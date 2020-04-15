@@ -1,0 +1,17 @@
+.hljs{display: block;overflow-x: auto;padding: 0.5em;background: #fff;color: white;}
+.xml.hljs-comment,.hljs-quote{color: #b1b1b1;font-style: italic}
+.hljs-tag,.hljs-attribute,.hljs-keyword,.hljs-selector-tag,.hljs-literal,.hljs-name{color: #ad76bf;font-style:bold}
+.hljs-variable,.hljs-template-variable{color: #f2ab9c}
+.hljs-code,.hljs-string,.hljs-meta-string{color: #D36D9F}.hljs-regexp,.hljs-link{color: #0E0EFF}
+.hljs-title,.hljs-symbol,.hljs-bullet,.hljs-number{color: #AFB3D8}
+.hljs-section,.hljs-meta{color: #F1A31D;font-weight:bold}
+.hljs-class,.hljs-title,.hljs-type,.hljs-built_in,.hljs-builtin-name,.hljs-params{color: #C6A7F6}
+.hljs-attr{color: #F1A31D}
+.hljs-subst{color: #606060}
+.hljs-formula{background-color: #AFB3D8;font-style: italic}
+.hljs-addition{background-color: #baeeba}
+.hljs-deletion{background-color: #ffc8bd}
+.hljs-selector-id,.hljs-selector-class{color: #F1A31D;font-weight:bold}
+.hljs-doctag,.hljs-strong{font-weight :bold}
+.hljs-emphasis{font-style: italic}
+/* C+++ dark mode default style */
