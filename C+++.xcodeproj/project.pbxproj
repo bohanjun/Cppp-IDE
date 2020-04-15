@@ -132,10 +132,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		180480A824474A0700CD0A4D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		183BF3C9242906B3007AF6AC /* CDTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTextView.swift; sourceTree = "<group>"; };
 		18541B1324458E7B000EB4CB /* SettingsVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVariables.swift; sourceTree = "<group>"; };
 		18541B152445905F000EB4CB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		188ACD8D2446ADAC0048EB08 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		188ACD8D2446ADAC0048EB08 /* Help(Chinese).md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Help(Chinese).md"; sourceTree = SOURCE_ROOT; };
 		18A41AA1242C756700AFC422 /* Highlightr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highlightr.swift; sourceTree = "<group>"; };
 		18A41AA3242C758B00AFC422 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		18A41AA5242C75A600AFC422 /* HTMLUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLUtils.swift; sourceTree = "<group>"; };
@@ -420,7 +421,8 @@
 		18B3C75B24272D9F00F4CA14 = {
 			isa = PBXGroup;
 			children = (
-				188ACD8D2446ADAC0048EB08 /* README.md */,
+				188ACD8D2446ADAC0048EB08 /* Help(Chinese).md */,
+				180480A824474A0700CD0A4D /* README.md */,
 				18B3C77E24282C1F00F4CA14 /* Code Editor */,
 				18B3C76524272D9F00F4CA14 /* Products */,
 			);
