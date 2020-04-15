@@ -6,7 +6,7 @@
 //  Copyright © 2020 Zhu Yixuan. All rights reserved.
 //
 
-import Cocoa
+import Cocoa 
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
