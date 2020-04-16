@@ -15,6 +15,11 @@ let completion = [
     "\'" : "\' "
 ]
 
+let completion2 = [
+    "]" : "]",
+    ")" : ")"
+]
+
 extension String {
     
     func challenge(_ input: Character) -> Int {
@@ -29,15 +34,7 @@ extension String {
 
 }
 
-class CDTextView: NSTextView, SettingsViewDelegate {
-    
-    // MARK: - SettingsViewDelegate
-    
-    func didSet(_ font: String, _ size: Int, _ dark: String, _ light: String, _ completion: Bool) {
-        
-    }
-    
-    
+class CDTextView: NSTextView {
 
     let highlightr = Highlightr()
     
@@ -84,25 +81,13 @@ class CDTextView: NSTextView, SettingsViewDelegate {
             
             
             // When input ")", "]", check if there is already a same symbol on the right.
-            if left == ")" {
+            if let str = completion2[left] {
                 let range = self.selectedRange.location
                 if self.string.count <= range {
                     return true
                 }
                 let string = NSString(string: self.string).substring(with: NSMakeRange(range, 1))
-                if string == ")" {
-                    self.deleteForward(self)
-                }
-                return superResult
-            }
-            
-            if left == "]" {
-                let range = self.selectedRange.location
-                if self.string.count <= range {
-                    return superResult
-                }
-                let string = NSString(string: self.string).substring(with: NSMakeRange(range, 1))
-                if string == "[" {
+                if string == str {
                     self.deleteForward(self)
                 }
                 return superResult
@@ -126,7 +111,7 @@ class CDTextView: NSTextView, SettingsViewDelegate {
     }
     
     
-    /// When press ENTER, analyze the code and insert tabs.
+    /// When press ENTER, insert tabs.
     override func insertNewline(_ sender: Any?) {
         super.insertNewline(sender)
         let nsstring = NSString(string: self.string)
@@ -147,7 +132,6 @@ class CDTextView: NSTextView, SettingsViewDelegate {
         
         super.init(coder: coder)
         self.highlightr!.setTheme(to: themeLight)
-        self.allowsUndo = true
         
     }
     

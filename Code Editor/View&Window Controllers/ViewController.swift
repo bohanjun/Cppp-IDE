@@ -92,9 +92,10 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     
 // MARK: - Appearance
     
-    @IBAction func changeTVAppearance(_ sender: Any) {
+    @IBAction func changeAppearance(_ sender: Any) {
         
         switch status {
+            
             case true:
                 
                 self.TextView.highlightr?.setTheme(to: themeDark)
@@ -128,6 +129,8 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
         }
         
         self.TextView.didChangeText()
+        self.TextView.highlightr?.theme.setCodeFont(NSFont(name: font, size: CGFloat(fontSize))!)
+        self.TextView.font = NSFont(name: font, size: CGFloat(fontSize))
         
     }
     
@@ -159,7 +162,6 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
         self.TextView.didChangeText()
         self.TextView.highlightr?.theme.setCodeFont(NSFont(name: font, size: CGFloat(size))!)
         self.TextView.font = NSFont(name: font, size: CGFloat(size))
-        
         
     }
     

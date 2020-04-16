@@ -988,7 +988,7 @@ Gw
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="changeTVAppearance:" target="5gI-5U-AMq" id="dKo-WM-MA7"/>
+                                            <action selector="changeAppearance:" target="5gI-5U-AMq" id="rxb-EE-Uvk"/>
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="n0c-Uk-5IZ">
@@ -1346,7 +1346,7 @@ Gw
                                     <rect key="frame" x="-100" y="-100" width="175" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="5v7-vf-fSo">
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="5v7-vf-fSo">
                                     <rect key="frame" x="175" y="0.0" width="15" height="300"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -1429,7 +1429,7 @@ DQ
                                     <rect key="frame" x="-100" y="-100" width="433" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="Exy-DJ-Z6N">
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Exy-DJ-Z6N">
                                     <rect key="frame" x="434" y="1" width="15" height="298"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
