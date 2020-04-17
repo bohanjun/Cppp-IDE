@@ -73,9 +73,11 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let savedData = NSKeyedUnarchiver.unarchiveObject(withFile: Settings.ArchiveURL.path) as? Settings {
+        if SettingsViewController.getSavedData() != nil &&
+            SettingsViewController.getSavedData2() != nil {
             
-            config = savedData
+            config = SettingsViewController.getSavedData()
+            compileConfig = SettingsViewController.getSavedData2()
             
         } else {
             
@@ -143,12 +145,13 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     @IBAction func showSettingsView(_ sender: Any) {
         
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
-        if let windowController =
+        if let ViewController =
             storyboard.instantiateController(
                 withIdentifier: NSStoryboard.SceneIdentifier("SettingsViewController")) as? SettingsViewController {
-            windowController.delegate = self
-            self.presentAsSheet(windowController)
+            ViewController.delegate = self
+            self.presentAsSheet(ViewController)
         }
+        
     }
     
     
@@ -158,9 +161,9 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
         
         // theme
         switch status {
-            case true:
-                self.TextView.highlightr?.setTheme(to: config.DarkThemeName)
             case false:
+                self.TextView.highlightr?.setTheme(to: config.DarkThemeName)
+            case true:
                 self.TextView.highlightr?.setTheme(to: config.LightThemeName)
         }
         
@@ -168,6 +171,10 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
         self.TextView.highlightr?.theme.setCodeFont(NSFont(name: config.FontName, size: CGFloat(config.FontSize))!)
         self.TextView.font = NSFont(name: config.FontName, size: CGFloat(config.FontSize))
         self.TextView.didChangeText()
+        
+        // in case of errors
+        changeAppearance(self)
+        changeAppearance(self)
         
     }
     

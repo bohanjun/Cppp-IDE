@@ -21,16 +21,21 @@ public func CompileSource(_ folderPath: String, fileURL: String, stdin: String, 
         for _ in 1...4 {
             out.removeLast()
         }
+    } else if out.hasSuffix(".c") || out.hasSuffix(".h") {
+        out.removeLast()
+        out.removeLast()
     }
     
     out = "\"" + out + "-output\""
     
-    var b: [String]
+    var command: String
     if openInTerminal {
-        b = shell("g++ \(_fileURL) -o \(out)", "")
+        command = "\(compileConfig.Compiler ?? "g++") \(compileConfig.Arguments ?? "") \(_fileURL) -o \(out)"
     } else {
-        b = shell("g++ \(_fileURL)", "")
+        command = "\(compileConfig.Compiler ?? "g++") \(compileConfig.Arguments ?? "") \(_fileURL)"
     }
+    
+    let b = shell(command, "")
     
     if b.count == 1 {
         var c: [String]
@@ -39,7 +44,7 @@ public func CompileSource(_ folderPath: String, fileURL: String, stdin: String, 
         } else {
             c = shell("./a.out", stdin)
         }
-        return ["Compile Succeed", c[0]]
+        return ["Compile Command:\n\(command)\n\nCompile Succeed", c[0]]
         
     } else {
         
@@ -54,7 +59,7 @@ public func CompileSource(_ folderPath: String, fileURL: String, stdin: String, 
             return [b[1], c[0]]
         }
         
-        return [b[1], "Compile Failed"]
+        return [b[1], "Compile Command:\n\(command)\n\nCompile Failed"]
         
     }
     
@@ -89,6 +94,7 @@ fileprivate func shell(_ command: String, _ stdin: String) -> [String] {
         return [output]
     }
     return [output, errorOutput]
+    
 }
 
 

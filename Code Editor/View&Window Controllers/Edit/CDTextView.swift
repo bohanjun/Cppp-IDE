@@ -131,7 +131,7 @@ class CDTextView: NSTextView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
-        if let savedData = NSKeyedUnarchiver.unarchiveObject(withFile: Settings.ArchiveURL.path) as? Settings {
+        if let savedData = SettingsViewController.getSavedData() {
             
             config = savedData
             

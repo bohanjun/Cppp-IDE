@@ -10,11 +10,14 @@ import Cocoa
 
 
 var config: Settings!
+var compileConfig: CompileSettings!
 
 public func initDefaultData() {
     
     config = Settings("Courier", 15, "Perfect", "Xcode", false)
+    compileConfig = CompileSettings("g++", "")
     NSKeyedArchiver.archiveRootObject(config!, toFile: Settings.ArchiveURL.path)
+    NSKeyedArchiver.archiveRootObject(compileConfig!, toFile: CompileSettings.ArchiveURL.path)
     
 }
 
@@ -25,12 +28,15 @@ public func initDefaultData() {
 class SettingsViewController: NSViewController {
     
     
-    
     @IBOutlet weak var fontname: NSPopUpButton!
     @IBOutlet weak var size: NSComboBox!
     @IBOutlet weak var dark: NSPopUpButton!
     @IBOutlet weak var light: NSPopUpButton!
     @IBOutlet weak var allows: NSButton!
+    
+    @IBOutlet weak var compiler: NSPopUpButton!
+    @IBOutlet weak var arguments: NSTextField!
+    
     var delegate: SettingsViewDelegate!
     
     
@@ -42,7 +48,13 @@ class SettingsViewController: NSViewController {
         config.LightThemeName = self.light.titleOfSelectedItem ?? "Xcode"
         config.AutoComplete = self.allows.state == .on
         
+        compileConfig.Compiler = self.compiler.titleOfSelectedItem ?? "g++"
+        compileConfig.Arguments = self.arguments.stringValue
+        
         NSKeyedArchiver.archiveRootObject(config!, toFile: Settings.ArchiveURL.path)
+        NSKeyedArchiver.archiveRootObject(compileConfig!, toFile: CompileSettings.ArchiveURL.path)
+        
+        self.delegate.didSet()
         
         self.dismiss(self)
         
@@ -51,7 +63,7 @@ class SettingsViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let savedData = getSavedData() {
+        if let savedData = SettingsViewController.getSavedData() {
             
             self.fontname.setTitle(savedData.FontName)
             self.size.stringValue = "\(savedData.FontSize ?? 15)"
@@ -64,19 +76,26 @@ class SettingsViewController: NSViewController {
                 self.allows.state = .off
             }
             
-        } else {
+        }
+        
+        if let savedData2 = SettingsViewController.getSavedData2() {
             
-            createDefaultData()
+            self.compiler.setTitle(savedData2.Compiler)
+            self.arguments.stringValue = savedData2.Arguments
             
         }
         
     }
     
-    private func getSavedData() -> Settings? {
+    public static func getSavedData() -> Settings? {
         return NSKeyedUnarchiver.unarchiveObject(withFile: Settings.ArchiveURL.path) as? Settings
     }
     
-    private func createDefaultData() {
+    public static func getSavedData2() -> CompileSettings? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: CompileSettings.ArchiveURL.path) as? CompileSettings
+    }
+    
+    /*private func createDefaultData() {
 
         self.fontname.setTitle("Courier")
         self.size.stringValue = "15"
@@ -86,6 +105,6 @@ class SettingsViewController: NSViewController {
         
         initDefaultData()
         
-    }
+    }*/
     
 }
