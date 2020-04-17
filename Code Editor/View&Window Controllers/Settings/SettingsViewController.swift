@@ -8,11 +8,23 @@
 
 import Cocoa
 
+
+var config: Settings!
+
+public func initDefaultData() {
+    
+    config = Settings("Courier", 15, "Perfect", "Xcode", false)
+    NSKeyedArchiver.archiveRootObject(config!, toFile: Settings.ArchiveURL.path)
+    
+}
+
 @objc protocol SettingsViewDelegate {
-    func didSet(_ font: String, _ size: Int, _ dark: String, _ light: String, _ completion: Bool)
+    func didSet()
 }
 
 class SettingsViewController: NSViewController {
+    
+    
     
     @IBOutlet weak var fontname: NSPopUpButton!
     @IBOutlet weak var size: NSComboBox!
@@ -21,23 +33,59 @@ class SettingsViewController: NSViewController {
     @IBOutlet weak var allows: NSButton!
     var delegate: SettingsViewDelegate!
     
+    
     @IBAction func Save(_ sender: NSButton) {
-        font = self.fontname.titleOfSelectedItem ?? "Courier"
-        fontSize = Int(self.size.stringValue) ?? 15
-        themeDark = self.dark.titleOfSelectedItem ?? "Perfect"
-        themeLight = self.light.titleOfSelectedItem ?? "Xcode"
-        allowsCompletion = self.allows.state == .on
-        self.delegate.didSet(font, fontSize, themeDark, themeLight, allowsCompletion)
+        
+        config.FontName = self.fontname.titleOfSelectedItem ?? "Courier"
+        config.FontSize = Int(self.size.stringValue) ?? 15
+        config.DarkThemeName = self.dark.titleOfSelectedItem ?? "Perfect"
+        config.LightThemeName = self.light.titleOfSelectedItem ?? "Xcode"
+        config.AutoComplete = self.allows.state == .on
+        
+        NSKeyedArchiver.archiveRootObject(config!, toFile: Settings.ArchiveURL.path)
         
         self.dismiss(self)
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.fontname.setTitle(font)
-        self.size.stringValue = "\(fontSize)"
-        self.dark.setTitle(themeDark)
-        self.light.setTitle(themeLight)
+        
+        if let savedData = getSavedData() {
+            
+            self.fontname.setTitle(savedData.FontName)
+            self.size.stringValue = "\(savedData.FontSize ?? 15)"
+            self.dark.setTitle(savedData.DarkThemeName)
+            self.light.setTitle(savedData.LightThemeName)
+            
+            if savedData.AutoComplete {
+                self.allows.state = .on
+            } else {
+                self.allows.state = .off
+            }
+            
+        } else {
+            
+            createDefaultData()
+            
+        }
+        
+    }
+    
+    private func getSavedData() -> Settings? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Settings.ArchiveURL.path) as? Settings
+    }
+    
+    private func createDefaultData() {
+
+        self.fontname.setTitle("Courier")
+        self.size.stringValue = "15"
+        self.dark.setTitle("Perfect")
+        self.light.setTitle("Xcode")
+        self.allows.state = .on
+        
+        initDefaultData()
+        
     }
     
 }

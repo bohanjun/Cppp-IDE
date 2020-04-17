@@ -63,7 +63,7 @@ class CDTextView: NSTextView {
         
         if let left = replacementString {
             
-            if allowsCompletion == false {
+            if config.AutoComplete == false {
                 return superResult
             }
             
@@ -129,9 +129,19 @@ class CDTextView: NSTextView {
     
     // MARK: - init(coder:)
     required init?(coder: NSCoder) {
-        
         super.init(coder: coder)
-        self.highlightr!.setTheme(to: themeLight)
+        
+        if let savedData = NSKeyedUnarchiver.unarchiveObject(withFile: Settings.ArchiveURL.path) as? Settings {
+            
+            config = savedData
+            
+        } else {
+            
+            initDefaultData()
+            
+        }
+        
+        self.highlightr!.setTheme(to: config.LightThemeName)
         
     }
     

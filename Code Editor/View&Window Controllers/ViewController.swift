@@ -73,13 +73,23 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let savedData = NSKeyedUnarchiver.unarchiveObject(withFile: Settings.ArchiveURL.path) as? Settings {
+            
+            config = savedData
+            
+        } else {
+            
+            initDefaultData()
+            
+        }
+        
         self.StdIn.font = MenloFont(ofSize: 14.0)
         self.TextView.delegate = self
         self.StdOut.font = MenloFont(ofSize: 14.0)
         self.CompileInfo.font = MenloFont(ofSize: 13.0)
         
         if #available(OSX 10.14, *) {
-            self.TextView.highlightr?.setTheme(to: themeDark)
+            self.TextView.highlightr?.setTheme(to: config.DarkThemeName)
             self.view.window?.appearance = darkAqua
             self.view.appearance = darkAqua
             for view in self.view.subviews {
@@ -98,7 +108,7 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
             
             case true:
                 
-                self.TextView.highlightr?.setTheme(to: themeDark)
+                self.TextView.highlightr?.setTheme(to: config.DarkThemeName)
                 
                 if #available(OSX 10.14, *) {
                     self.view.window?.appearance = darkAqua
@@ -107,14 +117,11 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
                         view.appearance = darkAqua
                     }
                     status = false
-                } else {
-                    
                 }
-                
          
             case false:
                 
-                self.TextView.highlightr?.setTheme(to: themeLight)
+                self.TextView.highlightr?.setTheme(to: config.LightThemeName)
                 
                 if #available(OSX 10.14, *) {
                     self.view.window?.appearance = aqua
@@ -123,14 +130,13 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
                         view.appearance = aqua
                     }
                     status = true
-                } else {
-                    
                 }
+            
         }
         
         self.TextView.didChangeText()
-        self.TextView.highlightr?.theme.setCodeFont(NSFont(name: font, size: CGFloat(fontSize))!)
-        self.TextView.font = NSFont(name: font, size: CGFloat(fontSize))
+        self.TextView.highlightr?.theme.setCodeFont(NSFont(name: config.FontName, size: CGFloat(config.FontSize))!)
+        self.TextView.font = NSFont(name: config.FontName, size: CGFloat(config.FontSize))
         
     }
     
@@ -148,20 +154,20 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     
     // MARK: - SettingsViewDelegate
     
-    func didSet(_ font: String, _ size: Int, _ dark: String, _ light: String, _ completion: Bool) {
+    func didSet() {
         
         // theme
         switch status {
             case true:
-                self.TextView.highlightr?.setTheme(to: themeLight)
+                self.TextView.highlightr?.setTheme(to: config.DarkThemeName)
             case false:
-                self.TextView.highlightr?.setTheme(to: themeDark)
+                self.TextView.highlightr?.setTheme(to: config.LightThemeName)
         }
         
         // font
+        self.TextView.highlightr?.theme.setCodeFont(NSFont(name: config.FontName, size: CGFloat(config.FontSize))!)
+        self.TextView.font = NSFont(name: config.FontName, size: CGFloat(config.FontSize))
         self.TextView.didChangeText()
-        self.TextView.highlightr?.theme.setCodeFont(NSFont(name: font, size: CGFloat(size))!)
-        self.TextView.font = NSFont(name: font, size: CGFloat(size))
         
     }
     
