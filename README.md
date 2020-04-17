@@ -10,6 +10,12 @@
 - From the App Store or from developer.apple.com/downloads.
 
 ## Update Log
+### 2020.4 Version 1.0.2  Developing
+- Persist Settings Data (✓)
+- Choose Compiler (g++, gcc, clang)
+- Fix the scroll view bug (✓)
+- Bug fixing
+
 ### 2020.4 Version 1.0.1
 - Add "Settings"
 - Add "Help"

@@ -1346,7 +1346,7 @@ Gw
                                     <rect key="frame" x="-100" y="-100" width="175" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="5v7-vf-fSo">
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="5v7-vf-fSo">
                                     <rect key="frame" x="175" y="0.0" width="15" height="300"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -1369,6 +1369,7 @@ Gw
                     </view>
                     <connections>
                         <outlet property="ctview" destination="XWB-fc-jhZ" id="auF-FD-kHi"/>
+                        <outlet property="scrollView" destination="pgq-7W-2wD" id="JFc-1H-38k"/>
                     </connections>
                 </viewController>
                 <customObject id="5Ka-wZ-fP5" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

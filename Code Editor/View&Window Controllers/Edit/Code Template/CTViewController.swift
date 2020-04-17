@@ -25,6 +25,7 @@ let NameCodePairs: Dictionary = [
 class CTViewController: NSViewController {
 
     @IBOutlet weak var ctview: CTView!
+    @IBOutlet weak var scrollView: NSScrollView!
     
     @IBAction func setCTView(_ sender: NSButton) {
         let Code = NameCodePairs[sender.title]
@@ -38,12 +39,14 @@ class CTViewController: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
         
+        // scroll to top
+        self.scrollView.contentView.scroll(to: NSPoint(x: 0, y: self.scrollView.contentSize.height))
+        scrollView.reflectScrolledClipView(scrollView.contentView)
+        
+        
+        // init the CTView
         self.ctview.reinit(name: "For Statement", code: NameCodePairs["  For Statement"] ?? "Error")
         
     }
     
 }
-
-#if (false)
-
-#endif
