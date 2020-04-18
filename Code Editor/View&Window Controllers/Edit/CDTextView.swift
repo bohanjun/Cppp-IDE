@@ -8,16 +8,19 @@
 
 import Cocoa
 
+
 let completion = [
     "(" : ")",
     "[" : "]",
-    "\"" : "\" ",
-    "\'" : "\' "
+    "\"" : "\"",
+    "\'" : "\'"
 ]
 
 let completion2 = [
     "]" : "]",
-    ")" : ")"
+    ")" : ")",
+    "\"" : "\"",
+    "\'" : "\'"
 ]
 
 extension String {
@@ -37,6 +40,7 @@ extension String {
 class CDTextView: NSTextView {
 
     let highlightr = Highlightr()
+    var codeTextViewDelegate: CDTextViewDelegate!
     
     
     // MARK: - Override Functions
@@ -54,9 +58,11 @@ class CDTextView: NSTextView {
         
         self.selectedRange.location = a
         
+        self.codeTextViewDelegate.didChangeText(lines: self.textStorage?.paragraphs.count ?? 0, characters: self.textStorage?.characters.count ?? 0)
+        
     }
     
-    /// When input "(", "[", etc, insert "]", ")", etc.
+    /// shouldChangeText(in:replacementString:)
     override func shouldChangeText(in affectedCharRange: NSRange, replacementString: String?) -> Bool {
         
         let superResult = super.shouldChangeText(in: affectedCharRange, replacementString: replacementString)
@@ -106,14 +112,15 @@ class CDTextView: NSTextView {
             }
             
         }
-        
         return superResult
+        
     }
     
     
     /// When press ENTER, insert tabs.
     override func insertNewline(_ sender: Any?) {
         super.insertNewline(sender)
+        
         let nsstring = NSString(string: self.string)
         let string = nsstring.substring(to: self.selectedRange.location)
         let l = string.challenge("{")
@@ -124,6 +131,7 @@ class CDTextView: NSTextView {
                 self.insertText("\t", replacementRange: self.selectedRange)
             }
         }
+        
     }
     
     

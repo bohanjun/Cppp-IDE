@@ -19,7 +19,8 @@ let darkAqua = NSAppearance(named: .darkAqua)
 let aqua = NSAppearance(named: .aqua)
 
 
-class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate {
+class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate, CDTextViewDelegate {
+    
     
     
 // MARK: - Properties
@@ -28,11 +29,14 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     // Normal Editing
     @IBOutlet var TextView: CDTextView!
     
+    // View Control
     @IBOutlet weak var BottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var RightConstraint: NSLayoutConstraint!
     @IBOutlet weak var FakeBackgroundAddition: NSTextField!
     @IBOutlet weak var TextView_ScrollView: NSScrollView!
     @IBOutlet weak var Option: NSButton!
+    @IBOutlet weak var linesLabel: NSTextField!
+    @IBOutlet weak var charactersLabel: NSTextField!
     
     // Compiling
     @IBOutlet weak var FileName: NSTextField!
@@ -45,6 +49,8 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     
     
 // MARK: - Methods
+    
+    // compile the code.
     @IBAction func Compile(_ sender: Any) {
         
         let file = FileName.stringValue
@@ -58,6 +64,7 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
         
     }
     
+    // fill in the File Path and the Folder Path.
     func fillInPath(_ sender: Any) {
         
         var tmp = self.FileName.stringValue.components(separatedBy: "/")
@@ -70,28 +77,39 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     
     
 // MARK: - viewDidLoad()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.TextView.codeTextViewDelegate = self
+        
+        // judge if there has already been a saved settings.
         if SettingsViewController.getSavedData() != nil &&
             SettingsViewController.getSavedData2() != nil {
             
+            // evaluate the config and compileConfig.
             config = SettingsViewController.getSavedData()
             compileConfig = SettingsViewController.getSavedData2()
             
+            // set the font of the text view.
+            self.TextView.font = NSFont(name: SettingsViewController.getSavedData()!.FontName, size: CGFloat(SettingsViewController.getSavedData()!.FontSize))
+            self.TextView.highlightr?.theme.setCodeFont(NSFont(name: SettingsViewController.getSavedData()!.FontName, size: CGFloat(SettingsViewController.getSavedData()!.FontSize))!)
+            
         } else {
             
+            // create default settings data.
             initDefaultData()
             
         }
         
+        // set the font of the StdIn, StdOut and the CompileInfo text view.
         self.StdIn.font = MenloFont(ofSize: 14.0)
-        self.TextView.delegate = self
         self.StdOut.font = MenloFont(ofSize: 14.0)
         self.CompileInfo.font = MenloFont(ofSize: 13.0)
         
+        // set the current appearance to Dark Mode.
         if #available(OSX 10.14, *) {
-            self.TextView.highlightr?.setTheme(to: config.DarkThemeName)
+            self.TextView.highlightr?.setTheme(to: SettingsViewController.getSavedData()!.DarkThemeName)
             self.view.window?.appearance = darkAqua
             self.view.appearance = darkAqua
             for view in self.view.subviews {
@@ -99,19 +117,29 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
             }
             status = false
         }
+        
+        // in case of errors
+        changeAppearance(self)
+        changeAppearance(self)
+        
     }
     
     
 // MARK: - Appearance
     
+    // Change the appearance of the App. (OSX 10.14, *)
     @IBAction func changeAppearance(_ sender: Any) {
         
+        // judge the current appearance.
         switch status {
             
+            // Dark Mode
             case true:
                 
-                self.TextView.highlightr?.setTheme(to: config.DarkThemeName)
+                // Change the text view's highlight theme to Dark Mode.
+                self.TextView.highlightr?.setTheme(to: SettingsViewController.getSavedData()!.DarkThemeName)
                 
+                // Chage the window's appearance to Dark Mode.
                 if #available(OSX 10.14, *) {
                     self.view.window?.appearance = darkAqua
                     self.view.appearance = darkAqua
@@ -120,11 +148,14 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
                     }
                     status = false
                 }
-         
+            
+            // Light Mode
             case false:
                 
-                self.TextView.highlightr?.setTheme(to: config.LightThemeName)
+                // Change the text view's highlight theme to Light Mode.
+                self.TextView.highlightr?.setTheme(to: SettingsViewController.getSavedData()!.LightThemeName)
                 
+                // Chage the window's appearance to Light Mode.
                 if #available(OSX 10.14, *) {
                     self.view.window?.appearance = aqua
                     self.view.appearance = aqua
@@ -136,9 +167,10 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
             
         }
         
+        // Change the font of the text view.
         self.TextView.didChangeText()
-        self.TextView.highlightr?.theme.setCodeFont(NSFont(name: config.FontName, size: CGFloat(config.FontSize))!)
-        self.TextView.font = NSFont(name: config.FontName, size: CGFloat(config.FontSize))
+        self.TextView.highlightr?.theme.setCodeFont(NSFont(name: SettingsViewController.getSavedData()!.FontName, size: CGFloat(SettingsViewController.getSavedData()!.FontSize))!)
+        self.TextView.font = NSFont(name: SettingsViewController.getSavedData()!.FontName, size: CGFloat(SettingsViewController.getSavedData()!.FontSize))
         
     }
     
@@ -155,26 +187,36 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     }
     
     
-    // MARK: - SettingsViewDelegate
+// MARK: - SettingsViewDelegate
     
     func didSet() {
         
         // theme
         switch status {
             case false:
-                self.TextView.highlightr?.setTheme(to: config.DarkThemeName)
+                self.TextView.highlightr?.setTheme(to: SettingsViewController.getSavedData()!.DarkThemeName)
             case true:
-                self.TextView.highlightr?.setTheme(to: config.LightThemeName)
+                self.TextView.highlightr?.setTheme(to: SettingsViewController.getSavedData()!.LightThemeName)
         }
         
         // font
-        self.TextView.highlightr?.theme.setCodeFont(NSFont(name: config.FontName, size: CGFloat(config.FontSize))!)
-        self.TextView.font = NSFont(name: config.FontName, size: CGFloat(config.FontSize))
+        self.TextView.highlightr?.theme.setCodeFont(NSFont(name: SettingsViewController.getSavedData()!.FontName, size: CGFloat(SettingsViewController.getSavedData()!.FontSize))!)
+        self.TextView.font = NSFont(name: SettingsViewController.getSavedData()!.FontName, size: CGFloat(SettingsViewController.getSavedData()!.FontSize))
         self.TextView.didChangeText()
         
         // in case of errors
         changeAppearance(self)
         changeAppearance(self)
+        
+    }
+    
+// MARK: - CDTextViewDelegate
+    
+    
+    func didChangeText(lines: Int, characters: Int) {
+        
+        self.linesLabel.stringValue = "\(lines) lines"
+        self.charactersLabel.stringValue = "\(characters) characters"
         
     }
     

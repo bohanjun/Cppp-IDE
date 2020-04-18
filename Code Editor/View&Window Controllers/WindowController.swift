@@ -33,10 +33,10 @@ class WindowController: NSWindowController, NSWindowDelegate {
     
     @IBAction func toggleCI(_ sender: Any) {
         if bottom == true {
-            (self.contentViewController as! ViewController).BottomConstraint.constant = 0.0
+            (self.contentViewController as! ViewController).BottomConstraint.constant = 22.0
             bottom = false
         } else {
-            (self.contentViewController as! ViewController).BottomConstraint.constant = 143.0
+            (self.contentViewController as! ViewController).BottomConstraint.constant = 165.0
             bottom = true
         }
     }

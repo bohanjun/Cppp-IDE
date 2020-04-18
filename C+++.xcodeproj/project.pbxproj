@@ -12,6 +12,7 @@
 		183BF3CA242906B3007AF6AC /* CDTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183BF3C9242906B3007AF6AC /* CDTextView.swift */; };
 		18541B162445905F000EB4CB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18541B152445905F000EB4CB /* SettingsViewController.swift */; };
 		1868EBD5244981C2005467B2 /* CompileSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1868EBD4244981C2005467B2 /* CompileSettings.swift */; };
+		1868EBD7244AF934005467B2 /* CDTextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1868EBD6244AF934005467B2 /* CDTextViewDelegate.swift */; };
 		18A41AA2242C756700AFC422 /* Highlightr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A41AA1242C756700AFC422 /* Highlightr.swift */; };
 		18A41AA4242C758B00AFC422 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A41AA3242C758B00AFC422 /* Theme.swift */; };
 		18A41AA6242C75A600AFC422 /* HTMLUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A41AA5242C75A600AFC422 /* HTMLUtils.swift */; };
@@ -138,6 +139,7 @@
 		183BF3C9242906B3007AF6AC /* CDTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTextView.swift; sourceTree = "<group>"; };
 		18541B152445905F000EB4CB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		1868EBD4244981C2005467B2 /* CompileSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompileSettings.swift; sourceTree = "<group>"; };
+		1868EBD6244AF934005467B2 /* CDTextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTextViewDelegate.swift; sourceTree = "<group>"; };
 		188ACD8D2446ADAC0048EB08 /* Help(Chinese).md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Help(Chinese).md"; sourceTree = SOURCE_ROOT; };
 		18A41AA1242C756700AFC422 /* Highlightr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highlightr.swift; sourceTree = "<group>"; };
 		18A41AA3242C758B00AFC422 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				183BF3C9242906B3007AF6AC /* CDTextView.swift */,
+				1868EBD6244AF934005467B2 /* CDTextViewDelegate.swift */,
 				18A41AA0242C752C00AFC422 /* Highlight */,
 				18F0D7A2242A558A0078E2B9 /* Code Template */,
 			);
@@ -632,6 +635,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18F0D7A4242AEDAC0078E2B9 /* CTViewController.swift in Sources */,
+				1868EBD7244AF934005467B2 /* CDTextViewDelegate.swift in Sources */,
 				18B3C78224282C1F00F4CA14 /* ViewController.swift in Sources */,
 				1868EBD5244981C2005467B2 /* CompileSettings.swift in Sources */,
 				18A41AA8242C75C300AFC422 /* Shims.swift in Sources */,
@@ -775,7 +779,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_TEAM = XG7269D873;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Code Editor/Info.plist";
@@ -799,7 +803,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_TEAM = XG7269D873;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Code Editor/Info.plist";

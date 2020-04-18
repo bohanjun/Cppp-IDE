@@ -1,56 +1,61 @@
 {
   "images" : [
     {
+      "filename" : "CpppIcon_2_0_16.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "16x16"
     },
     {
+      "filename" : "CpppIcon_2_0_32-1.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "16x16"
     },
     {
+      "filename" : "CpppIcon_2_0_32.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "32x32"
     },
     {
+      "filename" : "CpppIcon_2_0_64.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "32x32"
     },
     {
+      "filename" : "CpppIcon_2_0_128.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "128x128"
     },
     {
-      "filename" : "CpppAppIcon256-1.png",
+      "filename" : "CpppIcon_2_0_256-1.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "128x128"
     },
     {
-      "filename" : "CpppAppIcon256.png",
+      "filename" : "CpppIcon_2_0_256.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "256x256"
     },
     {
-      "filename" : "CpppAppIcon512-1.png",
+      "filename" : "CpppIcon_2_0_512-1.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "256x256"
     },
     {
-      "filename" : "CpppAppIcon512.png",
+      "filename" : "CpppIcon_2_0_512.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "512x512"
     },
     {
-      "filename" : "CpppAppIcon1024.png",
+      "filename" : "CpppIcon_2_0_1024.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "512x512"

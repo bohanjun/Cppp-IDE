@@ -95,16 +95,4 @@ class SettingsViewController: NSViewController {
         return NSKeyedUnarchiver.unarchiveObject(withFile: CompileSettings.ArchiveURL.path) as? CompileSettings
     }
     
-    /*private func createDefaultData() {
-
-        self.fontname.setTitle("Courier")
-        self.size.stringValue = "15"
-        self.dark.setTitle("Perfect")
-        self.light.setTitle("Xcode")
-        self.allows.state = .on
-        
-        initDefaultData()
-        
-    }*/
-    
 }

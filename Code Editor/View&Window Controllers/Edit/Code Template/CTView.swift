@@ -26,6 +26,14 @@ class CTView: NSView {
         self.titleLabel.stringValue = name
         self.codeLabel.string = code
         let code = self.codeLabel.string
+        
+        if #available(OSX 10.14, *) {
+            self.highlightr?.setTheme(to: SettingsViewController.getSavedData()!.DarkThemeName)
+        } else {
+            self.highlightr?.setTheme(to: SettingsViewController.getSavedData()!.LightThemeName)
+        }
+        self.highlightr?.theme.setCodeFont(NSFont(name: SettingsViewController.getSavedData()!.FontName, size: 14.0)!)
+        
         let highlightedCode = highlightr!.highlight(code, as: "C++")
         self.codeLabel.textStorage?.setAttributedString(highlightedCode!)
     }
@@ -33,7 +41,7 @@ class CTView: NSView {
     func setUp() {
         
         self.wantsLayer = true
-        self.layer?.backgroundColor = NSColor.darkGray.cgColor
+        self.layer?.backgroundColor = NSColor(srgbRed: 120.0, green: 20.0, blue: 20.0, alpha: 0.0).cgColor
         
         self.frame = CGRect(x: 190, y: 0, width: 260, height: 300)
         self.bounds = CGRect(x: 190, y: 0, width: 260, height: 300)
@@ -42,7 +50,7 @@ class CTView: NSView {
         self.titleLabel.isBordered = false
         self.titleLabel.isEditable = false
         self.titleLabel.textColor = .white
-        self.titleLabel.backgroundColor = .darkGray
+        self.titleLabel.backgroundColor = NSColor(srgbRed: 20.0, green: 20.0, blue: 20.0, alpha: 0.0)
         self.titleLabel.drawsBackground = false
         self.addSubview(titleLabel)
         
@@ -53,10 +61,14 @@ class CTView: NSView {
         
         self.codeLabel = NSTextView(frame: CGRect(x: 200, y: 90, width: 225, height: 200))
         self.codeLabel.backgroundColor = .black
-        self.codeLabel.font = NSFont(name: "Courier", size: 12.0)!
+        self.highlightr?.theme.setCodeFont(NSFont(name: SettingsViewController.getSavedData()!.FontName, size: 14.0)!)
         self.codeLabel.textColor = .white
         self.codeLabel.isEditable = false
-        highlightr?.setTheme(to: "perfect")
+        if #available(OSX 10.14, *) {
+            self.highlightr?.setTheme(to: SettingsViewController.getSavedData()!.DarkThemeName)
+        } else {
+            self.highlightr?.setTheme(to: SettingsViewController.getSavedData()!.LightThemeName)
+        }
         scrollView.documentView = codeLabel
         
         self.button = NSButton(frame: CGRect(x: 200, y: 15, width: 135, height: 20))
