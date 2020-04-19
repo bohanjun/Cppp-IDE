@@ -4,7 +4,6 @@
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaDFRPlugin" version="16002"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
         <capability name="the Touch Bar" minToolsVersion="8.1" minSystemVersion="10.12.2" requiredIntegratedClassName="NSTouchBar"/>
     </dependencies>
@@ -1018,12 +1017,12 @@ Gw
                                 <rect key="frame" x="707" y="0.0" width="253" height="599"/>
                                 <subviews>
                                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qsN-Aj-VGr">
-                                        <rect key="frame" x="95" y="539" width="147" height="21"/>
+                                        <rect key="frame" x="72" y="539" width="170" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="147" id="mul-b2-cHo"/>
+                                            <constraint firstAttribute="width" constant="170" id="mul-b2-cHo"/>
                                             <constraint firstAttribute="height" constant="21" id="yAG-Nw-sMA"/>
                                         </constraints>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Drag Your File Here" bezelStyle="round" id="It9-XX-i0U">
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="The path of the file" bezelStyle="round" id="It9-XX-i0U">
                                             <font key="font" usesAppearanceFont="YES"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1037,103 +1036,6 @@ Gw
                                         </constraints>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="File Path" id="0OZ-8e-glF">
                                             <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mxT-Qq-9TO">
-                                        <rect key="frame" x="95" y="512" width="147" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="EzD-hJ-0u8"/>
-                                            <constraint firstAttribute="width" constant="147" id="Yco-ix-auq"/>
-                                        </constraints>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="The Folder Path" bezelStyle="round" id="Xez-l0-iKq">
-                                            <font key="font" usesAppearanceFont="YES"/>
-                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZzM-dA-rzR">
-                                        <rect key="frame" x="7" y="514" width="82" height="16"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="78" id="7vl-7B-gFo"/>
-                                            <constraint firstAttribute="height" constant="16" id="Lpm-l5-zvO"/>
-                                        </constraints>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Folder Path" id="OGF-eb-fRy">
-                                            <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5c6-uU-e4R">
-                                        <rect key="frame" x="10" y="352" width="233" height="97"/>
-                                        <clipView key="contentView" copiesOnScroll="NO" id="hXH-SY-JeN">
-                                            <rect key="frame" x="0.0" y="0.0" width="218" height="97"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <subviews>
-                                                <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" smartInsertDelete="YES" id="9So-KV-sOg">
-                                                    <rect key="frame" x="0.0" y="0.0" width="218" height="97"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                    <color key="backgroundColor" name="StdInColor"/>
-                                                    <size key="minSize" width="218" height="97"/>
-                                                    <size key="maxSize" width="233" height="10000000"/>
-                                                    <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                </textView>
-                                            </subviews>
-                                            <color key="backgroundColor" name="StdInColor"/>
-                                        </clipView>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="97" id="CUn-ob-7eN"/>
-                                            <constraint firstAttribute="width" constant="233" id="gFL-1I-edZ"/>
-                                        </constraints>
-                                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="nJK-yB-HvL">
-                                            <rect key="frame" x="-100" y="-100" width="225" height="15"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </scroller>
-                                        <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="TH9-pP-pv1">
-                                            <rect key="frame" x="218" y="0.0" width="15" height="97"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </scroller>
-                                    </scrollView>
-                                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AD2-n9-ugr">
-                                        <rect key="frame" x="10" y="13" width="233" height="296"/>
-                                        <clipView key="contentView" copiesOnScroll="NO" id="5OI-pe-cwv">
-                                            <rect key="frame" x="0.0" y="0.0" width="218" height="296"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <subviews>
-                                                <textView editable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" smartInsertDelete="YES" id="fzH-fH-jce">
-                                                    <rect key="frame" x="0.0" y="0.0" width="218" height="296"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                    <color key="backgroundColor" name="StdOutColor"/>
-                                                    <size key="minSize" width="218" height="296"/>
-                                                    <size key="maxSize" width="233" height="10000000"/>
-                                                    <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                </textView>
-                                            </subviews>
-                                            <color key="backgroundColor" name="StdOutColor"/>
-                                        </clipView>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="233" id="QfP-fl-6bx"/>
-                                        </constraints>
-                                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="fHh-2B-xhf">
-                                            <rect key="frame" x="-100" y="-100" width="225" height="15"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </scroller>
-                                        <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="OLh-jm-89T">
-                                            <rect key="frame" x="218" y="0.0" width="15" height="296"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </scroller>
-                                    </scrollView>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4SW-YB-vHC">
-                                        <rect key="frame" x="7" y="313" width="121" height="19"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="117" id="N2y-I9-s7F"/>
-                                            <constraint firstAttribute="height" constant="19" id="b7p-3H-Ag6"/>
-                                        </constraints>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Stantard Output" id="Ud8-hX-N9v">
-                                            <font key="font" metaFont="system" size="16"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
@@ -1165,25 +1067,6 @@ Gw
                                             <action selector="changeAppearance:" target="5gI-5U-AMq" id="rxb-EE-Uvk"/>
                                         </connections>
                                     </button>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="n0c-Uk-5IZ">
-                                        <rect key="frame" x="7" y="490" width="219" height="18"/>
-                                        <buttonCell key="cell" type="check" title="Compile and execute in Terminal" bezelStyle="regularSquare" imagePosition="left" enabled="NO" state="on" inset="2" id="Mtt-zB-lsA">
-                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                    </button>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Q1y-CD-kgi">
-                                        <rect key="frame" x="7" y="452" width="108" height="19"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="104" id="DqL-Gf-kTq"/>
-                                            <constraint firstAttribute="height" constant="19" id="vMM-iC-51h"/>
-                                        </constraints>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Stantard Input" id="pjk-kx-SK3">
-                                            <font key="font" metaFont="system" size="16"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KHN-xI-39T">
                                         <rect key="frame" x="201" y="567" width="16" height="22"/>
                                         <constraints>
@@ -1216,39 +1099,19 @@ Gw
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="KHN-xI-39T" firstAttribute="leading" secondItem="4Ci-A4-t6w" secondAttribute="trailing" constant="8" id="17e-zH-26o"/>
-                                    <constraint firstItem="5c6-uU-e4R" firstAttribute="leading" secondItem="qkV-Pw-MXt" secondAttribute="leading" constant="10" id="1N6-tT-q5E"/>
-                                    <constraint firstAttribute="trailing" secondItem="AD2-n9-ugr" secondAttribute="trailing" constant="10" id="4Gb-xj-pgs"/>
-                                    <constraint firstAttribute="trailing" secondItem="5c6-uU-e4R" secondAttribute="trailing" constant="10" id="5z1-l6-9rz"/>
-                                    <constraint firstItem="AD2-n9-ugr" firstAttribute="top" secondItem="4SW-YB-vHC" secondAttribute="bottom" constant="4" id="8Ys-fP-pgb"/>
-                                    <constraint firstItem="mxT-Qq-9TO" firstAttribute="top" secondItem="qsN-Aj-VGr" secondAttribute="bottom" constant="6" id="Cw1-jQ-hkR"/>
                                     <constraint firstItem="myR-nW-Ncx" firstAttribute="leading" secondItem="KHN-xI-39T" secondAttribute="trailing" constant="4" id="FF1-1s-d6A"/>
-                                    <constraint firstItem="ZzM-dA-rzR" firstAttribute="top" secondItem="MJK-cX-OjH" secondAttribute="bottom" constant="11" id="FNr-MT-I88"/>
-                                    <constraint firstItem="Q1y-CD-kgi" firstAttribute="top" secondItem="mxT-Qq-9TO" secondAttribute="bottom" constant="41" id="HkT-sR-nlh"/>
                                     <constraint firstItem="qsN-Aj-VGr" firstAttribute="top" secondItem="qkV-Pw-MXt" secondAttribute="top" constant="39" id="I8J-XZ-5gi"/>
                                     <constraint firstAttribute="trailing" secondItem="qsN-Aj-VGr" secondAttribute="trailing" constant="11" id="Kb9-00-U3O"/>
-                                    <constraint firstItem="5c6-uU-e4R" firstAttribute="top" secondItem="Q1y-CD-kgi" secondAttribute="bottom" constant="3" id="Qkr-eC-hkt"/>
-                                    <constraint firstItem="4SW-YB-vHC" firstAttribute="top" secondItem="5c6-uU-e4R" secondAttribute="bottom" constant="20" id="Spw-NB-jQ1"/>
                                     <constraint firstItem="4Ci-A4-t6w" firstAttribute="top" secondItem="qkV-Pw-MXt" secondAttribute="top" constant="10" id="TwX-d2-pms"/>
-                                    <constraint firstItem="ZzM-dA-rzR" firstAttribute="leading" secondItem="qkV-Pw-MXt" secondAttribute="leading" constant="9" id="U45-av-JTH"/>
-                                    <constraint firstItem="n0c-Uk-5IZ" firstAttribute="leading" secondItem="ZzM-dA-rzR" secondAttribute="leading" id="VOU-cl-k2m"/>
-                                    <constraint firstItem="mxT-Qq-9TO" firstAttribute="leading" secondItem="ZzM-dA-rzR" secondAttribute="trailing" constant="8" id="Xiq-nf-hRn"/>
                                     <constraint firstAttribute="trailing" secondItem="myR-nW-Ncx" secondAttribute="trailing" constant="11" id="ZMv-Vt-NRT"/>
-                                    <constraint firstAttribute="bottom" secondItem="AD2-n9-ugr" secondAttribute="bottom" constant="13" id="Zuh-tI-AKJ"/>
-                                    <constraint firstItem="qsN-Aj-VGr" firstAttribute="leading" secondItem="MJK-cX-OjH" secondAttribute="trailing" constant="26" id="bck-mo-fjp"/>
-                                    <constraint firstAttribute="trailing" secondItem="4SW-YB-vHC" secondAttribute="trailing" constant="127" id="gp4-WJ-MPO"/>
+                                    <constraint firstItem="qsN-Aj-VGr" firstAttribute="leading" secondItem="MJK-cX-OjH" secondAttribute="trailing" constant="3" id="bck-mo-fjp"/>
                                     <constraint firstItem="MJK-cX-OjH" firstAttribute="top" secondItem="qkV-Pw-MXt" secondAttribute="top" constant="42" id="jsc-u6-RnI"/>
-                                    <constraint firstItem="n0c-Uk-5IZ" firstAttribute="top" secondItem="ZzM-dA-rzR" secondAttribute="bottom" constant="8" symbolic="YES" id="nBA-C5-6vf"/>
                                     <constraint firstItem="KHN-xI-39T" firstAttribute="top" secondItem="qkV-Pw-MXt" secondAttribute="top" constant="10" id="ndQ-Qm-fs9"/>
                                     <constraint firstItem="yBK-Qs-eq2" firstAttribute="top" secondItem="qkV-Pw-MXt" secondAttribute="top" constant="10" id="nsI-Qi-gI4"/>
-                                    <constraint firstAttribute="trailing" secondItem="Q1y-CD-kgi" secondAttribute="trailing" constant="140" id="p6O-ve-lWl"/>
-                                    <constraint firstItem="Q1y-CD-kgi" firstAttribute="leading" secondItem="qkV-Pw-MXt" secondAttribute="leading" constant="9" id="pwq-tU-KOp"/>
                                     <constraint firstItem="myR-nW-Ncx" firstAttribute="top" secondItem="qkV-Pw-MXt" secondAttribute="top" constant="10" id="rWa-V2-Aoo"/>
                                     <constraint firstItem="4Ci-A4-t6w" firstAttribute="leading" secondItem="yBK-Qs-eq2" secondAttribute="trailing" constant="7" id="rep-mk-Shu"/>
                                     <constraint firstAttribute="width" constant="253" id="vAV-il-wve"/>
                                     <constraint firstItem="MJK-cX-OjH" firstAttribute="leading" secondItem="qkV-Pw-MXt" secondAttribute="leading" constant="9" id="vvE-FK-Zie"/>
-                                    <constraint firstItem="AD2-n9-ugr" firstAttribute="leading" secondItem="qkV-Pw-MXt" secondAttribute="leading" constant="10" id="wlQ-6g-vqA"/>
-                                    <constraint firstItem="4SW-YB-vHC" firstAttribute="leading" secondItem="qkV-Pw-MXt" secondAttribute="leading" constant="9" id="ynN-za-fE4"/>
-                                    <constraint firstAttribute="trailing" secondItem="mxT-Qq-9TO" secondAttribute="trailing" constant="11" id="zVx-hU-gP0"/>
                                 </constraints>
                             </customView>
                             <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLp-eY-fSk">
@@ -1314,11 +1177,7 @@ Gw
                         <outlet property="CompileInfo" destination="XdU-QA-NPp" id="dmo-GI-COU"/>
                         <outlet property="FakeBackgroundAddition" destination="0HT-on-mcG" id="1xu-mn-zwJ"/>
                         <outlet property="FileName" destination="qsN-Aj-VGr" id="1W7-A9-hrQ"/>
-                        <outlet property="FolderName" destination="mxT-Qq-9TO" id="vH3-Q2-lLh"/>
-                        <outlet property="Option" destination="n0c-Uk-5IZ" id="Wxq-eq-Pmo"/>
                         <outlet property="RightConstraint" destination="ojl-bk-NGE" id="YpT-od-MgV"/>
-                        <outlet property="StdIn" destination="9So-KV-sOg" id="u2e-Yf-ihd"/>
-                        <outlet property="StdOut" destination="fzH-fH-jce" id="bIr-Bs-xov"/>
                         <outlet property="TextView" destination="E0u-iA-KeT" id="B0O-yd-iHk"/>
                         <outlet property="TextView_ScrollView" destination="yLp-eY-fSk" id="2Wl-e7-HUx"/>
                         <outlet property="charactersLabel" destination="VGX-he-xwO" id="jmZ-4Z-CPF"/>
@@ -1638,11 +1497,5 @@ DQ
         <image name="NSTouchBarPlayTemplate" width="14" height="30"/>
         <image name="Settings" width="305" height="305"/>
         <image name="Switch_50" width="25" height="25"/>
-        <namedColor name="StdInColor">
-            <color red="0.86100000143051147" green="0.90200001001358032" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="StdOutColor">
-            <color red="1" green="0.95399999618530273" blue="0.82700002193450928" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
     </resources>
 </document>

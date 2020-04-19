@@ -34,15 +34,11 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     @IBOutlet weak var RightConstraint: NSLayoutConstraint!
     @IBOutlet weak var FakeBackgroundAddition: NSTextField!
     @IBOutlet weak var TextView_ScrollView: NSScrollView!
-    @IBOutlet weak var Option: NSButton!
     @IBOutlet weak var linesLabel: NSTextField!
     @IBOutlet weak var charactersLabel: NSTextField!
     
     // Compiling
     @IBOutlet weak var FileName: NSTextField!
-    @IBOutlet weak var FolderName: NSTextField!
-    @IBOutlet var StdIn: NSTextView!
-    @IBOutlet var StdOut: NSTextView!
     @IBOutlet var CompileInfo: NSTextView!
     
     
@@ -54,23 +50,9 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     @IBAction func Compile(_ sender: Any) {
         
         let file = FileName.stringValue
-        let folder = FolderName.stringValue
-        let stdin = StdIn.string + "\nEOF\n"
-        let option = self.Option.state == .on
-        let res = CompileSource(folder, fileURL: file, stdin: stdin, openInTerminal: option)
+        let res = CompileSource(fileURL: file)
         
-        self.StdOut.string = res[1]
-        self.CompileInfo.string = res[0]
-        
-    }
-    
-    // fill in the File Path and the Folder Path.
-    func fillInPath(_ sender: Any) {
-        
-        var tmp = self.FileName.stringValue.components(separatedBy: "/")
-        tmp.removeLast()
-        let res = tmp.joined(separator: "/")
-        self.FolderName.stringValue = res
+        self.CompileInfo.string = res
         
     }
     
@@ -103,8 +85,6 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
         }
         
         // set the font of the StdIn, StdOut and the CompileInfo text view.
-        self.StdIn.font = MenloFont(ofSize: 14.0)
-        self.StdOut.font = MenloFont(ofSize: 14.0)
         self.CompileInfo.font = MenloFont(ofSize: 13.0)
         
         // set the current appearance to Dark Mode.

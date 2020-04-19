@@ -54,7 +54,6 @@ class Document: NSDocument {
                 contentViewController = contentVC
                 contentVC.TextView.didChangeText()
                 contentVC.FileName.stringValue = self.fileURL?.path ?? ""
-                contentVC.fillInPath(self)
             }
         }
     }
@@ -123,7 +122,6 @@ class Document: NSDocument {
         let vc = self.contentViewController!
         vc.TextView.didChangeText()
         vc.FileName.stringValue = self.fileURL?.path ?? ""
-        vc.fillInPath(self)
         
     }
     
@@ -133,7 +131,6 @@ class Document: NSDocument {
         let vc = self.contentViewController!
         vc.TextView.didChangeText()
         vc.FileName.stringValue = self.fileURL?.path ?? ""
-        vc.fillInPath(self)
         
     }
     

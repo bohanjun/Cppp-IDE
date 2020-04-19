@@ -8,15 +8,13 @@
 
 import Cocoa
 
-public func CompileSource(_ folderPath: String, fileURL: String, stdin: String, openInTerminal: Bool) -> [String] {
+public func CompileSource(fileURL: String) -> String {
     
-    
-    let _folderPath = "\"" + folderPath + "\""
+    // The path of the file
     let _fileURL = "\"" + fileURL + "\""
     
-    shell("cd \(_folderPath)", "")
+    // Create The name of the output exec
     var out = fileURL
-    
     if out.hasSuffix(".cpp") {
         for _ in 1...4 {
             out.removeLast()
@@ -25,41 +23,28 @@ public func CompileSource(_ folderPath: String, fileURL: String, stdin: String, 
         out.removeLast()
         out.removeLast()
     }
-    
     out = "\"" + out + "-output\""
     
-    var command: String
-    if openInTerminal {
-        command = "\(compileConfig.Compiler ?? "g++") \(compileConfig.Arguments ?? "") \(_fileURL) -o \(out)"
-    } else {
-        command = "\(compileConfig.Compiler ?? "g++") \(compileConfig.Arguments ?? "") \(_fileURL)"
-    }
+    // The compile command
+    let command = "\(compileConfig.Compiler ?? "g++") \(compileConfig.Arguments ?? "") \(_fileURL) -o \(out)"
     
+    // Compile
     let b = shell(command, "")
     
     if b.count == 1 {
-        var c: [String]
-        if openInTerminal {
-            c = shell("open \(out)", stdin)
-        } else {
-            c = shell("./a.out", stdin)
-        }
-        return ["Compile Command:\n\(command)\n\nCompile Succeed", c[0]]
+        // No error
+        shell("open \(out)", "")
+        return "Compile Command:\n\(command)\n\nCompile Succeed"
         
     } else {
-        
+        // Have warning or error
         if b[1].range(of: "error") == nil {
             
-            var c: [String]
-            if openInTerminal {
-                c = shell("open \(out)", stdin)
-            } else {
-                c = shell("./a.out", stdin)
-            }
-            return [b[1], c[0]]
+            shell("open \(out)", "")
+            return "Compile Command:\n\(command)\n\nCompile Succeed\n\n" + b[1]
         }
         
-        return [b[1], "Compile Command:\n\(command)\n\nCompile Failed"]
+        return "Compile Command:\n\(command)\n\nCompile Failed\n\n" + b[1]
         
     }
     
