@@ -349,6 +349,17 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="View" id="HyV-fh-RgO">
                                     <items>
+                                        <menuItem title="Preferences..." keyEquivalent="," id="b6Q-78-g31">
+                                            <connections>
+                                                <action selector="showSettingsView:" target="Ady-hI-5gd" id="zto-xB-hOq"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Change App Appearance" keyEquivalent="d" id="cGV-RK-5VK">
+                                            <connections>
+                                                <action selector="changeAppearance:" target="Ady-hI-5gd" id="USW-k9-9tR"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="MzY-RS-xQs"/>
                                         <menuItem title="Show Toolbar" keyEquivalent="t" id="snW-S8-Cw5">
                                             <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                             <connections>
@@ -372,6 +383,19 @@
                                             <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
                                             <connections>
                                                 <action selector="toggleFullScreen:" target="Ady-hI-5gd" id="dU3-MA-1Rq"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Compile" id="v33-9z-u0i">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Compile" id="nu4-Kq-FAj">
+                                    <items>
+                                        <menuItem title="Compile this file" keyEquivalent="e" id="wCv-IP-SA0">
+                                            <modifierMask key="keyEquivalentModifierMask" control="YES"/>
+                                            <connections>
+                                                <action selector="Compile:" target="Ady-hI-5gd" id="NhP-7D-Urn"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -510,7 +534,6 @@
                                 <viewController key="viewController" id="3Z8-i8-xxw">
                                     <textField key="view" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1Qe-NR-Gdj">
                                         <rect key="frame" x="0.0" y="0.0" width="45" height="19"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="C+++" id="pJJ-ym-q1Y">
                                             <font key="font" metaFont="systemBold" size="16"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -524,7 +547,6 @@
                                 <viewController key="viewController" id="Aec-JC-sDq">
                                     <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SId-IN-R9s">
                                         <rect key="frame" x="0.0" y="0.0" width="72" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="push" title="Run" bezelStyle="rounded" image="NSTouchBarPlayTemplate" imagePosition="leading" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="F5Y-ad-gD5">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" usesAppearanceFont="YES"/>
@@ -539,7 +561,7 @@
                             <touchBarItem id="4SO-gG-N5n">
                                 <viewController key="viewController" id="lFf-b2-FYj">
                                     <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AUY-A3-RUq">
-                                        <rect key="frame" x="0.0" y="-11" width="138" height="41"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="126" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="126" id="OyW-iU-VgB"/>
                                             <constraint firstAttribute="height" constant="30" id="RaS-N3-PgQ"/>
@@ -558,7 +580,6 @@
                                 <viewController key="viewController" id="Qp8-8Y-dam">
                                     <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ozB-4e-eoa">
                                         <rect key="frame" x="0.0" y="0.0" width="108" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="push" title="New File" bezelStyle="rounded" image="NSTouchBarAddTemplate" imagePosition="left" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IqF-TQ-6GP">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" usesAppearanceFont="YES"/>
@@ -622,7 +643,7 @@
                                             <menuItem title="Xcode" id="Ft9-3m-p7P"/>
                                             <menuItem title="Perfect" state="on" id="a4x-cD-hh2"/>
                                             <menuItem title="VS2015" id="TxT-XB-ykk"/>
-                                            <menuItem title="Github" id="ax7-bc-eFC">
+                                            <menuItem title="GitHub" id="ax7-bc-eFC">
                                                 <modifierMask key="keyEquivalentModifierMask"/>
                                             </menuItem>
                                             <menuItem title="GoogleCode" id="1n9-Oq-dPq">
@@ -641,6 +662,33 @@
                                                 <modifierMask key="keyEquivalentModifierMask"/>
                                             </menuItem>
                                             <menuItem title="Atom-one-light" id="hzQ-A6-dR6">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="Arduino" id="79F-v9-T4z">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="AndroidStudio" id="KnB-HJ-pyv">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="Brown-paper" id="COC-wF-xRy">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="Idea" id="6dH-Xo-uzc">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="Obsidian" id="Y6x-DF-fME">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="Ocean" id="SGw-Et-KS1">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="QtCreator_Dark" id="HUU-cd-pBw">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="QtCreator_Light" id="A0B-tW-vkz">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="Sunburst" id="s6g-7P-gdg">
                                                 <modifierMask key="keyEquivalentModifierMask"/>
                                             </menuItem>
                                         </items>
@@ -824,7 +872,7 @@ Gw
                                             <menuItem title="Xcode" state="on" id="Hkm-3d-5yd"/>
                                             <menuItem title="Perfect" id="tNh-tk-tvT"/>
                                             <menuItem title="VS2015" id="5Y9-4S-uu6"/>
-                                            <menuItem title="Github" id="Ky9-EE-yr9">
+                                            <menuItem title="GitHub" id="Ky9-EE-yr9">
                                                 <modifierMask key="keyEquivalentModifierMask"/>
                                             </menuItem>
                                             <menuItem title="GoogleCode" id="13h-wC-5l2">
@@ -843,6 +891,33 @@ Gw
                                                 <modifierMask key="keyEquivalentModifierMask"/>
                                             </menuItem>
                                             <menuItem title="Atom-one-light" id="uW6-vL-vXy">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="Arduino" id="f7a-dt-1eS">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="AndroidStudio" id="F7H-pa-vkb">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="Brown-paper" id="vzV-rx-lZ8">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="Idea" id="18i-Il-xXb">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="Obsidian" id="gKB-Hf-oWo">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="Ocean" id="9Xt-ME-ReE">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="QtCreator_Dark" id="OcJ-Bf-1iV">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="QtCreator_Light" id="7yv-b9-sQT">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="Sunburst" id="Y3B-R7-2NL">
                                                 <modifierMask key="keyEquivalentModifierMask"/>
                                             </menuItem>
                                         </items>
