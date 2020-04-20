@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "CpppHelp.png",
+      "filename" : "OpenFile.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "CpppHelp-1.png",
+      "filename" : "OpenFile-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "CpppHelp-2.png",
+      "filename" : "OpenFile-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -18,10 +18,18 @@ var status: Bool = true
 let darkAqua = NSAppearance(named: .darkAqua)
 let aqua = NSAppearance(named: .aqua)
 
+extension NSViewController {
+    func showAlert(_ message: String, _ title: String) {
+        let alert = NSAlert()
+        alert.messageText = message
+        alert.alertStyle = .informational
+        alert.addButton(withTitle: "OK")
+        alert.informativeText = title
+        alert.beginSheetModal(for: self.view.window!, completionHandler: { returnCode in })
+    }
+}
 
 class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate, CDTextViewDelegate {
-    
-    
     
 // MARK: - Properties
     
@@ -48,6 +56,11 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     
     // compile the code.
     @IBAction func Compile(_ sender: Any) {
+        
+        if FileName.stringValue == "" {
+            showAlert("Warning", "You haven't filled in the \"File Path\", so the compiler don't know which file to compile. Save the file first and the file path will be filled in the text box automatically. If the text box is not filled in automatically, try again.")
+            return
+        }
         
         let file = FileName.stringValue
         let res = CompileSource(fileURL: file)
@@ -109,6 +122,12 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     
     // Change the appearance of the App. (OSX 10.14, *)
     @IBAction func changeAppearance(_ sender: Any) {
+        
+        if #available(OSX 10.14, *) {
+        } else {
+            showAlert("Warning", "Your Mac does not support Dark Mode. Dark Mode requires macOS 10.14 or later. You can update your Mac.")
+            return
+        }
         
         // judge the current appearance.
         switch status {
