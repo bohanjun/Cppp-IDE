@@ -1019,7 +1019,7 @@ Gw
                                 </constraints>
                             </customView>
                             <textField identifier="Fake Background" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0HT-on-mcG">
-                                <rect key="frame" x="0.0" y="589" width="707" height="12"/>
+                                <rect key="frame" x="33" y="589" width="674" height="12"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="12" id="MIv-0g-wUK"/>
                                 </constraints>
@@ -1425,18 +1425,18 @@ Gw
                                     <constraint firstItem="MJK-cX-OjH" firstAttribute="leading" secondItem="qkV-Pw-MXt" secondAttribute="leading" constant="15" id="vvE-FK-Zie"/>
                                 </constraints>
                             </customView>
-                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLp-eY-fSk">
-                                <rect key="frame" x="0.0" y="165" width="707" height="424"/>
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLp-eY-fSk" customClass="CDScrollView" customModule="Code_Editor" customModuleProvider="target">
+                                <rect key="frame" x="33" y="165" width="674" height="424"/>
                                 <clipView key="contentView" copiesOnScroll="NO" id="a6q-mG-7ce">
-                                    <rect key="frame" x="0.0" y="0.0" width="692" height="424"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="659" height="424"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" findStyle="bar" allowsCharacterPickerTouchBarItem="NO" allowsUndo="YES" textCompletion="NO" smartInsertDelete="YES" id="E0u-iA-KeT" customClass="CDTextView" customModule="Code_Editor" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="692" height="424"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="659" height="424"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="692" height="424"/>
+                                            <size key="minSize" width="659" height="424"/>
                                             <size key="maxSize" width="945" height="10000000"/>
                                             <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <connections>
@@ -1456,7 +1456,37 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="5w4-ag-NiN">
-                                    <rect key="frame" x="692" y="0.0" width="15" height="424"/>
+                                    <rect key="frame" x="659" y="0.0" width="15" height="424"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <connections>
+                                    <outlet property="bindedScrollView" destination="TPB-sL-5NP" id="aGf-C4-KG6"/>
+                                </connections>
+                            </scrollView>
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPB-sL-5NP">
+                                <rect key="frame" x="0.0" y="165" width="33" height="424"/>
+                                <clipView key="contentView" copiesOnScroll="NO" id="aNs-hR-HC8">
+                                    <rect key="frame" x="0.0" y="0.0" width="33" height="424"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" smartInsertDelete="YES" id="hS1-5x-uqb" customClass="GutterTextView" customModule="Code_Editor" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="33" height="424"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="33" height="424"/>
+                                            <size key="maxSize" width="240" height="10000000"/>
+                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="3li-p8-h7l">
+                                    <rect key="frame" x="-100" y="-100" width="225" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="6sq-sV-4OU">
+                                    <rect key="frame" x="-100" y="-100" width="15" height="135"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -1464,7 +1494,10 @@ Gw
                         <constraints>
                             <constraint firstItem="qkV-Pw-MXt" firstAttribute="leading" secondItem="0HT-on-mcG" secondAttribute="trailing" id="0P7-iv-TjG"/>
                             <constraint firstAttribute="bottom" secondItem="yLp-eY-fSk" secondAttribute="bottom" constant="165" id="1lH-WC-wM9"/>
-                            <constraint firstItem="0HT-on-mcG" firstAttribute="leading" secondItem="ERx-hH-rdd" secondAttribute="leading" id="BOh-6r-wKj"/>
+                            <constraint firstItem="0HT-on-mcG" firstAttribute="leading" secondItem="ERx-hH-rdd" secondAttribute="leading" constant="33" id="BOh-6r-wKj"/>
+                            <constraint firstItem="TPB-sL-5NP" firstAttribute="leading" secondItem="ERx-hH-rdd" secondAttribute="leading" id="Bjy-Lc-bZJ"/>
+                            <constraint firstItem="RCh-2s-VX0" firstAttribute="top" secondItem="TPB-sL-5NP" secondAttribute="bottom" id="CSi-VP-S3c"/>
+                            <constraint firstItem="TPB-sL-5NP" firstAttribute="top" secondItem="0HT-on-mcG" secondAttribute="bottom" id="DcG-lz-Je2"/>
                             <constraint firstItem="qkV-Pw-MXt" firstAttribute="top" secondItem="ERx-hH-rdd" secondAttribute="top" id="I49-bb-C3P"/>
                             <constraint firstItem="d62-qb-Nyt" firstAttribute="top" secondItem="RCh-2s-VX0" secondAttribute="bottom" id="KBQ-yL-cRo"/>
                             <constraint firstAttribute="trailing" secondItem="qkV-Pw-MXt" secondAttribute="trailing" id="LoI-FY-tek"/>
@@ -1479,8 +1512,9 @@ Gw
                             <constraint firstItem="RCh-2s-VX0" firstAttribute="top" secondItem="yLp-eY-fSk" secondAttribute="bottom" id="pZh-Ds-jBE"/>
                             <constraint firstItem="yLp-eY-fSk" firstAttribute="trailing" secondItem="d62-qb-Nyt" secondAttribute="trailing" id="pZq-0a-yPt"/>
                             <constraint firstAttribute="bottom" secondItem="d62-qb-Nyt" secondAttribute="bottom" id="rMZ-N5-Isy"/>
+                            <constraint firstItem="yLp-eY-fSk" firstAttribute="leading" secondItem="TPB-sL-5NP" secondAttribute="trailing" id="v32-TE-z9R"/>
                             <constraint firstItem="d62-qb-Nyt" firstAttribute="top" secondItem="yLp-eY-fSk" secondAttribute="bottom" constant="22" id="vSL-n0-Si7"/>
-                            <constraint firstItem="yLp-eY-fSk" firstAttribute="leading" secondItem="ERx-hH-rdd" secondAttribute="leading" id="x50-d0-FBr"/>
+                            <constraint firstItem="yLp-eY-fSk" firstAttribute="leading" secondItem="ERx-hH-rdd" secondAttribute="leading" constant="33" id="x50-d0-FBr"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1492,6 +1526,7 @@ Gw
                         <outlet property="TextView" destination="E0u-iA-KeT" id="B0O-yd-iHk"/>
                         <outlet property="TextView_ScrollView" destination="yLp-eY-fSk" id="2Wl-e7-HUx"/>
                         <outlet property="charactersLabel" destination="VGX-he-xwO" id="jmZ-4Z-CPF"/>
+                        <outlet property="gutterTextView" destination="hS1-5x-uqb" id="poC-ev-yTa"/>
                         <outlet property="linesLabel" destination="42g-tY-n4q" id="vAG-yT-KLn"/>
                     </connections>
                 </viewController>
@@ -1733,7 +1768,7 @@ Gw
         <image name="Settings" width="305" height="305"/>
         <image name="Switch_50" width="25" height="25"/>
         <namedColor name="BackgroundColor">
-            <color red="0.96609255843703201" green="0.96948831952574355" blue="0.97967560279187815" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.9660000205039978" green="0.96899998188018799" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

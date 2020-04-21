@@ -116,6 +116,8 @@
 		18B3C790242836A500F4CA14 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3C78F242836A500F4CA14 /* Content.swift */; };
 		18B3C792242836F900F4CA14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B3C791242836F900F4CA14 /* Main.storyboard */; };
 		18B3C7942428378E00F4CA14 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3C7932428378E00F4CA14 /* WindowController.swift */; };
+		18E7291E244E6F91000317D7 /* GutterTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E7291D244E6F91000317D7 /* GutterTextView.swift */; };
+		18E72920244E756E000317D7 /* CDScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E7291F244E756E000317D7 /* CDScrollView.swift */; };
 		18F0D7A1242A55830078E2B9 /* CTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F0D7A0242A55830078E2B9 /* CTView.swift */; };
 		18F0D7A4242AEDAC0078E2B9 /* CTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F0D7A3242AEDAC0078E2B9 /* CTViewController.swift */; };
 /* End PBXBuildFile section */
@@ -247,6 +249,8 @@
 		18B3C78F242836A500F4CA14 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		18B3C791242836F900F4CA14 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		18B3C7932428378E00F4CA14 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		18E7291D244E6F91000317D7 /* GutterTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GutterTextView.swift; sourceTree = "<group>"; };
+		18E7291F244E756E000317D7 /* CDScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDScrollView.swift; sourceTree = "<group>"; };
 		18F0D7A0242A55830078E2B9 /* CTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTView.swift; sourceTree = "<group>"; };
 		18F0D7A3242AEDAC0078E2B9 /* CTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -287,6 +291,8 @@
 			isa = PBXGroup;
 			children = (
 				183BF3C9242906B3007AF6AC /* CDTextView.swift */,
+				18E7291D244E6F91000317D7 /* GutterTextView.swift */,
+				18E7291F244E756E000317D7 /* CDScrollView.swift */,
 				1868EBD6244AF934005467B2 /* CDTextViewDelegate.swift */,
 				18A41AA0242C752C00AFC422 /* Highlight */,
 				18F0D7A2242A558A0078E2B9 /* Code Template */,
@@ -638,6 +644,7 @@
 				1868EBD5244981C2005467B2 /* CompileSettings.swift in Sources */,
 				18A41AA8242C75C300AFC422 /* Shims.swift in Sources */,
 				180480AE2448602700CD0A4D /* Settings.swift in Sources */,
+				18E72920244E756E000317D7 /* CDScrollView.swift in Sources */,
 				18A41AAA242C75DE00AFC422 /* CodeAttributedString.swift in Sources */,
 				183BF3CA242906B3007AF6AC /* CDTextView.swift in Sources */,
 				18A41AA2242C756700AFC422 /* Highlightr.swift in Sources */,
@@ -650,6 +657,7 @@
 				18B3C78424282C1F00F4CA14 /* Document.swift in Sources */,
 				18B3C790242836A500F4CA14 /* Content.swift in Sources */,
 				183BF3C524287D4C007AF6AC /* Compile.swift in Sources */,
+				18E7291E244E6F91000317D7 /* GutterTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

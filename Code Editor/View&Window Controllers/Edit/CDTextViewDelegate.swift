@@ -8,8 +8,10 @@
 
 import Cocoa
 
+@objc
 protocol CDTextViewDelegate {
     
-    func didChangeText(lines: Int, characters: Int)
+    @objc
+    optional func didChangeText(lines: Int, characters: Int)
     
 }

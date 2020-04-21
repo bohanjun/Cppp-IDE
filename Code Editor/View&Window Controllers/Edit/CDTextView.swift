@@ -41,6 +41,7 @@ class CDTextView: NSTextView {
 
     let highlightr = Highlightr()
     var codeTextViewDelegate: CDTextViewDelegate!
+    var gutterDelegate: CDTextViewDelegate!
     
     
     // MARK: - Override Functions
@@ -58,7 +59,8 @@ class CDTextView: NSTextView {
         
         self.selectedRange.location = a
         
-        self.codeTextViewDelegate.didChangeText(lines: self.textStorage?.paragraphs.count ?? 0, characters: self.textStorage?.characters.count ?? 0)
+        self.codeTextViewDelegate.didChangeText!(lines: self.textStorage?.paragraphs.count ?? 0, characters: self.textStorage?.characters.count ?? 0)
+        self.gutterDelegate.didChangeText!(lines: (self.textStorage?.paragraphs.count)!, characters: 0)
         
     }
     
@@ -120,6 +122,8 @@ class CDTextView: NSTextView {
     /// When press ENTER, insert tabs.
     override func insertNewline(_ sender: Any?) {
         super.insertNewline(sender)
+        
+        
         
         let nsstring = NSString(string: self.string)
         let string = nsstring.substring(to: self.selectedRange.location)

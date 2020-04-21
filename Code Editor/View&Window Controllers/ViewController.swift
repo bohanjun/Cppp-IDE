@@ -36,6 +36,7 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     
     // Normal Editing
     @IBOutlet var TextView: CDTextView!
+    @IBOutlet var gutterTextView: GutterTextView!
     
     // View Control
     @IBOutlet weak var BottomConstraint: NSLayoutConstraint!
@@ -77,6 +78,7 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
         super.viewDidLoad()
         
         self.TextView.codeTextViewDelegate = self
+        self.TextView.gutterDelegate = self.gutterTextView
         
         // judge if there has already been a saved settings.
         if SettingsViewController.getSavedData() != nil &&
@@ -201,6 +203,7 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
         // font
         self.TextView.highlightr?.theme.setCodeFont(NSFont(name: SettingsViewController.getSavedData()!.FontName, size: CGFloat(SettingsViewController.getSavedData()!.FontSize))!)
         self.TextView.font = NSFont(name: SettingsViewController.getSavedData()!.FontName, size: CGFloat(SettingsViewController.getSavedData()!.FontSize))
+        self.gutterTextView.font = NSFont(name: SettingsViewController.getSavedData()!.FontName, size: CGFloat(SettingsViewController.getSavedData()!.FontSize))
         self.TextView.didChangeText()
         
         // in case of errors
