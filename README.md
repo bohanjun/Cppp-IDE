@@ -1,10 +1,11 @@
-#  C+++ IDE 1 for macOS
+#  C+++ IDE 1.1 for macOS
 > C+++ is an open source C++ IDE on macOS Platform, which is for C++ learners to use. Supports Dark Mode and Touch Bar. You needn't create a Xcode project to compile C++ file or compile a C++ file in the Terminal, all the things are done in the C+++ App.
 
 ## The most simple C++ IDE on macOS Platform.
 - Developed by a Grade-Six student 23786.
-- Website: ericnth.cn/cppp-ide-macos (ericnth.cn is the website of my friend)
-- Download Version 1.0.1: ericnth.cn/c-1-0-1-dmg/
+- Website: https://ericnth.cn/cppp-ide-macos (ericnth.cn is the website of my friend)
+- Download Version 1.1.0: https://github.com/23786/Cppp-IDE/releases/download/1.1.0/C+++1.1.0.dmg
+
 
 ## Uses the Xcode g++ to compile, so you need to install Xcode to use C+++.
 - From the App Store or from developer.apple.com/downloads.
