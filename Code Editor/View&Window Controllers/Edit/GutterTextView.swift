@@ -13,12 +13,15 @@ class GutterTextView: NSTextView, CDTextViewDelegate {
     @objc
     func didChangeText(lines: Int, characters: Int) {
         self.string = ""
-        if lines == 0 {
-            return
+        self.isEditable = true
+        self.isSelectable = true
+        if lines != 0 {
+            for i in 1...lines {
+                self.insertText("\(i)\n", replacementRange: self.selectedRange)
+            }
         }
-        for i in 1...lines {
-            self.insertText("\(i)\n", replacementRange: self.selectedRange)
-        }
+        self.isEditable = false
+        self.isSelectable = false
     }
     
     required init?(coder: NSCoder) {
