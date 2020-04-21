@@ -664,7 +664,7 @@
                                             <menuItem title="Atom-one-light" id="hzQ-A6-dR6">
                                                 <modifierMask key="keyEquivalentModifierMask"/>
                                             </menuItem>
-                                            <menuItem title="Arduino" id="79F-v9-T4z">
+                                            <menuItem title="Arduino-light" id="79F-v9-T4z">
                                                 <modifierMask key="keyEquivalentModifierMask"/>
                                             </menuItem>
                                             <menuItem title="AndroidStudio" id="KnB-HJ-pyv">
@@ -704,21 +704,6 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PjG-TQ-bzF">
-                                <rect key="frame" x="106" y="111" width="114" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <popUpButtonCell key="cell" type="push" title="g++" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="OPa-zw-811" id="1gH-Ld-wps">
-                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                    <menu key="menu" id="Sse-SQ-8fG">
-                                        <items>
-                                            <menuItem title="g++" state="on" id="OPa-zw-811"/>
-                                            <menuItem title="gcc" id="gjY-6U-GEN"/>
-                                            <menuItem title="clang" id="0wd-kn-FuB"/>
-                                        </items>
-                                    </menu>
-                                </popUpButtonCell>
-                            </popUpButton>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eKc-2f-ud6">
                                 <rect key="frame" x="31" y="117" width="59" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -893,7 +878,7 @@ Gw
                                             <menuItem title="Atom-one-light" id="uW6-vL-vXy">
                                                 <modifierMask key="keyEquivalentModifierMask"/>
                                             </menuItem>
-                                            <menuItem title="Arduino" id="f7a-dt-1eS">
+                                            <menuItem title="Arduino-light" id="f7a-dt-1eS">
                                                 <modifierMask key="keyEquivalentModifierMask"/>
                                             </menuItem>
                                             <menuItem title="AndroidStudio" id="F7H-pa-vkb">
@@ -933,6 +918,20 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nGw-ro-B66">
+                                <rect key="frame" x="108" y="112" width="99" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" title="g++" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="cxa-S3-MGj">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <objectValues>
+                                        <string>g++</string>
+                                        <string>gcc</string>
+                                        <string>clang</string>
+                                    </objectValues>
+                                </comboBoxCell>
+                            </comboBox>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="3dQ-SJ-Hj5" secondAttribute="bottom" constant="20" id="60u-JN-pq5"/>
@@ -944,7 +943,7 @@ Gw
                     <connections>
                         <outlet property="allows" destination="WZC-kh-AwI" id="e0R-Mc-2on"/>
                         <outlet property="arguments" destination="VBr-aO-lcD" id="PTk-7V-6lV"/>
-                        <outlet property="compiler" destination="PjG-TQ-bzF" id="Srr-rM-i5e"/>
+                        <outlet property="compiler" destination="nGw-ro-B66" id="Aek-JT-nA7"/>
                         <outlet property="dark" destination="olW-wi-IBX" id="4oe-IM-An0"/>
                         <outlet property="fontname" destination="aYN-i8-NOp" id="l04-rW-C0x"/>
                         <outlet property="light" destination="ItO-cj-oae" id="2T2-cS-2tf"/>
@@ -1302,7 +1301,7 @@ Gw
                                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6oY-Ev-mAx">
                                                 <rect key="frame" x="79" y="12" width="116" height="36"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                <textFieldCell key="cell" selectable="YES" title="Save the current C++ file." id="env-9y-wTi">
+                                                <textFieldCell key="cell" title="Save the current C++ file." id="env-9y-wTi">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1425,19 +1424,19 @@ Gw
                                     <constraint firstItem="MJK-cX-OjH" firstAttribute="leading" secondItem="qkV-Pw-MXt" secondAttribute="leading" constant="15" id="vvE-FK-Zie"/>
                                 </constraints>
                             </customView>
-                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLp-eY-fSk" customClass="CDScrollView" customModule="Code_Editor" customModuleProvider="target">
+                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" translatesAutoresizingMaskIntoConstraints="NO" id="yLp-eY-fSk" customClass="CDScrollView" customModule="Code_Editor" customModuleProvider="target">
                                 <rect key="frame" x="33" y="165" width="674" height="424"/>
                                 <clipView key="contentView" copiesOnScroll="NO" id="a6q-mG-7ce">
-                                    <rect key="frame" x="0.0" y="0.0" width="659" height="424"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="674" height="424"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" findStyle="bar" allowsCharacterPickerTouchBarItem="NO" allowsUndo="YES" textCompletion="NO" smartInsertDelete="YES" id="E0u-iA-KeT" customClass="CDTextView" customModule="Code_Editor" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="659" height="424"/>
+                                        <textView importsGraphics="NO" richText="NO" horizontallyResizable="YES" verticallyResizable="YES" findStyle="bar" allowsCharacterPickerTouchBarItem="NO" allowsUndo="YES" textCompletion="NO" smartInsertDelete="YES" id="E0u-iA-KeT" customClass="CDTextView" customModule="Code_Editor" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="674" height="424"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="659" height="424"/>
-                                            <size key="maxSize" width="945" height="10000000"/>
+                                            <size key="minSize" width="674" height="424"/>
+                                            <size key="maxSize" width="10000000" height="10000000"/>
                                             <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <connections>
                                                 <binding destination="5gI-5U-AMq" name="value" keyPath="representedObject.contentString" id="Hfd-3x-ikM">
@@ -1452,18 +1451,18 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="jDK-Za-BQt">
-                                    <rect key="frame" x="-100" y="-100" width="480" height="16"/>
+                                    <rect key="frame" x="0.0" y="409" width="659" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="5w4-ag-NiN">
-                                    <rect key="frame" x="659" y="0.0" width="15" height="424"/>
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="5w4-ag-NiN">
+                                    <rect key="frame" x="659" y="0.0" width="15" height="409"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <connections>
                                     <outlet property="bindedScrollView" destination="TPB-sL-5NP" id="aGf-C4-KG6"/>
                                 </connections>
                             </scrollView>
-                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPB-sL-5NP">
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPB-sL-5NP" customClass="CDScrollView" customModule="Code_Editor" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="165" width="33" height="424"/>
                                 <clipView key="contentView" copiesOnScroll="NO" id="aNs-hR-HC8">
                                     <rect key="frame" x="0.0" y="0.0" width="33" height="424"/>
@@ -1489,6 +1488,9 @@ Gw
                                     <rect key="frame" x="-100" y="-100" width="15" height="135"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
+                                <connections>
+                                    <outlet property="bindedScrollView" destination="yLp-eY-fSk" id="NtN-RS-myy"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <constraints>

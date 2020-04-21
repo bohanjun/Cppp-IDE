@@ -19,6 +19,7 @@ class GutterTextView: NSTextView, CDTextViewDelegate {
             for i in 1...lines {
                 self.insertText("\(i)\n", replacementRange: self.selectedRange)
             }
+            self.string.removeLast()
         }
         self.isEditable = false
         self.isSelectable = false

@@ -173,6 +173,8 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
         self.TextView.highlightr?.theme.setCodeFont(NSFont(name: SettingsViewController.getSavedData()!.FontName, size: CGFloat(SettingsViewController.getSavedData()!.FontSize))!)
         self.TextView.font = NSFont(name: SettingsViewController.getSavedData()!.FontName, size: CGFloat(SettingsViewController.getSavedData()!.FontSize))
         
+        
+        
     }
     
     @IBAction func showSettingsView(_ sender: Any) {

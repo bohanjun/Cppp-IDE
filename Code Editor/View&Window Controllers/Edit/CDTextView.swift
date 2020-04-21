@@ -143,6 +143,9 @@ class CDTextView: NSTextView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
+        self.textContainer?.size = NSSize(width: CGFloat(Int.max), height: CGFloat(Int.max))
+        self.textContainer?.widthTracksTextView = false
+        
         if let savedData = SettingsViewController.getSavedData() {
             
             config = savedData

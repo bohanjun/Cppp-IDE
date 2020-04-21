@@ -34,7 +34,7 @@ class SettingsViewController: NSViewController {
     @IBOutlet weak var light: NSPopUpButton!
     @IBOutlet weak var allows: NSButton!
     
-    @IBOutlet weak var compiler: NSPopUpButton!
+    @IBOutlet weak var compiler: NSComboBox!
     @IBOutlet weak var arguments: NSTextField!
     
     var delegate: SettingsViewDelegate!
@@ -48,7 +48,7 @@ class SettingsViewController: NSViewController {
         config.LightThemeName = self.light.titleOfSelectedItem ?? "Xcode"
         config.AutoComplete = self.allows.state == .on
         
-        compileConfig.Compiler = self.compiler.titleOfSelectedItem ?? "g++"
+        compileConfig.Compiler = self.compiler.stringValue
         compileConfig.Arguments = self.arguments.stringValue
         
         NSKeyedArchiver.archiveRootObject(config!, toFile: Settings.ArchiveURL.path)
@@ -80,7 +80,7 @@ class SettingsViewController: NSViewController {
         
         if let savedData2 = SettingsViewController.getSavedData2() {
             
-            self.compiler.setTitle(savedData2.Compiler)
+            self.compiler.stringValue = savedData2.Compiler
             self.arguments.stringValue = savedData2.Arguments
             
         }
