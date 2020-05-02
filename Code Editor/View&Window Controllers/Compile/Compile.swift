@@ -9,7 +9,7 @@
 import Cocoa
 
 public func CompileSource(fileURL: String) -> String {
-    
+     
     // The path of the file
     let _fileURL = "\"" + fileURL + "\""
     
