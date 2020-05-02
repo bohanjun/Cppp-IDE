@@ -447,7 +447,7 @@
                         <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="89" y="664" width="960" height="600"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
                         <value key="minSize" type="size" width="540" height="600"/>
                         <toolbar key="toolbar" implicitIdentifier="CB018D88-E93D-4CED-B9A7-FD4396751838" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="small" id="4Dk-sT-khY">
                             <allowedToolbarItems>
@@ -1144,7 +1144,7 @@ Gw
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="Compile:" target="5gI-5U-AMq" id="Y3j-T4-zbw"/>
+                                            <action selector="compileFile:" target="2Tp-Fl-jBw" id="9wR-fT-PPf"/>
                                         </connections>
                                     </button>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="Hb4-Me-Abj">

@@ -134,4 +134,11 @@ class Document: NSDocument {
         
     }
     
+    @IBAction func compileFile(_ sender: Any?) {
+        
+        let res = CompileSource(fileURL: self.fileURL?.path ?? "");
+        self.contentViewController.CompileInfo.string = res
+        
+    }
+    
 }

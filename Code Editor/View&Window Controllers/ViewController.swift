@@ -51,27 +51,6 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     @IBOutlet var CompileInfo: NSTextView!
     
     
-    
-    
-// MARK: - Methods
-    
-    // compile the code.
-    @IBAction func Compile(_ sender: Any) {
-        
-        if FileName.stringValue == "" {
-            showAlert("Warning", "You haven't filled in the \"File Path\", so the compiler don't know which file to compile. Save the file first and the file path will be filled in the text box automatically. If the text box is not filled in automatically, try again.")
-            return
-        }
-        
-        let file = FileName.stringValue
-        let res = CompileSource(fileURL: file)
-        
-        self.CompileInfo.string = res
-        
-    }
-    
-    
-    
 // MARK: - viewDidLoad()
     
     override func viewDidLoad() {
@@ -172,8 +151,6 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
         self.TextView.didChangeText()
         self.TextView.highlightr?.theme.setCodeFont(NSFont(name: SettingsViewController.getSavedData()!.FontName, size: CGFloat(SettingsViewController.getSavedData()!.FontSize))!)
         self.TextView.font = NSFont(name: SettingsViewController.getSavedData()!.FontName, size: CGFloat(SettingsViewController.getSavedData()!.FontSize))
-        
-        
         
     }
     
