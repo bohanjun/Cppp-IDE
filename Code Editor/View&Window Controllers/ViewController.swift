@@ -37,6 +37,7 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     // Normal Editing
     @IBOutlet var TextView: CDTextView!
     @IBOutlet var gutterTextView: GutterTextView!
+    @IBOutlet weak var PathControl: NSPathControl!
     
     // View Control
     @IBOutlet weak var BottomConstraint: NSLayoutConstraint!
@@ -47,7 +48,6 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     @IBOutlet weak var charactersLabel: NSTextField!
     
     // Compiling
-    @IBOutlet weak var FileName: NSTextField!
     @IBOutlet var CompileInfo: NSTextView!
     
     

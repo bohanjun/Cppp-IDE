@@ -13,8 +13,8 @@ class CompileSettings: NSObject, NSCoding {
     var Compiler: String!
     var Arguments: String!
     
-    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("CompileSettings")
+    static let DocumentsDirectory = FileManager().urls(for: .libraryDirectory, in: .userDomainMask).first!
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("C+++").appendingPathComponent("CompileSettings")
     
     struct PropertyKey {
         static let Compiler = "Compiler"

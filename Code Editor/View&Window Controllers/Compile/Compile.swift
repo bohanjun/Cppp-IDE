@@ -14,15 +14,7 @@ public func CompileSource(fileURL: String) -> String {
     let _fileURL = "\"" + fileURL + "\""
     
     // Create The name of the output exec
-    var out = fileURL
-    if out.hasSuffix(".cpp") {
-        for _ in 1...4 {
-            out.removeLast()
-        }
-    } else if out.hasSuffix(".c") || out.hasSuffix(".h") {
-        out.removeLast()
-        out.removeLast()
-    }
+    var out = (fileURL as NSString).deletingPathExtension as String
     out = "\"" + out + "-output\""
     
     // The compile command

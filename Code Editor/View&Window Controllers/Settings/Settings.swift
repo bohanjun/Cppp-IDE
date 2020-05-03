@@ -20,8 +20,8 @@ class Settings: NSObject, NSCoding {
     
     // MARK: - Archiving Paths
     
-    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("Settings")
+    static let DocumentsDirectory = FileManager().urls(for: .libraryDirectory, in: .userDomainMask).first!
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("C+++").appendingPathComponent("Settings")
     
     // MARK: - Types
     

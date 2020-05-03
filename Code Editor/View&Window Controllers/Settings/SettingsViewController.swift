@@ -14,8 +14,18 @@ var compileConfig: CompileSettings!
 
 public func initDefaultData() {
     
-    config = Settings("Courier", 15, "Perfect", "Xcode", false)
+    // Create the default data.
+    config = Settings("Courier", 15, "Xcode", "Perfect", true)
     compileConfig = CompileSettings("g++", "")
+    
+    // Create the "~/Library/C+++/" directory.
+    do {
+        try FileManager().createDirectory(at: FileManager().urls(for: .libraryDirectory, in: .userDomainMask).first!.appendingPathComponent("C+++"), withIntermediateDirectories: true, attributes: nil)
+    } catch {
+        fatalError("Create Directory Failed")
+    }
+    
+    // Save the default data.
     NSKeyedArchiver.archiveRootObject(config!, toFile: Settings.ArchiveURL.path)
     NSKeyedArchiver.archiveRootObject(compileConfig!, toFile: CompileSettings.ArchiveURL.path)
     
