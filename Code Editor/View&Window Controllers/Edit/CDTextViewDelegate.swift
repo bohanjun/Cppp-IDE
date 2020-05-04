@@ -14,4 +14,7 @@ protocol CDTextViewDelegate {
     @objc
     optional func didChangeText(lines: Int, characters: Int)
     
+    @objc
+    optional func didChangeText()
+    
 }

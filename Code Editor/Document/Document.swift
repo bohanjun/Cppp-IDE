@@ -53,7 +53,6 @@ class Document: NSDocument {
                 contentVC.representedObject = content
                 contentViewController = contentVC
                 contentVC.TextView.didChangeText()
-                contentVC.PathControl.url = self.fileURL
             }
         }
     }
@@ -121,7 +120,6 @@ class Document: NSDocument {
         
         let vc = self.contentViewController!
         vc.TextView.didChangeText()
-        vc.PathControl.url = self.fileURL
         
     }
     
@@ -130,13 +128,17 @@ class Document: NSDocument {
         
         let vc = self.contentViewController!
         vc.TextView.didChangeText()
-        vc.PathControl.url = self.fileURL
         
     }
     
     @IBAction func compileFile(_ sender: Any?) {
         
-        let res = CompileSource(fileURL: self.fileURL?.path ?? "");
+        if self.isDraft {
+            self.contentViewController.showAlert("You haven't saved the file yet. Please save it and then compile it.", "File not saved")
+            return
+        }
+        self.save(self)
+        let res = CompileSource(fileURL: self.fileURL?.path ?? "")
         self.contentViewController.CompileInfo.string = res
         
     }

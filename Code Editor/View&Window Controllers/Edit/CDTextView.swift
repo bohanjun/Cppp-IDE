@@ -42,6 +42,7 @@ class CDTextView: NSTextView {
     let highlightr = Highlightr()
     var codeTextViewDelegate: CDTextViewDelegate!
     var gutterDelegate: CDTextViewDelegate!
+    var scrollView: CDScrollView!
     
     
     // MARK: - Override Functions
@@ -52,7 +53,7 @@ class CDTextView: NSTextView {
         super.didChangeText()
         
         let a = self.selectedRange.location
-        
+        self.scrollView.accessibilityActivationPoint()
         let code = self.string
         let highlightedCode = highlightr!.highlight(code, as: "C++")
         self.textStorage!.setAttributedString(highlightedCode!)
@@ -123,8 +124,6 @@ class CDTextView: NSTextView {
     override func insertNewline(_ sender: Any?) {
         super.insertNewline(sender)
         
-        
-        
         let nsstring = NSString(string: self.string)
         let string = nsstring.substring(to: self.selectedRange.location)
         let l = string.challenge("{")
@@ -160,4 +159,31 @@ class CDTextView: NSTextView {
         
     }
     
+    init(frame: NSRect, textContainer: NSTextContainer) {
+        super.init(frame: frame, textContainer: textContainer)
+    }
+    
+    /*func enableHighlight(_ highlight: Bool) {
+        
+        if highlight == false {
+            return
+        }
+        
+        let textStorage = CodeAttributedString()
+        
+        textStorage.language = "C++"
+        textStorage.highlightr.theme = self.highlightr?.theme
+        textStorage.highlightr.theme.setCodeFont((self.highlightr?.theme.codeFont)!)
+        
+        let layoutManager = NSLayoutManager()
+        textStorage.addLayoutManager(layoutManager)
+        
+        let textContainer = NSTextContainer(size: self.frame.size)
+        layoutManager.addTextContainer(textContainer)
+        
+        self.textContainer = textContainer
+        
+    }*/
+    
 }
+

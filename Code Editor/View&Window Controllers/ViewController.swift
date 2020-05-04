@@ -43,7 +43,7 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     @IBOutlet weak var BottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var RightConstraint: NSLayoutConstraint!
     @IBOutlet weak var FakeBackgroundAddition: NSTextField!
-    @IBOutlet weak var TextView_ScrollView: NSScrollView!
+    @IBOutlet weak var TextView_ScrollView: CDScrollView!
     @IBOutlet weak var linesLabel: NSTextField!
     @IBOutlet weak var charactersLabel: NSTextField!
     
@@ -58,6 +58,7 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
         
         self.TextView.codeTextViewDelegate = self
         self.TextView.gutterDelegate = self.gutterTextView
+        self.TextView.scrollView = self.TextView_ScrollView
         
         // judge if there has already been a saved settings.
         if SettingsViewController.getSavedData() != nil &&

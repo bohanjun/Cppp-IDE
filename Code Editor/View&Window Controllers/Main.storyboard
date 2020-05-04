@@ -999,6 +999,13 @@ Gw
                                             <font key="font" metaFont="system"/>
                                             <url key="url" string="file:///Users/"/>
                                         </pathCell>
+                                        <connections>
+                                            <binding destination="5gI-5U-AMq" name="value" keyPath="view.window.representedURL" id="Yoe-j9-oX5">
+                                                <dictionary key="options">
+                                                    <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                                </dictionary>
+                                            </binding>
+                                        </connections>
                                     </pathControl>
                                 </subviews>
                                 <constraints>
@@ -1108,13 +1115,13 @@ Gw
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Dr7-ha-eyI">
-                                        <rect key="frame" x="13" y="505" width="227" height="33"/>
+                                        <rect key="frame" x="13" y="493" width="227" height="44"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="28" id="sUe-5f-zLS"/>
+                                            <constraint firstAttribute="height" constant="39" id="sUe-5f-zLS"/>
                                         </constraints>
-                                        <buttonCell key="cell" type="bevel" title="Compile" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="htQ-oR-Nti">
+                                        <buttonCell key="cell" type="bevel" title="Compile and Run" bezelStyle="regularSquare" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="htQ-oR-Nti">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
+                                            <font key="font" metaFont="system" size="15"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="compileFile:" target="2Tp-Fl-jBw" id="9wR-fT-PPf"/>
@@ -1368,28 +1375,47 @@ Gw
                                             <constraint firstItem="tI3-v5-4aS" firstAttribute="top" secondItem="ywS-mR-85U" secondAttribute="top" id="xJl-AU-yzu"/>
                                         </constraints>
                                     </customView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wFt-Ab-0ky">
+                                        <rect key="frame" x="15" y="543" width="225" height="19"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Untitled" id="nVg-e6-d4D">
+                                            <font key="font" metaFont="systemMedium" size="15"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                        <connections>
+                                            <binding destination="5gI-5U-AMq" name="value" keyPath="view.window.representedURL.lastPathComponent" id="iQb-oD-F0u">
+                                                <dictionary key="options">
+                                                    <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                                </dictionary>
+                                            </binding>
+                                        </connections>
+                                    </textField>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="TWt-wF-68Q" secondAttribute="trailing" constant="15" id="03G-PO-y3Q"/>
                                     <constraint firstItem="KHN-xI-39T" firstAttribute="leading" secondItem="4Ci-A4-t6w" secondAttribute="trailing" constant="8" id="17e-zH-26o"/>
                                     <constraint firstItem="75O-Xb-VQU" firstAttribute="top" secondItem="TWt-wF-68Q" secondAttribute="bottom" constant="15" id="3gm-F0-IFa"/>
                                     <constraint firstAttribute="trailing" secondItem="Dr7-ha-eyI" secondAttribute="trailing" constant="15" id="D24-Ou-9SE"/>
+                                    <constraint firstItem="wFt-Ab-0ky" firstAttribute="top" secondItem="4Ci-A4-t6w" secondAttribute="bottom" constant="6" id="KzO-UJ-J1H"/>
                                     <constraint firstItem="75O-Xb-VQU" firstAttribute="leading" secondItem="qkV-Pw-MXt" secondAttribute="leading" constant="15" id="ObV-tu-c8N"/>
                                     <constraint firstItem="ywS-mR-85U" firstAttribute="top" secondItem="75O-Xb-VQU" secondAttribute="bottom" constant="15" id="R5I-xJ-R3Q"/>
                                     <constraint firstItem="TWt-wF-68Q" firstAttribute="top" secondItem="Hb4-Me-Abj" secondAttribute="bottom" constant="15" id="T2s-pe-hbB"/>
                                     <constraint firstItem="4Ci-A4-t6w" firstAttribute="top" secondItem="qkV-Pw-MXt" secondAttribute="top" constant="10" id="TwX-d2-pms"/>
-                                    <constraint firstItem="Hb4-Me-Abj" firstAttribute="top" secondItem="Dr7-ha-eyI" secondAttribute="bottom" constant="32" id="UgO-N8-Md2"/>
+                                    <constraint firstItem="Hb4-Me-Abj" firstAttribute="top" secondItem="Dr7-ha-eyI" secondAttribute="bottom" constant="20" id="UgO-N8-Md2"/>
                                     <constraint firstAttribute="trailing" secondItem="ywS-mR-85U" secondAttribute="trailing" constant="15" id="XxC-Pk-ORE"/>
                                     <constraint firstAttribute="trailing" secondItem="75O-Xb-VQU" secondAttribute="trailing" constant="15" id="Z22-2O-9Bl"/>
+                                    <constraint firstItem="Dr7-ha-eyI" firstAttribute="top" secondItem="wFt-Ab-0ky" secondAttribute="bottom" constant="8" id="Zu7-Qd-biJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="wFt-Ab-0ky" secondAttribute="trailing" constant="15" id="b4K-v0-KeS"/>
                                     <constraint firstItem="Dr7-ha-eyI" firstAttribute="leading" secondItem="qkV-Pw-MXt" secondAttribute="leading" constant="15" id="dcZ-J8-7hT"/>
                                     <constraint firstItem="Hb4-Me-Abj" firstAttribute="leading" secondItem="qkV-Pw-MXt" secondAttribute="leading" constant="15" id="g3V-GE-NkO"/>
                                     <constraint firstAttribute="trailing" secondItem="KHN-xI-39T" secondAttribute="trailing" constant="20" id="iCA-Na-4Dd"/>
+                                    <constraint firstItem="wFt-Ab-0ky" firstAttribute="leading" secondItem="qkV-Pw-MXt" secondAttribute="leading" constant="17" id="j85-Oc-ycZ"/>
                                     <constraint firstAttribute="trailing" secondItem="Hb4-Me-Abj" secondAttribute="trailing" constant="15" id="lVA-Sy-85n"/>
                                     <constraint firstItem="TWt-wF-68Q" firstAttribute="leading" secondItem="qkV-Pw-MXt" secondAttribute="leading" constant="15" id="mL3-HI-4o8"/>
                                     <constraint firstItem="KHN-xI-39T" firstAttribute="top" secondItem="qkV-Pw-MXt" secondAttribute="top" constant="10" id="ndQ-Qm-fs9"/>
                                     <constraint firstItem="ywS-mR-85U" firstAttribute="leading" secondItem="qkV-Pw-MXt" secondAttribute="leading" constant="15" id="q1i-dK-7Gq"/>
                                     <constraint firstAttribute="width" constant="253" id="vAV-il-wve"/>
-                                    <constraint firstItem="Dr7-ha-eyI" firstAttribute="top" secondItem="4Ci-A4-t6w" secondAttribute="bottom" constant="32" id="yw9-uR-0d9"/>
+                                    <constraint firstItem="Dr7-ha-eyI" firstAttribute="top" secondItem="4Ci-A4-t6w" secondAttribute="bottom" constant="33" id="yw9-uR-0d9"/>
                                 </constraints>
                             </customView>
                             <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" translatesAutoresizingMaskIntoConstraints="NO" id="yLp-eY-fSk" customClass="CDScrollView" customModule="Code_Editor" customModuleProvider="target">
@@ -1501,6 +1527,7 @@ Gw
                     </connections>
                 </viewController>
                 <customObject id="2Tp-Fl-jBw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="ccS-rS-OUq"/>
             </objects>
             <point key="canvasLocation" x="87" y="969"/>
         </scene>
