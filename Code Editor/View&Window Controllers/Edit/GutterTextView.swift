@@ -15,12 +15,13 @@ class GutterTextView: NSTextView, CDTextViewDelegate {
         self.string = ""
         self.isEditable = true
         self.isSelectable = true
+        /*var string = ""
         if lines != 0 {
             for i in 1...lines {
-                self.insertText("\(i)\n", replacementRange: self.selectedRange)
+                string += "\(i)\n"
             }
-            self.string.removeLast()
-        }
+            string.removeLast()
+        }*/
         self.isEditable = false
         self.isSelectable = false
     }

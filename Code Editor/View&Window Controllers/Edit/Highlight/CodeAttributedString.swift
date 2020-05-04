@@ -26,10 +26,12 @@ import Cocoa
      - parameter success: Bool
      */
     @objc optional func didHighlight(_ range: NSRange, success: Bool)
+    
 }
 
 /// NSTextStorage subclass. Can be used to dynamically highlight code.
 open class CodeAttributedString : NSTextStorage {
+    
     /// Internal Storage
     let stringStorage = NSTextStorage()
 
@@ -39,33 +41,25 @@ open class CodeAttributedString : NSTextStorage {
     /// This object will be notified before and after the highlighting.
     open var highlightDelegate : HighlightDelegate?
 
-    /**
-     Initialize the CodeAttributedString
-
-     - parameter highlightr: The highlightr instance to use. Defaults to `Highlightr()`.
-
-     */
+    // MARK: - Initializers
     public init(highlightr: Highlightr = Highlightr()!) {
         self.highlightr = highlightr
         super.init()
         setupListeners()
     }
 
-    /// Initialize the CodeAttributedString
     public override init() {
         self.highlightr = Highlightr()!
         super.init()
         setupListeners()
     }
     
-    /// Initialize the CodeAttributedString
     required public init?(coder aDecoder: NSCoder) {
         self.highlightr = Highlightr()!
         super.init(coder: aDecoder)
         setupListeners()
     }
     
-    /// Initialize the CodeAttributedString
     required public init?(pasteboardPropertyList propertyList: Any, ofType type: NSPasteboard.PasteboardType) {
         self.highlightr = Highlightr()!
         super.init(pasteboardPropertyList: propertyList, ofType: type)
@@ -123,6 +117,9 @@ open class CodeAttributedString : NSTextStorage {
     /// Called internally everytime the string is modified.
     open override func processEditing() {
         super.processEditing()
+        
+        print("processEditing()")
+        
         if language != nil {
             if self.editedMask.contains(.editedCharacters) {
                 let string = (self.string as NSString)
@@ -130,41 +127,42 @@ open class CodeAttributedString : NSTextStorage {
                 highlight(range)
             }
         }
+        
     }
 
     func highlight(_ range: NSRange) {
-        if(language == nil) {
-            return;
+        
+        if language == nil {
+            return
         }
         
         if let highlightDelegate = highlightDelegate {
-            let shouldHighlight : Bool? = highlightDelegate.shouldHighlight?(range)
-            if(shouldHighlight != nil && !shouldHighlight!) {
-                return;
+            let shouldHighlight: Bool? = highlightDelegate.shouldHighlight?(range)
+            if shouldHighlight != nil && !shouldHighlight! {
+                return
             }
         }
-
         
-        let string = (self.string as NSString)
+        let string = self.string as NSString
         let line = string.substring(with: range)
         DispatchQueue.global().async {
             let tmpStrg = self.highlightr.highlight(line, as: self.language!)
             DispatchQueue.main.async(execute: {
                 //Checks to see if this highlighting is still valid.
-                if((range.location + range.length) > self.stringStorage.length) {
+                if (range.location + range.length) > self.stringStorage.length {
                     self.highlightDelegate?.didHighlight?(range, success: false)
-                    return;
+                    return
                 }
                 
-                if(tmpStrg?.string != self.stringStorage.attributedSubstring(from: range).string) {
+                if tmpStrg?.string != self.stringStorage.attributedSubstring(from: range).string {
                     self.highlightDelegate?.didHighlight?(range, success: false)
-                    return;
+                    return
                 }
                 
                 self.beginEditing()
                 tmpStrg?.enumerateAttributes(in: NSMakeRange(0, (tmpStrg?.length)!), options: [], using: { (attrs, locRange, stop) in
                     var fixedRange = NSMakeRange(range.location+locRange.location, locRange.length)
-                    fixedRange.length = (fixedRange.location + fixedRange.length < string.length) ? fixedRange.length : string.length-fixedRange.location
+                    fixedRange.length = (fixedRange.location + fixedRange.length < string.length) ? fixedRange.length : string.length - fixedRange.location
                     fixedRange.length = (fixedRange.length >= 0) ? fixedRange.length : 0
                     self.stringStorage.setAttributes(attrs, range: fixedRange)
                 })

@@ -40,9 +40,10 @@ extension String {
 class CDTextView: NSTextView {
 
     let highlightr = Highlightr()
-    var codeTextViewDelegate: CDTextViewDelegate!
     var gutterDelegate: CDTextViewDelegate!
     var scrollView: CDScrollView!
+    var codeTextViewDelegate: CDTextViewDelegate!
+    var codeAttributedString: CodeAttributedString!
     
     
     // MARK: - Override Functions
@@ -52,12 +53,12 @@ class CDTextView: NSTextView {
         
         super.didChangeText()
         
-        let a = self.selectedRange.location
+        let a = self.selectedRange
         let code = self.string
         let highlightedCode = highlightr!.highlight(code, as: "C++")
-        self.textStorage!.setAttributedString(highlightedCode!)
         
-        self.selectedRange.location = a
+        self.textStorage!.setAttributedString(highlightedCode!)
+        self.setSelectedRange(a)
         
         self.codeTextViewDelegate.didChangeText!(lines: self.textStorage?.paragraphs.count ?? 0, characters: self.textStorage?.characters.count ?? 0)
         self.gutterDelegate.didChangeText!(lines: (self.textStorage?.paragraphs.count)!, characters: 0)
