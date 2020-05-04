@@ -53,7 +53,6 @@ class CDTextView: NSTextView {
         super.didChangeText()
         
         let a = self.selectedRange.location
-        self.scrollView.accessibilityActivationPoint()
         let code = self.string
         let highlightedCode = highlightr!.highlight(code, as: "C++")
         self.textStorage!.setAttributedString(highlightedCode!)
