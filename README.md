@@ -7,17 +7,25 @@
 - Download Version 1.1.0: https://github.com/23786/Cppp-IDE/releases/download/v1.1.0/C+++1.1.0.dmg
 
 
-## Uses the Xcode g++ to compile, so you need to install Xcode to use C+++.
-- From the App Store or from developer.apple.com/downloads.
+## Uses the Xcode g++ to compile
+- Open terminal, and input "g++", press enter, and there should be a dialog box "Install Xcode g++", install it, about 2~5 minutes later the installation process will be completed and then you can use C+++.
+- Of course, you can choose your compiler. You can choose between g++, gcc and clang. You can also set the compiler to "python", "swift" or other compilers, but that is not recommended.
 
 ## Update Log
+### 2020.5 Version 1.1.1 (205111) (Developing)
+- Set the default code when creating a new file (Developing)
+- Remove the show line number feature temporarily (Will be fixed soon)
+- Code syntax highlighting improvement
+- UI improvement
+- You need't input the file path in the text box. You just need to click "Compile and Run" to compile your source file.
+
 ### 2020.4 Version 1.1.0 (204110)
 - Persist Settings Data
 - Choose Compiler (g++, gcc, clang)
 - More highlight themes and fonts
 - Many Improvements
 - UI Changes
-- Show gutter on the left of the text view
+- Show line number on the left of the text view
 - Show status bar on the bottom of the text view
 - Fix almost twenty bugs
 
