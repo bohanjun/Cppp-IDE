@@ -12,7 +12,7 @@ func MenloFont(ofSize size: CGFloat) -> NSFont {
     return NSFont(name: "Menlo", size: size)!
 }
 
-var status: Bool = true
+
 
 @available(OSX 10.14, *)
 let darkAqua = NSAppearance(named: .darkAqua)
@@ -33,13 +33,21 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     
 // MARK: - Properties
     
+    /// Whether the window is in dark mode or not.
+    /// - If it is true,the appearance is dark aqua.
+    /// - if it is false, the appearance is aqua.
+    var isDarkMode: Bool = true
     
-    // Normal Editing
+    /// Whether the compile info view is hidden.
+    var bottom = true
+    
+    /// Whether the compile view is hidden.
+    var right = true
+    
     @IBOutlet var TextView: CDTextView!
     @IBOutlet var gutterTextView: GutterTextView!
     @IBOutlet weak var PathControl: NSPathControl!
     
-    // View Control
     @IBOutlet weak var BottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var RightConstraint: NSLayoutConstraint!
     @IBOutlet weak var FakeBackgroundAddition: NSTextField!
@@ -62,15 +70,17 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
         
         // judge if there has already been a saved settings.
         if SettingsViewController.getSavedData() != nil &&
-            SettingsViewController.getSavedData2() != nil {
+        SettingsViewController.getSavedData2() != nil && SettingsViewController.getSavedData3() != nil {
             
             // evaluate the config and compileConfig.
             config = SettingsViewController.getSavedData()
             compileConfig = SettingsViewController.getSavedData2()
+            defaultCode = SettingsViewController.getSavedData3()
             
             // set the font of the text view.
             self.TextView.font = NSFont(name: SettingsViewController.getSavedData()!.FontName, size: CGFloat(SettingsViewController.getSavedData()!.FontSize))
             self.TextView.highlightr?.theme.setCodeFont(NSFont(name: SettingsViewController.getSavedData()!.FontName, size: CGFloat(SettingsViewController.getSavedData()!.FontSize))!)
+            self.TextView.string = SettingsViewController.getSavedData3()?.code ?? ""
             
         } else {
             
@@ -90,7 +100,7 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
             for view in self.view.subviews {
                 view.appearance = darkAqua
             }
-            status = false
+            isDarkMode = false
         }
         
         // in case of errors
@@ -112,7 +122,7 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
         }
         
         // judge the current appearance.
-        switch status {
+        switch isDarkMode {
             
             // Dark Mode
             case true:
@@ -127,7 +137,7 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
                     for view in self.view.subviews {
                         view.appearance = darkAqua
                     }
-                    status = false
+                    isDarkMode = false
                 }
             
             // Light Mode
@@ -143,7 +153,7 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
                     for view in self.view.subviews {
                         view.appearance = aqua
                     }
-                    status = true
+                    isDarkMode = true
                 }
             
         }
@@ -173,7 +183,7 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     func didSet() {
         
         // theme
-        switch status {
+        switch isDarkMode {
             case false:
                 self.TextView.highlightr?.setTheme(to: SettingsViewController.getSavedData()!.DarkThemeName)
             case true:

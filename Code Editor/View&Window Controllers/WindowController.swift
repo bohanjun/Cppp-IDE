@@ -8,7 +8,7 @@
 
 import Cocoa
 
-var bottom = true, right = true
+
 
 class WindowController: NSWindowController, NSWindowDelegate {
     
@@ -32,22 +32,24 @@ class WindowController: NSWindowController, NSWindowDelegate {
     
     
     @IBAction func toggleCI(_ sender: Any) {
-        if bottom == true {
-            (self.contentViewController as! ViewController).BottomConstraint.constant = 22.0
-            bottom = false
+        let vc = (self.contentViewController as! ViewController)
+        if vc.bottom == true {
+            vc.BottomConstraint.constant = 22.0
+            vc.bottom = false
         } else {
-            (self.contentViewController as! ViewController).BottomConstraint.constant = 165.0
-            bottom = true
+            vc.BottomConstraint.constant = 165.0
+            vc.bottom = true
         }
     }
     
     @IBAction func toggleCV(_ sender: Any) {
-        if right == true {
-            (self.contentViewController as! ViewController).RightConstraint.constant = 0.0
-            right = false
+        let vc = (self.contentViewController as! ViewController)
+        if vc.right == true {
+            vc.RightConstraint.constant = 0.0
+            vc.right = false
         } else {
-            (self.contentViewController as! ViewController).RightConstraint.constant = 253.0
-            right = true
+            vc.RightConstraint.constant = 253.0
+            vc.right = true
         }
     }
     

@@ -534,6 +534,7 @@
                                 <viewController key="viewController" id="3Z8-i8-xxw">
                                     <textField key="view" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1Qe-NR-Gdj">
                                         <rect key="frame" x="0.0" y="0.0" width="45" height="19"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="C+++" id="pJJ-ym-q1Y">
                                             <font key="font" metaFont="systemBold" size="16"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -547,6 +548,7 @@
                                 <viewController key="viewController" id="Aec-JC-sDq">
                                     <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SId-IN-R9s">
                                         <rect key="frame" x="0.0" y="0.0" width="72" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="push" title="Run" bezelStyle="rounded" image="NSTouchBarPlayTemplate" imagePosition="leading" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="F5Y-ad-gD5">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" usesAppearanceFont="YES"/>
@@ -561,7 +563,7 @@
                             <touchBarItem id="4SO-gG-N5n">
                                 <viewController key="viewController" id="lFf-b2-FYj">
                                     <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AUY-A3-RUq">
-                                        <rect key="frame" x="0.0" y="0.0" width="126" height="30"/>
+                                        <rect key="frame" x="0.0" y="-11" width="138" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="126" id="OyW-iU-VgB"/>
                                             <constraint firstAttribute="height" constant="30" id="RaS-N3-PgQ"/>
@@ -580,6 +582,7 @@
                                 <viewController key="viewController" id="Qp8-8Y-dam">
                                     <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ozB-4e-eoa">
                                         <rect key="frame" x="0.0" y="0.0" width="108" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="push" title="New File" bezelStyle="rounded" image="NSTouchBarAddTemplate" imagePosition="left" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IqF-TQ-6GP">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" usesAppearanceFont="YES"/>
@@ -605,7 +608,7 @@
             <objects>
                 <viewController storyboardIdentifier="SettingsViewController" id="rhr-iv-C7G" customClass="SettingsViewController" customModule="Code_Editor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="svp-l0-Kf4">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="380"/>
+                        <rect key="frame" x="0.0" y="0.0" width="670" height="380"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aYN-i8-NOp">
@@ -731,6 +734,15 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ian-HH-SMS">
+                                <rect key="frame" x="399" y="346" width="84" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Default Code" id="aSk-al-0hM">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cwK-d8-7Of">
                                 <rect key="frame" x="16" y="143" width="116" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -787,7 +799,7 @@
                                 </comboBoxCell>
                             </comboBox>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3dQ-SJ-Hj5">
-                                <rect key="frame" x="394" y="13" width="72" height="32"/>
+                                <rect key="frame" x="584" y="13" width="72" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="bwL-Hd-Nbd"/>
                                     <constraint firstAttribute="height" constant="21" id="eBe-pd-hDn"/>
@@ -804,7 +816,7 @@ DQ
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mZu-b6-4EA">
-                                <rect key="frame" x="312" y="13" width="82" height="32"/>
+                                <rect key="frame" x="502" y="13" width="82" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="7Ep-SB-Fpa"/>
                                     <constraint firstAttribute="width" constant="70" id="VK6-ed-OOy"/>
@@ -932,6 +944,33 @@ Gw
                                     </objectValues>
                                 </comboBoxCell>
                             </comboBox>
+                            <scrollView fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezi-iz-hv1">
+                                <rect key="frame" x="401" y="62" width="249" height="274"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="6rI-1A-G4t">
+                                    <rect key="frame" x="0.0" y="0.0" width="234" height="274"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" smartInsertDelete="YES" id="tvo-c8-s5d">
+                                            <rect key="frame" x="0.0" y="0.0" width="234" height="274"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="234" height="274"/>
+                                            <size key="maxSize" width="283" height="10000000"/>
+                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        </textView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="sBi-4C-eVQ">
+                                    <rect key="frame" x="-100" y="-100" width="225" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="Kle-DJ-F9W">
+                                    <rect key="frame" x="234" y="0.0" width="15" height="274"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="3dQ-SJ-Hj5" secondAttribute="bottom" constant="20" id="60u-JN-pq5"/>
@@ -945,6 +984,7 @@ Gw
                         <outlet property="arguments" destination="VBr-aO-lcD" id="PTk-7V-6lV"/>
                         <outlet property="compiler" destination="nGw-ro-B66" id="Aek-JT-nA7"/>
                         <outlet property="dark" destination="olW-wi-IBX" id="4oe-IM-An0"/>
+                        <outlet property="defaultCodeTextView" destination="tvo-c8-s5d" id="Lbl-Ju-yic"/>
                         <outlet property="fontname" destination="aYN-i8-NOp" id="l04-rW-C0x"/>
                         <outlet property="light" destination="ItO-cj-oae" id="2T2-cS-2tf"/>
                         <outlet property="size" destination="mdW-jF-55v" id="xHU-gR-UmV"/>
@@ -952,7 +992,7 @@ Gw
                 </viewController>
                 <customObject id="5A1-T6-jV9" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-709" y="1305"/>
+            <point key="canvasLocation" x="-798" y="1305"/>
         </scene>
         <!--C+++-->
         <scene sceneID="hIz-AP-VOD">
@@ -1527,7 +1567,6 @@ Gw
                     </connections>
                 </viewController>
                 <customObject id="2Tp-Fl-jBw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <userDefaultsController representsSharedInstance="YES" id="ccS-rS-OUq"/>
             </objects>
             <point key="canvasLocation" x="87" y="969"/>
         </scene>

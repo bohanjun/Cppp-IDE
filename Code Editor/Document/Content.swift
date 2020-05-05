@@ -9,6 +9,7 @@
 import Cocoa
 
 class Content: NSObject {
+    
     @objc dynamic var contentString = ""
     
     public init(contentString: String) {

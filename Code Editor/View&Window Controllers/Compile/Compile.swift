@@ -8,6 +8,10 @@
 
 import Cocoa
 
+/** Compile a C++ source file.
+- parameter fileURL: The path of the file.
+- returns: The result to be displayed in the "Compile Info"  text view.
+*/
 public func CompileSource(fileURL: String) -> String {
      
     // The path of the file
@@ -21,18 +25,18 @@ public func CompileSource(fileURL: String) -> String {
     let command = "\(compileConfig.Compiler ?? "g++") \(compileConfig.Arguments ?? "") \(_fileURL) -o \(out)"
     
     // Compile
-    let b = shell(command, "")
+    let b = shell(command)
     
     if b.count == 1 {
         // No error
-        shell("open \(out)", "")
+        shell("open \(out)")
         return "Compile Command:\n\(command)\n\nCompile Succeed"
         
     } else {
         // Have warning or error
         if b[1].range(of: "error") == nil {
             
-            shell("open \(out)", "")
+            shell("open \(out)")
             return "Compile Command:\n\(command)\n\nCompile Succeed\n\n" + b[1]
         }
         
@@ -42,8 +46,14 @@ public func CompileSource(fileURL: String) -> String {
     
 }
 
+/** Run a shell command.
+ - parameter command: The command.
+ - parameter stdin: The stantard input.
+ - returns: If no error ocurred, return a string array with only one item (stantard output).
+   If an error ocurred, return a string array with two items (stantard output and stantard error).
+*/
 @discardableResult
-fileprivate func shell(_ command: String, _ stdin: String) -> [String] {
+fileprivate func shell(_ command: String, _ stdin: String = "") -> [String] {
     
     let task = Process()
     task.launchPath = "/bin/bash"

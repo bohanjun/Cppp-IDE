@@ -163,27 +163,5 @@ class CDTextView: NSTextView {
         super.init(frame: frame, textContainer: textContainer)
     }
     
-    /*func enableHighlight(_ highlight: Bool) {
-        
-        if highlight == false {
-            return
-        }
-        
-        let textStorage = CodeAttributedString()
-        
-        textStorage.language = "C++"
-        textStorage.highlightr.theme = self.highlightr?.theme
-        textStorage.highlightr.theme.setCodeFont((self.highlightr?.theme.codeFont)!)
-        
-        let layoutManager = NSLayoutManager()
-        textStorage.addLayoutManager(layoutManager)
-        
-        let textContainer = NSTextContainer(size: self.frame.size)
-        layoutManager.addTextContainer(textContainer)
-        
-        self.textContainer = textContainer
-        
-    }*/
-    
 }
 

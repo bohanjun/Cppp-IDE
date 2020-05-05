@@ -109,6 +109,7 @@
 		18A41B60242C765500AFC422 /* atelier-savanna-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 18A41B06242C765400AFC422 /* atelier-savanna-dark.min.css */; };
 		18A41B61242C765500AFC422 /* atelier-sulphurpool-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 18A41B07242C765500AFC422 /* atelier-sulphurpool-light.min.css */; };
 		18A41B62242C765500AFC422 /* color-brewer.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 18A41B08242C765500AFC422 /* color-brewer.min.css */; };
+		18B1856C2460366100B579AD /* DefaultCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B1856B2460366100B579AD /* DefaultCode.swift */; };
 		18B3C78024282C1F00F4CA14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3C77F24282C1F00F4CA14 /* AppDelegate.swift */; };
 		18B3C78224282C1F00F4CA14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3C78124282C1F00F4CA14 /* ViewController.swift */; };
 		18B3C78424282C1F00F4CA14 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3C78324282C1F00F4CA14 /* Document.swift */; };
@@ -238,6 +239,7 @@
 		18A41B06242C765400AFC422 /* atelier-savanna-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-savanna-dark.min.css"; sourceTree = "<group>"; };
 		18A41B07242C765500AFC422 /* atelier-sulphurpool-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-sulphurpool-light.min.css"; sourceTree = "<group>"; };
 		18A41B08242C765500AFC422 /* color-brewer.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "color-brewer.min.css"; sourceTree = "<group>"; };
+		18B1856B2460366100B579AD /* DefaultCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCode.swift; sourceTree = "<group>"; };
 		18B3C77724272DF700F4CA14 /* Compile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compile.swift; sourceTree = "<group>"; };
 		18B3C77D24282C1F00F4CA14 /* Code Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Code Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B3C77F24282C1F00F4CA14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 			children = (
 				180480AD2448602700CD0A4D /* Settings.swift */,
 				1868EBD4244981C2005467B2 /* CompileSettings.swift */,
+				18B1856B2460366100B579AD /* DefaultCode.swift */,
 				18541B152445905F000EB4CB /* SettingsViewController.swift */,
 			);
 			path = Settings;
@@ -654,6 +657,7 @@
 				18B3C7942428378E00F4CA14 /* WindowController.swift in Sources */,
 				18B3C78024282C1F00F4CA14 /* AppDelegate.swift in Sources */,
 				18F0D7A1242A55830078E2B9 /* CTView.swift in Sources */,
+				18B1856C2460366100B579AD /* DefaultCode.swift in Sources */,
 				18B3C78424282C1F00F4CA14 /* Document.swift in Sources */,
 				18B3C790242836A500F4CA14 /* Content.swift in Sources */,
 				183BF3C524287D4C007AF6AC /* Compile.swift in Sources */,

@@ -19,7 +19,6 @@ class Document: NSDocument {
     }
     
     
-    
     // MARK: - Enablers
     
     // This enables auto save.
@@ -113,21 +112,6 @@ class Document: NSDocument {
             for: windowControllers[0].window!,
             delegate: self,
             didRun: #selector(printOperationDidRun(_:success:contextInfo:)), contextInfo: nil)
-    }
-    
-    override func save(_ sender: Any?) {
-        super.save(sender)
-        
-        let vc = self.contentViewController!
-        vc.TextView.didChangeText()
-        
-    }
-    
-    override func saveAs(_ sender: Any?) {
-        super.saveAs(sender)
-        
-        let vc = self.contentViewController!
-        vc.TextView.didChangeText()
         
     }
     
