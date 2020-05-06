@@ -19,7 +19,7 @@ public func CompileSource(fileURL: String) -> String {
     
     // Create The name of the output exec
     var out = (fileURL as NSString).deletingPathExtension as String
-    out = "\"" + out + "-output\""
+    out = "\"" + out + "\""
     
     // The compile command
     let command = "\(compileConfig.Compiler ?? "g++") \(compileConfig.Arguments ?? "") \(_fileURL) -o \(out)"
