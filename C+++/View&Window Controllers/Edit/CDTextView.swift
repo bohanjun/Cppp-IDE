@@ -96,7 +96,7 @@ class CDTextView: NSTextView {
                     return true
                 }
                 let string = NSString(string: self.string).substring(with: NSMakeRange(range, 1))
-                if string == str {
+                if string == str && (self.string.challenge("(") == self.string.challenge(")")) {
                     self.deleteForward(self)
                 }
                 return superResult
@@ -165,3 +165,51 @@ class CDTextView: NSTextView {
     
 }
 
+/*
+     aTextView.delegate = self
+     let string = "Lorem ipsum dolor sit amet"
+     var regexPatternForFullLinks: NSRegularExpression? = nil
+     do {
+         regexPatternForFullLinks = try NSRegularExpression(
+             pattern: "(\\.\\.\\s(.*?\\.png))",
+             options: .caseInsensitive)
+     } catch {
+     }
+     let arrayOfAllMatches = regexPatternForFullLinks?.matches(in: string, options: [], range: NSRange(location: 0, length: string.count))
+     var links: [AnyHashable] = []
+     for match in arrayOfAllMatches ?? [] {
+         links.append(((string as NSString).substring(with: match.range)).replacingOccurrences(of: ".. image:: ", with: "/"))
+     }
+     let modifiedString = regexPatternForFullLinks.stringByReplacingMatches(
+         in: string,
+         options: [],
+         range: NSRange(location: 0, length: string.length()),
+         withTemplate: "[Image]")
+     var regexPatternReplaceLinksWithIMAGEStr: NSRegularExpression? = nil
+     do {
+         regexPatternReplaceLinksWithIMAGEStr = try NSRegularExpression(
+             pattern: "\\[image\\]",
+             options: .caseInsensitive)
+     } catch {
+     }
+     var attrString = NSMutableAttributedString(string: modifiedString)
+     let arrayOfAllMatchesImageText = regexPatternReplaceLinksWithIMAGEStr?.matches(
+         in: modifiedString,
+         options: [],
+         range: NSRange(location: 0, length: modifiedString.count))
+     for i in 0..<arrayOfAllMatchesImageText.count {
+             let checkingResult = arrayOfAllMatchesImageText[i] as? NSTextCheckingResult
+             attrString.beginEditing()
+             if let range = checkingResult?.range {
+                 attrString.addAttribute(.link, value: links[i], range: range)
+             }
+             if let range = checkingResult?.range {
+                 attrString.addAttribute(.foregroundColor, value: NSColor.green, range: range)
+             }
+             if let range = checkingResult?.range {
+                 attrString.addAttribute(.underlineStyle, value: NSNumber(value: 0), range: range)
+             }
+             attrString.endEditing()
+         }
+     aTextView.textStorage?.setAttributedString(attrString)
+*/

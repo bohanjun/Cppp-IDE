@@ -241,7 +241,7 @@
 		18A41B08242C765500AFC422 /* color-brewer.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "color-brewer.min.css"; sourceTree = "<group>"; };
 		18B1856B2460366100B579AD /* DefaultCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCode.swift; sourceTree = "<group>"; };
 		18B3C77724272DF700F4CA14 /* Compile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compile.swift; sourceTree = "<group>"; };
-		18B3C77D24282C1F00F4CA14 /* Code Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Code Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		18B3C77D24282C1F00F4CA14 /* C+++.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "C+++.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B3C77F24282C1F00F4CA14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18B3C78124282C1F00F4CA14 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		18B3C78324282C1F00F4CA14 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
@@ -436,7 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				180480A824474A0700CD0A4D /* README.md */,
-				18B3C77E24282C1F00F4CA14 /* Code Editor */,
+				18B3C77E24282C1F00F4CA14 /* C+++ */,
 				18B3C76524272D9F00F4CA14 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -444,12 +444,12 @@
 		18B3C76524272D9F00F4CA14 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				18B3C77D24282C1F00F4CA14 /* Code Editor.app */,
+				18B3C77D24282C1F00F4CA14 /* C+++.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		18B3C77E24282C1F00F4CA14 /* Code Editor */ = {
+		18B3C77E24282C1F00F4CA14 /* C+++ */ = {
 			isa = PBXGroup;
 			children = (
 				18B3C77F24282C1F00F4CA14 /* AppDelegate.swift */,
@@ -459,7 +459,7 @@
 				18B3C78A24282C2100F4CA14 /* Info.plist */,
 				18B3C78B24282C2100F4CA14 /* Code_Editor.entitlements */,
 			);
-			path = "Code Editor";
+			path = "C+++";
 			sourceTree = "<group>";
 		};
 		18E0B01C242C52650062049C /* Document */ = {
@@ -483,9 +483,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		18B3C77C24282C1F00F4CA14 /* Code Editor */ = {
+		18B3C77C24282C1F00F4CA14 /* C+++ */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 18B3C78C24282C2100F4CA14 /* Build configuration list for PBXNativeTarget "Code Editor" */;
+			buildConfigurationList = 18B3C78C24282C2100F4CA14 /* Build configuration list for PBXNativeTarget "C+++" */;
 			buildPhases = (
 				18B3C77924282C1F00F4CA14 /* Sources */,
 				18B3C77A24282C1F00F4CA14 /* Frameworks */,
@@ -496,9 +496,9 @@
 			);
 			dependencies = (
 			);
-			name = "Code Editor";
+			name = "C+++";
 			productName = "Code Editor";
-			productReference = 18B3C77D24282C1F00F4CA14 /* Code Editor.app */;
+			productReference = 18B3C77D24282C1F00F4CA14 /* C+++.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -528,7 +528,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				18B3C77C24282C1F00F4CA14 /* Code Editor */,
+				18B3C77C24282C1F00F4CA14 /* C+++ */,
 			);
 		};
 /* End PBXProject section */
@@ -785,14 +785,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Code Editor/Code_Editor.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "C+++/Code_Editor.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 205111;
 				DEVELOPMENT_TEAM = XG7269D873;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = "Code Editor/Info.plist";
+				INFOPLIST_FILE = "C+++/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -809,14 +809,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Code Editor/Code_Editor.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "C+++/Code_Editor.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 205111;
 				DEVELOPMENT_TEAM = XG7269D873;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = "Code Editor/Info.plist";
+				INFOPLIST_FILE = "C+++/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -841,7 +841,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		18B3C78C24282C2100F4CA14 /* Build configuration list for PBXNativeTarget "Code Editor" */ = {
+		18B3C78C24282C2100F4CA14 /* Build configuration list for PBXNativeTarget "C+++" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				18B3C78D24282C2100F4CA14 /* Debug */,
