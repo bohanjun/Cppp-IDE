@@ -60,8 +60,8 @@ class CDTextView: NSTextView {
         self.textStorage!.setAttributedString(highlightedCode!)
         self.setSelectedRange(a)
         
-        self.codeTextViewDelegate.didChangeText!(lines: self.textStorage?.paragraphs.count ?? 0, characters: self.textStorage?.characters.count ?? 0)
-        self.gutterDelegate.didChangeText!(lines: (self.textStorage?.paragraphs.count)!, characters: 0)
+        self.codeTextViewDelegate?.didChangeText!(lines: self.textStorage?.paragraphs.count ?? 0, characters: self.textStorage?.characters.count ?? 0)
+        self.gutterDelegate?.didChangeText!(lines: (self.textStorage?.paragraphs.count)!, characters: 0)
         
     }
     
@@ -156,6 +156,7 @@ class CDTextView: NSTextView {
         }
         
         self.highlightr!.setTheme(to: config.LightThemeName)
+        self.highlightr!.theme.setCodeFont(NSFont(name: config.FontName, size: CGFloat(config.FontSize))!)
         
     }
     

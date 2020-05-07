@@ -110,6 +110,10 @@
 		18A41B61242C765500AFC422 /* atelier-sulphurpool-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 18A41B07242C765500AFC422 /* atelier-sulphurpool-light.min.css */; };
 		18A41B62242C765500AFC422 /* color-brewer.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 18A41B08242C765500AFC422 /* color-brewer.min.css */; };
 		18B1856C2460366100B579AD /* DefaultCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B1856B2460366100B579AD /* DefaultCode.swift */; };
+		18B1856E246387F100B579AD /* CDTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B1856D246387F100B579AD /* CDTableView.swift */; };
+		18B1857024638B2A00B579AD /* CDTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B1856F24638B2A00B579AD /* CDTableViewCell.swift */; };
+		18B185732463B32400B579AD /* CDTableViewCellInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B185712463B32400B579AD /* CDTableViewCellInfoViewController.swift */; };
+		18B185742463B32400B579AD /* CDTableViewCellInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B185722463B32400B579AD /* CDTableViewCellInfoViewController.xib */; };
 		18B3C78024282C1F00F4CA14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3C77F24282C1F00F4CA14 /* AppDelegate.swift */; };
 		18B3C78224282C1F00F4CA14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3C78124282C1F00F4CA14 /* ViewController.swift */; };
 		18B3C78424282C1F00F4CA14 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3C78324282C1F00F4CA14 /* Document.swift */; };
@@ -240,6 +244,10 @@
 		18A41B07242C765500AFC422 /* atelier-sulphurpool-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-sulphurpool-light.min.css"; sourceTree = "<group>"; };
 		18A41B08242C765500AFC422 /* color-brewer.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "color-brewer.min.css"; sourceTree = "<group>"; };
 		18B1856B2460366100B579AD /* DefaultCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCode.swift; sourceTree = "<group>"; };
+		18B1856D246387F100B579AD /* CDTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTableView.swift; sourceTree = "<group>"; };
+		18B1856F24638B2A00B579AD /* CDTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTableViewCell.swift; sourceTree = "<group>"; };
+		18B185712463B32400B579AD /* CDTableViewCellInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTableViewCellInfoViewController.swift; sourceTree = "<group>"; };
+		18B185722463B32400B579AD /* CDTableViewCellInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CDTableViewCellInfoViewController.xib; sourceTree = "<group>"; };
 		18B3C77724272DF700F4CA14 /* Compile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compile.swift; sourceTree = "<group>"; };
 		18B3C77D24282C1F00F4CA14 /* C+++.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "C+++.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B3C77F24282C1F00F4CA14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -283,6 +291,10 @@
 				18541B172445AB35000EB4CB /* Settings */,
 				18B3C78124282C1F00F4CA14 /* ViewController.swift */,
 				18B3C791242836F900F4CA14 /* Main.storyboard */,
+				18B1856D246387F100B579AD /* CDTableView.swift */,
+				18B1856F24638B2A00B579AD /* CDTableViewCell.swift */,
+				18B185712463B32400B579AD /* CDTableViewCellInfoViewController.swift */,
+				18B185722463B32400B579AD /* CDTableViewCellInfoViewController.xib */,
 				183BF3C824288043007AF6AC /* Edit */,
 				183BF3C624287FFE007AF6AC /* Compile */,
 			);
@@ -571,6 +583,7 @@
 				18A41B4B242C765500AFC422 /* googlecode.min.css in Resources */,
 				18A41B34242C765500AFC422 /* atelier-plateau-dark.min.css in Resources */,
 				18A41B1A242C765500AFC422 /* atelier-heath-dark.min.css in Resources */,
+				18B185742463B32400B579AD /* CDTableViewCellInfoViewController.xib in Resources */,
 				18A41B24242C765500AFC422 /* brown-paper.min.css in Resources */,
 				18A41AAD242C762100AFC422 /* highlight.min.js in Resources */,
 				18A41B16242C765500AFC422 /* far.min.css in Resources */,
@@ -648,6 +661,7 @@
 				18A41AA8242C75C300AFC422 /* Shims.swift in Sources */,
 				180480AE2448602700CD0A4D /* Settings.swift in Sources */,
 				18E72920244E756E000317D7 /* CDScrollView.swift in Sources */,
+				18B185732463B32400B579AD /* CDTableViewCellInfoViewController.swift in Sources */,
 				18A41AAA242C75DE00AFC422 /* CodeAttributedString.swift in Sources */,
 				183BF3CA242906B3007AF6AC /* CDTextView.swift in Sources */,
 				18A41AA2242C756700AFC422 /* Highlightr.swift in Sources */,
@@ -655,6 +669,8 @@
 				18541B162445905F000EB4CB /* SettingsViewController.swift in Sources */,
 				18A41AA4242C758B00AFC422 /* Theme.swift in Sources */,
 				18B3C7942428378E00F4CA14 /* WindowController.swift in Sources */,
+				18B1857024638B2A00B579AD /* CDTableViewCell.swift in Sources */,
+				18B1856E246387F100B579AD /* CDTableView.swift in Sources */,
 				18B3C78024282C1F00F4CA14 /* AppDelegate.swift in Sources */,
 				18F0D7A1242A55830078E2B9 /* CTView.swift in Sources */,
 				18B1856C2460366100B579AD /* DefaultCode.swift in Sources */,
@@ -789,7 +805,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 205111;
+				CURRENT_PROJECT_VERSION = 205200;
 				DEVELOPMENT_TEAM = XG7269D873;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "C+++/Info.plist";
@@ -798,7 +814,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12.2;
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ZhuYixuan.Cppp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -813,7 +829,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 205111;
+				CURRENT_PROJECT_VERSION = 205200;
 				DEVELOPMENT_TEAM = XG7269D873;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "C+++/Info.plist";
@@ -822,7 +838,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12.2;
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ZhuYixuan.Cppp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

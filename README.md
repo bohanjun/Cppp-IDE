@@ -12,11 +12,11 @@
 - Of course, you can choose your compiler. You can choose between g++, gcc and clang. You can also set the compiler to "python", "swift" or other compilers, but that is not recommended.
 
 ## Update Log
-### 2020.5 Version 1.1.1 (205111) (Developing)
+### 2020.5 Version 2.0.0 (205200) (Developing)
 - Set the default code when creating a new file (Developing)
 - Remove the show line number feature temporarily (Will be fixed soon)
 - Code syntax highlighting improvement
-- UI improvement
+- Big UI Change
 - You need't input the file path in the text box. You just need to click "Compile and Run" to compile your source file.
 
 ### 2020.4 Version 1.1.0 (204110)

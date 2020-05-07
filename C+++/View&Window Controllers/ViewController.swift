@@ -29,7 +29,7 @@ extension NSViewController {
     }
 }
 
-class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate, CDTextViewDelegate {
+class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate, CDTextViewDelegate, CDTableViewCellInfoViewControllerDelegate {
     
 // MARK: - Properties
     
@@ -70,7 +70,8 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
         
         // judge if there has already been a saved settings.
         if SettingsViewController.getSavedData() != nil &&
-        SettingsViewController.getSavedData2() != nil && SettingsViewController.getSavedData3() != nil {
+        SettingsViewController.getSavedData2() != nil &&
+            SettingsViewController.getSavedData3() != nil {
             
             // evaluate the config and compileConfig.
             config = SettingsViewController.getSavedData()
@@ -210,6 +211,36 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
         self.linesLabel.stringValue = "\(lines) lines"
         self.charactersLabel.stringValue = "\(characters) characters"
         
+    }
+    
+
+
+// MARK: - Segmented Control
+    @IBOutlet weak var CDTableView_ScrollView: NSScrollView!
+    @IBOutlet weak var AddButton: NSButton!
+    
+    @IBAction func ValueChanged(_ sender: NSSegmentedControl) {
+        
+        switch sender.selectedSegment {
+            case 0:
+                CDTableView_ScrollView.isHidden = true
+                AddButton.isHidden = true
+               // <#Show File View#>
+            
+            case 1:
+               // <#Hide File View#>
+                CDTableView_ScrollView.isHidden = false
+                AddButton.isHidden = false
+                break
+            default: break
+        }
+        
+    }
+    
+// MARK: - CDTextViewCellInfoViewControllerDelegate
+    
+    func didAddToCode(code: String) {
+        self.TextView.insertText(code, replacementRange: self.TextView.selectedRange)
     }
     
     
