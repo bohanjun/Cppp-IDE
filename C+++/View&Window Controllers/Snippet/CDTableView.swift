@@ -7,9 +7,43 @@
 //
 
 import Cocoa
+import os.log
 
 class CDTableView: NSView, CDTableViewCellInfoViewControllerDelegate {
     
+    let archievePath = FileManager().urls(for: .libraryDirectory, in: .userDomainMask).first!.appendingPathComponent("C+++").appendingPathComponent("Snippets")
+    
+    private func saveSnippets() {
+        
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(cells, toFile:
+        archievePath.path)
+        
+        if !isSuccessfulSave {
+            os_log("Failed to save...", log: OSLog.default, type: .error)
+        }
+        
+    }
+    
+    
+    /// Load sample snippets.
+    private func loadSampleSnippets() {
+        
+        for (name, code) in Code {
+
+            self.append(cell: CDTableViewCell(title: name, image: NSImage(named: "Code")!, code: code))
+            
+        }
+        
+    }
+    
+    /// Load the snippets.
+    /// - returns: [CDTableViewCell]
+    private func loadSnippets() -> [CDTableViewCell]?  {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: archievePath.path) as? [CDTableViewCell]
+    }
+    
+    
+    /// Default code snippets.
     private let Code: KeyValuePairs = [
         "For Statement": "\nfor (int i = , i <= , i ++ ) {\n\t\n}",
         "If Statement": "\nif () {\n\t\n}",
@@ -22,7 +56,7 @@ class CDTableView: NSView, CDTableViewCellInfoViewControllerDelegate {
         "Bubble Sort": "\nfor (int i = 1; i <= n - 1; i ++) {\n\tfor (int j = 1; j <= n - i; j ++) {\n\t\tif(a[j] < a[j + 1]) swap(a[j], a[j + 1]);\n\t}\n}",
         "Bucket Sort": "\nint a;\nfor (int i = 0; i < arr.count; i ++) {\n\tscanf(\"%d\", &a);\n\tn[a] += 1;\n}\n// output\nfor (int i = 0; i < arr.count; i ++) {\n\tfor(int j = 1; j <= n[i]; j ++)\n\t\tprintf(\"%d \", i);\n}",
         "Binary Search": "\nvoid binarySearch(int x) {\n\tint L = 1, R = MAXN, mid;\n\twhile (L < R) {\n\t\tmid = (L + R) / 2;\n\t\tif (x >= n[mid]) {\n\t\t\tL = mid;\n\t\t} else {\n\t\t\tR = mid - 1;\n\t\t}\n\t}\n\tprintf(\"%d\", n[L]);\n}",
-        "More...": "Press the \"+\" button below \nand add your own code snippets."
+        "More...": "Press the "+" button below\nand add your own code snippets.\nAfter you add a snippet, it\nwill not be editable.\n\nCode Snippet is a small portion\nof re-usable source code. They\nallow a programmer to avoid\ntyping repetitive code during\nprogramming."
     ]
     
     @objc func didAddItem(title: String, image: NSImage, code: String) {
@@ -54,22 +88,29 @@ class CDTableView: NSView, CDTableViewCellInfoViewControllerDelegate {
     
     // MARK: - init
     required init?(coder: NSCoder) {
-        
         super.init(coder: coder)
         
-        for (name, code) in Code {
-
-            self.append(cell: CDTableViewCell(title: name, image: NSImage(named: "Code")!, code: code))
+        if let savedSnippets = loadSnippets() {
+            
+            cells += savedSnippets
+            setup()
+            
+        } else {
+            
+            loadSampleSnippets()
             
         }
         
         
     }
     
+    
+    // MARK: - Append and remove
     func append(cell: CDTableViewCell) {
         
         self.cells.append(cell)
         setup()
+        saveSnippets()
         
     }
     
@@ -77,11 +118,13 @@ class CDTableView: NSView, CDTableViewCellInfoViewControllerDelegate {
         
         self.cells.remove(at: index)
         setup()
+        saveSnippets()
         
     }
     
     
     
+    // MARK: - Setup
     private func setup() {
         
         var y: CGFloat = 0

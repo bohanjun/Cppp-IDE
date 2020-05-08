@@ -359,11 +359,6 @@
                                                 <action selector="changeAppearance:" target="Ady-hI-5gd" id="USW-k9-9tR"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Show Code Templates" keyEquivalent="t" id="wkR-wp-qpo">
-                                            <connections>
-                                                <segue destination="O6m-Sn-E2f" kind="show" id="YGN-wP-eJE"/>
-                                            </connections>
-                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="MzY-RS-xQs"/>
                                         <menuItem title="Show Tab Bar" id="oN6-ym-I4S">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -523,23 +518,8 @@
                                         </connections>
                                     </textField>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="8C5FCC8B-CD85-49B4-A784-D0F87EB5BB49" label="Add" paletteLabel="Add" image="NSAddTemplate" sizingBehavior="auto" id="tPr-Hs-tyS">
-                                    <nil key="toolTip"/>
-                                    <button key="view" verticalHuggingPriority="750" id="N9k-9t-WYe">
-                                        <rect key="frame" x="0.0" y="14" width="51" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0nn-XA-VZ3">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <segue destination="O6m-Sn-E2f" kind="show" id="4cy-HO-FLD"/>
-                                        </connections>
-                                    </button>
-                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
-                                <toolbarItem reference="tPr-Hs-tyS"/>
                                 <toolbarItem reference="5Eg-DZ-en8"/>
                                 <toolbarItem reference="npZ-BU-ery"/>
                                 <toolbarItem reference="5Eg-DZ-en8"/>
@@ -1540,7 +1520,7 @@ Gw
                                     </segmentedControl>
                                     <scrollView hidden="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUE-vJ-YOp">
                                         <rect key="frame" x="0.0" y="20" width="219" height="654"/>
-                                        <clipView key="contentView" id="eMv-9j-k9F">
+                                        <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="eMv-9j-k9F">
                                             <rect key="frame" x="0.0" y="0.0" width="219" height="654"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -1690,232 +1670,10 @@ Gw
             </objects>
             <point key="canvasLocation" x="10" y="979"/>
         </scene>
-        <!--Window Controller-->
-        <scene sceneID="4Tf-YR-czu">
-            <objects>
-                <customObject id="uoT-3T-T8Q" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <windowController showSeguePresentationStyle="single" id="O6m-Sn-E2f" sceneMemberID="viewController">
-                    <window key="window" title="C+++" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" appearanceType="darkAqua" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="1kD-zz-XMU">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="450" height="300"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
-                        <connections>
-                            <outlet property="delegate" destination="O6m-Sn-E2f" id="QHN-BI-vsf"/>
-                        </connections>
-                    </window>
-                    <connections>
-                        <segue destination="BGV-bR-TGt" kind="relationship" relationship="window.shadowedContentViewController" id="fZN-oc-ef4"/>
-                    </connections>
-                </windowController>
-            </objects>
-            <point key="canvasLocation" x="854" y="521"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="wd2-Fq-jdL">
-            <objects>
-                <viewController id="BGV-bR-TGt" customClass="CTViewController" customModule="C___" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" appearanceType="darkAqua" id="XNx-9a-w2a">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="XWB-fc-jhZ" customClass="CTView" customModule="C___" customModuleProvider="target">
-                                <rect key="frame" x="190" y="0.0" width="260" height="300"/>
-                            </customView>
-                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgq-7W-2wD">
-                                <rect key="frame" x="0.0" y="0.0" width="190" height="300"/>
-                                <clipView key="contentView" copiesOnScroll="NO" id="rRr-z5-ivx">
-                                    <rect key="frame" x="0.0" y="0.0" width="175" height="300"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <view id="Ahu-cR-hmO">
-                                            <rect key="frame" x="0.0" y="0.0" width="175" height="517"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <subviews>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f7O-t6-EEw">
-                                                    <rect key="frame" x="-2" y="456" width="179" height="42"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="smallSquare" title="  For Statement" bezelStyle="smallSquare" image="NSRightFacingTriangleTemplate" imagePosition="right" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="r9b-pS-eQR">
-                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                    <connections>
-                                                        <action selector="setCTView:" target="BGV-bR-TGt" id="Wfh-Lu-72Y"/>
-                                                    </connections>
-                                                </button>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OK8-Wj-Cd7">
-                                                    <rect key="frame" x="-2" y="417" width="179" height="42"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="smallSquare" title="  If Statement" bezelStyle="smallSquare" image="NSRightFacingTriangleTemplate" imagePosition="right" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="i3q-Cc-jlE">
-                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                    <connections>
-                                                        <action selector="setCTView:" target="BGV-bR-TGt" id="mNn-cW-WYL"/>
-                                                    </connections>
-                                                </button>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dOu-bG-X1E">
-                                                    <rect key="frame" x="-2" y="378" width="179" height="42"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="smallSquare" title="  While Statement" bezelStyle="smallSquare" image="NSRightFacingTriangleTemplate" imagePosition="right" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nqW-vd-AWq">
-                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                    <connections>
-                                                        <action selector="setCTView:" target="BGV-bR-TGt" id="pHA-Ga-jaw"/>
-                                                    </connections>
-                                                </button>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2LF-pq-w9P">
-                                                    <rect key="frame" x="-2" y="339" width="179" height="42"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="smallSquare" title="  If-else Statement" bezelStyle="smallSquare" image="NSRightFacingTriangleTemplate" imagePosition="right" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xTc-fe-WjC">
-                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                    <connections>
-                                                        <action selector="setCTView:" target="BGV-bR-TGt" id="0s8-ot-r9B"/>
-                                                    </connections>
-                                                </button>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nGu-t2-dBg">
-                                                    <rect key="frame" x="-2" y="300" width="179" height="42"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="smallSquare" title="  Switch Statement" bezelStyle="smallSquare" image="NSRightFacingTriangleTemplate" imagePosition="right" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gfU-Hf-t2P">
-                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                    <connections>
-                                                        <action selector="setCTView:" target="BGV-bR-TGt" id="utA-St-0aR"/>
-                                                    </connections>
-                                                </button>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PYQ-ds-ZJL">
-                                                    <rect key="frame" x="-2" y="261" width="179" height="42"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="smallSquare" title="  Struct Declaration" bezelStyle="smallSquare" image="NSRightFacingTriangleTemplate" imagePosition="right" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pPs-FE-zWh">
-                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                    <connections>
-                                                        <action selector="setCTView:" target="BGV-bR-TGt" id="hKz-IJ-B7j"/>
-                                                    </connections>
-                                                </button>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VrJ-pr-4wX">
-                                                    <rect key="frame" x="-2" y="222" width="179" height="42"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="smallSquare" title="  Function Declaration" bezelStyle="smallSquare" imagePosition="right" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Rdf-yW-YPv">
-                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                    <connections>
-                                                        <action selector="setCTView:" target="BGV-bR-TGt" id="8xs-v2-vtt"/>
-                                                    </connections>
-                                                </button>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WFB-QV-Y5n">
-                                                    <rect key="frame" x="-2" y="183" width="179" height="42"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="smallSquare" title="  DFS Template" bezelStyle="smallSquare" image="NSRightFacingTriangleTemplate" imagePosition="right" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="LKD-hG-DTK">
-                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                    <connections>
-                                                        <action selector="setCTView:" target="BGV-bR-TGt" id="r0j-n8-t2q"/>
-                                                    </connections>
-                                                </button>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gse-Un-aqZ">
-                                                    <rect key="frame" x="-2" y="144" width="179" height="42"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="smallSquare" title="  Bubble Sort" bezelStyle="smallSquare" image="NSRightFacingTriangleTemplate" imagePosition="right" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WWT-wh-X4A">
-                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                    <connections>
-                                                        <action selector="setCTView:" target="BGV-bR-TGt" id="rmW-HB-5Fs"/>
-                                                    </connections>
-                                                </button>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O2X-Qx-Ppf">
-                                                    <rect key="frame" x="-2" y="105" width="179" height="42"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="smallSquare" title="  Bucket Sort" bezelStyle="smallSquare" image="NSRightFacingTriangleTemplate" imagePosition="right" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pkr-mS-xND">
-                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                    <connections>
-                                                        <action selector="setCTView:" target="BGV-bR-TGt" id="dSP-ha-Rzl"/>
-                                                    </connections>
-                                                </button>
-                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LM7-EQ-Ohu">
-                                                    <rect key="frame" x="-2" y="66" width="179" height="42"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="smallSquare" title="  Binary Search" bezelStyle="smallSquare" image="NSRightFacingTriangleTemplate" imagePosition="right" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hWS-YT-k42">
-                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                    <connections>
-                                                        <action selector="setCTView:" target="BGV-bR-TGt" id="NXb-iO-pfn"/>
-                                                    </connections>
-                                                </button>
-                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wX0-bW-HpH">
-                                                    <rect key="frame" x="29" y="15" width="118" height="16"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="16" id="IrN-fc-bka"/>
-                                                        <constraint firstAttribute="width" constant="114" id="ytk-qI-1za"/>
-                                                    </constraints>
-                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="11 Code Templates" id="h9J-Kx-XfV">
-                                                        <font key="font" metaFont="system"/>
-                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
-                                                </textField>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="wX0-bW-HpH" secondAttribute="bottom" constant="15" id="D2L-rk-rgw"/>
-                                                <constraint firstItem="wX0-bW-HpH" firstAttribute="centerX" secondItem="Ahu-cR-hmO" secondAttribute="centerX" id="pp6-Hd-MOP"/>
-                                            </constraints>
-                                        </view>
-                                    </subviews>
-                                    <color key="backgroundColor" red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="JXp-HE-9wq">
-                                    <rect key="frame" x="-100" y="-100" width="175" height="15"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="5v7-vf-fSo">
-                                    <rect key="frame" x="175" y="0.0" width="15" height="300"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </scroller>
-                            </scrollView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="XWB-fc-jhZ" secondAttribute="trailing" id="1ny-P3-Ikk"/>
-                            <constraint firstItem="pgq-7W-2wD" firstAttribute="top" secondItem="XWB-fc-jhZ" secondAttribute="top" id="9Nr-0a-j9P"/>
-                            <constraint firstItem="pgq-7W-2wD" firstAttribute="leading" secondItem="XNx-9a-w2a" secondAttribute="leading" id="AkC-v9-tsb"/>
-                            <constraint firstItem="XWB-fc-jhZ" firstAttribute="leading" secondItem="XNx-9a-w2a" secondAttribute="leading" constant="190" id="CGu-mN-UWk"/>
-                            <constraint firstAttribute="bottom" secondItem="XWB-fc-jhZ" secondAttribute="bottom" id="RWG-C0-SM2"/>
-                            <constraint firstItem="XWB-fc-jhZ" firstAttribute="top" secondItem="XNx-9a-w2a" secondAttribute="top" id="ZnG-Zd-xi3"/>
-                            <constraint firstItem="XWB-fc-jhZ" firstAttribute="leading" secondItem="pgq-7W-2wD" secondAttribute="trailing" id="ccc-n1-eUr"/>
-                            <constraint firstItem="pgq-7W-2wD" firstAttribute="bottom" secondItem="XWB-fc-jhZ" secondAttribute="bottom" id="jgE-Ey-tqb"/>
-                        </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="name" value="for statement testtttt"/>
-                            <userDefinedRuntimeAttribute type="string" keyPath="code" value="for(int i = 1; i &lt;= 100; i ++)"/>
-                        </userDefinedRuntimeAttributes>
-                    </view>
-                    <connections>
-                        <outlet property="ctview" destination="XWB-fc-jhZ" id="auF-FD-kHi"/>
-                        <outlet property="scrollView" destination="pgq-7W-2wD" id="JFc-1H-38k"/>
-                    </connections>
-                </viewController>
-                <customObject id="5Ka-wZ-fP5" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="854" y="1000"/>
-        </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="4cy-HO-FLD"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="DuplicateFile" width="560" height="575"/>
         <image name="NSAddTemplate" width="11" height="11"/>
-        <image name="NSRightFacingTriangleTemplate" width="9" height="12"/>
         <image name="NSTouchBarAddTemplate" width="14" height="30"/>
         <image name="NSTouchBarFolderTemplate" width="22" height="30"/>
         <image name="NSTouchBarGoDownTemplate" width="16" height="30"/>

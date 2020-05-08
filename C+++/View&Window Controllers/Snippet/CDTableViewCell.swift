@@ -10,7 +10,7 @@ import Cocoa
 
 class CDTableViewCell: NSView, CDTableViewCellInfoViewControllerDelegate {
     
-    private let width: CGFloat = 201.0
+    private let width: CGFloat = 210.0 // More than the width of the table view.
     
     var title: String!
     var code: String!
@@ -19,7 +19,15 @@ class CDTableViewCell: NSView, CDTableViewCellInfoViewControllerDelegate {
     var titleLabel: NSButton!
     var popover: NSPopover!
     
-    init(title: String, image: NSImage, code: String) {
+    override func encode(with coder: NSCoder) {
+        
+        coder.encode(title, forKey: "title")
+        coder.encode(code, forKey: "code")
+        coder.encode(image, forKey: "image")
+        
+    }
+    
+    init(title: String?, image: NSImage?, code: String?) {
         
         super.init(frame: NSRect(x: 0, y: 0, width: width, height: 45))
         self.title = title
@@ -29,10 +37,14 @@ class CDTableViewCell: NSView, CDTableViewCellInfoViewControllerDelegate {
         
     }
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        self.title = ""
-        self.code = ""
+    required convenience init?(coder: NSCoder) {
+        
+        let title = coder.decodeObject(forKey: "title") as? String
+        let code = coder.decodeObject(forKey: "code") as? String
+        let image = coder.decodeObject(forKey: "image") as? NSImage
+        
+        self.init(title: title, image: image, code: code)
+        
     }
     
     private func setup() {

@@ -17,6 +17,7 @@
 - Remove the show line number feature temporarily (Will be fixed soon)
 - Code syntax highlighting improvement
 - Big UI Change
+- Add "Code Snippets"
 - You need't input the file path in the text box. You just need to click "Compile and Run" to compile your source file.
 
 ### 2020.4 Version 1.1.0 (204110)

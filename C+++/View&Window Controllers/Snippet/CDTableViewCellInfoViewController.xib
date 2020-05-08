@@ -70,15 +70,18 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sFI-0I-EwQ">
-                    <rect key="frame" x="192" y="7" width="89" height="32"/>
+                    <rect key="frame" x="204" y="7" width="89" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="push" title="Remove" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="nZy-dL-d2V">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="removeItem:" target="-2" id="qub-ge-IlG"/>
+                    </connections>
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nkU-dH-6NV">
-                    <rect key="frame" x="11" y="236" width="30" height="30"/>
+                    <rect key="frame" x="1" y="237" width="40" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Code" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="R6w-Rh-sJs">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -93,6 +96,6 @@
         </customView>
     </objects>
     <resources>
-        <image name="Code" width="15" height="15"/>
+        <image name="Code" width="20" height="15"/>
     </resources>
 </document>

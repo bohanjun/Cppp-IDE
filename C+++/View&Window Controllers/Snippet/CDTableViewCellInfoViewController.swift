@@ -39,6 +39,7 @@ class CDTableViewCellInfoViewController: NSViewController {
     var closeDelegate: CDTableViewCellInfoViewControllerDelegate!
     /// The CDTextView.
     var addToCodeDelegate: CDTableViewCellInfoViewControllerDelegate!
+    var isEditable: Bool = false
     
     @IBAction func addToCode(_ sender: Any) {
         
@@ -63,6 +64,10 @@ class CDTableViewCellInfoViewController: NSViewController {
     
     @IBAction func ChangeImage(_ sender: NSButton) {
         
+        if !isEditable {
+            return
+        }
+        
         imageNameIndex += 1
         imageNameIndex %= 5
         self.imageView.image = NSImage(named: imageNames[imageNameIndex])!
@@ -74,7 +79,7 @@ class CDTableViewCellInfoViewController: NSViewController {
     - parameter title: The title.
     - parameter image: The image.
     - parameter code: The code.
-    - parameter mode: True when Add Mode and False when Normal Mode.
+    - parameter mode: Whether it is editable.
     - returns: none
     */
     func setup(title: String, image: NSImage, code: String, mode: Bool) {
@@ -83,12 +88,12 @@ class CDTableViewCellInfoViewController: NSViewController {
         self.titleLabel.stringValue = title
         self.textView.string = code
         self.imageView.image = image
+        self.isEditable = mode
         
         if #available(OSX 10.14, *) {
             self.view.appearance = darkAqua
-            self.view.window?.appearance = darkAqua
             self.view.wantsLayer = true
-            self.view.layer?.backgroundColor = NSColor.darkGray.cgColor
+            self.view.layer?.backgroundColor = NSColor(srgbRed: 0.2, green: 0.2, blue: 0.2, alpha: 1.0).cgColor
             self.textView.highlightr?.setTheme(to: "Agate")
         } else {
             self.view.appearance = aqua
@@ -96,10 +101,11 @@ class CDTableViewCellInfoViewController: NSViewController {
         }
         
         self.textView.didChangeText()
+        self.textView.isEditable = isEditable
         self.removeButton.target = self
         self.removeButton.action = #selector(removeItem)
         
-        if mode == true {
+        if self.isEditable == true {
             
             self.titleLabel.isEditable = true
             self.addToCodeButton.isHidden = true

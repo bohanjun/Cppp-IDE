@@ -123,22 +123,7 @@
 		18B3C7942428378E00F4CA14 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3C7932428378E00F4CA14 /* WindowController.swift */; };
 		18E7291E244E6F91000317D7 /* GutterTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E7291D244E6F91000317D7 /* GutterTextView.swift */; };
 		18E72920244E756E000317D7 /* CDScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E7291F244E756E000317D7 /* CDScrollView.swift */; };
-		18F0D7A1242A55830078E2B9 /* CTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F0D7A0242A55830078E2B9 /* CTView.swift */; };
-		18F0D7A4242AEDAC0078E2B9 /* CTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F0D7A3242AEDAC0078E2B9 /* CTViewController.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		18E9E768242C6F1400D8A258 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		180480A824474A0700CD0A4D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -261,8 +246,6 @@
 		18B3C7932428378E00F4CA14 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		18E7291D244E6F91000317D7 /* GutterTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GutterTextView.swift; sourceTree = "<group>"; };
 		18E7291F244E756E000317D7 /* CDScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDScrollView.swift; sourceTree = "<group>"; };
-		18F0D7A0242A55830078E2B9 /* CTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTView.swift; sourceTree = "<group>"; };
-		18F0D7A3242AEDAC0078E2B9 /* CTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,7 +289,6 @@
 				18E7291F244E756E000317D7 /* CDScrollView.swift */,
 				1868EBD6244AF934005467B2 /* CDTextViewDelegate.swift */,
 				18A41AA0242C752C00AFC422 /* Highlight */,
-				18F0D7A2242A558A0078E2B9 /* Code Template */,
 			);
 			path = Edit;
 			sourceTree = "<group>";
@@ -491,15 +473,6 @@
 			path = Document;
 			sourceTree = "<group>";
 		};
-		18F0D7A2242A558A0078E2B9 /* Code Template */ = {
-			isa = PBXGroup;
-			children = (
-				18F0D7A3242AEDAC0078E2B9 /* CTViewController.swift */,
-				18F0D7A0242A55830078E2B9 /* CTView.swift */,
-			);
-			path = "Code Template";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -510,7 +483,6 @@
 				18B3C77924282C1F00F4CA14 /* Sources */,
 				18B3C77A24282C1F00F4CA14 /* Frameworks */,
 				18B3C77B24282C1F00F4CA14 /* Resources */,
-				18E9E768242C6F1400D8A258 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -662,7 +634,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18F0D7A4242AEDAC0078E2B9 /* CTViewController.swift in Sources */,
 				1868EBD7244AF934005467B2 /* CDTextViewDelegate.swift in Sources */,
 				18B3C78224282C1F00F4CA14 /* ViewController.swift in Sources */,
 				1868EBD5244981C2005467B2 /* CompileSettings.swift in Sources */,
@@ -680,7 +651,6 @@
 				18B1857024638B2A00B579AD /* CDTableViewCell.swift in Sources */,
 				18B1856E246387F100B579AD /* CDTableView.swift in Sources */,
 				18B3C78024282C1F00F4CA14 /* AppDelegate.swift in Sources */,
-				18F0D7A1242A55830078E2B9 /* CTView.swift in Sources */,
 				18B1856C2460366100B579AD /* DefaultCode.swift in Sources */,
 				18B3C78424282C1F00F4CA14 /* Document.swift in Sources */,
 				18B3C790242836A500F4CA14 /* Content.swift in Sources */,
@@ -816,6 +786,10 @@
 				CURRENT_PROJECT_VERSION = 205200;
 				DEVELOPMENT_TEAM = XG7269D873;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "C+++/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -840,6 +814,10 @@
 				CURRENT_PROJECT_VERSION = 205200;
 				DEVELOPMENT_TEAM = XG7269D873;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "C+++/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
