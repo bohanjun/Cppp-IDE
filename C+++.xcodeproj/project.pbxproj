@@ -291,10 +291,7 @@
 				18541B172445AB35000EB4CB /* Settings */,
 				18B3C78124282C1F00F4CA14 /* ViewController.swift */,
 				18B3C791242836F900F4CA14 /* Main.storyboard */,
-				18B1856D246387F100B579AD /* CDTableView.swift */,
-				18B1856F24638B2A00B579AD /* CDTableViewCell.swift */,
-				18B185712463B32400B579AD /* CDTableViewCellInfoViewController.swift */,
-				18B185722463B32400B579AD /* CDTableViewCellInfoViewController.xib */,
+				18B185752464EE9200B579AD /* Snippet */,
 				183BF3C824288043007AF6AC /* Edit */,
 				183BF3C624287FFE007AF6AC /* Compile */,
 			);
@@ -442,6 +439,17 @@
 				18A41AF9242C765400AFC422 /* zenburn.min.css */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		18B185752464EE9200B579AD /* Snippet */ = {
+			isa = PBXGroup;
+			children = (
+				18B1856D246387F100B579AD /* CDTableView.swift */,
+				18B1856F24638B2A00B579AD /* CDTableViewCell.swift */,
+				18B185712463B32400B579AD /* CDTableViewCellInfoViewController.swift */,
+				18B185722463B32400B579AD /* CDTableViewCellInfoViewController.xib */,
+			);
+			path = Snippet;
 			sourceTree = "<group>";
 		};
 		18B3C75B24272D9F00F4CA14 = {

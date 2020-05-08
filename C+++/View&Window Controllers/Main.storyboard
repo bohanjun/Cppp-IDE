@@ -1084,7 +1084,7 @@ Gw
                                 </constraints>
                             </customView>
                             <textField identifier="Fake Background" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0HT-on-mcG">
-                                <rect key="frame" x="258" y="709" width="569" height="12"/>
+                                <rect key="frame" x="219" y="709" width="608" height="12"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="12" id="MIv-0g-wUK"/>
                                 </constraints>
@@ -1523,7 +1523,7 @@ Gw
                                 <rect key="frame" x="0.0" y="0.0" width="219" height="720"/>
                                 <subviews>
                                     <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="f1e-Y9-YD9">
-                                        <rect key="frame" x="31" y="681" width="159" height="20"/>
+                                        <rect key="frame" x="31" y="681" width="158" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="156" id="UqR-Nh-war"/>
                                         </constraints>
@@ -1538,9 +1538,9 @@ Gw
                                             <action selector="ValueChanged:" target="5gI-5U-AMq" id="ebi-8H-KRJ"/>
                                         </connections>
                                     </segmentedControl>
-                                    <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUE-vJ-YOp">
+                                    <scrollView hidden="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUE-vJ-YOp">
                                         <rect key="frame" x="0.0" y="20" width="219" height="654"/>
-                                        <clipView key="contentView" drawsBackground="NO" id="eMv-9j-k9F">
+                                        <clipView key="contentView" id="eMv-9j-k9F">
                                             <rect key="frame" x="0.0" y="0.0" width="219" height="654"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -1565,6 +1565,7 @@ Gw
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" name="BlackAndWhite"/>
                                         </clipView>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="219" id="fpO-Yw-W42"/>
@@ -1578,7 +1579,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                     </scrollView>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="r91-ZE-hUd">
+                                    <button hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="r91-ZE-hUd">
                                         <rect key="frame" x="184" y="1" width="20" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="FOt-xj-pTG"/>
@@ -1588,6 +1589,9 @@ Gw
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="addItem:" target="5gI-5U-AMq" id="VCC-r8-OSJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -1653,7 +1657,7 @@ Gw
                             <constraint firstItem="yLp-eY-fSk" firstAttribute="top" secondItem="0HT-on-mcG" secondAttribute="bottom" id="Vzv-Ay-jyX"/>
                             <constraint firstAttribute="bottom" secondItem="qkV-Pw-MXt" secondAttribute="bottom" id="Y1u-cV-rVe"/>
                             <constraint firstItem="qkV-Pw-MXt" firstAttribute="leading" secondItem="RCh-2s-VX0" secondAttribute="trailing" id="YME-rU-R5v"/>
-                            <constraint firstItem="0HT-on-mcG" firstAttribute="centerX" secondItem="yLp-eY-fSk" secondAttribute="centerX" id="fTo-BQ-SfA"/>
+                            <constraint firstItem="0HT-on-mcG" firstAttribute="centerX" secondItem="yLp-eY-fSk" secondAttribute="centerX" constant="-19.5" id="fTo-BQ-SfA"/>
                             <constraint firstItem="RCh-2s-VX0" firstAttribute="leading" secondItem="Dip-ez-JU8" secondAttribute="trailing" id="mLs-zZ-py9"/>
                             <constraint firstItem="Dip-ez-JU8" firstAttribute="leading" secondItem="ERx-hH-rdd" secondAttribute="leading" id="odh-hD-POo"/>
                             <constraint firstAttribute="trailing" secondItem="yLp-eY-fSk" secondAttribute="trailing" constant="253" id="ojl-bk-NGE"/>
@@ -1674,6 +1678,7 @@ Gw
                         <outlet property="FakeBackgroundAddition" destination="0HT-on-mcG" id="1xu-mn-zwJ"/>
                         <outlet property="PathControl" destination="Fh1-ZV-B2L" id="De9-Vs-V5G"/>
                         <outlet property="RightConstraint" destination="ojl-bk-NGE" id="YpT-od-MgV"/>
+                        <outlet property="TableView" destination="dSw-zn-573" id="2ps-Un-Wzx"/>
                         <outlet property="TextView" destination="E0u-iA-KeT" id="B0O-yd-iHk"/>
                         <outlet property="TextView_ScrollView" destination="yLp-eY-fSk" id="2Wl-e7-HUx"/>
                         <outlet property="charactersLabel" destination="VGX-he-xwO" id="jmZ-4Z-CPF"/>
@@ -1923,6 +1928,9 @@ Gw
         <image name="Switch_50" width="25" height="25"/>
         <namedColor name="BackgroundColor">
             <color red="0.9660000205039978" green="0.96899998188018799" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="BlackAndWhite">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

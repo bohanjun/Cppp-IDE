@@ -216,7 +216,9 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
 
 
 // MARK: - Segmented Control
+    
     @IBOutlet weak var CDTableView_ScrollView: NSScrollView!
+    @IBOutlet weak var TableView: CDTableView!
     @IBOutlet weak var AddButton: NSButton!
     
     @IBAction func ValueChanged(_ sender: NSSegmentedControl) {
@@ -237,10 +239,29 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
         
     }
     
-// MARK: - CDTextViewCellInfoViewControllerDelegate
+// MARK: - CDTextViewCellInfoViewController
+    
+    var popover: NSPopover!
+    
+    @IBAction func addItem(_ sender: NSButton) {
+        
+        let vc = CDTableViewCellInfoViewController()
+        vc.setup(title: "Edit your title", image: NSImage(named: "Code")!, code: "Edit your code here.\nYou can also click the image to\n change the color of it.", mode: true)
+        vc.closeDelegate = self
+        vc.delegate = self.TableView
+        popover = NSPopover()
+        popover.behavior = .transient
+        popover.contentViewController = vc
+        popover.show(relativeTo: sender.bounds, of: sender, preferredEdge: .maxY)
+        
+    }
     
     func didAddToCode(code: String) {
         self.TextView.insertText(code, replacementRange: self.TextView.selectedRange)
+    }
+    
+    func willClose() {
+        popover.close()
     }
     
     

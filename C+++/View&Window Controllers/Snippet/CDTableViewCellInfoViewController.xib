@@ -8,6 +8,9 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="CDTableViewCellInfoViewController" customModule="C___" customModuleProvider="target">
             <connections>
+                <outlet property="addToCodeButton" destination="MlQ-AU-NIG" id="jSi-EN-BTR"/>
+                <outlet property="imageView" destination="nkU-dH-6NV" id="Cod-ol-F5e"/>
+                <outlet property="removeButton" destination="sFI-0I-EwQ" id="KOM-hc-1pE"/>
                 <outlet property="textView" destination="non-4j-3VK" id="p5g-ii-94t"/>
                 <outlet property="titleLabel" destination="vfl-J8-3TD" id="wuw-Sv-BbC"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
@@ -20,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vfl-J8-3TD">
-                    <rect key="frame" x="47" y="237" width="242" height="26"/>
+                    <rect key="frame" x="47" y="239" width="242" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" title="Title" id="gKZ-Kv-ZO4">
                         <font key="font" metaFont="systemBold" size="22"/>
@@ -73,9 +76,6 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
-                    <connections>
-                        <action selector="removeItem:" target="-2" id="qub-ge-IlG"/>
-                    </connections>
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nkU-dH-6NV">
                     <rect key="frame" x="11" y="236" width="30" height="30"/>
@@ -84,6 +84,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="ChangeImage:" target="-2" id="XyA-gs-50x"/>
+                    </connections>
                 </button>
             </subviews>
             <point key="canvasLocation" x="48" y="157"/>

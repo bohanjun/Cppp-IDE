@@ -14,16 +14,17 @@ class CDTableViewCell: NSView, CDTableViewCellInfoViewControllerDelegate {
     
     var title: String!
     var code: String!
+    var image: NSImage!
     
     var titleLabel: NSButton!
     var popover: NSPopover!
     
-    init(title: String, code: String) {
+    init(title: String, image: NSImage, code: String) {
         
         super.init(frame: NSRect(x: 0, y: 0, width: width, height: 45))
         self.title = title
         self.code = code
-        
+        self.image = image
         setup()
         
     }
@@ -42,12 +43,18 @@ class CDTableViewCell: NSView, CDTableViewCellInfoViewControllerDelegate {
         self.titleLabel.isBordered = true
         self.titleLabel.target = self
         self.titleLabel.title = "  " + self.title
-        self.titleLabel.bezelStyle = .shadowlessSquare
+        self.titleLabel.bezelStyle = .smallSquare
         self.titleLabel.imagePosition = .imageLeft
         self.titleLabel.imageScaling = .scaleNone
         self.titleLabel.alignment = .left
-        self.titleLabel.image = NSImage(named: "Code")
+        self.titleLabel.image = image
         self.addSubview(titleLabel)
+        
+    }
+    
+    @objc func didSetColor(image: NSImage) {
+        
+        self.titleLabel.image = image
         
     }
     
@@ -55,17 +62,9 @@ class CDTableViewCell: NSView, CDTableViewCellInfoViewControllerDelegate {
         
         popover = NSPopover()
         let vc = CDTableViewCellInfoViewController()
-        vc.setup(title: self.title, code: self.code)
+        vc.setup(title: self.title, image: self.titleLabel.image!, code: self.code, mode: false)
         vc.delegate = (self.superview) as! CDTableView
         vc.closeDelegate = self
-        if #available(OSX 10.14, *) {
-            vc.view.appearance = darkAqua
-            vc.textView.highlightr?.setTheme(to: "Agate")
-        } else {
-            vc.view.appearance = aqua
-            vc.textView.highlightr?.setTheme(to: "Xcode")
-        }
-        vc.textView.didChangeText()
         vc.addToCodeDelegate = (((self.superview) as! CDTableView).superview?.superview?.window?.contentViewController) as! ViewController
         popover.contentViewController = vc
         popover.behavior = .transient

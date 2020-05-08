@@ -25,6 +25,13 @@ class CDTableView: NSView, CDTableViewCellInfoViewControllerDelegate {
         "More...": "Press the \"+\" button below \nand add your own code snippets."
     ]
     
+    @objc func didAddItem(title: String, image: NSImage, code: String) {
+        
+        let cell = CDTableViewCell(title: title, image: image, code: code)
+        self.append(cell: cell)
+        
+    }
+    
     @objc func didRemoveItem(senderTitle: String) {
         
         for (index, cell) in self.cells.enumerated() {
@@ -52,7 +59,7 @@ class CDTableView: NSView, CDTableViewCellInfoViewControllerDelegate {
         
         for (name, code) in Code {
 
-            self.append(cell: CDTableViewCell(title: name, code: code))
+            self.append(cell: CDTableViewCell(title: name, image: NSImage(named: "Code")!, code: code))
             
         }
         
@@ -90,18 +97,10 @@ class CDTableView: NSView, CDTableViewCellInfoViewControllerDelegate {
             cell.titleLabel.frame.origin = NSPoint(x: 0, y: y)
             cell.titleLabel.bounds.origin = NSPoint(x: 0, y: y)
             self.addSubview(cell)
-            y += cell.bounds.height - 1;
-            print(cell.bounds)
+            y += cell.bounds.height - 3
             
         }
         
-        let height: CGFloat = CGFloat(self.cells.count) * 44.0 + 50.0
-        print(height)
-        // self.bounds.size.height = height
-        // self.frame.size.height = height
-        // self.superview?.superview?.bounds.size.height = height
-        // self.bounds.size = NSSize(width: self.bounds.width, height: height)
-        // self.superview?.superview?.bounds.size = NSSize(width: self.bounds.width, height: height)
     }
     
 }
