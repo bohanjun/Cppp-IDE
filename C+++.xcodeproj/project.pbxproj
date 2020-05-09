@@ -291,7 +291,7 @@
 				18E7291D244E6F91000317D7 /* GutterTextView.swift */,
 				18E7291F244E756E000317D7 /* CDScrollView.swift */,
 				1868EBD6244AF934005467B2 /* CDTextViewDelegate.swift */,
-				18B1857E2465AB2E00B579AD /* CDParser.swift */,
+				18B185802466D9B100B579AD /* Parser */,
 				18A41AA0242C752C00AFC422 /* Highlight */,
 			);
 			path = Edit;
@@ -436,6 +436,14 @@
 				18B185722463B32400B579AD /* CDTableViewCellInfoViewController.xib */,
 			);
 			path = Snippet;
+			sourceTree = "<group>";
+		};
+		18B185802466D9B100B579AD /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				18B1857E2465AB2E00B579AD /* CDParser.swift */,
+			);
+			path = Parser;
 			sourceTree = "<group>";
 		};
 		18B3C75B24272D9F00F4CA14 = {
