@@ -90,6 +90,8 @@ class CDTableView: NSView, CDTableViewCellInfoViewControllerDelegate {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
+        self.autoresizesSubviews = false
+        
         if let savedSnippets = loadSnippets() {
             
             cells += savedSnippets
@@ -141,8 +143,14 @@ class CDTableView: NSView, CDTableViewCellInfoViewControllerDelegate {
             cell.titleLabel.bounds.origin = NSPoint(x: 0, y: y)
             self.addSubview(cell)
             y += cell.bounds.height - 3
+            self.bounds.size.height = y + 50
+            // self.frame.size.height = y + 50
             
         }
+        if cells.count == 0 {
+            return
+        }
+        print(y, self.bounds, self.frame, self.cells[0].frame.height)
         
     }
     

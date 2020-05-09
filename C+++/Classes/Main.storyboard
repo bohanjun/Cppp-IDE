@@ -1524,25 +1524,9 @@ Gw
                                             <rect key="frame" x="0.0" y="0.0" width="219" height="654"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <view id="nyL-Vp-iY2">
+                                                <view id="nyL-Vp-iY2" customClass="CDTableView" customModule="C___" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="201" height="654"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                    <subviews>
-                                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="dSw-zn-573" customClass="CDTableView" customModule="C___" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="201" height="654"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="201" id="Zbj-5J-HSi"/>
-                                                            </constraints>
-                                                        </customView>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="dSw-zn-573" firstAttribute="top" secondItem="nyL-Vp-iY2" secondAttribute="top" id="BLL-8O-vI6"/>
-                                                        <constraint firstAttribute="trailing" secondItem="dSw-zn-573" secondAttribute="trailing" id="Npq-E0-zvv"/>
-                                                        <constraint firstItem="dSw-zn-573" firstAttribute="leading" secondItem="nyL-Vp-iY2" secondAttribute="leading" id="OU6-nn-IXk"/>
-                                                        <constraint firstItem="dSw-zn-573" firstAttribute="leading" secondItem="nyL-Vp-iY2" secondAttribute="leading" id="OhE-nE-ozR"/>
-                                                        <constraint firstAttribute="bottom" secondItem="dSw-zn-573" secondAttribute="bottom" id="Y8A-4G-0bx"/>
-                                                        <constraint firstAttribute="bottom" secondItem="dSw-zn-573" secondAttribute="bottom" id="Ymi-x5-3RF"/>
-                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" name="BlackAndWhite"/>
@@ -1658,7 +1642,7 @@ Gw
                         <outlet property="FakeBackgroundAddition" destination="0HT-on-mcG" id="1xu-mn-zwJ"/>
                         <outlet property="PathControl" destination="Fh1-ZV-B2L" id="De9-Vs-V5G"/>
                         <outlet property="RightConstraint" destination="ojl-bk-NGE" id="YpT-od-MgV"/>
-                        <outlet property="TableView" destination="dSw-zn-573" id="2ps-Un-Wzx"/>
+                        <outlet property="TableView" destination="nyL-Vp-iY2" id="XKV-8O-Puw"/>
                         <outlet property="TextView" destination="E0u-iA-KeT" id="B0O-yd-iHk"/>
                         <outlet property="TextView_ScrollView" destination="yLp-eY-fSk" id="2Wl-e7-HUx"/>
                         <outlet property="charactersLabel" destination="VGX-he-xwO" id="jmZ-4Z-CPF"/>

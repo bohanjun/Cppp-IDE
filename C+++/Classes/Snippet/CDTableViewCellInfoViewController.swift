@@ -50,15 +50,15 @@ class CDTableViewCellInfoViewController: NSViewController {
     
     @objc func removeItem() {
         
-        self.delegate.didRemoveItem!(senderTitle: self.titleLabel.stringValue)
+        self.delegate?.didRemoveItem!(senderTitle: self.titleLabel.stringValue)
         self.closeDelegate.willClose?()
         
     }
     
     @objc func addItem() {
         
-        self.delegate.didAddItem!(title: self.titleLabel.stringValue, image: self.imageView.image!, code: self.textView.string)
-        self.closeDelegate.willClose?()
+        self.delegate?.didAddItem!(title: self.titleLabel.stringValue, image: self.imageView.image!, code: self.textView.string)
+        self.closeDelegate?.willClose?()
         
     }
     

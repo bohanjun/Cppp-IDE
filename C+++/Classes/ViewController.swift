@@ -64,6 +64,10 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let code = "using namespace std;\nint main(){}"
+        let parser = CDParser(code: code)
+        parser.getToken()
+        
         self.TextView.codeTextViewDelegate = self
         self.TextView.gutterDelegate = self.gutterTextView
         self.TextView.scrollView = self.TextView_ScrollView
