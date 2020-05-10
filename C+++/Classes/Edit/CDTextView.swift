@@ -11,9 +11,7 @@ import Cocoa
 
 let completion = [
     "(" : ")",
-    "[" : "]",
-    "\"" : "\"",
-    "\'" : "\'"
+    "[" : "]"
 ]
 
 
@@ -117,6 +115,42 @@ class CDTextView: NSTextView {
         
     }
     
+    override func completions(forPartialWordRange charRange: NSRange, indexOfSelectedItem index: UnsafeMutablePointer<Int>) -> [String]? {
+        
+        func compare(_ a: String, _ b: String) -> Int {
+            var cnt: Int = 0
+            if a.count > b.count {
+                return 0
+            } else {
+                for (index, c) in Array(a).enumerated() {
+                    if Array(b)[index] == c {
+                        cnt += 1
+                    }
+                }
+            }
+            return cnt
+        }
+        
+        var res = [String]()
+        let string = (self.string as NSString).substring(with: charRange)
+        print("word = \(string) ")
+        let parser = CDParser(code: self.string)
+        let parserRes = parser.getIdentifiers()
+        for i in parserRes {
+            if compare(string, i) == string.count {
+                res.append(i)
+            }
+        }
+        return res
+        
+    }
+    
+    override func complete(_ sender: Any?) {
+        
+        super.complete(sender)
+        
+    }
+    
     
     // MARK: - init(coder:)
     required init?(coder: NSCoder) {
@@ -138,10 +172,6 @@ class CDTextView: NSTextView {
         self.highlightr!.setTheme(to: config.LightThemeName)
         self.highlightr!.theme.setCodeFont(NSFont(name: config.FontName, size: CGFloat(config.FontSize))!)
         
-    }
-    
-    init(frame: NSRect, textContainer: NSTextContainer) {
-        super.init(frame: frame, textContainer: textContainer)
     }
     
 }

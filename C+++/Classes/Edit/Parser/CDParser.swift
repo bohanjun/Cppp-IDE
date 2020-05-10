@@ -8,6 +8,20 @@
 
 import Cocoa
 
+extension Array where Element: Equatable {
+        
+    func removeDuplicate() -> Array {
+            
+        return self.enumerated().filter { (index,value) -> Bool in
+            return self.firstIndex(of: value) == index
+        }.map { (_, value) in
+                value
+        }
+        
+    }
+    
+}
+
 class CDParser: NSObject {
     
     init(code: String) {
@@ -25,7 +39,7 @@ class CDParser: NSObject {
           "new", "void", "register", "extern", "return", "enum", "inline",
           "try", "short", "continue", "sizeof", "switch", "private", "protected",
           "asm", "catch", "delete", "public", "voltaile", "struct", "using",
-          "namespace", "bool"
+          "namespace", "bool", "main", "true", "false"
     ];
 
     var buffer: String!
@@ -66,9 +80,11 @@ class CDParser: NSObject {
         }
     }
     
-    func getToken() {
+    func getIdentifiers() -> [String] {
         
         let startTime = Date()
+
+        var res: [String] = []
         
         var ch: Character = " "
         var token: String = ""
@@ -193,7 +209,7 @@ class CDParser: NSObject {
                             state = .otherSymbol
                         } else {
                             state = .end
-                            print("Identifier: \(token)")
+                            res.append(token)
                         }
                     
                     
@@ -219,7 +235,9 @@ class CDParser: NSObject {
         }
         
         print("Time: ", -startTime.timeIntervalSinceNow)
-            
+        
+        return res.removeDuplicate()
+        
     }
         
 }
