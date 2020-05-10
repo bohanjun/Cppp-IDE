@@ -56,7 +56,7 @@ class CDTableView: NSView, CDTableViewCellInfoViewControllerDelegate {
         "Bubble Sort": "\nfor (int i = 1; i <= n - 1; i ++) {\n\tfor (int j = 1; j <= n - i; j ++) {\n\t\tif(a[j] < a[j + 1]) swap(a[j], a[j + 1]);\n\t}\n}",
         "Bucket Sort": "\nint a;\nfor (int i = 0; i < arr.count; i ++) {\n\tscanf(\"%d\", &a);\n\tn[a] += 1;\n}\n// output\nfor (int i = 0; i < arr.count; i ++) {\n\tfor(int j = 1; j <= n[i]; j ++)\n\t\tprintf(\"%d \", i);\n}",
         "Binary Search": "\nvoid binarySearch(int x) {\n\tint L = 1, R = MAXN, mid;\n\twhile (L < R) {\n\t\tmid = (L + R) / 2;\n\t\tif (x >= n[mid]) {\n\t\t\tL = mid;\n\t\t} else {\n\t\t\tR = mid - 1;\n\t\t}\n\t}\n\tprintf(\"%d\", n[L]);\n}",
-        "More...": "Press the "+" button below\nand add your own code snippets.\nAfter you add a snippet, it\nwill not be editable.\n\nCode Snippet is a small portion\nof re-usable source code. They\nallow a programmer to avoid\ntyping repetitive code during\nprogramming."
+        "More...": "Press the \"+\" button below\nand add your own code snippets.\nAfter you add a snippet, it\nwill not be editable.\n\nCode Snippet is a small portion\nof re-usable source code. They\nallow a programmer to avoid\ntyping repetitive code during\nprogramming."
     ]
     
     @objc func didAddItem(title: String, image: NSImage, code: String) {
@@ -85,12 +85,19 @@ class CDTableView: NSView, CDTableViewCellInfoViewControllerDelegate {
         return true
     }
     
+    override var autoresizesSubviews: Bool {
+        get {
+            return false
+        }
+        set {
+            self.autoresizesSubviews = newValue
+        }
+    }
+    
     
     // MARK: - init
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
-        self.autoresizesSubviews = false
         
         if let savedSnippets = loadSnippets() {
             
@@ -143,7 +150,7 @@ class CDTableView: NSView, CDTableViewCellInfoViewControllerDelegate {
             cell.titleLabel.bounds.origin = NSPoint(x: 0, y: y)
             self.addSubview(cell)
             y += cell.bounds.height - 3
-            self.bounds.size.height = y + 50
+            // self.bounds.size.height = y
             // self.frame.size.height = y + 50
             
         }
@@ -151,6 +158,16 @@ class CDTableView: NSView, CDTableViewCellInfoViewControllerDelegate {
             return
         }
         print(y, self.bounds, self.frame, self.cells[0].frame.height)
+        
+    }
+    
+    func getSnippets() -> [String] {
+        
+        var res = [String]()
+        for i in self.cells {
+            res.append(i.code!)
+        }
+        return res
         
     }
     
