@@ -33,6 +33,9 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     
 // MARK: - Properties
     
+    
+    var filePaths = [String]()
+    
     /// Whether the window is in dark mode or not.
     /// - If it is true,the appearance is dark aqua.
     /// - if it is false, the appearance is aqua.
@@ -43,6 +46,7 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     
     /// Whether the compile view is hidden.
     var right = true
+    var datas = [CDProjectData]()
     
     @IBOutlet var TextView: CDTextView!
     @IBOutlet var gutterTextView: CDGutterTextView!
@@ -64,6 +68,11 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let dictionary: [NSDictionary] = [
+            ["name" : "Hello",
+            "items" : [["name": "World"], ["name": "hello"]]]
+        ]
+        self.datas = CDProjectData.load(dictionary: dictionary)
         
         self.TextView.codeTextViewDelegate = self
         self.TextView.gutterDelegate = self.gutterTextView
@@ -266,6 +275,8 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     }
     
     
+    
+    
 // MARK: - Document
     
     override var representedObject: Any? {
@@ -284,6 +295,8 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
         return nil
     }
 
+    
+    
     
 // MARK: - NSTextViewDelegate
 

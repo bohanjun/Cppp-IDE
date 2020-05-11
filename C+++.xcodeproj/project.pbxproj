@@ -119,6 +119,8 @@
 		18B1858B2468DC9800B579AD /* CDFileCompiler(Compile).swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B1858A2468DC9800B579AD /* CDFileCompiler(Compile).swift */; };
 		18B1858D2468E44700B579AD /* CDDebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B1858C2468E44700B579AD /* CDDebugViewController.swift */; };
 		18B1858F2468E44E00B579AD /* CDDebugViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B1858E2468E44E00B579AD /* CDDebugViewController.xib */; };
+		18B185912469608B00B579AD /* CpppProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B185902469608B00B579AD /* CpppProject.swift */; };
+		18B185932469872D00B579AD /* CDProjectData + ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B185922469872D00B579AD /* CDProjectData + ViewController.swift */; };
 		18B3C78024282C1F00F4CA14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3C77F24282C1F00F4CA14 /* AppDelegate.swift */; };
 		18B3C78224282C1F00F4CA14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3C78124282C1F00F4CA14 /* ViewController.swift */; };
 		18B3C78424282C1F00F4CA14 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3C78324282C1F00F4CA14 /* Document.swift */; };
@@ -243,6 +245,8 @@
 		18B1858A2468DC9800B579AD /* CDFileCompiler(Compile).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDFileCompiler(Compile).swift"; sourceTree = "<group>"; };
 		18B1858C2468E44700B579AD /* CDDebugViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDDebugViewController.swift; sourceTree = "<group>"; };
 		18B1858E2468E44E00B579AD /* CDDebugViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CDDebugViewController.xib; sourceTree = "<group>"; };
+		18B185902469608B00B579AD /* CpppProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CpppProject.swift; sourceTree = "<group>"; };
+		18B185922469872D00B579AD /* CDProjectData + ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDProjectData + ViewController.swift"; sourceTree = "<group>"; };
 		18B3C77724272DF700F4CA14 /* CDFileCompiler(CompileAndRun).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDFileCompiler(CompileAndRun).swift"; sourceTree = "<group>"; };
 		18B3C77D24282C1F00F4CA14 /* C+++.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "C+++.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B3C77F24282C1F00F4CA14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -285,8 +289,7 @@
 				18E0B01C242C52650062049C /* Document */,
 				18B3C7932428378E00F4CA14 /* WindowController.swift */,
 				18541B172445AB35000EB4CB /* Settings */,
-				18B3C78124282C1F00F4CA14 /* ViewController.swift */,
-				18B3C791242836F900F4CA14 /* Main.storyboard */,
+				18B1859524698AA400B579AD /* ViewController */,
 				18B1858324682FC300B579AD /* Debug */,
 				18B185752464EE9200B579AD /* Snippet */,
 				183BF3C824288043007AF6AC /* Edit */,
@@ -466,6 +469,16 @@
 			path = Debug;
 			sourceTree = "<group>";
 		};
+		18B1859524698AA400B579AD /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				18B3C78124282C1F00F4CA14 /* ViewController.swift */,
+				18B185922469872D00B579AD /* CDProjectData + ViewController.swift */,
+				18B3C791242836F900F4CA14 /* Main.storyboard */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		18B3C75B24272D9F00F4CA14 = {
 			isa = PBXGroup;
 			children = (
@@ -499,6 +512,7 @@
 			isa = PBXGroup;
 			children = (
 				18B3C78324282C1F00F4CA14 /* Document.swift */,
+				18B185902469608B00B579AD /* CpppProject.swift */,
 				18B3C78F242836A500F4CA14 /* Content.swift */,
 			);
 			path = Document;
@@ -683,8 +697,10 @@
 				18541B162445905F000EB4CB /* SettingsViewController.swift in Sources */,
 				18A41AA4242C758B00AFC422 /* Theme.swift in Sources */,
 				18B3C7942428378E00F4CA14 /* WindowController.swift in Sources */,
+				18B185932469872D00B579AD /* CDProjectData + ViewController.swift in Sources */,
 				18B1857024638B2A00B579AD /* CDTableViewCell.swift in Sources */,
 				18B185822468210100B579AD /* CDFileCompiler(Debugger).swift in Sources */,
+				18B185912469608B00B579AD /* CpppProject.swift in Sources */,
 				18B1856E246387F100B579AD /* CDTableView.swift in Sources */,
 				18B3C78024282C1F00F4CA14 /* AppDelegate.swift in Sources */,
 				18B1856C2460366100B579AD /* DefaultCode.swift in Sources */,

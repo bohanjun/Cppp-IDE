@@ -1,14 +1,14 @@
 //
-//  Document.swift
-//  Code Editor
+//  CpppProject.swift
+//  C+++
 //
-//  Created by apple on 2020/3/23.
+//  Created by 23786 on 2020/5/11.
 //  Copyright © 2020 Zhu Yixuan. All rights reserved.
 //
 
 import Cocoa
 
-class Document: NSDocument {
+class CpppProject: NSDocument {
     
     @objc var content = Content(contentString: "")
     var contentViewController: ViewController!
@@ -45,16 +45,28 @@ class Document: NSDocument {
         if let windowController =
             storyboard.instantiateController(
                 withIdentifier: NSStoryboard.SceneIdentifier("Document Window Controller")) as? NSWindowController {
-            addWindowController(windowController)
+            
+            self.addWindowController(windowController)
             
             // Set the view controller's represented object as your document.
             if let contentVC = windowController.contentViewController as? ViewController {
-                contentVC.representedObject = content
-                contentVC.filePaths.append(self.fileURL?.path ?? "")
+                
+                contentVC.representedObject = self.content
+                contentVC.filePaths = self.allFilePaths()
                 contentViewController = contentVC
                 contentVC.TextView.didChangeText()
+                
             }
         }
+    }
+    
+    func allFilePaths() -> [String] {
+        
+        let string = self.content.contentString
+        var lines = string.components(separatedBy: "\n")
+        lines.removeFirst()
+        return lines
+        
     }
     
     
@@ -116,6 +128,7 @@ class Document: NSDocument {
         
     }
     
+    /*
     @IBAction func compileFile(_ sender: Any?) {
         
         if self.isDraft {
@@ -144,6 +157,6 @@ class Document: NSDocument {
         let res = CDFileCompiler.CompileWithoutRunning(fileURL: self.fileURL?.path ?? "")
         self.contentViewController.CompileInfo.string = res
         
-    }
+    }*/
     
 }
