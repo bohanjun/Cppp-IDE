@@ -14,21 +14,22 @@ class CDDebugViewController: NSViewController {
     @IBOutlet weak var textField: NSTextField!
     var task: Process!
     var filePath: String!
+    var inputPipe: Pipe = Pipe()
     
     public func setFilePath(path: String) {
         self.filePath = path
     }
     
-    @IBAction func end(sender: Any?) {
+    @IBAction func end(_ sender: Any?) {
         if task?.isRunning ?? false {
             task.suspend()
         }
         self.dismiss(self)
     }
     
-    @IBAction func start(sender: Any?) {
+    @IBAction func start(_ sender: Any?) {
         
-        let compileRes = CDFileCompiler.CompileWithoutRunning(fileURL: self.filePath)
+        let compileRes = CDFileCompiler.CompileWithoutRunning(fileURL: self.filePath, arguments: "-g")
         if compileRes.contains("Compile Failed") {
             self.textView.string = "Compile Failed. Please check your code carefully and try again.\n\n\(compileRes)"
             return
@@ -40,12 +41,15 @@ class CDDebugViewController: NSViewController {
         
         let pipe = Pipe()
         task.standardOutput = pipe
+        task.standardInput = inputPipe
         let outHandle = pipe.fileHandleForReading
         
         outHandle.readabilityHandler = { pipe in
             
             if let line = String(data: pipe.availableData, encoding: String.Encoding.utf8) {
-                self.textView.insertText(line, replacementRange: self.textView.selectedRange)
+                DispatchQueue.main.async {
+                    self.textView.insertText(line, replacementRange: self.textView.selectedRange)
+                }
             } else {
                 print("Error decoding data: \(pipe.availableData)")
             }
@@ -55,10 +59,56 @@ class CDDebugViewController: NSViewController {
         task.launch()
         
     }
+    
+    func send(message: String) {
+        
+        inputPipe.fileHandleForWriting.write(message.data(using: .utf8)!)
+        
+    }
+    
+    @IBAction func sendMessage(_ sender: Any?) {
+        
+        send(message: textField.stringValue + "\n")
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        self.textView.font = MenloFont(ofSize: 13.0)
+        
     }
+    
+    
+    @IBAction func run(_ sender: Any) {
+        self.textField.stringValue = "run"
+        sendMessage(sender)
+    }
+    
+    @IBAction func next(_ sender: Any) {
+        self.textField.stringValue = "next"
+        sendMessage(sender)
+    }
+    
+    @IBAction func step(_ sender: Any) {
+        self.textField.stringValue = "step"
+        sendMessage(sender)
+    }
+    
+    @IBAction func finish(_ sender: Any) {
+        self.textField.stringValue = "finish"
+        sendMessage(sender)
+    }
+    
+    @IBAction func `continue`(_ sender: Any) {
+        self.textField.stringValue = "continue"
+        sendMessage(sender)
+    }
+    
+    @IBAction func viewVariables(_ sender: Any) {
+        self.textField.stringValue = "frame variable"
+        sendMessage(sender)
+    }
+    
     
 }

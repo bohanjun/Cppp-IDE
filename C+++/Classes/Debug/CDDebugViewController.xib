@@ -75,7 +75,7 @@
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
-                        <action selector="startWithSender:" target="-2" id="BX0-of-DmE"/>
+                        <action selector="start:" target="-2" id="5V5-nW-GJC"/>
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gJz-dP-rqB">
@@ -87,6 +87,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="run:" target="-2" id="ezF-AB-Qmv"/>
+                    </connections>
                 </button>
                 <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iYx-qC-CKo">
                     <rect key="frame" x="119" y="240" width="97" height="31"/>
@@ -97,6 +100,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="next:" target="-2" id="8Bz-i7-HiO"/>
+                    </connections>
                 </button>
                 <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ki8-uU-OkA">
                     <rect key="frame" x="219" y="240" width="97" height="31"/>
@@ -107,6 +113,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="step:" target="-2" id="gCG-F2-Ie2"/>
+                    </connections>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cuk-Ut-Bhs">
                     <rect key="frame" x="574" y="278" width="41" height="17"/>
@@ -114,6 +123,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="smallSystemBold"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="sendMessage:" target="-2" id="Mob-wE-e3c"/>
+                    </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QRv-P3-WnH">
                     <rect key="frame" x="19" y="279" width="142" height="16"/>
@@ -140,6 +152,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="finish:" target="-2" id="yG0-69-fRN"/>
+                    </connections>
                 </button>
                 <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h7B-HN-k6G">
                     <rect key="frame" x="420" y="240" width="97" height="31"/>
@@ -150,6 +165,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="continue:" target="-2" id="B8G-Cj-Shx"/>
+                    </connections>
                 </button>
                 <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vAz-Ch-U2Q">
                     <rect key="frame" x="520" y="240" width="99" height="31"/>
@@ -157,6 +175,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="viewVariables:" target="-2" id="gw5-at-8pc"/>
+                    </connections>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XVS-8Z-MQ1">
                     <rect key="frame" x="119" y="364" width="97" height="37"/>
@@ -169,7 +190,7 @@
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
-                        <action selector="endWithSender:" target="-2" id="Do6-jf-ZoE"/>
+                        <action selector="end:" target="-2" id="tfo-nj-ZEl"/>
                     </connections>
                 </button>
             </subviews>
