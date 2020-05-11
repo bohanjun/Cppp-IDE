@@ -122,7 +122,25 @@ class Document: NSDocument {
             return
         }
         self.save(self)
-        let res = CompileSource(fileURL: self.fileURL?.path ?? "")
+        let res = CDFileCompiler.CompileSource(fileURL: self.fileURL?.path ?? "")
+        self.contentViewController.CompileInfo.string = res
+        
+    }
+    
+    @IBAction func debugFile(_ sender: Any?) {
+        
+        self.contentViewController.presentAsSheet(CDFileCompiler.debugFile(fileURL: self.fileURL?.path ?? ""))
+        
+    }
+    
+    @IBAction func compileWithoutRunning(_ sender: Any?) {
+        
+        if self.isDraft {
+            self.contentViewController.showAlert("You haven't saved the file yet. Please save it and then compile it.", "File not saved")
+            return
+        }
+        self.save(self)
+        let res = CDFileCompiler.CompileWithoutRunning(fileURL: self.fileURL?.path ?? "")
         self.contentViewController.CompileInfo.string = res
         
     }

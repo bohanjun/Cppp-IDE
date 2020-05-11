@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		180480AE2448602700CD0A4D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180480AD2448602700CD0A4D /* Settings.swift */; };
-		183BF3C524287D4C007AF6AC /* Compile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3C77724272DF700F4CA14 /* Compile.swift */; };
+		183BF3C524287D4C007AF6AC /* CDFileCompiler(CompileAndRun).swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3C77724272DF700F4CA14 /* CDFileCompiler(CompileAndRun).swift */; };
 		183BF3CA242906B3007AF6AC /* CDTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183BF3C9242906B3007AF6AC /* CDTextView.swift */; };
 		18541B162445905F000EB4CB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18541B152445905F000EB4CB /* SettingsViewController.swift */; };
 		1868EBD5244981C2005467B2 /* CompileSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1868EBD4244981C2005467B2 /* CompileSettings.swift */; };
@@ -115,6 +115,10 @@
 		18B185732463B32400B579AD /* CDTableViewCellInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B185712463B32400B579AD /* CDTableViewCellInfoViewController.swift */; };
 		18B185742463B32400B579AD /* CDTableViewCellInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B185722463B32400B579AD /* CDTableViewCellInfoViewController.xib */; };
 		18B1857F2465AB2E00B579AD /* CDParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B1857E2465AB2E00B579AD /* CDParser.swift */; };
+		18B185822468210100B579AD /* CDFileCompiler(Debugger).swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B185812468210100B579AD /* CDFileCompiler(Debugger).swift */; };
+		18B1858824682FFB00B579AD /* CDDebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B1858624682FFB00B579AD /* CDDebugViewController.swift */; };
+		18B1858924682FFB00B579AD /* CDDebugViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B1858724682FFB00B579AD /* CDDebugViewController.xib */; };
+		18B1858B2468DC9800B579AD /* CDFileCompiler(Compile).swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B1858A2468DC9800B579AD /* CDFileCompiler(Compile).swift */; };
 		18B3C78024282C1F00F4CA14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3C77F24282C1F00F4CA14 /* AppDelegate.swift */; };
 		18B3C78224282C1F00F4CA14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3C78124282C1F00F4CA14 /* ViewController.swift */; };
 		18B3C78424282C1F00F4CA14 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3C78324282C1F00F4CA14 /* Document.swift */; };
@@ -122,7 +126,7 @@
 		18B3C790242836A500F4CA14 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3C78F242836A500F4CA14 /* Content.swift */; };
 		18B3C792242836F900F4CA14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B3C791242836F900F4CA14 /* Main.storyboard */; };
 		18B3C7942428378E00F4CA14 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3C7932428378E00F4CA14 /* WindowController.swift */; };
-		18E7291E244E6F91000317D7 /* GutterTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E7291D244E6F91000317D7 /* GutterTextView.swift */; };
+		18E7291E244E6F91000317D7 /* CDGutterTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E7291D244E6F91000317D7 /* CDGutterTextView.swift */; };
 		18E72920244E756E000317D7 /* CDScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E7291F244E756E000317D7 /* CDScrollView.swift */; };
 /* End PBXBuildFile section */
 
@@ -235,7 +239,11 @@
 		18B185712463B32400B579AD /* CDTableViewCellInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTableViewCellInfoViewController.swift; sourceTree = "<group>"; };
 		18B185722463B32400B579AD /* CDTableViewCellInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CDTableViewCellInfoViewController.xib; sourceTree = "<group>"; };
 		18B1857E2465AB2E00B579AD /* CDParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDParser.swift; sourceTree = "<group>"; };
-		18B3C77724272DF700F4CA14 /* Compile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compile.swift; sourceTree = "<group>"; };
+		18B185812468210100B579AD /* CDFileCompiler(Debugger).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDFileCompiler(Debugger).swift"; sourceTree = "<group>"; };
+		18B1858624682FFB00B579AD /* CDDebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CDDebugViewController.swift; path = ../../../../CDDebugViewController.swift; sourceTree = "<group>"; };
+		18B1858724682FFB00B579AD /* CDDebugViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CDDebugViewController.xib; path = ../../../../CDDebugViewController.xib; sourceTree = "<group>"; };
+		18B1858A2468DC9800B579AD /* CDFileCompiler(Compile).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDFileCompiler(Compile).swift"; sourceTree = "<group>"; };
+		18B3C77724272DF700F4CA14 /* CDFileCompiler(CompileAndRun).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDFileCompiler(CompileAndRun).swift"; sourceTree = "<group>"; };
 		18B3C77D24282C1F00F4CA14 /* C+++.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "C+++.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B3C77F24282C1F00F4CA14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18B3C78124282C1F00F4CA14 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -246,7 +254,7 @@
 		18B3C78F242836A500F4CA14 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		18B3C791242836F900F4CA14 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		18B3C7932428378E00F4CA14 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
-		18E7291D244E6F91000317D7 /* GutterTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GutterTextView.swift; sourceTree = "<group>"; };
+		18E7291D244E6F91000317D7 /* CDGutterTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDGutterTextView.swift; sourceTree = "<group>"; };
 		18E7291F244E756E000317D7 /* CDScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -264,7 +272,9 @@
 		183BF3C624287FFE007AF6AC /* Compile */ = {
 			isa = PBXGroup;
 			children = (
-				18B3C77724272DF700F4CA14 /* Compile.swift */,
+				18B3C77724272DF700F4CA14 /* CDFileCompiler(CompileAndRun).swift */,
+				18B185812468210100B579AD /* CDFileCompiler(Debugger).swift */,
+				18B1858A2468DC9800B579AD /* CDFileCompiler(Compile).swift */,
 			);
 			path = Compile;
 			sourceTree = "<group>";
@@ -277,6 +287,7 @@
 				18541B172445AB35000EB4CB /* Settings */,
 				18B3C78124282C1F00F4CA14 /* ViewController.swift */,
 				18B3C791242836F900F4CA14 /* Main.storyboard */,
+				18B1858324682FC300B579AD /* Debug */,
 				18B185752464EE9200B579AD /* Snippet */,
 				183BF3C824288043007AF6AC /* Edit */,
 				183BF3C624287FFE007AF6AC /* Compile */,
@@ -288,7 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				183BF3C9242906B3007AF6AC /* CDTextView.swift */,
-				18E7291D244E6F91000317D7 /* GutterTextView.swift */,
+				18E7291D244E6F91000317D7 /* CDGutterTextView.swift */,
 				18E7291F244E756E000317D7 /* CDScrollView.swift */,
 				1868EBD6244AF934005467B2 /* CDTextViewDelegate.swift */,
 				18B185802466D9B100B579AD /* Parser */,
@@ -446,6 +457,15 @@
 			path = Parser;
 			sourceTree = "<group>";
 		};
+		18B1858324682FC300B579AD /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				18B1858624682FFB00B579AD /* CDDebugViewController.swift */,
+				18B1858724682FFB00B579AD /* CDDebugViewController.xib */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
 		18B3C75B24272D9F00F4CA14 = {
 			isa = PBXGroup;
 			children = (
@@ -564,6 +584,7 @@
 				18A41B58242C765500AFC422 /* atom-one-dark.min.css in Resources */,
 				18A41B57242C765500AFC422 /* atelier-plateau-light.min.css in Resources */,
 				18A41B4E242C765500AFC422 /* qtcreator_light.min.css in Resources */,
+				18B1858924682FFB00B579AD /* CDDebugViewController.xib in Resources */,
 				18A41B0C242C765500AFC422 /* atelier-savanna-light.min.css in Resources */,
 				18A41B0E242C765500AFC422 /* kimbie.light.min.css in Resources */,
 				18A41B21242C765500AFC422 /* atelier-dune-light.min.css in Resources */,
@@ -656,18 +677,21 @@
 				18A41AAA242C75DE00AFC422 /* CodeAttributedString.swift in Sources */,
 				183BF3CA242906B3007AF6AC /* CDTextView.swift in Sources */,
 				18A41AA2242C756700AFC422 /* Highlightr.swift in Sources */,
+				18B1858824682FFB00B579AD /* CDDebugViewController.swift in Sources */,
+				18B1858B2468DC9800B579AD /* CDFileCompiler(Compile).swift in Sources */,
 				18A41AA6242C75A600AFC422 /* HTMLUtils.swift in Sources */,
 				18541B162445905F000EB4CB /* SettingsViewController.swift in Sources */,
 				18A41AA4242C758B00AFC422 /* Theme.swift in Sources */,
 				18B3C7942428378E00F4CA14 /* WindowController.swift in Sources */,
 				18B1857024638B2A00B579AD /* CDTableViewCell.swift in Sources */,
+				18B185822468210100B579AD /* CDFileCompiler(Debugger).swift in Sources */,
 				18B1856E246387F100B579AD /* CDTableView.swift in Sources */,
 				18B3C78024282C1F00F4CA14 /* AppDelegate.swift in Sources */,
 				18B1856C2460366100B579AD /* DefaultCode.swift in Sources */,
 				18B3C78424282C1F00F4CA14 /* Document.swift in Sources */,
 				18B3C790242836A500F4CA14 /* Content.swift in Sources */,
-				183BF3C524287D4C007AF6AC /* Compile.swift in Sources */,
-				18E7291E244E6F91000317D7 /* GutterTextView.swift in Sources */,
+				183BF3C524287D4C007AF6AC /* CDFileCompiler(CompileAndRun).swift in Sources */,
+				18E7291E244E6F91000317D7 /* CDGutterTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

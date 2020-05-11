@@ -45,7 +45,7 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     var right = true
     
     @IBOutlet var TextView: CDTextView!
-    @IBOutlet var gutterTextView: GutterTextView!
+    @IBOutlet var gutterTextView: CDGutterTextView!
     @IBOutlet weak var PathControl: NSPathControl!
     
     @IBOutlet weak var BottomConstraint: NSLayoutConstraint!
@@ -63,6 +63,7 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         self.TextView.codeTextViewDelegate = self
         self.TextView.gutterDelegate = self.gutterTextView

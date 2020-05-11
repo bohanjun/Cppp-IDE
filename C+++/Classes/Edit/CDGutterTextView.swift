@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class GutterTextView: NSTextView, CDTextViewDelegate {
+class CDGutterTextView: NSTextView, CDTextViewDelegate {
     
     @objc
     func didChangeText(lines: Int, characters: Int) {
