@@ -38,7 +38,6 @@ class Document: NSDocument {
     
     // MARK: - User Interface
     
-    /// - Tag: makeWindowControllersExample
     override func makeWindowControllers() {
         // Returns the storyboard that contains your document window.
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
@@ -49,10 +48,11 @@ class Document: NSDocument {
             
             // Set the view controller's represented object as your document.
             if let contentVC = windowController.contentViewController as? ViewController {
+                
                 contentVC.representedObject = content
-                contentVC.filePaths.append(self.fileURL?.path ?? "")
                 contentViewController = contentVC
                 contentVC.TextView.didChangeText()
+                
             }
         }
     }
@@ -145,5 +145,13 @@ class Document: NSDocument {
         self.contentViewController.CompileInfo.string = res
         
     }
+    
+    /*override func read(from fileWrapper: FileWrapper, ofType typeName: String) throws {
+        do {
+            try super.read(from: fileWrapper, ofType: typeName)
+        } catch {
+            fatalError("Error")
+        }
+    }*/
     
 }

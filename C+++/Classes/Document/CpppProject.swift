@@ -11,7 +11,7 @@ import Cocoa
 class CpppProject: NSDocument {
     
     @objc var content = Content(contentString: "")
-    var contentViewController: ViewController!
+    var contentViewController: CDProjectViewController!
     
     override init() {
         super.init()
@@ -36,27 +36,59 @@ class CpppProject: NSDocument {
         return ofType == "public.plain-text"
     }
     
+    
+    
     // MARK: - User Interface
     
     /// - Tag: makeWindowControllersExample
     override func makeWindowControllers() {
-        // Returns the storyboard that contains your document window.
-        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
+        
+        let storyboard = NSStoryboard(name: NSStoryboard.Name("Project"), bundle: nil)
         if let windowController =
             storyboard.instantiateController(
-                withIdentifier: NSStoryboard.SceneIdentifier("Document Window Controller")) as? NSWindowController {
+                withIdentifier: NSStoryboard.SceneIdentifier("Project Window Controller")) as? NSWindowController {
             
             self.addWindowController(windowController)
             
             // Set the view controller's represented object as your document.
-            if let contentVC = windowController.contentViewController as? ViewController {
+            if let contentVC = windowController.contentViewController as? CDProjectViewController {
                 
-                contentVC.representedObject = self.content
-                contentVC.filePaths = self.allFilePaths()
+                contentVC.filePaths = self.allFiles
+                contentVC.representedObject = self
+
+                contentVC.tableView.paths = contentVC.filePaths
+                contentVC.tableView.cells = contentVC.tableView.load()
+                contentVC.tableView.setup()
+                contentVC.textField.stringValue = self.compileCommand
+                
                 contentViewController = contentVC
-                contentVC.TextView.didChangeText()
                 
             }
+        }
+    }
+    
+    var compileCommand: String {
+        get {
+            let string = self.content.contentString
+            let lines = string.components(separatedBy: "\n")
+            return lines.first ?? ""
+        }
+        set {
+            let string = newValue + "\n" + allFiles.joined(separator: "\n")
+            self.content.contentString = string
+        }
+    }
+    
+    var allFiles: [String] {
+        get {
+            let string = self.content.contentString
+            var lines = string.components(separatedBy: "\n")
+            lines.removeFirst()
+            return lines
+        }
+        set {
+            let string = compileCommand + "\n" + newValue.joined(separator: "\n")
+            self.content.contentString = string
         }
     }
     

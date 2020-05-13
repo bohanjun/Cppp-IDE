@@ -10,8 +10,6 @@ import Cocoa
 
 class CDTableViewCell: NSView, CDTableViewCellInfoViewControllerDelegate {
     
-    private let width: CGFloat = 210.0 // More than the width of the table view.
-    
     var title: String!
     var code: String!
     var image: NSImage!
@@ -27,13 +25,13 @@ class CDTableViewCell: NSView, CDTableViewCellInfoViewControllerDelegate {
         
     }
     
-    init(title: String?, image: NSImage?, code: String?) {
+    init(title: String?, image: NSImage?, code: String?, width: CGFloat) {
         
         super.init(frame: NSRect(x: 0, y: 0, width: width, height: 45))
         self.title = title
         self.code = code
         self.image = image
-        setup()
+        setup(width: width)
         
     }
     
@@ -43,11 +41,11 @@ class CDTableViewCell: NSView, CDTableViewCellInfoViewControllerDelegate {
         let code = coder.decodeObject(forKey: "code") as? String
         let image = coder.decodeObject(forKey: "image") as? NSImage
         
-        self.init(title: title, image: image, code: code)
+        self.init(title: title, image: image, code: code, width: 210.0)
         
     }
     
-    private func setup() {
+    func setup(width: CGFloat) {
         
         self.titleLabel = NSButton(frame: CGRect(x: 0, y: 0, width: width, height: 45))
         self.titleLabel.action = #selector(showInfo)

@@ -13,7 +13,7 @@ class CDTableView: NSView, CDTableViewCellInfoViewControllerDelegate {
     
     let archievePath = FileManager().urls(for: .libraryDirectory, in: .userDomainMask).first!.appendingPathComponent("C+++").appendingPathComponent("Snippets")
     
-    private func saveSnippets() {
+    func save() {
         
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(cells, toFile:
         archievePath.path)
@@ -26,11 +26,11 @@ class CDTableView: NSView, CDTableViewCellInfoViewControllerDelegate {
     
     
     /// Load sample snippets.
-    private func loadSampleSnippets() {
+    private func loadSample() {
         
-        for (name, code) in Code {
+        for (name, code) in Sample {
 
-            self.append(cell: CDTableViewCell(title: name, image: NSImage(named: "Code")!, code: code))
+            self.append(cell: CDTableViewCell(title: name, image: NSImage(named: "Code")!, code: code, width: 210.0))
             
         }
         
@@ -38,13 +38,13 @@ class CDTableView: NSView, CDTableViewCellInfoViewControllerDelegate {
     
     /// Load the snippets.
     /// - returns: [CDTableViewCell]
-    private func loadSnippets() -> [CDTableViewCell]?  {
+    func load() -> [CDTableViewCell]?  {
         return NSKeyedUnarchiver.unarchiveObject(withFile: archievePath.path) as? [CDTableViewCell]
     }
     
     
     /// Default code snippets.
-    private let Code: KeyValuePairs = [
+    private let Sample: KeyValuePairs = [
         "For Statement": "\nfor (int i = , i <= , i ++ ) {\n\t\n}",
         "If Statement": "\nif () {\n\t\n}",
         "While Statement": "\nwhile () {\n\t\n}",
@@ -61,7 +61,7 @@ class CDTableView: NSView, CDTableViewCellInfoViewControllerDelegate {
     
     @objc func didAddItem(title: String, image: NSImage, code: String) {
         
-        let cell = CDTableViewCell(title: title, image: image, code: code)
+        let cell = CDTableViewCell(title: title, image: image, code: code, width: 210.0)
         self.append(cell: cell)
         
     }
@@ -99,14 +99,14 @@ class CDTableView: NSView, CDTableViewCellInfoViewControllerDelegate {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
-        if let savedSnippets = loadSnippets() {
+        if let savedSnippets = load() {
             
             cells += savedSnippets
             setup()
             
         } else {
             
-            loadSampleSnippets()
+            loadSample()
             
         }
         
@@ -119,7 +119,7 @@ class CDTableView: NSView, CDTableViewCellInfoViewControllerDelegate {
         
         self.cells.append(cell)
         setup()
-        saveSnippets()
+        save()
         
     }
     
@@ -127,14 +127,14 @@ class CDTableView: NSView, CDTableViewCellInfoViewControllerDelegate {
         
         self.cells.remove(at: index)
         setup()
-        saveSnippets()
+        save()
         
     }
     
     
     
     // MARK: - Setup
-    private func setup() {
+    func setup() {
         
         var y: CGFloat = 0
         
@@ -158,16 +158,6 @@ class CDTableView: NSView, CDTableViewCellInfoViewControllerDelegate {
             return
         }
         print(y, self.bounds, self.frame, self.cells[0].frame.height)
-        
-    }
-    
-    func getSnippets() -> [String] {
-        
-        var res = [String]()
-        for i in self.cells {
-            res.append(i.code!)
-        }
-        return res
         
     }
     
