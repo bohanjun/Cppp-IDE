@@ -161,4 +161,14 @@ class CDTableView: NSView, CDTableViewCellInfoViewControllerDelegate {
         
     }
     
+    func getAllTitles() -> [String] {
+        
+        var res = [String]()
+        for i in self.cells {
+            res.append(i.title!)
+        }
+        return res
+        
+    }
+    
 }

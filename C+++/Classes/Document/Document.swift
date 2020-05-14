@@ -123,8 +123,10 @@ class Document: NSDocument {
             return
         }
         self.save(self)
+        self.contentViewController.setStatus(string: "\(self.fileURL?.lastPathComponent ?? "C+++") | Compiling...")
         let res = CDFileCompiler.CompileSource(fileURL: self.fileURL?.path ?? "")
         self.contentViewController.CompileInfo.string = res
+        self.contentViewController.setStatus(string: "\(self.fileURL?.lastPathComponent ?? "C+++") | Compile Finished")
         
     }
     
@@ -141,17 +143,11 @@ class Document: NSDocument {
             return
         }
         self.save(self)
+        self.contentViewController.setStatus(string: "\(self.fileURL?.lastPathComponent ?? "C+++") | Compiling...")
         let res = CDFileCompiler.CompileWithoutRunning(fileURL: self.fileURL?.path ?? "")
         self.contentViewController.CompileInfo.string = res
+        self.contentViewController.setStatus(string: "\(self.fileURL?.lastPathComponent ?? "C+++") | Compile Finished")
         
     }
-    
-    /*override func read(from fileWrapper: FileWrapper, ofType typeName: String) throws {
-        do {
-            try super.read(from: fileWrapper, ofType: typeName)
-        } catch {
-            fatalError("Error")
-        }
-    }*/
     
 }

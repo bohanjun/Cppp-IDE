@@ -27,13 +27,10 @@ class CDProjectTableViewCell: CDTableViewCell {
     override func showInfo() {
         NSDocumentController.shared.openDocument(withContentsOf: URL(fileURLWithPath: self.title), display: true) { (document, opened, error) in
             if let doc = document as? Document {
-                doc.contentViewController.right = false
-                doc.contentViewController.RightConstraint.constant = 0.0
-                doc.contentViewController.bottom = false
-                doc.contentViewController.BottomConstraint.constant = 0.0
+                (doc.contentViewController.view.window?.windowController as? WindowController)?.toggleCI(self)
+                (doc.contentViewController.view.window?.windowController as? WindowController)?.toggleCV(self)
             }
         }
-        return
     }
     
 }

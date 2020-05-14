@@ -507,8 +507,8 @@
 			children = (
 				18B3C77F24282C1F00F4CA14 /* AppDelegate.swift */,
 				183BF3C72428801C007AF6AC /* Classes */,
-				18B3C78524282C2100F4CA14 /* Assets.xcassets */,
 				18B3C78A24282C2100F4CA14 /* Info.plist */,
+				18B3C78524282C2100F4CA14 /* Assets.xcassets */,
 				18B3C78B24282C2100F4CA14 /* Code_Editor.entitlements */,
 			);
 			path = "C+++";

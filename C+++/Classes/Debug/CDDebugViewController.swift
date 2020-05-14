@@ -37,7 +37,7 @@ class CDDebugViewController: NSViewController {
         
         task = Process()
         task.launchPath = "/bin/bash"
-        task.arguments = ["-c", "lldb \((filePath as NSString).deletingPathExtension)"]
+        task.arguments = ["-c", "lldb \"\((filePath as NSString).deletingPathExtension)\""]
         
         let pipe = Pipe()
         task.standardOutput = pipe
@@ -48,7 +48,9 @@ class CDDebugViewController: NSViewController {
             
             if let line = String(data: pipe.availableData, encoding: String.Encoding.utf8) {
                 DispatchQueue.main.async {
+                    self.textView.isEditable = true
                     self.textView.insertText(line, replacementRange: self.textView.selectedRange)
+                    self.textView.isEditable = false
                 }
             } else {
                 print("Error decoding data: \(pipe.availableData)")

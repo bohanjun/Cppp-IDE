@@ -12,6 +12,7 @@ import Cocoa
 
 class WindowController: NSWindowController, NSWindowDelegate {
     
+    @objc dynamic var statusString = "C+++ | Ready"
     
     override func windowDidLoad() {
         super.windowDidLoad()

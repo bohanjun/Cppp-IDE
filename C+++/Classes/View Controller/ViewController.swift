@@ -33,6 +33,9 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     
 // MARK: - Properties
     
+    func setStatus(string: String) {
+        (self.view.window?.windowController as! WindowController).statusString = string
+    }
     
     /// Whether the window is in dark mode or not.
     /// - If it is true,the appearance is dark aqua.
@@ -45,18 +48,16 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     /// Whether the compile view is hidden.
     var right = true
     
+    
     @IBOutlet var TextView: CDTextView!
     @IBOutlet var gutterTextView: CDGutterTextView!
     @IBOutlet weak var PathControl: NSPathControl!
-    
     @IBOutlet weak var BottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var RightConstraint: NSLayoutConstraint!
     @IBOutlet weak var FakeBackgroundAddition: NSTextField!
     @IBOutlet weak var TextView_ScrollView: CDScrollView!
     @IBOutlet weak var linesLabel: NSTextField!
     @IBOutlet weak var charactersLabel: NSTextField!
-    
-    // Compiling
     @IBOutlet var CompileInfo: NSTextView!
     
     

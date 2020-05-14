@@ -466,7 +466,7 @@
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="89" y="664" width="1080" height="720"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
-                        <value key="minSize" type="size" width="600" height="600"/>
+                        <value key="minSize" type="size" width="700" height="600"/>
                         <toolbar key="toolbar" implicitIdentifier="CB018D88-E93D-4CED-B9A7-FD4396751838" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="4Dk-sT-khY">
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="eIb-XZ-6HS"/>
@@ -499,29 +499,43 @@
                                         </connections>
                                     </button>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="24444D75-2D7A-4F55-8CE8-2644E760FAEB" label="Title" paletteLabel="Title" sizingBehavior="auto" id="npZ-BU-ery">
+                                <toolbarItem implicitItemIdentifier="5B0DDB07-F132-4F2C-8C7F-7D59B02C96C7" label="Run" paletteLabel="Run" image="Run" id="yE0-ea-R7e">
                                     <nil key="toolTip"/>
-                                    <textField key="view" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="EDX-Yz-gRx">
-                                        <rect key="frame" x="0.0" y="14" width="35" height="16"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Title" id="470-sP-emE">
-                                            <font key="font" usesAppearanceFont="YES"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
+                                    <size key="minSize" width="38" height="25"/>
+                                    <size key="maxSize" width="38" height="25"/>
+                                    <button key="view" verticalHuggingPriority="750" id="MAA-Lh-mbo">
+                                        <rect key="frame" x="0.0" y="14" width="38" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="Run" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="NIF-O6-Sri">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
                                         <connections>
-                                            <binding destination="jGA-0Y-lOj" name="value" keyPath="window.title" id="UGh-ZU-EY0">
-                                                <dictionary key="options">
-                                                    <bool key="NSContinuouslyUpdatesValue" value="YES"/>
-                                                </dictionary>
-                                            </binding>
+                                            <action selector="compileFile:" target="6f7-a7-6o1" id="7he-Hm-UFi"/>
                                         </connections>
-                                    </textField>
+                                    </button>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="0BF3A7D5-19D8-4E1D-8F08-3AE4A0709FBA" label="Status" paletteLabel="Status" id="vjF-PO-DLw">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="285" height="25"/>
+                                    <size key="maxSize" width="400" height="25"/>
+                                    <button key="view" verticalHuggingPriority="750" id="bEN-fb-f0J">
+                                        <rect key="frame" x="0.0" y="14" width="400" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="roundTextured" title="C+++  |  Ready" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3P9-Nr-dp7">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <binding destination="jGA-0Y-lOj" name="title" keyPath="statusString" id="zZx-GX-vy6"/>
+                                        </connections>
+                                    </button>
                                 </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
+                                <toolbarItem reference="yE0-ea-R7e"/>
                                 <toolbarItem reference="5Eg-DZ-en8"/>
-                                <toolbarItem reference="npZ-BU-ery"/>
+                                <toolbarItem reference="vjF-PO-DLw"/>
                                 <toolbarItem reference="5Eg-DZ-en8"/>
                                 <toolbarItem reference="eBB-1J-Wng"/>
                                 <toolbarItem reference="jqT-Vf-vqj"/>
@@ -556,9 +570,6 @@
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" usesAppearanceFont="YES"/>
                                         </buttonCell>
-                                        <connections>
-                                            <action selector="compileFile:" target="6f7-a7-6o1" id="A6d-ln-yoJ"/>
-                                        </connections>
                                     </button>
                                 </viewController>
                             </touchBarItem>
@@ -1184,7 +1195,7 @@ Gw
                                         </constraints>
                                         <buttonCell key="cell" type="bevel" title="Compile and Run" bezelStyle="regularSquare" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="htQ-oR-Nti">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system" size="15"/>
+                                            <font key="font" metaFont="systemMedium" size="17"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="compileFile:" target="2Tp-Fl-jBw" id="9wR-fT-PPf"/>
@@ -1702,6 +1713,7 @@ Gw
         <image name="NSTouchBarPlayTemplate" width="14" height="30"/>
         <image name="NewFile" width="660" height="660"/>
         <image name="OpenFile" width="720" height="600"/>
+        <image name="Run" width="350" height="320"/>
         <image name="SaveFile" width="600" height="600"/>
         <image name="Settings" width="305" height="305"/>
         <image name="Switch_50" width="25" height="25"/>
