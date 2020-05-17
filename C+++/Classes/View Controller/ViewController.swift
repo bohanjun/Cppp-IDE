@@ -303,4 +303,28 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
         document?.objectDidEndEditing(self)
     }
     
+    
+    
+    
+    
+    
+    
+    @IBAction func showTutorial(_ sender: Any) {
+        NSWorkspace.shared.open(URL(string: "https://www.runoob.com/cplusplus/cpp-tutorial.html")!)
+    }
+    
+    @IBAction func showWebsite(_ sender: Any) {
+        NSWorkspace.shared.open(URL(string: "https://ericnth.cn/cppp-ide-macos/")!)
+    }
+    
+    @IBAction func showGithub(_ sender: Any) {
+        NSWorkspace.shared.open(URL(string: "https://github.com/23786/cppp-ide")!)
+    }
+    
+    @IBAction func newProject(_ sender: Any) {
+        
+        self.showAlert("Warning", "This version of C+++ does not support creating a project directly. Please create a plain text document using a text editor, the first line is the compile command and the next lines are all the file paths in this project. Then change the extension of this file to \"cpppproj\" and then open it in C+++.")
+        
+    }
+    
 }

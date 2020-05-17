@@ -127,7 +127,6 @@
 		18B3C78624282C2100F4CA14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B3C78524282C2100F4CA14 /* Assets.xcassets */; };
 		18B3C790242836A500F4CA14 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3C78F242836A500F4CA14 /* Content.swift */; };
 		18B3C7942428378E00F4CA14 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3C7932428378E00F4CA14 /* WindowController.swift */; };
-		18D4DD6A246A2A8C00B97F32 /* Project.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D4DD69246A2A8C00B97F32 /* Project.storyboard */; };
 		18D4DD6D246A2C5100B97F32 /* CDProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D4DD6C246A2C5100B97F32 /* CDProjectViewController.swift */; };
 		18D4DD6F246A2C9E00B97F32 /* CDProjectTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D4DD6E246A2C9E00B97F32 /* CDProjectTableView.swift */; };
 		18D4DD71246A303400B97F32 /* CDProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D4DD70246A303400B97F32 /* CDProjectTableViewCell.swift */; };
@@ -260,7 +259,6 @@
 		18B3C78B24282C2100F4CA14 /* Code_Editor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Code_Editor.entitlements; sourceTree = "<group>"; };
 		18B3C78F242836A500F4CA14 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		18B3C7932428378E00F4CA14 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
-		18D4DD69246A2A8C00B97F32 /* Project.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Project.storyboard; sourceTree = "<group>"; };
 		18D4DD6C246A2C5100B97F32 /* CDProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProjectViewController.swift; sourceTree = "<group>"; };
 		18D4DD6E246A2C9E00B97F32 /* CDProjectTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProjectTableView.swift; sourceTree = "<group>"; };
 		18D4DD70246A303400B97F32 /* CDProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProjectTableViewCell.swift; sourceTree = "<group>"; };
@@ -294,6 +292,7 @@
 			children = (
 				18E0B01C242C52650062049C /* Document */,
 				18D4DD6B246A2C1A00B97F32 /* Project View Controller */,
+				18B1859824699A2800B579AD /* Main.storyboard */,
 				18541B172445AB35000EB4CB /* Settings */,
 				18B1859524698AA400B579AD /* View Controller */,
 				18B1858324682FC300B579AD /* Debug */,
@@ -480,7 +479,6 @@
 			children = (
 				18B3C7932428378E00F4CA14 /* WindowController.swift */,
 				18B3C78124282C1F00F4CA14 /* ViewController.swift */,
-				18B1859824699A2800B579AD /* Main.storyboard */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -517,7 +515,6 @@
 		18D4DD6B246A2C1A00B97F32 /* Project View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				18D4DD69246A2A8C00B97F32 /* Project.storyboard */,
 				18D4DD6C246A2C5100B97F32 /* CDProjectViewController.swift */,
 				18D4DD6E246A2C9E00B97F32 /* CDProjectTableView.swift */,
 				18D4DD70246A303400B97F32 /* CDProjectTableViewCell.swift */,
@@ -624,7 +621,6 @@
 				18A41B5A242C765500AFC422 /* codepen-embed.min.css in Resources */,
 				18A41B4B242C765500AFC422 /* googlecode.min.css in Resources */,
 				18A41B34242C765500AFC422 /* atelier-plateau-dark.min.css in Resources */,
-				18D4DD6A246A2A8C00B97F32 /* Project.storyboard in Resources */,
 				18A41B1A242C765500AFC422 /* atelier-heath-dark.min.css in Resources */,
 				18B185742463B32400B579AD /* CDTableViewCellInfoViewController.xib in Resources */,
 				18A41B24242C765500AFC422 /* brown-paper.min.css in Resources */,

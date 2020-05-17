@@ -43,7 +43,7 @@ class CpppProject: NSDocument {
     /// - Tag: makeWindowControllersExample
     override func makeWindowControllers() {
         
-        let storyboard = NSStoryboard(name: NSStoryboard.Name("Project"), bundle: nil)
+        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
         if let windowController =
             storyboard.instantiateController(
                 withIdentifier: NSStoryboard.SceneIdentifier("Project Window Controller")) as? NSWindowController {
@@ -58,6 +58,7 @@ class CpppProject: NSDocument {
 
                 contentVC.tableView.paths = contentVC.filePaths
                 contentVC.tableView.cells = contentVC.tableView.load()
+                contentVC.isFileSaved = true
                 contentVC.tableView.setup()
                 contentVC.textField.stringValue = self.compileCommand
                 
@@ -67,7 +68,7 @@ class CpppProject: NSDocument {
         }
     }
     
-    var compileCommand: String {
+    @objc dynamic var compileCommand: String {
         get {
             let string = self.content.contentString
             let lines = string.components(separatedBy: "\n")
@@ -141,7 +142,7 @@ class CpppProject: NSDocument {
         textView.appearance = NSAppearance(named: .aqua)
         
         // Copy the attributed string.
-        textView.textStorage?.append(NSAttributedString(string: content.contentString))
+        textView.textStorage?.append(NSAttributedString(string: "This C+++ Project document cannot be printed."))
         
         let printOperation = NSPrintOperation(view: textView)
         printOperation.runModal(
