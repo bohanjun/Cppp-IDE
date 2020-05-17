@@ -37,6 +37,7 @@ class CDTextView: NSTextView {
     var codeTextViewDelegate: CDTextViewDelegate!
     var codeAttributedString: CodeAttributedString!
     
+    private var completeWhenChangingText = true
     
     // MARK: - Override Functions
     
@@ -119,7 +120,7 @@ class CDTextView: NSTextView {
         
         func compare(_ a: String, _ b: String) -> Int {
             var cnt: Int = 0
-            if a.count > b.count {
+            if a.count > b.count || a.count == 0 || b.count == 0 {
                 return 0
             } else {
                 for (index, c) in Array(a).enumerated() {
@@ -133,8 +134,10 @@ class CDTextView: NSTextView {
         
         var res = [String]()
         let string = (self.string as NSString).substring(with: charRange)
-        print("word = \(string) ")
-        let parser = CDParser(code: self.string)
+        if string == "" {
+            return res
+        }
+        let parser = CDParser(code: (self.string as NSString).substring(to: self.selectedRange.location))
         let parserRes = parser.getIdentifiers()
         for i in parserRes {
             if compare(string, i) == string.count {
@@ -151,6 +154,11 @@ class CDTextView: NSTextView {
         
     }
     
+    override func insertCompletion(_ word: String, forPartialWordRange charRange: NSRange, movement: Int, isFinal flag: Bool) {
+        
+        super.insertCompletion(word, forPartialWordRange: charRange, movement: movement, isFinal: flag)
+        
+    }
     
     // MARK: - init(coder:)
     required init?(coder: NSCoder) {

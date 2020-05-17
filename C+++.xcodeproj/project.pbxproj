@@ -293,7 +293,6 @@
 			isa = PBXGroup;
 			children = (
 				18E0B01C242C52650062049C /* Document */,
-				18B3C7932428378E00F4CA14 /* WindowController.swift */,
 				18D4DD6B246A2C1A00B97F32 /* Project View Controller */,
 				18541B172445AB35000EB4CB /* Settings */,
 				18B1859524698AA400B579AD /* View Controller */,
@@ -479,6 +478,7 @@
 		18B1859524698AA400B579AD /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				18B3C7932428378E00F4CA14 /* WindowController.swift */,
 				18B3C78124282C1F00F4CA14 /* ViewController.swift */,
 				18B1859824699A2800B579AD /* Main.storyboard */,
 			);

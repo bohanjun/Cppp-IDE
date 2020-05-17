@@ -118,8 +118,6 @@ open class CodeAttributedString : NSTextStorage {
     open override func processEditing() {
         super.processEditing()
         
-        print("processEditing()")
-        
         if language != nil {
             if self.editedMask.contains(.editedCharacters) {
                 let string = (self.string as NSString)

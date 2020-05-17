@@ -15,13 +15,14 @@ class CDGutterTextView: NSTextView, CDTextViewDelegate {
         self.string = ""
         self.isEditable = true
         self.isSelectable = true
-        /*var string = ""
+        var string = ""
         if lines != 0 {
             for i in 1...lines {
                 string += "\(i)\n"
             }
             string.removeLast()
-        }*/
+        }
+        // self.textStorage?.setAttributedString(NSAttributedString(string: string, attributes: [.foregroundColor : NSColor.white]))
         self.isEditable = false
         self.isSelectable = false
     }

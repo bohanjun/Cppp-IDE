@@ -20,8 +20,10 @@
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="QVA-Zs-EAq"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="AXe-zJ-d0f"/>
-                                <toolbarItem implicitItemIdentifier="7CA04D3E-1A64-4603-B468-CF9E10B55A50" label="Run" paletteLabel="Run" image="Run" sizingBehavior="auto" id="QQY-oD-TXT">
+                                <toolbarItem implicitItemIdentifier="7CA04D3E-1A64-4603-B468-CF9E10B55A50" label="Run" paletteLabel="Run" image="Run" id="QQY-oD-TXT">
                                     <nil key="toolTip"/>
+                                    <size key="minSize" width="22" height="24"/>
+                                    <size key="maxSize" width="40" height="24"/>
                                     <button key="view" verticalHuggingPriority="750" imageHugsTitle="YES" id="bHp-Db-9jc">
                                         <rect key="frame" x="3" y="14" width="22" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -30,12 +32,14 @@
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="run:" target="OXB-fY-3iP" id="5tE-Or-A03"/>
+                                            <action selector="compileProject:" target="OXB-fY-3iP" id="Lnl-c8-PQy"/>
                                         </connections>
                                     </button>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="514DE0EB-C25D-402C-A61B-D893F2DBD29B" label="Save" paletteLabel="Save" image="SaveFile" sizingBehavior="auto" id="NeG-aK-BPK">
+                                <toolbarItem implicitItemIdentifier="514DE0EB-C25D-402C-A61B-D893F2DBD29B" label="Save" paletteLabel="Save" image="SaveFile" id="NeG-aK-BPK">
                                     <nil key="toolTip"/>
+                                    <size key="minSize" width="28" height="25"/>
+                                    <size key="maxSize" width="40" height="25"/>
                                     <button key="view" verticalHuggingPriority="750" id="a3e-ua-huF">
                                         <rect key="frame" x="3" y="14" width="28" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -154,7 +158,7 @@
                                     <constraint firstAttribute="height" constant="18" id="svy-WG-gvf"/>
                                 </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Index" drawsBackground="YES" id="asZ-Eh-cBK">
-                                    <font key="font" metaFont="controlContent" size="11"/>
+                                    <font key="font" metaFont="message" size="11"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>

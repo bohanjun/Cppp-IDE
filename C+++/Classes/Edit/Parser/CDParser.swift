@@ -132,6 +132,8 @@ class CDParser: NSObject {
                         ch = getNext()!
                         if ch == "\n" {
                             state = .otherSymbol
+                        } else if ch == "\0" {
+                            state = .fileEnd
                         } else {
                             state = .preprocessor
                         }

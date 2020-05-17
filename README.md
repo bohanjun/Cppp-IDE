@@ -14,6 +14,8 @@
 ## Update Log
 ### 2020.5 Version 2.0.0 (205200) (Developing)
 - Set the default code when creating a new file (Developing)
+- Debug
+- CpppProject
 - Remove the show line number feature temporarily (Will be fixed soon)
 - Code syntax highlighting improvement
 - Big UI Change

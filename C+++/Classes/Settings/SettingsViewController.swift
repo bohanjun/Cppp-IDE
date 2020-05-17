@@ -11,14 +11,12 @@ import Cocoa
 
 var config: Settings!
 var compileConfig: CompileSettings!
-var defaultCode: DefaultCode!
 
 public func initDefaultData() {
     
     // Create the default data.
     config = Settings("Courier", 15, "Xcode", "Perfect", true)
     compileConfig = CompileSettings("g++", "")
-    defaultCode = DefaultCode("")
     
     // Create the "~/Library/C+++/" directory.
     do {
@@ -30,7 +28,6 @@ public func initDefaultData() {
     // Save the default data.
     NSKeyedArchiver.archiveRootObject(config!, toFile: Settings.ArchiveURL.path)
     NSKeyedArchiver.archiveRootObject(compileConfig!, toFile: CompileSettings.ArchiveURL.path)
-    NSKeyedArchiver.archiveRootObject(defaultCode!, toFile: DefaultCode.ArchiveURL.path)
     
 }
 
@@ -50,8 +47,6 @@ class SettingsViewController: NSViewController {
     @IBOutlet weak var compiler: NSComboBox!
     @IBOutlet weak var arguments: NSTextField!
     
-    @IBOutlet weak var defaultCodeTextView: NSTextView!
-    
     
     var delegate: SettingsViewDelegate!
     
@@ -67,11 +62,8 @@ class SettingsViewController: NSViewController {
         compileConfig.Compiler = self.compiler.stringValue
         compileConfig.Arguments = self.arguments.stringValue
         
-        defaultCode.code = self.defaultCodeTextView.string
-        
         NSKeyedArchiver.archiveRootObject(config!, toFile: Settings.ArchiveURL.path)
         NSKeyedArchiver.archiveRootObject(compileConfig!, toFile: CompileSettings.ArchiveURL.path)
-        NSKeyedArchiver.archiveRootObject(defaultCode!, toFile: DefaultCode.ArchiveURL.path)
         
         self.delegate.didSet()
         
@@ -81,8 +73,6 @@ class SettingsViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.defaultCodeTextView.font = NSFont(name: "Menlo", size: 14.0)!
         
         if let savedData = SettingsViewController.getSavedData() {
             
@@ -106,12 +96,6 @@ class SettingsViewController: NSViewController {
             
         }
         
-        if let savedData3 = SettingsViewController.getSavedData3() {
-            
-            self.defaultCodeTextView.string = savedData3.code
-            
-        }
-        
     }
     
     public static func getSavedData() -> Settings? {
@@ -120,10 +104,6 @@ class SettingsViewController: NSViewController {
     
     public static func getSavedData2() -> CompileSettings? {
         return NSKeyedUnarchiver.unarchiveObject(withFile: CompileSettings.ArchiveURL.path) as? CompileSettings
-    }
-    
-    public static func getSavedData3() -> DefaultCode? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: DefaultCode.ArchiveURL.path) as? DefaultCode
     }
     
 }

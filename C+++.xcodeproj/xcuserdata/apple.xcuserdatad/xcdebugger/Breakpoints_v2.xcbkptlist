@@ -23,16 +23,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8FBFD16C-B03A-4212-8FE8-D60D0401E733"
+            uuid = "67BFABCB-0ECB-4E09-AA1E-25DDED864FCD"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "C+++/Classes/Debug/CDDebugViewController.swift"
+            filePath = "C+++/Classes/Edit/Parser/CDParser.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "send(message:)"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "getIdentifiers()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

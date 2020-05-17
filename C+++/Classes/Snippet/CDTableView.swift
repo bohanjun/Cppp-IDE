@@ -157,7 +157,6 @@ class CDTableView: NSView, CDTableViewCellInfoViewControllerDelegate {
         if cells.count == 0 {
             return
         }
-        print(y, self.bounds, self.frame, self.cells[0].frame.height)
         
     }
     

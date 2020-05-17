@@ -60,7 +60,6 @@ open class Highlightr {
         
         let value = jsContext.evaluateScript(hgJs)
         if value?.toBool() != true {
-            print("return")
             return nil
         }
         guard let hljs = window?.objectForKeyedSubscript("hljs") else {

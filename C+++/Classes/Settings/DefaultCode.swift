@@ -6,7 +6,7 @@
 //  Copyright © 2020 Zhu Yixuan. All rights reserved.
 //
 
-import Cocoa
+/*import Cocoa
 
 class DefaultCode: NSObject, NSCoding {
     
@@ -43,3 +43,4 @@ class DefaultCode: NSObject, NSCoding {
     }
     
 }
+*/

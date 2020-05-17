@@ -45,11 +45,6 @@ class CDProjectViewController: NSViewController {
     }
     
     
-    @IBAction func run(_ sender: Any?) {
-        
-    }
-    
-    
     @IBAction func addFile(_ sender: Any?) {
         
         let dialog = NSOpenPanel()

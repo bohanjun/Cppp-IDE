@@ -54,4 +54,15 @@ class WindowController: NSWindowController, NSWindowDelegate {
         }
     }
     
+    @IBAction func toggleFI(_ sender: Any) {
+        let vc = (self.contentViewController as! ViewController)
+        if vc.left == true {
+            vc.LeftConstraint.constant = 0.0
+            vc.left = false
+        } else {
+            vc.LeftConstraint.constant = 219.0
+            vc.left = true
+        }
+    }
+    
 }

@@ -48,12 +48,15 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     /// Whether the compile view is hidden.
     var right = true
     
+    /// Whether the file info view is hidden.
+    var left = true
     
     @IBOutlet var TextView: CDTextView!
     @IBOutlet var gutterTextView: CDGutterTextView!
     @IBOutlet weak var PathControl: NSPathControl!
     @IBOutlet weak var BottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var RightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var LeftConstraint: NSLayoutConstraint!
     @IBOutlet weak var FakeBackgroundAddition: NSTextField!
     @IBOutlet weak var TextView_ScrollView: CDScrollView!
     @IBOutlet weak var linesLabel: NSTextField!
@@ -72,18 +75,15 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
         
         // judge if there has already been a saved settings.
         if SettingsViewController.getSavedData() != nil &&
-        SettingsViewController.getSavedData2() != nil &&
-            SettingsViewController.getSavedData3() != nil {
+        SettingsViewController.getSavedData2() != nil {
             
             // evaluate the config and compileConfig.
             config = SettingsViewController.getSavedData()
             compileConfig = SettingsViewController.getSavedData2()
-            defaultCode = SettingsViewController.getSavedData3()
             
             // set the font of the text view.
             self.TextView.font = NSFont(name: SettingsViewController.getSavedData()!.FontName, size: CGFloat(SettingsViewController.getSavedData()!.FontSize))
             self.TextView.highlightr?.theme.setCodeFont(NSFont(name: SettingsViewController.getSavedData()!.FontName, size: CGFloat(SettingsViewController.getSavedData()!.FontSize))!)
-            self.TextView.string = SettingsViewController.getSavedData3()?.code ?? ""
             
         } else {
             
@@ -120,7 +120,9 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
         
         if #available(OSX 10.14, *) {
         } else {
-            showAlert("Warning", "Your Mac does not support Dark Mode. Dark Mode requires macOS 10.14 or later. You can update your Mac.")
+            if let _ = self.view.window {
+                showAlert("Warning", "Your Mac does not support Dark Mode. Dark Mode requires macOS 10.14 or later. You can update your Mac.")
+            }
             return
         }
         
@@ -222,6 +224,7 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     @IBOutlet weak var CDTableView_ScrollView: NSScrollView!
     @IBOutlet weak var TableView: CDTableView!
     @IBOutlet weak var AddButton: NSButton!
+    @IBOutlet weak var FileView: NSView!
     
     @IBAction func ValueChanged(_ sender: NSSegmentedControl) {
         
@@ -229,10 +232,10 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
             case 0:
                 CDTableView_ScrollView.isHidden = true
                 AddButton.isHidden = true
-               // <#Show File View#>
+                FileView.isHidden = false
             
             case 1:
-               // <#Hide File View#>
+                FileView.isHidden = true
                 CDTableView_ScrollView.isHidden = false
                 AddButton.isHidden = false
                 break
