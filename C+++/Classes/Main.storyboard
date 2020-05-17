@@ -1885,9 +1885,6 @@ Gw
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
-                                <connections>
-                                    <binding destination="ivk-Yy-MWH" name="value" keyPath="representedObject.compileCommand" id="4wr-Ab-Nbl"/>
-                                </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AgV-9H-a4o">
                                 <rect key="frame" x="15" y="213" width="123" height="16"/>
