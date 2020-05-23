@@ -767,13 +767,13 @@ Gw
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="olW-wi-IBX">
                                             <rect key="frame" x="245" y="79" width="114" height="25"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <popUpButtonCell key="cell" type="push" title="Perfect" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="a4x-cD-hh2" id="2Mr-1J-JcQ">
+                                            <popUpButtonCell key="cell" type="push" title="Agate" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Q3A-iY-dFu" id="2Mr-1J-JcQ">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                                 <menu key="menu" id="Wap-kl-UGe">
                                                     <items>
                                                         <menuItem title="Xcode" id="Ft9-3m-p7P"/>
-                                                        <menuItem title="Perfect" state="on" id="a4x-cD-hh2"/>
+                                                        <menuItem title="Perfect" id="a4x-cD-hh2"/>
                                                         <menuItem title="VS2015" id="TxT-XB-ykk"/>
                                                         <menuItem title="GitHub" id="ax7-bc-eFC">
                                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -787,7 +787,7 @@ Gw
                                                         <menuItem title="Rainbow" id="Cop-ZG-Mym">
                                                             <modifierMask key="keyEquivalentModifierMask"/>
                                                         </menuItem>
-                                                        <menuItem title="Agate" id="Q3A-iY-dFu">
+                                                        <menuItem title="Agate" state="on" id="Q3A-iY-dFu">
                                                             <modifierMask key="keyEquivalentModifierMask"/>
                                                         </menuItem>
                                                         <menuItem title="Atom-one-dark" id="Moc-cx-x3E">
@@ -1800,13 +1800,13 @@ Gw
                             <constraint firstItem="RCh-2s-VX0" firstAttribute="leading" secondItem="hS1-5x-uqb" secondAttribute="leading" id="FWU-6G-Off"/>
                             <constraint firstItem="qkV-Pw-MXt" firstAttribute="top" secondItem="ERx-hH-rdd" secondAttribute="top" id="I49-bb-C3P"/>
                             <constraint firstItem="d62-qb-Nyt" firstAttribute="top" secondItem="RCh-2s-VX0" secondAttribute="bottom" id="KBQ-yL-cRo"/>
+                            <constraint firstItem="RCh-2s-VX0" firstAttribute="trailing" secondItem="E0u-iA-KeT" secondAttribute="trailing" id="LHx-LO-4Jr"/>
                             <constraint firstItem="a6q-mG-7ce" firstAttribute="leading" secondItem="E0u-iA-KeT" secondAttribute="leading" id="LVP-nU-aI1"/>
                             <constraint firstAttribute="trailing" secondItem="qkV-Pw-MXt" secondAttribute="trailing" id="LoI-FY-tek"/>
                             <constraint firstItem="TPB-sL-5NP" firstAttribute="leading" secondItem="Dip-ez-JU8" secondAttribute="trailing" id="Ppb-m0-8W1"/>
                             <constraint firstItem="yLp-eY-fSk" firstAttribute="top" secondItem="ERx-hH-rdd" secondAttribute="top" constant="11" id="QHf-FW-Bie"/>
                             <constraint firstItem="yLp-eY-fSk" firstAttribute="top" secondItem="0HT-on-mcG" secondAttribute="bottom" id="Vzv-Ay-jyX"/>
                             <constraint firstAttribute="bottom" secondItem="qkV-Pw-MXt" secondAttribute="bottom" id="Y1u-cV-rVe"/>
-                            <constraint firstItem="qkV-Pw-MXt" firstAttribute="leading" secondItem="RCh-2s-VX0" secondAttribute="trailing" id="YME-rU-R5v"/>
                             <constraint firstItem="TPB-sL-5NP" firstAttribute="leading" secondItem="ERx-hH-rdd" secondAttribute="leading" constant="219" id="jfa-UV-rjU"/>
                             <constraint firstItem="RCh-2s-VX0" firstAttribute="leading" secondItem="Dip-ez-JU8" secondAttribute="trailing" id="mLs-zZ-py9"/>
                             <constraint firstItem="TPB-sL-5NP" firstAttribute="leading" secondItem="0HT-on-mcG" secondAttribute="leading" id="mt2-uO-J8q"/>

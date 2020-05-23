@@ -15,7 +15,7 @@ var compileConfig: CompileSettings!
 public func initDefaultData() {
     
     // Create the default data.
-    config = Settings("Courier", 15, "Xcode", "Perfect", true)
+    config = Settings("Courier", 15, "Xcode", "Agate", true)
     compileConfig = CompileSettings("g++", "")
     
     // Create the "~/Library/C+++/" directory.
@@ -55,7 +55,7 @@ class SettingsViewController: NSViewController {
         
         config.FontName = self.fontname.titleOfSelectedItem ?? "Courier"
         config.FontSize = Int(self.size.stringValue) ?? 15
-        config.DarkThemeName = self.dark.titleOfSelectedItem ?? "Perfect"
+        config.DarkThemeName = self.dark.titleOfSelectedItem ?? "Agate"
         config.LightThemeName = self.light.titleOfSelectedItem ?? "Xcode"
         config.AutoComplete = self.allows.state == .on
         
