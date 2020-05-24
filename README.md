@@ -4,7 +4,7 @@
 ## The most simple C++ IDE on macOS Platform.
 - Developed by a Grade-Six student 23786.
 - Website: https://ericnth.cn/cppp-ide-macos (https://ericnth.cn is the website of my friend)
-- Download Version 2.0.1: https://github.com/23786/Cppp-IDE/releases/download/v2.0.0/C+++.2.0.0.dmg.zip
+- Download Version 2.0.0: https://github.com/23786/Cppp-IDE/releases/download/v2.0.0/C+++.2.0.0.dmg.zip
 
 
 ## Uses the Xcode g++ to compile
