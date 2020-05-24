@@ -31,11 +31,11 @@ public func initDefaultData() {
     
 }
 
-@objc protocol SettingsViewDelegate {
+@objc protocol CDSettingsViewDelegate {
     func didSet()
 }
 
-class SettingsViewController: NSViewController {
+class CDSettingsViewController: NSViewController {
     
     
     @IBOutlet weak var fontname: NSPopUpButton!
@@ -48,7 +48,7 @@ class SettingsViewController: NSViewController {
     @IBOutlet weak var arguments: NSTextField!
     
     
-    var delegate: SettingsViewDelegate!
+    var delegate: CDSettingsViewDelegate!
     
     
     @IBAction func Save(_ sender: NSButton) {
@@ -74,7 +74,7 @@ class SettingsViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let savedData = SettingsViewController.getSavedData() {
+        if let savedData = CDSettingsViewController.getSavedData() {
             
             self.fontname.setTitle(savedData.FontName)
             self.size.stringValue = "\(savedData.FontSize ?? 15)"
@@ -89,7 +89,7 @@ class SettingsViewController: NSViewController {
             
         }
         
-        if let savedData2 = SettingsViewController.getSavedData2() {
+        if let savedData2 = CDSettingsViewController.getSavedData2() {
             
             self.compiler.stringValue = savedData2.Compiler
             self.arguments.stringValue = savedData2.Arguments

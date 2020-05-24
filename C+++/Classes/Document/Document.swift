@@ -11,7 +11,7 @@ import Cocoa
 class Document: NSDocument {
     
     @objc var content = Content(contentString: "")
-    var contentViewController: ViewController!
+    var contentViewController: CDMainViewController!
     
     override init() {
         super.init()
@@ -47,7 +47,7 @@ class Document: NSDocument {
             addWindowController(windowController)
             
             // Set the view controller's represented object as your document.
-            if let contentVC = windowController.contentViewController as? ViewController {
+            if let contentVC = windowController.contentViewController as? CDMainViewController {
                 
                 contentVC.representedObject = content
                 contentViewController = contentVC

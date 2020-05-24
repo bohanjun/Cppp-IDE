@@ -19,6 +19,7 @@ let darkAqua = NSAppearance(named: .darkAqua)
 let aqua = NSAppearance(named: .aqua)
 
 extension NSViewController {
+    
     func showAlert(_ message: String, _ title: String) {
         let alert = NSAlert()
         alert.messageText = message
@@ -27,9 +28,31 @@ extension NSViewController {
         alert.informativeText = title
         alert.beginSheetModal(for: self.view.window!, completionHandler: { returnCode in })
     }
+    
 }
 
-class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate, CDTextViewDelegate, CDTableViewCellInfoViewControllerDelegate {
+
+
+extension NSDocumentController {
+    
+    @IBAction func newProject(_ sender: Any?) {
+        
+        // self.showAlert("Warning", "This version of C+++ does not support creating a project directly. Please create a plain text document using a text editor, the first line is the compile command and the next lines are all the file paths in this project. Then change the extension of this file to \"cpppproj\" and then open it in C+++.")
+        do {
+            let document = try NSDocumentController.shared.makeUntitledDocument(ofType: "cpppproj") as! CpppProject
+            NSDocumentController.shared.addDocument(document)
+        } catch {
+            
+        }
+        
+    }
+    
+}
+
+
+
+
+class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsViewDelegate, CDTextViewDelegate, CDTableViewCellInfoViewControllerDelegate {
     
 // MARK: - Properties
     
@@ -64,6 +87,10 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     @IBOutlet var CompileInfo: NSTextView!
     
     
+    
+    
+    
+    
 // MARK: - viewDidLoad()
     
     override func viewDidLoad() {
@@ -74,16 +101,16 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
         self.TextView.scrollView = self.TextView_ScrollView
         
         // judge if there has already been a saved settings.
-        if SettingsViewController.getSavedData() != nil &&
-        SettingsViewController.getSavedData2() != nil {
+        if CDSettingsViewController.getSavedData() != nil &&
+        CDSettingsViewController.getSavedData2() != nil {
             
             // evaluate the config and compileConfig.
-            config = SettingsViewController.getSavedData()
-            compileConfig = SettingsViewController.getSavedData2()
+            config = CDSettingsViewController.getSavedData()
+            compileConfig = CDSettingsViewController.getSavedData2()
             
             // set the font of the text view.
-            self.TextView.font = NSFont(name: SettingsViewController.getSavedData()!.FontName, size: CGFloat(SettingsViewController.getSavedData()!.FontSize))
-            self.TextView.highlightr?.theme.setCodeFont(NSFont(name: SettingsViewController.getSavedData()!.FontName, size: CGFloat(SettingsViewController.getSavedData()!.FontSize))!)
+            self.TextView.font = NSFont(name: CDSettingsViewController.getSavedData()!.FontName, size: CGFloat(CDSettingsViewController.getSavedData()!.FontSize))
+            self.TextView.highlightr?.theme.setCodeFont(NSFont(name: CDSettingsViewController.getSavedData()!.FontName, size: CGFloat(CDSettingsViewController.getSavedData()!.FontSize))!)
             
         } else {
             
@@ -97,7 +124,7 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
         
         // set the current appearance to Dark Mode.
         if #available(OSX 10.14, *) {
-            self.TextView.highlightr?.setTheme(to: SettingsViewController.getSavedData()!.DarkThemeName)
+            self.TextView.highlightr?.setTheme(to: CDSettingsViewController.getSavedData()!.DarkThemeName)
             self.view.window?.appearance = darkAqua
             self.view.appearance = darkAqua
             for view in self.view.subviews {
@@ -111,6 +138,12 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
         changeAppearance(self)
         
     }
+    
+    
+    
+    
+    
+    
     
     
 // MARK: - Appearance
@@ -133,7 +166,7 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
             case true:
                 
                 // Change the text view's highlight theme to Dark Mode.
-                self.TextView.highlightr?.setTheme(to: SettingsViewController.getSavedData()!.DarkThemeName)
+                self.TextView.highlightr?.setTheme(to: CDSettingsViewController.getSavedData()!.DarkThemeName)
                 
                 // Chage the window's appearance to Dark Mode.
                 if #available(OSX 10.14, *) {
@@ -149,7 +182,7 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
             case false:
                 
                 // Change the text view's highlight theme to Light Mode.
-                self.TextView.highlightr?.setTheme(to: SettingsViewController.getSavedData()!.LightThemeName)
+                self.TextView.highlightr?.setTheme(to: CDSettingsViewController.getSavedData()!.LightThemeName)
                 
                 // Chage the window's appearance to Light Mode.
                 if #available(OSX 10.14, *) {
@@ -165,8 +198,8 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
         
         // Change the font of the text view.
         self.TextView.didChangeText()
-        self.TextView.highlightr?.theme.setCodeFont(NSFont(name: SettingsViewController.getSavedData()!.FontName, size: CGFloat(SettingsViewController.getSavedData()!.FontSize))!)
-        self.TextView.font = NSFont(name: SettingsViewController.getSavedData()!.FontName, size: CGFloat(SettingsViewController.getSavedData()!.FontSize))
+        self.TextView.highlightr?.theme.setCodeFont(NSFont(name: CDSettingsViewController.getSavedData()!.FontName, size: CGFloat(CDSettingsViewController.getSavedData()!.FontSize))!)
+        self.TextView.font = NSFont(name: CDSettingsViewController.getSavedData()!.FontName, size: CGFloat(CDSettingsViewController.getSavedData()!.FontSize))
         
     }
     
@@ -175,12 +208,15 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
         if let ViewController =
             storyboard.instantiateController(
-                withIdentifier: NSStoryboard.SceneIdentifier("SettingsViewController")) as? SettingsViewController {
+                withIdentifier: NSStoryboard.SceneIdentifier("CDSettingsViewController")) as? CDSettingsViewController {
             ViewController.delegate = self
             self.presentAsSheet(ViewController)
         }
         
     }
+    
+    
+    
     
     
 // MARK: - SettingsViewDelegate
@@ -190,15 +226,15 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
         // theme
         switch isDarkMode {
             case false:
-                self.TextView.highlightr?.setTheme(to: SettingsViewController.getSavedData()!.DarkThemeName)
+                self.TextView.highlightr?.setTheme(to: CDSettingsViewController.getSavedData()!.DarkThemeName)
             case true:
-                self.TextView.highlightr?.setTheme(to: SettingsViewController.getSavedData()!.LightThemeName)
+                self.TextView.highlightr?.setTheme(to: CDSettingsViewController.getSavedData()!.LightThemeName)
         }
         
         // font
-        self.TextView.highlightr?.theme.setCodeFont(NSFont(name: SettingsViewController.getSavedData()!.FontName, size: CGFloat(SettingsViewController.getSavedData()!.FontSize))!)
-        self.TextView.font = NSFont(name: SettingsViewController.getSavedData()!.FontName, size: CGFloat(SettingsViewController.getSavedData()!.FontSize))
-        self.gutterTextView.font = NSFont(name: SettingsViewController.getSavedData()!.FontName, size: CGFloat(SettingsViewController.getSavedData()!.FontSize))
+        self.TextView.highlightr?.theme.setCodeFont(NSFont(name: CDSettingsViewController.getSavedData()!.FontName, size: CGFloat(CDSettingsViewController.getSavedData()!.FontSize))!)
+        self.TextView.font = NSFont(name: CDSettingsViewController.getSavedData()!.FontName, size: CGFloat(CDSettingsViewController.getSavedData()!.FontSize))
+        self.gutterTextView.font = NSFont(name: CDSettingsViewController.getSavedData()!.FontName, size: CGFloat(CDSettingsViewController.getSavedData()!.FontSize))
         self.TextView.didChangeText()
         
         // in case of errors
@@ -206,6 +242,11 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
         changeAppearance(self)
         
     }
+    
+    
+    
+    
+    
     
 // MARK: - CDTextViewDelegate
     
@@ -218,6 +259,10 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     }
     
 
+    
+    
+    
+    
 
 // MARK: - Segmented Control
     
@@ -319,12 +364,6 @@ class ViewController: NSViewController, NSTextViewDelegate, SettingsViewDelegate
     
     @IBAction func showGithub(_ sender: Any) {
         NSWorkspace.shared.open(URL(string: "https://github.com/23786/cppp-ide")!)
-    }
-    
-    @IBAction func newProject(_ sender: Any) {
-        
-        self.showAlert("Warning", "This version of C+++ does not support creating a project directly. Please create a plain text document using a text editor, the first line is the compile command and the next lines are all the file paths in this project. Then change the extension of this file to \"cpppproj\" and then open it in C+++.")
-        
     }
     
 }

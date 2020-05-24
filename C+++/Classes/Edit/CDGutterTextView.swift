@@ -15,13 +15,13 @@ class CDGutterTextView: NSTextView, CDTextViewDelegate {
         self.string = ""
         self.isEditable = true
         self.isSelectable = true
-        var string = ""
+        /*var string = ""
         if lines != 0 {
             for i in 1...lines {
                 string += "\(i)\n"
             }
             string.removeLast()
-        }
+        }*/
         // self.textStorage?.setAttributedString(NSAttributedString(string: string, attributes: [.foregroundColor : NSColor.white]))
         self.isEditable = false
         self.isSelectable = false
@@ -30,7 +30,7 @@ class CDGutterTextView: NSTextView, CDTextViewDelegate {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
-        if let savedData = SettingsViewController.getSavedData() {
+        if let savedData = CDSettingsViewController.getSavedData() {
             
             config = savedData
             
@@ -40,7 +40,7 @@ class CDGutterTextView: NSTextView, CDTextViewDelegate {
             
         }
         
-        self.font = NSFont(name: SettingsViewController.getSavedData()?.FontName ?? "Courier", size: CGFloat(SettingsViewController.getSavedData()?.FontSize ?? 15))
+        self.font = NSFont(name: CDSettingsViewController.getSavedData()?.FontName ?? "Courier", size: CGFloat(CDSettingsViewController.getSavedData()?.FontSize ?? 15))
         
     }
     

@@ -33,7 +33,7 @@ class WindowController: NSWindowController, NSWindowDelegate {
     
     
     @IBAction func toggleCI(_ sender: Any) {
-        let vc = (self.contentViewController as! ViewController)
+        let vc = (self.contentViewController as! CDMainViewController)
         if vc.bottom == true {
             vc.BottomConstraint.constant = 22.0
             vc.bottom = false
@@ -44,7 +44,7 @@ class WindowController: NSWindowController, NSWindowDelegate {
     }
     
     @IBAction func toggleCV(_ sender: Any) {
-        let vc = (self.contentViewController as! ViewController)
+        let vc = (self.contentViewController as! CDMainViewController)
         if vc.right == true {
             vc.RightConstraint.constant = 0.0
             vc.right = false
@@ -55,7 +55,7 @@ class WindowController: NSWindowController, NSWindowDelegate {
     }
     
     @IBAction func toggleFI(_ sender: Any) {
-        let vc = (self.contentViewController as! ViewController)
+        let vc = (self.contentViewController as! CDMainViewController)
         if vc.left == true {
             vc.LeftConstraint.constant = 0.0
             vc.left = false

@@ -17,7 +17,6 @@ class CDProjectTableViewCell: CDTableViewCell {
         self.path = path
         super.init(title: path, image: NSImage(named: "Code"), code: "", width: 10000.0)
         
-        
     }
     
     required convenience init?(coder: NSCoder) {

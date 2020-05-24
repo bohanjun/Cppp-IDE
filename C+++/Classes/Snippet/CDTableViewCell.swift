@@ -75,7 +75,7 @@ class CDTableViewCell: NSView, CDTableViewCellInfoViewControllerDelegate {
         vc.setup(title: self.title, image: self.titleLabel.image!, code: self.code, mode: false)
         vc.delegate = (self.superview) as! CDTableView
         vc.closeDelegate = self
-        vc.addToCodeDelegate = (((self.superview) as! CDTableView).superview?.superview?.window?.contentViewController) as! ViewController
+        vc.addToCodeDelegate = (((self.superview) as! CDTableView).superview?.superview?.window?.contentViewController) as! CDMainViewController
         popover.contentViewController = vc
         popover.behavior = .transient
         popover.show(relativeTo: self.frame, of: self, preferredEdge: NSRectEdge.maxX)

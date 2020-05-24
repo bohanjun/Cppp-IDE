@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="wkS-JN-u0Y">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaDFRPlugin" version="16002"/>
@@ -694,7 +694,7 @@
         <!--Settings View Controller-->
         <scene sceneID="OuO-DT-mqm">
             <objects>
-                <viewController storyboardIdentifier="SettingsViewController" id="rhr-iv-C7G" customClass="SettingsViewController" customModule="C___" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" id="rhr-iv-C7G" customClass="CDSettingsViewController" customModule="C___" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="svp-l0-Kf4">
                         <rect key="frame" x="0.0" y="0.0" width="413" height="380"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1050,7 +1050,7 @@ Gw
         <!--C+++-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController title="C+++" id="5gI-5U-AMq" customClass="ViewController" customModule="C___" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="C+++" id="5gI-5U-AMq" customClass="CDMainViewController" customModule="C___" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="ERx-hH-rdd">
                         <rect key="frame" x="0.0" y="0.0" width="1080" height="720"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -2063,6 +2063,273 @@ Gw
             </objects>
             <point key="canvasLocation" x="-784" y="1784"/>
         </scene>
+        <!--Launch View Controller-->
+        <scene sceneID="tGs-wb-Y9q">
+            <objects>
+                <viewController id="S31-UQ-a5H" customClass="CDLaunchViewController" customModule="C___" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="uAp-bo-N4d">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="qr4-Ra-UsF">
+                                <rect key="frame" x="0.0" y="0.0" width="158" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <clipView key="contentView" id="T5t-la-ahx">
+                                    <rect key="frame" x="1" y="1" width="156" height="318"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <view id="nLX-Kn-loi">
+                                            <rect key="frame" x="0.0" y="0.0" width="156" height="318"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jY9-pm-TSb">
+                                                    <rect key="frame" x="-6" y="237" width="169" height="42"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="smallSquare" title="   Welcome to C+++" bezelStyle="smallSquare" imagePosition="left" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="rw3-sT-Cdt">
+                                                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                        <font key="font" metaFont="system" size="15"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="welcomeButtonClicked:" target="S31-UQ-a5H" id="tyv-a9-gG2"/>
+                                                    </connections>
+                                                </button>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RQm-Nb-2fu">
+                                                    <rect key="frame" x="-6" y="197" width="169" height="42"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="smallSquare" title="   About" bezelStyle="smallSquare" imagePosition="left" alignment="left" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ltI-oI-d2R">
+                                                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                                        <font key="font" metaFont="system" size="15"/>
+                                                    </buttonCell>
+                                                    <connections>
+                                                        <action selector="aboutButtonClicked:" target="S31-UQ-a5H" id="xsF-bs-ahZ"/>
+                                                    </connections>
+                                                </button>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i0N-e9-5kY">
+                                                    <rect key="frame" x="6" y="13" width="100" height="18"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <buttonCell key="cell" type="square" title=" Settings" bezelStyle="shadowlessSquare" image="Settings" imagePosition="left" alignment="center" imageScaling="proportionallyDown" inset="2" id="kN0-38-Ojj">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system" size="15"/>
+                                                    </buttonCell>
+                                                    <color key="contentTintColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <connections>
+                                                        <action selector="showSettingsView:" target="S31-UQ-a5H" id="pgy-54-KU9"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" name="LaunchVCSideBarColor"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Ab7-rY-HAu">
+                                    <rect key="frame" x="-100" y="-100" width="141" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="jBw-YT-ttp">
+                                    <rect key="frame" x="-100" y="-100" width="15" height="268"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DaM-b0-s97">
+                                <rect key="frame" x="173" y="275" width="215" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Welcome to C+++" id="OLs-T9-RLc">
+                                    <font key="font" metaFont="systemBold" size="25"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vrD-Zo-Nmy">
+                                <rect key="frame" x="175" y="176" width="287" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bAF-lr-kCR">
+                                        <rect key="frame" x="0.0" y="0.0" width="287" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" borderStyle="bezel" drawsBackground="YES" id="tJw-zE-yMY">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="BackgroundColor"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KDV-Yn-7NQ">
+                                        <rect key="frame" x="68" y="35" width="77" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="New File" id="Cha-rl-wQv">
+                                            <font key="font" metaFont="systemBold" size="18"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5oW-Cw-aTp">
+                                        <rect key="frame" x="68" y="8" width="190" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" title="Create a new C++ source file" id="QTq-Fd-Bs9">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ElD-2N-Oms">
+                                        <rect key="frame" x="7" y="8" width="52" height="54"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="NSTouchBarAddTemplate" id="nRR-ZF-rkn"/>
+                                    </imageView>
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zSZ-8E-L6z">
+                                        <rect key="frame" x="0.0" y="0.0" width="287" height="68"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="tE2-ot-2Jh">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="newDocument:" target="stx-lN-Mur" id="jFg-qp-IdB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </customView>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0eU-Y0-HaU">
+                                <rect key="frame" x="175" y="98" width="287" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qwK-xE-qrE">
+                                        <rect key="frame" x="0.0" y="0.0" width="287" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" borderStyle="bezel" drawsBackground="YES" id="I4v-B6-tO1">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="BackgroundColor"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Baq-g2-fxp">
+                                        <rect key="frame" x="68" y="35" width="98" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Open File" id="oTC-KB-bMF">
+                                            <font key="font" metaFont="systemBold" size="18"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EnW-nh-Toc">
+                                        <rect key="frame" x="68" y="8" width="190" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" title="Open an existing C++ file" id="8sv-ch-6oV">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xFs-oy-1re">
+                                        <rect key="frame" x="7" y="8" width="52" height="54"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="NSTouchBarFolderMoveToTemplate" id="bGQ-tl-TaC"/>
+                                    </imageView>
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L1n-RQ-5gf">
+                                        <rect key="frame" x="0.0" y="2" width="287" height="68"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="Xnv-pV-JWK">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="openDocument:" target="stx-lN-Mur" id="FVq-df-CLA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </customView>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hys-Ai-Wdd">
+                                <rect key="frame" x="175" y="20" width="287" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Cl-X3-Q5L">
+                                        <rect key="frame" x="0.0" y="0.0" width="287" height="70"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" borderStyle="bezel" drawsBackground="YES" id="Dfl-sT-GJL">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="BackgroundColor"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Moc-Hm-Gnw">
+                                        <rect key="frame" x="68" y="39" width="109" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="New Project" id="dhE-eK-UjA">
+                                            <font key="font" metaFont="systemBold" size="18"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PWB-LN-3PF">
+                                        <rect key="frame" x="68" y="8" width="190" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" title="Create a new C+++ project" id="yqU-xP-vnv">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Sl-2g-asN">
+                                        <rect key="frame" x="7" y="8" width="52" height="54"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="NSTouchBarFolderCopyToTemplate" id="xq3-mT-J1a"/>
+                                    </imageView>
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rhM-yo-EPV">
+                                        <rect key="frame" x="0.0" y="0.0" width="287" height="68"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="HGB-HR-e3Q">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                </subviews>
+                            </customView>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="aboutButton" destination="RQm-Nb-2fu" id="hBH-M2-UNn"/>
+                        <outlet property="newFileView" destination="vrD-Zo-Nmy" id="h6v-B4-ADl"/>
+                        <outlet property="newProjectView" destination="hys-Ai-Wdd" id="lhK-t7-yVl"/>
+                        <outlet property="openFileView" destination="0eU-Y0-HaU" id="dR0-pH-dBU"/>
+                        <outlet property="titleLabel" destination="DaM-b0-s97" id="HVa-Y6-GEf"/>
+                        <outlet property="welcomeButton" destination="jY9-pm-TSb" id="dmP-OP-N6o"/>
+                    </connections>
+                </viewController>
+                <customObject id="stx-lN-Mur" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="432" y="-597"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="WZv-jL-aAV">
+            <objects>
+                <windowController id="wkS-JN-u0Y" sceneMemberID="viewController">
+                    <window key="window" title="C+++" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="tFG-UU-8A2">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="480" height="320"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+                        <value key="minSize" type="size" width="480" height="320"/>
+                        <value key="maxSize" type="size" width="480" height="320"/>
+                        <toolbar key="toolbar" implicitIdentifier="680F8BD5-F074-481A-A942-E646A0ED1B61" autosavesConfiguration="NO" allowsUserCustomization="NO" showsBaselineSeparator="NO" displayMode="iconAndLabel" sizeMode="regular" id="gy2-l1-9T0">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="uD7-En-qCq"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="qtO-PT-C9e"/>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="qtO-PT-C9e"/>
+                            </defaultToolbarItems>
+                        </toolbar>
+                        <connections>
+                            <outlet property="delegate" destination="wkS-JN-u0Y" id="dtt-NV-0HE"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="S31-UQ-a5H" kind="relationship" relationship="window.shadowedContentViewController" id="Zcg-HR-Kmp"/>
+                    </connections>
+                </windowController>
+                <customObject id="3ax-lc-LWD" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-70" y="-597"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Copy" width="112.5" height="112.5"/>
@@ -2074,6 +2341,8 @@ Gw
         <image name="NSTouchBarAddTemplate" width="14" height="30"/>
         <image name="NSTouchBarComposeTemplate" width="21" height="30"/>
         <image name="NSTouchBarDeleteTemplate" width="15" height="30"/>
+        <image name="NSTouchBarFolderCopyToTemplate" width="26" height="30"/>
+        <image name="NSTouchBarFolderMoveToTemplate" width="22" height="30"/>
         <image name="NSTouchBarFolderTemplate" width="22" height="30"/>
         <image name="NSTouchBarGoBackTemplate" width="10" height="30"/>
         <image name="NSTouchBarGoDownTemplate" width="16" height="30"/>
@@ -2093,7 +2362,10 @@ Gw
             <color red="0.9660000205039978" green="0.96899998188018799" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="BlackAndWhite">
-            <color red="0.93000000000000005" green="0.93000000000000005" blue="0.93000000000000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.93000000715255737" green="0.93000000715255737" blue="0.93000000715255737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="LaunchVCSideBarColor">
+            <color red="0.89999997615814209" green="0.89999997615814209" blue="0.89999997615814209" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>
