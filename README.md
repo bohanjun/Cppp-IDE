@@ -4,7 +4,7 @@
 ## The most simple C++ IDE on macOS Platform.
 - Developed by a Grade-Six student 23786.
 - Website: https://ericnth.cn/cppp-ide-macos (https://ericnth.cn is the website of my friend)
-- Download Version 1.1.0: https://github.com/23786/Cppp-IDE/releases/download/v1.1.0/C+++1.1.0.dmg
+- Download Version 2.0.1: https://github.com/23786/Cppp-IDE/releases/download/v2.0.0/C+++.2.0.0.dmg.zip
 
 
 ## Uses the Xcode g++ to compile
@@ -12,6 +12,8 @@
 - Of course, you can choose your compiler. You can choose between g++, gcc and clang. You can also set the compiler to "python", "swift" or other compilers, but that is not recommended.
 
 ## Update Log
+### 2020.6 Version 2.0.1 (206201) (DEVELOPING)
+
 ### 2020.5 Version 2.0.0 (205200)
 - Great changes have taken place. Discover them youselves!
 
