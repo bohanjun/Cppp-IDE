@@ -17,10 +17,6 @@
 			<string></string>
 			<key>CFBundleTypeName</key>
 			<string>C++ Source</string>
-			<key>CFBundleTypeOSTypes</key>
-			<array>
-				<string>????</string>
-			</array>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>LSTypeIsPackage</key>

@@ -22,6 +22,8 @@ class CDLaunchViewController: NSViewController, CDSettingsViewDelegate {
     @IBOutlet weak var openFileView: NSView!
     @IBOutlet weak var newProjectView: NSView!
     
+    @IBOutlet weak var aboutView: NSView!
+    
     @IBAction func welcomeButtonClicked(_ sender: Any?) {
         
         welcomeButton.state = .on
@@ -30,6 +32,7 @@ class CDLaunchViewController: NSViewController, CDSettingsViewDelegate {
         newFileView.isHidden = false
         openFileView.isHidden = false
         newProjectView.isHidden = false
+        aboutView.isHidden = true
         
     }
     
@@ -41,15 +44,14 @@ class CDLaunchViewController: NSViewController, CDSettingsViewDelegate {
         newFileView.isHidden = true
         openFileView.isHidden = true
         newProjectView.isHidden = true
+        aboutView.isHidden = false
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        welcomeButton.state = .on
-        aboutButton.state = .off
-        titleLabel.stringValue = "Welcome to C+++"
+        welcomeButtonClicked(nil)
         
         welcomeButton.bezelStyle = .smallSquare
         aboutButton.bezelStyle = .smallSquare

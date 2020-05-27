@@ -2140,7 +2140,7 @@ Gw
                                 </textFieldCell>
                             </textField>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vrD-Zo-Nmy">
-                                <rect key="frame" x="175" y="176" width="287" height="70"/>
+                                <rect key="frame" x="175" y="185" width="287" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bAF-lr-kCR">
@@ -2189,7 +2189,7 @@ Gw
                                 </subviews>
                             </customView>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0eU-Y0-HaU">
-                                <rect key="frame" x="175" y="98" width="287" height="70"/>
+                                <rect key="frame" x="175" y="102" width="287" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qwK-xE-qrE">
@@ -2283,10 +2283,93 @@ Gw
                                     </button>
                                 </subviews>
                             </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Kxi-zY-7BU">
+                                <rect key="frame" x="157" y="0.0" width="323" height="267"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R95-JO-AO7">
+                                        <rect key="frame" x="143" y="206" width="73" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="C+++" id="fKj-m0-vbm">
+                                            <font key="font" metaFont="systemSemibold" size="26"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lcp-zT-dkC">
+                                        <rect key="frame" x="145" y="182" width="140" height="16"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Version 2.0.1 (206201)" id="ndz-OK-YpO">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OVe-px-XDr">
+                                        <rect key="frame" x="29" y="31" width="264" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" alignment="center" title="Copyright © 2020 Zhu Yixuan. All rights reserved." id="7KL-kE-PKP">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FqQ-n3-g6t">
+                                        <rect key="frame" x="23" y="113" width="119" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Developed By:" id="O7U-hR-wKD">
+                                            <font key="font" metaFont="systemSemibold" size="17"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Pz-rc-OfN">
+                                        <rect key="frame" x="23" y="85" width="111" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="GitHub Repo:" id="8Qi-i1-vqA">
+                                            <font key="font" metaFont="systemSemibold" size="17"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lVg-he-9L9">
+                                        <rect key="frame" x="146" y="113" width="157" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Zhu Yixuan (23786)" id="rMj-2F-EEo">
+                                            <font key="font" metaFont="system" size="17"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cjt-yS-bvG">
+                                        <rect key="frame" x="137" y="85" width="130" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="23786/cppp-ide" id="cJx-9K-TXc">
+                                            <font key="font" metaFont="system" size="17"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bZT-pD-4Bq">
+                                        <rect key="frame" x="25" y="158" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="AppIcon" id="sEd-gA-nJv"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="267" id="3H5-Bf-qKw"/>
+                                    <constraint firstAttribute="width" constant="323" id="EOj-St-jI7"/>
+                                </constraints>
+                            </customView>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Kxi-zY-7BU" secondAttribute="trailing" id="fbH-gE-yGy"/>
+                            <constraint firstAttribute="bottom" secondItem="Kxi-zY-7BU" secondAttribute="bottom" id="lXV-Td-AvX"/>
+                            <constraint firstItem="Kxi-zY-7BU" firstAttribute="leading" secondItem="uAp-bo-N4d" secondAttribute="leading" constant="157" id="sqH-CO-Eyc"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="aboutButton" destination="RQm-Nb-2fu" id="hBH-M2-UNn"/>
+                        <outlet property="aboutView" destination="Kxi-zY-7BU" id="EVH-xr-4Eu"/>
                         <outlet property="newFileView" destination="vrD-Zo-Nmy" id="h6v-B4-ADl"/>
                         <outlet property="newProjectView" destination="hys-Ai-Wdd" id="lhK-t7-yVl"/>
                         <outlet property="openFileView" destination="0eU-Y0-HaU" id="dR0-pH-dBU"/>
@@ -2332,6 +2415,7 @@ Gw
         </scene>
     </scenes>
     <resources>
+        <image name="AppIcon" width="128" height="128"/>
         <image name="Copy" width="112.5" height="112.5"/>
         <image name="Cut" width="112.5" height="112.5"/>
         <image name="DuplicateFile" width="560" height="575"/>
