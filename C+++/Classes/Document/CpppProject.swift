@@ -40,8 +40,9 @@ class CpppProject: NSDocument {
     
     // MARK: - User Interface
     
-    /// - Tag: makeWindowControllersExample
     override func makeWindowControllers() {
+        
+        launchViewController.view.window?.close()
         
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
         if let windowController =

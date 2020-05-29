@@ -10,6 +10,7 @@
 		180480AE2448602700CD0A4D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180480AD2448602700CD0A4D /* Settings.swift */; };
 		183BF3C524287D4C007AF6AC /* CDFileCompiler(CompileAndRun).swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3C77724272DF700F4CA14 /* CDFileCompiler(CompileAndRun).swift */; };
 		183BF3CA242906B3007AF6AC /* CDTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183BF3C9242906B3007AF6AC /* CDTextView.swift */; };
+		184D5734247EA97500C5AA27 /* NSApplication Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184D5733247EA97500C5AA27 /* NSApplication Extension.swift */; };
 		18541B162445905F000EB4CB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18541B152445905F000EB4CB /* SettingsViewController.swift */; };
 		1868EBD5244981C2005467B2 /* CompileSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1868EBD4244981C2005467B2 /* CompileSettings.swift */; };
 		1868EBD7244AF934005467B2 /* CDTextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1868EBD6244AF934005467B2 /* CDTextViewDelegate.swift */; };
@@ -139,6 +140,7 @@
 		180480A824474A0700CD0A4D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		180480AD2448602700CD0A4D /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		183BF3C9242906B3007AF6AC /* CDTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTextView.swift; sourceTree = "<group>"; };
+		184D5733247EA97500C5AA27 /* NSApplication Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSApplication Extension.swift"; sourceTree = "<group>"; };
 		18541B152445905F000EB4CB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		1868EBD4244981C2005467B2 /* CompileSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompileSettings.swift; sourceTree = "<group>"; };
 		1868EBD6244AF934005467B2 /* CDTextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTextViewDelegate.swift; sourceTree = "<group>"; };
@@ -515,6 +517,7 @@
 			isa = PBXGroup;
 			children = (
 				18B3C77F24282C1F00F4CA14 /* AppDelegate.swift */,
+				184D5733247EA97500C5AA27 /* NSApplication Extension.swift */,
 				183BF3C72428801C007AF6AC /* Classes */,
 				18B3C78A24282C2100F4CA14 /* Info.plist */,
 				18B3C78524282C2100F4CA14 /* Assets.xcassets */,
@@ -735,6 +738,7 @@
 				18B3C78424282C1F00F4CA14 /* Document.swift in Sources */,
 				18B3C790242836A500F4CA14 /* Content.swift in Sources */,
 				183BF3C524287D4C007AF6AC /* CDFileCompiler(CompileAndRun).swift in Sources */,
+				184D5734247EA97500C5AA27 /* NSApplication Extension.swift in Sources */,
 				18E7291E244E6F91000317D7 /* CDGutterTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

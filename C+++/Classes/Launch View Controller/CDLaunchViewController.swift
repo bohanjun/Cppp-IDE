@@ -8,6 +8,8 @@
 
 import Cocoa
 
+var launchViewController: CDLaunchViewController!
+
 class CDLaunchViewController: NSViewController, CDSettingsViewDelegate {
     
     func didSet() {
@@ -55,6 +57,8 @@ class CDLaunchViewController: NSViewController, CDSettingsViewDelegate {
         
         welcomeButton.bezelStyle = .smallSquare
         aboutButton.bezelStyle = .smallSquare
+        
+        launchViewController = self
         
     }
     

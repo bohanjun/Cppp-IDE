@@ -40,7 +40,7 @@ extension NSDocumentController {
         // self.showAlert("Warning", "This version of C+++ does not support creating a project directly. Please create a plain text document using a text editor, the first line is the compile command and the next lines are all the file paths in this project. Then change the extension of this file to \"cpppproj\" and then open it in C+++.")
 
         print(NSDocumentController.shared.documentClassNames)
-        print(NSDocumentController.shared.documentClass(forType: "cpppproj"))
+        // print(NSDocumentController.shared.documentClass(forType: "cpppproj")!)
         do {
             let document = try NSDocumentController.shared.makeUntitledDocument(ofType: "cpppproj") as! CpppProject
             NSDocumentController.shared.addDocument(document)
@@ -353,20 +353,5 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
     
     
     
-    
-    
-    
-    
-    @IBAction func showTutorial(_ sender: Any) {
-        NSWorkspace.shared.open(URL(string: "https://www.runoob.com/cplusplus/cpp-tutorial.html")!)
-    }
-    
-    @IBAction func showWebsite(_ sender: Any) {
-        NSWorkspace.shared.open(URL(string: "https://ericnth.cn/cppp-ide-macos/")!)
-    }
-    
-    @IBAction func showGithub(_ sender: Any) {
-        NSWorkspace.shared.open(URL(string: "https://github.com/23786/cppp-ide")!)
-    }
     
 }

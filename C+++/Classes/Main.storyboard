@@ -444,6 +444,13 @@
                                                 <action selector="mergeAllWindows:" target="Ady-hI-5gd" id="rbb-tP-WUB"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="JdI-ce-SQE"/>
+                                        <menuItem title="Welcome to C+++" id="h6c-Pu-3pU">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <segue destination="wkS-JN-u0Y" kind="show" id="ZqP-BO-9th"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="eu3-7i-yIM"/>
                                         <menuItem title="Bring All to Front" id="LE2-aR-0XJ">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -1873,7 +1880,7 @@ Gw
                                     <rect key="frame" x="-100" y="-100" width="429" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="bse-x7-XOG">
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="bse-x7-XOG">
                                     <rect key="frame" x="430" y="1" width="15" height="170"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -2305,7 +2312,7 @@ Gw
                                         </textFieldCell>
                                     </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OVe-px-XDr">
-                                        <rect key="frame" x="29" y="31" width="264" height="37"/>
+                                        <rect key="frame" x="29" y="23" width="264" height="37"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <textFieldCell key="cell" alignment="center" title="Copyright © 2020 Zhu Yixuan. All rights reserved." id="7KL-kE-PKP">
                                             <font key="font" metaFont="system"/>
@@ -2384,9 +2391,10 @@ Gw
         <!--Window Controller-->
         <scene sceneID="WZv-jL-aAV">
             <objects>
-                <windowController id="wkS-JN-u0Y" sceneMemberID="viewController">
-                    <window key="window" title="C+++" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="tFG-UU-8A2">
+                <windowController storyboardIdentifier="Launch View Controller" showSeguePresentationStyle="single" id="wkS-JN-u0Y" sceneMemberID="viewController">
+                    <window key="window" title="C+++" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="" animationBehavior="default" tabbingMode="disallowed" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="tFG-UU-8A2">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
+                        <windowCollectionBehavior key="collectionBehavior" fullScreenNone="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="320"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
