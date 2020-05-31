@@ -67,15 +67,21 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="File" id="bib-Uj-vzu">
                                     <items>
-                                        <menuItem title="New" keyEquivalent="n" id="Was-JA-tGl">
-                                            <connections>
-                                                <action selector="newDocument:" target="Ady-hI-5gd" id="4Si-XN-c54"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="New Project" keyEquivalent="N" id="Qsx-Xa-Z91">
-                                            <connections>
-                                                <action selector="newProject:" target="Ady-hI-5gd" id="tgD-bs-7ES"/>
-                                            </connections>
+                                        <menuItem title="New" id="Was-JA-tGl">
+                                            <menu key="submenu" id="O6I-tM-e3n">
+                                                <items>
+                                                    <menuItem title="C++ Source File" keyEquivalent="n" id="9K1-YS-0Q3">
+                                                        <connections>
+                                                            <action selector="newDocument:" target="Ady-hI-5gd" id="E7O-Tc-Ril"/>
+                                                        </connections>
+                                                    </menuItem>
+                                                    <menuItem title="Project" keyEquivalent="N" id="bVd-hN-U9Y">
+                                                        <connections>
+                                                            <action selector="newProject:" target="Ady-hI-5gd" id="TT4-86-bTv"/>
+                                                        </connections>
+                                                    </menuItem>
+                                                </items>
+                                            </menu>
                                         </menuItem>
                                         <menuItem title="Open…" keyEquivalent="o" id="IAo-SY-fd9">
                                             <connections>
@@ -1880,7 +1886,7 @@ Gw
                                     <rect key="frame" x="-100" y="-100" width="429" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="bse-x7-XOG">
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="bse-x7-XOG">
                                     <rect key="frame" x="430" y="1" width="15" height="170"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -2003,7 +2009,7 @@ Gw
                 </viewController>
                 <customObject id="G77-u6-IiC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-285" y="1747"/>
+            <point key="canvasLocation" x="-285" y="1784"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="du1-IZ-qyr">
@@ -2119,9 +2125,6 @@ Gw
                                                         <font key="font" metaFont="system" size="15"/>
                                                     </buttonCell>
                                                     <color key="contentTintColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                                    <connections>
-                                                        <action selector="showSettingsView:" target="S31-UQ-a5H" id="pgy-54-KU9"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </view>
@@ -2287,6 +2290,9 @@ Gw
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="newProject:" target="stx-lN-Mur" id="HYo-al-TE6"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </customView>
