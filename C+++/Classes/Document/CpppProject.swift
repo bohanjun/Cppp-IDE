@@ -8,6 +8,26 @@
 
 import Cocoa
 
+
+extension NSDocumentController {
+    
+    @IBAction func newProject(_ sender: Any?) {
+        
+        do {
+            (NSDocumentController.shared as! CDDocumentController).isCreatingAProject = true
+            try NSDocumentController.shared.openUntitledDocumentAndDisplay(true)
+            (NSDocumentController.shared as! CDDocumentController).isCreatingAProject = false
+        } catch {
+            print("Error")
+        }
+        
+    }
+    
+}
+
+
+
+
 class CpppProject: NSDocument {
     
     @objc var content = Content(contentString: "")
@@ -70,39 +90,49 @@ class CpppProject: NSDocument {
     }
     
     @objc dynamic var compileCommand: String {
+        
         get {
             let string = self.content.contentString
             let lines = string.components(separatedBy: "\n")
             return lines.first ?? ""
         }
+        
         set {
             let string = newValue + "\n" + allFiles.joined(separator: "\n")
             self.content.contentString = string
         }
+        
     }
     
-    var allFiles: [String] {
+    @objc dynamic var allFiles: [String] {
+        
         get {
             let string = self.content.contentString
             var lines = string.components(separatedBy: "\n")
             lines.removeFirst()
             return lines
         }
+        
         set {
             let string = compileCommand + "\n" + newValue.joined(separator: "\n")
             self.content.contentString = string
         }
+        
     }
     
     
     // MARK: - Reading and Writing
     
     override func read(from data: Data, ofType typeName: String) throws {
+        
         content.read(from: data)
+        
     }
     
     override func data(ofType typeName: String) throws -> Data {
+        
         return content.data()!
+        
     }
     
     

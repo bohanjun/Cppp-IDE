@@ -41,6 +41,7 @@ class Document: NSDocument {
     override func makeWindowControllers() {
         
         launchViewController.view.window?.close()
+        
         // Returns the storyboard that contains your document window.
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
         if let windowController =

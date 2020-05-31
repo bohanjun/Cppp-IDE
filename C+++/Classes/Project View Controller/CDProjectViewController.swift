@@ -12,12 +12,13 @@ class CDProjectViewController: NSViewController {
     
     var filePaths = [String]()
     var isFileSaved: Bool = false
+    
     @IBOutlet var tableView: CDProjectTableView!
     @IBOutlet weak var textField: NSTextField!
     
     @IBAction func set(_ sender: Any?) {
         
-        self.view.window?.isDocumentEdited = true
+        didChange()
         if let file = self.representedObject as? CpppProject {
             file.compileCommand = textField.stringValue
         } else {
@@ -28,8 +29,8 @@ class CDProjectViewController: NSViewController {
     
     @IBAction func saveProject(_ sender: Any?) {
       //  if self.isFileSaved {
-            self.view.window?.isDocumentEdited = false
-            NSDocumentController.shared.currentDocument?.save(self)
+        self.view.window?.isDocumentEdited = false
+        NSDocumentController.shared.currentDocument?.save(self)
       /*  } else {
             let panel = NSSavePanel()
             panel.allowedFileTypes = ["cpppproj"]
@@ -61,7 +62,9 @@ class CDProjectViewController: NSViewController {
     @IBOutlet weak var RemoveIndexTextField: NSTextField!
     
     @IBAction func Remove(_ sender: NSButton) {
+        
         if let index = Int(self.RemoveIndexTextField.stringValue) {
+            
             if index - 1 >= self.tableView.cells.count || index <= 0 {
                 self.showAlert("Warning", "File index invalid.")
                 return
@@ -69,10 +72,12 @@ class CDProjectViewController: NSViewController {
             self.tableView.remove(at: index - 1)
             self.RemoveIndexTextField.stringValue = ""
             (self.representedObject as! CpppProject).allFiles = self.tableView.getAllTitles()
-            self.view.window?.isDocumentEdited = true
+            self.didChange()
+            
         } else {
             self.showAlert("Warning", "Please type the index of the document in the text box and then try to remove it from the project.")
         }
+        
     }
     
     
@@ -88,7 +93,7 @@ class CDProjectViewController: NSViewController {
                 case .OK:
                     self.tableView.append(cell: CDProjectTableViewCell(path: dialog.url!.path))
                     (self.representedObject as! CpppProject).allFiles = self.tableView.getAllTitles()
-                    self.view.window?.isDocumentEdited = true
+                    self.didChange()
                 default: break
             }
         }
@@ -97,7 +102,9 @@ class CDProjectViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.isFileSaved = false
+        
     }
     
     override var representedObject: Any? {
@@ -107,5 +114,19 @@ class CDProjectViewController: NSViewController {
             }
         }
     }
+    
+    weak var document: CpppProject? {
+        if let docRepresentedObject = representedObject as? CpppProject {
+            return docRepresentedObject
+        }
+        return nil
+    }
+    
+    func didChange() {
+        
+        self.view.window?.isDocumentEdited = true
+        
+    }
+    
     
 }

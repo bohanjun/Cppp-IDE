@@ -1846,7 +1846,7 @@ Gw
                 </viewController>
                 <customObject id="2Tp-Fl-jBw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11" y="1062"/>
+            <point key="canvasLocation" x="70" y="1006"/>
         </scene>
         <!--Project View Controller-->
         <scene sceneID="eAM-Sv-WeE">
@@ -1880,7 +1880,7 @@ Gw
                                     <rect key="frame" x="-100" y="-100" width="429" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="bse-x7-XOG">
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="bse-x7-XOG">
                                     <rect key="frame" x="430" y="1" width="15" height="170"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -2003,7 +2003,7 @@ Gw
                 </viewController>
                 <customObject id="G77-u6-IiC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-262" y="1789"/>
+            <point key="canvasLocation" x="-285" y="1747"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="du1-IZ-qyr">

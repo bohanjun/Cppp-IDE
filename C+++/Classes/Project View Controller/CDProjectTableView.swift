@@ -10,7 +10,7 @@ import Cocoa
 
 class CDProjectTableView: CDTableView {
     
-    var paths = [String]() {
+    @objc dynamic var paths = [String]() {
         didSet {
             setup()
         }

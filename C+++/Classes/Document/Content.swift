@@ -21,7 +21,16 @@ class Content: NSObject {
 extension Content {
     
     func read(from data: Data) {
-        contentString = String(bytes: data, encoding: .utf8)!
+        if let string = String(bytes: data, encoding: .utf8) {
+            print("utf8")
+            contentString = string
+        } else if let string = String(bytes: data, encoding: .windowsCP1252) {
+            print("CP1252")
+            contentString = string
+        } else if let string = String(bytes: data, encoding: .unicode) {
+            print("unicode")
+            contentString = string
+        }
     }
     
     func data() -> Data? {
