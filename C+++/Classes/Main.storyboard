@@ -1509,6 +1509,17 @@ Gw
                                             <action selector="compileWithoutRunning:" target="2Tp-Fl-jBw" id="tdJ-tN-pyp"/>
                                         </connections>
                                     </button>
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sug-ve-Dre">
+                                        <rect key="frame" x="15" y="542" width="52" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="bevel" title="Test" bezelStyle="regularSquare" image="NSTouchBarQuickLookTemplate" imagePosition="left" alignment="center" imageScaling="proportionallyDown" inset="2" id="N2a-aR-KkV">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="testFile:" target="2Tp-Fl-jBw" id="7A5-Qf-Agk"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="TWt-wF-68Q" secondAttribute="trailing" constant="15" id="03G-PO-y3Q"/>
@@ -2446,6 +2457,7 @@ Gw
         <image name="NSTouchBarGoDownTemplate" width="16" height="30"/>
         <image name="NSTouchBarGoForwardTemplate" width="10" height="30"/>
         <image name="NSTouchBarPlayTemplate" width="14" height="30"/>
+        <image name="NSTouchBarQuickLookTemplate" width="22" height="30"/>
         <image name="NSTouchBarSearchTemplate" width="19" height="30"/>
         <image name="NewFile" width="660" height="660"/>
         <image name="OpenFile" width="720" height="600"/>

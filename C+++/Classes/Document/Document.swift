@@ -139,6 +139,14 @@ class Document: NSDocument {
         
     }
     
+    @IBAction func testFile(_ sender: Any?) {
+        
+        let vc = CDTestViewController()
+        vc.fileURL = self.fileURL?.path ?? ""
+        self.contentViewController.presentAsSheet(vc)
+        
+    }
+    
     @IBAction func compileWithoutRunning(_ sender: Any?) {
         
         if self.isDraft {

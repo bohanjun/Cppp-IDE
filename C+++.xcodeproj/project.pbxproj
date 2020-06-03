@@ -135,6 +135,9 @@
 		18D4DD71246A303400B97F32 /* CDProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D4DD70246A303400B97F32 /* CDProjectTableViewCell.swift */; };
 		18E7291E244E6F91000317D7 /* CDGutterTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E7291D244E6F91000317D7 /* CDGutterTextView.swift */; };
 		18E72920244E756E000317D7 /* CDScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E7291F244E756E000317D7 /* CDScrollView.swift */; };
+		18FC05482487B9F600F33CE2 /* CDTestPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC05472487B9F600F33CE2 /* CDTestPointView.swift */; };
+		18FC054B2487BA3600F33CE2 /* CDTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC05492487BA3600F33CE2 /* CDTestViewController.swift */; };
+		18FC054C2487BA3600F33CE2 /* CDTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18FC054A2487BA3600F33CE2 /* CDTestViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -270,6 +273,9 @@
 		18D4DD70246A303400B97F32 /* CDProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProjectTableViewCell.swift; sourceTree = "<group>"; };
 		18E7291D244E6F91000317D7 /* CDGutterTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDGutterTextView.swift; sourceTree = "<group>"; };
 		18E7291F244E756E000317D7 /* CDScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDScrollView.swift; sourceTree = "<group>"; };
+		18FC05472487B9F600F33CE2 /* CDTestPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTestPointView.swift; sourceTree = "<group>"; };
+		18FC05492487BA3600F33CE2 /* CDTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTestViewController.swift; sourceTree = "<group>"; };
+		18FC054A2487BA3600F33CE2 /* CDTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CDTestViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,12 +302,13 @@
 		183BF3C72428801C007AF6AC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				187527AC247A64B200A7522A /* Launch View Controller */,
-				18E0B01C242C52650062049C /* Document */,
-				18D4DD6B246A2C1A00B97F32 /* Project View Controller */,
 				18B1859824699A2800B579AD /* Main.storyboard */,
-				18541B172445AB35000EB4CB /* Settings */,
 				18B1859524698AA400B579AD /* Main View Controller */,
+				18E0B01C242C52650062049C /* Document */,
+				18FC05442487B96200F33CE2 /* Test */,
+				187527AC247A64B200A7522A /* Launch View Controller */,
+				18D4DD6B246A2C1A00B97F32 /* Project View Controller */,
+				18541B172445AB35000EB4CB /* Settings */,
 				18B1858324682FC300B579AD /* Debug */,
 				18B185752464EE9200B579AD /* Snippet */,
 				183BF3C824288043007AF6AC /* Edit */,
@@ -549,6 +556,16 @@
 			path = Document;
 			sourceTree = "<group>";
 		};
+		18FC05442487B96200F33CE2 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				18FC05472487B9F600F33CE2 /* CDTestPointView.swift */,
+				18FC05492487BA3600F33CE2 /* CDTestViewController.swift */,
+				18FC054A2487BA3600F33CE2 /* CDTestViewController.xib */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -685,6 +702,7 @@
 				18A41B43242C765500AFC422 /* pojoaque.min.css in Resources */,
 				18A41B2E242C765500AFC422 /* kimbie.dark.min.css in Resources */,
 				18A41B42242C765500AFC422 /* atelier-forest-light.min.css in Resources */,
+				18FC054C2487BA3600F33CE2 /* CDTestViewController.xib in Resources */,
 				18A41B41242C765500AFC422 /* magula.min.css in Resources */,
 				18A41B39242C765500AFC422 /* monokai.min.css in Resources */,
 				18B3C78624282C2100F4CA14 /* Assets.xcassets in Resources */,
@@ -730,6 +748,7 @@
 				18541B162445905F000EB4CB /* SettingsViewController.swift in Sources */,
 				18A41AA4242C758B00AFC422 /* Theme.swift in Sources */,
 				18B3C7942428378E00F4CA14 /* WindowController.swift in Sources */,
+				18FC054B2487BA3600F33CE2 /* CDTestViewController.swift in Sources */,
 				18D4DD6F246A2C9E00B97F32 /* CDProjectTableView.swift in Sources */,
 				18D4DD71246A303400B97F32 /* CDProjectTableViewCell.swift in Sources */,
 				18D4DD6D246A2C5100B97F32 /* CDProjectViewController.swift in Sources */,
@@ -737,6 +756,7 @@
 				18B185822468210100B579AD /* CDFileCompiler(Debugger).swift in Sources */,
 				18B185912469608B00B579AD /* CpppProject.swift in Sources */,
 				18B1856E246387F100B579AD /* CDTableView.swift in Sources */,
+				18FC05482487B9F600F33CE2 /* CDTestPointView.swift in Sources */,
 				18B3C78024282C1F00F4CA14 /* AppDelegate.swift in Sources */,
 				18B1856C2460366100B579AD /* DefaultCode.swift in Sources */,
 				18B3C78424282C1F00F4CA14 /* Document.swift in Sources */,
