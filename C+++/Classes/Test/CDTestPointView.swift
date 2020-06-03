@@ -39,14 +39,14 @@ class CDTestPointView: NSView {
         } set {
             if newValue {
                 checkBox?.state = .on
-                inputTextView?.isHidden = true
-                outputTextView?.isHidden = true
-                actualOutputTextView?.isHidden = true
-            } else {
-                checkBox?.state = .off
                 inputTextView?.isHidden = false
                 outputTextView?.isHidden = false
                 actualOutputTextView?.isHidden = false
+            } else {
+                checkBox?.state = .off
+                inputTextView?.isHidden = true
+                outputTextView?.isHidden = true
+                actualOutputTextView?.isHidden = true
             }
         }
     }
