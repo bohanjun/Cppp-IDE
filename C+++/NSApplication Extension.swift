@@ -10,11 +10,6 @@ import Cocoa
 
 extension NSApplication {
     
-    
-    @IBAction func showTutorial(_ sender: Any) {
-        NSWorkspace.shared.open(URL(string: "https://www.runoob.com/cplusplus/cpp-tutorial.html")!)
-    }
-    
     @IBAction func showWebsite(_ sender: Any) {
         NSWorkspace.shared.open(URL(string: "https://ericnth.cn/cppp-ide-macos/")!)
     }

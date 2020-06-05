@@ -471,12 +471,6 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" id="5dI-Xc-jaZ">
                                     <items>
-                                        <menuItem title="View C++ Tutorial" id="oOa-EA-j4I">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="showTutorial:" target="Ady-hI-5gd" id="G1g-Bl-6Xf"/>
-                                            </connections>
-                                        </menuItem>
                                         <menuItem title="Visit the Website of C+++" id="fhs-Ki-oQO">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
