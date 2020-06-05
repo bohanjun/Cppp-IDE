@@ -52,13 +52,15 @@ class CDTestViewController: NSViewController {
         }
         
         for i in [first!, second!, third!, fourth!] {
+            
+            i.result = "Not tested"
 
             if i.isEnabled {
                 
                 let ans = CDFileCompiler.shell("\"\(executablePath)\"", i.input! + "\nEOF\n").first
                 i.actualOutput = ans
                 
-                if ans == i.output {
+                if ans?.trimmingCharacters(in: .whitespaces) == i.output?.trimmingCharacters(in: .whitespaces) {
                     i.result = "Correct"
                 } else {
                     i.result = "Incorrect"

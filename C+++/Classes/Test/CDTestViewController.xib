@@ -10,8 +10,7 @@
             <connections>
                 <outlet property="first" destination="7cH-JF-m8f" id="C6b-Js-ce1"/>
                 <outlet property="fourth" destination="sKA-DZ-q5n" id="kjd-fh-Vk1"/>
-                <outlet property="second" destination="K8N-Su-kjO" id="LZJ-sK-rDt"/>
-                <outlet property="sourceItemView" destination="sKA-DZ-q5n" id="BUY-g2-OO3"/>
+                <outlet property="second" destination="LtO-UA-2Gk" id="63s-V9-Dmf"/>
                 <outlet property="third" destination="K8N-Su-kjO" id="t8K-Gi-Dsh"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
