@@ -18,14 +18,17 @@ func MenloFont(ofSize size: CGFloat) -> NSFont {
 let darkAqua = NSAppearance(named: .darkAqua)
 let aqua = NSAppearance(named: .aqua)
 
+
+
+
 extension NSViewController {
     
-    func showAlert(_ message: String, _ title: String) {
+    func showAlert(_ title: String, _ message: String) {
         let alert = NSAlert()
-        alert.messageText = message
+        alert.messageText = title
         alert.alertStyle = .informational
         alert.addButton(withTitle: "OK")
-        alert.informativeText = title
+        alert.informativeText = message
         alert.beginSheetModal(for: self.view.window!, completionHandler: { returnCode in })
     }
     

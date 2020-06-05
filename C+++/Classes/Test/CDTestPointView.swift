@@ -15,6 +15,7 @@ class CDTestPointView: NSView {
     @IBOutlet weak var outputTextView: NSTextView!
     @IBOutlet weak var actualOutputTextView: NSTextView!
     @IBOutlet weak var checkBox: NSButton!
+    @IBOutlet weak var resultLabel: NSTextField!
     
     var input: String? {
         return inputTextView?.string
@@ -24,12 +25,23 @@ class CDTestPointView: NSView {
         return outputTextView?.string
     }
     
+    var result: String? {
+        get {
+            return resultLabel?.stringValue
+        }
+        set {
+            resultLabel?.stringValue = newValue!
+        }
+    }
+    
     var actualOutput: String? {
         get {
             return actualOutputTextView?.string
         }
         set {
+            actualOutputTextView?.isEditable = true
             actualOutputTextView?.string = newValue ?? "Error"
+            actualOutputTextView?.isEditable = false
         }
     }
     

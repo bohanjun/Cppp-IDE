@@ -22,10 +22,51 @@ class CDTestViewController: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
         
-        self.first?.isEnabled = true
-        self.second?.isEnabled = true
-        self.third?.isEnabled = true
-        self.fourth?.isEnabled = true
+        for i in [first!, second!, third!, fourth!] {
+
+            i.isEnabled = true
+            i.inputTextView.font = MenloFont(ofSize: 12.0)
+            i.outputTextView.font = MenloFont(ofSize: 12.0)
+            i.actualOutputTextView.font = MenloFont(ofSize: 12.0)
+            i.actualOutputTextView.isEditable = false
+            
+        }
+        
+    }
+    
+    @IBAction func end(_ sender: Any?) {
+        
+        self.dismiss(self)
+        
+    }
+    
+    @IBAction func start(_ sender: Any?) {
+        
+        let executablePath = (self.fileURL as NSString).deletingPathExtension
+        
+        let exsists = FileManager().fileExists(atPath: executablePath)
+        
+        guard exsists else {
+            self.showAlert("Warning", "Please compile the file first." )
+            return
+        }
+        
+        for i in [first!, second!, third!, fourth!] {
+
+            if i.isEnabled {
+                
+                let ans = CDFileCompiler.shell("\"\(executablePath)\"", i.input! + "\nEOF\n").first
+                i.actualOutput = ans
+                
+                if ans == i.output {
+                    i.result = "Correct"
+                } else {
+                    i.result = "Incorrect"
+                }
+                
+            }
+            
+        }
         
     }
     

@@ -8,8 +8,6 @@
 
 import Cocoa
 
-
-
 class WindowController: NSWindowController, NSWindowDelegate {
     
     @objc dynamic var statusString = "C+++ | Ready"

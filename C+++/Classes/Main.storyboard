@@ -1897,7 +1897,7 @@ Gw
                                     <rect key="frame" x="-100" y="-100" width="429" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="bse-x7-XOG">
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="bse-x7-XOG">
                                     <rect key="frame" x="430" y="1" width="15" height="170"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>

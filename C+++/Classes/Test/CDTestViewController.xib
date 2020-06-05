@@ -9,9 +9,10 @@
         <customObject id="-2" userLabel="File's Owner" customClass="CDTestViewController" customModule="C___" customModuleProvider="target">
             <connections>
                 <outlet property="first" destination="7cH-JF-m8f" id="C6b-Js-ce1"/>
-                <outlet property="fourth" destination="LtO-UA-2Gk" id="Tub-kb-giO"/>
+                <outlet property="fourth" destination="sKA-DZ-q5n" id="kjd-fh-Vk1"/>
                 <outlet property="second" destination="K8N-Su-kjO" id="LZJ-sK-rDt"/>
                 <outlet property="sourceItemView" destination="sKA-DZ-q5n" id="BUY-g2-OO3"/>
+                <outlet property="third" destination="K8N-Su-kjO" id="t8K-Gi-Dsh"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -37,11 +38,14 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="start:" target="-2" id="V3h-6o-JgG"/>
+                    </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aoA-jY-1fg">
-                    <rect key="frame" x="88" y="383" width="347" height="16"/>
+                    <rect key="frame" x="88" y="383" width="537" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" lineBreakMode="clipping" title="Please make sure your file can be compiled successfully." id="5Zh-LJ-HMe">
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Please make sure you have compiled your file and the executable file has no fatal errors." id="5Zh-LJ-HMe">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -54,6 +58,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="end:" target="-2" id="lRj-Hw-ppp"/>
+                    </connections>
                 </button>
                 <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7cH-JF-m8f" customClass="CDTestPointView" customModule="C___" customModuleProvider="target">
                     <rect key="frame" x="20" y="32" width="137" height="275"/>
@@ -151,12 +158,22 @@
                                 <autoresizingMask key="autoresizingMask"/>
                             </scroller>
                         </scrollView>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sQ8-lx-eBD">
+                            <rect key="frame" x="28" y="7" width="80" height="19"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" lineBreakMode="clipping" title="Not tested" id="TWS-ZG-b7M">
+                                <font key="font" metaFont="systemSemibold" size="15"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
                     </subviews>
                     <connections>
                         <outlet property="actualOutputTextView" destination="3TA-Ac-R5c" id="fCb-pm-TEx"/>
                         <outlet property="checkBox" destination="cGu-qk-nvu" id="xhG-OM-O01"/>
                         <outlet property="inputTextView" destination="pj3-cr-8S6" id="eaW-kV-bxi"/>
                         <outlet property="outputTextView" destination="FAB-0B-kA2" id="FkI-2c-FnW"/>
+                        <outlet property="resultLabel" destination="sQ8-lx-eBD" id="Pzg-O3-OMw"/>
                     </connections>
                 </customView>
                 <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LtO-UA-2Gk" customClass="CDTestPointView" customModule="C___" customModuleProvider="target">
@@ -255,12 +272,22 @@
                                 <autoresizingMask key="autoresizingMask"/>
                             </scroller>
                         </scrollView>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iaC-Wb-fkt">
+                            <rect key="frame" x="28" y="7" width="80" height="19"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" lineBreakMode="clipping" title="Not tested" id="Zz4-rF-w0E">
+                                <font key="font" metaFont="systemSemibold" size="15"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
                     </subviews>
                     <connections>
                         <outlet property="actualOutputTextView" destination="ZmI-R3-MfW" id="wt7-nI-0ds"/>
                         <outlet property="checkBox" destination="Gyw-gX-gf0" id="EhO-0C-Jou"/>
                         <outlet property="inputTextView" destination="Fte-DW-Pzm" id="fge-OC-e3h"/>
                         <outlet property="outputTextView" destination="KVJ-bk-DvS" id="BJn-e3-CNn"/>
+                        <outlet property="resultLabel" destination="iaC-Wb-fkt" id="LBc-Lj-ef2"/>
                     </connections>
                 </customView>
                 <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K8N-Su-kjO" customClass="CDTestPointView" customModule="C___" customModuleProvider="target">
@@ -359,12 +386,22 @@
                                 <action selector="didChange:" target="K8N-Su-kjO" id="ue5-GW-OHX"/>
                             </connections>
                         </button>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="96P-vG-ZOH">
+                            <rect key="frame" x="28" y="7" width="80" height="19"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" lineBreakMode="clipping" title="Not tested" id="5Ys-qg-1ZZ">
+                                <font key="font" metaFont="systemSemibold" size="15"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
                     </subviews>
                     <connections>
                         <outlet property="actualOutputTextView" destination="Itc-54-VgK" id="asR-RR-0T1"/>
                         <outlet property="checkBox" destination="mgB-Jl-Bbh" id="XbV-Nb-7Ii"/>
                         <outlet property="inputTextView" destination="gv2-GP-JFh" id="VvV-Cs-e72"/>
                         <outlet property="outputTextView" destination="Ftc-pJ-7bN" id="umg-2Q-vfe"/>
+                        <outlet property="resultLabel" destination="96P-vG-ZOH" id="MDz-jp-ET7"/>
                     </connections>
                 </customView>
                 <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sKA-DZ-q5n" customClass="CDTestPointView" customModule="C___" customModuleProvider="target">
@@ -463,12 +500,22 @@
                                 <autoresizingMask key="autoresizingMask"/>
                             </scroller>
                         </scrollView>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aX0-iB-3IC">
+                            <rect key="frame" x="28" y="7" width="80" height="19"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textFieldCell key="cell" lineBreakMode="clipping" title="Not tested" id="yES-zo-d11">
+                                <font key="font" metaFont="systemSemibold" size="15"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
                     </subviews>
                     <connections>
                         <outlet property="actualOutputTextView" destination="U9W-BB-yZt" id="FH6-uz-kef"/>
                         <outlet property="checkBox" destination="39z-RZ-CU5" id="uuy-3o-9xN"/>
                         <outlet property="inputTextView" destination="DsZ-c0-ha3" id="QPL-yV-Gdg"/>
                         <outlet property="outputTextView" destination="IPg-YL-Ui6" id="WXl-dY-q1C"/>
+                        <outlet property="resultLabel" destination="aX0-iB-3IC" id="Sb6-H7-cXp"/>
                     </connections>
                 </customView>
             </subviews>
