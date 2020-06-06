@@ -36,6 +36,7 @@ class CDTextView: NSTextView {
     var scrollView: CDScrollView!
     var codeTextViewDelegate: CDTextViewDelegate!
     var codeAttributedString: CodeAttributedString!
+    let parser = CDParser(code: "")
     
     private var completeWhenChangingText = true
     
@@ -65,7 +66,7 @@ class CDTextView: NSTextView {
         
         if let left = replacementString {
             
-            if config.AutoComplete == false {
+            if config!.autoComplete == false {
                 return superResult
             }
             
@@ -137,7 +138,7 @@ class CDTextView: NSTextView {
         if string == "" {
             return res
         }
-        let parser = CDParser(code: (self.string as NSString).substring(to: self.selectedRange.location))
+        self.parser.buffer = (self.string as NSString).substring(to: self.selectedRange.location)
         let parserRes = parser.getIdentifiers()
         for i in parserRes {
             if compare(string, i) == string.count {
@@ -177,8 +178,8 @@ class CDTextView: NSTextView {
             
         }
         
-        self.highlightr!.setTheme(to: config.LightThemeName)
-        self.highlightr!.theme.setCodeFont(NSFont(name: config.FontName, size: CGFloat(config.FontSize))!)
+        self.highlightr!.setTheme(to: config!.lightThemeName)
+        self.highlightr!.theme.setCodeFont(NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))!)
         
     }
     

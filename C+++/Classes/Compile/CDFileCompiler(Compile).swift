@@ -14,7 +14,7 @@ extension CDFileCompiler {
     - parameter fileURL: The path of the file.
     - returns: The result to be displayed in the "Compile Info"  text view.
     */
-    public static func CompileWithoutRunning(fileURL: String, arguments: String = compileConfig.Arguments ?? "") -> String {
+    public static func CompileWithoutRunning(fileURL: String, arguments: String = compileConfig!.arguments ?? "") -> String {
          
         // The path of the file
         let _fileURL = "\"" + fileURL + "\""
@@ -24,7 +24,7 @@ extension CDFileCompiler {
         out = "\"" + out + "\""
         
         // The compile command
-        let command = "\(compileConfig.Compiler ?? "g++") \(arguments) \(_fileURL) -o \(out)"
+        let command = "\(compileConfig!.compiler ?? "g++") \(arguments) \(_fileURL) -o \(out)"
         
         // Compile
         let b = shell(command)

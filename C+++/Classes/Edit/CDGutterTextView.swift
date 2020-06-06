@@ -40,7 +40,7 @@ class CDGutterTextView: NSTextView, CDTextViewDelegate {
             
         }
         
-        self.font = NSFont(name: CDSettingsViewController.getSavedData()?.FontName ?? "Courier", size: CGFloat(CDSettingsViewController.getSavedData()?.FontSize ?? 15))
+        self.font = NSFont(name: CDSettingsViewController.getSavedData()?.fontName ?? "Courier", size: CGFloat(CDSettingsViewController.getSavedData()?.fontSize ?? 15))
         
     }
     

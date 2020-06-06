@@ -12,38 +12,40 @@ class Settings: NSObject, NSCoding {
     
     // MARK: - Properties
     
-    var FontName: String!
-    var FontSize: Int!
-    var LightThemeName: String!
-    var DarkThemeName: String!
-    var AutoComplete: Bool!
+    var fontName: String!
+    var fontSize: Int!
+    var lightThemeName: String!
+    var darkThemeName: String!
+    var autoComplete: Bool!
     
     // MARK: - Archiving Paths
     
-    static let DocumentsDirectory = FileManager().urls(for: .libraryDirectory, in: .userDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("C+++").appendingPathComponent("Settings")
+    static let documentsDirectory = FileManager().urls(for: .libraryDirectory, in: .userDomainMask).first!
+    static let archiveURL = documentsDirectory.appendingPathComponent("C+++").appendingPathComponent("Settings")
     
     // MARK: - Types
     
     struct PropertyKey {
+        
         static let FontName = "FontName"
         static let FontSize = "FontSize"
         static let LightThemeName = "LightThemeName"
         static let DarkThemeName = "DarkThemeName"
         static let AutoComplete = "AutoComplete"
+        
     }
     
     
     // MARK: - Initialization
     
-    init?(_ FontName: String?, _ FontSize: Int?, _ LightThemeName: String?, _ DarkThemeName: String?, _ AutoComplete: Bool?) {
+    init?(_ fontName: String?, _ fontSize: Int?, _ lightThemeName: String?, _ darkThemeName: String?, _ autoComplete: Bool?) {
         
         // Initialize stored properties.
-        self.FontName = FontName
-        self.FontSize = FontSize
-        self.LightThemeName = LightThemeName
-        self.DarkThemeName = DarkThemeName
-        self.AutoComplete = AutoComplete
+        self.fontName = fontName
+        self.fontSize = fontSize
+        self.lightThemeName = lightThemeName
+        self.darkThemeName = darkThemeName
+        self.autoComplete = autoComplete
         
     }
     
@@ -51,11 +53,13 @@ class Settings: NSObject, NSCoding {
     // MARK: - NSCoding
     
     func encode(with coder: NSCoder) {
-        coder.encode(FontName, forKey: PropertyKey.FontName)
-        coder.encode(FontSize, forKey: PropertyKey.FontSize)
-        coder.encode(LightThemeName, forKey: PropertyKey.LightThemeName)
-        coder.encode(DarkThemeName, forKey: PropertyKey.DarkThemeName)
-        coder.encode(AutoComplete, forKey: PropertyKey.AutoComplete)
+        
+        coder.encode(fontName, forKey: PropertyKey.FontName)
+        coder.encode(fontSize, forKey: PropertyKey.FontSize)
+        coder.encode(lightThemeName, forKey: PropertyKey.LightThemeName)
+        coder.encode(darkThemeName, forKey: PropertyKey.DarkThemeName)
+        coder.encode(autoComplete, forKey: PropertyKey.AutoComplete)
+        
     }
     
     required convenience init?(coder: NSCoder) {

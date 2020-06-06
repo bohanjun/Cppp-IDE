@@ -67,7 +67,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
     @IBOutlet weak var RightConstraint: NSLayoutConstraint!
     @IBOutlet weak var LeftConstraint: NSLayoutConstraint!
     @IBOutlet weak var FakeBackgroundAddition: NSTextField!
-    @IBOutlet weak var TextView_ScrollView: CDScrollView!
+    @IBOutlet weak var scrollViewOfTextView: CDScrollView!
     @IBOutlet weak var linesLabel: NSTextField!
     @IBOutlet weak var charactersLabel: NSTextField!
     @IBOutlet var CompileInfo: NSTextView!
@@ -84,33 +84,28 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
         
         self.TextView.codeTextViewDelegate = self
         self.TextView.gutterDelegate = self.gutterTextView
-        self.TextView.scrollView = self.TextView_ScrollView
+        self.TextView.scrollView = self.scrollViewOfTextView
         
         // judge if there has already been a saved settings.
-        if CDSettingsViewController.getSavedData() != nil &&
-        CDSettingsViewController.getSavedData2() != nil {
+        if compileConfig != nil && config != nil {
             
-            // evaluate the config and compileConfig.
-            config = CDSettingsViewController.getSavedData()
-            compileConfig = CDSettingsViewController.getSavedData2()
-            
-            // set the font of the text view.
-            self.TextView.font = NSFont(name: CDSettingsViewController.getSavedData()!.FontName, size: CGFloat(CDSettingsViewController.getSavedData()!.FontSize))
-            self.TextView.highlightr?.theme.setCodeFont(NSFont(name: CDSettingsViewController.getSavedData()!.FontName, size: CGFloat(CDSettingsViewController.getSavedData()!.FontSize))!)
+            // set the font of the text view
+            self.TextView.font = NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))
+            self.TextView.highlightr?.theme.setCodeFont(NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))!)
             
         } else {
             
-            // create default settings data.
+            // create default settings data
             initDefaultData()
             
         }
         
-        // set the font of the StdIn, StdOut and the CompileInfo text view.
+        // set the font of the StdIn, StdOut and the CompileInfo text view
         self.CompileInfo.font = MenloFont(ofSize: 13.0)
         
         // set the current appearance to Dark Mode.
         if #available(OSX 10.14, *) {
-            self.TextView.highlightr?.setTheme(to: CDSettingsViewController.getSavedData()!.DarkThemeName)
+            self.TextView.highlightr?.setTheme(to: config!.darkThemeName)
             self.view.window?.appearance = darkAqua
             self.view.appearance = darkAqua
             for view in self.view.subviews {
@@ -152,7 +147,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
             case true:
                 
                 // Change the text view's highlight theme to Dark Mode.
-                self.TextView.highlightr?.setTheme(to: CDSettingsViewController.getSavedData()!.DarkThemeName)
+                self.TextView.highlightr?.setTheme(to: config!.darkThemeName)
                 
                 // Chage the window's appearance to Dark Mode.
                 if #available(OSX 10.14, *) {
@@ -168,7 +163,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
             case false:
                 
                 // Change the text view's highlight theme to Light Mode.
-                self.TextView.highlightr?.setTheme(to: CDSettingsViewController.getSavedData()!.LightThemeName)
+                self.TextView.highlightr?.setTheme(to: config!.lightThemeName)
                 
                 // Chage the window's appearance to Light Mode.
                 if #available(OSX 10.14, *) {
@@ -184,8 +179,8 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
         
         // Change the font of the text view.
         self.TextView.didChangeText()
-        self.TextView.highlightr?.theme.setCodeFont(NSFont(name: CDSettingsViewController.getSavedData()!.FontName, size: CGFloat(CDSettingsViewController.getSavedData()!.FontSize))!)
-        self.TextView.font = NSFont(name: CDSettingsViewController.getSavedData()!.FontName, size: CGFloat(CDSettingsViewController.getSavedData()!.FontSize))
+        self.TextView.highlightr?.theme.setCodeFont(NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))!)
+        self.TextView.font = NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))
         
     }
     
@@ -212,15 +207,15 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
         // theme
         switch isDarkMode {
             case false:
-                self.TextView.highlightr?.setTheme(to: CDSettingsViewController.getSavedData()!.DarkThemeName)
+                self.TextView.highlightr?.setTheme(to: config!.darkThemeName)
             case true:
-                self.TextView.highlightr?.setTheme(to: CDSettingsViewController.getSavedData()!.LightThemeName)
+                self.TextView.highlightr?.setTheme(to: config!.lightThemeName)
         }
         
         // font
-        self.TextView.highlightr?.theme.setCodeFont(NSFont(name: CDSettingsViewController.getSavedData()!.FontName, size: CGFloat(CDSettingsViewController.getSavedData()!.FontSize))!)
-        self.TextView.font = NSFont(name: CDSettingsViewController.getSavedData()!.FontName, size: CGFloat(CDSettingsViewController.getSavedData()!.FontSize))
-        self.gutterTextView.font = NSFont(name: CDSettingsViewController.getSavedData()!.FontName, size: CGFloat(CDSettingsViewController.getSavedData()!.FontSize))
+        self.TextView.highlightr?.theme.setCodeFont(NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))!)
+        self.TextView.font = NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))
+        self.gutterTextView.font = NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))
         self.TextView.didChangeText()
         
         // in case of errors

@@ -10,8 +10,8 @@ import Cocoa
 
 class CompileSettings: NSObject, NSCoding {
     
-    var Compiler: String!
-    var Arguments: String!
+    var compiler: String!
+    var arguments: String!
     
     static let DocumentsDirectory = FileManager().urls(for: .libraryDirectory, in: .userDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.appendingPathComponent("C+++").appendingPathComponent("CompileSettings")
@@ -22,14 +22,14 @@ class CompileSettings: NSObject, NSCoding {
     }
     
     init?(_ compiler: String?, _ arguments: String?) {
-        self.Compiler = compiler
-        self.Arguments = arguments
+        self.compiler = compiler
+        self.arguments = arguments
     }
     
     
     func encode(with coder: NSCoder) {
-        coder.encode(Compiler, forKey: PropertyKey.Compiler)
-        coder.encode(Arguments, forKey: PropertyKey.Arguments)
+        coder.encode(compiler, forKey: PropertyKey.Compiler)
+        coder.encode(arguments, forKey: PropertyKey.Arguments)
     }
     
     required convenience init?(coder: NSCoder) {
