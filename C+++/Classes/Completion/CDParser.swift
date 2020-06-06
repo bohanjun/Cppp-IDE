@@ -72,12 +72,14 @@ class CDParser: NSObject {
     }
     
     func getNext() -> Character? {
+        
         if pos + 1 < buffer.count {
             pos += 1
             return Array(buffer)[pos]
         } else {
             return "\0"
         }
+        
     }
     
     func getIdentifiers() -> [String] {

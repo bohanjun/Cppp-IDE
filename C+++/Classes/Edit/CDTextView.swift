@@ -31,11 +31,11 @@ extension String {
 
 class CDTextView: NSTextView {
 
-    let highlightr = Highlightr()
+    let highlightr = CDHighlightr()
     var gutterDelegate: CDTextViewDelegate!
     var scrollView: CDScrollView!
     var codeTextViewDelegate: CDTextViewDelegate!
-    var codeAttributedString: CodeAttributedString!
+    var codeAttributedString: CDAttributedString!
     let parser = CDParser(code: "")
     
     private var completeWhenChangingText = true

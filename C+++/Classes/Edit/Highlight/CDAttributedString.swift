@@ -9,19 +9,16 @@
 import Cocoa
 
 /// Highlighting Delegate
-@objc public protocol HighlightDelegate {
+@objc public protocol CDHighlightDelegate {
     /**
      If this method returns *false*, the highlighting process will be skipped for this range.
-     
      - parameter range: NSRange
-     
      - returns: Bool
      */
     @objc optional func shouldHighlight(_ range: NSRange) -> Bool
     
     /**
      Called after a range of the string was highlighted, if there was an error **success** will be *false*.
-     
      - parameter range:   NSRange
      - parameter success: Bool
      */
@@ -30,40 +27,45 @@ import Cocoa
 }
 
 /// NSTextStorage subclass. Can be used to dynamically highlight code.
-open class CodeAttributedString : NSTextStorage {
+open class CDAttributedString : NSTextStorage {
     
     /// Internal Storage
     let stringStorage = NSTextStorage()
 
     /// Highlightr instace used internally for highlighting. Use this for configuring the theme.
-    public let highlightr: Highlightr
+    public let highlightr: CDHighlightr
     
     /// This object will be notified before and after the highlighting.
-    open var highlightDelegate : HighlightDelegate?
+    open var highlightDelegate : CDHighlightDelegate?
 
+    
     // MARK: - Initializers
-    public init(highlightr: Highlightr = Highlightr()!) {
+    public init(highlightr: CDHighlightr = CDHighlightr()!) {
+        
         self.highlightr = highlightr
         super.init()
         setupListeners()
+        
     }
 
     public override init() {
-        self.highlightr = Highlightr()!
+        self.highlightr = CDHighlightr()!
         super.init()
         setupListeners()
     }
     
     required public init?(coder aDecoder: NSCoder) {
-        self.highlightr = Highlightr()!
+        self.highlightr = CDHighlightr()!
         super.init(coder: aDecoder)
         setupListeners()
     }
     
     required public init?(pasteboardPropertyList propertyList: Any, ofType type: NSPasteboard.PasteboardType) {
-        self.highlightr = Highlightr()!
+        
+        self.highlightr = CDHighlightr()!
         super.init(pasteboardPropertyList: propertyList, ofType: type)
         setupListeners()
+        
     }
     
     /// Language syntax to use for highlighting. Providing nil will disable highlighting.
@@ -82,10 +84,8 @@ open class CodeAttributedString : NSTextStorage {
     
     /**
      Returns the attributes for the character at a given index.
-     
      - parameter location: Int
      - parameter range:    NSRangePointer
-     
      - returns: Attributes
      */
     open override func attributes(at location: Int, effectiveRange range: NSRangePointer?) -> [AttributedStringKey : Any] {
@@ -94,24 +94,26 @@ open class CodeAttributedString : NSTextStorage {
     
     /**
      Replaces the characters at the given range with the provided string.
-     
      - parameter range: NSRange
      - parameter str:   String
      */
     open override func replaceCharacters(in range: NSRange, with str: String) {
         stringStorage.replaceCharacters(in: range, with: str)
+        
         self.edited(TextStorageEditActions.editedCharacters, range: range, changeInLength: (str as NSString).length - range.length)
+        
     }
     
     /**
      Sets the attributes for the characters in the specified range to the given attributes.
-     
      - parameter attrs: [String : AnyObject]
      - parameter range: NSRange
      */
     open override func setAttributes(_ attrs: [AttributedStringKey : Any]?, range: NSRange) {
+        
         stringStorage.setAttributes(attrs, range: range)
         self.edited(TextStorageEditActions.editedAttributes, range: range, changeInLength: 0)
+        
     }
     
     /// Called internally everytime the string is modified.
@@ -143,6 +145,7 @@ open class CodeAttributedString : NSTextStorage {
         
         let string = self.string as NSString
         let line = string.substring(with: range)
+        
         DispatchQueue.global().async {
             let tmpStrg = self.highlightr.highlight(line, as: self.language!)
             DispatchQueue.main.async(execute: {
@@ -167,6 +170,7 @@ open class CodeAttributedString : NSTextStorage {
                 self.endEditing()
                 self.edited(TextStorageEditActions.editedAttributes, range: range, changeInLength: 0)
                 self.highlightDelegate?.didHighlight?(range, success: true)
+                
             })
             
         }
@@ -174,9 +178,11 @@ open class CodeAttributedString : NSTextStorage {
     }
     
     func setupListeners() {
+        
         highlightr.themeChanged = {
             _ in self.highlight(NSMakeRange(0, self.stringStorage.length))
         }
+        
     }
     
 }

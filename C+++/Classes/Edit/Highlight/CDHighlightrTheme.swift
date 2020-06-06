@@ -18,7 +18,8 @@ private typealias RPThemeDict = [String: [AnyHashable: AnyObject]]
 private typealias RPThemeStringDict = [String:[String:String]]
 
 /// Theme parser, can be used to configure the theme parameters.
-open class Theme {
+open class CDHighlightrTheme {
+    
     internal let theme : String
     internal var lightTheme : String!
     

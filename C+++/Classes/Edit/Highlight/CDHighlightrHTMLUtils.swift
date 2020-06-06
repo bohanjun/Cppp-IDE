@@ -269,15 +269,18 @@ private let characterEntities : [String: Character] = [
     
 ]
 
-internal class HTMLUtils {
+internal class CDHighlightrHTMLUtils {
     
-    // Decode the HTML character entity to the corresponding
-    // Unicode character, return `nil` for invalid input.
-    //     decode("&#64;")    --> "@"
-    //     decode("&#x20ac;") --> "€"
-    //     decode("&lt;")     --> "<"
-    //     decode("&foo;")    --> nil
+    /**
+     Decode the HTML character entity to the corresponding
+     Unicode character, return `nil` for invalid input.
+     decode("&#64;")    --> "@"
+     decode("&#x20ac;") --> "€"
+     decode("&lt;")     --> "<"
+     decode("&foo;")    --> nil
+    */
     class func decode(_ entity : String) -> Character? {
+        
         if entity.hasPrefix("&#x") || entity.hasPrefix("&#X"){
             return decodeNumeric(String(entity[entity.index(entity.startIndex, offsetBy: 3)...]), base: 16)
         } else if entity.hasPrefix("&#") {
@@ -285,6 +288,7 @@ internal class HTMLUtils {
         } else {
             return characterEntities[entity]
         }
+        
     }
     
     /// Convert the number in the string to the corresponding
@@ -293,8 +297,10 @@ internal class HTMLUtils {
     /// -   decodeNumeric("20ac", 16) --> "€"
     /// - returns: Character
     class func decodeNumeric(_ string : String, base : Int32) -> Character? {
+        
         let code = UInt32(strtoul(string, nil, base))
         return Character(UnicodeScalar(code)!)
+        
     }
     
 }

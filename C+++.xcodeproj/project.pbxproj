@@ -16,12 +16,11 @@
 		1868EBD5244981C2005467B2 /* CDCompileSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1868EBD4244981C2005467B2 /* CDCompileSettings.swift */; };
 		1868EBD7244AF934005467B2 /* CDTextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1868EBD6244AF934005467B2 /* CDTextViewDelegate.swift */; };
 		187527B0247A6A1900A7522A /* CDLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187527AF247A6A1900A7522A /* CDLaunchViewController.swift */; };
-		187EF955248B23240023F381 /* CDCompletionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187EF954248B23240023F381 /* CDCompletionButton.swift */; };
-		18A41AA2242C756700AFC422 /* Highlightr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A41AA1242C756700AFC422 /* Highlightr.swift */; };
-		18A41AA4242C758B00AFC422 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A41AA3242C758B00AFC422 /* Theme.swift */; };
-		18A41AA6242C75A600AFC422 /* HTMLUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A41AA5242C75A600AFC422 /* HTMLUtils.swift */; };
-		18A41AA8242C75C300AFC422 /* Shims.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A41AA7242C75C300AFC422 /* Shims.swift */; };
-		18A41AAA242C75DE00AFC422 /* CodeAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A41AA9242C75DE00AFC422 /* CodeAttributedString.swift */; };
+		18A41AA2242C756700AFC422 /* CDHighlightr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A41AA1242C756700AFC422 /* CDHighlightr.swift */; };
+		18A41AA4242C758B00AFC422 /* CDHighlightrTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A41AA3242C758B00AFC422 /* CDHighlightrTheme.swift */; };
+		18A41AA6242C75A600AFC422 /* CDHighlightrHTMLUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A41AA5242C75A600AFC422 /* CDHighlightrHTMLUtils.swift */; };
+		18A41AA8242C75C300AFC422 /* CDHighlightrShims.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A41AA7242C75C300AFC422 /* CDHighlightrShims.swift */; };
+		18A41AAA242C75DE00AFC422 /* CDAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A41AA9242C75DE00AFC422 /* CDAttributedString.swift */; };
 		18A41AAD242C762100AFC422 /* highlight.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 18A41AAC242C762100AFC422 /* highlight.min.js */; };
 		18A41B09242C765500AFC422 /* paraiso-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 18A41AAF242C765200AFC422 /* paraiso-dark.min.css */; };
 		18A41B0A242C765500AFC422 /* isbl-editor-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 18A41AB0242C765200AFC422 /* isbl-editor-dark.min.css */; };
@@ -113,10 +112,10 @@
 		18A41B60242C765500AFC422 /* atelier-savanna-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 18A41B06242C765400AFC422 /* atelier-savanna-dark.min.css */; };
 		18A41B61242C765500AFC422 /* atelier-sulphurpool-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 18A41B07242C765500AFC422 /* atelier-sulphurpool-light.min.css */; };
 		18A41B62242C765500AFC422 /* color-brewer.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 18A41B08242C765500AFC422 /* color-brewer.min.css */; };
-		18B1856E246387F100B579AD /* CDTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B1856D246387F100B579AD /* CDTableView.swift */; };
-		18B1857024638B2A00B579AD /* CDTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B1856F24638B2A00B579AD /* CDTableViewCell.swift */; };
-		18B185732463B32400B579AD /* CDTableViewCellInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B185712463B32400B579AD /* CDTableViewCellInfoViewController.swift */; };
-		18B185742463B32400B579AD /* CDTableViewCellInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B185722463B32400B579AD /* CDTableViewCellInfoViewController.xib */; };
+		18B1856E246387F100B579AD /* CDSnippetTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B1856D246387F100B579AD /* CDSnippetTableView.swift */; };
+		18B1857024638B2A00B579AD /* CDSnippetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B1856F24638B2A00B579AD /* CDSnippetTableViewCell.swift */; };
+		18B185732463B32400B579AD /* CDSnippetPopoberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B185712463B32400B579AD /* CDSnippetPopoberViewController.swift */; };
+		18B185742463B32400B579AD /* CDSnippetPopoberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B185722463B32400B579AD /* CDSnippetPopoberViewController.xib */; };
 		18B1857F2465AB2E00B579AD /* CDParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B1857E2465AB2E00B579AD /* CDParser.swift */; };
 		18B185822468210100B579AD /* CDFileCompiler(Debugger).swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B185812468210100B579AD /* CDFileCompiler(Debugger).swift */; };
 		18B1858B2468DC9800B579AD /* CDFileCompiler(Compile).swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B1858A2468DC9800B579AD /* CDFileCompiler(Compile).swift */; };
@@ -150,12 +149,11 @@
 		1868EBD4244981C2005467B2 /* CDCompileSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDCompileSettings.swift; sourceTree = "<group>"; };
 		1868EBD6244AF934005467B2 /* CDTextViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTextViewDelegate.swift; sourceTree = "<group>"; };
 		187527AF247A6A1900A7522A /* CDLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDLaunchViewController.swift; sourceTree = "<group>"; };
-		187EF954248B23240023F381 /* CDCompletionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDCompletionButton.swift; sourceTree = "<group>"; };
-		18A41AA1242C756700AFC422 /* Highlightr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highlightr.swift; sourceTree = "<group>"; };
-		18A41AA3242C758B00AFC422 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		18A41AA5242C75A600AFC422 /* HTMLUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLUtils.swift; sourceTree = "<group>"; };
-		18A41AA7242C75C300AFC422 /* Shims.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shims.swift; sourceTree = "<group>"; };
-		18A41AA9242C75DE00AFC422 /* CodeAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeAttributedString.swift; sourceTree = "<group>"; };
+		18A41AA1242C756700AFC422 /* CDHighlightr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDHighlightr.swift; sourceTree = "<group>"; };
+		18A41AA3242C758B00AFC422 /* CDHighlightrTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDHighlightrTheme.swift; sourceTree = "<group>"; };
+		18A41AA5242C75A600AFC422 /* CDHighlightrHTMLUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDHighlightrHTMLUtils.swift; sourceTree = "<group>"; };
+		18A41AA7242C75C300AFC422 /* CDHighlightrShims.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDHighlightrShims.swift; sourceTree = "<group>"; };
+		18A41AA9242C75DE00AFC422 /* CDAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDAttributedString.swift; sourceTree = "<group>"; };
 		18A41AAC242C762100AFC422 /* highlight.min.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = highlight.min.js; sourceTree = "<group>"; };
 		18A41AAF242C765200AFC422 /* paraiso-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "paraiso-dark.min.css"; sourceTree = "<group>"; };
 		18A41AB0242C765200AFC422 /* isbl-editor-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "isbl-editor-dark.min.css"; sourceTree = "<group>"; };
@@ -247,10 +245,10 @@
 		18A41B06242C765400AFC422 /* atelier-savanna-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-savanna-dark.min.css"; sourceTree = "<group>"; };
 		18A41B07242C765500AFC422 /* atelier-sulphurpool-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-sulphurpool-light.min.css"; sourceTree = "<group>"; };
 		18A41B08242C765500AFC422 /* color-brewer.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "color-brewer.min.css"; sourceTree = "<group>"; };
-		18B1856D246387F100B579AD /* CDTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTableView.swift; sourceTree = "<group>"; };
-		18B1856F24638B2A00B579AD /* CDTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTableViewCell.swift; sourceTree = "<group>"; };
-		18B185712463B32400B579AD /* CDTableViewCellInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTableViewCellInfoViewController.swift; sourceTree = "<group>"; };
-		18B185722463B32400B579AD /* CDTableViewCellInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CDTableViewCellInfoViewController.xib; sourceTree = "<group>"; };
+		18B1856D246387F100B579AD /* CDSnippetTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSnippetTableView.swift; sourceTree = "<group>"; };
+		18B1856F24638B2A00B579AD /* CDSnippetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSnippetTableViewCell.swift; sourceTree = "<group>"; };
+		18B185712463B32400B579AD /* CDSnippetPopoberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSnippetPopoberViewController.swift; sourceTree = "<group>"; };
+		18B185722463B32400B579AD /* CDSnippetPopoberViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CDSnippetPopoberViewController.xib; sourceTree = "<group>"; };
 		18B1857E2465AB2E00B579AD /* CDParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDParser.swift; sourceTree = "<group>"; };
 		18B185812468210100B579AD /* CDFileCompiler(Debugger).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDFileCompiler(Debugger).swift"; sourceTree = "<group>"; };
 		18B1858A2468DC9800B579AD /* CDFileCompiler(Compile).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDFileCompiler(Compile).swift"; sourceTree = "<group>"; };
@@ -351,12 +349,12 @@
 		18A41AA0242C752C00AFC422 /* Highlight */ = {
 			isa = PBXGroup;
 			children = (
-				18A41AA1242C756700AFC422 /* Highlightr.swift */,
-				18A41AA3242C758B00AFC422 /* Theme.swift */,
+				18A41AA1242C756700AFC422 /* CDHighlightr.swift */,
+				18A41AA3242C758B00AFC422 /* CDHighlightrTheme.swift */,
 				18A41AAB242C75EF00AFC422 /* Assets */,
-				18A41AA5242C75A600AFC422 /* HTMLUtils.swift */,
-				18A41AA7242C75C300AFC422 /* Shims.swift */,
-				18A41AA9242C75DE00AFC422 /* CodeAttributedString.swift */,
+				18A41AA5242C75A600AFC422 /* CDHighlightrHTMLUtils.swift */,
+				18A41AA7242C75C300AFC422 /* CDHighlightrShims.swift */,
+				18A41AA9242C75DE00AFC422 /* CDAttributedString.swift */,
 			);
 			path = Highlight;
 			sourceTree = "<group>";
@@ -470,10 +468,10 @@
 		18B185752464EE9200B579AD /* Snippet */ = {
 			isa = PBXGroup;
 			children = (
-				18B1856D246387F100B579AD /* CDTableView.swift */,
-				18B1856F24638B2A00B579AD /* CDTableViewCell.swift */,
-				18B185712463B32400B579AD /* CDTableViewCellInfoViewController.swift */,
-				18B185722463B32400B579AD /* CDTableViewCellInfoViewController.xib */,
+				18B1856D246387F100B579AD /* CDSnippetTableView.swift */,
+				18B1856F24638B2A00B579AD /* CDSnippetTableViewCell.swift */,
+				18B185712463B32400B579AD /* CDSnippetPopoberViewController.swift */,
+				18B185722463B32400B579AD /* CDSnippetPopoberViewController.xib */,
 			);
 			path = Snippet;
 			sourceTree = "<group>";
@@ -482,7 +480,6 @@
 			isa = PBXGroup;
 			children = (
 				18B1857E2465AB2E00B579AD /* CDParser.swift */,
-				187EF954248B23240023F381 /* CDCompletionButton.swift */,
 			);
 			path = Completion;
 			sourceTree = "<group>";
@@ -656,7 +653,7 @@
 				18A41B4B242C765500AFC422 /* googlecode.min.css in Resources */,
 				18A41B34242C765500AFC422 /* atelier-plateau-dark.min.css in Resources */,
 				18A41B1A242C765500AFC422 /* atelier-heath-dark.min.css in Resources */,
-				18B185742463B32400B579AD /* CDTableViewCellInfoViewController.xib in Resources */,
+				18B185742463B32400B579AD /* CDSnippetPopoberViewController.xib in Resources */,
 				18A41B24242C765500AFC422 /* brown-paper.min.css in Resources */,
 				18A41AAD242C762100AFC422 /* highlight.min.js in Resources */,
 				18B1859924699A2800B579AD /* Main.storyboard in Resources */,
@@ -735,29 +732,28 @@
 				187527B0247A6A1900A7522A /* CDLaunchViewController.swift in Sources */,
 				18B1857F2465AB2E00B579AD /* CDParser.swift in Sources */,
 				1868EBD5244981C2005467B2 /* CDCompileSettings.swift in Sources */,
-				18A41AA8242C75C300AFC422 /* Shims.swift in Sources */,
+				18A41AA8242C75C300AFC422 /* CDHighlightrShims.swift in Sources */,
 				180480AE2448602700CD0A4D /* CDSettings.swift in Sources */,
 				18E72920244E756E000317D7 /* CDScrollView.swift in Sources */,
-				18B185732463B32400B579AD /* CDTableViewCellInfoViewController.swift in Sources */,
-				18A41AAA242C75DE00AFC422 /* CodeAttributedString.swift in Sources */,
+				18B185732463B32400B579AD /* CDSnippetPopoberViewController.swift in Sources */,
+				18A41AAA242C75DE00AFC422 /* CDAttributedString.swift in Sources */,
 				183BF3CA242906B3007AF6AC /* CDTextView.swift in Sources */,
-				18A41AA2242C756700AFC422 /* Highlightr.swift in Sources */,
+				18A41AA2242C756700AFC422 /* CDHighlightr.swift in Sources */,
 				18B1858D2468E44700B579AD /* CDDebugViewController.swift in Sources */,
 				18B1858B2468DC9800B579AD /* CDFileCompiler(Compile).swift in Sources */,
-				18A41AA6242C75A600AFC422 /* HTMLUtils.swift in Sources */,
+				18A41AA6242C75A600AFC422 /* CDHighlightrHTMLUtils.swift in Sources */,
 				18541B162445905F000EB4CB /* CDSettingsViewController.swift in Sources */,
-				18A41AA4242C758B00AFC422 /* Theme.swift in Sources */,
+				18A41AA4242C758B00AFC422 /* CDHighlightrTheme.swift in Sources */,
 				18B3C7942428378E00F4CA14 /* CDMainWindowController.swift in Sources */,
 				18FC054B2487BA3600F33CE2 /* CDTestViewController.swift in Sources */,
 				18D4DD6F246A2C9E00B97F32 /* CDProjectTableView.swift in Sources */,
 				18D4DD71246A303400B97F32 /* CDProjectTableViewCell.swift in Sources */,
 				18D4DD6D246A2C5100B97F32 /* CDProjectViewController.swift in Sources */,
-				18B1857024638B2A00B579AD /* CDTableViewCell.swift in Sources */,
+				18B1857024638B2A00B579AD /* CDSnippetTableViewCell.swift in Sources */,
 				18B185822468210100B579AD /* CDFileCompiler(Debugger).swift in Sources */,
 				18B185912469608B00B579AD /* CpppProject.swift in Sources */,
-				18B1856E246387F100B579AD /* CDTableView.swift in Sources */,
+				18B1856E246387F100B579AD /* CDSnippetTableView.swift in Sources */,
 				18FC05482487B9F600F33CE2 /* CDTestPointView.swift in Sources */,
-				187EF955248B23240023F381 /* CDCompletionButton.swift in Sources */,
 				18B3C78024282C1F00F4CA14 /* AppDelegate.swift in Sources */,
 				18B3C78424282C1F00F4CA14 /* CDCodeDocument.swift in Sources */,
 				18B3C790242836A500F4CA14 /* CDDocumentContent.swift in Sources */,

@@ -9,7 +9,7 @@
 import Cocoa
 import os.log
 
-class CDTableView: NSView, CDTableViewCellInfoViewControllerDelegate {
+class CDSnippetTableView: NSView, CDSnippetPopoverViewControllerDelegate {
     
     let archievePath = FileManager().urls(for: .libraryDirectory, in: .userDomainMask).first!.appendingPathComponent("C+++").appendingPathComponent("Snippets")
     
@@ -30,7 +30,7 @@ class CDTableView: NSView, CDTableViewCellInfoViewControllerDelegate {
         
         for (name, code) in Sample {
 
-            self.append(cell: CDTableViewCell(title: name, image: NSImage(named: "Code")!, code: code, width: 210.0))
+            self.append(cell: CDSnippetTableViewCell(title: name, image: NSImage(named: "Code")!, code: code, width: 210.0))
             
         }
         
@@ -38,8 +38,8 @@ class CDTableView: NSView, CDTableViewCellInfoViewControllerDelegate {
     
     /// Load the snippets.
     /// - returns: [CDTableViewCell]
-    func load() -> [CDTableViewCell]?  {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: archievePath.path) as? [CDTableViewCell]
+    func load() -> [CDSnippetTableViewCell]?  {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: archievePath.path) as? [CDSnippetTableViewCell]
     }
     
     
@@ -61,7 +61,7 @@ class CDTableView: NSView, CDTableViewCellInfoViewControllerDelegate {
     
     @objc func didAddItem(title: String, image: NSImage, code: String) {
         
-        let cell = CDTableViewCell(title: title, image: image, code: code, width: 210.0)
+        let cell = CDSnippetTableViewCell(title: title, image: image, code: code, width: 210.0)
         self.append(cell: cell)
         
     }
@@ -79,7 +79,7 @@ class CDTableView: NSView, CDTableViewCellInfoViewControllerDelegate {
         
     }
     
-    var cells : [CDTableViewCell] = []
+    var cells : [CDSnippetTableViewCell] = []
     
     override var isFlipped: Bool {
         return true
@@ -115,7 +115,7 @@ class CDTableView: NSView, CDTableViewCellInfoViewControllerDelegate {
     
     
     // MARK: - Append and remove
-    func append(cell: CDTableViewCell) {
+    func append(cell: CDSnippetTableViewCell) {
         
         self.cells.append(cell)
         setup()

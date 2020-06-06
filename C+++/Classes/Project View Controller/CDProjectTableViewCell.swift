@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class CDProjectTableViewCell: CDTableViewCell {
+class CDProjectTableViewCell: CDSnippetTableViewCell {
     
     var path: String
     

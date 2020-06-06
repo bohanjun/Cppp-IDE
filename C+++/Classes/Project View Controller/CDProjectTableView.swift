@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class CDProjectTableView: CDTableView {
+class CDProjectTableView: CDSnippetTableView {
     
     @objc dynamic var paths = [String]() {
         didSet {
@@ -23,7 +23,7 @@ class CDProjectTableView: CDTableView {
         
     }
     
-    override func load() -> [CDTableViewCell] {
+    override func load() -> [CDSnippetTableViewCell] {
         var array = [CDProjectTableViewCell]()
         for i in self.paths {
             array.append(CDProjectTableViewCell(path: i))

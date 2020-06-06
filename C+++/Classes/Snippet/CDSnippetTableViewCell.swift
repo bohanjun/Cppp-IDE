@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class CDTableViewCell: NSView, CDTableViewCellInfoViewControllerDelegate {
+class CDSnippetTableViewCell: NSView, CDSnippetPopoverViewControllerDelegate {
     
     var title: String!
     var code: String!
@@ -71,11 +71,11 @@ class CDTableViewCell: NSView, CDTableViewCellInfoViewControllerDelegate {
     @objc func showInfo() {
         
         popover = NSPopover()
-        let vc = CDTableViewCellInfoViewController()
+        let vc = CDSnippetPopoberViewController()
         vc.setup(title: self.title, image: self.titleLabel.image!, code: self.code, mode: false)
-        vc.delegate = (self.superview) as! CDTableView
+        vc.delegate = (self.superview) as! CDSnippetTableView
         vc.closeDelegate = self
-        vc.addToCodeDelegate = (((self.superview) as! CDTableView).superview?.superview?.window?.contentViewController) as! CDMainViewController
+        vc.addToCodeDelegate = (((self.superview) as! CDSnippetTableView).superview?.superview?.window?.contentViewController) as! CDMainViewController
         popover.contentViewController = vc
         popover.behavior = .transient
         popover.show(relativeTo: self.frame, of: self, preferredEdge: NSRectEdge.maxX)

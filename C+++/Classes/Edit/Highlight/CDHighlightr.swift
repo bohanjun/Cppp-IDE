@@ -10,16 +10,16 @@ import Cocoa
 import JavaScriptCore
 
 /// Utility class for generating a highlighted NSAttributedString from a String.
-open class Highlightr {
+open class CDHighlightr {
     /// Returns the current Theme.
-    open var theme : Theme! {
+    open var theme : CDHighlightrTheme! {
         didSet {
             themeChanged?(theme)
         }
     }
     
     /// This block will be called every time the theme changes.
-    open var themeChanged : ((Theme) -> Void)?
+    open var themeChanged : ((CDHighlightrTheme) -> Void)?
 
     /// Defaults to `false` - when `true`, forces highlighting to finish even if illegal syntax is detected.
     open var ignoreIllegals = false
@@ -45,7 +45,7 @@ open class Highlightr {
         let window = JSValue(newObjectIn: jsContext)
         jsContext.setObject(window, forKeyedSubscript: "window" as NSString)
 
-        let bundle = Bundle(for: Highlightr.self)
+        let bundle = Bundle(for: CDHighlightr.self)
         self.bundle = bundle
         guard let hgPath = highlightPath ?? bundle.path(forResource: "highlight.min", ofType: "js") else {
             return nil
@@ -86,7 +86,7 @@ open class Highlightr {
             return false
         }
         let themeString = try! String.init(contentsOfFile: defTheme)
-        theme =  Theme(themeString: themeString)
+        theme =  CDHighlightrTheme(themeString: themeString)
         
         return true
     }
@@ -220,7 +220,7 @@ open class Highlightr {
         for result in results {
             let fixedRange = NSMakeRange(result.range.location-locOffset, result.range.length)
             let entity = (resultString.string as NSString).substring(with: fixedRange)
-            if let decodedEntity = HTMLUtils.decode(entity) {
+            if let decodedEntity = CDHighlightrHTMLUtils.decode(entity) {
                 resultString.replaceCharacters(in: fixedRange, with: String(decodedEntity))
                 locOffset += result.range.length-1;
             }

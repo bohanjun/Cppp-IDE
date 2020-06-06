@@ -38,7 +38,7 @@ extension NSViewController {
 
 
 
-class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsViewDelegate, CDTextViewDelegate, CDTableViewCellInfoViewControllerDelegate {
+class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsViewDelegate, CDTextViewDelegate, CDSnippetPopoverViewControllerDelegate {
     
 // MARK: - Properties
     
@@ -248,7 +248,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
 // MARK: - Segmented Control
     
     @IBOutlet weak var scrollViewOfTableView: NSScrollView!
-    @IBOutlet weak var snippetTableView: CDTableView!
+    @IBOutlet weak var snippetTableView: CDSnippetTableView!
     @IBOutlet weak var addSnippetButton: NSButton!
     @IBOutlet weak var fileView: NSView!
     
@@ -272,11 +272,11 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
     
 // MARK: - CDTextViewCellInfoViewController
     
-    var popover: NSPopover!
+    private var popover: NSPopover!
     
     @IBAction func addItem(_ sender: NSButton) {
         
-        let vc = CDTableViewCellInfoViewController()
+        let vc = CDSnippetPopoberViewController()
         vc.setup(title: "Edit your title", image: NSImage(named: "Code")!, code: "Edit your code here.\nYou can also click the image to\n change the color of it.", mode: true)
         vc.closeDelegate = self
         vc.delegate = self.snippetTableView
@@ -328,8 +328,6 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
     func textDidEndEditing(_ notification: Notification) {
         document?.objectDidEndEditing(self)
     }
-    
-    
     
     
 }

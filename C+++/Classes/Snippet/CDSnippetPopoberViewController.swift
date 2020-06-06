@@ -10,7 +10,7 @@ import Cocoa
 
 
 @objc
-protocol CDTableViewCellInfoViewControllerDelegate {
+protocol CDSnippetPopoverViewControllerDelegate {
     
     @objc optional func didAddToCode(code: String)
     @objc optional func didRemoveItem(senderTitle: String)
@@ -21,7 +21,7 @@ protocol CDTableViewCellInfoViewControllerDelegate {
 }
 
 
-class CDTableViewCellInfoViewController: NSViewController {
+class CDSnippetPopoberViewController: NSViewController {
         
     let imageNames = ["Code", "YellowCode", "GreenCode", "PurpleCode", "BlueCode"]
     
@@ -34,11 +34,11 @@ class CDTableViewCellInfoViewController: NSViewController {
     public var imageNameIndex: Int = 0
     
     /// The CDTableView.
-    var delegate: CDTableViewCellInfoViewControllerDelegate!
+    var delegate: CDSnippetPopoverViewControllerDelegate!
     /// The CDTableViewCell.
-    var closeDelegate: CDTableViewCellInfoViewControllerDelegate!
+    var closeDelegate: CDSnippetPopoverViewControllerDelegate!
     /// The CDTextView.
-    var addToCodeDelegate: CDTableViewCellInfoViewControllerDelegate!
+    var addToCodeDelegate: CDSnippetPopoverViewControllerDelegate!
     var isEditable: Bool = false
     
     @IBAction func addToCode(_ sender: Any) {
