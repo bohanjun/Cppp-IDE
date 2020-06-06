@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class Content: NSObject {
+class CDDocumentContent: NSObject {
     
     @objc dynamic var contentString = ""
     
@@ -18,7 +18,7 @@ class Content: NSObject {
     
 }
 
-extension Content {
+extension CDDocumentContent {
     
     func read(from data: Data) {
         if let string = String(bytes: data, encoding: .utf8) {

@@ -8,9 +8,9 @@
 
 import Cocoa
 
-class Document: NSDocument {
+class CDCodeDocument: NSDocument {
     
-    @objc var content = Content(contentString: "")
+    @objc var content = CDDocumentContent(contentString: "")
     var contentViewController: CDMainViewController!
     
     override init() {
@@ -54,7 +54,7 @@ class Document: NSDocument {
                 
                 contentVC.representedObject = content
                 contentViewController = contentVC
-                contentVC.TextView.didChangeText()
+                contentVC.mainTextView.didChangeText()
                 
             }
         }
@@ -128,7 +128,7 @@ class Document: NSDocument {
         self.save(self)
         self.contentViewController.setStatus(string: "\(self.fileURL?.lastPathComponent ?? "C+++") | Compiling...")
         let res = CDFileCompiler.CompileSource(fileURL: self.fileURL?.path ?? "")
-        self.contentViewController.CompileInfo.string = res
+        self.contentViewController.compileInfo.string = res
         self.contentViewController.setStatus(string: "\(self.fileURL?.lastPathComponent ?? "C+++") | Compile Finished")
         
     }
@@ -156,7 +156,7 @@ class Document: NSDocument {
         self.save(self)
         self.contentViewController.setStatus(string: "\(self.fileURL?.lastPathComponent ?? "C+++") | Compiling...")
         let res = CDFileCompiler.CompileWithoutRunning(fileURL: self.fileURL?.path ?? "")
-        self.contentViewController.CompileInfo.string = res
+        self.contentViewController.compileInfo.string = res
         self.contentViewController.setStatus(string: "\(self.fileURL?.lastPathComponent ?? "C+++") | Compile Finished")
         
     }

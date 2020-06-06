@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class CompileSettings: NSObject, NSCoding {
+class CDCompileSettings: NSObject, NSCoding {
     
     var compiler: String!
     var arguments: String!

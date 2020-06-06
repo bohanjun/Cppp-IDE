@@ -507,7 +507,7 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController storyboardIdentifier="Document Window Controller" id="jGA-0Y-lOj" customClass="WindowController" customModule="C___" customModuleProvider="target" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="Document Window Controller" id="jGA-0Y-lOj" customClass="CDMainWindowController" customModule="C___" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" identifier="Document Window Controller" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titleVisibility="hidden" id="Ckk-yw-fiv">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
@@ -529,7 +529,7 @@
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="toggleFI:" target="jGA-0Y-lOj" id="U3q-Vt-3Fi"/>
+                                            <action selector="toggleFileViewShown:" target="jGA-0Y-lOj" id="U3q-Vt-3Fi"/>
                                         </connections>
                                     </button>
                                 </toolbarItem>
@@ -543,7 +543,7 @@
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="toggleCV:" target="jGA-0Y-lOj" id="gZh-yC-cSf"/>
+                                            <action selector="toggleCompileViewShown:" target="jGA-0Y-lOj" id="gZh-yC-cSf"/>
                                         </connections>
                                     </button>
                                 </toolbarItem>
@@ -557,7 +557,7 @@
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="toggleCI:" target="jGA-0Y-lOj" id="em0-va-uFU"/>
+                                            <action selector="toggleCompileInfoViewShown:" target="jGA-0Y-lOj" id="em0-va-uFU"/>
                                         </connections>
                                     </button>
                                 </toolbarItem>
@@ -1597,7 +1597,7 @@ Gw
                                             </segments>
                                         </segmentedCell>
                                         <connections>
-                                            <action selector="ValueChanged:" target="5gI-5U-AMq" id="ebi-8H-KRJ"/>
+                                            <action selector="valueChanged:" target="5gI-5U-AMq" id="ebi-8H-KRJ"/>
                                         </connections>
                                     </segmentedControl>
                                     <scrollView hidden="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUE-vJ-YOp">
@@ -1935,21 +1935,21 @@ Gw
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="AddButton" destination="r91-ZE-hUd" id="uPc-Au-fOa"/>
-                        <outlet property="BottomConstraint" destination="1lH-WC-wM9" id="TzH-mb-aDF"/>
-                        <outlet property="CDTableView_ScrollView" destination="KUE-vJ-YOp" id="w0O-X7-ZKA"/>
-                        <outlet property="CompileInfo" destination="XdU-QA-NPp" id="dmo-GI-COU"/>
-                        <outlet property="FakeBackgroundAddition" destination="0HT-on-mcG" id="1xu-mn-zwJ"/>
-                        <outlet property="FileView" destination="BUq-1q-FQe" id="SNn-hN-pE6"/>
-                        <outlet property="LeftConstraint" destination="jfa-UV-rjU" id="1r4-7E-mo6"/>
-                        <outlet property="PathControl" destination="Fh1-ZV-B2L" id="De9-Vs-V5G"/>
-                        <outlet property="RightConstraint" destination="ojl-bk-NGE" id="YpT-od-MgV"/>
-                        <outlet property="TableView" destination="nyL-Vp-iY2" id="XKV-8O-Puw"/>
-                        <outlet property="TextView" destination="E0u-iA-KeT" id="B0O-yd-iHk"/>
+                        <outlet property="addSnippetButton" destination="r91-ZE-hUd" id="uPc-Au-fOa"/>
+                        <outlet property="bottomConstraint" destination="1lH-WC-wM9" id="TzH-mb-aDF"/>
                         <outlet property="charactersLabel" destination="VGX-he-xwO" id="jmZ-4Z-CPF"/>
+                        <outlet property="compileInfo" destination="XdU-QA-NPp" id="dmo-GI-COU"/>
+                        <outlet property="fakeBackground" destination="0HT-on-mcG" id="1xu-mn-zwJ"/>
+                        <outlet property="fileView" destination="BUq-1q-FQe" id="SNn-hN-pE6"/>
                         <outlet property="gutterTextView" destination="hS1-5x-uqb" id="poC-ev-yTa"/>
+                        <outlet property="leftConstraint" destination="jfa-UV-rjU" id="1r4-7E-mo6"/>
                         <outlet property="linesLabel" destination="42g-tY-n4q" id="vAG-yT-KLn"/>
+                        <outlet property="mainTextView" destination="E0u-iA-KeT" id="B0O-yd-iHk"/>
+                        <outlet property="pathControl" destination="Fh1-ZV-B2L" id="De9-Vs-V5G"/>
+                        <outlet property="rightConstraint" destination="ojl-bk-NGE" id="YpT-od-MgV"/>
+                        <outlet property="scrollViewOfTableView" destination="KUE-vJ-YOp" id="w0O-X7-ZKA"/>
                         <outlet property="scrollViewOfTextView" destination="yLp-eY-fSk" id="Lzl-9S-PjX"/>
+                        <outlet property="snippetTableView" destination="nyL-Vp-iY2" id="XKV-8O-Puw"/>
                     </connections>
                 </viewController>
                 <customObject id="2Tp-Fl-jBw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

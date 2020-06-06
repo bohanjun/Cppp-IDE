@@ -25,9 +25,9 @@ class CDProjectTableViewCell: CDTableViewCell {
     
     override func showInfo() {
         NSDocumentController.shared.openDocument(withContentsOf: URL(fileURLWithPath: self.title), display: true) { (document, opened, error) in
-            if let doc = document as? Document {
-                (doc.contentViewController.view.window?.windowController as? WindowController)?.toggleCI(self)
-                (doc.contentViewController.view.window?.windowController as? WindowController)?.toggleCV(self)
+            if let doc = document as? CDCodeDocument {
+                (doc.contentViewController.view.window?.windowController as? CDMainWindowController)?.toggleCompileInfoViewShown(self)
+                (doc.contentViewController.view.window?.windowController as? CDMainWindowController)?.toggleCompileViewShown(self)
             }
         }
     }

@@ -30,7 +30,7 @@ extension NSDocumentController {
 
 class CpppProject: NSDocument {
     
-    @objc var content = Content(contentString: "")
+    @objc var content = CDDocumentContent(contentString: "")
     var contentViewController: CDProjectViewController!
     
     override init() {

@@ -43,7 +43,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
 // MARK: - Properties
     
     func setStatus(string: String) {
-        (self.view.window?.windowController as! WindowController).statusString = string
+        (self.view.window?.windowController as! CDMainWindowController).statusString = string
     }
     
     /// Whether the window is in dark mode or not.
@@ -60,17 +60,17 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
     /// Whether the file info view is hidden.
     var left = true
     
-    @IBOutlet var TextView: CDTextView!
+    @IBOutlet var mainTextView: CDTextView!
     @IBOutlet var gutterTextView: CDGutterTextView!
-    @IBOutlet weak var PathControl: NSPathControl!
-    @IBOutlet weak var BottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var RightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var LeftConstraint: NSLayoutConstraint!
-    @IBOutlet weak var FakeBackgroundAddition: NSTextField!
+    @IBOutlet weak var pathControl: NSPathControl!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var rightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var leftConstraint: NSLayoutConstraint!
+    @IBOutlet weak var fakeBackground: NSTextField!
     @IBOutlet weak var scrollViewOfTextView: CDScrollView!
     @IBOutlet weak var linesLabel: NSTextField!
     @IBOutlet weak var charactersLabel: NSTextField!
-    @IBOutlet var CompileInfo: NSTextView!
+    @IBOutlet var compileInfo: NSTextView!
     
     
     
@@ -82,16 +82,16 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.TextView.codeTextViewDelegate = self
-        self.TextView.gutterDelegate = self.gutterTextView
-        self.TextView.scrollView = self.scrollViewOfTextView
+        self.mainTextView.codeTextViewDelegate = self
+        self.mainTextView.gutterDelegate = self.gutterTextView
+        self.mainTextView.scrollView = self.scrollViewOfTextView
         
         // judge if there has already been a saved settings.
         if compileConfig != nil && config != nil {
             
             // set the font of the text view
-            self.TextView.font = NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))
-            self.TextView.highlightr?.theme.setCodeFont(NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))!)
+            self.mainTextView.font = NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))
+            self.mainTextView.highlightr?.theme.setCodeFont(NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))!)
             
         } else {
             
@@ -101,11 +101,11 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
         }
         
         // set the font of the StdIn, StdOut and the CompileInfo text view
-        self.CompileInfo.font = MenloFont(ofSize: 13.0)
+        self.compileInfo.font = MenloFont(ofSize: 13.0)
         
         // set the current appearance to Dark Mode.
         if #available(OSX 10.14, *) {
-            self.TextView.highlightr?.setTheme(to: config!.darkThemeName)
+            self.mainTextView.highlightr?.setTheme(to: config!.darkThemeName)
             self.view.window?.appearance = darkAqua
             self.view.appearance = darkAqua
             for view in self.view.subviews {
@@ -147,7 +147,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
             case true:
                 
                 // Change the text view's highlight theme to Dark Mode.
-                self.TextView.highlightr?.setTheme(to: config!.darkThemeName)
+                self.mainTextView.highlightr?.setTheme(to: config!.darkThemeName)
                 
                 // Chage the window's appearance to Dark Mode.
                 if #available(OSX 10.14, *) {
@@ -163,7 +163,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
             case false:
                 
                 // Change the text view's highlight theme to Light Mode.
-                self.TextView.highlightr?.setTheme(to: config!.lightThemeName)
+                self.mainTextView.highlightr?.setTheme(to: config!.lightThemeName)
                 
                 // Chage the window's appearance to Light Mode.
                 if #available(OSX 10.14, *) {
@@ -178,9 +178,9 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
         }
         
         // Change the font of the text view.
-        self.TextView.didChangeText()
-        self.TextView.highlightr?.theme.setCodeFont(NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))!)
-        self.TextView.font = NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))
+        self.mainTextView.didChangeText()
+        self.mainTextView.highlightr?.theme.setCodeFont(NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))!)
+        self.mainTextView.font = NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))
         
     }
     
@@ -207,16 +207,16 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
         // theme
         switch isDarkMode {
             case false:
-                self.TextView.highlightr?.setTheme(to: config!.darkThemeName)
+                self.mainTextView.highlightr?.setTheme(to: config!.darkThemeName)
             case true:
-                self.TextView.highlightr?.setTheme(to: config!.lightThemeName)
+                self.mainTextView.highlightr?.setTheme(to: config!.lightThemeName)
         }
         
         // font
-        self.TextView.highlightr?.theme.setCodeFont(NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))!)
-        self.TextView.font = NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))
+        self.mainTextView.highlightr?.theme.setCodeFont(NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))!)
+        self.mainTextView.font = NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))
         self.gutterTextView.font = NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))
-        self.TextView.didChangeText()
+        self.mainTextView.didChangeText()
         
         // in case of errors
         changeAppearance(self)
@@ -247,23 +247,23 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
 
 // MARK: - Segmented Control
     
-    @IBOutlet weak var CDTableView_ScrollView: NSScrollView!
-    @IBOutlet weak var TableView: CDTableView!
-    @IBOutlet weak var AddButton: NSButton!
-    @IBOutlet weak var FileView: NSView!
+    @IBOutlet weak var scrollViewOfTableView: NSScrollView!
+    @IBOutlet weak var snippetTableView: CDTableView!
+    @IBOutlet weak var addSnippetButton: NSButton!
+    @IBOutlet weak var fileView: NSView!
     
-    @IBAction func ValueChanged(_ sender: NSSegmentedControl) {
+    @IBAction func valueChanged(_ sender: NSSegmentedControl) {
         
         switch sender.selectedSegment {
             case 0:
-                CDTableView_ScrollView.isHidden = true
-                AddButton.isHidden = true
-                FileView.isHidden = false
+                scrollViewOfTableView.isHidden = true
+                addSnippetButton.isHidden = true
+                fileView.isHidden = false
             
             case 1:
-                FileView.isHidden = true
-                CDTableView_ScrollView.isHidden = false
-                AddButton.isHidden = false
+                fileView.isHidden = true
+                scrollViewOfTableView.isHidden = false
+                addSnippetButton.isHidden = false
                 break
             default: break
         }
@@ -279,7 +279,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
         let vc = CDTableViewCellInfoViewController()
         vc.setup(title: "Edit your title", image: NSImage(named: "Code")!, code: "Edit your code here.\nYou can also click the image to\n change the color of it.", mode: true)
         vc.closeDelegate = self
-        vc.delegate = self.TableView
+        vc.delegate = self.snippetTableView
         popover = NSPopover()
         popover.behavior = .transient
         popover.contentViewController = vc
@@ -288,7 +288,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
     }
     
     func didAddToCode(code: String) {
-        self.TextView.insertText(code, replacementRange: self.TextView.selectedRange)
+        self.mainTextView.insertText(code, replacementRange: self.mainTextView.selectedRange)
     }
     
     func willClose() {
@@ -309,8 +309,8 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
         }
     }
 
-    weak var document: Document? {
-        if let docRepresentedObject = representedObject as? Document {
+    weak var document: CDCodeDocument? {
+        if let docRepresentedObject = representedObject as? CDCodeDocument {
             return docRepresentedObject
         }
         return nil

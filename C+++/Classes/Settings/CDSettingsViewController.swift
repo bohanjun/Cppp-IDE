@@ -9,21 +9,21 @@
 import Cocoa
 
 
-var config: Settings? {
+var config: CDSettings? {
     get {
         return CDSettingsViewController.getSavedData()
     }
     set {
-        NSKeyedArchiver.archiveRootObject(newValue!, toFile: Settings.archiveURL.path)
+        NSKeyedArchiver.archiveRootObject(newValue!, toFile: CDSettings.archiveURL.path)
     }
 }
 
-var compileConfig: CompileSettings? {
+var compileConfig: CDCompileSettings? {
     get {
         return CDSettingsViewController.getSavedCompileSettings()
     }
     set {
-        NSKeyedArchiver.archiveRootObject(newValue!, toFile: CompileSettings.ArchiveURL.path)
+        NSKeyedArchiver.archiveRootObject(newValue!, toFile: CDCompileSettings.ArchiveURL.path)
     }
 }
 
@@ -35,8 +35,8 @@ public func initDefaultData() {
         return
     }
     // Create the default data.
-    config = Settings("Courier", 15, "Xcode", "Agate", true)!
-    compileConfig = CompileSettings("g++", "")!
+    config = CDSettings("Courier", 15, "Xcode", "Agate", true)!
+    compileConfig = CDCompileSettings("g++", "")!
     
 }
 
@@ -109,12 +109,12 @@ class CDSettingsViewController: NSViewController {
         
     }
     
-    public static func getSavedData() -> Settings? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: Settings.archiveURL.path) as? Settings
+    public static func getSavedData() -> CDSettings? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: CDSettings.archiveURL.path) as? CDSettings
     }
     
-    public static func getSavedCompileSettings() -> CompileSettings? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: CompileSettings.ArchiveURL.path) as? CompileSettings
+    public static func getSavedCompileSettings() -> CDCompileSettings? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: CDCompileSettings.ArchiveURL.path) as? CDCompileSettings
     }
     
 }

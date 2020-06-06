@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class WindowController: NSWindowController, NSWindowDelegate {
+class CDMainWindowController: NSWindowController, NSWindowDelegate {
     
     @objc dynamic var statusString = "C+++ | Ready"
     
@@ -30,35 +30,35 @@ class WindowController: NSWindowController, NSWindowDelegate {
     
     
     
-    @IBAction func toggleCI(_ sender: Any) {
+    @IBAction func toggleCompileInfoViewShown(_ sender: Any) {
         let vc = (self.contentViewController as! CDMainViewController)
         if vc.bottom == true {
-            vc.BottomConstraint.constant = 22.0
+            vc.bottomConstraint.constant = 22.0
             vc.bottom = false
         } else {
-            vc.BottomConstraint.constant = 165.0
+            vc.bottomConstraint.constant = 165.0
             vc.bottom = true
         }
     }
     
-    @IBAction func toggleCV(_ sender: Any) {
+    @IBAction func toggleCompileViewShown(_ sender: Any) {
         let vc = (self.contentViewController as! CDMainViewController)
         if vc.right == true {
-            vc.RightConstraint.constant = 0.0
+            vc.rightConstraint.constant = 0.0
             vc.right = false
         } else {
-            vc.RightConstraint.constant = 253.0
+            vc.rightConstraint.constant = 253.0
             vc.right = true
         }
     }
     
-    @IBAction func toggleFI(_ sender: Any) {
+    @IBAction func toggleFileViewShown(_ sender: Any) {
         let vc = (self.contentViewController as! CDMainViewController)
         if vc.left == true {
-            vc.LeftConstraint.constant = 0.0
+            vc.leftConstraint.constant = 0.0
             vc.left = false
         } else {
-            vc.LeftConstraint.constant = 219.0
+            vc.leftConstraint.constant = 219.0
             vc.left = true
         }
     }
