@@ -51,7 +51,7 @@ class CDSettingsViewController: NSViewController {
     @IBOutlet weak var size: NSComboBox!
     @IBOutlet weak var dark: NSPopUpButton!
     @IBOutlet weak var light: NSPopUpButton!
-    @IBOutlet weak var allows: NSButton!
+    @IBOutlet weak var allowsCompletion: NSButton!
     
     @IBOutlet weak var compiler: NSComboBox!
     @IBOutlet weak var arguments: NSTextField!
@@ -60,14 +60,14 @@ class CDSettingsViewController: NSViewController {
     var delegate: CDSettingsViewDelegate!
     
     
-    @IBAction func Save(_ sender: NSButton) {
+    @IBAction func save(_ sender: NSButton) {
         
         let settings = config!
         settings.fontName = self.fontname.titleOfSelectedItem ?? "Courier"
         settings.fontSize = Int(self.size.stringValue) ?? 15
         settings.darkThemeName = self.dark.titleOfSelectedItem ?? "Agate"
         settings.lightThemeName = self.light.titleOfSelectedItem ?? "Xcode"
-        settings.autoComplete = self.allows.state == .on
+        settings.autoComplete = self.allowsCompletion.state == .on
         
         let compileSettings = compileConfig!
         compileSettings.compiler = self.compiler.stringValue
@@ -82,6 +82,12 @@ class CDSettingsViewController: NSViewController {
         
     }
     
+    @IBAction func defaultSettings(_ sender: Any?) {
+        
+        self.showAlert("Recover to default settings", "Please delete files named \"Settings\" and \"CompileSettings\" at \"~/Library/C+++/\" and restart C+++.")
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -93,9 +99,9 @@ class CDSettingsViewController: NSViewController {
             self.light.setTitle(savedData.lightThemeName)
             
             if savedData.autoComplete {
-                self.allows.state = .on
+                self.allowsCompletion.state = .on
             } else {
-                self.allows.state = .off
+                self.allowsCompletion.state = .off
             }
             
         }

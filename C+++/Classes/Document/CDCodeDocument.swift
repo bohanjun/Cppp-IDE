@@ -54,7 +54,7 @@ class CDCodeDocument: NSDocument {
                 
                 contentVC.representedObject = content
                 contentViewController = contentVC
-                contentVC.mainTextView.didChangeText()
+                contentVC.mainTextView?.didChangeText()
                 
             }
         }

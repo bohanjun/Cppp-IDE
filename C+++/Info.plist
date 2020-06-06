@@ -66,6 +66,34 @@
 			<key>NSDocumentClass</key>
 			<string>$(PRODUCT_MODULE_NAME).CpppProject</string>
 		</dict>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>in</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>Input File</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSTypeIsPackage</key>
+			<integer>0</integer>
+			<key>NSDocumentClass</key>
+			<string>$(PRODUCT_MODULE_NAME).CDCodeDocument</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>out</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>Output File</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSTypeIsPackage</key>
+			<integer>0</integer>
+			<key>NSDocumentClass</key>
+			<string>$(PRODUCT_MODULE_NAME).CDCodeDocument</string>
+		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>

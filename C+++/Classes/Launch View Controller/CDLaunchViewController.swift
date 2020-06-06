@@ -66,7 +66,7 @@ class CDLaunchViewController: NSViewController, CDSettingsViewDelegate {
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
             if let ViewController =
                 storyboard.instantiateController(
-                     withIdentifier: NSStoryboard.SceneIdentifier("SettingsViewController")) as? CDSettingsViewController {
+                     withIdentifier: NSStoryboard.SceneIdentifier("CDSettingsViewController")) as? CDSettingsViewController {
                 ViewController.delegate = self
                 self.presentAsSheet(ViewController)
         }

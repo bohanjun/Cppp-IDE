@@ -405,9 +405,9 @@
                                     </items>
                                 </menu>
                             </menuItem>
-                            <menuItem title="Compile" id="v33-9z-u0i">
+                            <menuItem title="Run" id="v33-9z-u0i">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Compile" id="nu4-Kq-FAj">
+                                <menu key="submenu" title="Run" id="nu4-Kq-FAj">
                                     <items>
                                         <menuItem title="Compile and Run" keyEquivalent="C" id="wCv-IP-SA0">
                                             <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
@@ -424,6 +424,11 @@
                                         <menuItem title="Debug" keyEquivalent="d" id="0cD-b9-4Qu">
                                             <connections>
                                                 <action selector="debugFile:" target="Ady-hI-5gd" id="l1M-vX-aCm"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Test" keyEquivalent="t" id="r3S-C0-q3J">
+                                            <connections>
+                                                <action selector="testFile:" target="Ady-hI-5gd" id="lin-pg-GfH"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -451,8 +456,8 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="JdI-ce-SQE"/>
-                                        <menuItem title="Welcome to C+++" id="h6c-Pu-3pU">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        <menuItem title="Welcome to C+++" keyEquivalent="0" id="h6c-Pu-3pU">
+                                            <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
                                             <connections>
                                                 <segue destination="wkS-JN-u0Y" kind="show" id="ZqP-BO-9th"/>
                                             </connections>
@@ -720,7 +725,7 @@ DQ
 </string>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="Save:" target="rhr-iv-C7G" id="l82-K4-Mxh"/>
+                                    <action selector="save:" target="rhr-iv-C7G" id="l82-K4-Mxh"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mZu-b6-4EA">
@@ -1032,16 +1037,32 @@ Gw
                                     </subviews>
                                 </view>
                             </box>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lbm-p1-KID">
+                                <rect key="frame" x="163" y="13" width="84" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="aUl-G1-7t6"/>
+                                    <constraint firstAttribute="height" constant="21" id="pYX-cc-GKL"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Default" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AJl-a7-6a9">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="defaultSettings:" target="rhr-iv-C7G" id="Tnk-dY-xFG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="3dQ-SJ-Hj5" secondAttribute="bottom" constant="20" id="60u-JN-pq5"/>
+                            <constraint firstAttribute="bottom" secondItem="lbm-p1-KID" secondAttribute="bottom" constant="20" id="M1j-Qo-1h8"/>
+                            <constraint firstItem="mZu-b6-4EA" firstAttribute="leading" secondItem="lbm-p1-KID" secondAttribute="trailing" constant="10" id="W4h-b5-cX2"/>
                             <constraint firstItem="3dQ-SJ-Hj5" firstAttribute="leading" secondItem="mZu-b6-4EA" secondAttribute="trailing" constant="12" id="k0I-dz-xUv"/>
                             <constraint firstAttribute="bottom" secondItem="mZu-b6-4EA" secondAttribute="bottom" constant="20" id="r5u-02-cci"/>
                             <constraint firstAttribute="trailing" secondItem="3dQ-SJ-Hj5" secondAttribute="trailing" constant="20" id="yEO-wf-9aX"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="allows" destination="WZC-kh-AwI" id="e0R-Mc-2on"/>
+                        <outlet property="allowsCompletion" destination="WZC-kh-AwI" id="hXr-F0-EAd"/>
                         <outlet property="arguments" destination="VBr-aO-lcD" id="PTk-7V-6lV"/>
                         <outlet property="compiler" destination="nGw-ro-B66" id="Aek-JT-nA7"/>
                         <outlet property="dark" destination="olW-wi-IBX" id="4oe-IM-An0"/>
@@ -1052,7 +1073,7 @@ Gw
                 </viewController>
                 <customObject id="5A1-T6-jV9" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-803" y="1249"/>
+            <point key="canvasLocation" x="-803.5" y="1249"/>
         </scene>
         <!--C+++-->
         <scene sceneID="hIz-AP-VOD">
@@ -2130,6 +2151,9 @@ Gw
                                                         <font key="font" metaFont="system" size="15"/>
                                                     </buttonCell>
                                                     <color key="contentTintColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <connections>
+                                                        <action selector="showSettingsView:" target="S31-UQ-a5H" id="yjQ-Op-vN4"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </view>
