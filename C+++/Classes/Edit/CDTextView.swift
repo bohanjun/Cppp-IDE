@@ -59,43 +59,31 @@ class CDTextView: NSTextView {
         
     }
     
-    /// shouldChangeText(in:replacementString:)
-    override func shouldChangeText(in affectedCharRange: NSRange, replacementString: String?) -> Bool {
+    override func insertText(_ string: Any, replacementRange: NSRange) {
+        super.insertText(string, replacementRange: replacementRange)
         
-        let superResult = super.shouldChangeText(in: affectedCharRange, replacementString: replacementString)
-        
-        if let left = replacementString {
+        var right = ""
+        switch string as! String {
+            case "(":
+                right = ")"
+            case "[":
+                right = "]"
+            case "\"":
+                right = "\""
+            case "\'":
+                right = "\'"
+            case "{":
+                insertNewline(self)
+                insertNewline(self)
+                deleteBackward(self)
+                super.insertText("}", replacementRange: replacementRange)
+                self.selectedRange.location -= 1
             
-            if config!.autoComplete == false {
-                return superResult
-            }
-            
-            // When Input "{", insert "}".
-            if left == "{" {
-                self.insertNewline(self)
-                self.insertText("\t", replacementRange: self.selectedRange)
-                let desRange = self.selectedRange
-                self.insertNewline(self)
-                self.insertText("}", replacementRange: self.selectedRange)
-                self.selectedRange = desRange
-                
-                return superResult
-            }
-            
-            
-            // When input "(", "[", etc, insert "]", ")", etc.
-            if let right = completion[left] {
-                
-                let rangeLocation = self.selectedRange.location
-                self.insertText(right, replacementRange: self.selectedRange)
-                self.selectedRange.location = rangeLocation
-                
-                self.didChangeText()
-                
-            }
-            
+            default:
+                return
         }
-        return superResult
+        super.insertText(right, replacementRange: replacementRange)
+        self.selectedRange.location -= 1
         
     }
     
