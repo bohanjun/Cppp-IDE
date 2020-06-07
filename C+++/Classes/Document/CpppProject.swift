@@ -14,9 +14,9 @@ extension NSDocumentController {
     @IBAction func newProject(_ sender: Any?) {
         
         do {
-            (NSDocumentController.shared as! CDDocumentController).isCreatingAProject = true
+            (NSDocumentController.shared as! CDDocumentController).isCreatingProject = true
             try NSDocumentController.shared.openUntitledDocumentAndDisplay(true)
-            (NSDocumentController.shared as! CDDocumentController).isCreatingAProject = false
+            (NSDocumentController.shared as! CDDocumentController).isCreatingProject = false
         } catch {
             print("Error")
         }
@@ -36,6 +36,10 @@ class CpppProject: NSDocument {
     override init() {
         super.init()
         // Add your subclass-specific initialization here.
+    }
+    
+    override func defaultDraftName() -> String {
+        return "Untitled C+++ Project"
     }
     
     

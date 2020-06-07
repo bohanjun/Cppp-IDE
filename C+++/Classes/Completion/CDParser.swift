@@ -84,6 +84,9 @@ class CDParser: NSObject {
     
     func getIdentifiers() -> [String] {
         
+        pos = -1
+        state = .all
+        
         let startTime = Date()
 
         var res: [String] = []

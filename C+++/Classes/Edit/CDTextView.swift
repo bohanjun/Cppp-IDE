@@ -17,14 +17,8 @@ let completion = [
 
 extension String {
     
-    func challenge(_ input: Character) -> Int {
-        var letterCount = 0
-        for letter in Array(self) {
-            if letter == input {
-                letterCount += 1
-            }
-        }
-        return letterCount
+    func challenge(_ character: Character) -> Int {
+        Array(self).reduce(0, {$1 == character ? $0 + 1 : $0})
     }
 
 }
@@ -61,6 +55,10 @@ class CDTextView: NSTextView {
     
     override func insertText(_ string: Any, replacementRange: NSRange) {
         super.insertText(string, replacementRange: replacementRange)
+        
+        if config!.autoComplete == false {
+            return
+        }
         
         var right = ""
         switch string as! String {

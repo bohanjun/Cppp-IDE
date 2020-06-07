@@ -10,10 +10,10 @@ import Cocoa
 
 class CDDocumentController: NSDocumentController {
     
-    var isCreatingAProject = false
+    var isCreatingProject = false
     
     override var defaultType: String? {
-        if isCreatingAProject {
+        if isCreatingProject {
             return "C+++ Project"
         } else {
             return super.defaultType

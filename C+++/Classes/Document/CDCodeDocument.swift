@@ -18,6 +18,10 @@ class CDCodeDocument: NSDocument {
         // Add your subclass-specific initialization here.
     }
     
+    override func defaultDraftName() -> String {
+        return "Untitled Code Document"
+    }
+    
     
     // MARK: - Enablers
     

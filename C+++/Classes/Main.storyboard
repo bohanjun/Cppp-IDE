@@ -22,7 +22,7 @@
                                         <menuItem title="About C+++" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
+                                                <action selector="about:" target="Ady-hI-5gd" id="i8h-5H-XWc"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
@@ -389,6 +389,25 @@
                                                 <action selector="toggleToolbarShown:" target="Ady-hI-5gd" id="BXY-wc-z0C"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="ud1-l5-B3H"/>
+                                        <menuItem title="Hide / Show Compile Result" id="soo-KA-kdn">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="toggleCompileInfoViewShown:" target="Ady-hI-5gd" id="C7I-T4-DPY"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Hide / Show Compile View" id="Bej-nZ-9eJ">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="toggleCompileViewShown:" target="Ady-hI-5gd" id="f6O-jP-YYj"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Hide / Show File View" id="fx0-a0-e87">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="toggleFileViewShown:" target="Ady-hI-5gd" id="oAs-O7-0gG"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="hB3-LF-h0Y"/>
                                         <menuItem title="Show Sidebar" keyEquivalent="s" id="kIP-vf-haE">
                                             <modifierMask key="keyEquivalentModifierMask" control="YES" command="YES"/>
@@ -476,6 +495,13 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" id="5dI-Xc-jaZ">
                                     <items>
+                                        <menuItem title="C+++ Help" id="4Uk-Dm-gdh">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="_showHelp:" target="Ady-hI-5gd" id="zew-21-W7c"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="3qt-Z3-ZOZ"/>
                                         <menuItem title="Visit the Website of C+++" id="fhs-Ki-oQO">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
@@ -513,7 +539,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController storyboardIdentifier="Document Window Controller" id="jGA-0Y-lOj" customClass="CDMainWindowController" customModule="C___" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" identifier="Document Window Controller" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titleVisibility="hidden" id="Ckk-yw-fiv">
+                    <window key="window" identifier="Document Window Controller" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" tabbingMode="preferred" titleVisibility="hidden" id="Ckk-yw-fiv">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -619,7 +645,6 @@
                                 <viewController key="viewController" id="3Z8-i8-xxw">
                                     <textField key="view" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1Qe-NR-Gdj">
                                         <rect key="frame" x="0.0" y="0.0" width="45" height="19"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="C+++" id="pJJ-ym-q1Y">
                                             <font key="font" metaFont="systemBold" size="16"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -633,7 +658,6 @@
                                 <viewController key="viewController" id="Aec-JC-sDq">
                                     <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SId-IN-R9s">
                                         <rect key="frame" x="0.0" y="0.0" width="72" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="push" title="Run" bezelStyle="rounded" image="NSTouchBarPlayTemplate" imagePosition="leading" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="F5Y-ad-gD5">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" usesAppearanceFont="YES"/>
@@ -641,29 +665,11 @@
                                     </button>
                                 </viewController>
                             </touchBarItem>
-                            <touchBarItem id="KaO-Ca-uTX">
-                                <viewController key="viewController" id="Y5Y-HX-F7r">
-                                    <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="m0q-nO-eDO">
-                                        <rect key="frame" x="0.0" y="0.0" width="162" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="162" id="G2k-Qk-MUL"/>
-                                            <constraint firstAttribute="height" constant="30" id="SlV-34-ndl"/>
-                                        </constraints>
-                                        <buttonCell key="cell" type="bevel" title="Show Suggestions" bezelStyle="rounded" image="NSTouchBarComposeTemplate" imagePosition="left" alignment="center" imageScaling="proportionallyDown" inset="2" id="8Dc-gG-LgB">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" usesAppearanceFont="YES"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="complete:" target="6f7-a7-6o1" id="rRn-3B-FuU"/>
-                                        </connections>
-                                    </button>
-                                </viewController>
-                            </touchBarItem>
                             <touchBarSpacerItem identifier="NSTouchBarItemIdentifierFlexibleSpace" id="zs7-NM-GQ6"/>
                             <touchBarItem id="4SO-gG-N5n">
                                 <viewController key="viewController" id="lFf-b2-FYj">
                                     <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AUY-A3-RUq">
-                                        <rect key="frame" x="0.0" y="-11" width="138" height="41"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="126" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="126" id="OyW-iU-VgB"/>
                                             <constraint firstAttribute="height" constant="30" id="RaS-N3-PgQ"/>
@@ -682,7 +688,6 @@
                                 <viewController key="viewController" id="Qp8-8Y-dam">
                                     <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ozB-4e-eoa">
                                         <rect key="frame" x="0.0" y="0.0" width="108" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="push" title="New File" bezelStyle="rounded" image="NSTouchBarAddTemplate" imagePosition="left" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IqF-TQ-6GP">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" usesAppearanceFont="YES"/>
@@ -903,9 +908,9 @@ Gw
                                             </buttonCell>
                                         </button>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HjV-4j-63o">
-                                            <rect key="frame" x="30" y="9" width="71" height="16"/>
+                                            <rect key="frame" x="30" y="9" width="103" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <textFieldCell key="cell" lineBreakMode="clipping" title="(), [] and {}" id="NjQ-Ys-auw">
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="(), [], {}, &quot;&quot; and ''" id="NjQ-Ys-auw">
                                                 <font key="font" metaFont="system"/>
                                                 <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1236,11 +1241,11 @@ Gw
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Dr7-ha-eyI">
-                                        <rect key="frame" x="13" y="616" width="227" height="61"/>
+                                        <rect key="frame" x="13" y="612" width="227" height="61"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="sUe-5f-zLS"/>
                                         </constraints>
-                                        <buttonCell key="cell" type="bevel" title="Compile and Run" bezelStyle="regularSquare" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="htQ-oR-Nti">
+                                        <buttonCell key="cell" type="bevel" title="Compile and Run" bezelStyle="regularSquare" imagePosition="left" alignment="center" state="on" borderStyle="border" inset="2" id="htQ-oR-Nti">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="systemMedium" size="17"/>
                                         </buttonCell>
@@ -1248,15 +1253,15 @@ Gw
                                             <action selector="compileFile:" target="2Tp-Fl-jBw" id="9wR-fT-PPf"/>
                                         </connections>
                                     </button>
-                                    <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="raB-fg-Lfm">
-                                        <rect key="frame" x="13" y="570" width="112" height="43"/>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="raB-fg-Lfm">
+                                        <rect key="frame" x="20" y="578" width="68" height="33"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="108" id="5kN-lE-Srl"/>
-                                            <constraint firstAttribute="height" constant="38" id="8gL-jT-255"/>
+                                            <constraint firstAttribute="width" constant="68" id="5kN-lE-Srl"/>
+                                            <constraint firstAttribute="height" constant="33" id="8gL-jT-255"/>
                                         </constraints>
-                                        <buttonCell key="cell" type="bevel" title="Debug" bezelStyle="regularSquare" image="NSSlideshowTemplate" imagePosition="left" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ieA-Nv-Nq5">
+                                        <buttonCell key="cell" type="bevel" title="Debug" bezelStyle="regularSquare" image="NSPathTemplate" imagePosition="left" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="ieA-Nv-Nq5">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system" size="15"/>
+                                            <font key="font" metaFont="menu" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="debugFile:" target="2Tp-Fl-jBw" id="2hu-wx-ihG"/>
@@ -1510,29 +1515,29 @@ Gw
                                             <constraint firstItem="tI3-v5-4aS" firstAttribute="top" secondItem="ywS-mR-85U" secondAttribute="top" id="xJl-AU-yzu"/>
                                         </constraints>
                                     </customView>
-                                    <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="olj-kb-MX6">
-                                        <rect key="frame" x="128" y="570" width="112" height="43"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="38" id="YxD-3U-ZOt"/>
-                                            <constraint firstAttribute="width" constant="108" id="qEC-71-6ZP"/>
-                                        </constraints>
-                                        <buttonCell key="cell" type="bevel" title="Compile" bezelStyle="regularSquare" image="NSListViewTemplate" imagePosition="left" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Dgk-8t-4EW">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system" size="15"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="compileWithoutRunning:" target="2Tp-Fl-jBw" id="tdJ-tN-pyp"/>
-                                        </connections>
-                                    </button>
                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sug-ve-Dre">
-                                        <rect key="frame" x="15" y="542" width="52" height="23"/>
+                                        <rect key="frame" x="180" y="578" width="58" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="bevel" title="Test" bezelStyle="regularSquare" image="NSTouchBarQuickLookTemplate" imagePosition="left" alignment="center" imageScaling="proportionallyDown" inset="2" id="N2a-aR-KkV">
+                                        <buttonCell key="cell" type="bevel" title="Test" bezelStyle="regularSquare" image="NSQuickLookTemplate" imagePosition="left" alignment="center" imageScaling="proportionallyDown" inset="2" id="N2a-aR-KkV">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
+                                            <font key="font" metaFont="menu" size="14"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="testFile:" target="2Tp-Fl-jBw" id="7A5-Qf-Agk"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="olj-kb-MX6">
+                                        <rect key="frame" x="96" y="578" width="76" height="33"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="33" id="YxD-3U-ZOt"/>
+                                            <constraint firstAttribute="width" constant="76" id="qEC-71-6ZP"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="bevel" title="Compile" bezelStyle="regularSquare" image="NSTouchBarPlayTemplate" imagePosition="left" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="Dgk-8t-4EW">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="menu" size="14"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="compileWithoutRunning:" target="2Tp-Fl-jBw" id="tdJ-tN-pyp"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1540,19 +1545,19 @@ Gw
                                     <constraint firstAttribute="trailing" secondItem="TWt-wF-68Q" secondAttribute="trailing" constant="15" id="03G-PO-y3Q"/>
                                     <constraint firstItem="KHN-xI-39T" firstAttribute="leading" secondItem="4Ci-A4-t6w" secondAttribute="trailing" constant="8" id="17e-zH-26o"/>
                                     <constraint firstItem="75O-Xb-VQU" firstAttribute="top" secondItem="TWt-wF-68Q" secondAttribute="bottom" constant="15" id="3gm-F0-IFa"/>
-                                    <constraint firstItem="olj-kb-MX6" firstAttribute="leading" secondItem="raB-fg-Lfm" secondAttribute="trailing" constant="7" id="6g1-Lz-uGw"/>
-                                    <constraint firstAttribute="trailing" secondItem="olj-kb-MX6" secondAttribute="trailing" constant="15" id="C2f-vr-tzw"/>
+                                    <constraint firstItem="olj-kb-MX6" firstAttribute="leading" secondItem="raB-fg-Lfm" secondAttribute="trailing" constant="8" id="6g1-Lz-uGw"/>
+                                    <constraint firstAttribute="trailing" secondItem="olj-kb-MX6" secondAttribute="trailing" constant="81" id="C2f-vr-tzw"/>
                                     <constraint firstAttribute="trailing" secondItem="Dr7-ha-eyI" secondAttribute="trailing" constant="15" id="D24-Ou-9SE"/>
-                                    <constraint firstItem="raB-fg-Lfm" firstAttribute="leading" secondItem="qkV-Pw-MXt" secondAttribute="leading" constant="15" id="JHU-Dv-fBU"/>
+                                    <constraint firstItem="raB-fg-Lfm" firstAttribute="leading" secondItem="qkV-Pw-MXt" secondAttribute="leading" constant="20" id="JHU-Dv-fBU"/>
                                     <constraint firstItem="75O-Xb-VQU" firstAttribute="leading" secondItem="qkV-Pw-MXt" secondAttribute="leading" constant="15" id="ObV-tu-c8N"/>
                                     <constraint firstItem="ywS-mR-85U" firstAttribute="top" secondItem="75O-Xb-VQU" secondAttribute="bottom" constant="15" id="R5I-xJ-R3Q"/>
                                     <constraint firstItem="TWt-wF-68Q" firstAttribute="top" secondItem="Hb4-Me-Abj" secondAttribute="bottom" constant="15" id="T2s-pe-hbB"/>
                                     <constraint firstItem="4Ci-A4-t6w" firstAttribute="top" secondItem="qkV-Pw-MXt" secondAttribute="top" constant="10" id="TwX-d2-pms"/>
-                                    <constraint firstItem="Hb4-Me-Abj" firstAttribute="top" secondItem="Dr7-ha-eyI" secondAttribute="bottom" constant="102" id="UgO-N8-Md2"/>
+                                    <constraint firstItem="Hb4-Me-Abj" firstAttribute="top" secondItem="Dr7-ha-eyI" secondAttribute="bottom" constant="98" id="UgO-N8-Md2"/>
                                     <constraint firstAttribute="trailing" secondItem="ywS-mR-85U" secondAttribute="trailing" constant="15" id="XxC-Pk-ORE"/>
                                     <constraint firstAttribute="trailing" secondItem="75O-Xb-VQU" secondAttribute="trailing" constant="15" id="Z22-2O-9Bl"/>
                                     <constraint firstItem="Dr7-ha-eyI" firstAttribute="leading" secondItem="qkV-Pw-MXt" secondAttribute="leading" constant="15" id="dcZ-J8-7hT"/>
-                                    <constraint firstItem="raB-fg-Lfm" firstAttribute="top" secondItem="Dr7-ha-eyI" secondAttribute="bottom" constant="8" id="fTM-XY-7Os"/>
+                                    <constraint firstItem="raB-fg-Lfm" firstAttribute="top" secondItem="Dr7-ha-eyI" secondAttribute="bottom" constant="4" id="fTM-XY-7Os"/>
                                     <constraint firstItem="Hb4-Me-Abj" firstAttribute="leading" secondItem="qkV-Pw-MXt" secondAttribute="leading" constant="15" id="g3V-GE-NkO"/>
                                     <constraint firstAttribute="trailing" secondItem="KHN-xI-39T" secondAttribute="trailing" constant="20" id="iCA-Na-4Dd"/>
                                     <constraint firstAttribute="trailing" secondItem="Hb4-Me-Abj" secondAttribute="trailing" constant="15" id="lVA-Sy-85n"/>
@@ -1560,8 +1565,8 @@ Gw
                                     <constraint firstItem="KHN-xI-39T" firstAttribute="top" secondItem="qkV-Pw-MXt" secondAttribute="top" constant="10" id="ndQ-Qm-fs9"/>
                                     <constraint firstItem="ywS-mR-85U" firstAttribute="leading" secondItem="qkV-Pw-MXt" secondAttribute="leading" constant="15" id="q1i-dK-7Gq"/>
                                     <constraint firstAttribute="width" constant="253" id="vAV-il-wve"/>
-                                    <constraint firstItem="Dr7-ha-eyI" firstAttribute="top" secondItem="4Ci-A4-t6w" secondAttribute="bottom" constant="13" id="yw9-uR-0d9"/>
-                                    <constraint firstItem="olj-kb-MX6" firstAttribute="top" secondItem="Dr7-ha-eyI" secondAttribute="bottom" constant="8" id="zeg-X8-7Or"/>
+                                    <constraint firstItem="Dr7-ha-eyI" firstAttribute="top" secondItem="4Ci-A4-t6w" secondAttribute="bottom" constant="17" id="yw9-uR-0d9"/>
+                                    <constraint firstItem="olj-kb-MX6" firstAttribute="top" secondItem="Dr7-ha-eyI" secondAttribute="bottom" constant="4" id="zeg-X8-7Or"/>
                                 </constraints>
                             </customView>
                             <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" translatesAutoresizingMaskIntoConstraints="NO" id="yLp-eY-fSk" customClass="CDScrollView" customModule="C___" customModuleProvider="target">
@@ -1779,6 +1784,17 @@ Gw
                                                     <action selector="copy:" target="2Tp-Fl-jBw" id="Yiy-gl-Bbo"/>
                                                 </connections>
                                             </button>
+                                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="1" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6cy-Yh-o0P">
+                                                <rect key="frame" x="13" y="452" width="190" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <buttonCell key="cell" type="bevel" title="Browse all versions..." bezelStyle="regularSquare" image="NSQuickLookTemplate" imagePosition="left" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7Wk-64-1Ao">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                </buttonCell>
+                                                <connections>
+                                                    <action selector="browseDocumentVersions:" target="2Tp-Fl-jBw" id="aqN-Y9-82C"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </customView>
                                 </subviews>
@@ -1831,6 +1847,7 @@ Gw
                         <constraints>
                             <constraint firstItem="qkV-Pw-MXt" firstAttribute="leading" secondItem="0HT-on-mcG" secondAttribute="trailing" id="0P7-iv-TjG"/>
                             <constraint firstAttribute="bottom" secondItem="yLp-eY-fSk" secondAttribute="bottom" constant="165" id="1lH-WC-wM9"/>
+                            <constraint firstItem="RCh-2s-VX0" firstAttribute="trailing" secondItem="yLp-eY-fSk" secondAttribute="trailing" id="2x6-dv-Z9t"/>
                             <constraint firstAttribute="bottom" secondItem="Dip-ez-JU8" secondAttribute="bottom" id="8en-YI-U0n"/>
                             <constraint firstItem="Dip-ez-JU8" firstAttribute="top" secondItem="ERx-hH-rdd" secondAttribute="top" id="ATb-bg-D4A"/>
                             <constraint firstItem="RCh-2s-VX0" firstAttribute="top" secondItem="TPB-sL-5NP" secondAttribute="bottom" id="CSi-VP-S3c"/>
@@ -1839,7 +1856,6 @@ Gw
                             <constraint firstItem="RCh-2s-VX0" firstAttribute="leading" secondItem="hS1-5x-uqb" secondAttribute="leading" id="FWU-6G-Off"/>
                             <constraint firstItem="qkV-Pw-MXt" firstAttribute="top" secondItem="ERx-hH-rdd" secondAttribute="top" id="I49-bb-C3P"/>
                             <constraint firstItem="d62-qb-Nyt" firstAttribute="top" secondItem="RCh-2s-VX0" secondAttribute="bottom" id="KBQ-yL-cRo"/>
-                            <constraint firstItem="RCh-2s-VX0" firstAttribute="trailing" secondItem="E0u-iA-KeT" secondAttribute="trailing" id="LHx-LO-4Jr"/>
                             <constraint firstItem="a6q-mG-7ce" firstAttribute="leading" secondItem="E0u-iA-KeT" secondAttribute="leading" id="LVP-nU-aI1"/>
                             <constraint firstAttribute="trailing" secondItem="qkV-Pw-MXt" secondAttribute="trailing" id="LoI-FY-tek"/>
                             <constraint firstItem="TPB-sL-5NP" firstAttribute="leading" secondItem="Dip-ez-JU8" secondAttribute="trailing" id="Ppb-m0-8W1"/>
@@ -1854,6 +1870,7 @@ Gw
                             <constraint firstItem="RCh-2s-VX0" firstAttribute="top" secondItem="yLp-eY-fSk" secondAttribute="bottom" id="pZh-Ds-jBE"/>
                             <constraint firstItem="yLp-eY-fSk" firstAttribute="trailing" secondItem="d62-qb-Nyt" secondAttribute="trailing" id="pZq-0a-yPt"/>
                             <constraint firstAttribute="bottom" secondItem="d62-qb-Nyt" secondAttribute="bottom" id="rMZ-N5-Isy"/>
+                            <constraint firstItem="RCh-2s-VX0" firstAttribute="top" secondItem="qkV-Pw-MXt" secondAttribute="bottom" constant="-165" id="uvq-GK-UWp"/>
                             <constraint firstItem="yLp-eY-fSk" firstAttribute="leading" secondItem="TPB-sL-5NP" secondAttribute="trailing" id="v32-TE-z9R"/>
                             <constraint firstItem="d62-qb-Nyt" firstAttribute="top" secondItem="yLp-eY-fSk" secondAttribute="bottom" constant="22" id="vSL-n0-Si7"/>
                         </constraints>
@@ -2463,8 +2480,8 @@ Gw
         <image name="Cut" width="112.5" height="112.5"/>
         <image name="DuplicateFile" width="560" height="575"/>
         <image name="NSAddTemplate" width="11" height="11"/>
-        <image name="NSListViewTemplate" width="14" height="10"/>
-        <image name="NSSlideshowTemplate" width="17" height="14"/>
+        <image name="NSPathTemplate" width="16" height="10"/>
+        <image name="NSQuickLookTemplate" width="19" height="12"/>
         <image name="NSTouchBarAddTemplate" width="14" height="30"/>
         <image name="NSTouchBarComposeTemplate" width="21" height="30"/>
         <image name="NSTouchBarDeleteTemplate" width="15" height="30"/>
@@ -2475,7 +2492,6 @@ Gw
         <image name="NSTouchBarGoDownTemplate" width="16" height="30"/>
         <image name="NSTouchBarGoForwardTemplate" width="10" height="30"/>
         <image name="NSTouchBarPlayTemplate" width="14" height="30"/>
-        <image name="NSTouchBarQuickLookTemplate" width="22" height="30"/>
         <image name="NSTouchBarSearchTemplate" width="19" height="30"/>
         <image name="NewFile" width="660" height="660"/>
         <image name="OpenFile" width="720" height="600"/>

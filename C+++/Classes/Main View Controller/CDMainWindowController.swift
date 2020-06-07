@@ -31,6 +31,7 @@ class CDMainWindowController: NSWindowController, NSWindowDelegate {
     
     
     @IBAction func toggleCompileInfoViewShown(_ sender: Any) {
+        
         let vc = (self.contentViewController as! CDMainViewController)
         if vc.bottom == true {
             vc.bottomConstraint.constant = 22.0
@@ -39,9 +40,11 @@ class CDMainWindowController: NSWindowController, NSWindowDelegate {
             vc.bottomConstraint.constant = 165.0
             vc.bottom = true
         }
+        
     }
     
     @IBAction func toggleCompileViewShown(_ sender: Any) {
+        
         let vc = (self.contentViewController as! CDMainViewController)
         if vc.right == true {
             vc.rightConstraint.constant = 0.0
@@ -50,9 +53,11 @@ class CDMainWindowController: NSWindowController, NSWindowDelegate {
             vc.rightConstraint.constant = 253.0
             vc.right = true
         }
+        
     }
     
     @IBAction func toggleFileViewShown(_ sender: Any) {
+        
         let vc = (self.contentViewController as! CDMainViewController)
         if vc.left == true {
             vc.leftConstraint.constant = 0.0
@@ -61,6 +66,7 @@ class CDMainWindowController: NSWindowController, NSWindowDelegate {
             vc.leftConstraint.constant = 219.0
             vc.left = true
         }
+        
     }
     
 }
