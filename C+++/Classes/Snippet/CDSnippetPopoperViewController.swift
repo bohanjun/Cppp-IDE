@@ -21,7 +21,7 @@ protocol CDSnippetPopoverViewControllerDelegate {
 }
 
 
-class CDSnippetPopoberViewController: NSViewController {
+class CDSnippetPopoperViewController: NSViewController {
         
     let imageNames = ["Code", "YellowCode", "GreenCode", "PurpleCode", "BlueCode"]
     

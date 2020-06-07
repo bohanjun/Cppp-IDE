@@ -8,17 +8,34 @@
 
 import Cocoa
 
-
-let completion = [
-    "(" : ")",
-    "[" : "]"
-]
-
-
 extension String {
     
+    /// Count how many times a character appears in a string.
+    /// - Parameter character: The character.
+    /// - Returns: How many times the character appears in the string.
     func challenge(_ character: Character) -> Int {
         Array(self).reduce(0, {$1 == character ? $0 + 1 : $0})
+    }
+    
+    func lineNumber(at position: Int) -> Int? {
+        
+        var lineNumber = 0
+        var characterPosition = 0
+        for line in self.components(separatedBy: .newlines) {
+            lineNumber += 1
+            for _ in line {
+                characterPosition += 1
+                if characterPosition == position {
+                    return lineNumber
+                }
+            }
+            characterPosition += 1
+            if characterPosition == position {
+                return lineNumber
+            }
+        }
+        return 1
+        
     }
 
 }
@@ -48,11 +65,19 @@ class CDTextView: NSTextView {
         self.textStorage!.setAttributedString(highlightedCode!)
         self.setSelectedRange(a)
         
-        self.codeTextViewDelegate?.didChangeText!(lines: self.textStorage?.paragraphs.count ?? 0, characters: self.textStorage?.characters.count ?? 0)
-        self.gutterDelegate?.didChangeText!(lines: (self.textStorage?.paragraphs.count)!, characters: 0)
+        DispatchQueue.main.async {
+            
+            self.codeTextViewDelegate?.didChangeText!(lines: self.textStorage?.paragraphs.count ?? 0, characters: self.textStorage?.characters.count ?? 0)
+            self.gutterDelegate?.didChangeText!(lines: (self.textStorage?.paragraphs.count)!, currentLine: self.string.lineNumber(at: self.selectedRange.location)!)
+            
+        }
         
     }
     
+    /// Inserts the given string into the receiver, replacing the specified content. Overriden to support automatic completion.
+    /// - Parameters:
+    ///   - string: The text to insert, either an NSString or NSAttributedString instance.
+    ///   - replacementRange: The range of content to replace in the receiver’s text storage.
     override func insertText(_ string: Any, replacementRange: NSRange) {
         super.insertText(string, replacementRange: replacementRange)
         
@@ -103,6 +128,7 @@ class CDTextView: NSTextView {
         
     }
     
+    
     override func completions(forPartialWordRange charRange: NSRange, indexOfSelectedItem index: UnsafeMutablePointer<Int>) -> [String]? {
         
         func compare(_ a: String, _ b: String) -> Int {
@@ -135,17 +161,16 @@ class CDTextView: NSTextView {
         
     }
     
+    
     override func complete(_ sender: Any?) {
-        
         super.complete(sender)
-        
     }
     
+    
     override func insertCompletion(_ word: String, forPartialWordRange charRange: NSRange, movement: Int, isFinal flag: Bool) {
-        
         super.insertCompletion(word, forPartialWordRange: charRange, movement: movement, isFinal: flag)
-        
     }
+    
     
     // MARK: - init(coder:)
     required init?(coder: NSCoder) {
@@ -154,14 +179,8 @@ class CDTextView: NSTextView {
         self.textContainer?.size = NSSize(width: CGFloat(Int.max), height: CGFloat(Int.max))
         self.textContainer?.widthTracksTextView = false
         
-        if let savedData = CDSettingsViewController.getSavedData() {
-            
-            config = savedData
-            
-        } else {
-            
+        if config == nil {
             initDefaultData()
-            
         }
         
         self.highlightr!.setTheme(to: config!.lightThemeName)

@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="CDSnippetPopoberViewController" customModule="C___" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="CDSnippetPopoperViewController" customModule="C___" customModuleProvider="target">
             <connections>
                 <outlet property="addToCodeButton" destination="MlQ-AU-NIG" id="jSi-EN-BTR"/>
                 <outlet property="imageView" destination="nkU-dH-6NV" id="Cod-ol-F5e"/>

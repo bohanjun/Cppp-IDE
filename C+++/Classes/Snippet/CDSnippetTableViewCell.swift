@@ -71,7 +71,7 @@ class CDSnippetTableViewCell: NSView, CDSnippetPopoverViewControllerDelegate {
     @objc func showInfo() {
         
         popover = NSPopover()
-        let vc = CDSnippetPopoberViewController()
+        let vc = CDSnippetPopoperViewController()
         vc.setup(title: self.title, image: self.titleLabel.image!, code: self.code, mode: false)
         vc.delegate = (self.superview) as! CDSnippetTableView
         vc.closeDelegate = self

@@ -114,8 +114,8 @@
 		18A41B62242C765500AFC422 /* color-brewer.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 18A41B08242C765500AFC422 /* color-brewer.min.css */; };
 		18B1856E246387F100B579AD /* CDSnippetTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B1856D246387F100B579AD /* CDSnippetTableView.swift */; };
 		18B1857024638B2A00B579AD /* CDSnippetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B1856F24638B2A00B579AD /* CDSnippetTableViewCell.swift */; };
-		18B185732463B32400B579AD /* CDSnippetPopoberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B185712463B32400B579AD /* CDSnippetPopoberViewController.swift */; };
-		18B185742463B32400B579AD /* CDSnippetPopoberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B185722463B32400B579AD /* CDSnippetPopoberViewController.xib */; };
+		18B185732463B32400B579AD /* CDSnippetPopoperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B185712463B32400B579AD /* CDSnippetPopoperViewController.swift */; };
+		18B185742463B32400B579AD /* CDSnippetPopoperViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B185722463B32400B579AD /* CDSnippetPopoperViewController.xib */; };
 		18B1857F2465AB2E00B579AD /* CDParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B1857E2465AB2E00B579AD /* CDParser.swift */; };
 		18B185822468210100B579AD /* CDFileCompiler(Debugger).swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B185812468210100B579AD /* CDFileCompiler(Debugger).swift */; };
 		18B1858B2468DC9800B579AD /* CDFileCompiler(Compile).swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B1858A2468DC9800B579AD /* CDFileCompiler(Compile).swift */; };
@@ -248,8 +248,8 @@
 		18A41B08242C765500AFC422 /* color-brewer.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "color-brewer.min.css"; sourceTree = "<group>"; };
 		18B1856D246387F100B579AD /* CDSnippetTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSnippetTableView.swift; sourceTree = "<group>"; };
 		18B1856F24638B2A00B579AD /* CDSnippetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSnippetTableViewCell.swift; sourceTree = "<group>"; };
-		18B185712463B32400B579AD /* CDSnippetPopoberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSnippetPopoberViewController.swift; sourceTree = "<group>"; };
-		18B185722463B32400B579AD /* CDSnippetPopoberViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CDSnippetPopoberViewController.xib; sourceTree = "<group>"; };
+		18B185712463B32400B579AD /* CDSnippetPopoperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSnippetPopoperViewController.swift; sourceTree = "<group>"; };
+		18B185722463B32400B579AD /* CDSnippetPopoperViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CDSnippetPopoperViewController.xib; sourceTree = "<group>"; };
 		18B1857E2465AB2E00B579AD /* CDParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDParser.swift; sourceTree = "<group>"; };
 		18B185812468210100B579AD /* CDFileCompiler(Debugger).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDFileCompiler(Debugger).swift"; sourceTree = "<group>"; };
 		18B1858A2468DC9800B579AD /* CDFileCompiler(Compile).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDFileCompiler(Compile).swift"; sourceTree = "<group>"; };
@@ -472,8 +472,8 @@
 			children = (
 				18B1856D246387F100B579AD /* CDSnippetTableView.swift */,
 				18B1856F24638B2A00B579AD /* CDSnippetTableViewCell.swift */,
-				18B185712463B32400B579AD /* CDSnippetPopoberViewController.swift */,
-				18B185722463B32400B579AD /* CDSnippetPopoberViewController.xib */,
+				18B185712463B32400B579AD /* CDSnippetPopoperViewController.swift */,
+				18B185722463B32400B579AD /* CDSnippetPopoperViewController.xib */,
 			);
 			path = Snippet;
 			sourceTree = "<group>";
@@ -656,7 +656,7 @@
 				18A41B4B242C765500AFC422 /* googlecode.min.css in Resources */,
 				18A41B34242C765500AFC422 /* atelier-plateau-dark.min.css in Resources */,
 				18A41B1A242C765500AFC422 /* atelier-heath-dark.min.css in Resources */,
-				18B185742463B32400B579AD /* CDSnippetPopoberViewController.xib in Resources */,
+				18B185742463B32400B579AD /* CDSnippetPopoperViewController.xib in Resources */,
 				18A41B24242C765500AFC422 /* brown-paper.min.css in Resources */,
 				18A41AAD242C762100AFC422 /* highlight.min.js in Resources */,
 				18B1859924699A2800B579AD /* Main.storyboard in Resources */,
@@ -738,7 +738,7 @@
 				18A41AA8242C75C300AFC422 /* CDHighlightrShims.swift in Sources */,
 				180480AE2448602700CD0A4D /* CDSettings.swift in Sources */,
 				18E72920244E756E000317D7 /* CDScrollView.swift in Sources */,
-				18B185732463B32400B579AD /* CDSnippetPopoberViewController.swift in Sources */,
+				18B185732463B32400B579AD /* CDSnippetPopoperViewController.swift in Sources */,
 				18A41AAA242C75DE00AFC422 /* CDAttributedString.swift in Sources */,
 				183BF3CA242906B3007AF6AC /* CDTextView.swift in Sources */,
 				18A41AA2242C756700AFC422 /* CDHighlightr.swift in Sources */,

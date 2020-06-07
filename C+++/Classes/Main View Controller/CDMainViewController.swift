@@ -276,7 +276,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
     
     @IBAction func addItem(_ sender: NSButton) {
         
-        let vc = CDSnippetPopoberViewController()
+        let vc = CDSnippetPopoperViewController()
         vc.setup(title: "Edit your title", image: NSImage(named: "Code")!, code: "Edit your code here.\nYou can also click the image to\n change the color of it.", mode: true)
         vc.closeDelegate = self
         vc.delegate = self.snippetTableView

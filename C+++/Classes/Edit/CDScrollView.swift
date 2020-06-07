@@ -11,7 +11,6 @@ import Cocoa
 class CDScrollView: NSScrollView {
     
     @IBOutlet var bindedScrollView: CDScrollView!
-
     
     override func scroll(_ clipView: NSClipView, to point: NSPoint) {
         super.scroll(clipView, to: point)
@@ -22,6 +21,7 @@ class CDScrollView: NSScrollView {
     }
     
     func superScroll(_ clipView: NSClipView, to point: NSPoint) {
+        
         super.scroll(clipView, to: point)
         
     }
