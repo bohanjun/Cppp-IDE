@@ -19,6 +19,7 @@
 - Add TEST function
 - Small UI Changes
 - Much more stable
+- Revert the line number feature
 - Bug fixes and improvements
 
 ### 2020.5 Version 2.0.0 (205200)

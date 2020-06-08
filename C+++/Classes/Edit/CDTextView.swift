@@ -97,10 +97,12 @@ class CDTextView: NSTextView {
                 right = "\'"
             case "{":
                 insertNewline(self)
+                let location = self.selectedRange.location
                 insertNewline(self)
                 deleteBackward(self)
                 super.insertText("}", replacementRange: replacementRange)
-                self.selectedRange.location -= 1
+                self.selectedRange.location = location
+                return
             
             default:
                 return

@@ -61,7 +61,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
     var left = true
     
     @IBOutlet var mainTextView: CDTextView!
-    @IBOutlet var gutterTextView: CDGutterTextView!
+    @IBOutlet var gutterTextView: CDLineNumberTextView!
     @IBOutlet weak var pathControl: NSPathControl!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var rightConstraint: NSLayoutConstraint!
