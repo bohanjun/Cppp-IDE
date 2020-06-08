@@ -64,7 +64,7 @@
 			<key>LSTypeIsPackage</key>
 			<integer>0</integer>
 			<key>NSDocumentClass</key>
-			<string>$(PRODUCT_MODULE_NAME).CpppProject</string>
+			<string>$(PRODUCT_MODULE_NAME).CDProjectDocument</string>
 		</dict>
 		<dict>
 			<key>CFBundleTypeExtensions</key>

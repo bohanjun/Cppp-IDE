@@ -28,7 +28,7 @@ extension NSDocumentController {
 
 
 
-class CpppProject: NSDocument {
+class CDProjectDocument: NSDocument {
     
     @objc var content = CDDocumentContent(contentString: "")
     var contentViewController: CDProjectViewController!
@@ -143,6 +143,7 @@ class CpppProject: NSDocument {
     // MARK: - Printing
     
     func thePrintInfo() -> NSPrintInfo {
+        
         let thePrintInfo = NSPrintInfo()
         thePrintInfo.horizontalPagination = .fit
         thePrintInfo.isHorizontallyCentered = false
@@ -158,6 +159,7 @@ class CpppProject: NSDocument {
                                          forKey: NSPrintInfo.AttributeKey.headerAndFooter as NSCopying)
         
         return thePrintInfo
+        
     }
     
     @objc

@@ -19,7 +19,7 @@ class CDProjectViewController: NSViewController {
     @IBAction func set(_ sender: Any?) {
         
         didChange()
-        if let file = self.representedObject as? CpppProject {
+        if let file = self.representedObject as? CDProjectDocument {
             file.compileCommand = textField.stringValue
         } else {
             saveProject(self)
@@ -71,7 +71,7 @@ class CDProjectViewController: NSViewController {
             }
             self.tableView.remove(at: index - 1)
             self.RemoveIndexTextField.stringValue = ""
-            (self.representedObject as! CpppProject).allFiles = self.tableView.getAllTitles()
+            (self.representedObject as! CDProjectDocument).allFiles = self.tableView.getAllTitles()
             self.didChange()
             
         } else {
@@ -92,7 +92,7 @@ class CDProjectViewController: NSViewController {
             switch response {
                 case .OK:
                     self.tableView.append(cell: CDProjectTableViewCell(path: dialog.url!.path))
-                    (self.representedObject as! CpppProject).allFiles = self.tableView.getAllTitles()
+                    (self.representedObject as! CDProjectDocument).allFiles = self.tableView.getAllTitles()
                     self.didChange()
                 default: break
             }
@@ -115,8 +115,8 @@ class CDProjectViewController: NSViewController {
         }
     }
     
-    weak var document: CpppProject? {
-        if let docRepresentedObject = representedObject as? CpppProject {
+    weak var document: CDProjectDocument? {
+        if let docRepresentedObject = representedObject as? CDProjectDocument {
             return docRepresentedObject
         }
         return nil

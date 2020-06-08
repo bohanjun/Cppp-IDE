@@ -17,6 +17,9 @@ extension String {
         Array(self).reduce(0, {$1 == character ? $0 + 1 : $0})
     }
     
+    /// Get the number of the line which the character at a specific position is in.
+    /// - Parameter position: The position.
+    /// - Returns: The number of the line which the character at `position` is in.
     func lineNumber(at position: Int) -> Int? {
         
         var lineNumber = 0
@@ -40,6 +43,8 @@ extension String {
 
 }
 
+
+
 class CDTextView: NSTextView {
 
     let highlightr = CDHighlightr()
@@ -49,9 +54,9 @@ class CDTextView: NSTextView {
     var codeAttributedString: CDAttributedString!
     let parser = CDParser(code: "")
     
-    private var completeWhenChangingText = true
     
-    // MARK: - Override Functions
+    
+    
     
     /// When the text changes, highlight the text.
     override func didChangeText() {
@@ -73,6 +78,8 @@ class CDTextView: NSTextView {
         }
         
     }
+    
+    
     
     /// Inserts the given string into the receiver, replacing the specified content. Overriden to support automatic completion.
     /// - Parameters:
@@ -111,6 +118,7 @@ class CDTextView: NSTextView {
         self.selectedRange.location -= 1
         
     }
+    
     
     
     /// When press ENTER, insert tabs.
