@@ -49,7 +49,7 @@ class CDDebugViewController: NSViewController {
             if let line = String(data: pipe.availableData, encoding: String.Encoding.utf8) {
                 DispatchQueue.main.async {
                     self.textView.isEditable = true
-                    self.textView.insertText(line, replacementRange: self.textView.selectedRange)
+                    self.textView.string.append(line)
                     self.textView.isEditable = false
                 }
             } else {

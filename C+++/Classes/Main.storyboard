@@ -517,7 +517,7 @@
                                         <menuItem title="About C+++" id="xIN-2T-nuO">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="P7j-AJ-fKZ"/>
+                                                <action selector="about:" target="Ady-hI-5gd" id="MDs-Qz-3Nv"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -1150,7 +1150,7 @@ Gw
                                         </connections>
                                     </button>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="Hb4-Me-Abj">
-                                        <rect key="frame" x="15" y="456" width="223" height="82"/>
+                                        <rect key="frame" x="15" y="476" width="223" height="82"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9w0-i2-cXR">
                                                 <rect key="frame" x="0.0" y="0.0" width="223" height="82"/>
@@ -1212,7 +1212,7 @@ Gw
                                         </constraints>
                                     </customView>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="TWt-wF-68Q">
-                                        <rect key="frame" x="15" y="359" width="223" height="82"/>
+                                        <rect key="frame" x="15" y="379" width="223" height="82"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wOn-ZL-BDf">
                                                 <rect key="frame" x="0.0" y="0.0" width="223" height="82"/>
@@ -1274,7 +1274,7 @@ Gw
                                         </constraints>
                                     </customView>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="75O-Xb-VQU">
-                                        <rect key="frame" x="15" y="262" width="223" height="82"/>
+                                        <rect key="frame" x="15" y="282" width="223" height="82"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vro-TC-84K">
                                                 <rect key="frame" x="0.0" y="0.0" width="223" height="82"/>
@@ -1336,7 +1336,7 @@ Gw
                                         </constraints>
                                     </customView>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="ywS-mR-85U">
-                                        <rect key="frame" x="15" y="165" width="223" height="82"/>
+                                        <rect key="frame" x="15" y="185" width="223" height="82"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tI3-v5-4aS">
                                                 <rect key="frame" x="0.0" y="0.0" width="223" height="82"/>
@@ -1435,7 +1435,7 @@ Gw
                                     <constraint firstItem="ywS-mR-85U" firstAttribute="top" secondItem="75O-Xb-VQU" secondAttribute="bottom" constant="15" id="R5I-xJ-R3Q"/>
                                     <constraint firstItem="TWt-wF-68Q" firstAttribute="top" secondItem="Hb4-Me-Abj" secondAttribute="bottom" constant="15" id="T2s-pe-hbB"/>
                                     <constraint firstItem="4Ci-A4-t6w" firstAttribute="top" secondItem="qkV-Pw-MXt" secondAttribute="top" constant="10" id="TwX-d2-pms"/>
-                                    <constraint firstItem="Hb4-Me-Abj" firstAttribute="top" secondItem="Dr7-ha-eyI" secondAttribute="bottom" constant="77" id="UgO-N8-Md2"/>
+                                    <constraint firstItem="Hb4-Me-Abj" firstAttribute="top" secondItem="Dr7-ha-eyI" secondAttribute="bottom" constant="57" id="UgO-N8-Md2"/>
                                     <constraint firstAttribute="trailing" secondItem="ywS-mR-85U" secondAttribute="trailing" constant="15" id="XxC-Pk-ORE"/>
                                     <constraint firstAttribute="trailing" secondItem="75O-Xb-VQU" secondAttribute="trailing" constant="15" id="Z22-2O-9Bl"/>
                                     <constraint firstItem="Dr7-ha-eyI" firstAttribute="leading" secondItem="qkV-Pw-MXt" secondAttribute="leading" constant="15" id="dcZ-J8-7hT"/>
@@ -1849,7 +1849,6 @@ Gw
                             </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="qkV-Pw-MXt" firstAttribute="leading" secondItem="0HT-on-mcG" secondAttribute="trailing" id="0P7-iv-TjG"/>
                             <constraint firstAttribute="bottom" secondItem="yLp-eY-fSk" secondAttribute="bottom" constant="165" id="1lH-WC-wM9"/>
                             <constraint firstItem="RCh-2s-VX0" firstAttribute="trailing" secondItem="yLp-eY-fSk" secondAttribute="trailing" id="2x6-dv-Z9t"/>
                             <constraint firstAttribute="bottom" secondItem="Dip-ez-JU8" secondAttribute="bottom" id="8en-YI-U0n"/>
@@ -1863,6 +1862,7 @@ Gw
                             <constraint firstItem="a6q-mG-7ce" firstAttribute="leading" secondItem="E0u-iA-KeT" secondAttribute="leading" id="LVP-nU-aI1"/>
                             <constraint firstAttribute="trailing" secondItem="qkV-Pw-MXt" secondAttribute="trailing" id="LoI-FY-tek"/>
                             <constraint firstItem="yLp-eY-fSk" firstAttribute="top" secondItem="ERx-hH-rdd" secondAttribute="top" constant="11" id="QHf-FW-Bie"/>
+                            <constraint firstItem="yLp-eY-fSk" firstAttribute="trailing" secondItem="0HT-on-mcG" secondAttribute="trailing" id="U0l-vc-4ct"/>
                             <constraint firstItem="yLp-eY-fSk" firstAttribute="top" secondItem="0HT-on-mcG" secondAttribute="bottom" id="Vzv-Ay-jyX"/>
                             <constraint firstAttribute="bottom" secondItem="qkV-Pw-MXt" secondAttribute="bottom" id="Y1u-cV-rVe"/>
                             <constraint firstItem="TPB-sL-5NP" firstAttribute="leading" secondItem="ERx-hH-rdd" secondAttribute="leading" constant="219" id="jfa-UV-rjU"/>
