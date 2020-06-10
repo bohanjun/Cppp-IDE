@@ -12,6 +12,8 @@
 - Of course, you can choose your compiler. You can choose between g++, gcc and clang. You can also set the compiler to "python", "swift" or other compilers, but that is not recommended.
 
 ## Update Log
+### 2020.6(7?) Version 2.0.2 (20 6/7 202)
+
 ### 2020.6 Version 2.0.1 (206201)
 - Support "" and '' completion
 - Add launch view
