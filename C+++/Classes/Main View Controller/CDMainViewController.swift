@@ -102,20 +102,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        CDUpdateManager.getLatestVersionData { (data, error) in
-            
-            if let _data = data {
-                let string = String(data: _data, encoding: .utf8) ?? "Error"
-                print(string)
-                let start = string.firstIndexOf("LATESTVERSIONBEGIN")
-                let end = string.firstIndexOf("LATESTVERSIONEND")
-                // let substring = (string as NSString).substring(with: NSRange(location: start, length: end - start + 1))
-                print(start, end)
-            } else {
-                print(error!)
-            }
-            
-        }
+        CDUpdateManager.getVersionAndUpdateInformation { (a, b, c) in }
         
         self.mainTextView.codeTextViewDelegate = self
         self.mainTextView.gutterDelegate = self.gutterTextView
