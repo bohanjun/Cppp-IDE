@@ -135,6 +135,7 @@
 		18E7291E244E6F91000317D7 /* CDLineNumberTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E7291D244E6F91000317D7 /* CDLineNumberTextView.swift */; };
 		18E72920244E756E000317D7 /* CDScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E7291F244E756E000317D7 /* CDScrollView.swift */; };
 		18FC02882490E612004551B1 /* CDUpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC02872490E612004551B1 /* CDUpdateManager.swift */; };
+		18FC028A2492624F004551B1 /* CDUpdateManager(NSViewController Extension).swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC02892492624F004551B1 /* CDUpdateManager(NSViewController Extension).swift */; };
 		18FC05482487B9F600F33CE2 /* CDTestPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC05472487B9F600F33CE2 /* CDTestPointView.swift */; };
 		18FC054B2487BA3600F33CE2 /* CDTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC05492487BA3600F33CE2 /* CDTestViewController.swift */; };
 		18FC054C2487BA3600F33CE2 /* CDTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18FC054A2487BA3600F33CE2 /* CDTestViewController.xib */; };
@@ -275,6 +276,7 @@
 		18E7291F244E756E000317D7 /* CDScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDScrollView.swift; sourceTree = "<group>"; };
 		18FC0284248FBA5D004551B1 /* LatestVersion.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LatestVersion.txt; sourceTree = "<group>"; };
 		18FC02872490E612004551B1 /* CDUpdateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDUpdateManager.swift; sourceTree = "<group>"; };
+		18FC02892492624F004551B1 /* CDUpdateManager(NSViewController Extension).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUpdateManager(NSViewController Extension).swift"; sourceTree = "<group>"; };
 		18FC05472487B9F600F33CE2 /* CDTestPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTestPointView.swift; sourceTree = "<group>"; };
 		18FC05492487BA3600F33CE2 /* CDTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTestViewController.swift; sourceTree = "<group>"; };
 		18FC054A2487BA3600F33CE2 /* CDTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CDTestViewController.xib; sourceTree = "<group>"; };
@@ -564,6 +566,7 @@
 			isa = PBXGroup;
 			children = (
 				18FC02872490E612004551B1 /* CDUpdateManager.swift */,
+				18FC02892492624F004551B1 /* CDUpdateManager(NSViewController Extension).swift */,
 			);
 			path = Update;
 			sourceTree = "<group>";
@@ -745,6 +748,7 @@
 				1868EBD7244AF934005467B2 /* CDTextViewDelegate.swift in Sources */,
 				1860EC3324839A8B0066DE64 /* CDDocumentController.swift in Sources */,
 				18B3C78224282C1F00F4CA14 /* CDMainViewController.swift in Sources */,
+				18FC028A2492624F004551B1 /* CDUpdateManager(NSViewController Extension).swift in Sources */,
 				187527B0247A6A1900A7522A /* CDLaunchViewController.swift in Sources */,
 				18B1857F2465AB2E00B579AD /* CDParser.swift in Sources */,
 				1868EBD5244981C2005467B2 /* CDCompileSettings.swift in Sources */,

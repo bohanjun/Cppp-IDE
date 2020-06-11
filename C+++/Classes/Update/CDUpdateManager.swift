@@ -12,9 +12,9 @@ class CDUpdateManager: NSObject {
     
     private static func getLatestVersionData(completionHandler: @escaping (Data?, Error?) -> Void) {
 
-        let textFileURL = URL(string: "https://23786.github.io/")!
+        let url = URL(string: "https://23786.github.io/")!
         
-        let downloadTask = URLSession.shared.dataTask(with: textFileURL) { (data, response, error) in
+        let downloadTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
             
             if data != nil {
                 completionHandler(data, nil)
@@ -30,7 +30,7 @@ class CDUpdateManager: NSObject {
     
     static func getVersionAndUpdateInformation(completionHandler: @escaping (String?, String?, String?) -> Void) {
         
-        CDUpdateManager.getLatestVersionData { (data, error) in
+        getLatestVersionData { (data, error) in
             
             if let _data = data {
                 
@@ -52,6 +52,19 @@ class CDUpdateManager: NSObject {
                 
             }
             
+        }
+        
+    }
+    
+    static func getCurrentVersion() -> String? {
+        
+        let infoDictionary = Bundle.main.infoDictionary
+        if let infoDictionary = infoDictionary {
+            let appVersion = infoDictionary["CFBundleShortVersionString"] as! String
+            print("Current Version: \(appVersion)")
+            return appVersion
+        } else {
+            return nil
         }
         
     }

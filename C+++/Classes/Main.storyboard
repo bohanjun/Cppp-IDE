@@ -502,6 +502,12 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="3qt-Z3-ZOZ"/>
+                                        <menuItem title="Check for Updates" id="Y0r-jt-Iq5">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="checkUpdate:" target="Ady-hI-5gd" id="XMl-NM-UeS"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem title="Visit the Website of C+++" id="fhs-Ki-oQO">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
