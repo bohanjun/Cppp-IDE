@@ -134,6 +134,7 @@
 		18D4DD71246A303400B97F32 /* CDProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D4DD70246A303400B97F32 /* CDProjectTableViewCell.swift */; };
 		18E7291E244E6F91000317D7 /* CDLineNumberTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E7291D244E6F91000317D7 /* CDLineNumberTextView.swift */; };
 		18E72920244E756E000317D7 /* CDScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E7291F244E756E000317D7 /* CDScrollView.swift */; };
+		18FC02882490E612004551B1 /* CDUpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC02872490E612004551B1 /* CDUpdateManager.swift */; };
 		18FC05482487B9F600F33CE2 /* CDTestPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC05472487B9F600F33CE2 /* CDTestPointView.swift */; };
 		18FC054B2487BA3600F33CE2 /* CDTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC05492487BA3600F33CE2 /* CDTestViewController.swift */; };
 		18FC054C2487BA3600F33CE2 /* CDTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18FC054A2487BA3600F33CE2 /* CDTestViewController.xib */; };
@@ -273,6 +274,7 @@
 		18E7291D244E6F91000317D7 /* CDLineNumberTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDLineNumberTextView.swift; sourceTree = "<group>"; };
 		18E7291F244E756E000317D7 /* CDScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDScrollView.swift; sourceTree = "<group>"; };
 		18FC0284248FBA5D004551B1 /* LatestVersion.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LatestVersion.txt; sourceTree = "<group>"; };
+		18FC02872490E612004551B1 /* CDUpdateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDUpdateManager.swift; sourceTree = "<group>"; };
 		18FC05472487B9F600F33CE2 /* CDTestPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTestPointView.swift; sourceTree = "<group>"; };
 		18FC05492487BA3600F33CE2 /* CDTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTestViewController.swift; sourceTree = "<group>"; };
 		18FC054A2487BA3600F33CE2 /* CDTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CDTestViewController.xib; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 				18B185802466D9B100B579AD /* Completion */,
 				183BF3C824288043007AF6AC /* Edit */,
 				183BF3C624287FFE007AF6AC /* Compile */,
+				18FC02862490E5F2004551B1 /* Update */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -557,6 +560,14 @@
 			path = Document;
 			sourceTree = "<group>";
 		};
+		18FC02862490E5F2004551B1 /* Update */ = {
+			isa = PBXGroup;
+			children = (
+				18FC02872490E612004551B1 /* CDUpdateManager.swift */,
+			);
+			path = Update;
+			sourceTree = "<group>";
+		};
 		18FC05442487B96200F33CE2 /* Test */ = {
 			isa = PBXGroup;
 			children = (
@@ -752,6 +763,7 @@
 				18B3C7942428378E00F4CA14 /* CDMainWindowController.swift in Sources */,
 				18FC054B2487BA3600F33CE2 /* CDTestViewController.swift in Sources */,
 				18D4DD6F246A2C9E00B97F32 /* CDProjectTableView.swift in Sources */,
+				18FC02882490E612004551B1 /* CDUpdateManager.swift in Sources */,
 				18D4DD71246A303400B97F32 /* CDProjectTableViewCell.swift in Sources */,
 				18D4DD6D246A2C5100B97F32 /* CDProjectViewController.swift in Sources */,
 				18B1857024638B2A00B579AD /* CDSnippetTableViewCell.swift in Sources */,

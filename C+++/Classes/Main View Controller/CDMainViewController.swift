@@ -34,6 +34,26 @@ extension NSViewController {
     
 }
 
+extension String {
+    
+    /// Returns the index of the first substring in the string.
+    /// - Parameters:
+    ///   - string: The substring.
+    /// - Returns: The index of the first substring in the string. -1 if not found.
+    func firstIndexOf(_ string: String) -> Int {
+        
+        var pos = -1
+        if let range = range(of: string, options: .literal) {
+            if !range.isEmpty {
+                pos = self.distance(from: startIndex, to: range.lowerBound)
+            }
+        }
+        return pos
+        
+    }
+    
+}
+
 
 
 
@@ -81,6 +101,21 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        CDUpdateManager.getLatestVersionData { (data, error) in
+            
+            if let _data = data {
+                let string = String(data: _data, encoding: .utf8) ?? "Error"
+                print(string)
+                let start = string.firstIndexOf("LATESTVERSIONBEGIN")
+                let end = string.firstIndexOf("LATESTVERSIONEND")
+                // let substring = (string as NSString).substring(with: NSRange(location: start, length: end - start + 1))
+                print(start, end)
+            } else {
+                print(error!)
+            }
+            
+        }
         
         self.mainTextView.codeTextViewDelegate = self
         self.mainTextView.gutterDelegate = self.gutterTextView
