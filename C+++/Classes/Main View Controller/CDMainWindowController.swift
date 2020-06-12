@@ -49,9 +49,11 @@ class CDMainWindowController: NSWindowController, NSWindowDelegate {
         if vc.right == true {
             vc.rightConstraint.constant = 0.0
             vc.right = false
+            vc.compileView.isHidden = true
         } else {
             vc.rightConstraint.constant = 253.0
             vc.right = true
+            vc.compileView.isHidden = false
         }
         
     }
@@ -62,9 +64,11 @@ class CDMainWindowController: NSWindowController, NSWindowDelegate {
         if vc.left == true {
             vc.leftConstraint.constant = 0.0
             vc.left = false
+            vc.fileAndSnippetView.isHidden = true
         } else {
             vc.leftConstraint.constant = 219.0
             vc.left = true
+            vc.fileAndSnippetView.isHidden = false
         }
         
     }

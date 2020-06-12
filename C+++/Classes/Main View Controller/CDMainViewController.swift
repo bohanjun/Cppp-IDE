@@ -91,6 +91,8 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
     @IBOutlet weak var linesLabel: NSTextField!
     @IBOutlet weak var charactersLabel: NSTextField!
     @IBOutlet var compileInfo: NSTextView!
+    @IBOutlet weak var compileView: NSView!
+    @IBOutlet weak var fileAndSnippetView: NSView!
     
     
     
@@ -155,7 +157,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
         if #available(OSX 10.14, *) {
         } else {
             if let _ = self.view.window {
-                showAlert("Warning", "Your Mac does not support Dark Mode. Dark Mode requires macOS 10.14 or later. You can update your Mac.")
+                showAlert("Warning", "Your Mac does not support Dark Mode. Dark Mode requires macOS 10.14 Mojave or later. You should update your Mac.")
             }
             return
         }
