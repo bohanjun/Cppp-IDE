@@ -102,8 +102,6 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        CDUpdateManager.getVersionAndUpdateInformation { (a, b, c) in }
-        
         self.mainTextView.codeTextViewDelegate = self
         self.mainTextView.gutterDelegate = self.gutterTextView
         self.mainTextView.scrollView = self.scrollViewOfTextView

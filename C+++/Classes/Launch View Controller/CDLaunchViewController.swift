@@ -48,6 +48,8 @@ class CDLaunchViewController: NSViewController, CDSettingsViewDelegate {
         newProjectView.isHidden = true
         aboutView.isHidden = false
         
+        checkUpdate(alsoShowAlertWhenUpToDate: false)
+        
     }
     
     override func viewDidLoad() {
@@ -63,6 +65,7 @@ class CDLaunchViewController: NSViewController, CDSettingsViewDelegate {
     }
     
     @IBAction func showSettingsView(_ sender: Any?) {
+        
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
             if let ViewController =
                 storyboard.instantiateController(
@@ -70,6 +73,7 @@ class CDLaunchViewController: NSViewController, CDSettingsViewDelegate {
                 ViewController.delegate = self
                 self.presentAsSheet(ViewController)
         }
+        
     }
     
 }
