@@ -1,192 +1,796 @@
 <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+            <!-- Google Analytics user opt-out added via Site Kit by Google -->
+                    <script type="text/javascript">window["_gaUserPrefs"] = { ioo : function() { return true; } }</script>
+                <title>C+++ IDE &#8211; EricNTH的个人主页</title>
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+<link rel="alternate" type="application/rss+xml" title="EricNTH的个人主页 &raquo; Feed" href="https://ericnth.cn/feed/" />
+<link rel="alternate" type="application/rss+xml" title="EricNTH的个人主页 &raquo; 评论Feed" href="https://ericnth.cn/comments/feed/" />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+    display: inline !important;
+    border: none !important;
+    box-shadow: none !important;
+    height: 1em !important;
+    width: 1em !important;
+    margin: 0 .07em !important;
+    vertical-align: -0.1em !important;
+    background: none !important;
+    padding: 0 !important;
+}
+</style>
+    <link rel='stylesheet' id='admin-subscription-css-css'  href='https://ericnth.cn/wp-content/plugins/mycred/assets/css/admin-subscription.css?ver=1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='https://c0.wp.com/c/5.4.2/wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='admin-bar-css'  href='https://c0.wp.com/c/5.4.2/wp-includes/css/admin-bar.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://c0.wp.com/c/5.4.2/wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' />
+<style id='wp-block-library-inline-css' type='text/css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<link rel='stylesheet' id='fep-common-style-css'  href='https://ericnth.cn/wp-content/plugins/front-end-pm/assets/css/common-style.css?ver=11.2.3' type='text/css' media='all' />
+<style id='fep-common-style-inline-css' type='text/css'>
+#fep-wrapper{background-color:;color:#000000;} #fep-wrapper a:not(.fep-button,.fep-button-active) {color:#000080;} .fep-button{background-color:#F0FCFF;color:#000000;} .fep-button:hover,.fep-button-active{background-color:#D3EEF5;color:#000000;} .fep-odd-even > div:nth-child(odd) {background-color:#F2F7FC;} .fep-odd-even > div:nth-child(even) {background-color:#FAFAFA;} .fep-message .fep-message-title-heading, .fep-per-message .fep-message-title{background-color:#F2F7FC;} #fep-content-single-heads .fep-message-head:hover,#fep-content-single-heads .fep-message-head-active{background-color:#D3EEF5;color:#000000;}
+</style>
+<link rel='stylesheet' id='generate-style-css'  href='https://ericnth.cn/wp-content/themes/generatepress/css/all.min.css?ver=2.4.2' type='text/css' media='all' />
+<style id='generate-style-inline-css' type='text/css'>
+body{background-color:#efefef;color:#3a3a3a;}a, a:visited{color:#1e73be;}a:hover, a:focus, a:active{color:#000000;}body .grid-container{max-width:1100px;}.wp-block-group__inner-container{max-width:1100px;margin-left:auto;margin-right:auto;}body, button, input, select, textarea{font-family:-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";}body{line-height:2;}.entry-content > [class*="wp-block-"]:not(:last-child){margin-bottom:1.5em;}.main-navigation .main-nav ul ul li a{font-size:14px;}@media (max-width:768px){.main-title{font-size:30px;}h1{font-size:30px;}h2{font-size:25px;}}.top-bar{background-color:#636363;color:#ffffff;}.top-bar a,.top-bar a:visited{color:#ffffff;}.top-bar a:hover{color:#303030;}.site-header{background-color:#ffffff;color:#3a3a3a;}.site-header a,.site-header a:visited{color:#3a3a3a;}.main-title a,.main-title a:hover,.main-title a:visited{color:#222222;}.site-description{color:#757575;}.main-navigation,.main-navigation ul ul{background-color:#222222;}.main-navigation .main-nav ul li a,.menu-toggle{color:#ffffff;}.main-navigation .main-nav ul li:hover > a,.main-navigation .main-nav ul li:focus > a, .main-navigation .main-nav ul li.sfHover > a{color:#ffffff;background-color:#3f3f3f;}button.menu-toggle:hover,button.menu-toggle:focus,.main-navigation .mobile-bar-items a,.main-navigation .mobile-bar-items a:hover,.main-navigation .mobile-bar-items a:focus{color:#ffffff;}.main-navigation .main-nav ul li[class*="current-menu-"] > a{color:#ffffff;background-color:#3f3f3f;}.main-navigation .main-nav ul li[class*="current-menu-"] > a:hover,.main-navigation .main-nav ul li[class*="current-menu-"].sfHover > a{color:#ffffff;background-color:#3f3f3f;}.navigation-search input[type="search"],.navigation-search input[type="search"]:active, .navigation-search input[type="search"]:focus, .main-navigation .main-nav ul li.search-item.active > a{color:#ffffff;background-color:#3f3f3f;}.main-navigation ul ul{background-color:#3f3f3f;}.main-navigation .main-nav ul ul li a{color:#ffffff;}.main-navigation .main-nav ul ul li:hover > a,.main-navigation .main-nav ul ul li:focus > a,.main-navigation .main-nav ul ul li.sfHover > a{color:#ffffff;background-color:#4f4f4f;}.main-navigation .main-nav ul ul li[class*="current-menu-"] > a{color:#ffffff;background-color:#4f4f4f;}.main-navigation .main-nav ul ul li[class*="current-menu-"] > a:hover,.main-navigation .main-nav ul ul li[class*="current-menu-"].sfHover > a{color:#ffffff;background-color:#4f4f4f;}.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .one-container .container, .separate-containers .paging-navigation, .inside-page-header{background-color:#ffffff;}.entry-meta{color:#595959;}.entry-meta a,.entry-meta a:visited{color:#595959;}.entry-meta a:hover{color:#1e73be;}.sidebar .widget{background-color:#ffffff;}.sidebar .widget .widget-title{color:#000000;}.footer-widgets{background-color:#ffffff;}.footer-widgets .widget-title{color:#000000;}.site-info{color:#ffffff;background-color:#222222;}.site-info a,.site-info a:visited{color:#ffffff;}.site-info a:hover{color:#606060;}.footer-bar .widget_nav_menu .current-menu-item a{color:#606060;}input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="tel"],input[type="number"],textarea,select{color:#666666;background-color:#fafafa;border-color:#cccccc;}input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="number"]:focus,textarea:focus,select:focus{color:#666666;background-color:#ffffff;border-color:#bfbfbf;}button,html input[type="button"],input[type="reset"],input[type="submit"],a.button,a.button:visited,a.wp-block-button__link:not(.has-background){color:#ffffff;background-color:#666666;}button:hover,html input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,a.button:hover,button:focus,html input[type="button"]:focus,input[type="reset"]:focus,input[type="submit"]:focus,a.button:focus,a.wp-block-button__link:not(.has-background):active,a.wp-block-button__link:not(.has-background):focus,a.wp-block-button__link:not(.has-background):hover{color:#ffffff;background-color:#3f3f3f;}.generate-back-to-top,.generate-back-to-top:visited{background-color:rgba( 0,0,0,0.4 );color:#ffffff;}.generate-back-to-top:hover,.generate-back-to-top:focus{background-color:rgba( 0,0,0,0.6 );color:#ffffff;}.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull{margin-left:-40px;width:calc(100% + 80px);max-width:calc(100% + 80px);}.rtl .menu-item-has-children .dropdown-menu-toggle{padding-left:20px;}.rtl .main-navigation .main-nav ul li.menu-item-has-children > a{padding-right:20px;}@media (max-width:768px){.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .separate-containers .paging-navigation, .one-container .site-content, .inside-page-header, .wp-block-group__inner-container{padding:30px;}.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull{margin-left:-30px;width:calc(100% + 60px);max-width:calc(100% + 60px);}}.one-container .sidebar .widget{padding:0px;}/* End cached CSS */@media (max-width: 768px){.main-navigation .menu-toggle,.main-navigation .mobile-bar-items,.sidebar-nav-mobile:not(#sticky-placeholder){display:block;}.main-navigation ul,.gen-sidebar-nav{display:none;}[class*="nav-float-"] .site-header .inside-header > *{float:none;clear:both;}}@font-face {font-family: "GeneratePress";src:  url("https://ericnth.cn/wp-content/themes/generatepress/fonts/generatepress.eot");src:  url("https://ericnth.cn/wp-content/themes/generatepress/fonts/generatepress.eot#iefix") format("embedded-opentype"),  url("https://ericnth.cn/wp-content/themes/generatepress/fonts/generatepress.woff2") format("woff2"),  url("https://ericnth.cn/wp-content/themes/generatepress/fonts/generatepress.woff") format("woff"),  url("https://ericnth.cn/wp-content/themes/generatepress/fonts/generatepress.ttf") format("truetype"),  url("https://ericnth.cn/wp-content/themes/generatepress/fonts/generatepress.svg#GeneratePress") format("svg");font-weight: normal;font-style: normal;}.main-navigation .slideout-toggle a:before,.slide-opened .slideout-overlay .slideout-exit:before {font-family: GeneratePress;}.slideout-navigation .dropdown-menu-toggle:before {content: "\f107" !important;}.slideout-navigation .sfHover > a .dropdown-menu-toggle:before {content: "\f106" !important;}
+.navigation-branding .main-title{font-weight:bold;text-transform:none;font-size:45px;}@media (max-width: 768px){.navigation-branding .main-title{font-size:30px;}}
+</style>
+<link rel='stylesheet' id='mycred-front-css'  href='https://ericnth.cn/wp-content/plugins/mycred/assets/css/mycred-front.css?ver=1.8.11' type='text/css' media='all' />
+<link rel='stylesheet' id='mycred-notifications-css'  href='https://ericnth.cn/wp-content/plugins/mycred/addons/notifications/assets/css/notify.css?ver=1.1.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='generate-blog-css'  href='https://ericnth.cn/wp-content/plugins/gp-premium/blog/functions/css/style-min.css?ver=1.9.1' type='text/css' media='all' />
+<link rel='stylesheet' id='wsocial-css'  href='https://ericnth.cn/wp-content/plugins/wechat-social-login/assets/css/social.css?ver=1.3.0' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='https://c0.wp.com/p/jetpack/8.6.1/css/jetpack.css' type='text/css' media='all' />
+<script type='text/javascript' src='https://c0.wp.com/c/5.4.2/wp-includes/js/jquery/jquery.js'></script>
+<script type='text/javascript' src='https://c0.wp.com/c/5.4.2/wp-includes/js/jquery/jquery-migrate.min.js'></script>
+<script type='text/javascript' src='https://www.googletagmanager.com/gtag/js?id=UA-165342445-1' async></script>
+<script type='text/javascript'>
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-165342445-1', {"anonymize_ip":true} );
+</script>
+<link rel='https://api.w.org/' href='https://ericnth.cn/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://ericnth.cn/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://ericnth.cn/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 5.4.2" />
+<link rel="canonical" href="https://ericnth.cn/cppp-ide-macos/" />
+<link rel='shortlink' href='https://ericnth.cn/?p=821' />
+<link rel="alternate" type="application/json+oembed" href="https://ericnth.cn/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fericnth.cn%2Fcppp-ide-macos%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://ericnth.cn/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fericnth.cn%2Fcppp-ide-macos%2F&#038;format=xml" />
+<meta name="generator" content="Site Kit by Google 1.9.0" />
+<link rel='dns-prefetch' href='//c0.wp.com'/>
+<style type='text/css'>img#wpstats{display:none}</style><meta name="viewport" content="width=device-width, initial-scale=1"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <script>
+(adsbygoogle = window.adsbygoogle || []).push({
+google_ad_client: "ca-pub-9124198509974970",
+enable_page_level_ads: true,
+tag_partner: "site_kit"
+});
+</script>
+        <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><style type="text/css" media="print">#wpadminbar { display:none; }</style>
+    <style type="text/css" media="screen">
+    html { margin-top: 32px !important; }
+    * html body { margin-top: 32px !important; }
+    @media screen and ( max-width: 782px ) {
+        html { margin-top: 46px !important; }
+        * html body { margin-top: 46px !important; }
+    }
+</style>
+    <link rel="icon" href="https://ericnth.cn/wp-content/uploads/2020/05/icon-150x150.jpg" sizes="32x32" />
+<link rel="icon" href="https://ericnth.cn/wp-content/uploads/2020/05/icon.jpg" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://ericnth.cn/wp-content/uploads/2020/05/icon.jpg" />
+<meta name="msapplication-TileImage" content="https://ericnth.cn/wp-content/uploads/2020/05/icon.jpg" />
+<div id="fep-notification-bar" class="fep-notification-bar fep-hide"><p>You have<span class="fep_unread_message_count_hide_if_zero fep-hide"> <a href="https://ericnth.cn/messages/?fepaction=messagebox"><span class="fep_unread_message_count_text">0 messages</span></a></span><span class="fep_hide_if_anyone_zero fep-hide"> and</span><span class="fep_unread_announcement_count_hide_if_zero fep-hide"> <a href="https://ericnth.cn/messages/?fepaction=announcements"><span class="fep_unread_announcement_count_text">0 announcements</span></a></span> unread</p><button aria-label="Dismiss notice" class="fep-notice-dismiss">×</button></div>
+<style data-ampdevmode type='text/css'>
+#wpadminbar .quicklinks li#wp-admin-bar-stats {
+    height: 32px;
+}
+#wpadminbar .quicklinks li#wp-admin-bar-stats a {
+    height: 32px;
+    padding: 0;
+}
+#wpadminbar .quicklinks li#wp-admin-bar-stats a div {
+    height: 32px;
+    width: 95px;
+    overflow: hidden;
+    margin: 0 10px;
+}
+#wpadminbar .quicklinks li#wp-admin-bar-stats a:hover div {
+    width: auto;
+    margin: 0 8px 0 10px;
+}
+#wpadminbar .quicklinks li#wp-admin-bar-stats a img {
+    height: 24px;
+    margin: 4px 0;
+    max-width: none;
+    border: none;
+}
+</style>
+<script data-ampdevmode type="text/javascript">
+/* <![CDATA[ */
+    var wpNotesIsJetpackClient = true;
+    var wpNotesIsJetpackClientV2 = true;
+    var wpNotesLinkAccountsURL = 'https://ericnth.cn/wp-admin/admin.php?page=jetpack';
+/* ]]> */
+</script>
+</head>
+
+<body class="page-template-default page page-id-821 logged-in admin-bar no-customize-support wp-embed-responsive post-image-aligned-center sticky-menu-fade right-sidebar nav-below-header fluid-header separate-containers active-footer-widgets-3 nav-aligned-left header-aligned-left dropdown-hover" itemtype="https://schema.org/WebPage" itemscope>
+        <!--[if lte IE 8]>
+        <script type="text/javascript">
+            document.body.className = document.body.className.replace( /(^|\s)(no-)?customize-support(?=\s|$)/, '' ) + ' no-customize-support';
+        </script>
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+        <script type="text/javascript">
+            (function() {
+                var request, b = document.body, c = 'className', cs = 'customize-support', rcs = new RegExp('(^|\\s+)(no-)?'+cs+'(\\s+|$)');
+
+                        request = true;
+        
+                b[c] = b[c].replace( rcs, ' ' );
+                // The customizer requires postMessage and CORS (if the site is cross domain).
+                b[c] += ( window.postMessage && request ? ' ' : ' no-' ) + cs;
+            }());
+        </script>
+    <!--<![endif]-->
+            <div id="wpadminbar" class="nojq nojs">
+                            <a class="screen-reader-shortcut" href="#wp-toolbar" tabindex="1">跳至工具栏</a>
+                        <div class="quicklinks" id="wp-toolbar" role="navigation" aria-label="工具栏">
+                <ul id='wp-admin-bar-root-default' class="ab-top-menu"><li id='wp-admin-bar-wp-logo' class="menupop"><a class='ab-item' aria-haspopup="true" href='https://ericnth.cn/wp-admin/about.php'><span class="ab-icon"></span><span class="screen-reader-text">关于WordPress</span></a><div class="ab-sub-wrapper"><ul id='wp-admin-bar-wp-logo-default' class="ab-submenu"><li id='wp-admin-bar-about'><a class='ab-item' href='https://ericnth.cn/wp-admin/about.php'>关于WordPress</a></li></ul><ul id='wp-admin-bar-wp-logo-external' class="ab-sub-secondary ab-submenu"><li id='wp-admin-bar-wporg'><a class='ab-item' href='https://cn.wordpress.org/'>WordPress.org</a></li><li id='wp-admin-bar-documentation'><a class='ab-item' href='https://codex.wordpress.org/'>文档</a></li><li id='wp-admin-bar-support-forums'><a class='ab-item' href='http://zh-cn.forums.wordpress.org/'>支持</a></li><li id='wp-admin-bar-feedback'><a class='ab-item' href='http://zh-cn.forums.wordpress.org/forum/suggestions'>反馈</a></li></ul></div></li><li id='wp-admin-bar-site-name' class="menupop"><a class='ab-item' aria-haspopup="true" href='https://ericnth.cn/wp-admin/'>EricNTH的个人主页</a><div class="ab-sub-wrapper"><ul id='wp-admin-bar-site-name-default' class="ab-submenu"><li id='wp-admin-bar-dashboard'><a class='ab-item' href='https://ericnth.cn/wp-admin/'>仪表盘</a></li></ul><ul id='wp-admin-bar-appearance' class="ab-submenu"><li id='wp-admin-bar-themes'><a class='ab-item' href='https://ericnth.cn/wp-admin/themes.php'>主题</a></li><li id='wp-admin-bar-widgets'><a class='ab-item' href='https://ericnth.cn/wp-admin/widgets.php'>小工具</a></li><li id='wp-admin-bar-menus'><a class='ab-item' href='https://ericnth.cn/wp-admin/nav-menus.php'>菜单</a></li></ul></div></li><li id='wp-admin-bar-customize' class="menupop hide-if-no-customize"><a class='ab-item' aria-haspopup="true" href='https://ericnth.cn/wp-admin/customize.php?url=https%3A%2F%2Fericnth.cn%2Fcppp-ide-macos%2F'>自定义</a><div class="ab-sub-wrapper"><ul id='wp-admin-bar-customize-default' class="ab-submenu"><li id='wp-admin-bar-my-sub-item'><a class='ab-item' href='https://ericnth.cn/wp-admin/customize.php?autofocus[section]=login_designer__section--templates&#038;url=https://ericnth.cn/login-designer/'>Login Designer</a></li></ul></div></li><li id='wp-admin-bar-updates'><a class='ab-item' href='https://ericnth.cn/wp-admin/update-core.php' title='1个插件更新, 1个主题更新'><span class="ab-icon"></span><span class="ab-label">2</span><span class="screen-reader-text">1个插件更新, 1个主题更新</span></a></li><li id='wp-admin-bar-comments'><a class='ab-item' href='https://ericnth.cn/wp-admin/edit-comments.php'><span class="ab-icon"></span><span class="ab-label awaiting-mod pending-count count-0" aria-hidden="true">0</span><span class="screen-reader-text comments-in-moderation-text">0条评论待审</span></a></li><li id='wp-admin-bar-new-content' class="menupop"><a class='ab-item' aria-haspopup="true" href='https://ericnth.cn/wp-admin/post-new.php'><span class="ab-icon"></span><span class="ab-label">新建</span></a><div class="ab-sub-wrapper"><ul id='wp-admin-bar-new-content-default' class="ab-submenu"><li id='wp-admin-bar-new-post'><a class='ab-item' href='https://ericnth.cn/wp-admin/post-new.php'>文章</a></li><li id='wp-admin-bar-new-media'><a class='ab-item' href='https://ericnth.cn/wp-admin/media-new.php'>媒体</a></li><li id='wp-admin-bar-new-page'><a class='ab-item' href='https://ericnth.cn/wp-admin/post-new.php?post_type=page'>页面</a></li><li id='wp-admin-bar-new-user'><a class='ab-item' href='https://ericnth.cn/wp-admin/user-new.php'>用户</a></li></ul></div></li><li id='wp-admin-bar-edit'><a class='ab-item' href='https://ericnth.cn/wp-admin/post.php?post=821&#038;action=edit'>编辑页面</a></li><li id='wp-admin-bar-stats'><a class='ab-item' href='https://ericnth.cn/wp-admin/admin.php?page=stats'><div><img src='https://ericnth.cn/wp-admin/admin.php?page=stats&amp;noheader&amp;proxy&amp;chart=admin-bar-hours-scale' srcset='https://ericnth.cn/wp-admin/admin.php?page=stats&amp;noheader&amp;proxy&amp;chart=admin-bar-hours-scale 1x, https://ericnth.cn/wp-admin/admin.php?page=stats&amp;noheader&amp;proxy&amp;chart=admin-bar-hours-scale-2x 2x' width='112' height='24' alt='统计' title='查看超过 48 小时。点击以查看更多站点统计信息。'></div></a></li><li id='wp-admin-bar-wp-rocket' class="menupop"><a class='ab-item' aria-haspopup="true" href='https://ericnth.cn/wp-admin/options-general.php?page=wprocket'>WP Rocket</a><div class="ab-sub-wrapper"><ul id='wp-admin-bar-wp-rocket-default' class="ab-submenu"><li id='wp-admin-bar-rocket-settings'><a class='ab-item' href='https://ericnth.cn/wp-admin/options-general.php?page=wprocket'>设置</a></li><li id='wp-admin-bar-purge-all'><a class='ab-item' href='https://ericnth.cn/wp-admin/admin-post.php?action=purge_cache&#038;type=all&#038;_wp_http_referer=%2Fcppp-ide-macos%2F&#038;_wpnonce=794f4c3c02'>清除缓存</a></li><li id='wp-admin-bar-purge-url'><a class='ab-item' href='https://ericnth.cn/wp-admin/admin-post.php?action=purge_cache&#038;type=url&#038;_wp_http_referer=%2Fcppp-ide-macos%2F&#038;_wpnonce=95e9af62ed'>清除此URL</a></li><li id='wp-admin-bar-purge-opcache'><a class='ab-item' href='https://ericnth.cn/wp-admin/admin-post.php?action=rocket_purge_opcache&#038;_wp_http_referer=%2Fcppp-ide-macos%2F&#038;_wpnonce=549a4daef0'>清除 OPcache</a></li><li id='wp-admin-bar-regenerate-critical-path'><a class='ab-item' href='https://ericnth.cn/wp-admin/admin-post.php?action=rocket_generate_critical_css&#038;_wp_http_referer=%2Fcppp-ide-macos%2F&#038;_wpnonce=ff569b2dca'>重新生成关键路径CSS</a></li><li id='wp-admin-bar-preload-cache'><a class='ab-item' href='https://ericnth.cn/wp-admin/admin-post.php?action=preload&#038;_wp_http_referer=%2Fcppp-ide-macos%2F&#038;_wpnonce=abdaff8323'>预缓存</a></li><li id='wp-admin-bar-docs'><a class='ab-item' href='https://docs.wp-rocket.me/?utm_source=wp_plugin&#038;utm_medium=wp_rocket'>文档</a></li><li id='wp-admin-bar-faq'><a class='ab-item' href='https://wp-rocket.me/faq/?utm_source=wp_plugin&#038;utm_medium=wp_rocket'>常见问题</a></li><li id='wp-admin-bar-support'><a class='ab-item' href='https://wp-rocket.me/support/?utm_source=wp_plugin&#038;utm_medium=wp_rocket'>支持</a></li></ul></div></li></ul><ul id='wp-admin-bar-top-secondary' class="ab-top-secondary ab-top-menu"><li id='wp-admin-bar-search' class="admin-bar-search"><div class="ab-item ab-empty-item" tabindex="-1"><form action="https://ericnth.cn/" method="get" id="adminbarsearch"><input class="adminbar-input" name="s" id="adminbar-search" type="text" value="" maxlength="150" /><label for="adminbar-search" class="screen-reader-text">搜索</label><input type="submit" class="adminbar-button" value="搜索"/></form></div></li><li id='wp-admin-bar-my-account' class="menupop with-avatar"><a class='ab-item' aria-haspopup="true" href='https://ericnth.cn/wp-admin/profile.php'>嗨，<span class="display-name">24950 YX Z</span><img alt='' src='https://sdn.geekzu.org/avatar/47012e5dcaedbed65aa63a8bef7805da?s=26&#038;d=retro&#038;r=g' srcset='https://sdn.geekzu.org/avatar/47012e5dcaedbed65aa63a8bef7805da?s=52&#038;d=retro&#038;r=g 2x' class='avatar avatar-26 photo' height='26' width='26' /></a><div class="ab-sub-wrapper"><ul id='wp-admin-bar-user-actions' class="ab-submenu"><li id='wp-admin-bar-user-info'><a class='ab-item' tabindex="-1" href='https://ericnth.cn/wp-admin/profile.php'><img alt='' src='https://sdn.geekzu.org/avatar/47012e5dcaedbed65aa63a8bef7805da?s=64&#038;d=retro&#038;r=g' srcset='https://sdn.geekzu.org/avatar/47012e5dcaedbed65aa63a8bef7805da?s=128&#038;d=retro&#038;r=g 2x' class='avatar avatar-64 photo' height='64' width='64' /><span class='display-name'>24950 YX Z</span><span class='username'>ZhuYiXuan</span></a></li><li id='wp-admin-bar-edit-profile'><a class='ab-item' href='https://ericnth.cn/wp-admin/profile.php'>编辑我的个人资料</a></li><li id='wp-admin-bar-logout'><a class='ab-item' href='https://ericnth.cn/wp-login.php?action=logout&#038;_wpnonce=62a6625a2b'>注销</a></li></ul><ul id='wp-admin-bar-my-account-default' class="ab-submenu"><li id='wp-admin-bar-mycred-account' class="menupop ab-sub-secondary"><div class="ab-item ab-empty-item" aria-haspopup="true"><span class="wp-admin-bar-arrow" aria-hidden="true"></span>E币</div><div class="ab-sub-wrapper"><ul id='wp-admin-bar-mycred-account-default' class="ab-submenu"><li id='wp-admin-bar-mycred-account-balance-mycred-default'><div class="ab-item ab-empty-item">E币: 571</div></li><li id='wp-admin-bar-mycred-account-history-mycred-default'><a class='ab-item' href='https://ericnth.cn/wp-admin/users.php?page=mycred_default-history'>E币 历史</a></li></ul></div></li></ul></div></li><li id='wp-admin-bar-notes' class="menupop"><div class="ab-item ab-empty-item"><span id="wpnt-notes-unread-count" class="wpnt-loading wpn-read">
+                    <span class="noticon noticon-notification"></span>
+                    </span></div><div id="wpnt-notes-panel2" class="intrinsic-ignore" style="display:none" lang="zh-cn" dir="ltr"><div class="wpnt-notes-panel-header"><span class="wpnt-notes-header">通知</span><span class="wpnt-notes-panel-link"></span></div></div></li></ul>            </div>
+                        <a class="screen-reader-shortcut" href="https://ericnth.cn/wp-login.php?action=logout&#038;_wpnonce=62a6625a2b">注销</a>
+                    </div>
+
+        <a class="screen-reader-text skip-link" href="#content" title="跳转到内容">跳转到内容</a>        <header id="masthead" class="site-header" itemtype="https://schema.org/WPHeader" itemscope>
+            <div class="inside-header grid-container grid-parent">
+                <div class="site-branding">
+                    <p class="main-title" itemprop="headline">
+                <a href="https://ericnth.cn/" rel="home">
+                    EricNTH的个人主页
+                </a>
+            </p>
+                    <p class="site-description" itemprop="description">
+                Welcome to EricNTH&#039;s personal page!
+            </p>
+                </div>            </div><!-- .inside-header -->
+        </header><!-- #masthead -->
+                <nav id="site-navigation" class="main-navigation" itemtype="https://schema.org/SiteNavigationElement" itemscope>
+            <div class="inside-navigation grid-container grid-parent">
+                                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                    <span class="mobile-menu">菜单</span>                </button>
+                <div id="primary-menu" class="main-nav"><ul id="menu-menu-1" class=" menu sf-menu"><li id="menu-item-147" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-147"><a href="https://ericnth.cn/">首页</a></li>
+<li id="menu-item-151" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-151"><a href="https://ericnth.cn/login/">注册/登录<span role="presentation" class="dropdown-menu-toggle"></span></a>
+<ul class="sub-menu">
+    <li id="menu-item-162" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-162"><a href="https://ericnth.cn/wp-login.php?action=register">注册</a></li>
+    <li id="menu-item-161" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-161"><a href="https://ericnth.cn/wp-login.php">登录</a></li>
+    <li id="menu-item-2043" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2043"><a href="https://ericnth.cn/wp-admin/profile.php">个人资料</a></li>
+</ul>
+</li>
+<li id="menu-item-149" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-149"><a href="https://ericnth.cn/agreements/">使用条款<span role="presentation" class="dropdown-menu-toggle"></span></a>
+<ul class="sub-menu">
+    <li id="menu-item-160" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-160"><a href="https://ericnth.cn/agreements/">使用条款</a></li>
+    <li id="menu-item-148" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-148"><a href="https://ericnth.cn/privacy-policy/">Privacy Policy</a></li>
+    <li id="menu-item-150" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-150"><a href="https://ericnth.cn/feedback/">反馈</a></li>
+</ul>
+</li>
+<li id="menu-item-153" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-153"><a href="https://ericnth.cn/programming/">编程开发<span role="presentation" class="dropdown-menu-toggle"></span></a>
+<ul class="sub-menu">
+    <li id="menu-item-158" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-158"><a href="https://ericnth.cn/category/c-plus-plus/">C++学习笔记<span role="presentation" class="dropdown-menu-toggle"></span></a>
+    <ul class="sub-menu">
+        <li id="menu-item-430" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-430"><a href="https://ericnth.cn/category/c-plus-plus/cplusplus-games/">C++有趣程序</a></li>
+        <li id="menu-item-431" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-431"><a href="https://ericnth.cn/category/c-plus-plus/cplusplus-sort/">C++算法</a></li>
+        <li id="menu-item-1876" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1876"><a href="https://ericnth.cn/category/c-plus-plus/win32-programming/">Win32编程</a></li>
+        <li id="menu-item-777" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-777"><a href="https://ericnth.cn/category/c-plus-plus/">全部</a></li>
+    </ul>
+</li>
+    <li id="menu-item-1548" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1548"><a href="https://ericnth.cn/category/hackintosh/">Hackintosh专区</a></li>
+    <li id="menu-item-159" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-159"><a href="https://ericnth.cn/category/ios-macos-development/">Apple开发</a></li>
+</ul>
+</li>
+<li id="menu-item-157" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-157"><a href="https://ericnth.cn/category/website-establishment-diary/">建站日记</a></li>
+<li id="menu-item-450" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-450"><a href="https://ericnth.cn/category/essay/">随笔</a></li>
+<li id="menu-item-175" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-175"><a href="https://ericnth.cn/resource/">产品<span role="presentation" class="dropdown-menu-toggle"></span></a>
+<ul class="sub-menu">
+    <li id="menu-item-818" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-818"><a href="https://ericnth.cn/clickide/">Click IDE</a></li>
+    <li id="menu-item-914" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-821 current_page_item menu-item-914"><a href="https://ericnth.cn/cppp-ide-macos/" aria-current="page">C+++ IDE</a></li>
+    <li id="menu-item-819" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-819"><a href="https://ericnth.cn/resource/">全部</a></li>
+</ul>
+</li>
+<li id="menu-item-289" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-289"><a href="https://ericnth.cn/category/notice/">更多<span role="presentation" class="dropdown-menu-toggle"></span></a>
+<ul class="sub-menu">
+    <li id="menu-item-506" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-506"><a href="https://ericnth.cn/website-notice/">网站公告</a></li>
+    <li id="menu-item-1106" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1106"><a href="https://ericnth.cn/membership/">会员制度</a></li>
+    <li id="menu-item-498" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-498"><a href="https://ericnth.cn/category/notice/">其它内容</a></li>
+    <li id="menu-item-1574" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1574"><a href="https://ericnth.cn/category/funny-video/">趣味视频</a></li>
+    <li id="menu-item-586" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-586"><a href="https://ericnth.cn/category/linux/">Linux</a></li>
+    <li id="menu-item-587" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-587"><a href="https://ericnth.cn/category/audio-film-edit/">音视频剪辑</a></li>
+    <li id="menu-item-1110" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1110"><a href="https://ericnth.cn/category/computer-using-skills/">电脑使用技巧</a></li>
+    <li id="menu-item-497" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-497"><a href="https://ericnth.cn/category/uncategorized/">未分类博文</a></li>
+</ul>
+</li>
+<li id="menu-item-1180" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1180"><a href="https://ericnth.cn/messages/">站内信</a></li>
+</ul></div>            </div><!-- .inside-navigation -->
+        </nav><!-- #site-navigation -->
+        
+    <div id="page" class="hfeed site grid-container container grid-parent">
+                <div id="content" class="site-content">
+            
+    <div id="primary" class="content-area grid-parent mobile-grid-100 grid-75 tablet-grid-75">
+        <main id="main" class="site-main">
+            
+<article id="post-821" class="post-821 page type-page status-publish" itemtype="https://schema.org/CreativeWork" itemscope>
+    <div class="inside-article">
+        
+            <header class="entry-header">
+                <h1 class="entry-title" itemprop="headline">C+++ IDE</h1>            </header><!-- .entry-header -->
+
+        
+        <div class="entry-content" itemprop="text">
+            
+<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://ericnth.cn/wp-content/uploads/2020/04/image-13.png" alt="" class="wp-image-824" width="528" height="155" srcset="https://ericnth.cn/wp-content/uploads/2020/04/image-13.png 880w, https://ericnth.cn/wp-content/uploads/2020/04/image-13-300x88.png 300w, https://ericnth.cn/wp-content/uploads/2020/04/image-13-768x225.png 768w" sizes="(max-width: 528px) 100vw, 528px" /></figure></div>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://ericnth.cn/wp-content/uploads/2020/05/C_IDE_Title_Pic-1-1024x269-1.png" alt="" class="wp-image-2035" srcset="https://ericnth.cn/wp-content/uploads/2020/05/C_IDE_Title_Pic-1-1024x269-1.png 1024w, https://ericnth.cn/wp-content/uploads/2020/05/C_IDE_Title_Pic-1-1024x269-1-300x79.png 300w, https://ericnth.cn/wp-content/uploads/2020/05/C_IDE_Title_Pic-1-1024x269-1-768x202.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p class="has-text-align-center"><strong>· 通知：<span class="has-inline-color has-vivid-red-color">C+++ IDE 2.0.1 已经发布更新，建议您更新C+++。</span></strong></p>
+
+
+
+<blockquote class="wp-block-quote"><p>使用C+++应用创建并编辑C++源代码文件，代码高亮、自动配对括号、自动缩进、代码片段等功能应有尽有。点击按钮，一键编译。</p></blockquote>
+
+
+
+<p style="background-color:#ffffff" class="has-text-color has-background has-text-align-center has-vivid-red-color"><strong><span style="color:#000000" class="has-inline-color">· 开发者：23786(24950 YX Z)    · 版本：2.0.1    · 适用平台：macOS 10.12.2及以上</span></strong></p>
+
+
+
+<p style="font-size:25px" class="has-text-color has-background has-text-align-center has-very-light-gray-color has-very-dark-gray-background-color"><strong><span class="has-inline-color has-very-light-gray-color"><a href="https://ericnth.cn/wp-content/uploads/2020/05/C-2.0.1.dmg_.zip" target="_blank" rel="noreferrer noopener">下载C+++</a></span></strong></p>
+
+
+
+<p></p>
+
+
+
+<br><br>
+
+
+
+<p>C+++是macOS平台上的一款开源的轻量级C++编译器，界面简洁，使用方便，适合使用macOS的C++初学者使用。包含代码高亮、自动配对括号、自动缩进等功能，并且支持深色模式以及MacBook Pro的触控栏操作。安装C+++以后，您不用打开Xcode(*)，创建Xcode Project以后进行C++编写，也不用在终端使用g++对C++源文件进行编译，一切工作全在C+++应用里完成。</p>
+
+
+
+<p class="has-small-font-size"> *：关于如何安装g++详情请见“如何安装g++“板块。</p>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://ericnth.cn/wp-content/uploads/2020/05/DarkMode-1-1024x721.png" alt="" class="wp-image-2038" srcset="https://ericnth.cn/wp-content/uploads/2020/05/DarkMode-1-1024x721.png 1024w, https://ericnth.cn/wp-content/uploads/2020/05/DarkMode-1-300x211.png 300w, https://ericnth.cn/wp-content/uploads/2020/05/DarkMode-1-768x541.png 768w, https://ericnth.cn/wp-content/uploads/2020/05/DarkMode-1-1536x1082.png 1536w, https://ericnth.cn/wp-content/uploads/2020/05/DarkMode-1-2048x1442.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>深色模式</figcaption></figure>
+
+
+
+<figure class="wp-block-image size-large"><img src="https://ericnth.cn/wp-content/uploads/2020/05/LightMode-1-1024x721.png" alt="" class="wp-image-2039" srcset="https://ericnth.cn/wp-content/uploads/2020/05/LightMode-1-1024x721.png 1024w, https://ericnth.cn/wp-content/uploads/2020/05/LightMode-1-300x211.png 300w, https://ericnth.cn/wp-content/uploads/2020/05/LightMode-1-768x541.png 768w, https://ericnth.cn/wp-content/uploads/2020/05/LightMode-1-1536x1082.png 1536w, https://ericnth.cn/wp-content/uploads/2020/05/LightMode-1-2048x1442.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>浅色模式</figcaption></figure>
+
+
+
+<figure class="wp-block-gallery columns-2 is-cropped"><ul class="blocks-gallery-grid"><li class="blocks-gallery-item"><figure><img src="https://ericnth.cn/wp-content/uploads/2020/04/Screen-Shot-2020-04-14-at-11.52.30-AM.png" alt="" data-id="906" data-link="https://ericnth.cn/c-ide/attachment/screen-shot-2020-04-14-at-11-52-30-am/#main" class="wp-image-906" srcset="https://ericnth.cn/wp-content/uploads/2020/04/Screen-Shot-2020-04-14-at-11.52.30-AM.png 638w, https://ericnth.cn/wp-content/uploads/2020/04/Screen-Shot-2020-04-14-at-11.52.30-AM-300x188.png 300w" sizes="(max-width: 638px) 100vw, 638px" /><figcaption class="blocks-gallery-item__caption">语法高亮</figcaption></figure></li><li class="blocks-gallery-item"><figure><img src="https://ericnth.cn/wp-content/uploads/2020/04/WX20200414-115248@2x.png" alt="" data-id="907" data-full-url="https://ericnth.cn/wp-content/uploads/2020/04/WX20200414-115248@2x.png" data-link="https://ericnth.cn/c-ide/attachment/wx20200414-1152482x/#main" class="wp-image-907" srcset="https://ericnth.cn/wp-content/uploads/2020/04/WX20200414-115248@2x.png 900w, https://ericnth.cn/wp-content/uploads/2020/04/WX20200414-115248@2x-300x215.png 300w, https://ericnth.cn/wp-content/uploads/2020/04/WX20200414-115248@2x-768x550.png 768w" sizes="(max-width: 900px) 100vw, 900px" /><figcaption class="blocks-gallery-item__caption">代码片段</figcaption></figure></li></ul></figure>
+
+
+
+<p class="has-small-font-size">· 由于各个系统API不同，macOS 10.14以下系统显示效果可能不同，图片仅供参考。</p>
+
+
+
+<br>
+
+
+
+<h2><strong><span style="color:#710891" class="has-inline-color">· 下载</span></strong></h2>
+
+
+
+<p><strong>C+++ Version 2.0.1 ：<br></strong><a rel="noreferrer noopener" href="https://ericnth.cn/wp-content/uploads/2020/05/C-2.0.0.dmg_.zip" target="_blank"><span class="has-inline-color has-vivid-red-color">下载dmg安装包（7 MB）</span></a>（本站2.0.0）<br><a href="https://github.com/23786/Cppp-IDE/releases/download/v2.0.1/C+++.2.0.1.dmg.zip"><span class="has-inline-color has-vivid-red-color">下载dmg安装包（7 MB）</span></a>（GitHub Release，国内较慢）<br><a rel="noreferrer noopener" href="https://github.com/23786/Cppp-IDE/releases" target="_blank"><span class="has-inline-color has-vivid-red-color">前往GitHub查看所有发布版本</span></a></p>
+
+
+
+<p><strong>前往GitHub查看/下载源码：</strong><br><a rel="noreferrer noopener" href="https://github.com/23786/Cppp-IDE" target="_blank"><span class="has-inline-color has-vivid-red-color">前往GitHub</span></a></p>
+
+
+
+<br>
+
+
+
+<h2><strong><span style="color:#710891" class="has-inline-color">· 如何安装g++(gcc, clang)编译器</span></strong></h2>
+
+
+
+<p>如果您的Mac已经安装过Xcode，直接使用C+++即可。</p>
+
+
+
+<p>如果您的Mac未安装过Xcode，请打开C+++，新建源文件并随便输入一些代码，保存，并编译。如果没有猜错，应该会弹出一个“g++命令需要使用命令行开发者工具”对话框，请点击最右边的按钮“安装”，并按照指示进行安装。过程需要大约5分钟左右。</p>
+
+
+
+<ul><li>本方法在未安装Xcode的 OS X 10.9.5 Mavericks(2013) 和 macOS 10.15.4 Catalina(2019) 都测试成功。这意味着您不用安装巨大的完整的Xcode以使用C+++。如果没有弹出对话框，请打开“终端”应用，输入g++，回车，这时应该会跳出上述所说的对话框。</li></ul>
+
+
+
+<br>
+
+
+
+<h2><strong><span style="color:#710891" class="has-inline-color">· 更新日志</span></strong></h2>
+
+
+
+<p style="font-size:25px"><strong>2020.6 Version 2.0.1</strong></p>
+
+
+
+<ul><li>支持引号和单引号自动补全</li><li><strong>增加启动欢迎画面</strong></li><li>支持直接创建一个C+++项目</li><li><strong>增加“测评”功能（Test）</strong></li><li>UI界面改变，新增功能</li><li><strong>显示行数功能恢复</strong></li><li>增加多条菜单栏项目</li><li>增加帮助提示框</li><li><strong>更加稳定</strong></li><li>改进和问题修复</li><li><strong><span class="has-inline-color has-vivid-red-color">建议使用本版本</span></strong></li></ul>
+
+
+
+<p style="font-size:25px"><strong>2020.5 Version 2.0.0</strong></p>
+
+
+
+<ul><li><strong>增加多种新功能，成为一个完整的IDE:</strong></li><li>调试功能</li><li>项目管理功能</li><li>代码片段功能</li><li>UI界面优化</li><li>……</li></ul>
+
+
+
+<p style="font-size:25px"><strong>2020.4 Version 1.1.0</strong></p>
+
+
+
+<ul><li><strong>更改App图标</strong></li><li><strong>支持保存所选设置</strong></li><li>新增“编译设置”，支持选择编译器（这意味着您如果装了Xcode以外的编译器，可以用您所安装的编译器而不是Xcode的g++）等</li><li>新增多种代码高亮主题、编程字体</li><li><strong>简化编译界面，仅有一个按钮和一个文本框</strong></li><li>在右边栏显示文件操作，比如“打开”“保存”“另存为“等</li><li>在代码编辑区底部新增状态栏，显示当前有多少行代码、多少个字符</li><li>在代码编辑区左边可以显示当前行数</li><li>去除“帮助”模块</li><li>去除一些多余的控件</li><li>当macOS 10.14以下的用户尝试更改至暗黑模式时，显示警告</li><li>当没有填写文件路径并编译时，显示警告</li><li><strong>修复每次切换到暗黑模式/浅色模式以后字体大小设置无效等近20个错误</strong></li></ul>
+
+
+
+<p style="font-size:25px"><strong>2020.4 Version 1.0.1</strong></p>
+
+
+
+<ul><li>新增“设置”功能，支持设置代码高亮的主题、编程字体、字体大小等。（暂不支持保存所选设置）</li><li>新增“帮助”</li><li>UI界面小更新</li><li>支持打开.h文件、.c文件</li><li>“代码模版“功能新增了模版</li><li><strong><span class="has-inline-color has-vivid-red-color">（不建议使用本版本）</span></strong></li></ul>
+
+
+
+<p style="font-size:25px"><strong>2020.3 Version 1.0.0</strong></p>
+
+
+
+<ul><li>正式发布</li></ul>
+
+
+
+<p style="font-size:25px"><strong>2020.3 Version 0.9.3</strong></p>
+
+
+
+<ul><li>解决Xcode报错Highlightr代码高亮库未找到的问题</li><li>新增“在终端打开”选项，在对应的目录生成一个Unix可执行文件，运行时使用终端打开这个可执行文件（后来发现生成app包以后必须在终端打开，否则会有错误）</li><li>修复括号自动补全可能带来的问题</li><li>其他问题修复与改进</li></ul>
+
+
+
+<p style="font-size:25px"><strong>2020.3 Version 0.9.2</strong></p>
+
+
+
+<ul><li>完成代码模版功能</li><li>适配深色模式、代码高亮颜色主题</li><li>开发触控栏操作</li><li>实现代码自动缩进、括号自动补全功能</li></ul>
+
+
+
+<p style="font-size:25px"><strong>2020.3 Version 0.9.1</strong></p>
+
+
+
+<ul><li>实现实时代码高亮</li><li>整合编译功能和代码编辑功能，形成完整的C++ IDE，优化工具栏，优化UI界面</li></ul>
+
+
+
+<p style="font-size:25px"><strong>2020.3 Version 0.9.0</strong></p>
+
+
+
+<ul><li>创建项目</li><li>实现编译功能</li></ul>
+
+
+
+<p></p>
+        </div><!-- .entry-content -->
+
+            </div><!-- .inside-article -->
+</article><!-- #post-## -->
+        </main><!-- #main -->
+    </div><!-- #primary -->
+
+    <div id="right-sidebar" class="widget-area grid-25 tablet-grid-25 grid-parent sidebar" itemtype="https://schema.org/WPSideBar" itemscope>
+    <div class="inside-right-sidebar">
+        <aside id="views-2" class="widget inner-padding widget_views"><h2 class="widget-title">热门文章</h2><ul>
+<li><a href="https://ericnth.cn/zhangxuheng/article/1940/" title="四行代码启动任务管理器">四行代码启动任务管理器</a> - 58 浏览</li><li><a href="https://ericnth.cn/zhangxuheng/article/1894/" title="改正：Windows 7镜像">改正：Windows 7镜像</a> - 47 浏览</li><li><a href="https://ericnth.cn/zhangxuheng/article/1951/" title="2019年Noip普及组复赛第三题解析">2019年Noip普及组复赛第三题解析</a> - 46 浏览</li><li><a href="https://ericnth.cn/eric_ni2008_fkx8lukq/article/1862/" title="C++ Win32编程入门">C++ Win32编程入门</a> - 46 浏览</li><li><a href="https://ericnth.cn/zhangxuheng/article/2027/" title="Windows 8、Windows 7、Windows 10、Windows XP 激活工具">Windows 8、Windows 7、Windows 10、Windows XP 激活工具</a> - 42 浏览</li></ul>
+</aside><aside id="categories-2" class="widget inner-padding widget_categories"><h2 class="widget-title">分类目录</h2><form action="https://ericnth.cn" method="get"><label class="screen-reader-text" for="cat">分类目录</label><select  name='cat' id='cat' class='postform' >
+    <option value='-1'>选择分类目录</option>
+    <option class="level-0" value="6">Apple开发&nbsp;&nbsp;(14)</option>
+    <option class="level-0" value="3">C++学习笔记&nbsp;&nbsp;(37)</option>
+    <option class="level-1" value="15">&nbsp;&nbsp;&nbsp;C++小游戏&nbsp;&nbsp;(15)</option>
+    <option class="level-1" value="16">&nbsp;&nbsp;&nbsp;C++排序算法&nbsp;&nbsp;(4)</option>
+    <option class="level-1" value="44">&nbsp;&nbsp;&nbsp;Win32编程&nbsp;&nbsp;(3)</option>
+    <option class="level-0" value="38">Hackintosh专区&nbsp;&nbsp;(4)</option>
+    <option class="level-0" value="18">Linux&nbsp;&nbsp;(1)</option>
+    <option class="level-0" value="9">MarkDown&nbsp;&nbsp;(1)</option>
+    <option class="level-0" value="1">Uncategorized&nbsp;&nbsp;(5)</option>
+    <option class="level-0" value="10">其他内容/公告&nbsp;&nbsp;(7)</option>
+    <option class="level-0" value="2">建站日记&nbsp;&nbsp;(8)</option>
+    <option class="level-0" value="36">电脑使用技巧&nbsp;&nbsp;(26)</option>
+    <option class="level-0" value="43">虚拟机教程&nbsp;&nbsp;(9)</option>
+    <option class="level-0" value="42">趣味视频&nbsp;&nbsp;(3)</option>
+    <option class="level-0" value="26">软件安装&nbsp;&nbsp;(6)</option>
+    <option class="level-0" value="17">随笔&nbsp;&nbsp;(32)</option>
+    <option class="level-0" value="19">音视频剪辑&nbsp;&nbsp;(4)</option>
+</select>
+</form>
+<script type="text/javascript">
+/* <![CDATA[ */
+(function() {
+    var dropdown = document.getElementById( "cat" );
+    function onCatChange() {
+        if ( dropdown.options[ dropdown.selectedIndex ].value > 0 ) {
+            dropdown.parentNode.submit();
+        }
+    }
+    dropdown.onchange = onCatChange;
+})();
+/* ]]> */
+</script>
+
+            </aside><aside id="recent-comments-2" class="widget inner-padding widget_recent_comments"><h2 class="widget-title">近期评论</h2><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">EricNTH</span>发表在《<a href="https://ericnth.cn/eric_ni2008_fkx8lukq/article/2094/#comment-251">Windows: 详细解密“回收站”</a>》</li><li class="recentcomments"><span class="comment-author-link">Qin, Yihao</span>发表在《<a href="https://ericnth.cn/eric_ni2008_fkx8lukq/article/2094/#comment-250">Windows: 详细解密“回收站”</a>》</li><li class="recentcomments"><span class="comment-author-link">Qin, Yihao</span>发表在《<a href="https://ericnth.cn/zhangxuheng/article/1913/#comment-249">本人整理的Mac10.7~10.15镜像</a>》</li><li class="recentcomments"><span class="comment-author-link">Wei, ZiXiang</span>发表在《<a href="https://ericnth.cn/zhangxuheng/article/1913/#comment-248">本人整理的Mac10.7~10.15镜像</a>》</li><li class="recentcomments"><span class="comment-author-link">EricNTH</span>发表在《<a href="https://ericnth.cn/weizixiang/article/2031/#comment-247">文学</a>》</li></ul></aside>    </div><!-- .inside-right-sidebar -->
+</div><!-- #secondary -->
+
+    </div><!-- #content -->
+</div><!-- #page -->
+
+
+<div class="site-footer">
+                <div id="footer-widgets" class="site footer-widgets">
+                <div class="footer-widgets-container grid-container grid-parent">
+                    <div class="inside-footer-widgets">
+                            <div class="footer-widget-1 grid-parent grid-33 tablet-grid-50 mobile-grid-100">
+        <aside id="mycred_widget_list-2" class="widget inner-padding widget-mycred-list"><h2 class="widget-title">E币排行</h2><ol class="item-0 alt"><span>#1:</span><span><a href="https://ericnth.cn/author/zhangxuheng/">Zhang, Xuheng</a></span> <span>1,378EB</span></ol>
+<ol class="item-1"><span>#2:</span><span><a href="https://ericnth.cn/author/qinyihao/">Qin, Yihao</a></span> <span>1,028EB</span></ol>
+<ol class="item-2 alt"><span>#3:</span><span><a href="https://ericnth.cn/author/eric_ni2008_fkx8lukq/">EricNTH</a></span> <span>811EB</span></ol>
+<ol class="item-3 current-user"><span>#4:</span><span><a href="https://ericnth.cn/author/zhuyixuan/">24950 YX Z</a></span> <span>571EB</span></ol>
+</aside>    </div>
+        <div class="footer-widget-2 grid-parent grid-33 tablet-grid-50 mobile-grid-100">
+        <aside id="custom_html-3" class="widget_text widget inner-padding widget_custom_html"><h2 class="widget-title">搜索</h2><div class="textwidget custom-html-widget"><!DOCTYPE html>
 <html>
-    <main id="main" class="site-main">
+<head>
+    <meta charset="utf-8">
+    <title>multi-engine-search</title>
+<style>.centered{margin:50px auto;text-align:center;}.button::-moz-focus-inner{border:0;padding:0;}.button{display:inline-block;*display:inline;zoom:1;padding:6px 20px;margin:0;cursor:pointer;border:1px solid #bbb;overflow:visible;font:bold 13px arial,helvetica,sans-serif;text-decoration:none;white-space:nowrap;color:#555;background-color:#ddd;background-image:-webkit-gradient(linear,left top,left bottom,from(rgba(255,255,255,1)),to(rgba(255,255,255,0)));background-image:-webkit-linear-gradient(top,rgba(255,255,255,1),rgba(255,255,255,0));background-image:-moz-linear-gradient(top,rgba(255,255,255,1),rgba(255,255,255,0));background-image:-ms-linear-gradient(top,rgba(255,255,255,1),rgba(255,255,255,0));background-image:-o-linear-gradient(top,rgba(255,255,255,1),rgba(255,255,255,0));background-image:linear-gradient(top,rgba(255,255,255,1),rgba(255,255,255,0));-webkit-transition:background-color .2s ease-out;-moz-transition:background-color .2s ease-out;-ms-transition:background-color .2s ease-out;-o-transition:background-color .2s ease-out;transition:background-color .2s ease-out;background-clip:padding-box;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;-moz-box-shadow:0 1px 0 rgba(0,0,0,.3),0 2px 2px -1px rgba(0,0,0,.5),0 1px 0 rgba(255,255,255,.3) inset;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.3),0 2px 2px -1px rgba(0,0,0,.5),0 1px 0 rgba(255,255,255,.3) inset;box-shadow:0 1px 0 rgba(0,0,0,.3),0 2px 2px -1px rgba(0,0,0,.5),0 1px 0 rgba(255,255,255,.3) inset;text-shadow:0 1px 0 rgba(255,255,255,.9);-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}.button:hover{background-color:#eee;color:#555;}.button:active{background:#e9e9e9;position:relative;top:1px;text-shadow:none;-moz-box-shadow:0 1px 1px rgba(0,0,0,.3) inset;-webkit-box-shadow:0 1px 1px rgba(0,0,0,.3) inset;box-shadow:0 1px 1px rgba(0,0,0,.3) inset;}.button[disabled],.button[disabled]:hover,.button[disabled]:active{border-color:#eaeaea;background:#fafafa;cursor:default;position:static;color:#999;-moz-box-shadow:none !important;-webkit-box-shadow:none !important;box-shadow:none !important;text-shadow:none !important;}.button.small{padding:4px 12px;}.button.large{padding:12px 30px;text-transform:uppercase;}.button.large:active{top:2px;}.button.green,.button.red,.button.blue{color:#fff;text-shadow:0 1px 0 rgba(0,0,0,.2);background-image:-webkit-gradient(linear,left top,left bottom,from(rgba(255,255,255,.3)),to(rgba(255,255,255,0)));background-image:-webkit-linear-gradient(top,rgba(255,255,255,.3),rgba(255,255,255,0));background-image:-moz-linear-gradient(top,rgba(255,255,255,.3),rgba(255,255,255,0));background-image:-ms-linear-gradient(top,rgba(255,255,255,.3),rgba(255,255,255,0));background-image:-o-linear-gradient(top,rgba(255,255,255,.3),rgba(255,255,255,0));background-image:linear-gradient(top,rgba(255,255,255,.3),rgba(255,255,255,0));}.button.green{background-color:#57a957;border-color:#57a957;}.button.green:hover{background-color:#62c462;}.button.green:active{background:#57a957;}.button.red{background-color:#ca3535;border-color:#c43c35;}.button.red:hover{background-color:#ee5f5b;}.button.red:active{background:#c43c35;}.button.blue{background-color:#269CE9;border-color:#269CE9;}.button.blue:hover{background-color:#70B9E8;}.button.blue:active{background:#269CE9;}.green[disabled],.green[disabled]:hover,.green[disabled]:active{border-color:#57A957;background:#57A957;color:#D2FFD2;}.red[disabled],.red[disabled]:hover,.red[disabled]:active{border-color:#C43C35;background:#C43C35;color:#FFD3D3;}.blue[disabled],.blue[disabled]:hover,.blue[disabled]:active{border-color:#269CE9;background:#269CE9;color:#93D5FF;}.button-group,.button-group li{display:inline-block;*display:inline;zoom:1;}.button-group{font-size:0;margin:0;padding:0;background:rgba(0,0,0,.1);border-bottom:1px solid rgba(0,0,0,.1);padding:7px;-moz-border-radius:7px;-webkit-border-radius:7px;border-radius:7px;}.button-group li{margin-right:-1px;}.button-group .button{font-size:13px;-moz-border-radius:0;-webkit-border-radius:0;border-radius:0;}.button-group .button:active{-moz-box-shadow:0 0 1px rgba(0,0,0,.2) inset,5px 0 5px -3px rgba(0,0,0,.2) inset,-5px 0 5px -3px rgba(0,0,0,.2) inset;-webkit-box-shadow:0 0 1px rgba(0,0,0,.2) inset,5px 0 5px -3px rgba(0,0,0,.2) inset,-5px 0 5px -3px rgba(0,0,0,.2) inset;box-shadow:0 0 1px rgba(0,0,0,.2) inset,5px 0 5px -3px rgba(0,0,0,.2) inset,-5px 0 5px -3px rgba(0,0,0,.2) inset;}.button-group li:first-child .button{-moz-border-radius:3px 0 0 3px;-webkit-border-radius:3px 0 0 3px;border-radius:3px 0 0 3px;}.button-group li:first-child .button:active{-moz-box-shadow:0 0 1px rgba(0,0,0,.2) inset,-5px 0 5px -3px rgba(0,0,0,.2) inset;-webkit-box-shadow:0 0 1px rgba(0,0,0,.2) inset,-5px 0 5px -3px rgba(0,0,0,.2) inset;box-shadow:0 0 1px rgba(0,0,0,.2) inset,-5px 0 5px -3px rgba(0,0,0,.2) inset;}.button-group li:last-child .button{-moz-border-radius:0 3px 3px 0;-webkit-border-radius:0 3px 3px 0;border-radius:0 3px 3px 0;}.button-group li:last-child .button:active{-moz-box-shadow:0 0 1px rgba(0,0,0,.2) inset,5px 0 5px -3px rgba(0,0,0,.2) inset;-webkit-box-shadow:0 0 1px rgba(0,0,0,.2) inset,5px 0 5px -3px rgba(0,0,0,.2) inset;box-shadow:0 0 1px rgba(0,0,0,.2) inset,5px 0 5px -3px rgba(0,0,0,.2) inset;}
+    </style>
+    <script>
+    function SearchWithGoogle() {
+        var googlecontent = document.getElementById("googlesearchcontent");
+        console.log(googlecontent.value);
+        window.open("https://www.google.com/search?q="+googlecontent.value+"&oq="+googlecontent.value, "_blank");
+    }
+    function SearchWithBaidu() {
+        var baiducontent = document.getElementById("baidusearchcontent");
+        console.log(baiducontent.value);
+        window.open("https://www.baidu.com/s?wd="+baiducontent.value, "_blank");
+    }
+    function SearchWithBing() {
+        var bingcontent = document.getElementById("bingsearchcontent");
+        console.log(bingcontent.value);
+        window.open("https://bing.com/search?q="+bingcontent.value+"&qs=n&sp=-1&pq="+bingcontent.value, "_blank");
+    }
+    function SearchSite() {
+        var scontent = document.getElementById("sitesearchcontent");
+window.open("https://ericnth.cn/?s="+scontent.value, "_blank");
+    }
+    </script>
+</head>
+<body>
+    <form>
+        <input id="sitesearchcontent" type="text" value="" placeholder="站内搜索">
+        <button onclick="SearchSite();" class="red button">Search</button>
+    </form><!--
+    <form>
+        <input id="googlesearchcontent" type="text" value="" placeholder="用Google搜索">
+        <button onclick="SearchWithGoogle();" class="red button">Search</button>
+    </form>-->
+    <form>
+        <input id="baidusearchcontent" type="text" value="" placeholder="用百度搜索">
+        <button onclick="SearchWithBaidu();" class="blue button">Search</button>
+    </form>
+    <form>
+        <input id="bingsearchcontent" type="text" value="" placeholder="用Bing搜索">
+        <button onclick="SearchWithBing();" class="green button">Search</button>
+    </form>
+</body>
+</html></div></aside>    </div>
+        <div class="footer-widget-3 grid-parent grid-33 tablet-grid-50 mobile-grid-100">
+                <aside id="recent-posts-3" class="widget inner-padding widget_recent_entries">        <h2 class="widget-title">新发布的文章</h2>        <ul>
+                                            <li>
+                    <a href="https://ericnth.cn/zhangxuheng/article/2124/">Noip2018普及组复赛第一题解析</a>
+                                    </li>
+                                            <li>
+                    <a href="https://ericnth.cn/eric_ni2008_fkx8lukq/article/2094/">Windows: 详细解密“回收站”</a>
+                                    </li>
+                                            <li>
+                    <a href="https://ericnth.cn/weizixiang/article/2031/">文学</a>
+                                    </li>
+                                            <li>
+                    <a href="https://ericnth.cn/zhangxuheng/article/2027/">Windows 8、Windows 7、Windows 10、Windows XP 激活工具</a>
+                                    </li>
+                    </ul>
+        </aside>    </div>
+                        </div>
+                </div>
+            </div>
+                <footer class="site-info" itemtype="https://schema.org/WPFooter" itemscope>
+            <div class="inside-site-info grid-container grid-parent">
+                                <div class="copyright-bar">
+                    <p>Copyright &copy; 2020 <a href="https://ericnth.cn/">ericnth.cn</a>. All rights reserved.<br><a href="https://ericnth.cn/%e4%bd%bf%e7%94%a8%e6%9d%a1%e6%ac%be/" target="_blank">使用条款</a> | <a href="mailto:eric_ni2008@163.com">联系我们</a> | <a href="https://ericnth.cn/bad-users/" target="_blank">小黑屋</a> | <a href="https://ericnth.cn/feedback/" target="_blank">反馈</a><br>Powered by <a href="https://wordpress.org/" target="_blank">Wordpress</a> 5.4.1.<br>欢迎加官方QQ交流群：1019034208</p>                </div>
+            </div>
+        </footer><!-- .site-info -->
+        </div><!-- .site-footer -->
+
+<a title="滚动回到顶部" rel="nofollow" href="#" class="generate-back-to-top" style="opacity:0;visibility:hidden;" data-scroll-speed="400" data-start-scroll="300">
+                <span class="screen-reader-text">滚动回到顶部</span>
                 
-    <article id="post-821" class="post-821 page type-page status-publish" itemtype="https://schema.org/CreativeWork" itemscope="">
-        <div class="inside-article">
+            </a>        <script>
+            function copy_to_clipBoard() {
+                var copyText = document.getElementById("mref-link-buddypress-profile");
+                copyText.select();
+                document.execCommand("copy");
+            }
+        </script>
+        <link rel='stylesheet' id='wpcom-notes-admin-bar-css'  href='https://s0.wp.com/wp-content/mu-plugins/notes/admin-bar-v2.css?ver=8.6.1-202024' type='text/css' media='all' />
+<link rel='stylesheet' id='noticons-css'  href='https://s0.wp.com/i/noticons/noticons.css?ver=8.6.1-202024' type='text/css' media='all' />
+<script type='text/javascript' src='https://c0.wp.com/c/5.4.2/wp-includes/js/hoverintent-js.min.js'></script>
+<script type='text/javascript' src='https://c0.wp.com/c/5.4.2/wp-includes/js/admin-bar.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var viewsCacheL10n = {"admin_ajax_url":"https:\/\/ericnth.cn\/wp-admin\/admin-ajax.php","post_id":"821"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://ericnth.cn/wp-content/plugins/wp-postviews/postviews-cache.js?ver=1.68'></script>
+<!--[if lte IE 11]>
+<script type='text/javascript' src='https://ericnth.cn/wp-content/themes/generatepress/js/classList.min.js?ver=2.4.2'></script>
+<![endif]-->
+<script type='text/javascript' src='https://ericnth.cn/wp-content/themes/generatepress/js/menu.min.js?ver=2.4.2'></script>
+<script type='text/javascript' src='https://ericnth.cn/wp-content/themes/generatepress/js/a11y.min.js?ver=2.4.2'></script>
+<script type='text/javascript' src='https://ericnth.cn/wp-content/themes/generatepress/js/back-to-top.min.js?ver=2.4.2'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var myCRED_Video = {"ajaxurl":"https:\/\/ericnth.cn\/cppp-ide-macos\/","token":"0326b460d5"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://ericnth.cn/wp-content/plugins/mycred/assets/js/video.js?ver=1.8.11.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var myCRED_Notice = {"ajaxurl":"https:\/\/ericnth.cn\/wp-admin\/admin-ajax.php","duration":"5"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://ericnth.cn/wp-content/plugins/mycred/addons/notifications/assets/js/notify.js?ver=1.1.2.2'></script>
+<script type='text/javascript' src='https://c0.wp.com/c/5.4.2/wp-includes/js/wp-embed.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var fep_notification_script = {"root":"https:\/\/ericnth.cn\/wp-json\/front-end-pm\/v1","nonce":"9b5d878732","interval":"60000","skip":"2","show_in_title":"1","show_in_desktop":"1","call_on_ready":"","play_sound":"1","sound_url":"https:\/\/ericnth.cn\/wp-content\/plugins\/front-end-pm\/assets\/audio\/plucky.mp3","icon_url":"https:\/\/ericnth.cn\/wp-content\/plugins\/front-end-pm\/assets\/images\/desktop-notification-32.png","mgs_notification_title":"New Message. ","mgs_notification_body":"You have received a new message. ","mgs_notification_url":"https:\/\/ericnth.cn\/messages\/?fepaction=messagebox","ann_notification_title":"New Announcement. ","ann_notification_body":"You have received a new announcement. ","ann_notification_url":"https:\/\/ericnth.cn\/messages\/?fepaction=announcements"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://ericnth.cn/wp-content/plugins/front-end-pm/assets/js/notification.js?ver=11.2.3'></script>
+<script type='text/javascript' src='https://c0.wp.com/c/5.4.2/wp-includes/js/underscore.min.js'></script>
+<script type='text/javascript' src='https://c0.wp.com/c/5.4.2/wp-includes/js/backbone.min.js'></script>
+<script type='text/javascript' src='https://s1.wp.com/wp-content/js/mustache.js?ver=8.6.1-202024'></script>
+<script type='text/javascript' src='https://s1.wp.com/wp-content/mu-plugins/notes/notes-common-v2.js?ver=8.6.1-202024'></script>
+<script type='text/javascript' src='https://s0.wp.com/wp-content/mu-plugins/notes/admin-bar-v2.js?ver=8.6.1-202024'></script>
+<div id="wsocial-dialog-login" style="display:none;position: fixed;z-index: 999;">
+    <div class="xh-cover"></div>
+    <div class="xh-regbox xh-window">
+        <div class="xh-title">登录</div>
+<form class="xh-form">
+    <div class="commonlogincc84b62bd9b179271a8ca83f9d42cb0f0 fields-error"></div>
+                <div class="xh-form-group">
+            <label class="required">用户名/邮箱/手机</label>
+            <input type="text" id="logincc84b62bd9b179271a8ca83f9d42cb0f0_login_name" name="login_name" value="" placeholder="请输入用户名，邮箱或手机" class="form-control " style=""   />
+                    </div>
+              <script type="text/javascript">
+          (function($){
+            $(document).bind('on_form_logincc84b62bd9b179271a8ca83f9d42cb0f0_submit',function(e,m){
+                m.login_name=$('#logincc84b62bd9b179271a8ca83f9d42cb0f0_login_name').val();
+            });
+
+        })(jQuery);
+        </script>
+              <div class="xh-form-group">
+            <label class="required">密码</label>
+            <input type="password" id="logincc84b62bd9b179271a8ca83f9d42cb0f0_login_password" name="login_password" value="" placeholder="" class="form-control " style=""   />
+                    </div>
+              <script type="text/javascript">
+          (function($){
+            $(document).bind('on_form_logincc84b62bd9b179271a8ca83f9d42cb0f0_submit',function(e,m){
+                m.login_password=$('#logincc84b62bd9b179271a8ca83f9d42cb0f0_login_password').val();
+            });
+
+        })(jQuery);
+        </script>
+              <div class="xh-form-group mt10">
+            <button type="button" id="btn-login" onclick="window.xh_social_view.login();" class="xh-btn xh-btn-primary xh-btn-block xh-btn-lg">登录</button>
+        </div>
+                    <div class="xh-form-group xh-mT20">
+                <label>快速登录</label>
+               <div class="xh-social">
+                   <a title="微信" href="https://ericnth.cn/wp-admin/admin-ajax.php?channel_id=social_wechat&action=xh_social_channel&tab=login_redirect_to_authorization_uri&xh_social_channel=967428d1c9&notice_str=2111415089&hash=c8388e53d69dda24fbe3597e10e16f1e&redirect_to=https%3A%2F%2Fericnth.cn%2Fcppp-ide-macos%2F" class="xh-social-item xh-wechat"></a><a title="QQ" href="https://ericnth.cn/wp-admin/admin-ajax.php?channel_id=social_qq&action=xh_social_channel&tab=login_redirect_to_authorization_uri&xh_social_channel=967428d1c9&notice_str=1945110281&hash=43e4e9e9744f9ff627777b329fd9f2f2&redirect_to=https%3A%2F%2Fericnth.cn%2Fcppp-ide-macos%2F" class="xh-social-item xh-qq"></a><a title="微博" href="https://ericnth.cn/wp-admin/admin-ajax.php?channel_id=social_weibo&action=xh_social_channel&tab=login_redirect_to_authorization_uri&xh_social_channel=967428d1c9&notice_str=1081594112&hash=01127e078c8ca3c6924903c5ccc66506&redirect_to=https%3A%2F%2Fericnth.cn%2Fcppp-ide-macos%2F" class="xh-social-item xh-weibo"></a><a title="Github" href="https://ericnth.cn/wp-admin/admin-ajax.php?channel_id=social_github&action=xh_social_channel&tab=login_redirect_to_authorization_uri&xh_social_channel=967428d1c9&notice_str=5809141121&hash=7513c29502758e7a9538cfa8647b91bf&redirect_to=https%3A%2F%2Fericnth.cn%2Fcppp-ide-macos%2F" class="xh-social-item xh-github"></a>               </div>
+            </div>
+            </form>
+<script type="text/javascript">
+    (function($){
+        if(!window.xh_social_view){
+            window.xh_social_view={};
+        }
+
+        window.xh_social_view.reset=function(){
+            $('.xh-alert').empty().css('display','none');
+        };
+
+        window.xh_social_view.error=function(msg,parent){
+            var s = parent?(parent+'.fields-error'):'.fields-error';
+            $(s).html('<div class="xh-alert xh-alert-danger" role="alert">'+msg+'</div>').css('display','block');
+        };
+
+        window.xh_social_view.warning=function(msg,parent){
+            var s = parent?(parent+'.fields-error'):'.fields-error';
+            $(s).html('<div class="xh-alert xh-alert-warning" role="alert">'+msg+'</div>').css('display','block');
+        };
+
+        window.xh_social_view.success=function(msg,parent){
+            var s = parent?(parent+'.fields-error'):'.fields-error';
+            $(s).html('<div class="xh-alert xh-alert-success" role="alert">'+msg+'</div>').css('display','block');
+        };
+    })(jQuery);
+</script><script type="text/javascript">
+    (function($){
+       $(document).keypress(function(e) {
+           if(window.__wsocial_enable_entrl_submit){
+                if (e.which == 13){
+                　　window.xh_social_view.login();
+                }
+           }
+        });
+        
+       window.xh_social_view.login=function(){
+           window.xh_social_view.reset();
+            var data={};
+                   $(document).trigger('on_form_logincc84b62bd9b179271a8ca83f9d42cb0f0_submit',data);
+       
+            var validate = {
+                data:data,
+                success:true,
+                message:null
+            };
             
-                <header class="entry-header">
-                    <h1 class="entry-title" itemprop="headline">C+++ IDE</h1>            </header><!-- .entry-header -->
+            $(document).trigger('wsocial_pre_login',validate);
+            if(!validate.success){
+                window.xh_social_view.warning(validate.message,'.commonlogincc84b62bd9b179271a8ca83f9d42cb0f0');
+                return false;
+            }
 
+            var callback = {
+                type:'login',
+                done:false,
+                data:data
+            };
+            $(document).trigger('wsocial_action_before',callback);
+            if(callback.done){return;}
+
+            if(window.xh_social_view.loading){
+                return;
+            }
+            window.xh_social_view.loading=true;
             
-            <div class="entry-content" itemprop="text">
-                
-    <div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img src="https://ericnth.cn/wp-content/uploads/2020/04/image-13.png" alt="" class="wp-image-824" width="528" height="155" srcset="https://ericnth.cn/wp-content/uploads/2020/04/image-13.png 880w, https://ericnth.cn/wp-content/uploads/2020/04/image-13-300x88.png 300w, https://ericnth.cn/wp-content/uploads/2020/04/image-13-768x225.png 768w" sizes="(max-width: 528px) 100vw, 528px"></figure></div>
-
-
-
-    <figure class="wp-block-image size-large"><img src="https://ericnth.cn/wp-content/uploads/2020/05/C_IDE_Title_Pic-1-1024x269-1.png" alt="" class="wp-image-2035" srcset="https://ericnth.cn/wp-content/uploads/2020/05/C_IDE_Title_Pic-1-1024x269-1.png 1024w, https://ericnth.cn/wp-content/uploads/2020/05/C_IDE_Title_Pic-1-1024x269-1-300x79.png 300w, https://ericnth.cn/wp-content/uploads/2020/05/C_IDE_Title_Pic-1-1024x269-1-768x202.png 768w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
-
-
-
-    <p class="has-text-align-center"><strong>· 通知：<span class="has-inline-color has-vivid-red-color">C+++ IDE 2.0.1 已经发布更新，建议您更新C+++。</span></strong></p>
-
-
-
-    <blockquote class="wp-block-quote"><p>使用C+++应用创建并编辑C++源代码文件，代码高亮、自动配对括号、自动缩进、代码片段等功能应有尽有。点击按钮，一键编译。</p></blockquote>
-
-
-
-    <p style="background-color:#ffffff" class="has-text-color has-background has-text-align-center has-vivid-red-color"><strong><span style="color:#000000" class="has-inline-color">· 开发者：23786(24950 YX Z)    · 版本：2.0.1    · 适用平台：macOS 10.12.2及以上</span></strong></p>
-
-
-
-    <p style="font-size:25px" class="has-text-color has-background has-text-align-center has-very-light-gray-color has-very-dark-gray-background-color"><strong><span class="has-inline-color has-very-light-gray-color"><a href="https://ericnth.cn/wp-content/uploads/2020/05/C-2.0.1.dmg_.zip" target="_blank" rel="noreferrer noopener">下载C+++</a></span></strong></p>
-
-
-
-    <p></p>
-
-
-
-    <br><br>
-
-
-
-    <p>C+++是macOS平台上的一款开源的轻量级C++编译器，界面简洁，使用方便，适合使用macOS的C++初学者使用。包含代码高亮、自动配对括号、自动缩进等功能，并且支持深色模式以及MacBook Pro的触控栏操作。安装C+++以后，您不用打开Xcode(*)，创建Xcode Project以后进行C++编写，也不用在终端使用g++对C++源文件进行编译，一切工作全在C+++应用里完成。</p>
-
-
-
-    <p class="has-small-font-size"> *：关于如何安装g++详情请见“如何安装g++“板块。</p>
-
-
-
-    <figure class="wp-block-image size-large"><img src="https://ericnth.cn/wp-content/uploads/2020/05/DarkMode-1-1024x721.png" alt="" class="wp-image-2038" srcset="https://ericnth.cn/wp-content/uploads/2020/05/DarkMode-1-1024x721.png 1024w, https://ericnth.cn/wp-content/uploads/2020/05/DarkMode-1-300x211.png 300w, https://ericnth.cn/wp-content/uploads/2020/05/DarkMode-1-768x541.png 768w, https://ericnth.cn/wp-content/uploads/2020/05/DarkMode-1-1536x1082.png 1536w, https://ericnth.cn/wp-content/uploads/2020/05/DarkMode-1-2048x1442.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px"><figcaption>深色模式</figcaption></figure>
-
-
-
-    <figure class="wp-block-image size-large"><img src="https://ericnth.cn/wp-content/uploads/2020/05/LightMode-1-1024x721.png" alt="" class="wp-image-2039" srcset="https://ericnth.cn/wp-content/uploads/2020/05/LightMode-1-1024x721.png 1024w, https://ericnth.cn/wp-content/uploads/2020/05/LightMode-1-300x211.png 300w, https://ericnth.cn/wp-content/uploads/2020/05/LightMode-1-768x541.png 768w, https://ericnth.cn/wp-content/uploads/2020/05/LightMode-1-1536x1082.png 1536w, https://ericnth.cn/wp-content/uploads/2020/05/LightMode-1-2048x1442.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px"><figcaption>浅色模式</figcaption></figure>
-
-
-
-    <figure class="wp-block-gallery columns-2 is-cropped"><ul class="blocks-gallery-grid"><li class="blocks-gallery-item"><figure><img src="https://ericnth.cn/wp-content/uploads/2020/04/Screen-Shot-2020-04-14-at-11.52.30-AM.png" alt="" data-id="906" data-link="https://ericnth.cn/c-ide/attachment/screen-shot-2020-04-14-at-11-52-30-am/#main" class="wp-image-906" srcset="https://ericnth.cn/wp-content/uploads/2020/04/Screen-Shot-2020-04-14-at-11.52.30-AM.png 638w, https://ericnth.cn/wp-content/uploads/2020/04/Screen-Shot-2020-04-14-at-11.52.30-AM-300x188.png 300w" sizes="(max-width: 638px) 100vw, 638px"><figcaption class="blocks-gallery-item__caption">语法高亮</figcaption></figure></li><li class="blocks-gallery-item"><figure><img src="https://ericnth.cn/wp-content/uploads/2020/04/WX20200414-115248@2x.png" alt="" data-id="907" data-full-url="https://ericnth.cn/wp-content/uploads/2020/04/WX20200414-115248@2x.png" data-link="https://ericnth.cn/c-ide/attachment/wx20200414-1152482x/#main" class="wp-image-907" srcset="https://ericnth.cn/wp-content/uploads/2020/04/WX20200414-115248@2x.png 900w, https://ericnth.cn/wp-content/uploads/2020/04/WX20200414-115248@2x-300x215.png 300w, https://ericnth.cn/wp-content/uploads/2020/04/WX20200414-115248@2x-768x550.png 768w" sizes="(max-width: 900px) 100vw, 900px"><figcaption class="blocks-gallery-item__caption">代码片段</figcaption></figure></li></ul></figure>
-
-
-
-    <p class="has-small-font-size">· 由于各个系统API不同，macOS 10.14以下系统显示效果可能不同，图片仅供参考。</p>
-
-
-
-    <br>
-
-
-
-    <h2><strong><span style="color:#710891" class="has-inline-color">· 下载</span></strong></h2>
-
-
-
-    <p><strong>C+++ Version 2.0.1 ：<br></strong><a rel="noreferrer noopener" href="https://ericnth.cn/wp-content/uploads/2020/05/C-2.0.0.dmg_.zip" target="_blank"><span class="has-inline-color has-vivid-red-color">下载dmg安装包（7 MB）</span></a>（本站2.0.0）<br><a href="https://github.com/23786/Cppp-IDE/releases/download/v2.0.1/C+++.2.0.1.dmg.zip"><span class="has-inline-color has-vivid-red-color">下载dmg安装包（7 MB）</span></a>（GitHub Release，国内较慢）<br><a rel="noreferrer noopener" href="https://github.com/23786/Cppp-IDE/releases" target="_blank"><span class="has-inline-color has-vivid-red-color">前往GitHub查看所有发布版本</span></a></p>
-
-
-
-    <p><strong>前往GitHub查看/下载源码：</strong><br><a rel="noreferrer noopener" href="https://github.com/23786/Cppp-IDE" target="_blank"><span class="has-inline-color has-vivid-red-color">前往GitHub</span></a></p>
-
-
-
-    <br>
-
-
-
-    <h2><strong><span style="color:#710891" class="has-inline-color">· 如何安装g++(gcc, clang)编译器</span></strong></h2>
-
-
-
-    <p>如果您的Mac已经安装过Xcode，直接使用C+++即可。</p>
-
-
-
-    <p>如果您的Mac未安装过Xcode，请打开C+++，新建源文件并随便输入一些代码，保存，并编译。如果没有猜错，应该会弹出一个“g++命令需要使用命令行开发者工具”对话框，请点击最右边的按钮“安装”，并按照指示进行安装。过程需要大约5分钟左右。</p>
-
-
-
-    <ul><li>本方法在未安装Xcode的 OS X 10.9.5 Mavericks(2013) 和 macOS 10.15.4 Catalina(2019) 都测试成功。这意味着您不用安装巨大的完整的Xcode以使用C+++。如果没有弹出对话框，请打开“终端”应用，输入g++，回车，这时应该会跳出上述所说的对话框。</li></ul>
-
-
-
-    <br>
-
-
-
-    <h2><strong><span style="color:#710891" class="has-inline-color">· 更新日志</span></strong></h2>
-
-
-
-    <p style="font-size:25px"><strong>2020.6 Version 2.0.1</strong></p>
-
-
-
-    <ul><li>支持引号和单引号自动补全</li><li><strong>增加启动欢迎画面</strong></li><li>支持直接创建一个C+++项目</li><li><strong>增加“测评”功能（Test）</strong></li><li>UI界面改变，新增功能</li><li><strong>显示行数功能恢复</strong></li><li>增加多条菜单栏项目</li><li>增加帮助提示框</li><li><strong>更加稳定</strong></li><li>改进和问题修复</li><li><strong><span class="has-inline-color has-vivid-red-color">建议使用本版本</span></strong></li></ul>
-
-
-
-    <p style="font-size:25px"><strong>2020.5 Version 2.0.0</strong></p>
-
-
-
-    <ul><li><strong>增加多种新功能，成为一个完整的IDE:</strong></li><li>调试功能</li><li>项目管理功能</li><li>代码片段功能</li><li>UI界面优化</li><li>……</li></ul>
-
-
-
-    <p style="font-size:25px"><strong>2020.4 Version 1.1.0</strong></p>
-
-
-
-    <ul><li><strong>更改App图标</strong></li><li><strong>支持保存所选设置</strong></li><li>新增“编译设置”，支持选择编译器（这意味着您如果装了Xcode以外的编译器，可以用您所安装的编译器而不是Xcode的g++）等</li><li>新增多种代码高亮主题、编程字体</li><li><strong>简化编译界面，仅有一个按钮和一个文本框</strong></li><li>在右边栏显示文件操作，比如“打开”“保存”“另存为“等</li><li>在代码编辑区底部新增状态栏，显示当前有多少行代码、多少个字符</li><li>在代码编辑区左边可以显示当前行数</li><li>去除“帮助”模块</li><li>去除一些多余的控件</li><li>当macOS 10.14以下的用户尝试更改至暗黑模式时，显示警告</li><li>当没有填写文件路径并编译时，显示警告</li><li><strong>修复每次切换到暗黑模式/浅色模式以后字体大小设置无效等近20个错误</strong></li></ul>
-
-
-
-    <p style="font-size:25px"><strong>2020.4 Version 1.0.1</strong></p>
-
-
-
-    <ul><li>新增“设置”功能，支持设置代码高亮的主题、编程字体、字体大小等。（暂不支持保存所选设置）</li><li>新增“帮助”</li><li>UI界面小更新</li><li>支持打开.h文件、.c文件</li><li>“代码模版“功能新增了模版</li><li><strong><span class="has-inline-color has-vivid-red-color">（不建议使用本版本）</span></strong></li></ul>
-
-
-
-    <p style="font-size:25px"><strong>2020.3 Version 1.0.0</strong></p>
-
-
-
-    <ul><li>正式发布</li></ul>
-
-
-
-    <p style="font-size:25px"><strong>2020.3 Version 0.9.3</strong></p>
-
-
-
-    <ul><li>解决Xcode报错Highlightr代码高亮库未找到的问题</li><li>新增“在终端打开”选项，在对应的目录生成一个Unix可执行文件，运行时使用终端打开这个可执行文件（后来发现生成app包以后必须在终端打开，否则会有错误）</li><li>修复括号自动补全可能带来的问题</li><li>其他问题修复与改进</li></ul>
-
-
-
-    <p style="font-size:25px"><strong>2020.3 Version 0.9.2</strong></p>
-
-
-
-    <ul><li>完成代码模版功能</li><li>适配深色模式、代码高亮颜色主题</li><li>开发触控栏操作</li><li>实现代码自动缩进、括号自动补全功能</li></ul>
-
-
-
-    <p style="font-size:25px"><strong>2020.3 Version 0.9.1</strong></p>
-
-
-
-    <ul><li>实现实时代码高亮</li><li>整合编译功能和代码编辑功能，形成完整的C++ IDE，优化工具栏，优化UI界面</li></ul>
-
-
-
-    <p style="font-size:25px"><strong>2020.3 Version 0.9.0</strong></p>
-
-
-
-    <ul><li>创建项目</li><li>实现编译功能</li></ul>
-
-
-
-    <p></p>
-            </div><!-- .entry-content -->
-
-                </div><!-- .inside-article -->
-    </article><!-- #post-## -->
-            </main>
+            $('#btn-login').attr('disabled','disabled').text('加载中...');
+            
+
+            jQuery.ajax({
+                url: 'https://ericnth.cn/wp-admin/admin-ajax.php?action=xh_social_add_ons_login&tab=login&xh_social_add_ons_login=c5345a92b6&notice_str=9412110185&hash=c0d879a56b5aa633c65c01ad923be8b6',
+                type: 'post',
+                timeout: 60 * 1000,
+                async: true,
+                cache: false,
+                data: data,
+                dataType: 'json',
+                complete: function() {
+                    window.xh_social_view.loading=false;
+                    $('#btn-login').removeAttr('disabled').text('登录');
+                },
+                success: function(m) {
+                    var callback = {
+                        type:'login',
+                        done:false,
+                        retry:window.xh_social_view.login,
+                        data:m
+                    };
+                    $(document).trigger('wsocial_action_after',callback);
+                    if(callback.done){return;}
+                        
+                    if(m.errcode==405||m.errcode==0){
+                        window.xh_social_view.success('登录成功！','.commonlogincc84b62bd9b179271a8ca83f9d42cb0f0');
+
+                        if (window.top&&window.top != window.self) {
+                            var $wp_dialog = jQuery('#wp-auth-check-wrap',window.top.document);
+                            if($wp_dialog.length>0){$wp_dialog.hide();return;}
+                        }
+                        
+                        location.href='https://ericnth.cn/cppp-ide-macos/';
+                        return;
+                    }
+                    
+                    window.xh_social_view.error(m.errmsg,'.commonlogincc84b62bd9b179271a8ca83f9d42cb0f0');
+                },
+                error:function(e){
+                    window.xh_social_view.error('系统内部错误！','.commonlogincc84b62bd9b179271a8ca83f9d42cb0f0');
+                    console.error(e.responseText);
+                }
+             });
+        };
+    })(jQuery);
+</script>         <div class="xh-user-register xh-w">
+           <a href="https://ericnth.cn/wp-login.php?action=register">注册</a>|<a href="https://ericnth.cn/wp-login.php?action=lostpassword">忘记密码？</a>
+        </div>
+        <a class="xh-close" href="javascript:void(0);"></a>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    (function($){
+        $('#wsocial-dialog-login .xh-close,#wsocial-dialog-login .xh-cover').click(function(){
+            window.__wsocial_enable_entrl_submit=false;
+            $('#wsocial-dialog-login').hide();
+        });
+        window.wsocial_dialog_login_show=function(){
+            $('#wsocial-dialog-login').css('display','block');
+            window.__wsocial_enable_entrl_submit=true;
+            window.__modal_wsocial_login_resize();
+            return false;
+        };
+        $(function(){
+            $('.btn-wsocial-login').click(function(event){
+                event.stopPropagation();
+                window.wsocial_dialog_login_show();
+                return false;
+            });
+        });
+        window.__modal_wsocial_login_resize=function(){
+            var $ul =$('#wsocial-dialog-login');
+            var width = window.innerWidth,height = window.innerHeight;
+            if (typeof width != 'number') {
+                if (document.compatMode == 'CSS1Compat') {
+                    width = document.documentElement.clientWidth;
+                    height = document.documentElement.clientHeight;
+                } else {
+                    width = document.body.clientWidth;
+                    height = document.body.clientHeight;
+                }
+            }
+            $ul.css({
+                top:((height - $ul.height()) / 2) + "px",
+                left:((width - $ul.width()) / 2) + "px"
+            });
+        };
+        $(window).resize(function(){
+            window.__modal_wsocial_login_resize();
+        });
+    })(jQuery);
+</script>
+</body>
 </html>
