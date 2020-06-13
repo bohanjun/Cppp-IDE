@@ -11,7 +11,7 @@ import Cocoa
 extension NSApplication {
     
     @IBAction func showWebsite(_ sender: Any) {
-        NSWorkspace.shared.open(URL(string: "https://ericnth.cn/cppp-ide-macos/")!)
+        NSWorkspace.shared.open(URL(string: "https://23786.github.io/Cppp-IDE/")!)
     }
     
     @IBAction func showGithub(_ sender: Any) {

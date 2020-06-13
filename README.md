@@ -3,23 +3,24 @@
 
 ## The best C++ IDE on macOS for beginners
 - Developed by a Grade-Six student 23786.
-- Website: https://ericnth.cn/cppp-ide-macos
+- Website: https://23786.github.io/Cppp-IDE/
 - Download Version 2.0.0: https://github.com/23786/Cppp-IDE/releases/download/v2.0.0/C+++.2.0.0.dmg.zip
 
 
-## Uses the Xcode g++ to compile
-- Open terminal, and input "g++", press enter, and there should be a dialog box "Install Xcode g++", install it, about 2~5 minutes later the installation process will be completed and then you can use C+++.
+## Install g++
+- Open terminal, and type "g++", press enter, and there should be a dialog box "Install Xcode g++", install it, about 2~5 minutes later the installation process will be completed and then you can use C+++.
 - Of course, you can choose your compiler. You can choose between g++, gcc and clang. You can also set the compiler to "python", "swift" or other compilers, but that is not recommended.
 
 ## Update Log
-### 2020.6(7?) Version 2.0.2 (20 6/7 202)
+### 2020.6 Version 2.0.2 (206202)
+- Add Check Update function
 
 ### 2020.6 Version 2.0.1 (206201)
 - Support "" and '' completion
 - Add launch view
 - Support creating a project directly
 - Add TEST function
-- Small UI Changes
+- Small UI changes
 - Much more stable
 - Revert the line number feature
 - Bug fixes and improvements
