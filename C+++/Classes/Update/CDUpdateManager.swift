@@ -12,7 +12,7 @@ class CDUpdateManager: NSObject {
     
     private static func getLatestVersionData(completionHandler: @escaping (Data?, Error?) -> Void) {
 
-        let url = URL(string: "https://23786.github.io/cpppideupdate.github.io/")!
+        let url = URL(string: "https://23786.github.io/cpppideupdate/")!
         
         let downloadTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
             

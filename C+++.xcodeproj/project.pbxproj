@@ -10,6 +10,7 @@
 		180480AE2448602700CD0A4D /* CDSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180480AD2448602700CD0A4D /* CDSettings.swift */; };
 		183BF3C524287D4C007AF6AC /* CDFileCompiler(CompileAndRun).swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3C77724272DF700F4CA14 /* CDFileCompiler(CompileAndRun).swift */; };
 		183BF3CA242906B3007AF6AC /* CDTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183BF3C9242906B3007AF6AC /* CDTextView.swift */; };
+		184B1C7224945FBA0071C1AA /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 184B1C7124945FBA0071C1AA /* index.html */; };
 		184D5734247EA97500C5AA27 /* NSApplication Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184D5733247EA97500C5AA27 /* NSApplication Extension.swift */; };
 		18541B162445905F000EB4CB /* CDSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18541B152445905F000EB4CB /* CDSettingsViewController.swift */; };
 		1860EC3324839A8B0066DE64 /* CDDocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1860EC3224839A8B0066DE64 /* CDDocumentController.swift */; };
@@ -145,6 +146,7 @@
 		180480A824474A0700CD0A4D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		180480AD2448602700CD0A4D /* CDSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSettings.swift; sourceTree = "<group>"; };
 		183BF3C9242906B3007AF6AC /* CDTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTextView.swift; sourceTree = "<group>"; };
+		184B1C7124945FBA0071C1AA /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		184D5733247EA97500C5AA27 /* NSApplication Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSApplication Extension.swift"; sourceTree = "<group>"; };
 		18541B152445905F000EB4CB /* CDSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSettingsViewController.swift; sourceTree = "<group>"; };
 		1860EC3224839A8B0066DE64 /* CDDocumentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDDocumentController.swift; sourceTree = "<group>"; };
@@ -274,7 +276,7 @@
 		18D4DD70246A303400B97F32 /* CDProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProjectTableViewCell.swift; sourceTree = "<group>"; };
 		18E7291D244E6F91000317D7 /* CDLineNumberTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDLineNumberTextView.swift; sourceTree = "<group>"; };
 		18E7291F244E756E000317D7 /* CDScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDScrollView.swift; sourceTree = "<group>"; };
-		18FC02872490E612004551B1 /* CDUpdateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDUpdateManager.swift; sourceTree = "<group>"; };
+		18FC02872490E612004551B1 /* CDUpdateManager.swift */ = {isa = PBXFileReference; indentWidth = 5; lastKnownFileType = sourcecode.swift; path = CDUpdateManager.swift; sourceTree = "<group>"; };
 		18FC02892492624F004551B1 /* CDUpdateManager(NSViewController Extension).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDUpdateManager(NSViewController Extension).swift"; sourceTree = "<group>"; };
 		18FC05472487B9F600F33CE2 /* CDTestPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTestPointView.swift; sourceTree = "<group>"; };
 		18FC05492487BA3600F33CE2 /* CDTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDTestViewController.swift; sourceTree = "<group>"; };
@@ -513,6 +515,7 @@
 			isa = PBXGroup;
 			children = (
 				180480A824474A0700CD0A4D /* README.md */,
+				184B1C7124945FBA0071C1AA /* index.html */,
 				18B3C77E24282C1F00F4CA14 /* C+++ */,
 				18B3C76524272D9F00F4CA14 /* Products */,
 			);
@@ -689,6 +692,7 @@
 				18A41B48242C765500AFC422 /* school-book.min.css in Resources */,
 				18A41B18242C765500AFC422 /* atelier-seaside-light.min.css in Resources */,
 				18A41B59242C765500AFC422 /* ascetic.min.css in Resources */,
+				184B1C7224945FBA0071C1AA /* index.html in Resources */,
 				18A41B4F242C765500AFC422 /* solarized-light.min.css in Resources */,
 				18A41B31242C765500AFC422 /* dracula.min.css in Resources */,
 				18A41B1B242C765500AFC422 /* atom-one-dark-reasonable.min.css in Resources */,
