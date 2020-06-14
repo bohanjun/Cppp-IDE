@@ -31,7 +31,7 @@
                                                 <action selector="showSettingsView:" target="Ady-hI-5gd" id="gen-Wf-CPT"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Check for Updates" id="yxB-EH-3vZ">
+                                        <menuItem title="Check for Updates..." id="yxB-EH-3vZ">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="checkUpdate:" target="Ady-hI-5gd" id="cVn-kr-MK7"/>
@@ -508,7 +508,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="3qt-Z3-ZOZ"/>
-                                        <menuItem title="Check for Updates" id="Y0r-jt-Iq5">
+                                        <menuItem title="Check for Updates..." id="Y0r-jt-Iq5">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="checkUpdate:" target="Ady-hI-5gd" id="XMl-NM-UeS"/>
