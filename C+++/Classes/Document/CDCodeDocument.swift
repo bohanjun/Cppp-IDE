@@ -50,7 +50,7 @@ class CDCodeDocument: NSDocument {
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
         if let windowController =
             storyboard.instantiateController(
-                withIdentifier: NSStoryboard.SceneIdentifier("Document Window Controller")) as? NSWindowController {
+                withIdentifier: NSStoryboard.SceneIdentifier("Document Window Controller")) as? CDMainWindowController {
             addWindowController(windowController)
             
             // Set the view controller's represented object as your document.
@@ -60,8 +60,14 @@ class CDCodeDocument: NSDocument {
                 contentViewController = contentVC
                 contentVC.mainTextView?.didChangeText()
                 
+                if self.fileType == "Input File" || self.fileType == "Output File" {
+                    windowController.disableCompiling()
+                }
+                
             }
+            
         }
+        
     }
     
     
@@ -125,10 +131,11 @@ class CDCodeDocument: NSDocument {
     
     @IBAction func compileFile(_ sender: Any?) {
         
-        if self.isDraft {
-            self.contentViewController.showAlert("You haven't saved the file yet. Please save it and then compile it.", "File not saved")
+        if self.fileURL == nil {
+            self.contentViewController.showAlert("You haven't saved the file yet. Please save it before compiling it.", "")
             return
         }
+        
         self.save(self)
         self.contentViewController.setStatus(string: "\(self.fileURL?.lastPathComponent ?? "C+++") | Compiling...")
         let res = CDFileCompiler.compileFile(fileURL: self.fileURL?.path ?? "").replacingOccurrences(of: self.fileURL!.path + ":", with: "")
@@ -153,6 +160,7 @@ class CDCodeDocument: NSDocument {
                     }
                 }
             }
+            
         }
         
     }
@@ -173,15 +181,35 @@ class CDCodeDocument: NSDocument {
     
     @IBAction func compileWithoutRunning(_ sender: Any?) {
         
-        if self.isDraft {
-            self.contentViewController.showAlert("You haven't saved the file yet. Please save it and then compile it.", "File not saved")
+        if self.fileURL == nil {
+            self.contentViewController.showAlert("You haven't saved the file yet. Please save it before compiling it.", "")
             return
         }
+        
         self.save(self)
         self.contentViewController.setStatus(string: "\(self.fileURL?.lastPathComponent ?? "C+++") | Compiling...")
         let res = CDFileCompiler.CompileWithoutRunning(fileURL: self.fileURL?.path ?? "")
         self.contentViewController.compileInfo.string = res
         self.contentViewController.setStatus(string: "\(self.fileURL?.lastPathComponent ?? "C+++") | Compile Finished")
+        
+        DispatchQueue.main.async {
+            
+            for i in res.components(separatedBy: "\n") {
+                if i.first == nil {
+                    continue
+                }
+                if i.first!.isNumber && i.contains(":") {
+                    let index = i.firstIndexOf(":")
+                    let nsstring = NSString(string: i)
+                    let substring = nsstring.substring(to: index)
+                    if let int = Int(substring) {
+                        Swift.print(int)
+                        self.contentViewController?.gutterTextView?.markLineNumber(line: int, color: .orange)
+                    }
+                }
+            }
+            
+        }
         
     }
     

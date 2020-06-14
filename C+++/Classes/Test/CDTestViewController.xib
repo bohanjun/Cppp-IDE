@@ -8,7 +8,6 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="CDTestViewController" customModule="C___" customModuleProvider="target">
             <connections>
-                <outlet property="background" destination="0WC-vG-1js" id="6pG-rn-nQf"/>
                 <outlet property="first" destination="7cH-JF-m8f" id="C6b-Js-ce1"/>
                 <outlet property="fourth" destination="sKA-DZ-q5n" id="kjd-fh-Vk1"/>
                 <outlet property="second" destination="LtO-UA-2Gk" id="63s-V9-Dmf"/>
@@ -22,9 +21,6 @@
             <rect key="frame" x="0.0" y="0.0" width="678" height="427"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <customView translatesAutoresizingMaskIntoConstraints="NO" id="0WC-vG-1js">
-                    <rect key="frame" x="17" y="26" width="641" height="294"/>
-                </customView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NW9-Ug-jz8">
                     <rect key="frame" x="15" y="374" width="97" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -66,7 +62,7 @@
                     </connections>
                 </button>
                 <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7cH-JF-m8f" customClass="CDTestPointView" customModule="C___" customModuleProvider="target">
-                    <rect key="frame" x="31" y="29" width="137" height="275"/>
+                    <rect key="frame" x="20" y="29" width="137" height="275"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <subviews>
                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cGu-qk-nvu">
@@ -180,7 +176,7 @@
                     </connections>
                 </customView>
                 <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LtO-UA-2Gk" customClass="CDTestPointView" customModule="C___" customModuleProvider="target">
-                    <rect key="frame" x="190" y="29" width="137" height="275"/>
+                    <rect key="frame" x="184" y="29" width="137" height="275"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <subviews>
                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gyw-gX-gf0">
@@ -408,7 +404,7 @@
                     </connections>
                 </customView>
                 <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sKA-DZ-q5n" customClass="CDTestPointView" customModule="C___" customModuleProvider="target">
-                    <rect key="frame" x="511" y="29" width="137" height="275"/>
+                    <rect key="frame" x="518" y="29" width="137" height="275"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <subviews>
                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="39z-RZ-CU5">
@@ -522,12 +518,6 @@
                     </connections>
                 </customView>
             </subviews>
-            <constraints>
-                <constraint firstAttribute="trailing" secondItem="0WC-vG-1js" secondAttribute="trailing" constant="20" id="Hqt-Rb-xff"/>
-                <constraint firstAttribute="bottom" secondItem="0WC-vG-1js" secondAttribute="bottom" constant="26" id="Qxt-c3-bef"/>
-                <constraint firstItem="0WC-vG-1js" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="107" id="Tmp-mP-hjw"/>
-                <constraint firstItem="0WC-vG-1js" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="17" id="vEG-Q4-txd"/>
-            </constraints>
             <point key="canvasLocation" x="301" y="296.5"/>
         </customView>
     </objects>

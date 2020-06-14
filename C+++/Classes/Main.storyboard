@@ -562,7 +562,7 @@
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="eIb-XZ-6HS"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="5Eg-DZ-en8"/>
-                                <toolbarItem implicitItemIdentifier="CD4CBE8F-5908-4DEA-94C3-403FC1EFDFF5" label="File Information" paletteLabel="File Information" image="NSTouchBarGoBackTemplate" sizingBehavior="auto" id="2Dn-Xg-q3W">
+                                <toolbarItem implicitItemIdentifier="CD4CBE8F-5908-4DEA-94C3-403FC1EFDFF5" explicitItemIdentifier="Left" label="File Information" paletteLabel="File Information" image="NSTouchBarGoBackTemplate" sizingBehavior="auto" id="2Dn-Xg-q3W">
                                     <nil key="toolTip"/>
                                     <button key="view" verticalHuggingPriority="750" id="oet-RU-QaX">
                                         <rect key="frame" x="23" y="14" width="44" height="42"/>
@@ -576,7 +576,7 @@
                                         </connections>
                                     </button>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="50CA4B36-93A9-48D8-B122-3E774A2764E5" label="Compile View" paletteLabel="Compile View" image="NSTouchBarGoForwardTemplate" sizingBehavior="auto" id="jqT-Vf-vqj">
+                                <toolbarItem implicitItemIdentifier="50CA4B36-93A9-48D8-B122-3E774A2764E5" explicitItemIdentifier="Right" label="Compile View" paletteLabel="Compile View" image="NSTouchBarGoForwardTemplate" sizingBehavior="auto" id="jqT-Vf-vqj">
                                     <nil key="toolTip"/>
                                     <button key="view" verticalHuggingPriority="750" id="dyS-MN-Xd8">
                                         <rect key="frame" x="18" y="14" width="44" height="42"/>
@@ -590,7 +590,7 @@
                                         </connections>
                                     </button>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="7B0E94A6-2B09-41AD-ABD2-35DC42627FD6" label="Compile Information" paletteLabel="Compile Information" image="NSTouchBarGoDownTemplate" sizingBehavior="auto" id="eBB-1J-Wng">
+                                <toolbarItem implicitItemIdentifier="7B0E94A6-2B09-41AD-ABD2-35DC42627FD6" explicitItemIdentifier="Down" label="Compile Information" paletteLabel="Compile Information" image="NSTouchBarGoDownTemplate" sizingBehavior="auto" id="eBB-1J-Wng">
                                     <nil key="toolTip"/>
                                     <button key="view" verticalHuggingPriority="750" id="bfV-yr-4PF">
                                         <rect key="frame" x="35" y="14" width="44" height="42"/>
@@ -604,7 +604,7 @@
                                         </connections>
                                     </button>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="5B0DDB07-F132-4F2C-8C7F-7D59B02C96C7" label="Run" paletteLabel="Run" image="Run" id="yE0-ea-R7e">
+                                <toolbarItem implicitItemIdentifier="5B0DDB07-F132-4F2C-8C7F-7D59B02C96C7" explicitItemIdentifier="Run" label="Run" paletteLabel="Run" image="Run" id="yE0-ea-R7e">
                                     <nil key="toolTip"/>
                                     <size key="minSize" width="38" height="25"/>
                                     <size key="maxSize" width="38" height="25"/>

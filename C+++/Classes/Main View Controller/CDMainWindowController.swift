@@ -26,9 +26,24 @@ class CDMainWindowController: NSWindowController, NSWindowDelegate {
         super.init(coder: aDecoder)
         
         self.shouldCascadeWindows = true
+        
     }
     
-    
+    func disableCompiling() {
+        
+        self.window?.toolbar?.isVisible = false
+        
+        let vc = (self.contentViewController as! CDMainViewController)
+        vc.bottomConstraint.constant = 22.0
+        vc.bottom = false
+        vc.rightConstraint.constant = 0.0
+        vc.right = false
+        vc.compileView.isHidden = true
+        vc.leftConstraint.constant = 0.0
+        vc.left = false
+        vc.fileAndSnippetView.isHidden = true
+        
+    }
     
     @IBAction func toggleCompileInfoViewShown(_ sender: Any) {
         

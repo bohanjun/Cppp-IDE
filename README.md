@@ -14,6 +14,9 @@
 ## Update Log
 ### 2020.6 Version 2.0.2 (206202)
 - Add Check Update function
+- Support code font customizing
+- Mark error lines
+- Bug fixes and improvements
 
 ### 2020.6 Version 2.0.1 (206201)
 - Support "" and '' completion

@@ -16,7 +16,6 @@ class CDTestViewController: NSViewController {
     @IBOutlet weak var second: CDTestPointView!
     @IBOutlet weak var third: CDTestPointView!
     @IBOutlet weak var fourth: CDTestPointView!
-    @IBOutlet weak var background: NSView!
     
 
     override func viewDidLoad() {
@@ -32,12 +31,6 @@ class CDTestViewController: NSViewController {
             i.actualOutputTextView.isEditable = false
             
         }
-        
-        self.background.wantsLayer = true
-        self.background.layer?.masksToBounds = true
-        self.background.layer?.cornerRadius = 10.0
-        self.background.layer?.borderWidth = 2.0
-        self.background.layer?.borderColor = NSColor.lightGray.cgColor
         
     }
     
