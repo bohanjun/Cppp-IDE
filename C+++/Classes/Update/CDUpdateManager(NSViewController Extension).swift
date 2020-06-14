@@ -36,7 +36,7 @@ extension NSViewController {
                         }
                     } else {
                         title = "An update is available. The latest version is \(latest) and you are using C+++ \(version)."
-                        message = "\(updateInformation!)\n\nThe xlatest version is available at \"\(url!)\". Or you can visit \"https://github.com/23786/Cppp-IDE/releases\" to view all releases."
+                        message = "\(updateInformation!)\n\nThe latest version is available at \"\(url!)\". Or you can visit \"https://github.com/23786/Cppp-IDE/releases\" to view all releases."
                     }
                     self.showAlert(title, message)
                     
