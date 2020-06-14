@@ -33,6 +33,30 @@ class CDLineNumberTextView: NSTextView, CDTextViewDelegate {
         
     }
     
+    
+    /// Mark a line number with a color.
+    /// - Parameters:
+    ///   - line: The number of the line to mark.
+    ///   - color: The color.
+    func markLineNumber(line: Int, color: NSColor) {
+        
+        self.isEditable = true
+        self.isSelectable = true
+        var string = ""
+        var range = NSMakeRange(0, 0)
+        if line > 0 {
+            for i in 1..<line {
+                string += "\(i)\n"
+            }
+            range = NSMakeRange(string.count, "\(line)".count)
+            string.removeLast()
+        }
+        self.textStorage?.addAttribute(.foregroundColor, value: color, range: range)
+        self.isEditable = false
+        self.isSelectable = false
+        
+    }
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
@@ -42,11 +66,6 @@ class CDLineNumberTextView: NSTextView, CDTextViewDelegate {
         
         self.font = NSFont(name: config!.fontName ?? "Courier", size: CGFloat(config!.fontSize ?? 15))
         self.alignment = .right
-        if #available(OSX 10.13, *) {
-            self.textColor = NSColor(named: "LineNumberColor")!
-        } else {
-            self.textColor = .textColor
-        }
         
     }
     

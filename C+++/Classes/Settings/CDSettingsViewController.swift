@@ -82,6 +82,28 @@ class CDSettingsViewController: NSViewController {
         
     }
     
+    
+    
+    @IBAction func chooseAnotherFont(_ sender: Any?) {
+        
+        NSFontPanel.shared.setPanelFont(NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))!, isMultiple: false)
+        NSFontManager.shared.target = self
+        NSFontManager.shared.action = #selector(changeFont(_:))
+        NSFontManager.shared.orderFrontFontPanel(self)
+        /*NSFontPanel.shared.beginSheet(self.view.window!) { response in
+        }*/
+        
+    }
+    
+    @objc func changeFont(_ sender: Any?) {
+        
+        let font = NSFont(name: config!.fontName!, size: CGFloat(config!.fontSize!))!
+        let convertedFont = NSFontPanel.shared.convert(font)
+        self.fontname.setTitle(convertedFont.fontName )
+        self.size.stringValue = "\(Int(convertedFont.pointSize))"
+        
+    }
+    
     @IBAction func defaultSettings(_ sender: Any?) {
         
         self.showAlert("Recover to default settings", "Please delete files named \"Settings\" and \"CompileSettings\" at \"~/Library/C+++/\" and restart C+++.")

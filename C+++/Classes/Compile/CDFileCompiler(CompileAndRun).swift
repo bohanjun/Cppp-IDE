@@ -14,7 +14,7 @@ class CDFileCompiler: NSObject {
     - parameter fileURL: The path of the file.
     - returns: The result to be displayed in the "Compile Info"  text view.
     */
-    public static func CompileSource(fileURL: String, arguments: String = compileConfig!.arguments ?? "") -> String {
+    public static func compileFile(fileURL: String, arguments: String = compileConfig!.arguments ?? "") -> String {
          
         // The path of the file
         let _fileURL = "\"" + fileURL + "\""

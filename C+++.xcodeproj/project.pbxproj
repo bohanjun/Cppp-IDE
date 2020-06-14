@@ -10,7 +10,6 @@
 		180480AE2448602700CD0A4D /* CDSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180480AD2448602700CD0A4D /* CDSettings.swift */; };
 		183BF3C524287D4C007AF6AC /* CDFileCompiler(CompileAndRun).swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3C77724272DF700F4CA14 /* CDFileCompiler(CompileAndRun).swift */; };
 		183BF3CA242906B3007AF6AC /* CDTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183BF3C9242906B3007AF6AC /* CDTextView.swift */; };
-		184B1C7224945FBA0071C1AA /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 184B1C7124945FBA0071C1AA /* index.html */; };
 		184D5734247EA97500C5AA27 /* NSApplication Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184D5733247EA97500C5AA27 /* NSApplication Extension.swift */; };
 		18541B162445905F000EB4CB /* CDSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18541B152445905F000EB4CB /* CDSettingsViewController.swift */; };
 		1860EC3324839A8B0066DE64 /* CDDocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1860EC3224839A8B0066DE64 /* CDDocumentController.swift */; };
@@ -692,7 +691,6 @@
 				18A41B48242C765500AFC422 /* school-book.min.css in Resources */,
 				18A41B18242C765500AFC422 /* atelier-seaside-light.min.css in Resources */,
 				18A41B59242C765500AFC422 /* ascetic.min.css in Resources */,
-				184B1C7224945FBA0071C1AA /* index.html in Resources */,
 				18A41B4F242C765500AFC422 /* solarized-light.min.css in Resources */,
 				18A41B31242C765500AFC422 /* dracula.min.css in Resources */,
 				18A41B1B242C765500AFC422 /* atom-one-dark-reasonable.min.css in Resources */,

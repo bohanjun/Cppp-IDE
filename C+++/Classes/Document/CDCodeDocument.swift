@@ -131,9 +131,29 @@ class CDCodeDocument: NSDocument {
         }
         self.save(self)
         self.contentViewController.setStatus(string: "\(self.fileURL?.lastPathComponent ?? "C+++") | Compiling...")
-        let res = CDFileCompiler.CompileSource(fileURL: self.fileURL?.path ?? "")
+        let res = CDFileCompiler.compileFile(fileURL: self.fileURL?.path ?? "").replacingOccurrences(of: self.fileURL!.path + ":", with: "")
         self.contentViewController.compileInfo.string = res
         self.contentViewController.setStatus(string: "\(self.fileURL?.lastPathComponent ?? "C+++") | Compile Finished")
+        
+        Swift.print(res)
+        
+        DispatchQueue.main.async {
+            
+            for i in res.components(separatedBy: "\n") {
+                if i.first == nil {
+                    continue
+                }
+                if i.first!.isNumber && i.contains(":") {
+                    let index = i.firstIndexOf(":")
+                    let nsstring = NSString(string: i)
+                    let substring = nsstring.substring(to: index)
+                    if let int = Int(substring) {
+                        Swift.print(int)
+                        self.contentViewController?.gutterTextView?.markLineNumber(line: int, color: .orange)
+                    }
+                }
+            }
+        }
         
     }
     

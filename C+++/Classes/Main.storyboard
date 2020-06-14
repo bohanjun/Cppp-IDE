@@ -994,6 +994,17 @@ Gw
                                                 </menu>
                                             </popUpButtonCell>
                                         </popUpButton>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IrK-uP-frj">
+                                            <rect key="frame" x="199" y="133" width="163" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="push" title="Choose another font..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="GhM-j5-yx4">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="chooseAnotherFont:" target="rhr-iv-C7G" id="xMx-0S-VvC"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </view>
                             </box>
@@ -1529,6 +1540,7 @@ Gw
                                 <constraints>
                                     <constraint firstItem="VGX-he-xwO" firstAttribute="leading" secondItem="42g-tY-n4q" secondAttribute="trailing" constant="18" id="0t4-mT-dbM"/>
                                     <constraint firstAttribute="bottom" secondItem="42g-tY-n4q" secondAttribute="bottom" constant="4" id="5hp-VW-MtA"/>
+                                    <constraint firstItem="Fh1-ZV-B2L" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VGX-he-xwO" secondAttribute="trailing" constant="-50" id="6jt-4J-qY0"/>
                                     <constraint firstItem="42g-tY-n4q" firstAttribute="leading" secondItem="RCh-2s-VX0" secondAttribute="leading" constant="7" id="8Y4-h2-HEb"/>
                                     <constraint firstAttribute="trailing" secondItem="Fh1-ZV-B2L" secondAttribute="trailing" id="IMM-V7-UEr"/>
                                     <constraint firstItem="VGX-he-xwO" firstAttribute="top" secondItem="RCh-2s-VX0" secondAttribute="top" constant="3" id="O2V-4a-ocp"/>

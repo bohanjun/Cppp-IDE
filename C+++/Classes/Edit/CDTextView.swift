@@ -63,12 +63,12 @@ class CDTextView: NSTextView {
         
         super.didChangeText()
         
-        let a = self.selectedRange
+        let selectedRange = self.selectedRange
         let code = self.string
         let highlightedCode = highlightr!.highlight(code, as: "C++")
         
         self.textStorage!.setAttributedString(highlightedCode!)
-        self.setSelectedRange(a)
+        self.setSelectedRange(selectedRange)
         
         DispatchQueue.main.async {
             
@@ -114,6 +114,7 @@ class CDTextView: NSTextView {
             default:
                 return
         }
+        
         super.insertText(right, replacementRange: replacementRange)
         self.selectedRange.location -= 1
         
