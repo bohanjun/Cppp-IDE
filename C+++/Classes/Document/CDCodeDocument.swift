@@ -156,7 +156,7 @@ class CDCodeDocument: NSDocument {
                     let substring = nsstring.substring(to: index)
                     if let int = Int(substring) {
                         Swift.print(int)
-                        self.contentViewController?.gutterTextView?.markLineNumber(line: int, color: .orange)
+                        self.contentViewController?.lineNumberTextView?.markLineNumber(line: int, color: .orange)
                     }
                 }
             }
@@ -204,7 +204,7 @@ class CDCodeDocument: NSDocument {
                     let substring = nsstring.substring(to: index)
                     if let int = Int(substring) {
                         Swift.print(int)
-                        self.contentViewController?.gutterTextView?.markLineNumber(line: int, color: .orange)
+                        self.contentViewController?.lineNumberTextView?.markLineNumber(line: int, color: .orange)
                     }
                 }
             }

@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class CDLineNumberTextView: NSTextView, CDTextViewDelegate {
+class CDLineNumberTextView: NSTextView, CDCodeEditorDelegate {
     
     @objc
     func didChangeText(lines: Int, currentLine: Int) {

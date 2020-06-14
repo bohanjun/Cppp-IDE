@@ -8,7 +8,7 @@
 
 import Cocoa
 
-func MenloFont(ofSize size: CGFloat) -> NSFont {
+func menloFont(ofSize size: CGFloat) -> NSFont {
     return NSFont(name: "Menlo", size: size)!
 }
 
@@ -24,12 +24,18 @@ let aqua = NSAppearance(named: .aqua)
 extension NSViewController {
     
     func showAlert(_ title: String, _ message: String) {
+        
+        guard self.view.window != nil else {
+            return
+        }
+        
         let alert = NSAlert()
         alert.messageText = title
         alert.alertStyle = .informational
         alert.addButton(withTitle: "OK")
         alert.informativeText = message
         alert.beginSheetModal(for: self.view.window!, completionHandler: { returnCode in })
+        
     }
     
 }
@@ -58,7 +64,7 @@ extension String {
 
 
 
-class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsViewDelegate, CDTextViewDelegate, CDSnippetPopoverViewControllerDelegate {
+class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsViewDelegate, CDCodeEditorDelegate, CDSnippetPopoverViewControllerDelegate {
     
 // MARK: - Properties
     
@@ -80,14 +86,14 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
     /// Whether the file info view is hidden.
     var left = true
     
-    @IBOutlet var mainTextView: CDTextView!
-    @IBOutlet var gutterTextView: CDLineNumberTextView!
+    @IBOutlet var mainTextView: CDCodeEditor!
+    @IBOutlet var lineNumberTextView: CDLineNumberTextView!
     @IBOutlet weak var pathControl: NSPathControl!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var rightConstraint: NSLayoutConstraint!
     @IBOutlet weak var leftConstraint: NSLayoutConstraint!
     @IBOutlet weak var fakeBackground: NSTextField!
-    @IBOutlet weak var scrollViewOfTextView: CDScrollView!
+    @IBOutlet weak var scrollViewOfTextView: CDLineNumberScrollView!
     @IBOutlet weak var linesLabel: NSTextField!
     @IBOutlet weak var charactersLabel: NSTextField!
     @IBOutlet var compileInfo: NSTextView!
@@ -104,8 +110,8 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.mainTextView.codeTextViewDelegate = self
-        self.mainTextView.gutterDelegate = self.gutterTextView
+        self.mainTextView.codeEditorDelegate = self
+        self.mainTextView.gutterDelegate = self.lineNumberTextView
         self.mainTextView.scrollView = self.scrollViewOfTextView
         
         // judge if there has already been a saved settings.
@@ -123,7 +129,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
         }
         
         // set the font of the StdIn, StdOut and the CompileInfo text view
-        self.compileInfo.font = MenloFont(ofSize: 13.0)
+        self.compileInfo.font = menloFont(ofSize: 13.0)
         
         // set the current appearance to Dark Mode.
         if #available(OSX 10.14, *) {
@@ -237,7 +243,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
         // font
         self.mainTextView.highlightr?.theme.setCodeFont(NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))!)
         self.mainTextView.font = NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))
-        self.gutterTextView.font = NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))
+        self.lineNumberTextView.font = NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))
         self.mainTextView.didChangeText()
         
         // in case of errors

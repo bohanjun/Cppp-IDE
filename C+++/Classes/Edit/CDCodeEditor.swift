@@ -45,12 +45,12 @@ extension String {
 
 
 
-class CDTextView: NSTextView {
+class CDCodeEditor: NSTextView {
 
     let highlightr = CDHighlightr()
-    var gutterDelegate: CDTextViewDelegate!
-    var scrollView: CDScrollView!
-    var codeTextViewDelegate: CDTextViewDelegate!
+    var gutterDelegate: CDCodeEditorDelegate!
+    var scrollView: CDLineNumberScrollView!
+    var codeEditorDelegate: CDCodeEditorDelegate!
     var codeAttributedString: CDAttributedString!
     let parser = CDParser(code: "")
     
@@ -72,7 +72,7 @@ class CDTextView: NSTextView {
         
         DispatchQueue.main.async {
             
-            self.codeTextViewDelegate?.didChangeText!(lines: self.textStorage?.paragraphs.count ?? 0, characters: self.textStorage?.characters.count ?? 0)
+            self.codeEditorDelegate?.didChangeText!(lines: self.textStorage?.paragraphs.count ?? 0, characters: self.textStorage?.characters.count ?? 0)
             self.gutterDelegate?.didChangeText!(lines: (self.textStorage?.paragraphs.count)!, currentLine: self.string.lineNumber(at: self.selectedRange.location)!)
             
         }

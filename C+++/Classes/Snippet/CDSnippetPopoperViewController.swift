@@ -26,7 +26,7 @@ class CDSnippetPopoperViewController: NSViewController {
     let imageNames = ["Code", "YellowCode", "GreenCode", "PurpleCode", "BlueCode"]
     
     @IBOutlet weak var titleLabel: NSTextField!
-    @IBOutlet weak var textView: CDTextView!
+    @IBOutlet weak var textView: CDCodeEditor!
     @IBOutlet weak var imageView: NSButton!
     @IBOutlet weak var addToCodeButton: NSButton!
     @IBOutlet weak var removeButton: NSButton!

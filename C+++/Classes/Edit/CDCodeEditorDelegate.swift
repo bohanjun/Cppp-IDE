@@ -9,7 +9,7 @@
 import Cocoa
 
 @objc
-protocol CDTextViewDelegate {
+protocol CDCodeEditorDelegate {
     
     @objc
     optional func didChangeText(lines: Int, characters: Int)

@@ -8,9 +8,9 @@
 
 import Cocoa
 
-class CDScrollView: NSScrollView {
+class CDLineNumberScrollView: NSScrollView {
     
-    @IBOutlet var bindedScrollView: CDScrollView!
+    @IBOutlet var bindedScrollView: CDLineNumberScrollView!
     
     override func scroll(_ clipView: NSClipView, to point: NSPoint) {
         super.scroll(clipView, to: point)

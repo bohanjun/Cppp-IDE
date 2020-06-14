@@ -25,9 +25,9 @@ class CDTestViewController: NSViewController {
         for i in [first!, second!, third!, fourth!] {
 
             i.isEnabled = true
-            i.inputTextView.font = MenloFont(ofSize: 12.0)
-            i.outputTextView.font = MenloFont(ofSize: 12.0)
-            i.actualOutputTextView.font = MenloFont(ofSize: 12.0)
+            i.inputTextView.font = menloFont(ofSize: 12.0)
+            i.outputTextView.font = menloFont(ofSize: 12.0)
+            i.actualOutputTextView.font = menloFont(ofSize: 12.0)
             i.actualOutputTextView.isEditable = false
             
         }

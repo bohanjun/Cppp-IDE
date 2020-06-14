@@ -1613,13 +1613,13 @@ Gw
                                     <constraint firstAttribute="trailing" secondItem="d64-8C-Dx7" secondAttribute="trailing" id="nFb-Qf-AkH"/>
                                 </constraints>
                             </customView>
-                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" translatesAutoresizingMaskIntoConstraints="NO" id="yLp-eY-fSk" customClass="CDScrollView" customModule="C___" customModuleProvider="target">
+                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" translatesAutoresizingMaskIntoConstraints="NO" id="yLp-eY-fSk" customClass="CDLineNumberScrollView" customModule="C___" customModuleProvider="target">
                                 <rect key="frame" x="258" y="165" width="569" height="544"/>
                                 <clipView key="contentView" copiesOnScroll="NO" id="a6q-mG-7ce">
                                     <rect key="frame" x="0.0" y="0.0" width="569" height="544"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView importsGraphics="NO" richText="NO" horizontallyResizable="YES" verticallyResizable="YES" findStyle="bar" allowsCharacterPickerTouchBarItem="NO" allowsUndo="YES" usesRuler="YES" textCompletion="NO" smartInsertDelete="YES" id="E0u-iA-KeT" customClass="CDTextView" customModule="C___" customModuleProvider="target">
+                                        <textView importsGraphics="NO" richText="NO" horizontallyResizable="YES" verticallyResizable="YES" findStyle="bar" allowsCharacterPickerTouchBarItem="NO" allowsUndo="YES" usesRuler="YES" textCompletion="NO" smartInsertDelete="YES" id="E0u-iA-KeT" customClass="CDCodeEditor" customModule="C___" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="569" height="544"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -1854,7 +1854,7 @@ Gw
                                     <constraint firstAttribute="trailing" secondItem="r91-ZE-hUd" secondAttribute="trailing" constant="15" id="xhS-f3-nDt"/>
                                 </constraints>
                             </customView>
-                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPB-sL-5NP" customClass="CDScrollView" customModule="C___" customModuleProvider="target">
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPB-sL-5NP" customClass="CDLineNumberScrollView" customModule="C___" customModuleProvider="target">
                                 <rect key="frame" x="219" y="165" width="39" height="544"/>
                                 <clipView key="contentView" copiesOnScroll="NO" id="aNs-hR-HC8">
                                     <rect key="frame" x="0.0" y="0.0" width="39" height="544"/>
@@ -1926,8 +1926,8 @@ Gw
                         <outlet property="fakeBackground" destination="0HT-on-mcG" id="1xu-mn-zwJ"/>
                         <outlet property="fileAndSnippetView" destination="Dip-ez-JU8" id="sy5-qa-ou9"/>
                         <outlet property="fileView" destination="BUq-1q-FQe" id="SNn-hN-pE6"/>
-                        <outlet property="gutterTextView" destination="hS1-5x-uqb" id="poC-ev-yTa"/>
                         <outlet property="leftConstraint" destination="jfa-UV-rjU" id="1r4-7E-mo6"/>
+                        <outlet property="lineNumberTextView" destination="hS1-5x-uqb" id="poC-ev-yTa"/>
                         <outlet property="linesLabel" destination="42g-tY-n4q" id="vAG-yT-KLn"/>
                         <outlet property="mainTextView" destination="E0u-iA-KeT" id="B0O-yd-iHk"/>
                         <outlet property="pathControl" destination="Fh1-ZV-B2L" id="De9-Vs-V5G"/>

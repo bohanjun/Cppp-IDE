@@ -77,7 +77,7 @@ class CDDebugViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-        self.textView.font = MenloFont(ofSize: 13.0)
+        self.textView.font = menloFont(ofSize: 13.0)
         
     }
     
