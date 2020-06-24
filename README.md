@@ -12,6 +12,11 @@
 - Of course, you can choose your compiler. You can choose between g++, gcc and clang. You can also set the compiler to "python", "swift" or other compilers, but that is not recommended.
 
 ## Update Log
+### 2020.7 Version 2.0.3 (207203)
+- Adapt macOS 11.0 Big Sur
+- More stable
+- Bug fixes and improvements
+
 ### 2020.6 Version 2.0.2 (206202)
 - Add Check Update function
 - Support code font customizing
