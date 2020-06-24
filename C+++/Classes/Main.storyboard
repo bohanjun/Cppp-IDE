@@ -566,7 +566,7 @@
                                     <nil key="toolTip"/>
                                     <button key="view" verticalHuggingPriority="750" id="oet-RU-QaX">
                                         <rect key="frame" x="23" y="14" width="44" height="42"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <autoresizingMask key="autoresizingMask"/>
                                         <buttonCell key="cell" type="round" bezelStyle="circular" image="NSTouchBarGoBackTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gdn-mS-Qn4">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -580,7 +580,7 @@
                                     <nil key="toolTip"/>
                                     <button key="view" verticalHuggingPriority="750" id="dyS-MN-Xd8">
                                         <rect key="frame" x="18" y="14" width="44" height="42"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <autoresizingMask key="autoresizingMask"/>
                                         <buttonCell key="cell" type="round" bezelStyle="circular" image="NSTouchBarGoForwardTemplate" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Ymf-pD-Twg">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -594,7 +594,7 @@
                                     <nil key="toolTip"/>
                                     <button key="view" verticalHuggingPriority="750" id="bfV-yr-4PF">
                                         <rect key="frame" x="35" y="14" width="44" height="42"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <autoresizingMask key="autoresizingMask"/>
                                         <buttonCell key="cell" type="round" bezelStyle="circular" image="NSTouchBarGoDownTemplate" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="s1B-ct-U1Z">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -683,7 +683,7 @@
                             <touchBarItem id="4SO-gG-N5n">
                                 <viewController key="viewController" id="lFf-b2-FYj">
                                     <button key="view" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AUY-A3-RUq">
-                                        <rect key="frame" x="0.0" y="-11" width="138" height="41"/>
+                                        <rect key="frame" x="0.0" y="-12" width="140" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="126" id="OyW-iU-VgB"/>
                                             <constraint firstAttribute="height" constant="30" id="RaS-N3-PgQ"/>
@@ -732,7 +732,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3dQ-SJ-Hj5">
-                                <rect key="frame" x="327" y="13" width="72" height="32"/>
+                                <rect key="frame" x="326" y="13" width="74" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="bwL-Hd-Nbd"/>
                                     <constraint firstAttribute="height" constant="21" id="eBe-pd-hDn"/>
@@ -749,7 +749,7 @@ DQ
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mZu-b6-4EA">
-                                <rect key="frame" x="245" y="13" width="82" height="32"/>
+                                <rect key="frame" x="244" y="13" width="84" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="7Ep-SB-Fpa"/>
                                     <constraint firstAttribute="width" constant="70" id="VK6-ed-OOy"/>
@@ -777,7 +777,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" title="Courier" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="6c2-ts-vri" id="jMq-m3-e3g">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" metaFont="menu"/>
                                                 <menu key="menu" id="E7L-hh-PEz">
                                                     <items>
                                                         <menuItem title="Menlo" id="8hh-ii-DU4"/>
@@ -801,7 +801,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" title="Agate" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Q3A-iY-dFu" id="2Mr-1J-JcQ">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" metaFont="menu"/>
                                                 <menu key="menu" id="Wap-kl-UGe">
                                                     <items>
                                                         <menuItem title="Xcode" id="Ft9-3m-p7P"/>
@@ -936,7 +936,7 @@ Gw
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <popUpButtonCell key="cell" type="push" title="Xcode" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Hkm-3d-5yd" id="Tkb-qm-R4q">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" metaFont="menu"/>
                                                 <menu key="menu" id="fKZ-AI-8LX">
                                                     <items>
                                                         <menuItem title="Xcode" state="on" id="Hkm-3d-5yd"/>
@@ -1069,7 +1069,7 @@ Gw
                                 </view>
                             </box>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lbm-p1-KID">
-                                <rect key="frame" x="163" y="13" width="84" height="32"/>
+                                <rect key="frame" x="162" y="13" width="86" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="72" id="aUl-G1-7t6"/>
                                     <constraint firstAttribute="height" constant="21" id="pYX-cc-GKL"/>
@@ -1146,7 +1146,7 @@ Gw
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Dr7-ha-eyI">
-                                        <rect key="frame" x="13" y="612" width="227" height="61"/>
+                                        <rect key="frame" x="12" y="611" width="229" height="63"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="sUe-5f-zLS"/>
                                         </constraints>
@@ -1500,7 +1500,7 @@ Gw
                                             <constraint firstAttribute="height" constant="15" id="JMC-hi-9wB"/>
                                         </constraints>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="0 Lines" id="3UM-hd-9Ae">
-                                            <font key="font" metaFont="label" size="12"/>
+                                            <font key="font" metaFont="cellTitle"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
@@ -1512,7 +1512,7 @@ Gw
                                             <constraint firstAttribute="height" constant="15" id="kxt-vc-qlo"/>
                                         </constraints>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="0 Characters" id="U6z-Sg-PCs">
-                                            <font key="font" metaFont="label" size="12"/>
+                                            <font key="font" metaFont="cellTitle"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
@@ -1995,7 +1995,7 @@ Gw
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MQy-01-BSn">
-                                <rect key="frame" x="432" y="212" width="31" height="17"/>
+                                <rect key="frame" x="432" y="213" width="31" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="SJo-lR-fYi"/>
                                 </constraints>
