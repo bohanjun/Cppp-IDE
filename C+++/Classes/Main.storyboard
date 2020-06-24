@@ -1177,11 +1177,18 @@ Gw
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9w0-i2-cXR">
                                                 <rect key="frame" x="0.0" y="0.0" width="223" height="82"/>
-                                                <textFieldCell key="cell" lineBreakMode="clipping" borderStyle="bezel" drawsBackground="YES" id="dOp-0K-bJz">
+                                                <textFieldCell key="cell" lineBreakMode="clipping" drawsBackground="YES" id="dOp-0K-bJz">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="BackgroundColor"/>
                                                 </textFieldCell>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="wantsLayer" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="12"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </textField>
                                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3l4-4x-8MV">
                                                 <rect key="frame" x="10" y="12" width="63" height="60"/>
@@ -1239,11 +1246,18 @@ Gw
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wOn-ZL-BDf">
                                                 <rect key="frame" x="0.0" y="0.0" width="223" height="82"/>
-                                                <textFieldCell key="cell" lineBreakMode="clipping" borderStyle="bezel" drawsBackground="YES" id="bBE-JM-B3E">
+                                                <textFieldCell key="cell" lineBreakMode="clipping" drawsBackground="YES" id="bBE-JM-B3E">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="BackgroundColor"/>
                                                     <color key="backgroundColor" name="BackgroundColor"/>
                                                 </textFieldCell>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="wantsLayer" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="12"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </textField>
                                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qyq-TS-P9L">
                                                 <rect key="frame" x="10" y="12" width="63" height="60"/>
@@ -1301,11 +1315,18 @@ Gw
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vro-TC-84K">
                                                 <rect key="frame" x="0.0" y="0.0" width="223" height="82"/>
-                                                <textFieldCell key="cell" lineBreakMode="clipping" borderStyle="bezel" drawsBackground="YES" id="0ex-1f-nyJ">
+                                                <textFieldCell key="cell" lineBreakMode="clipping" drawsBackground="YES" id="0ex-1f-nyJ">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="BackgroundColor"/>
                                                 </textFieldCell>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="wantsLayer" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="12"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </textField>
                                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="anh-JZ-uSW">
                                                 <rect key="frame" x="10" y="12" width="63" height="60"/>
@@ -1363,11 +1384,18 @@ Gw
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tI3-v5-4aS">
                                                 <rect key="frame" x="0.0" y="0.0" width="223" height="82"/>
-                                                <textFieldCell key="cell" lineBreakMode="clipping" borderStyle="bezel" drawsBackground="YES" id="nuL-2c-MlP">
+                                                <textFieldCell key="cell" lineBreakMode="clipping" drawsBackground="YES" id="nuL-2c-MlP">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="BackgroundColor"/>
                                                 </textFieldCell>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="wantsLayer" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="12"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </textField>
                                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fas-v0-NSn">
                                                 <rect key="frame" x="10" y="12" width="63" height="60"/>
