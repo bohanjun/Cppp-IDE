@@ -23,7 +23,7 @@ var compileConfig: CDCompileSettings? {
         return CDSettingsViewController.getSavedCompileSettings()
     }
     set {
-        NSKeyedArchiver.archiveRootObject(newValue!, toFile: CDCompileSettings.ArchiveURL.path)
+        NSKeyedArchiver.archiveRootObject(newValue!, toFile: CDCompileSettings.archiveURL.path)
     }
 }
 
@@ -142,7 +142,7 @@ class CDSettingsViewController: NSViewController {
     }
     
     public static func getSavedCompileSettings() -> CDCompileSettings? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: CDCompileSettings.ArchiveURL.path) as? CDCompileSettings
+        return NSKeyedUnarchiver.unarchiveObject(withFile: CDCompileSettings.archiveURL.path) as? CDCompileSettings
     }
     
 }

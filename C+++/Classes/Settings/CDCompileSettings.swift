@@ -13,12 +13,12 @@ class CDCompileSettings: NSObject, NSCoding {
     var compiler: String!
     var arguments: String!
     
-    static let DocumentsDirectory = FileManager().urls(for: .libraryDirectory, in: .userDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("C+++").appendingPathComponent("CompileSettings")
+    static let documentsDirectory = FileManager().urls(for: .libraryDirectory, in: .userDomainMask).first!
+    static let archiveURL = documentsDirectory.appendingPathComponent("C+++").appendingPathComponent("CompileSettings")
     
     struct PropertyKey {
-        static let Compiler = "Compiler"
-        static let Arguments = "Arguments"
+        static let compiler = "Compiler"
+        static let arguments = "Arguments"
     }
     
     init?(_ compiler: String?, _ arguments: String?) {
@@ -28,15 +28,16 @@ class CDCompileSettings: NSObject, NSCoding {
     
     
     func encode(with coder: NSCoder) {
-        coder.encode(compiler, forKey: PropertyKey.Compiler)
-        coder.encode(arguments, forKey: PropertyKey.Arguments)
+        coder.encode(compiler, forKey: PropertyKey.compiler)
+        coder.encode(arguments, forKey: PropertyKey.arguments)
     }
     
     required convenience init?(coder: NSCoder) {
-        let compiler = coder.decodeObject(forKey: PropertyKey.Compiler) as? String
-        let arguments = coder.decodeObject(forKey: PropertyKey.Arguments) as? String
+        let compiler = coder.decodeObject(forKey: PropertyKey.compiler) as? String
+        let arguments = coder.decodeObject(forKey: PropertyKey.arguments) as? String
         
         self.init(compiler, arguments)
+        
     }
     
 }
