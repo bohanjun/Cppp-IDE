@@ -1,61 +1,61 @@
 {
   "images" : [
     {
-      "filename" : "CpppIcon_2_0_16.png",
+      "filename" : "AppIcon_16×16.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "16x16"
     },
     {
-      "filename" : "CpppIcon_2_0_32-1.png",
+      "filename" : "AppIcon_32×32-1.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "16x16"
     },
     {
-      "filename" : "CpppIcon_2_0_32.png",
+      "filename" : "AppIcon_32×32.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "32x32"
     },
     {
-      "filename" : "CpppIcon_2_0_64.png",
+      "filename" : "AppIcon_64×64.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "32x32"
     },
     {
-      "filename" : "CpppIcon_2_0_128.png",
+      "filename" : "AppIcon_128×128.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "128x128"
     },
     {
-      "filename" : "CpppIcon_2_0_256-1.png",
+      "filename" : "AppIcon_256×256-1.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "128x128"
     },
     {
-      "filename" : "CpppIcon_2_0_256.png",
+      "filename" : "AppIcon_256×256.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "256x256"
     },
     {
-      "filename" : "CpppIcon_2_0_512-1.png",
+      "filename" : "AppIcon_512×512-1.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "256x256"
     },
     {
-      "filename" : "CpppIcon_2_0_512.png",
+      "filename" : "AppIcon_512×512.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "512x512"
     },
     {
-      "filename" : "CpppIcon_2_0_1024.png",
+      "filename" : "AppIcon_1024×1024.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "512x512"

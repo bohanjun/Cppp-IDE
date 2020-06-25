@@ -188,7 +188,7 @@ class CDCodeDocument: NSDocument {
         
         self.save(self)
         self.contentViewController.setStatus(string: "\(self.fileURL?.lastPathComponent ?? "C+++") | Compiling...")
-        let res = CDFileCompiler.CompileWithoutRunning(fileURL: self.fileURL?.path ?? "")
+        let res = CDFileCompiler.compileFileWithoutRunning(fileURL: self.fileURL?.path ?? "")
         self.contentViewController.compileInfo.string = res
         self.contentViewController.setStatus(string: "\(self.fileURL?.lastPathComponent ?? "C+++") | Compile Finished")
         

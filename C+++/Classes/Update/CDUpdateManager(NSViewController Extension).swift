@@ -20,6 +20,8 @@ extension NSViewController {
         
         CDUpdateManager.getVersionAndUpdateInformation { (latestVersion, updateInformation, url) in
             
+            self.sendUserNotification(title: "Checking For Updates...", subtitle: "This may take a few seconds.")
+            
             DispatchQueue.main.async {
                 
                 let currentVersion = CDUpdateManager.getCurrentVersion()

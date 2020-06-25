@@ -2597,7 +2597,7 @@ Gw
         <image name="Undo" width="255" height="255"/>
         <image name="Update" width="580" height="580"/>
         <namedColor name="BackgroundColor">
-            <color red="0.92400000000000004" green="0.92400000000000004" blue="0.92429041520260169" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.92400002479553223" green="0.92400002479553223" blue="0.92400002479553223" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="LaunchVCSideBarColor">
             <color red="0.89999997615814209" green="0.89999997615814209" blue="0.89999997615814209" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

@@ -15,6 +15,7 @@
 		1860EC3324839A8B0066DE64 /* CDDocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1860EC3224839A8B0066DE64 /* CDDocumentController.swift */; };
 		1868EBD5244981C2005467B2 /* CDCompileSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1868EBD4244981C2005467B2 /* CDCompileSettings.swift */; };
 		1868EBD7244AF934005467B2 /* CDCodeEditorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1868EBD6244AF934005467B2 /* CDCodeEditorDelegate.swift */; };
+		186AC7F324A47BD900F6B682 /* NSViewController+NSUserNotificationCenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186AC7F224A47BD900F6B682 /* NSViewController+NSUserNotificationCenterDelegate.swift */; };
 		187527B0247A6A1900A7522A /* CDLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187527AF247A6A1900A7522A /* CDLaunchViewController.swift */; };
 		18A41AA2242C756700AFC422 /* CDHighlightr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A41AA1242C756700AFC422 /* CDHighlightr.swift */; };
 		18A41AA4242C758B00AFC422 /* CDHighlightrTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A41AA3242C758B00AFC422 /* CDHighlightrTheme.swift */; };
@@ -165,6 +166,7 @@
 		1861349624A366F100AC9709 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		1868EBD4244981C2005467B2 /* CDCompileSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDCompileSettings.swift; sourceTree = "<group>"; };
 		1868EBD6244AF934005467B2 /* CDCodeEditorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDCodeEditorDelegate.swift; sourceTree = "<group>"; };
+		186AC7F224A47BD900F6B682 /* NSViewController+NSUserNotificationCenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSViewController+NSUserNotificationCenterDelegate.swift"; sourceTree = "<group>"; };
 		187527AF247A6A1900A7522A /* CDLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDLaunchViewController.swift; sourceTree = "<group>"; };
 		187EF969248C86DD0023F381 /* C+++-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "C+++-Bridging-Header.h"; sourceTree = "<group>"; };
 		18A41AA1242C756700AFC422 /* CDHighlightr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDHighlightr.swift; sourceTree = "<group>"; };
@@ -527,6 +529,7 @@
 			children = (
 				18B3C7932428378E00F4CA14 /* CDMainWindowController.swift */,
 				18B3C78124282C1F00F4CA14 /* CDMainViewController.swift */,
+				186AC7F224A47BD900F6B682 /* NSViewController+NSUserNotificationCenterDelegate.swift */,
 			);
 			path = "Main View Controller";
 			sourceTree = "<group>";
@@ -632,7 +635,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Zhu Yixuan";
 				TargetAttributes = {
 					18B3C77C24282C1F00F4CA14 = {
@@ -778,6 +781,7 @@
 				18B1857F2465AB2E00B579AD /* CDParser.swift in Sources */,
 				1868EBD5244981C2005467B2 /* CDCompileSettings.swift in Sources */,
 				18A41AA8242C75C300AFC422 /* CDHighlightrShims.swift in Sources */,
+				186AC7F324A47BD900F6B682 /* NSViewController+NSUserNotificationCenterDelegate.swift in Sources */,
 				180480AE2448602700CD0A4D /* CDSettings.swift in Sources */,
 				18E72920244E756E000317D7 /* CDLineNumberScrollView.swift in Sources */,
 				18B185732463B32400B579AD /* CDSnippetPopoperViewController.swift in Sources */,
@@ -838,6 +842,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -898,6 +903,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

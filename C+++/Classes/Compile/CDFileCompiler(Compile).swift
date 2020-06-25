@@ -14,7 +14,7 @@ extension CDFileCompiler {
     - parameter fileURL: The path of the file.
     - returns: The result to be displayed in the "Compile Info"  text view.
     */
-    public static func CompileWithoutRunning(fileURL: String, arguments: String = compileConfig!.arguments ?? "") -> String {
+    public static func compileFileWithoutRunning(fileURL: String, arguments: String = compileConfig!.arguments ?? "") -> String {
          
         // The path of the file
         let _fileURL = "\"" + fileURL + "\""
