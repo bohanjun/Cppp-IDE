@@ -48,8 +48,6 @@ class CDLaunchViewController: NSViewController, CDSettingsViewDelegate {
         newProjectView.isHidden = true
         aboutView.isHidden = false
         
-        checkUpdate(alsoShowAlertWhenUpToDate: false)
-        
     }
     
     override func viewDidLoad() {
