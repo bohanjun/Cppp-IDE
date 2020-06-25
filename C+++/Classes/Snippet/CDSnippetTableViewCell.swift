@@ -10,6 +10,12 @@ import Cocoa
 
 class CDSnippetTableViewCell: NSView, CDSnippetPopoverViewControllerDelegate {
     
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
+        NSColor.textBackgroundColor.set()
+        self.bounds.fill()
+    }
+    
     var title: String!
     var code: String!
     var image: NSImage!

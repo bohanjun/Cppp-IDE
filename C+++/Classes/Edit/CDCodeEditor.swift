@@ -45,7 +45,7 @@ extension String {
 
 
 
-class CDCodeEditor: NSTextView {
+open class CDCodeEditor: NSTextView {
 
     let highlightr = CDHighlightr()
     var gutterDelegate: CDCodeEditorDelegate!
@@ -59,7 +59,7 @@ class CDCodeEditor: NSTextView {
     
     
     /// When the text changes, highlight the text.
-    override func didChangeText() {
+    open override func didChangeText() {
         
         super.didChangeText()
         
@@ -85,7 +85,7 @@ class CDCodeEditor: NSTextView {
     /// - Parameters:
     ///   - string: The text to insert, either an NSString or NSAttributedString instance.
     ///   - replacementRange: The range of content to replace in the receiver’s text storage.
-    override func insertText(_ string: Any, replacementRange: NSRange) {
+    open override func insertText(_ string: Any, replacementRange: NSRange) {
         super.insertText(string, replacementRange: replacementRange)
         
         if config!.autoComplete == false {
@@ -123,7 +123,7 @@ class CDCodeEditor: NSTextView {
     
     
     /// When press ENTER, insert tabs.
-    override func insertNewline(_ sender: Any?) {
+    open override func insertNewline(_ sender: Any?) {
         super.insertNewline(sender)
         
         let nsstring = NSString(string: self.string)
@@ -140,7 +140,7 @@ class CDCodeEditor: NSTextView {
     }
     
     
-    override func completions(forPartialWordRange charRange: NSRange, indexOfSelectedItem index: UnsafeMutablePointer<Int>) -> [String]? {
+    open override func completions(forPartialWordRange charRange: NSRange, indexOfSelectedItem index: UnsafeMutablePointer<Int>) -> [String]? {
         
         func compare(_ a: String, _ b: String) -> Int {
             var cnt: Int = 0
@@ -173,18 +173,18 @@ class CDCodeEditor: NSTextView {
     }
     
     
-    override func complete(_ sender: Any?) {
+    open override func complete(_ sender: Any?) {
         super.complete(sender)
     }
     
     
-    override func insertCompletion(_ word: String, forPartialWordRange charRange: NSRange, movement: Int, isFinal flag: Bool) {
+    open override func insertCompletion(_ word: String, forPartialWordRange charRange: NSRange, movement: Int, isFinal flag: Bool) {
         super.insertCompletion(word, forPartialWordRange: charRange, movement: movement, isFinal: flag)
     }
     
     
     // MARK: - init(coder:)
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)
         
         self.textContainer?.size = NSSize(width: CGFloat(Int.max), height: CGFloat(Int.max))

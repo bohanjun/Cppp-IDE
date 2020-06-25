@@ -65,7 +65,7 @@
                     </textFieldCell>
                 </textField>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4oc-fq-kaQ">
-                    <rect key="frame" x="18" y="364" width="97" height="37"/>
+                    <rect key="frame" x="17" y="363" width="99" height="39"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="32" id="iL9-Pq-RjF"/>
                         <constraint firstAttribute="width" constant="93" id="kG3-bs-mn4"/>
@@ -79,11 +79,11 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gJz-dP-rqB">
-                    <rect key="frame" x="19" y="240" width="97" height="31"/>
+                    <rect key="frame" x="18" y="239" width="99" height="33"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="26" id="tEP-vU-FYt"/>
                     </constraints>
-                    <buttonCell key="cell" type="bevel" title="Run" bezelStyle="regularSquare" image="NSTouchBarPlayTemplate" imagePosition="left" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Q19-RT-yme">
+                    <buttonCell key="cell" type="bevel" title=" Run" bezelStyle="regularSquare" image="NSTouchBarPlayTemplate" imagePosition="left" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Q19-RT-yme">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -92,11 +92,11 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iYx-qC-CKo">
-                    <rect key="frame" x="119" y="240" width="97" height="31"/>
+                    <rect key="frame" x="118" y="239" width="99" height="33"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="93" id="wpF-17-CiE"/>
                     </constraints>
-                    <buttonCell key="cell" type="bevel" title="Next" bezelStyle="regularSquare" image="NSTouchBarGoForwardTemplate" imagePosition="left" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="i26-0p-RA3">
+                    <buttonCell key="cell" type="bevel" title=" Next" bezelStyle="regularSquare" image="NSTouchBarGoForwardTemplate" imagePosition="left" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="i26-0p-RA3">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -105,11 +105,11 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ki8-uU-OkA">
-                    <rect key="frame" x="219" y="240" width="97" height="31"/>
+                    <rect key="frame" x="218" y="239" width="99" height="33"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="93" id="0SE-gg-GeR"/>
                     </constraints>
-                    <buttonCell key="cell" type="bevel" title="Step" bezelStyle="regularSquare" image="NSTouchBarGoForwardTemplate" imagePosition="left" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dGI-Bm-ADJ">
+                    <buttonCell key="cell" type="bevel" title=" Step" bezelStyle="regularSquare" image="NSTouchBarGoForwardTemplate" imagePosition="left" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dGI-Bm-ADJ">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -118,7 +118,7 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cuk-Ut-Bhs">
-                    <rect key="frame" x="574" y="278" width="41" height="17"/>
+                    <rect key="frame" x="574" y="279" width="41" height="16"/>
                     <buttonCell key="cell" type="inline" title="Send" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="LzK-at-vwD">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="smallSystemBold"/>
@@ -144,11 +144,11 @@
                     </textFieldCell>
                 </textField>
                 <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MWp-sT-jK1">
-                    <rect key="frame" x="320" y="240" width="97" height="31"/>
+                    <rect key="frame" x="319" y="239" width="99" height="33"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="93" id="ZIh-73-dk5"/>
                     </constraints>
-                    <buttonCell key="cell" type="bevel" title="Finish" bezelStyle="regularSquare" image="NSTouchBarGoForwardTemplate" imagePosition="left" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Yjs-Og-nAo">
+                    <buttonCell key="cell" type="bevel" title=" Finish" bezelStyle="regularSquare" image="NSTouchBarGoForwardTemplate" imagePosition="left" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Yjs-Og-nAo">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -157,11 +157,11 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h7B-HN-k6G">
-                    <rect key="frame" x="420" y="240" width="97" height="31"/>
+                    <rect key="frame" x="419" y="239" width="99" height="33"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="93" id="kpg-GD-tyb"/>
                     </constraints>
-                    <buttonCell key="cell" type="bevel" title="Continue" bezelStyle="regularSquare" image="NSTouchBarGoForwardTemplate" imagePosition="left" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ucW-vm-R9L">
+                    <buttonCell key="cell" type="bevel" title=" Continue" bezelStyle="regularSquare" image="NSTouchBarGoForwardTemplate" imagePosition="left" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ucW-vm-R9L">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -170,8 +170,8 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vAz-Ch-U2Q">
-                    <rect key="frame" x="520" y="240" width="99" height="31"/>
-                    <buttonCell key="cell" type="bevel" title="Variables" bezelStyle="regularSquare" image="NSQuickLookTemplate" imagePosition="left" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YvZ-eZ-Yes">
+                    <rect key="frame" x="519" y="239" width="101" height="33"/>
+                    <buttonCell key="cell" type="bevel" title=" Variables" bezelStyle="regularSquare" image="NSQuickLookTemplate" imagePosition="left" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YvZ-eZ-Yes">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -180,7 +180,7 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XVS-8Z-MQ1">
-                    <rect key="frame" x="119" y="364" width="97" height="37"/>
+                    <rect key="frame" x="118" y="363" width="99" height="39"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="32" id="Ndt-hn-owm"/>
                         <constraint firstAttribute="width" constant="93" id="nwe-Iv-R0c"/>
