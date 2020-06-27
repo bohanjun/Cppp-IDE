@@ -64,7 +64,7 @@ extension String {
 
 
 
-class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsViewDelegate, CDCodeEditorDelegate, CDSnippetPopoverViewControllerDelegate {
+class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsViewDelegate, CDCodeEditorDelegate, CDSnippetPopoverViewControllerDelegate, NSSplitViewDelegate {
     
 // MARK: - Properties
     
@@ -86,8 +86,10 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
     /// Whether the file info view is hidden.
     var left = true
     
-    @IBOutlet var mainTextView: CDCodeEditor!
-    @IBOutlet var lineNumberTextView: CDLineNumberTextView!
+    
+    
+    @IBOutlet weak var mainTextView: CDCodeEditor!
+    @IBOutlet weak var lineNumberTextView: CDLineNumberTextView!
     @IBOutlet weak var pathControl: NSPathControl!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var rightConstraint: NSLayoutConstraint!
@@ -96,11 +98,29 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
     @IBOutlet weak var scrollViewOfTextView: CDLineNumberScrollView!
     @IBOutlet weak var linesLabel: NSTextField!
     @IBOutlet weak var charactersLabel: NSTextField!
-    @IBOutlet var compileInfo: NSTextView!
+    @IBOutlet weak var compileInfo: NSTextView!
     @IBOutlet weak var compileView: NSView!
     @IBOutlet weak var fileAndSnippetView: NSView!
+    @IBOutlet weak var bigSplitView: NSSplitView!
+    @IBOutlet weak var smallSplitView: NSSplitView!
     
     
+    
+    
+    
+    
+    
+// MARK: - Split View Delegate
+    
+    func splitView(_ splitView: NSSplitView, canCollapseSubview subview: NSView) -> Bool {
+        
+        if subview == self.fileAndSnippetView {
+            return true
+        } else {
+            return false
+        }
+        
+    }
     
     
     

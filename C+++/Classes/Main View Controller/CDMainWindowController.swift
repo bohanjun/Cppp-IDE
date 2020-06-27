@@ -17,9 +17,8 @@ class CDMainWindowController: NSWindowController, NSWindowDelegate {
         
         if #available(OSX 10.14, *) {
             self.window?.appearance = darkAqua
-        } else {
-            
         }
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -45,22 +44,9 @@ class CDMainWindowController: NSWindowController, NSWindowDelegate {
         
     }
     
-    @IBAction func toggleCompileInfoViewShown(_ sender: Any) {
-        
-        let vc = (self.contentViewController as! CDMainViewController)
-        if vc.bottom == true {
-            vc.bottomConstraint.constant = 22.0
-            vc.bottom = false
-        } else {
-            vc.bottomConstraint.constant = 165.0
-            vc.bottom = true
-        }
-        
-    }
-    
     @IBAction func toggleCompileViewShown(_ sender: Any) {
         
-        let vc = (self.contentViewController as! CDMainViewController)
+        let vc = self.contentViewController as! CDMainViewController
         if vc.right == true {
             vc.rightConstraint.constant = 0.0
             vc.right = false
@@ -69,21 +55,6 @@ class CDMainWindowController: NSWindowController, NSWindowDelegate {
             vc.rightConstraint.constant = 253.0
             vc.right = true
             vc.compileView.isHidden = false
-        }
-        
-    }
-    
-    @IBAction func toggleFileViewShown(_ sender: Any) {
-        
-        let vc = (self.contentViewController as! CDMainViewController)
-        if vc.left == true {
-            vc.leftConstraint.constant = 0.0
-            vc.left = false
-            vc.fileAndSnippetView.isHidden = true
-        } else {
-            vc.leftConstraint.constant = 219.0
-            vc.left = true
-            vc.fileAndSnippetView.isHidden = false
         }
         
     }

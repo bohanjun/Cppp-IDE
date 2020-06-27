@@ -551,7 +551,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController storyboardIdentifier="Document Window Controller" id="jGA-0Y-lOj" customClass="CDMainWindowController" customModule="C___" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" identifier="Document Window Controller" title="Untitled.cpp" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" tabbingMode="preferred" toolbarStyle="unified" id="Ckk-yw-fiv">
+                    <window key="window" identifier="Document Window Controller" title="Untitled.cpp" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" tabbingMode="preferred" toolbarStyle="unified" titleVisibility="hidden" id="Ckk-yw-fiv">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="89" y="664" width="1080" height="720"/>
@@ -561,34 +561,6 @@
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="eIb-XZ-6HS"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="5Eg-DZ-en8"/>
-                                <toolbarItem implicitItemIdentifier="CD4CBE8F-5908-4DEA-94C3-403FC1EFDFF5" explicitItemIdentifier="Left" label="File Information" paletteLabel="File Information" image="NSTouchBarGoBackTemplate" sizingBehavior="auto" id="2Dn-Xg-q3W">
-                                    <nil key="toolTip"/>
-                                    <button key="view" verticalHuggingPriority="750" id="oet-RU-QaX">
-                                        <rect key="frame" x="32" y="14" width="26" height="26"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <buttonCell key="cell" type="round" bezelStyle="circular" image="NSTouchBarGoBackTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gdn-mS-Qn4">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="toggleFileViewShown:" target="jGA-0Y-lOj" id="U3q-Vt-3Fi"/>
-                                        </connections>
-                                    </button>
-                                </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="50CA4B36-93A9-48D8-B122-3E774A2764E5" explicitItemIdentifier="Right" label="Compile View" paletteLabel="Compile View" image="NSTouchBarGoForwardTemplate" sizingBehavior="auto" id="jqT-Vf-vqj">
-                                    <nil key="toolTip"/>
-                                    <button key="view" verticalHuggingPriority="750" id="dyS-MN-Xd8">
-                                        <rect key="frame" x="27" y="14" width="26" height="26"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <buttonCell key="cell" type="round" bezelStyle="circular" image="NSTouchBarGoForwardTemplate" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Ymf-pD-Twg">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="toggleCompileViewShown:" target="jGA-0Y-lOj" id="gZh-yC-cSf"/>
-                                        </connections>
-                                    </button>
-                                </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="0BF3A7D5-19D8-4E1D-8F08-3AE4A0709FBA" label="Status" paletteLabel="Status" id="vjF-PO-DLw">
                                     <nil key="toolTip"/>
                                     <size key="minSize" width="290" height="25"/>
@@ -612,14 +584,20 @@
                                         <action selector="compileFile:" target="6f7-a7-6o1" id="HaJ-uj-eEm"/>
                                     </connections>
                                 </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="231C080A-2FB6-4940-9D72-78F19FABA1DC" label="Compile View" paletteLabel="Compile View" tag="-1" image="CompileView" id="eW6-E2-pZH">
+                                    <size key="minSize" width="32" height="32"/>
+                                    <size key="maxSize" width="32" height="32"/>
+                                    <connections>
+                                        <action selector="toggleCompileViewShown:" target="jGA-0Y-lOj" id="P44-z2-2MD"/>
+                                    </connections>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="Qet-oC-g8p"/>
                                 <toolbarItem reference="5Eg-DZ-en8"/>
                                 <toolbarItem reference="vjF-PO-DLw"/>
                                 <toolbarItem reference="5Eg-DZ-en8"/>
-                                <toolbarItem reference="2Dn-Xg-q3W"/>
-                                <toolbarItem reference="jqT-Vf-vqj"/>
+                                <toolbarItem reference="eW6-E2-pZH"/>
                             </defaultToolbarItems>
                         </toolbar>
                         <connections>
@@ -1089,9 +1067,8 @@ Gw
                         <rect key="frame" x="0.0" y="0.0" width="1080" height="720"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qkV-Pw-MXt">
-                                <rect key="frame" x="827" y="0.0" width="253" height="720"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="qkV-Pw-MXt">
+                                <rect key="frame" x="828" y="0.0" width="252" height="720"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Ci-A4-t6w">
                                         <rect key="frame" x="193" y="688" width="16" height="22"/>
@@ -1373,7 +1350,7 @@ Gw
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="olj-kb-MX6">
-                                        <rect key="frame" x="99" y="578" width="76" height="33"/>
+                                        <rect key="frame" x="101" y="578" width="76" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="bevel" title="Compile" bezelStyle="regularSquare" image="NSTouchBarPlayTemplate" imagePosition="left" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="Dgk-8t-4EW">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -1395,8 +1372,11 @@ Gw
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="252" id="sBe-Fc-HWO"/>
+                                </constraints>
                             </customView>
-                            <splitView arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LB2-Rd-Bhv">
+                            <splitView dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LB2-Rd-Bhv">
                                 <rect key="frame" x="0.0" y="0.0" width="828" height="720"/>
                                 <subviews>
                                     <customView id="Qyo-s2-8ZO">
@@ -1406,8 +1386,8 @@ Gw
                                             <button hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XjK-g4-Xti">
                                                 <rect key="frame" x="2" y="-1" width="17" height="20"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="17" id="DuO-TG-Jbk"/>
-                                                    <constraint firstAttribute="height" constant="18" id="P0w-uI-Pdg"/>
+                                                    <constraint firstAttribute="width" constant="17" id="4dj-Om-RLN"/>
+                                                    <constraint firstAttribute="height" constant="18" id="MP8-HA-oxT"/>
                                                 </constraints>
                                                 <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="ET2-hz-STm">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -1441,7 +1421,7 @@ Gw
                                                             </binding>
                                                         </connections>
                                                     </textField>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pX0-ko-mBy">
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="185" translatesAutoresizingMaskIntoConstraints="NO" id="pX0-ko-mBy">
                                                         <rect key="frame" x="11" y="564" width="189" height="52"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="52" id="y35-JE-27x"/>
@@ -1560,26 +1540,26 @@ Gw
                                                             </button>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="189" id="EFi-GG-Gyn"/>
                                                             <constraint firstAttribute="height" constant="38" id="S46-86-Jkw"/>
                                                         </constraints>
                                                     </customView>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="217" id="3ii-An-O0Q"/>
                                                     <constraint firstItem="pX0-ko-mBy" firstAttribute="trailing" secondItem="GhK-qN-kZs" secondAttribute="trailing" id="4h2-oD-0CE"/>
+                                                    <constraint firstItem="GhK-qN-kZs" firstAttribute="top" secondItem="TzQ-K8-fWw" secondAttribute="top" constant="9" id="4qz-xl-0Eo"/>
                                                     <constraint firstItem="Vcf-8L-D6E" firstAttribute="top" secondItem="eGn-Ho-Xj8" secondAttribute="bottom" constant="7" id="5QS-We-lXh"/>
-                                                    <constraint firstItem="Hxm-LV-0KQ" firstAttribute="leading" secondItem="TzQ-K8-fWw" secondAttribute="leading" constant="14" id="C1l-MQ-Nox"/>
-                                                    <constraint firstItem="GhK-qN-kZs" firstAttribute="top" secondItem="TzQ-K8-fWw" secondAttribute="top" constant="9" id="EhM-x1-4cp"/>
+                                                    <constraint firstItem="Hxm-LV-0KQ" firstAttribute="leading" secondItem="TzQ-K8-fWw" secondAttribute="leading" constant="14" id="CcX-wH-4jt"/>
+                                                    <constraint firstItem="GhK-qN-kZs" firstAttribute="leading" secondItem="TzQ-K8-fWw" secondAttribute="leading" constant="13" id="EV1-ix-jrp"/>
                                                     <constraint firstItem="eGn-Ho-Xj8" firstAttribute="top" secondItem="wgw-En-fwu" secondAttribute="bottom" constant="1" id="EtE-w3-4hP"/>
                                                     <constraint firstItem="pX0-ko-mBy" firstAttribute="top" secondItem="GhK-qN-kZs" secondAttribute="bottom" constant="8" id="JR6-hR-DNg"/>
                                                     <constraint firstItem="Hxm-LV-0KQ" firstAttribute="top" secondItem="wgw-En-fwu" secondAttribute="bottom" constant="1" id="O9J-Ka-YZB"/>
                                                     <constraint firstItem="wgw-En-fwu" firstAttribute="top" secondItem="GhK-qN-kZs" secondAttribute="bottom" constant="58" id="O9z-nJ-aVr"/>
-                                                    <constraint firstItem="wgw-En-fwu" firstAttribute="centerX" secondItem="TzQ-K8-fWw" secondAttribute="centerX" id="X2w-YV-GPP"/>
-                                                    <constraint firstItem="Vcf-8L-D6E" firstAttribute="leading" secondItem="TzQ-K8-fWw" secondAttribute="leading" constant="14" id="dwh-eq-LOw"/>
+                                                    <constraint firstAttribute="trailing" secondItem="wgw-En-fwu" secondAttribute="trailing" constant="14" id="OmU-7N-kSb"/>
+                                                    <constraint firstItem="wgw-En-fwu" firstAttribute="leading" secondItem="TzQ-K8-fWw" secondAttribute="leading" constant="14" id="Ugk-YC-GAW"/>
+                                                    <constraint firstAttribute="width" constant="217" id="arO-eb-F2g"/>
+                                                    <constraint firstItem="Vcf-8L-D6E" firstAttribute="leading" secondItem="TzQ-K8-fWw" secondAttribute="leading" constant="14" id="fof-Uv-TwO"/>
                                                     <constraint firstItem="eGn-Ho-Xj8" firstAttribute="leading" secondItem="Hxm-LV-0KQ" secondAttribute="trailing" constant="8" id="gXN-Iy-Idj"/>
                                                     <constraint firstItem="pX0-ko-mBy" firstAttribute="leading" secondItem="GhK-qN-kZs" secondAttribute="leading" id="geb-F6-uMT"/>
-                                                    <constraint firstItem="GhK-qN-kZs" firstAttribute="leading" secondItem="TzQ-K8-fWw" secondAttribute="leading" constant="13" id="izN-xn-JD5"/>
                                                     <constraint firstItem="Vcf-8L-D6E" firstAttribute="top" secondItem="Hxm-LV-0KQ" secondAttribute="bottom" constant="7" id="zUu-LD-DnY"/>
                                                 </constraints>
                                             </customView>
@@ -1638,7 +1618,7 @@ Gw
                                                     </subviews>
                                                 </clipView>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="217" id="Efo-U6-6yg"/>
+                                                    <constraint firstAttribute="width" constant="217" id="CVZ-QJ-pIF"/>
                                                 </constraints>
                                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="QLr-CA-ieV">
                                                     <rect key="frame" x="-100" y="-100" width="219" height="15"/>
@@ -1650,11 +1630,7 @@ Gw
                                                 </scroller>
                                             </scrollView>
                                             <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yvz-sc-WpK">
-                                                <rect key="frame" x="23" y="681" width="172" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="170" id="QR3-Cu-Q7A"/>
-                                                    <constraint firstAttribute="height" constant="18" id="rPp-cL-mlK"/>
-                                                </constraints>
+                                                <rect key="frame" x="22" y="681" width="172" height="20"/>
                                                 <segmentedCell key="cell" borderStyle="border" alignment="left" segmentDistribution="fillEqually" style="roundRect" trackingMode="selectOne" id="ZsW-lY-tvs">
                                                     <font key="font" metaFont="cellTitle"/>
                                                     <segments>
@@ -1668,18 +1644,20 @@ Gw
                                             </segmentedControl>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="XjK-g4-Xti" firstAttribute="leading" secondItem="Qyo-s2-8ZO" secondAttribute="leading" constant="2" id="IT6-fU-lkQ"/>
-                                            <constraint firstAttribute="bottom" secondItem="TzQ-K8-fWw" secondAttribute="bottom" constant="20" id="M9J-b7-58j"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="217" id="Mgk-en-obH"/>
-                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="217" id="RP0-K3-Glo"/>
-                                            <constraint firstAttribute="bottom" secondItem="5hZ-8U-hjU" secondAttribute="bottom" constant="20" id="U7L-3f-sBW"/>
-                                            <constraint firstItem="Yvz-sc-WpK" firstAttribute="top" secondItem="Qyo-s2-8ZO" secondAttribute="top" constant="20" id="URL-Hb-O7C"/>
-                                            <constraint firstItem="Yvz-sc-WpK" firstAttribute="centerX" secondItem="Qyo-s2-8ZO" secondAttribute="centerX" id="W0m-kM-htD"/>
-                                            <constraint firstItem="5hZ-8U-hjU" firstAttribute="top" secondItem="Yvz-sc-WpK" secondAttribute="bottom" constant="8" id="adx-mT-yhe"/>
-                                            <constraint firstItem="TzQ-K8-fWw" firstAttribute="centerX" secondItem="Qyo-s2-8ZO" secondAttribute="centerX" id="oHX-JU-6sm"/>
-                                            <constraint firstItem="TzQ-K8-fWw" firstAttribute="top" secondItem="Yvz-sc-WpK" secondAttribute="bottom" constant="8" id="pF4-FY-YPZ"/>
-                                            <constraint firstItem="XjK-g4-Xti" firstAttribute="top" secondItem="5hZ-8U-hjU" secondAttribute="bottom" constant="2" id="xQb-Zf-dnv"/>
-                                            <constraint firstItem="5hZ-8U-hjU" firstAttribute="centerX" secondItem="Qyo-s2-8ZO" secondAttribute="centerX" id="xxb-eP-KSN"/>
+                                            <constraint firstItem="Yvz-sc-WpK" firstAttribute="top" secondItem="Qyo-s2-8ZO" secondAttribute="top" constant="20" id="3Gk-mi-O84"/>
+                                            <constraint firstItem="5hZ-8U-hjU" firstAttribute="leading" secondItem="Qyo-s2-8ZO" secondAttribute="leading" id="43Z-3q-lYX"/>
+                                            <constraint firstAttribute="trailing" secondItem="5hZ-8U-hjU" secondAttribute="trailing" id="69c-88-dhS"/>
+                                            <constraint firstItem="TzQ-K8-fWw" firstAttribute="leading" secondItem="Qyo-s2-8ZO" secondAttribute="leading" id="7x4-OH-Ebg"/>
+                                            <constraint firstItem="XjK-g4-Xti" firstAttribute="leading" secondItem="Qyo-s2-8ZO" secondAttribute="leading" constant="2" id="8sF-p0-JFD"/>
+                                            <constraint firstItem="Yvz-sc-WpK" firstAttribute="leading" secondItem="Qyo-s2-8ZO" secondAttribute="leading" constant="23" id="Bbl-P3-sD5"/>
+                                            <constraint firstAttribute="trailing" secondItem="TzQ-K8-fWw" secondAttribute="trailing" id="Q7H-Ex-Nqt"/>
+                                            <constraint firstAttribute="bottom" secondItem="TzQ-K8-fWw" secondAttribute="bottom" constant="20" id="UVo-73-NV8"/>
+                                            <constraint firstItem="TzQ-K8-fWw" firstAttribute="top" secondItem="Qyo-s2-8ZO" secondAttribute="top" constant="46" id="byZ-mQ-kxo"/>
+                                            <constraint firstItem="5hZ-8U-hjU" firstAttribute="top" secondItem="Qyo-s2-8ZO" secondAttribute="top" constant="46" id="cfd-Un-yd4"/>
+                                            <constraint firstAttribute="bottom" secondItem="XjK-g4-Xti" secondAttribute="bottom" id="f6k-4c-5DW"/>
+                                            <constraint firstAttribute="bottom" secondItem="5hZ-8U-hjU" secondAttribute="bottom" constant="20" id="kVg-MK-zD5"/>
+                                            <constraint firstAttribute="trailing" secondItem="Yvz-sc-WpK" secondAttribute="trailing" constant="24" id="qhJ-V9-5tl"/>
+                                            <constraint firstItem="5hZ-8U-hjU" firstAttribute="top" secondItem="Yvz-sc-WpK" secondAttribute="bottom" constant="8" id="sSR-vY-71h"/>
                                         </constraints>
                                     </customView>
                                     <customView id="Cwa-V7-gw1">
@@ -1915,17 +1893,24 @@ Gw
                                     <real value="250"/>
                                     <real value="250"/>
                                 </holdingPriorities>
+                                <connections>
+                                    <outlet property="delegate" destination="5gI-5U-AMq" id="fbY-Jj-Se0"/>
+                                </connections>
                             </splitView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="LB2-Rd-Bhv" firstAttribute="top" secondItem="ERx-hH-rdd" secondAttribute="top" id="B0n-zs-GUF"/>
+                            <constraint firstAttribute="trailing" secondItem="qkV-Pw-MXt" secondAttribute="trailing" id="G6B-8l-pbG"/>
+                            <constraint firstItem="qkV-Pw-MXt" firstAttribute="top" secondItem="ERx-hH-rdd" secondAttribute="top" id="Nhz-uB-PKZ"/>
                             <constraint firstAttribute="bottom" secondItem="LB2-Rd-Bhv" secondAttribute="bottom" id="VbL-7W-Lgv"/>
                             <constraint firstItem="LB2-Rd-Bhv" firstAttribute="leading" secondItem="ERx-hH-rdd" secondAttribute="leading" id="dc7-1I-gOw"/>
+                            <constraint firstAttribute="bottom" secondItem="qkV-Pw-MXt" secondAttribute="bottom" id="dtC-zN-kvD"/>
                             <constraint firstAttribute="trailing" secondItem="LB2-Rd-Bhv" secondAttribute="trailing" constant="252" id="fNW-CT-dK4"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addSnippetButton" destination="XjK-g4-Xti" id="tIB-Nz-zDD"/>
+                        <outlet property="bigSplitView" destination="LB2-Rd-Bhv" id="ZER-aX-bhz"/>
                         <outlet property="charactersLabel" destination="VGX-he-xwO" id="jmZ-4Z-CPF"/>
                         <outlet property="compileInfo" destination="XdU-QA-NPp" id="dmo-GI-COU"/>
                         <outlet property="compileView" destination="qkV-Pw-MXt" id="fwd-MB-Naf"/>
@@ -1939,6 +1924,7 @@ Gw
                         <outlet property="rightConstraint" destination="fNW-CT-dK4" id="wop-M0-Toi"/>
                         <outlet property="scrollViewOfTableView" destination="5hZ-8U-hjU" id="w2d-vE-Q1o"/>
                         <outlet property="scrollViewOfTextView" destination="yLp-eY-fSk" id="Lzl-9S-PjX"/>
+                        <outlet property="smallSplitView" destination="ydI-Mf-nVj" id="SZl-fp-rWw"/>
                         <outlet property="snippetSearchField" destination="k1p-D8-m1a" id="FGs-eD-hZD"/>
                         <outlet property="snippetTableView" destination="T7N-w9-Bt0" id="sXD-V6-YYK"/>
                     </connections>
@@ -2532,6 +2518,7 @@ Gw
     </scenes>
     <resources>
         <image name="AppIcon" width="128" height="128"/>
+        <image name="CompileView" width="128" height="128"/>
         <image name="Copy" width="112.5" height="112.5"/>
         <image name="Cut" width="112.5" height="112.5"/>
         <image name="DuplicateFile" width="560" height="575"/>
@@ -2546,8 +2533,6 @@ Gw
         <image name="NSTouchBarFolderCopyToTemplate" width="20" height="13"/>
         <image name="NSTouchBarFolderMoveToTemplate" width="19" height="12"/>
         <image name="NSTouchBarFolderTemplate" width="19" height="12"/>
-        <image name="NSTouchBarGoBackTemplate" width="11" height="12"/>
-        <image name="NSTouchBarGoForwardTemplate" width="11" height="12"/>
         <image name="NSTouchBarPlayTemplate" width="12" height="11"/>
         <image name="NSTouchBarSearchTemplate" width="14" height="13"/>
         <image name="NSTouchBarTextListTemplate" width="17" height="10"/>
