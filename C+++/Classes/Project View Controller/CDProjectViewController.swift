@@ -71,7 +71,7 @@ class CDProjectViewController: NSViewController {
             }
             self.tableView.remove(at: index - 1)
             self.RemoveIndexTextField.stringValue = ""
-            (self.representedObject as! CDProjectDocument).allFiles = self.tableView.getAllTitles()
+            (self.representedObject as! CDProjectDocument).allFiles = self.tableView.allItemTitles()
             self.didChange()
             
         } else {
@@ -92,7 +92,7 @@ class CDProjectViewController: NSViewController {
             switch response {
                 case .OK:
                     self.tableView.append(cell: CDProjectTableViewCell(path: dialog.url!.path))
-                    (self.representedObject as! CDProjectDocument).allFiles = self.tableView.getAllTitles()
+                    (self.representedObject as! CDProjectDocument).allFiles = self.tableView.allItemTitles()
                     self.didChange()
                 default: break
             }

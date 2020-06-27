@@ -43,7 +43,7 @@ open class CDHighlightrTheme {
      */
     init(themeString: String) {
         theme = themeString
-        setCodeFont(RPFont(name: "Courier", size: 14.5)!)
+        setCodeFont(RPFont(name: config!.fontName ?? "Courier", size: 14.5)!)
         strippedTheme = stripTheme(themeString)
         lightTheme = strippedThemeToString(strippedTheme)
         themeDict = strippedThemeToTheme(strippedTheme)

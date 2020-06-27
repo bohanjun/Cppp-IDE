@@ -61,7 +61,7 @@ class CDSnippetTableViewCell: NSView, CDSnippetPopoverViewControllerDelegate {
         self.titleLabel.title = "  " + self.title
         self.titleLabel.bezelStyle = .smallSquare
         self.titleLabel.imagePosition = .imageLeft
-        self.titleLabel.imageScaling = .scaleNone
+        self.titleLabel.imageScaling = .scaleProportionallyUpOrDown
         self.titleLabel.alignment = .left
         self.titleLabel.image = image
         self.addSubview(titleLabel)

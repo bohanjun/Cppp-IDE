@@ -298,7 +298,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
         
     }
     
-// MARK: - CDTextViewCellInfoViewController
+// MARK: - CDSnippetTableView
     
     private var popover: NSPopover!
     
@@ -322,6 +322,33 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
     func willClose() {
         popover.close()
     }
+    
+    @IBOutlet weak var snippetSearchField: NSSearchField!
+    
+    @IBAction func search(_ sender: NSButton) {
+        
+        switch sender.title {
+            
+            case "Search":
+                sender.title = "Back"
+                self.snippetTableView.search(for: self.snippetSearchField.stringValue)
+                self.snippetSearchField.isEnabled = false
+                self.addSnippetButton.isEnabled = false
+                
+            case "Back":
+                sender.title = "Search"
+                self.snippetTableView.setup(cells: self.snippetTableView.cells)
+                self.snippetSearchField.isEnabled = true
+                self.snippetSearchField.stringValue = ""
+                self.addSnippetButton.isEnabled = false
+                
+            default:
+                break
+            
+        }
+        
+    }
+    
     
     
     

@@ -12,7 +12,7 @@ class CDProjectTableView: CDSnippetTableView {
     
     @objc dynamic var paths = [String]() {
         didSet {
-            setup()
+            setup(cells: self.cells)
         }
     }
     

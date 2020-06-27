@@ -1594,14 +1594,45 @@ Gw
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="T7N-w9-Bt0" customClass="CDSnippetTableView" customModule="C___" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="206" height="654"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="206" height="621"/>
                                                                 </customView>
+                                                                <searchField wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1p-D8-m1a">
+                                                                    <rect key="frame" x="8" y="626" width="147" height="22"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="147" id="2W2-ck-p6X"/>
+                                                                        <constraint firstAttribute="height" constant="22" id="lo8-0T-qoz"/>
+                                                                    </constraints>
+                                                                    <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="XKL-5P-bxN">
+                                                                        <font key="font" metaFont="system"/>
+                                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                    </searchFieldCell>
+                                                                </searchField>
+                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nLy-3f-Be9">
+                                                                    <rect key="frame" x="161" y="628" width="43" height="18"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="18" id="93c-UL-XdK"/>
+                                                                        <constraint firstAttribute="width" constant="43" id="LfX-u3-diU"/>
+                                                                    </constraints>
+                                                                    <buttonCell key="cell" type="inline" title="Search" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="PmZ-I9-itf">
+                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                        <font key="font" metaFont="smallSystemBold"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="search:" target="5gI-5U-AMq" id="u2w-2G-uJ4"/>
+                                                                    </connections>
+                                                                </button>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstItem="T7N-w9-Bt0" firstAttribute="top" secondItem="2of-4T-ou6" secondAttribute="top" id="Fmt-gb-MnA"/>
+                                                                <constraint firstItem="T7N-w9-Bt0" firstAttribute="top" secondItem="2of-4T-ou6" secondAttribute="top" constant="33" id="Fmt-gb-MnA"/>
                                                                 <constraint firstAttribute="trailing" secondItem="T7N-w9-Bt0" secondAttribute="trailing" id="KsG-yL-boy"/>
+                                                                <constraint firstItem="nLy-3f-Be9" firstAttribute="leading" secondItem="k1p-D8-m1a" secondAttribute="trailing" constant="6" id="Pdc-6E-1Lw"/>
                                                                 <constraint firstItem="T7N-w9-Bt0" firstAttribute="leading" secondItem="2of-4T-ou6" secondAttribute="leading" id="SHG-MF-ZXj"/>
+                                                                <constraint firstItem="k1p-D8-m1a" firstAttribute="top" secondItem="2of-4T-ou6" secondAttribute="top" constant="6" id="VoY-Og-xsc"/>
+                                                                <constraint firstItem="nLy-3f-Be9" firstAttribute="top" secondItem="2of-4T-ou6" secondAttribute="top" constant="8" id="WRc-PU-O4m"/>
                                                                 <constraint firstAttribute="bottom" secondItem="T7N-w9-Bt0" secondAttribute="bottom" id="aRp-p5-jMU"/>
+                                                                <constraint firstItem="k1p-D8-m1a" firstAttribute="leading" secondItem="2of-4T-ou6" secondAttribute="leading" constant="8" id="dtN-D7-Ell"/>
+                                                                <constraint firstAttribute="trailing" secondItem="nLy-3f-Be9" secondAttribute="trailing" constant="2" id="jPm-dH-MJk"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
@@ -1908,6 +1939,7 @@ Gw
                         <outlet property="rightConstraint" destination="fNW-CT-dK4" id="wop-M0-Toi"/>
                         <outlet property="scrollViewOfTableView" destination="5hZ-8U-hjU" id="w2d-vE-Q1o"/>
                         <outlet property="scrollViewOfTextView" destination="yLp-eY-fSk" id="Lzl-9S-PjX"/>
+                        <outlet property="snippetSearchField" destination="k1p-D8-m1a" id="FGs-eD-hZD"/>
                         <outlet property="snippetTableView" destination="T7N-w9-Bt0" id="sXD-V6-YYK"/>
                     </connections>
                 </viewController>
@@ -2087,7 +2119,7 @@ Gw
         <scene sceneID="du1-IZ-qyr">
             <objects>
                 <windowController storyboardIdentifier="Project Window Controller" id="R3z-3v-C3k" sceneMemberID="viewController">
-                    <window key="window" title="Project" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titleVisibility="hidden" id="uP8-Jg-bgR">
+                    <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="uP8-Jg-bgR">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -2097,43 +2129,19 @@ Gw
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="UOD-96-t6Q"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="D3J-mw-IiK"/>
-                                <toolbarItem implicitItemIdentifier="7CA04D3E-1A64-4603-B468-CF9E10B55A50" label="Run" paletteLabel="Run" image="Run" id="1yH-cI-mcZ">
-                                    <nil key="toolTip"/>
-                                    <size key="minSize" width="22" height="24"/>
-                                    <size key="maxSize" width="40" height="24"/>
-                                    <button key="view" verticalHuggingPriority="750" imageHugsTitle="YES" id="e29-Hn-RYb">
-                                        <rect key="frame" x="3" y="14" width="22" height="24"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="Run" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="LWJ-Dz-pND">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                    </button>
-                                    <connections>
-                                        <action selector="compileProject:" target="ULU-hZ-lrQ" id="6C9-iZ-BcV"/>
-                                    </connections>
+                                <toolbarItem implicitItemIdentifier="69C3E7BE-45CE-4D06-B8F5-F3AB9B4552DB" label="Compile" paletteLabel="Compile" tag="-1" image="Run" id="cXt-2s-lTk">
+                                    <size key="minSize" width="32" height="32"/>
+                                    <size key="maxSize" width="32" height="32"/>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="514DE0EB-C25D-402C-A61B-D893F2DBD29B" label="Save" paletteLabel="Save" image="SaveFile" id="faU-ha-LUK">
-                                    <nil key="toolTip"/>
-                                    <size key="minSize" width="28" height="25"/>
-                                    <size key="maxSize" width="40" height="25"/>
-                                    <button key="view" verticalHuggingPriority="750" id="6xV-kR-Iw9">
-                                        <rect key="frame" x="3" y="14" width="28" height="25"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="SaveFile" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="XDz-IE-EEk">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="saveProject:" target="ULU-hZ-lrQ" id="bJN-X4-BLa"/>
-                                        </connections>
-                                    </button>
+                                <toolbarItem implicitItemIdentifier="97456251-8973-4C73-9902-B6D91C0E71EC" label="Save" paletteLabel="Save" tag="-1" image="NSMenuOnStateTemplate" id="eKC-k7-dAr">
+                                    <size key="minSize" width="32" height="35"/>
+                                    <size key="maxSize" width="32" height="35"/>
                                 </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
-                                <toolbarItem reference="1yH-cI-mcZ"/>
-                                <toolbarItem reference="faU-ha-LUK"/>
                                 <toolbarItem reference="D3J-mw-IiK"/>
+                                <toolbarItem reference="cXt-2s-lTk"/>
+                                <toolbarItem reference="eKC-k7-dAr"/>
                             </defaultToolbarItems>
                         </toolbar>
                         <connections>
@@ -2529,6 +2537,7 @@ Gw
         <image name="DuplicateFile" width="560" height="575"/>
         <image name="NSAddTemplate" width="15" height="11"/>
         <image name="NSIconViewTemplate" width="16" height="12"/>
+        <image name="NSMenuOnStateTemplate" width="15" height="11"/>
         <image name="NSPathTemplate" width="20" height="10"/>
         <image name="NSQuickLookTemplate" width="20" height="11"/>
         <image name="NSTouchBarAddTemplate" width="15" height="11"/>

@@ -19,7 +19,7 @@ class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate 
         archievePath.path)
         
         if !isSuccessfulSave {
-            os_log("Failed to save...", log: OSLog.default, type: .error)
+            os_log("Failed to save...", type: .error)
         }
         
     }
@@ -28,7 +28,7 @@ class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate 
     /// Load sample snippets.
     private func loadSample() {
         
-        for (name, code) in Sample {
+        for (name, code) in sampleSnippets {
 
             self.append(cell: CDSnippetTableViewCell(title: name, image: NSImage(named: "Code")!, code: code, width: 210.0))
             
@@ -44,7 +44,7 @@ class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate 
     
     
     /// Default code snippets.
-    private let Sample: KeyValuePairs = [
+    private let sampleSnippets: KeyValuePairs = [
         "For Statement": "\nfor (int i = , i <= , i ++ ) {\n\t\n}",
         "If Statement": "\nif () {\n\t\n}",
         "While Statement": "\nwhile () {\n\t\n}",
@@ -63,6 +63,18 @@ class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate 
         
         let cell = CDSnippetTableViewCell(title: title, image: image, code: code, width: 210.0)
         self.append(cell: cell)
+        
+    }
+    
+    func search(for title: String) {
+        
+        var filteredItems = [CDSnippetTableViewCell]()
+        for item in self.cells {
+            if item.title.lowercased().contains(title.lowercased()) {
+                filteredItems.append(item)
+            }
+        }
+        self.setup(cells: filteredItems)
         
     }
     
@@ -85,9 +97,7 @@ class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate 
         get {
             return false
         }
-        set {
-            self.autoresizesSubviews = newValue
-        }
+        set {}
     }
     
     
@@ -98,7 +108,7 @@ class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate 
         if let savedSnippets = load() {
             
             cells += savedSnippets
-            setup()
+            setup(cells: self.cells)
             
         } else {
             
@@ -114,7 +124,7 @@ class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate 
     func append(cell: CDSnippetTableViewCell) {
         
         self.cells.append(cell)
-        setup()
+        setup(cells: self.cells)
         save()
         
     }
@@ -122,7 +132,7 @@ class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate 
     func remove(at index: Int) {
         
         self.cells.remove(at: index)
-        setup()
+        setup(cells: self.cells)
         save()
         
     }
@@ -130,7 +140,7 @@ class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate 
     
     
     // MARK: - Setup
-    func setup() {
+    func setup(cells: [CDSnippetTableViewCell]) {
         
         var y: CGFloat = 0
         
@@ -138,7 +148,7 @@ class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate 
             view.removeFromSuperview()
         }
         
-        for (_, cell) in self.cells.enumerated() {
+        for cell in cells {
             
             cell.frame.origin = NSPoint(x: 0, y: y)
             cell.bounds.origin = NSPoint(x: 0, y: y)
@@ -149,6 +159,10 @@ class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate 
             
         }
         
+        if !(self is CDProjectTableView) {
+            y += 33
+        }
+        
         self.frame.size.height = y + 20
         self.bounds.size.height = y + 20
         self.superview?.frame.size.height = y + 20
@@ -156,7 +170,7 @@ class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate 
         
     }
     
-    func getAllTitles() -> [String] {
+    func allItemTitles() -> [String] {
         
         var res = [String]()
         for i in self.cells {
