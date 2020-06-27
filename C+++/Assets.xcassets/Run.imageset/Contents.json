@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "Run-4.png",
+      "filename" : "RunLight.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -12,12 +12,12 @@
           "value" : "dark"
         }
       ],
-      "filename" : "Run.png",
+      "filename" : "RunDark.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Run-1.png",
+      "filename" : "RunLight-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -28,12 +28,12 @@
           "value" : "dark"
         }
       ],
-      "filename" : "Run-3.png",
+      "filename" : "RunDark-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Run-5.png",
+      "filename" : "RunLight-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     },
@@ -44,7 +44,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "Run-2.png",
+      "filename" : "RunDark-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

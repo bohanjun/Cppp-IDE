@@ -150,6 +150,10 @@ class CDSnippetTableView: NSView, CDSnippetPopoverViewControllerDelegate {
             cell.titleLabel.bounds.origin = NSPoint(x: 0, y: y)
             self.addSubview(cell)
             y += cell.bounds.height - 3
+            self.frame.size.height = y + 50
+            self.bounds.size.height = y + 50
+            self.superview?.frame.size.height = y + 50
+            self.superview?.bounds.size.height = y + 50
             
         }
         if cells.count == 0 {
