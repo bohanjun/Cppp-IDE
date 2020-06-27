@@ -1589,7 +1589,7 @@ Gw
                                                     <rect key="frame" x="0.0" y="0.0" width="217" height="654"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <view id="2of-4T-ou6">
+                                                        <view id="2of-4T-ou6" customClass="CDFlippedView" customModule="C___" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="206" height="654"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>

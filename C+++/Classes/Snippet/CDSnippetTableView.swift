@@ -9,7 +9,13 @@
 import Cocoa
 import os.log
 
-class CDSnippetTableView: NSView, CDSnippetPopoverViewControllerDelegate {
+class CDFlippedView : NSView {
+    override var isFlipped: Bool {
+        return true
+    }
+}
+
+class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate {
     
     let archievePath = FileManager().urls(for: .libraryDirectory, in: .userDomainMask).first!.appendingPathComponent("C+++").appendingPathComponent("Snippets")
     
@@ -80,11 +86,7 @@ class CDSnippetTableView: NSView, CDSnippetPopoverViewControllerDelegate {
     }
     
     var cells : [CDSnippetTableViewCell] = []
-    
-    override var isFlipped: Bool {
-        return true
-    }
-    
+
     override var autoresizesSubviews: Bool {
         get {
             return false
