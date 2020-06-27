@@ -9,12 +9,6 @@
 import Cocoa
 import os.log
 
-class CDFlippedView : NSView {
-    override var isFlipped: Bool {
-        return true
-    }
-}
-
 class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate {
     
     let archievePath = FileManager().urls(for: .libraryDirectory, in: .userDomainMask).first!.appendingPathComponent("C+++").appendingPathComponent("Snippets")
@@ -152,15 +146,13 @@ class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate 
             cell.titleLabel.bounds.origin = NSPoint(x: 0, y: y)
             self.addSubview(cell)
             y += cell.bounds.height - 3
-            self.frame.size.height = y + 20
-            self.bounds.size.height = y + 20
-            self.superview?.frame.size.height = y + 20
-            self.superview?.bounds.size.height = y + 20
             
         }
-        if cells.count == 0 {
-            return
-        }
+        
+        self.frame.size.height = y + 20
+        self.bounds.size.height = y + 20
+        self.superview?.frame.size.height = y + 20
+        self.superview?.bounds.size.height = y + 20
         
     }
     
