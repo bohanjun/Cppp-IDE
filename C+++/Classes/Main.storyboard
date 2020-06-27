@@ -1937,9 +1937,20 @@ Gw
                                     <rect key="frame" x="1" y="1" width="429" height="170"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <view id="8Vi-0v-adj" customClass="CDProjectTableView" customModule="C___" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="429" height="2000"/>
+                                        <view id="8Vi-0v-adj" customClass="CDFlippedView" customModule="C___" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="429" height="170"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <customView translatesAutoresizingMaskIntoConstraints="NO" id="SWq-gx-e3N" customClass="CDProjectTableView" customModule="C___" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="429" height="170"/>
+                                                </customView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="SWq-gx-e3N" firstAttribute="top" secondItem="8Vi-0v-adj" secondAttribute="top" id="CnK-T2-B6I"/>
+                                                <constraint firstItem="SWq-gx-e3N" firstAttribute="leading" secondItem="8Vi-0v-adj" secondAttribute="leading" id="Eoi-JH-OUq"/>
+                                                <constraint firstAttribute="trailing" secondItem="SWq-gx-e3N" secondAttribute="trailing" id="IMF-Eu-7wt"/>
+                                                <constraint firstAttribute="bottom" secondItem="SWq-gx-e3N" secondAttribute="bottom" id="x7i-79-eaS"/>
+                                            </constraints>
                                         </view>
                                     </subviews>
                                 </clipView>
@@ -1947,7 +1958,7 @@ Gw
                                     <rect key="frame" x="-100" y="-100" width="429" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="bse-x7-XOG">
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="bse-x7-XOG">
                                     <rect key="frame" x="430" y="1" width="15" height="170"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -2064,7 +2075,7 @@ Gw
                     </view>
                     <connections>
                         <outlet property="RemoveIndexTextField" destination="gXF-Ow-37B" id="DnV-jg-BzK"/>
-                        <outlet property="tableView" destination="8Vi-0v-adj" id="0sf-8y-aRb"/>
+                        <outlet property="tableView" destination="SWq-gx-e3N" id="FPj-yK-eVP"/>
                         <outlet property="textField" destination="mc7-Tc-NmA" id="9LN-e3-aA7"/>
                     </connections>
                 </viewController>
