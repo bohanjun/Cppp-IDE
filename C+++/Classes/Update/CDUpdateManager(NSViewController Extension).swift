@@ -18,9 +18,9 @@ extension NSViewController {
     
     func checkUpdate(alsoShowAlertWhenUpToDate: Bool) {
         
+        self.sendUserNotification(title: "Checking For Updates...", subtitle: "This may take a few seconds.")
+        
         CDUpdateManager.getVersionAndUpdateInformation { (latestVersion, updateInformation, url) in
-            
-            self.sendUserNotification(title: "Checking For Updates...", subtitle: "This may take a few seconds.")
             
             DispatchQueue.main.async {
                 
