@@ -8,6 +8,8 @@
 
 import Cocoa
 
+var codeCompletionViewController : CDCodeCompletionViewController!
+
 extension String {
     
     /// Count how many times a character appears in a string.
@@ -40,12 +42,35 @@ extension String {
         return 1
         
     }
+    
+    var isIdentifier: Bool {
+        get {
+            if self.count == 0 {
+                return true
+            }
+            if !(Array(self)[1].isLetter || Array(self)[1] == "_") {
+                return false
+            }
+            for (i, char) in Array(self).enumerated() {
+                if i == 0 {
+                    continue
+                }
+                if !(char.isLetter || char.isNumber || char == "_") {
+                    return false
+                }
+            }
+            return true
+        }
+    }
 
 }
 
 
 
-open class CDCodeEditor: NSTextView {
+
+open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
+    
+    
 
     let highlightr = CDHighlightr()
     var gutterDelegate: CDCodeEditorDelegate!
@@ -72,6 +97,7 @@ open class CDCodeEditor: NSTextView {
         
         DispatchQueue.main.async {
             
+            self.complete(self)
             self.codeEditorDelegate?.didChangeText!(lines: self.textStorage?.paragraphs.count ?? 0, characters: self.textStorage?.characters.count ?? 0)
             self.gutterDelegate?.didChangeText!(lines: (self.textStorage?.paragraphs.count)!, currentLine: self.string.lineNumber(at: self.selectedRange.location)!)
             
@@ -158,9 +184,11 @@ open class CDCodeEditor: NSTextView {
         
         var res = [String]()
         let string = (self.string as NSString).substring(with: charRange)
+        
         if string == "" {
             return res
         }
+        
         self.parser.buffer = (self.string as NSString).substring(to: self.selectedRange.location)
         let parserRes = parser.getIdentifiers()
         for i in parserRes {
@@ -168,13 +196,44 @@ open class CDCodeEditor: NSTextView {
                 res.append(i)
             }
         }
-        return res
         
+        if res.count <= 1 {
+            return [String]()
+        }
+        
+        var rect = self.layoutManager?.boundingRect(forGlyphRange: self.selectedRange, in: self.textContainer!)
+        
+        DispatchQueue.main.async {
+            self.parser.buffer = (self.string as NSString).substring(to: self.selectedRange.location)
+            let results = self.parser.getIdentifiers()
+            
+            if results.count > 0 {
+                let vc = CDCodeCompletionViewController()
+                vc.results = res
+                vc.delegate = self
+                vc.range = charRange
+                rect?.size.width = 1.0
+                DispatchQueue.main.async {
+                    vc.openInPopover(relativeTo: rect!, of: self, preferredEdge: .maxY)
+                    C___.codeCompletionViewController?.closePopover()
+                    C___.codeCompletionViewController = vc
+                }
+            }
+        }
+        
+        return [String]()
+        
+    }
+    
+    
+    func codeCompletionViewController(_ viewController: CDCodeCompletionViewController, didSelectItemWithTitle title: String, range: NSRange) {
+        self.insertCompletion(title, forPartialWordRange: range, movement: NSTextMovement.return.rawValue, isFinal: true)
     }
     
     
     open override func complete(_ sender: Any?) {
         super.complete(sender)
+        //self.showCodeCompletion()
     }
     
     
@@ -198,5 +257,24 @@ open class CDCodeEditor: NSTextView {
         self.highlightr!.theme.setCodeFont(NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))!)
         
     }
+    
+    /*func showCodeCompletion() {
+        
+        var rect = self.layoutManager?.boundingRect(forGlyphRange: self.selectedRange, in: self.textContainer!)
+        DispatchQueue.main.async {
+            self.parser.buffer = (self.string as NSString).substring(to: self.selectedRange.location)
+            let results = self.parser.getIdentifiers()
+            
+            if results.count > 0 {
+                let vc = CDCodeCompletionViewController()
+                vc.results = results
+                rect?.size.width = 1.0
+                DispatchQueue.main.async {
+                    vc.openInPopover(relativeTo: rect!, of: self, preferredEdge: .maxY)
+                }
+            }
+        }
+        
+    }*/
     
 }

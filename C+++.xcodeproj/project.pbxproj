@@ -135,6 +135,9 @@
 		18D4DD6D246A2C5100B97F32 /* CDProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D4DD6C246A2C5100B97F32 /* CDProjectViewController.swift */; };
 		18D4DD6F246A2C9E00B97F32 /* CDProjectTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D4DD6E246A2C9E00B97F32 /* CDProjectTableView.swift */; };
 		18D4DD71246A303400B97F32 /* CDProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D4DD70246A303400B97F32 /* CDProjectTableViewCell.swift */; };
+		18E17EBB24A809D200392009 /* CDCodeCompletionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E17EB924A809D200392009 /* CDCodeCompletionViewController.swift */; };
+		18E17EBC24A809D200392009 /* CDCodeCompletionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E17EBA24A809D200392009 /* CDCodeCompletionViewController.xib */; };
+		18E17F0E24A8D7AE00392009 /* CDCodeCompletionViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E17F0D24A8D7AE00392009 /* CDCodeCompletionViewControllerDelegate.swift */; };
 		18E7291E244E6F91000317D7 /* CDLineNumberTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E7291D244E6F91000317D7 /* CDLineNumberTextView.swift */; };
 		18E72920244E756E000317D7 /* CDLineNumberScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E7291F244E756E000317D7 /* CDLineNumberScrollView.swift */; };
 		18FC02882490E612004551B1 /* CDUpdateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FC02872490E612004551B1 /* CDUpdateManager.swift */; };
@@ -155,6 +158,16 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		18E17ECF24A8A39300392009 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -166,7 +179,6 @@
 		184D5733247EA97500C5AA27 /* NSApplication Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSApplication Extension.swift"; sourceTree = "<group>"; };
 		18541B152445905F000EB4CB /* CDSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSettingsViewController.swift; sourceTree = "<group>"; };
 		1860EC3224839A8B0066DE64 /* CDDocumentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDDocumentController.swift; sourceTree = "<group>"; };
-		1861349624A366F100AC9709 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		1868EBD4244981C2005467B2 /* CDCompileSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDCompileSettings.swift; sourceTree = "<group>"; };
 		1868EBD6244AF934005467B2 /* CDCodeEditorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDCodeEditorDelegate.swift; sourceTree = "<group>"; };
 		186AC7F224A47BD900F6B682 /* NSViewController+NSUserNotificationCenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSViewController+NSUserNotificationCenterDelegate.swift"; sourceTree = "<group>"; };
@@ -293,6 +305,9 @@
 		18D4DD6C246A2C5100B97F32 /* CDProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProjectViewController.swift; sourceTree = "<group>"; };
 		18D4DD6E246A2C9E00B97F32 /* CDProjectTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProjectTableView.swift; sourceTree = "<group>"; };
 		18D4DD70246A303400B97F32 /* CDProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProjectTableViewCell.swift; sourceTree = "<group>"; };
+		18E17EB924A809D200392009 /* CDCodeCompletionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDCodeCompletionViewController.swift; sourceTree = "<group>"; };
+		18E17EBA24A809D200392009 /* CDCodeCompletionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CDCodeCompletionViewController.xib; sourceTree = "<group>"; };
+		18E17F0D24A8D7AE00392009 /* CDCodeCompletionViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDCodeCompletionViewControllerDelegate.swift; sourceTree = "<group>"; };
 		18E7291D244E6F91000317D7 /* CDLineNumberTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDLineNumberTextView.swift; sourceTree = "<group>"; };
 		18E7291F244E756E000317D7 /* CDLineNumberScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDLineNumberScrollView.swift; sourceTree = "<group>"; };
 		18FC02872490E612004551B1 /* CDUpdateManager.swift */ = {isa = PBXFileReference; indentWidth = 5; lastKnownFileType = sourcecode.swift; path = CDUpdateManager.swift; sourceTree = "<group>"; };
@@ -363,14 +378,6 @@
 				18541B152445905F000EB4CB /* CDSettingsViewController.swift */,
 			);
 			path = Settings;
-			sourceTree = "<group>";
-		};
-		1861349524A366F100AC9709 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1861349624A366F100AC9709 /* Quartz.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		187527AC247A64B200A7522A /* Launch View Controller */ = {
@@ -516,6 +523,9 @@
 			isa = PBXGroup;
 			children = (
 				18B1857E2465AB2E00B579AD /* CDParser.swift */,
+				18E17EB924A809D200392009 /* CDCodeCompletionViewController.swift */,
+				18E17F0D24A8D7AE00392009 /* CDCodeCompletionViewControllerDelegate.swift */,
+				18E17EBA24A809D200392009 /* CDCodeCompletionViewController.xib */,
 			);
 			path = Completion;
 			sourceTree = "<group>";
@@ -546,7 +556,6 @@
 				180480A824474A0700CD0A4D /* README.md */,
 				184B1C7124945FBA0071C1AA /* index.html */,
 				18B3C77E24282C1F00F4CA14 /* C+++ */,
-				1861349524A366F100AC9709 /* Frameworks */,
 				18B3C76524272D9F00F4CA14 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -624,6 +633,7 @@
 				18B3C77A24282C1F00F4CA14 /* Frameworks */,
 				18B3C77B24282C1F00F4CA14 /* Resources */,
 				186134A724A366F100AC9709 /* Embed App Extensions */,
+				18E17ECF24A8A39300392009 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -717,6 +727,7 @@
 				18A41B3A242C765500AFC422 /* shades-of-purple.min.css in Resources */,
 				18A41B0F242C765500AFC422 /* rainbow.min.css in Resources */,
 				18A41B35242C765500AFC422 /* vs2015.min.css in Resources */,
+				18E17EBC24A809D200392009 /* CDCodeCompletionViewController.xib in Resources */,
 				18A41B10242C765500AFC422 /* ocean.min.css in Resources */,
 				18A41B29242C765500AFC422 /* routeros.min.css in Resources */,
 				18A41B5F242C765500AFC422 /* railscasts.min.css in Resources */,
@@ -797,6 +808,8 @@
 				18B1858D2468E44700B579AD /* CDDebugViewController.swift in Sources */,
 				18B1858B2468DC9800B579AD /* CDFileCompiler(Compile).swift in Sources */,
 				18A41AA6242C75A600AFC422 /* CDHighlightrHTMLUtils.swift in Sources */,
+				18E17EBB24A809D200392009 /* CDCodeCompletionViewController.swift in Sources */,
+				18E17F0E24A8D7AE00392009 /* CDCodeCompletionViewControllerDelegate.swift in Sources */,
 				1827400C24A6343000AF3613 /* CDToolbarStateButton.swift in Sources */,
 				18541B162445905F000EB4CB /* CDSettingsViewController.swift in Sources */,
 				18A41AA4242C758B00AFC422 /* CDHighlightrTheme.swift in Sources */,
@@ -861,7 +874,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -922,7 +935,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;

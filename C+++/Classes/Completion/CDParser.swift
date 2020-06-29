@@ -195,7 +195,11 @@ class CDParser: NSObject {
                     
                     case .stringStart:
                         ch = getNext()!
-                        if ch == "\"" {
+                        print("\(ch)")
+                        if ch == "\0" {
+                            state = .otherSymbol
+                        }
+                        if ch == "\"" || ch == "\0" {
                             state = .otherSymbol
                         } else {
                             state = .stringStart
