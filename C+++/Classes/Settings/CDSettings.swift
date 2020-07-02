@@ -27,11 +27,11 @@ class CDSettings: NSObject, NSCoding {
     
     struct PropertyKey {
         
-        static let FontName = "FontName"
-        static let FontSize = "FontSize"
-        static let LightThemeName = "LightThemeName"
-        static let DarkThemeName = "DarkThemeName"
-        static let AutoComplete = "AutoComplete"
+        static let fontName = "FontName"
+        static let fontSize = "FontSize"
+        static let lightThemeName = "LightThemeName"
+        static let darkThemeName = "DarkThemeName"
+        static let autoComplete = "AutoComplete"
         
     }
     
@@ -54,24 +54,39 @@ class CDSettings: NSObject, NSCoding {
     
     func encode(with coder: NSCoder) {
         
-        coder.encode(fontName, forKey: PropertyKey.FontName)
-        coder.encode(fontSize, forKey: PropertyKey.FontSize)
-        coder.encode(lightThemeName, forKey: PropertyKey.LightThemeName)
-        coder.encode(darkThemeName, forKey: PropertyKey.DarkThemeName)
-        coder.encode(autoComplete, forKey: PropertyKey.AutoComplete)
+        coder.encode(fontName, forKey: PropertyKey.fontName)
+        coder.encode(fontSize, forKey: PropertyKey.fontSize)
+        coder.encode(lightThemeName, forKey: PropertyKey.lightThemeName)
+        coder.encode(darkThemeName, forKey: PropertyKey.darkThemeName)
+        coder.encode(autoComplete, forKey: PropertyKey.autoComplete)
         
     }
     
     required convenience init?(coder: NSCoder) {
         
-        let name = coder.decodeObject(forKey: PropertyKey.FontName) as? String
-        let size = coder.decodeObject(forKey: PropertyKey.FontSize) as? Int
-        let light = coder.decodeObject(forKey: PropertyKey.LightThemeName) as? String
-        let dark = coder.decodeObject(forKey: PropertyKey.DarkThemeName) as? String
-        let bool = coder.decodeObject(forKey: PropertyKey.AutoComplete) as? Bool
+        let name = coder.decodeObject(forKey: PropertyKey.fontName) as? String
+        let size = coder.decodeObject(forKey: PropertyKey.fontSize) as? Int
+        let light = coder.decodeObject(forKey: PropertyKey.lightThemeName) as? String
+        let dark = coder.decodeObject(forKey: PropertyKey.darkThemeName) as? String
+        let bool = coder.decodeObject(forKey: PropertyKey.autoComplete) as? Bool
         
         self.init(name, size, light, dark, bool)
         
+    }
+    
+    var font: NSFont {
+        
+        return NSFont(name: self.fontName, size: CGFloat(self.fontSize))!
+        
+    }
+    
+    class var shared: CDSettings! {
+        get {
+            return NSKeyedUnarchiver.unarchiveObject(withFile: CDSettings.archiveURL.path) as? CDSettings
+        }
+        set {
+            NSKeyedArchiver.archiveRootObject(newValue!, toFile: CDSettings.archiveURL.path)
+        }
     }
     
     

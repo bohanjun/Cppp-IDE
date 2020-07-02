@@ -35,29 +35,7 @@ class CDCodeCompletionViewController: NSViewController, NSTableViewDataSource, N
             return nil
         }
         
-        
-        /*if results != nil {
-            if let _result = results[row] as? CKCompletionResult {
-                for chunk in _result.chunks {
-                    if let _chunk = chunk as? CKCompletionChunk {
-                        if _chunk.kind == CKCompletionChunkKindTypedText {
-                            return _chunk.text!
-                        } else {
-                            return nil
-                        }
-                    } else {
-                        return nil
-                    }
-                }
-            }
-        } else {
-            return nil
-        }
-        return nil*/
-        
     }
-    
-    // var results = [String]()
     
     deinit {
         
@@ -78,6 +56,8 @@ class CDCodeCompletionViewController: NSViewController, NSTableViewDataSource, N
         super.viewDidLoad()
         // Do view setup here.
         self.tableView?.selectRowIndexes(IndexSet(integer: 0), byExtendingSelection: false)
+        self.tableView?.font = CDSettings.shared.font
+        
     }
     
     func closePopover() {

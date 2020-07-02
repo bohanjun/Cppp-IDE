@@ -14,7 +14,7 @@ class CDFileCompiler: NSObject {
     - parameter fileURL: The path of the file.
     - returns: The result to be displayed in the "Compile Info"  text view.
     */
-    public static func compileFile(fileURL: String, arguments: String = compileConfig!.arguments ?? "") -> String {
+    public static func compileFile(fileURL: String, arguments: String = CDCompileSettings.shared.arguments ?? "") -> String {
          
         // The path of the file
         let _fileURL = "\"" + fileURL + "\""
@@ -24,7 +24,7 @@ class CDFileCompiler: NSObject {
         out = "\"" + out + "\""
         
         // The compile command
-        let command = "\(compileConfig!.compiler ?? "g++") \(arguments) \(_fileURL) -o \(out)"
+        let command = "\(CDCompileSettings.shared.compiler ?? "g++") \(arguments) \(_fileURL) -o \(out)"
         
         // Compile
         let b = shell(command)

@@ -60,11 +60,11 @@ class CDLineNumberTextView: NSTextView, CDCodeEditorDelegate {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
-        if config == nil {
+        if CDSettings.shared == nil {
             initDefaultData()
         }
         
-        self.font = NSFont(name: config!.fontName ?? "Courier", size: CGFloat(config!.fontSize ?? 15))
+        self.font = CDSettings.shared.font
         self.alignment = .right
         
     }

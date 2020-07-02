@@ -40,4 +40,13 @@ class CDCompileSettings: NSObject, NSCoding {
         
     }
     
+    class var shared: CDCompileSettings! {
+        get {
+            return NSKeyedUnarchiver.unarchiveObject(withFile: CDCompileSettings.archiveURL.path) as? CDCompileSettings
+        }
+        set {
+            NSKeyedArchiver.archiveRootObject(newValue!, toFile: CDCompileSettings.archiveURL.path)
+        }
+    }
+    
 }

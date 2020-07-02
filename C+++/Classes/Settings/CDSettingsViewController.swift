@@ -8,25 +8,6 @@
 
 import Cocoa
 
-
-var config: CDSettings? {
-    get {
-        return CDSettingsViewController.getSavedData()
-    }
-    set {
-        NSKeyedArchiver.archiveRootObject(newValue!, toFile: CDSettings.archiveURL.path)
-    }
-}
-
-var compileConfig: CDCompileSettings? {
-    get {
-        return CDSettingsViewController.getSavedCompileSettings()
-    }
-    set {
-        NSKeyedArchiver.archiveRootObject(newValue!, toFile: CDCompileSettings.archiveURL.path)
-    }
-}
-
 public func initDefaultData() {
 
     do {
@@ -35,8 +16,8 @@ public func initDefaultData() {
         return
     }
     // Create the default data.
-    config = CDSettings("Courier", 15, "Xcode", "Agate", true)!
-    compileConfig = CDCompileSettings("g++", "")!
+    CDSettings.shared = CDSettings("Courier", 15, "Xcode", "Agate", true)!
+    CDCompileSettings.shared = CDCompileSettings("g++", "")!
     
 }
 
@@ -62,19 +43,19 @@ class CDSettingsViewController: NSViewController {
     
     @IBAction func save(_ sender: NSButton) {
         
-        let settings = config!
+        let settings = CDSettings.shared!
         settings.fontName = self.fontname.titleOfSelectedItem ?? "Courier"
         settings.fontSize = Int(self.size.stringValue) ?? 15
         settings.darkThemeName = self.dark.titleOfSelectedItem ?? "Agate"
         settings.lightThemeName = self.light.titleOfSelectedItem ?? "Xcode"
         settings.autoComplete = self.allowsCompletion.state == .on
         
-        let compileSettings = compileConfig!
+        let compileSettings = CDCompileSettings.shared!
         compileSettings.compiler = self.compiler.stringValue
         compileSettings.arguments = self.arguments.stringValue
         
-        config = settings
-        compileConfig = compileSettings
+        CDSettings.shared = settings
+        CDCompileSettings.shared = compileSettings
         
         self.delegate.didSet()
         
@@ -86,7 +67,7 @@ class CDSettingsViewController: NSViewController {
     
     @IBAction func chooseAnotherFont(_ sender: Any?) {
         
-        NSFontPanel.shared.setPanelFont(NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))!, isMultiple: false)
+        NSFontPanel.shared.setPanelFont(CDSettings.shared.font, isMultiple: false)
         NSFontManager.shared.target = self
         NSFontManager.shared.action = #selector(changeFont(_:))
         NSFontManager.shared.orderFrontFontPanel(self)
@@ -97,7 +78,7 @@ class CDSettingsViewController: NSViewController {
     
     @objc func changeFont(_ sender: Any?) {
         
-        let font = NSFont(name: config!.fontName!, size: CGFloat(config!.fontSize!))!
+        let font = CDSettings.shared.font
         let convertedFont = NSFontPanel.shared.convert(font)
         self.fontname.setTitle(convertedFont.fontName )
         self.size.stringValue = "\(Int(convertedFont.pointSize))"
@@ -113,7 +94,7 @@ class CDSettingsViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let savedData = CDSettingsViewController.getSavedData() {
+        if let savedData = CDSettings.shared {
             
             self.fontname.setTitle(savedData.fontName)
             self.size.stringValue = "\(savedData.fontSize ?? 15)"
@@ -128,21 +109,13 @@ class CDSettingsViewController: NSViewController {
             
         }
         
-        if let savedData2 = CDSettingsViewController.getSavedCompileSettings() {
+        if let savedData2 = CDCompileSettings.shared {
             
             self.compiler.stringValue = savedData2.compiler
             self.arguments.stringValue = savedData2.arguments
             
         }
         
-    }
-    
-    public static func getSavedData() -> CDSettings? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: CDSettings.archiveURL.path) as? CDSettings
-    }
-    
-    public static func getSavedCompileSettings() -> CDCompileSettings? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: CDCompileSettings.archiveURL.path) as? CDCompileSettings
     }
     
 }

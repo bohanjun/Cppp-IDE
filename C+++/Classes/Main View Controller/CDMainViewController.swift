@@ -128,18 +128,16 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.document?.save(self)
-        
         self.mainTextView.codeEditorDelegate = self
         self.mainTextView.gutterDelegate = self.lineNumberTextView
         self.mainTextView.scrollView = self.scrollViewOfTextView
         
         // judge if there has already been a saved settings.
-        if compileConfig != nil && config != nil {
+        if CDSettings.shared != nil && CDCompileSettings.shared != nil {
             
             // set the font of the text view
-            self.mainTextView.font = NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))
-            self.mainTextView.highlightr?.theme.setCodeFont(NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))!)
+            self.mainTextView.font = CDSettings.shared.font
+            self.mainTextView.highlightr?.theme.setCodeFont(CDSettings.shared.font)
             
         } else {
             
@@ -153,7 +151,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
         
         // set the current appearance to Dark Mode.
         if #available(OSX 10.14, *) {
-            self.mainTextView.highlightr?.setTheme(to: config!.darkThemeName)
+            self.mainTextView.highlightr?.setTheme(to: CDSettings.shared.darkThemeName)
             self.view.window?.appearance = darkAqua
             self.view.appearance = darkAqua
             for view in self.view.subviews {
@@ -195,7 +193,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
             case true:
                 
                 // Change the text view's highlight theme to Dark Mode.
-                self.mainTextView.highlightr?.setTheme(to: config!.darkThemeName)
+                self.mainTextView.highlightr?.setTheme(to: CDSettings.shared.darkThemeName)
                 
                 // Chage the window's appearance to Dark Mode.
                 if #available(OSX 10.14, *) {
@@ -211,7 +209,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
             case false:
                 
                 // Change the text view's highlight theme to Light Mode.
-                self.mainTextView.highlightr?.setTheme(to: config!.lightThemeName)
+                self.mainTextView.highlightr?.setTheme(to: CDSettings.shared.lightThemeName)
                 
                 // Chage the window's appearance to Light Mode.
                 if #available(OSX 10.14, *) {
@@ -227,8 +225,8 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
         
         // Change the font of the text view.
         self.mainTextView.didChangeText()
-        self.mainTextView.highlightr?.theme.setCodeFont(NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))!)
-        self.mainTextView.font = NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))
+        self.mainTextView.highlightr?.theme.setCodeFont(CDSettings.shared.font)
+        self.mainTextView.font = CDSettings.shared.font
         
     }
     
@@ -255,15 +253,15 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
         // theme
         switch isDarkMode {
             case false:
-                self.mainTextView.highlightr?.setTheme(to: config!.darkThemeName)
+                self.mainTextView.highlightr?.setTheme(to: CDSettings.shared.darkThemeName)
             case true:
-                self.mainTextView.highlightr?.setTheme(to: config!.lightThemeName)
+                self.mainTextView.highlightr?.setTheme(to: CDSettings.shared.lightThemeName)
         }
         
         // font
-        self.mainTextView.highlightr?.theme.setCodeFont(NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))!)
-        self.mainTextView.font = NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))
-        self.lineNumberTextView.font = NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))
+        self.mainTextView.highlightr?.theme.setCodeFont(CDSettings.shared.font)
+        self.mainTextView.font = CDSettings.shared.font
+        self.lineNumberTextView.font = CDSettings.shared.font
         self.mainTextView.didChangeText()
         
         // in case of errors

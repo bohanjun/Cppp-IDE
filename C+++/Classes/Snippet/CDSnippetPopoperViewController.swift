@@ -94,10 +94,10 @@ class CDSnippetPopoperViewController: NSViewController {
             self.view.appearance = darkAqua
             self.view.wantsLayer = true
             self.view.layer?.backgroundColor = NSColor(srgbRed: 0.2, green: 0.2, blue: 0.2, alpha: 1.0).cgColor
-            self.textView.highlightr?.setTheme(to: config!.darkThemeName ?? "Agate")
+            self.textView.highlightr?.setTheme(to: CDSettings.shared.darkThemeName)
         } else {
             self.view.appearance = aqua
-            self.textView.highlightr?.setTheme(to: config!.lightThemeName ?? "Xcode")
+            self.textView.highlightr?.setTheme(to: CDSettings.shared.lightThemeName)
         }
         
         self.textView.didChangeText()

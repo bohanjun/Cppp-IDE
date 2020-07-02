@@ -136,7 +136,7 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
     open override func insertText(_ string: Any, replacementRange: NSRange) {
         super.insertText(string, replacementRange: replacementRange)
         
-        if config!.autoComplete == false {
+        if CDSettings.shared.autoComplete == false {
             return
         }
         
@@ -190,18 +190,9 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
     
     open override func completions(forPartialWordRange charRange: NSRange, indexOfSelectedItem index: UnsafeMutablePointer<Int>) -> [String]? {
         
-        func compare(_ a: String, _ b: String) -> Int {
-            var cnt: Int = 0
-            if a.count > b.count || a.count == 0 || b.count == 0 {
-                return 0
-            } else {
-                for (index, c) in Array(a).enumerated() {
-                    if Array(b)[index].lowercased() == c.lowercased() {
-                        cnt += 1
-                    }
-                }
-            }
-            return cnt
+        let substring = (self.string as NSString).substring(with: charRange)
+        if substring == "" {
+            return [String]()
         }
         
         let line = self.string.lineNumber(at: self.selectedRange.location) ?? 0
@@ -230,7 +221,7 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
                                 case CKCompletionChunkKindTypedText:
                                     typedText = _chunk.text
                                 case CKCompletionChunkKindPlaceholder:
-                                    otherTexts.append("(\(_chunk.text!))")
+                                    otherTexts.append("{\(_chunk.text!)}")
                                 default:
                                     otherTexts.append(_chunk.text)
                             }
@@ -250,9 +241,8 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
         }
         
         var finalRes = [CDCompletionResult]()
-        let substring = (self.string as NSString).substring(with: charRange)
         for result in completionResults {
-            if compare(substring, result.typedText) == substring.count {
+            if result.typedText.lowercased().hasPrefix(substring.lowercased()) && substring.count != result.typedText.count {
                 finalRes.append(result)
             }
         }
@@ -304,12 +294,12 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
         self.textContainer?.size = NSSize(width: CGFloat(Int.max), height: CGFloat(Int.max))
         self.textContainer?.widthTracksTextView = false
         
-        if config == nil {
+        if CDSettings.shared == nil {
             initDefaultData()
         }
         
-        self.highlightr!.setTheme(to: config!.lightThemeName)
-        self.highlightr!.theme.setCodeFont(NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))!)
+        self.highlightr!.setTheme(to: CDSettings.shared.lightThemeName)
+        self.highlightr!.theme.setCodeFont(CDSettings.shared.font)
         
     }
     
