@@ -10,6 +10,9 @@ import Cocoa
 
 class CDCodeCompletionViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
     
+    var results: [CDCompletionResult]!
+    var popover: NSPopover!
+    @IBOutlet weak var tableView: NSTableView!
     var delegate: CDCodeCompletionViewControllerDelegate!
     var range: NSRange!
     
@@ -17,7 +20,6 @@ class CDCodeCompletionViewController: NSViewController, NSTableViewDataSource, N
     // MARK: NSTableViewDataSource
     
     func numberOfRows(in tableView: NSTableView) -> Int {
-        print(results.count)
         return results.count
     }
     
@@ -27,17 +29,35 @@ class CDCodeCompletionViewController: NSViewController, NSTableViewDataSource, N
     
     func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
         
-        if self.results.count >= row {
-            return results[row]
+        if results.count >= row {
+            return results[row].textForDisplay
         } else {
             return nil
         }
         
+        
+        /*if results != nil {
+            if let _result = results[row] as? CKCompletionResult {
+                for chunk in _result.chunks {
+                    if let _chunk = chunk as? CKCompletionChunk {
+                        if _chunk.kind == CKCompletionChunkKindTypedText {
+                            return _chunk.text!
+                        } else {
+                            return nil
+                        }
+                    } else {
+                        return nil
+                    }
+                }
+            }
+        } else {
+            return nil
+        }
+        return nil*/
+        
     }
     
-    var results = [String]()
-    var popover: NSPopover!
-    @IBOutlet weak var tableView: NSTableView!
+    // var results = [String]()
     
     deinit {
         
@@ -82,8 +102,7 @@ class CDCodeCompletionViewController: NSViewController, NSTableViewDataSource, N
         
         if event.specialKey == NSEvent.SpecialKey(rawValue: 13) && self.tableView.selectedRow != -1 {
             
-            let string = self.results[self.tableView.selectedRow]
-            self.delegate?.codeCompletionViewController(self, didSelectItemWithTitle: string, range: self.range)
+            self.delegate?.codeCompletionViewController(self, didSelectItemWithTitle: self.results[self.tableView.selectedRow].completionString, range: self.range)
             self.closePopover()
             return
             

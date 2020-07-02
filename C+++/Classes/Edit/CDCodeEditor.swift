@@ -43,6 +43,29 @@ extension String {
         
     }
     
+    func columnNumber(at position: Int) -> Int {
+        
+        var columnNumber = 0
+        var characterPosition = 0
+        for line in self.components(separatedBy: .newlines) {
+            columnNumber = 0
+            for _ in line {
+                characterPosition += 1
+                columnNumber += 1
+                if characterPosition == position {
+                    return columnNumber
+                }
+            }
+            characterPosition += 1
+            columnNumber += 1
+            if characterPosition == position {
+                return columnNumber
+            }
+        }
+        return 1
+        
+    }
+    
     var isIdentifier: Bool {
         get {
             if self.count == 0 {
@@ -70,14 +93,13 @@ extension String {
 
 open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
     
-    
 
     let highlightr = CDHighlightr()
     var gutterDelegate: CDCodeEditorDelegate!
     var scrollView: CDLineNumberScrollView!
     var codeEditorDelegate: CDCodeEditorDelegate!
+    weak var document: CDCodeDocument!
     var codeAttributedString: CDAttributedString!
-    let parser = CDParser(code: "")
     
     
     
@@ -174,7 +196,7 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
                 return 0
             } else {
                 for (index, c) in Array(a).enumerated() {
-                    if Array(b)[index] == c {
+                    if Array(b)[index].lowercased() == c.lowercased() {
                         cnt += 1
                     }
                 }
@@ -182,45 +204,79 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
             return cnt
         }
         
-        var res = [String]()
-        let string = (self.string as NSString).substring(with: charRange)
+        let line = self.string.lineNumber(at: self.selectedRange.location) ?? 0
+        let column = self.string.columnNumber(at: self.selectedRange.location)
+        let results = CKTranslationUnit(text: self.string, language: CKLanguageCPP).completionResults(forLine: UInt(line), column: UInt(column))
+        var completionResults = [CDCompletionResult]()
         
-        if string == "" {
-            return res
+        if results != nil {
+            
+            var returnType: String!
+            var typedText = ""
+            var otherTexts = [String]()
+            
+            for result in results! {
+                if let _result = result as? CKCompletionResult {
+                    
+                    otherTexts = [String]()
+                    
+                    for chunk in _result.chunks {
+                        if let _chunk = chunk as? CKCompletionChunk {
+                            
+                            
+                            switch _chunk.kind {
+                                case CKCompletionChunkKindResultType:
+                                    returnType = _chunk.text
+                                case CKCompletionChunkKindTypedText:
+                                    typedText = _chunk.text
+                                case CKCompletionChunkKindPlaceholder:
+                                    otherTexts.append("(\(_chunk.text!))")
+                                default:
+                                    otherTexts.append(_chunk.text)
+                            }
+                            
+                            
+                        }
+                        
+                    }
+                    
+                    let completionResult = CDCompletionResult(returnType: returnType, typedText: typedText, otherTexts: otherTexts)
+                    completionResults.append(completionResult)
+                    
+                }
+                
+            }
+            
         }
         
-        self.parser.buffer = (self.string as NSString).substring(to: self.selectedRange.location)
-        let parserRes = parser.getIdentifiers()
-        for i in parserRes {
-            if compare(string, i) == string.count {
-                res.append(i)
+        var finalRes = [CDCompletionResult]()
+        let substring = (self.string as NSString).substring(with: charRange)
+        for result in completionResults {
+            if compare(substring, result.typedText) == substring.count {
+                finalRes.append(result)
             }
         }
         
-        if res.count <= 1 {
+        guard finalRes.count > 0 else {
             return [String]()
         }
-        
-        var rect = self.layoutManager?.boundingRect(forGlyphRange: self.selectedRange, in: self.textContainer!)
-        
+                
         DispatchQueue.main.async {
-            self.parser.buffer = (self.string as NSString).substring(to: self.selectedRange.location)
-            let results = self.parser.getIdentifiers()
-            
-            if results.count > 0 {
-                let vc = CDCodeCompletionViewController()
-                vc.results = res
-                vc.delegate = self
-                vc.range = charRange
+                    
+            let vc = CDCodeCompletionViewController()
+            vc.delegate = self
+            vc.results = finalRes
+            vc.range = charRange
+            var rect = self.layoutManager?.boundingRect(forGlyphRange: self.selectedRange, in: self.textContainer!)
                 rect?.size.width = 1.0
-                DispatchQueue.main.async {
-                    vc.openInPopover(relativeTo: rect!, of: self, preferredEdge: .maxY)
-                    C___.codeCompletionViewController?.closePopover()
-                    C___.codeCompletionViewController = vc
-                }
+            DispatchQueue.main.async {
+                vc.openInPopover(relativeTo: rect!, of: self, preferredEdge: .maxY)
+                C___.codeCompletionViewController?.closePopover()
+                C___.codeCompletionViewController = vc
             }
+            
         }
-        
+                
         return [String]()
         
     }
@@ -233,7 +289,6 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
     
     open override func complete(_ sender: Any?) {
         super.complete(sender)
-        //self.showCodeCompletion()
     }
     
     
@@ -257,24 +312,5 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
         self.highlightr!.theme.setCodeFont(NSFont(name: config!.fontName, size: CGFloat(config!.fontSize))!)
         
     }
-    
-    /*func showCodeCompletion() {
-        
-        var rect = self.layoutManager?.boundingRect(forGlyphRange: self.selectedRange, in: self.textContainer!)
-        DispatchQueue.main.async {
-            self.parser.buffer = (self.string as NSString).substring(to: self.selectedRange.location)
-            let results = self.parser.getIdentifiers()
-            
-            if results.count > 0 {
-                let vc = CDCodeCompletionViewController()
-                vc.results = results
-                rect?.size.width = 1.0
-                DispatchQueue.main.async {
-                    vc.openInPopover(relativeTo: rect!, of: self, preferredEdge: .maxY)
-                }
-            }
-        }
-        
-    }*/
     
 }

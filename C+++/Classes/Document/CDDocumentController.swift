@@ -20,4 +20,12 @@ class CDDocumentController: NSDocumentController {
         }
     }
     
+    override func newDocument(_ sender: Any?) {
+        super.newDocument(sender)
+        self.currentDocument?.save(self)
+        if let document = self.currentDocument as? CDCodeDocument {
+            document.contentViewController.mainTextView.document = document
+        }
+    }
+    
 }

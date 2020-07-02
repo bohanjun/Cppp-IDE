@@ -33,12 +33,10 @@ class CDMainWindowController: NSWindowController, NSWindowDelegate {
         self.window?.toolbar?.isVisible = false
         
         let vc = (self.contentViewController as! CDMainViewController)
-        vc.bottomConstraint.constant = 22.0
         vc.bottom = false
         vc.rightConstraint.constant = 0.0
         vc.right = false
         vc.compileView.isHidden = true
-        vc.leftConstraint.constant = 0.0
         vc.left = false
         vc.fileAndSnippetView.isHidden = true
         

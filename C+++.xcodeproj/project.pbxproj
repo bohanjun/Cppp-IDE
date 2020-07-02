@@ -8,6 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		180480AE2448602700CD0A4D /* CDSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180480AD2448602700CD0A4D /* CDSettings.swift */; };
+		181F2B8E24AB44C600C4B217 /* Index.h in Sources */ = {isa = PBXBuildFile; fileRef = 181F2B8B24AB318800C4B217 /* Index.h */; };
+		181F2B8F24AB44E100C4B217 /* BuildSystem.h in Sources */ = {isa = PBXBuildFile; fileRef = 181F2B8424AB30AC00C4B217 /* BuildSystem.h */; };
+		181F2B9024AB44E900C4B217 /* CXErrorCode.h in Sources */ = {isa = PBXBuildFile; fileRef = 181F2B8624AB311000C4B217 /* CXErrorCode.h */; };
+		181F2B9124AB47D700C4B217 /* CXString.h in Sources */ = {isa = PBXBuildFile; fileRef = 181F2B8724AB312E00C4B217 /* CXString.h */; };
+		181F2B9224AB47DB00C4B217 /* ExternC.h in Sources */ = {isa = PBXBuildFile; fileRef = 181F2B8924AB316300C4B217 /* ExternC.h */; };
+		181F2B9324AB47DF00C4B217 /* FatalErrorHandler.h in Sources */ = {isa = PBXBuildFile; fileRef = 181F2B8A24AB317600C4B217 /* FatalErrorHandler.h */; };
+		181F2B9424AB47E400C4B217 /* Documentation.h in Sources */ = {isa = PBXBuildFile; fileRef = 181F2B8824AB314900C4B217 /* Documentation.h */; };
+		181F2B9524AB47E800C4B217 /* Platform.h in Sources */ = {isa = PBXBuildFile; fileRef = 181F2B8C24AB31E700C4B217 /* Platform.h */; };
+		181F2B9624AB47ED00C4B217 /* CXCompilationDatabase.h in Sources */ = {isa = PBXBuildFile; fileRef = 181F2B8524AB30D200C4B217 /* CXCompilationDatabase.h */; };
+		181F2B9724AB490300C4B217 /* C+++-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 187EF969248C86DD0023F381 /* C+++-Bridging-Header.h */; };
+		181F2B9A24AB557D00C4B217 /* libclang.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 181F2B9924AB557D00C4B217 /* libclang.dylib */; };
+		181F2B9B24AB558500C4B217 /* libclang.dylib in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 181F2B9924AB557D00C4B217 /* libclang.dylib */; };
+		181F2BCF24AC78C700C4B217 /* CKCompletionChunk.m in Sources */ = {isa = PBXBuildFile; fileRef = 181F2BB624AC78C600C4B217 /* CKCompletionChunk.m */; };
+		181F2BD024AC78C700C4B217 /* CKToken+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 181F2BB824AC78C600C4B217 /* CKToken+Private.m */; };
+		181F2BD124AC78C700C4B217 /* CKCursor+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 181F2BBD24AC78C600C4B217 /* CKCursor+Private.m */; };
+		181F2BD224AC78C700C4B217 /* CKCursor.m in Sources */ = {isa = PBXBuildFile; fileRef = 181F2BBE24AC78C600C4B217 /* CKCursor.m */; };
+		181F2BD324AC78C700C4B217 /* CKToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 181F2BBF24AC78C600C4B217 /* CKToken.m */; };
+		181F2BD424AC78C700C4B217 /* CKTranslationUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 181F2BC024AC78C600C4B217 /* CKTranslationUnit.m */; };
+		181F2BD524AC78C700C4B217 /* CKIndex.m in Sources */ = {isa = PBXBuildFile; fileRef = 181F2BC424AC78C700C4B217 /* CKIndex.m */; };
+		181F2BD624AC78C700C4B217 /* CKDiagnostic+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 181F2BC524AC78C700C4B217 /* CKDiagnostic+Private.m */; };
+		181F2BD724AC78C700C4B217 /* CKTranslationUnit+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 181F2BC624AC78C700C4B217 /* CKTranslationUnit+Private.m */; };
+		181F2BD824AC78C700C4B217 /* CKDiagnostic.m in Sources */ = {isa = PBXBuildFile; fileRef = 181F2BCB24AC78C700C4B217 /* CKDiagnostic.m */; };
+		181F2BD924AC78C700C4B217 /* CKSourceLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 181F2BCC24AC78C700C4B217 /* CKSourceLocation.m */; };
+		181F2BDA24AC78C700C4B217 /* CKCompletionResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 181F2BCD24AC78C700C4B217 /* CKCompletionResult.m */; };
+		181F2BDB24AC78C700C4B217 /* CKFixIt.m in Sources */ = {isa = PBXBuildFile; fileRef = 181F2BCE24AC78C700C4B217 /* CKFixIt.m */; };
 		1827400C24A6343000AF3613 /* CDToolbarStateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827400B24A6343000AF3613 /* CDToolbarStateButton.swift */; };
 		183BF3C524287D4C007AF6AC /* CDFileCompiler(CompileAndRun).swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3C77724272DF700F4CA14 /* CDFileCompiler(CompileAndRun).swift */; };
 		183BF3CA242906B3007AF6AC /* CDCodeEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183BF3C9242906B3007AF6AC /* CDCodeEditor.swift */; };
@@ -119,7 +144,7 @@
 		18B1857024638B2A00B579AD /* CDSnippetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B1856F24638B2A00B579AD /* CDSnippetTableViewCell.swift */; };
 		18B185732463B32400B579AD /* CDSnippetPopoperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B185712463B32400B579AD /* CDSnippetPopoperViewController.swift */; };
 		18B185742463B32400B579AD /* CDSnippetPopoperViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B185722463B32400B579AD /* CDSnippetPopoperViewController.xib */; };
-		18B1857F2465AB2E00B579AD /* CDParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B1857E2465AB2E00B579AD /* CDParser.swift */; };
+		18B1857F2465AB2E00B579AD /* CDCompletionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B1857E2465AB2E00B579AD /* CDCompletionResult.swift */; };
 		18B185822468210100B579AD /* CDFileCompiler(Debugger).swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B185812468210100B579AD /* CDFileCompiler(Debugger).swift */; };
 		18B1858B2468DC9800B579AD /* CDFileCompiler(Compile).swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B1858A2468DC9800B579AD /* CDFileCompiler(Compile).swift */; };
 		18B1858D2468E44700B579AD /* CDDebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B1858C2468E44700B579AD /* CDDebugViewController.swift */; };
@@ -164,6 +189,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				181F2B9B24AB558500C4B217 /* libclang.dylib in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,6 +199,45 @@
 /* Begin PBXFileReference section */
 		180480A824474A0700CD0A4D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		180480AD2448602700CD0A4D /* CDSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSettings.swift; sourceTree = "<group>"; };
+		181F2B8424AB30AC00C4B217 /* BuildSystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuildSystem.h; sourceTree = "<group>"; };
+		181F2B8524AB30D200C4B217 /* CXCompilationDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXCompilationDatabase.h; sourceTree = "<group>"; };
+		181F2B8624AB311000C4B217 /* CXErrorCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXErrorCode.h; sourceTree = "<group>"; };
+		181F2B8724AB312E00C4B217 /* CXString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXString.h; sourceTree = "<group>"; };
+		181F2B8824AB314900C4B217 /* Documentation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Documentation.h; sourceTree = "<group>"; };
+		181F2B8924AB316300C4B217 /* ExternC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExternC.h; sourceTree = "<group>"; };
+		181F2B8A24AB317600C4B217 /* FatalErrorHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FatalErrorHandler.h; sourceTree = "<group>"; };
+		181F2B8B24AB318800C4B217 /* Index.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Index.h; sourceTree = "<group>"; };
+		181F2B8C24AB31E700C4B217 /* Platform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Platform.h; sourceTree = "<group>"; };
+		181F2B9924AB557D00C4B217 /* libclang.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libclang.dylib; sourceTree = "<group>"; };
+		181F2BAF24AC78B400C4B217 /* ClangKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClangKit.h; sourceTree = "<group>"; };
+		181F2BB024AC78B400C4B217 /* CKWarnings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKWarnings.h; sourceTree = "<group>"; };
+		181F2BB524AC78C600C4B217 /* CKCursor+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CKCursor+Private.h"; sourceTree = "<group>"; };
+		181F2BB624AC78C600C4B217 /* CKCompletionChunk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKCompletionChunk.m; sourceTree = "<group>"; wrapsLines = 0; };
+		181F2BB724AC78C600C4B217 /* CKIndex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKIndex.h; sourceTree = "<group>"; };
+		181F2BB824AC78C600C4B217 /* CKToken+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CKToken+Private.m"; sourceTree = "<group>"; };
+		181F2BB924AC78C600C4B217 /* CKCursor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKCursor.h; sourceTree = "<group>"; };
+		181F2BBA24AC78C600C4B217 /* CKSourceLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKSourceLocation.h; sourceTree = "<group>"; };
+		181F2BBB24AC78C600C4B217 /* CKCompletionChunk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKCompletionChunk.h; sourceTree = "<group>"; };
+		181F2BBC24AC78C600C4B217 /* CKFixIt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKFixIt.h; sourceTree = "<group>"; };
+		181F2BBD24AC78C600C4B217 /* CKCursor+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CKCursor+Private.m"; sourceTree = "<group>"; };
+		181F2BBE24AC78C600C4B217 /* CKCursor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKCursor.m; sourceTree = "<group>"; };
+		181F2BBF24AC78C600C4B217 /* CKToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKToken.m; sourceTree = "<group>"; };
+		181F2BC024AC78C600C4B217 /* CKTranslationUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKTranslationUnit.m; sourceTree = "<group>"; };
+		181F2BC124AC78C700C4B217 /* CKCompletionResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKCompletionResult.h; sourceTree = "<group>"; };
+		181F2BC224AC78C700C4B217 /* CKToken+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CKToken+Private.h"; sourceTree = "<group>"; };
+		181F2BC324AC78C700C4B217 /* CKTranslationUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKTranslationUnit.h; sourceTree = "<group>"; };
+		181F2BC424AC78C700C4B217 /* CKIndex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKIndex.m; sourceTree = "<group>"; };
+		181F2BC524AC78C700C4B217 /* CKDiagnostic+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CKDiagnostic+Private.m"; sourceTree = "<group>"; };
+		181F2BC624AC78C700C4B217 /* CKTranslationUnit+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CKTranslationUnit+Private.m"; sourceTree = "<group>"; };
+		181F2BC724AC78C700C4B217 /* CKTranslationUnit+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CKTranslationUnit+Private.h"; sourceTree = "<group>"; };
+		181F2BC824AC78C700C4B217 /* CKDiagnostic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKDiagnostic.h; sourceTree = "<group>"; };
+		181F2BC924AC78C700C4B217 /* CKToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKToken.h; sourceTree = "<group>"; };
+		181F2BCA24AC78C700C4B217 /* CKDiagnostic+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CKDiagnostic+Private.h"; sourceTree = "<group>"; };
+		181F2BCB24AC78C700C4B217 /* CKDiagnostic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKDiagnostic.m; sourceTree = "<group>"; };
+		181F2BCC24AC78C700C4B217 /* CKSourceLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKSourceLocation.m; sourceTree = "<group>"; };
+		181F2BCD24AC78C700C4B217 /* CKCompletionResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKCompletionResult.m; sourceTree = "<group>"; };
+		181F2BCE24AC78C700C4B217 /* CKFixIt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKFixIt.m; sourceTree = "<group>"; };
+		181F2BDC24AC7B1100C4B217 /* CKLanguage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKLanguage.h; sourceTree = "<group>"; };
 		1827400B24A6343000AF3613 /* CDToolbarStateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDToolbarStateButton.swift; sourceTree = "<group>"; };
 		183BF3C9242906B3007AF6AC /* CDCodeEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDCodeEditor.swift; sourceTree = "<group>"; };
 		184B1C7124945FBA0071C1AA /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
@@ -285,7 +350,7 @@
 		18B1856F24638B2A00B579AD /* CDSnippetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSnippetTableViewCell.swift; sourceTree = "<group>"; };
 		18B185712463B32400B579AD /* CDSnippetPopoperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSnippetPopoperViewController.swift; sourceTree = "<group>"; };
 		18B185722463B32400B579AD /* CDSnippetPopoperViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CDSnippetPopoperViewController.xib; sourceTree = "<group>"; };
-		18B1857E2465AB2E00B579AD /* CDParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDParser.swift; sourceTree = "<group>"; };
+		18B1857E2465AB2E00B579AD /* CDCompletionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDCompletionResult.swift; sourceTree = "<group>"; };
 		18B185812468210100B579AD /* CDFileCompiler(Debugger).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDFileCompiler(Debugger).swift"; sourceTree = "<group>"; };
 		18B1858A2468DC9800B579AD /* CDFileCompiler(Compile).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDFileCompiler(Compile).swift"; sourceTree = "<group>"; };
 		18B1858C2468E44700B579AD /* CDDebugViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDDebugViewController.swift; sourceTree = "<group>"; };
@@ -305,7 +370,7 @@
 		18D4DD6C246A2C5100B97F32 /* CDProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProjectViewController.swift; sourceTree = "<group>"; };
 		18D4DD6E246A2C9E00B97F32 /* CDProjectTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProjectTableView.swift; sourceTree = "<group>"; };
 		18D4DD70246A303400B97F32 /* CDProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProjectTableViewCell.swift; sourceTree = "<group>"; };
-		18E17EB924A809D200392009 /* CDCodeCompletionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDCodeCompletionViewController.swift; sourceTree = "<group>"; };
+		18E17EB924A809D200392009 /* CDCodeCompletionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDCodeCompletionViewController.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		18E17EBA24A809D200392009 /* CDCodeCompletionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CDCodeCompletionViewController.xib; sourceTree = "<group>"; };
 		18E17F0D24A8D7AE00392009 /* CDCodeCompletionViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDCodeCompletionViewControllerDelegate.swift; sourceTree = "<group>"; };
 		18E7291D244E6F91000317D7 /* CDLineNumberTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDLineNumberTextView.swift; sourceTree = "<group>"; };
@@ -322,12 +387,73 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181F2B9A24AB557D00C4B217 /* libclang.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		181F2B8324AB307F00C4B217 /* clang-c */ = {
+			isa = PBXGroup;
+			children = (
+				181F2B8424AB30AC00C4B217 /* BuildSystem.h */,
+				181F2B8624AB311000C4B217 /* CXErrorCode.h */,
+				181F2B8524AB30D200C4B217 /* CXCompilationDatabase.h */,
+				181F2B8724AB312E00C4B217 /* CXString.h */,
+				181F2B8824AB314900C4B217 /* Documentation.h */,
+				181F2B8924AB316300C4B217 /* ExternC.h */,
+				181F2B8A24AB317600C4B217 /* FatalErrorHandler.h */,
+				181F2B8B24AB318800C4B217 /* Index.h */,
+				181F2B8C24AB31E700C4B217 /* Platform.h */,
+			);
+			path = "clang-c";
+			sourceTree = "<group>";
+		};
+		181F2B9824AB557D00C4B217 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				181F2B9924AB557D00C4B217 /* libclang.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		181F2BAE24AC789700C4B217 /* ClangKit */ = {
+			isa = PBXGroup;
+			children = (
+				181F2BAF24AC78B400C4B217 /* ClangKit.h */,
+				181F2BB024AC78B400C4B217 /* CKWarnings.h */,
+				181F2BDC24AC7B1100C4B217 /* CKLanguage.h */,
+				181F2BBB24AC78C600C4B217 /* CKCompletionChunk.h */,
+				181F2BB624AC78C600C4B217 /* CKCompletionChunk.m */,
+				181F2BC124AC78C700C4B217 /* CKCompletionResult.h */,
+				181F2BCD24AC78C700C4B217 /* CKCompletionResult.m */,
+				181F2BB924AC78C600C4B217 /* CKCursor.h */,
+				181F2BBE24AC78C600C4B217 /* CKCursor.m */,
+				181F2BB524AC78C600C4B217 /* CKCursor+Private.h */,
+				181F2BBD24AC78C600C4B217 /* CKCursor+Private.m */,
+				181F2BC824AC78C700C4B217 /* CKDiagnostic.h */,
+				181F2BCB24AC78C700C4B217 /* CKDiagnostic.m */,
+				181F2BCA24AC78C700C4B217 /* CKDiagnostic+Private.h */,
+				181F2BC524AC78C700C4B217 /* CKDiagnostic+Private.m */,
+				181F2BBC24AC78C600C4B217 /* CKFixIt.h */,
+				181F2BCE24AC78C700C4B217 /* CKFixIt.m */,
+				181F2BB724AC78C600C4B217 /* CKIndex.h */,
+				181F2BC424AC78C700C4B217 /* CKIndex.m */,
+				181F2BBA24AC78C600C4B217 /* CKSourceLocation.h */,
+				181F2BCC24AC78C700C4B217 /* CKSourceLocation.m */,
+				181F2BC924AC78C700C4B217 /* CKToken.h */,
+				181F2BBF24AC78C600C4B217 /* CKToken.m */,
+				181F2BC224AC78C700C4B217 /* CKToken+Private.h */,
+				181F2BB824AC78C600C4B217 /* CKToken+Private.m */,
+				181F2BC324AC78C700C4B217 /* CKTranslationUnit.h */,
+				181F2BC024AC78C600C4B217 /* CKTranslationUnit.m */,
+				181F2BC724AC78C700C4B217 /* CKTranslationUnit+Private.h */,
+				181F2BC624AC78C700C4B217 /* CKTranslationUnit+Private.m */,
+			);
+			path = ClangKit;
+			sourceTree = "<group>";
+		};
 		183BF3C624287FFE007AF6AC /* Compile */ = {
 			isa = PBXGroup;
 			children = (
@@ -522,7 +648,7 @@
 		18B185802466D9B100B579AD /* Completion */ = {
 			isa = PBXGroup;
 			children = (
-				18B1857E2465AB2E00B579AD /* CDParser.swift */,
+				18B1857E2465AB2E00B579AD /* CDCompletionResult.swift */,
 				18E17EB924A809D200392009 /* CDCodeCompletionViewController.swift */,
 				18E17F0D24A8D7AE00392009 /* CDCodeCompletionViewControllerDelegate.swift */,
 				18E17EBA24A809D200392009 /* CDCodeCompletionViewController.xib */,
@@ -557,6 +683,7 @@
 				184B1C7124945FBA0071C1AA /* index.html */,
 				18B3C77E24282C1F00F4CA14 /* C+++ */,
 				18B3C76524272D9F00F4CA14 /* Products */,
+				181F2B9824AB557D00C4B217 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -574,9 +701,11 @@
 				18B3C77F24282C1F00F4CA14 /* AppDelegate.swift */,
 				184D5733247EA97500C5AA27 /* NSApplication Extension.swift */,
 				183BF3C72428801C007AF6AC /* Classes */,
-				18B3C78A24282C2100F4CA14 /* Info.plist */,
+				181F2B8324AB307F00C4B217 /* clang-c */,
+				181F2BAE24AC789700C4B217 /* ClangKit */,
 				187EF969248C86DD0023F381 /* C+++-Bridging-Header.h */,
 				18B3C78524282C2100F4CA14 /* Assets.xcassets */,
+				18B3C78A24282C2100F4CA14 /* Info.plist */,
 				18B3C78B24282C2100F4CA14 /* Code_Editor.entitlements */,
 			);
 			path = "C+++";
@@ -650,6 +779,7 @@
 		18B3C75C24272D9F00F4CA14 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = CD;
 				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Zhu Yixuan";
@@ -790,29 +920,50 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181F2B9724AB490300C4B217 /* C+++-Bridging-Header.h in Sources */,
+				181F2B9624AB47ED00C4B217 /* CXCompilationDatabase.h in Sources */,
+				181F2B9524AB47E800C4B217 /* Platform.h in Sources */,
+				181F2B9424AB47E400C4B217 /* Documentation.h in Sources */,
+				181F2B9324AB47DF00C4B217 /* FatalErrorHandler.h in Sources */,
+				181F2B9224AB47DB00C4B217 /* ExternC.h in Sources */,
+				181F2B9124AB47D700C4B217 /* CXString.h in Sources */,
+				181F2B9024AB44E900C4B217 /* CXErrorCode.h in Sources */,
+				181F2B8F24AB44E100C4B217 /* BuildSystem.h in Sources */,
+				181F2B8E24AB44C600C4B217 /* Index.h in Sources */,
+				181F2BD724AC78C700C4B217 /* CKTranslationUnit+Private.m in Sources */,
 				1868EBD7244AF934005467B2 /* CDCodeEditorDelegate.swift in Sources */,
 				1860EC3324839A8B0066DE64 /* CDDocumentController.swift in Sources */,
 				18B3C78224282C1F00F4CA14 /* CDMainViewController.swift in Sources */,
+				181F2BD024AC78C700C4B217 /* CKToken+Private.m in Sources */,
 				18FC028A2492624F004551B1 /* CDUpdateManager(NSViewController Extension).swift in Sources */,
 				187527B0247A6A1900A7522A /* CDLaunchViewController.swift in Sources */,
-				18B1857F2465AB2E00B579AD /* CDParser.swift in Sources */,
+				18B1857F2465AB2E00B579AD /* CDCompletionResult.swift in Sources */,
+				181F2BD224AC78C700C4B217 /* CKCursor.m in Sources */,
 				1868EBD5244981C2005467B2 /* CDCompileSettings.swift in Sources */,
+				181F2BCF24AC78C700C4B217 /* CKCompletionChunk.m in Sources */,
 				18A41AA8242C75C300AFC422 /* CDHighlightrShims.swift in Sources */,
+				181F2BDA24AC78C700C4B217 /* CKCompletionResult.m in Sources */,
 				186AC7F324A47BD900F6B682 /* NSViewController+NSUserNotificationCenterDelegate.swift in Sources */,
 				180480AE2448602700CD0A4D /* CDSettings.swift in Sources */,
 				18E72920244E756E000317D7 /* CDLineNumberScrollView.swift in Sources */,
 				18B185732463B32400B579AD /* CDSnippetPopoperViewController.swift in Sources */,
 				18A41AAA242C75DE00AFC422 /* CDAttributedString.swift in Sources */,
 				183BF3CA242906B3007AF6AC /* CDCodeEditor.swift in Sources */,
+				181F2BD824AC78C700C4B217 /* CKDiagnostic.m in Sources */,
 				18A41AA2242C756700AFC422 /* CDHighlightr.swift in Sources */,
 				18B1858D2468E44700B579AD /* CDDebugViewController.swift in Sources */,
 				18B1858B2468DC9800B579AD /* CDFileCompiler(Compile).swift in Sources */,
+				181F2BD124AC78C700C4B217 /* CKCursor+Private.m in Sources */,
 				18A41AA6242C75A600AFC422 /* CDHighlightrHTMLUtils.swift in Sources */,
 				18E17EBB24A809D200392009 /* CDCodeCompletionViewController.swift in Sources */,
+				181F2BD924AC78C700C4B217 /* CKSourceLocation.m in Sources */,
 				18E17F0E24A8D7AE00392009 /* CDCodeCompletionViewControllerDelegate.swift in Sources */,
+				181F2BD524AC78C700C4B217 /* CKIndex.m in Sources */,
 				1827400C24A6343000AF3613 /* CDToolbarStateButton.swift in Sources */,
+				181F2BD324AC78C700C4B217 /* CKToken.m in Sources */,
 				18541B162445905F000EB4CB /* CDSettingsViewController.swift in Sources */,
 				18A41AA4242C758B00AFC422 /* CDHighlightrTheme.swift in Sources */,
+				181F2BDB24AC78C700C4B217 /* CKFixIt.m in Sources */,
 				18B3C7942428378E00F4CA14 /* CDMainWindowController.swift in Sources */,
 				18FC054B2487BA3600F33CE2 /* CDTestViewController.swift in Sources */,
 				18D4DD6F246A2C9E00B97F32 /* CDProjectTableView.swift in Sources */,
@@ -820,6 +971,7 @@
 				18D4DD71246A303400B97F32 /* CDProjectTableViewCell.swift in Sources */,
 				1895B51C24A716E60019580D /* CDFlippedView.swift in Sources */,
 				18D4DD6D246A2C5100B97F32 /* CDProjectViewController.swift in Sources */,
+				181F2BD424AC78C700C4B217 /* CKTranslationUnit.m in Sources */,
 				18B1857024638B2A00B579AD /* CDSnippetTableViewCell.swift in Sources */,
 				18B185822468210100B579AD /* CDFileCompiler(Debugger).swift in Sources */,
 				18B185912469608B00B579AD /* CDProjectDocument.swift in Sources */,
@@ -830,6 +982,7 @@
 				18B3C790242836A500F4CA14 /* CDDocumentContent.swift in Sources */,
 				183BF3C524287D4C007AF6AC /* CDFileCompiler(CompileAndRun).swift in Sources */,
 				184D5734247EA97500C5AA27 /* NSApplication Extension.swift in Sources */,
+				181F2BD624AC78C700C4B217 /* CKDiagnostic+Private.m in Sources */,
 				18E7291E244E6F91000317D7 /* CDLineNumberTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -846,7 +999,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -907,7 +1060,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -973,6 +1126,10 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12.2;
 				MARKETING_VERSION = 2.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = ZhuYixuan.Cppp;
@@ -1003,6 +1160,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12.2;
 				MARKETING_VERSION = 2.0.3;

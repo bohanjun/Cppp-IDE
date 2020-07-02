@@ -91,9 +91,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
     @IBOutlet weak var mainTextView: CDCodeEditor!
     @IBOutlet weak var lineNumberTextView: CDLineNumberTextView!
     @IBOutlet weak var pathControl: NSPathControl!
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var rightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var leftConstraint: NSLayoutConstraint!
     @IBOutlet weak var fakeBackground: NSTextField!
     @IBOutlet weak var scrollViewOfTextView: CDLineNumberScrollView!
     @IBOutlet weak var linesLabel: NSTextField!
@@ -129,6 +127,8 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.document?.save(self)
         
         self.mainTextView.codeEditorDelegate = self
         self.mainTextView.gutterDelegate = self.lineNumberTextView
