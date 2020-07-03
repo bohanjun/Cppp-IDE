@@ -96,8 +96,8 @@ CKDiagnosticSeverity CKDiagnosticSeverityFatal    = CXDiagnostic_Fatal;
         severity = @"Unknown";
     }
     
-    description = [ super description ];
-    description = [ description stringByAppendingFormat: @": %@[%lu:%lu] - %@",
+    description = @"";
+    description = [ description stringByAppendingFormat: @"%@ (%lu:%lu) - %@",
                                                          severity,
                                                          ( unsigned long )( self.line ),
                                                          ( unsigned long )( self.column ),

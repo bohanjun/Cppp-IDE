@@ -10,6 +10,17 @@ import Cocoa
 
 class CDSnippetTableViewCell: NSView, CDSnippetPopoverViewControllerDelegate {
     
+    var explicitHeight: CGFloat = 45.0 {
+        didSet {
+            self.setup(width: 210.0)
+        }
+    }
+    var displaysImage: Bool = true {
+        didSet {
+            self.setup(width: 210.0)
+        }
+    }
+    
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
         NSColor.textBackgroundColor.set()
@@ -33,7 +44,7 @@ class CDSnippetTableViewCell: NSView, CDSnippetPopoverViewControllerDelegate {
     
     init(title: String?, image: NSImage?, code: String?, width: CGFloat) {
         
-        super.init(frame: NSRect(x: 0, y: 0, width: width, height: 45))
+        super.init(frame: NSRect(x: 0, y: 0, width: width, height: explicitHeight))
         self.title = title
         self.code = code
         self.image = image
@@ -53,7 +64,12 @@ class CDSnippetTableViewCell: NSView, CDSnippetPopoverViewControllerDelegate {
     
     func setup(width: CGFloat) {
         
-        self.titleLabel = NSButton(frame: CGRect(x: 0, y: 0, width: width, height: 45))
+        for view in self.subviews {
+            view.removeFromSuperview()
+        }
+        
+        self.titleLabel = NSButton(frame: CGRect(x: 0, y: 0, width: width, height: explicitHeight))
+        self.frame = CGRect(x: 0, y: 0, width: width, height: explicitHeight)
         self.titleLabel.action = #selector(showInfo)
         self.titleLabel.font = NSFont.systemFont(ofSize: 15.0)
         self.titleLabel.isBordered = true
@@ -63,7 +79,9 @@ class CDSnippetTableViewCell: NSView, CDSnippetPopoverViewControllerDelegate {
         self.titleLabel.imagePosition = .imageLeft
         self.titleLabel.imageScaling = .scaleProportionallyUpOrDown
         self.titleLabel.alignment = .left
-        self.titleLabel.image = image
+        if self.displaysImage {
+            self.titleLabel.image = image
+        }
         self.addSubview(titleLabel)
         
     }
@@ -78,7 +96,7 @@ class CDSnippetTableViewCell: NSView, CDSnippetPopoverViewControllerDelegate {
         
         popover = NSPopover()
         let vc = CDSnippetPopoperViewController()
-        vc.setup(title: self.title, image: self.titleLabel.image!, code: self.code, mode: false)
+        vc.setup(title: self.title, image: self.titleLabel.image, code: self.code, mode: false)
         vc.delegate = (self.superview) as! CDSnippetTableView
         vc.closeDelegate = self
         vc.addToCodeDelegate = (((self.superview) as! CDSnippetTableView).superview?.superview?.window?.contentViewController) as! CDMainViewController

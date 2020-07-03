@@ -15,6 +15,7 @@ public func initDefaultData() {
     } catch {
         return
     }
+    
     // Create the default data.
     CDSettings.shared = CDSettings("Courier", 15, "Xcode", "Agate", true)!
     CDCompileSettings.shared = CDCompileSettings("g++", "")!
@@ -71,8 +72,6 @@ class CDSettingsViewController: NSViewController {
         NSFontManager.shared.target = self
         NSFontManager.shared.action = #selector(changeFont(_:))
         NSFontManager.shared.orderFrontFontPanel(self)
-        /*NSFontPanel.shared.beginSheet(self.view.window!) { response in
-        }*/
         
     }
     
@@ -109,10 +108,10 @@ class CDSettingsViewController: NSViewController {
             
         }
         
-        if let savedData2 = CDCompileSettings.shared {
+        if let savedCompileSettingsData = CDCompileSettings.shared {
             
-            self.compiler.stringValue = savedData2.compiler
-            self.arguments.stringValue = savedData2.arguments
+            self.compiler.stringValue = savedCompileSettingsData.compiler
+            self.arguments.stringValue = savedCompileSettingsData.arguments
             
         }
         

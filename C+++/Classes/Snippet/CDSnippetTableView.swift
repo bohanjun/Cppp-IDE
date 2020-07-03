@@ -11,12 +11,44 @@ import os.log
 
 class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate {
     
-    let archievePath = FileManager().urls(for: .libraryDirectory, in: .userDomainMask).first!.appendingPathComponent("C+++").appendingPathComponent("Snippets")
+    var explicitCellHeight: CGFloat {
+        get {
+            if self.cells.count == 0 {
+                return 45.0
+            } else {
+                return self.cells[0].explicitHeight
+            }
+        }
+        set {
+            for cell in self.cells {
+                cell.explicitHeight = newValue
+            }
+            self.setup(cells: self.cells)
+        }
+    }
+    
+    var cellDisplaysImage: Bool {
+        get {
+            if self.cells.count == 0 {
+                return true
+            } else {
+                return self.cells[0].displaysImage
+            }
+        }
+        set {
+            for cell in self.cells {
+                cell.displaysImage = newValue
+            }
+            self.setup(cells: self.cells)
+        }
+    }
+    
+    static let archievePath = FileManager().urls(for: .libraryDirectory, in: .userDomainMask).first!.appendingPathComponent("C+++").appendingPathComponent("Snippets")
     
     func save() {
         
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(cells, toFile:
-        archievePath.path)
+                                                                    CDSnippetTableView.archievePath.path)
         
         if !isSuccessfulSave {
             os_log("Failed to save...", type: .error)
@@ -39,7 +71,7 @@ class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate 
     /// Load the snippets.
     /// - returns: [CDTableViewCell]
     func load() -> [CDSnippetTableViewCell]?  {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: archievePath.path) as? [CDSnippetTableViewCell]
+        return NSKeyedUnarchiver.unarchiveObject(withFile: CDSnippetTableView.archievePath.path) as? [CDSnippetTableViewCell]
     }
     
     
@@ -177,6 +209,18 @@ class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate 
             res.append(i.title!)
         }
         return res
+        
+    }
+    
+    static func snippetCompletionResults() -> [CDCompletionResult] {
+        
+        var results = [CDCompletionResult]()
+        var result: CDCompletionResult
+        for cell in (NSKeyedUnarchiver.unarchiveObject(withFile: archievePath.path) as! [CDSnippetTableViewCell]) {
+            result = CDCompletionResult(returnType: cell.title, typedText: cell.code, otherTexts: [String]())
+            results.append(result)
+        }
+        return results
         
     }
     

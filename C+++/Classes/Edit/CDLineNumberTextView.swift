@@ -13,6 +13,12 @@ class CDLineNumberTextView: NSTextView, CDCodeEditorDelegate {
     @objc
     func didChangeText(lines: Int, currentLine: Int) {
         
+        if #available(OSX 10.13, *) {
+            self.textColor = NSColor(named: "LineNumberColor")
+        } else {
+            self.textColor = NSColor.textColor
+        }
+        
         self.isEditable = true
         self.isSelectable = true
         var string = ""
@@ -40,11 +46,18 @@ class CDLineNumberTextView: NSTextView, CDCodeEditorDelegate {
     ///   - color: The color.
     func markLineNumber(line: Int, color: NSColor) {
         
+        if line <= 0 || self.string.count <= 0 {
+            return
+        }
+        
         self.isEditable = true
         self.isSelectable = true
         var string = ""
         var range = NSMakeRange(0, 0)
-        if line > 0 {
+        if line == 1 && self.string.count >= 1 {
+            range = NSMakeRange(0, 1)
+        }
+        if line > 1 {
             for i in 1..<line {
                 string += "\(i)\n"
             }

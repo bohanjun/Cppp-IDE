@@ -82,7 +82,7 @@ class CDSnippetPopoperViewController: NSViewController {
     - parameter mode: Whether it is editable.
     - returns: none
     */
-    func setup(title: String, image: NSImage, code: String, mode: Bool) {
+    func setup(title: String, image: NSImage?, code: String, mode: Bool) {
         
         self.loadView()
         self.titleLabel.stringValue = title

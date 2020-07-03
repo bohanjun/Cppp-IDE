@@ -728,13 +728,13 @@ Gw
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aYN-i8-NOp">
                                             <rect key="frame" x="86" y="137" width="114" height="25"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <popUpButtonCell key="cell" type="push" title="Courier" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="6c2-ts-vri" id="jMq-m3-e3g">
+                                            <popUpButtonCell key="cell" type="push" title="Menlo" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="8hh-ii-DU4" id="jMq-m3-e3g">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="menu"/>
                                                 <menu key="menu" id="E7L-hh-PEz">
                                                     <items>
-                                                        <menuItem title="Menlo" id="8hh-ii-DU4"/>
-                                                        <menuItem title="Courier" state="on" id="6c2-ts-vri"/>
+                                                        <menuItem title="Menlo" state="on" id="8hh-ii-DU4"/>
+                                                        <menuItem title="Courier" id="6c2-ts-vri"/>
                                                         <menuItem title="Courier New" id="reS-Bd-Zot"/>
                                                         <menuItem title="PT Mono" id="IsB-ar-hPO">
                                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -1466,8 +1466,8 @@ Gw
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="TzQ-K8-fWw">
                                                 <rect key="frame" x="0.0" y="20" width="217" height="654"/>
                                                 <subviews>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="185" translatesAutoresizingMaskIntoConstraints="NO" id="pX0-ko-mBy">
-                                                        <rect key="frame" x="11" y="564" width="189" height="52"/>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pX0-ko-mBy">
+                                                        <rect key="frame" x="11" y="564" width="194" height="52"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="52" id="y35-JE-27x"/>
                                                         </constraints>
@@ -1589,11 +1589,12 @@ Gw
                                                         </constraints>
                                                     </customView>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GhK-qN-kZs">
-                                                        <rect key="frame" x="11" y="624" width="189" height="21"/>
+                                                        <rect key="frame" x="11" y="624" width="194" height="21"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="21" id="IkL-dS-sgE"/>
+                                                            <constraint firstAttribute="width" constant="190" id="KVX-ib-LIF"/>
                                                         </constraints>
-                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Untitled.cpp" id="1cb-m8-NJf">
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" truncatesLastVisibleLine="YES" title="Untitled.cpp" id="1cb-m8-NJf">
                                                             <font key="font" metaFont="systemSemibold" size="19"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1630,16 +1631,17 @@ Gw
                                                 </constraints>
                                             </customView>
                                             <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yvz-sc-WpK">
-                                                <rect key="frame" x="22" y="681" width="172" height="20"/>
-                                                <segmentedCell key="cell" borderStyle="border" alignment="left" segmentDistribution="fillEqually" style="roundRect" trackingMode="selectOne" id="ZsW-lY-tvs">
-                                                    <font key="font" metaFont="cellTitle"/>
+                                                <rect key="frame" x="22" y="680" width="172" height="21"/>
+                                                <segmentedCell key="cell" borderStyle="border" alignment="left" segmentDistribution="fillEqually" style="capsule" trackingMode="selectOne" id="ZsW-lY-tvs">
+                                                    <font key="font" metaFont="system"/>
                                                     <segments>
-                                                        <segment label="File" image="NSTouchBarFolderMoveToTemplate" width="85" selected="YES"/>
-                                                        <segment label="Snippets" image="NSTouchBarTextListTemplate" tag="1"/>
+                                                        <segment image="NSTouchBarFolderMoveToTemplate" selected="YES"/>
+                                                        <segment image="NSTouchBarTextListTemplate" tag="1"/>
+                                                        <segment image="NSTouchBarGetInfoTemplate"/>
                                                     </segments>
                                                 </segmentedCell>
                                                 <connections>
-                                                    <action selector="valueChanged:" target="5gI-5U-AMq" id="EQ2-9d-qUO"/>
+                                                    <action selector="didClickSegmentedControl:" target="5gI-5U-AMq" id="EQ2-9d-qUO"/>
                                                 </connections>
                                             </segmentedControl>
                                         </subviews>
@@ -1915,8 +1917,8 @@ Gw
                         <outlet property="compileInfo" destination="XdU-QA-NPp" id="dmo-GI-COU"/>
                         <outlet property="compileView" destination="qkV-Pw-MXt" id="fwd-MB-Naf"/>
                         <outlet property="fakeBackground" destination="0HT-on-mcG" id="1xu-mn-zwJ"/>
-                        <outlet property="fileAndSnippetView" destination="Qyo-s2-8ZO" id="VT5-js-cmi"/>
                         <outlet property="fileView" destination="TzQ-K8-fWw" id="eCX-cC-ChV"/>
+                        <outlet property="leftView" destination="Qyo-s2-8ZO" id="VT5-js-cmi"/>
                         <outlet property="lineNumberTextView" destination="hS1-5x-uqb" id="poC-ev-yTa"/>
                         <outlet property="linesLabel" destination="42g-tY-n4q" id="vAG-yT-KLn"/>
                         <outlet property="mainTextView" destination="E0u-iA-KeT" id="B0O-yd-iHk"/>
@@ -1924,9 +1926,10 @@ Gw
                         <outlet property="rightConstraint" destination="fNW-CT-dK4" id="wop-M0-Toi"/>
                         <outlet property="scrollViewOfTableView" destination="5hZ-8U-hjU" id="w2d-vE-Q1o"/>
                         <outlet property="scrollViewOfTextView" destination="yLp-eY-fSk" id="Lzl-9S-PjX"/>
+                        <outlet property="segmentedControl" destination="Yvz-sc-WpK" id="NJR-Ej-n8z"/>
                         <outlet property="smallSplitView" destination="ydI-Mf-nVj" id="SZl-fp-rWw"/>
+                        <outlet property="snippetAndDiagnositcsTableView" destination="T7N-w9-Bt0" id="sXD-V6-YYK"/>
                         <outlet property="snippetSearchField" destination="k1p-D8-m1a" id="FGs-eD-hZD"/>
-                        <outlet property="snippetTableView" destination="T7N-w9-Bt0" id="sXD-V6-YYK"/>
                     </connections>
                 </viewController>
                 <customObject id="2Tp-Fl-jBw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -2002,7 +2005,7 @@ Gw
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="SJo-lR-fYi"/>
                                 </constraints>
-                                <buttonCell key="cell" type="inline" title="Set" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="AUd-0G-JHr">
+                                <buttonCell key="cell" type="inline" title="OK" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="AUd-0G-JHr">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="smallSystemBold"/>
                                 </buttonCell>
@@ -2118,10 +2121,16 @@ Gw
                                 <toolbarItem implicitItemIdentifier="69C3E7BE-45CE-4D06-B8F5-F3AB9B4552DB" label="Compile" paletteLabel="Compile" tag="-1" image="Run" id="cXt-2s-lTk">
                                     <size key="minSize" width="32" height="32"/>
                                     <size key="maxSize" width="32" height="32"/>
+                                    <connections>
+                                        <action selector="compileProject:" target="ULU-hZ-lrQ" id="yie-31-omk"/>
+                                    </connections>
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="97456251-8973-4C73-9902-B6D91C0E71EC" label="Save" paletteLabel="Save" tag="-1" image="NSMenuOnStateTemplate" id="eKC-k7-dAr">
                                     <size key="minSize" width="32" height="35"/>
                                     <size key="maxSize" width="32" height="35"/>
+                                    <connections>
+                                        <action selector="saveProject:" target="ULU-hZ-lrQ" id="Fvk-uO-wBQ"/>
+                                    </connections>
                                 </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
@@ -2532,6 +2541,7 @@ Gw
         <image name="NSTouchBarFolderCopyToTemplate" width="20" height="13"/>
         <image name="NSTouchBarFolderMoveToTemplate" width="19" height="12"/>
         <image name="NSTouchBarFolderTemplate" width="19" height="12"/>
+        <image name="NSTouchBarGetInfoTemplate" width="15" height="13"/>
         <image name="NSTouchBarPlayTemplate" width="12" height="11"/>
         <image name="NSTouchBarSearchTemplate" width="14" height="13"/>
         <image name="NSTouchBarTextListTemplate" width="17" height="10"/>

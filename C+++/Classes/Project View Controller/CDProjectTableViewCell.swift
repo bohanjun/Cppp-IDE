@@ -28,7 +28,7 @@ class CDProjectTableViewCell: CDSnippetTableViewCell {
             if let doc = document as? CDCodeDocument {
                 (doc.contentViewController.view.window?.windowController as? CDMainWindowController)?.toggleCompileViewShown(self)
             } else {
-                CDFileCompiler.shell("open \"\(self.title!)\"")
+                NSWorkspace.shared.selectFile(self.title, inFileViewerRootedAtPath: "")
             }
         }
     }

@@ -64,9 +64,8 @@ extension String {
 
 
 
-class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsViewDelegate, CDCodeEditorDelegate, CDSnippetPopoverViewControllerDelegate, NSSplitViewDelegate {
+class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDelegate, NSSplitViewDelegate {
     
-// MARK: - Properties
     
     func setStatus(string: String) {
         (self.view.window?.windowController as! CDMainWindowController).statusString = string
@@ -98,7 +97,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
     @IBOutlet weak var charactersLabel: NSTextField!
     @IBOutlet weak var compileInfo: NSTextView!
     @IBOutlet weak var compileView: NSView!
-    @IBOutlet weak var fileAndSnippetView: NSView!
+    @IBOutlet weak var leftView: NSView!
     @IBOutlet weak var bigSplitView: NSSplitView!
     @IBOutlet weak var smallSplitView: NSSplitView!
     
@@ -112,7 +111,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
     
     func splitView(_ splitView: NSSplitView, canCollapseSubview subview: NSView) -> Bool {
         
-        if subview == self.fileAndSnippetView {
+        if subview == self.leftView {
             return true
         } else {
             return false
@@ -170,122 +169,23 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
     
     
     
-    
-    
-    
-// MARK: - Appearance
-    
-    // Change the appearance of the App. (OSX 10.14, *)
-    @IBAction func changeAppearance(_ sender: Any) {
-        
-        if #available(OSX 10.14, *) {
-        } else {
-            if let _ = self.view.window {
-                showAlert("Warning", "Your Mac does not support Dark Mode. Dark Mode requires macOS 10.14 Mojave or later. You should update your Mac.")
-            }
-            return
-        }
-        
-        // judge the current appearance.
-        switch isDarkMode {
-            
-            // Dark Mode
-            case true:
-                
-                // Change the text view's highlight theme to Dark Mode.
-                self.mainTextView.highlightr?.setTheme(to: CDSettings.shared.darkThemeName)
-                
-                // Chage the window's appearance to Dark Mode.
-                if #available(OSX 10.14, *) {
-                    self.view.window?.appearance = darkAqua
-                    self.view.appearance = darkAqua
-                    for view in self.view.subviews {
-                        view.appearance = darkAqua
-                    }
-                    isDarkMode = false
-                }
-            
-            // Light Mode
-            case false:
-                
-                // Change the text view's highlight theme to Light Mode.
-                self.mainTextView.highlightr?.setTheme(to: CDSettings.shared.lightThemeName)
-                
-                // Chage the window's appearance to Light Mode.
-                if #available(OSX 10.14, *) {
-                    self.view.window?.appearance = aqua
-                    self.view.appearance = aqua
-                    for view in self.view.subviews {
-                        view.appearance = aqua
-                    }
-                    isDarkMode = true
-                }
-            
-        }
-        
-        // Change the font of the text view.
-        self.mainTextView.didChangeText()
-        self.mainTextView.highlightr?.theme.setCodeFont(CDSettings.shared.font)
-        self.mainTextView.font = CDSettings.shared.font
-        
-    }
-    
-    @IBAction func showSettingsView(_ sender: Any) {
-        
-        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
-        if let ViewController =
-            storyboard.instantiateController(
-                withIdentifier: NSStoryboard.SceneIdentifier("CDSettingsViewController")) as? CDSettingsViewController {
-            ViewController.delegate = self
-            self.presentAsSheet(ViewController)
-        }
-        
-    }
-    
-    
-    
-    
-    
-// MARK: - SettingsViewDelegate
-    
-    func didSet() {
-        
-        // theme
-        switch isDarkMode {
-            case false:
-                self.mainTextView.highlightr?.setTheme(to: CDSettings.shared.darkThemeName)
-            case true:
-                self.mainTextView.highlightr?.setTheme(to: CDSettings.shared.lightThemeName)
-        }
-        
-        // font
-        self.mainTextView.highlightr?.theme.setCodeFont(CDSettings.shared.font)
-        self.mainTextView.font = CDSettings.shared.font
-        self.lineNumberTextView.font = CDSettings.shared.font
-        self.mainTextView.didChangeText()
-        
-        // in case of errors
-        changeAppearance(self)
-        changeAppearance(self)
-        
-    }
-    
-    
-    
-    
-    
-    
-// MARK: - CDTextViewDelegate
+// MARK: - Code Editor Delegate
     
     
     func didChangeText(lines: Int, characters: Int) {
         
-        self.linesLabel.stringValue = "\(lines) lines"
-        self.charactersLabel.stringValue = "\(characters) characters"
+        DispatchQueue.main.async {
+            
+            self.linesLabel.stringValue = "\(lines) lines"
+            self.charactersLabel.stringValue = "\(characters) characters"
+            self.updateDiagnostics()
+            
+        }
         
     }
     
 
+    
     
     
     
@@ -293,79 +193,26 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
 
 // MARK: - Segmented Control
     
+    @IBOutlet weak var segmentedControl: NSSegmentedControl!
     @IBOutlet weak var scrollViewOfTableView: NSScrollView!
-    @IBOutlet weak var snippetTableView: CDSnippetTableView!
+    @IBOutlet weak var snippetAndDiagnositcsTableView: CDSnippetTableView!
     @IBOutlet weak var addSnippetButton: NSButton!
     @IBOutlet weak var fileView: NSView!
     
-    @IBAction func valueChanged(_ sender: NSSegmentedControl) {
-        
-        switch sender.selectedSegment {
-            case 0:
-                scrollViewOfTableView.isHidden = true
-                addSnippetButton.isHidden = true
-                fileView.isHidden = false
-            
-            case 1:
-                fileView.isHidden = true
-                scrollViewOfTableView.isHidden = false
-                addSnippetButton.isHidden = false
-                break
-            default: break
-        }
-        
-    }
+   
     
-// MARK: - CDSnippetTableView
+// MARK: - Snippet Table View
     
-    private var popover: NSPopover!
-    
-    @IBAction func addItem(_ sender: NSButton) {
-        
-        let vc = CDSnippetPopoperViewController()
-        vc.setup(title: "Edit your title", image: NSImage(named: "Code")!, code: "Edit your code here.\nYou can also click the image to\n change the color of it.", mode: true)
-        vc.closeDelegate = self
-        vc.delegate = self.snippetTableView
-        popover = NSPopover()
-        popover.behavior = .transient
-        popover.contentViewController = vc
-        popover.show(relativeTo: sender.bounds, of: sender, preferredEdge: .maxY)
-        
-    }
-    
-    func didAddToCode(code: String) {
-        self.mainTextView.insertText(code, replacementRange: self.mainTextView.selectedRange)
-    }
-    
-    func willClose() {
-        popover.close()
-    }
-    
+    var popover: NSPopover!
     @IBOutlet weak var snippetSearchField: NSSearchField!
+   
     
-    @IBAction func search(_ sender: NSButton) {
-        
-        switch sender.title {
-            
-            case "Search":
-                sender.title = "Back"
-                self.snippetTableView.search(for: self.snippetSearchField.stringValue)
-                self.snippetSearchField.isEnabled = false
-                self.addSnippetButton.isEnabled = false
-                
-            case "Back":
-                sender.title = "Search"
-                self.snippetTableView.setup(cells: self.snippetTableView.cells)
-                self.snippetSearchField.isEnabled = true
-                self.snippetSearchField.stringValue = ""
-                self.addSnippetButton.isEnabled = false
-                
-            default:
-                break
-            
-        }
-        
-    }
+    
+    
+// MARK: - Diagnostics
+    
+    var diagnostics = [CKDiagnostic]()
+    var diagnosticsCells = [CDSnippetTableViewCell]()
     
     
     
@@ -389,6 +236,8 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDSettingsView
         return nil
     }
 
+    
+    
     
     
     

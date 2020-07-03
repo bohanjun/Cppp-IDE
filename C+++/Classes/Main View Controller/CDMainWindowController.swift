@@ -38,7 +38,7 @@ class CDMainWindowController: NSWindowController, NSWindowDelegate {
         vc.right = false
         vc.compileView.isHidden = true
         vc.left = false
-        vc.fileAndSnippetView.isHidden = true
+        vc.leftView.isHidden = true
         
     }
     

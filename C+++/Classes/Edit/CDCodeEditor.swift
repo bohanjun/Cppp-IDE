@@ -129,6 +129,7 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
     
     
     
+    
     /// Inserts the given string into the receiver, replacing the specified content. Overriden to support automatic completion.
     /// - Parameters:
     ///   - string: The text to insert, either an NSString or NSAttributedString instance.
@@ -188,66 +189,91 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
     }
     
     
+    private var lastTimeCompletionResults = [CDCompletionResult]()
+    
     open override func completions(forPartialWordRange charRange: NSRange, indexOfSelectedItem index: UnsafeMutablePointer<Int>) -> [String]? {
+        
+        var completionResults = [CDCompletionResult]()
         
         let substring = (self.string as NSString).substring(with: charRange)
         if substring == "" {
             return [String]()
         }
         
-        let line = self.string.lineNumber(at: self.selectedRange.location) ?? 0
-        let column = self.string.columnNumber(at: self.selectedRange.location)
-        let results = CKTranslationUnit(text: self.string, language: CKLanguageCPP).completionResults(forLine: UInt(line), column: UInt(column))
-        var completionResults = [CDCompletionResult]()
         
-        if results != nil {
+        if charRange.length == 1 {
             
-            var returnType: String!
-            var typedText = ""
-            var otherTexts = [String]()
+            print("charRange.length = 1")
             
-            for result in results! {
-                if let _result = result as? CKCompletionResult {
-                    
-                    otherTexts = [String]()
-                    
-                    for chunk in _result.chunks {
-                        if let _chunk = chunk as? CKCompletionChunk {
-                            
-                            
-                            switch _chunk.kind {
-                                case CKCompletionChunkKindResultType:
-                                    returnType = _chunk.text
-                                case CKCompletionChunkKindTypedText:
-                                    typedText = _chunk.text
-                                case CKCompletionChunkKindPlaceholder:
-                                    otherTexts.append("{\(_chunk.text!)}")
-                                default:
-                                    otherTexts.append(_chunk.text)
+            let line = self.string.lineNumber(at: self.selectedRange.location) ?? 0
+            let column = self.string.columnNumber(at: self.selectedRange.location)
+            let results = CKTranslationUnit(text: self.string, language: CKLanguageCPP).completionResults(forLine: UInt(line), column: UInt(column))
+            
+            if results != nil {
+                
+                var returnType: String!
+                var typedText = ""
+                var otherTexts = [String]()
+                
+                for result in results! {
+                    if let _result = result as? CKCompletionResult {
+                        
+                        otherTexts = [String]()
+                        
+                        for chunk in _result.chunks {
+                            if let _chunk = chunk as? CKCompletionChunk {
+                                
+                                
+                                switch _chunk.kind {
+                                    case CKCompletionChunkKindResultType:
+                                        returnType = _chunk.text
+                                    case CKCompletionChunkKindTypedText:
+                                        typedText = _chunk.text
+                                    case CKCompletionChunkKindPlaceholder:
+                                        otherTexts.append("{\(_chunk.text!)}")
+                                    default:
+                                        otherTexts.append(_chunk.text)
+                                }
+                                
+                                
                             }
-                            
                             
                         }
                         
+                        let completionResult = CDCompletionResult(returnType: returnType, typedText: typedText, otherTexts: otherTexts)
+                        completionResults.append(completionResult)
+                        
                     }
-                    
-                    let completionResult = CDCompletionResult(returnType: returnType, typedText: typedText, otherTexts: otherTexts)
-                    completionResults.append(completionResult)
                     
                 }
                 
             }
             
-        }
-        
-        var finalRes = [CDCompletionResult]()
-        for result in completionResults {
-            if result.typedText.lowercased().hasPrefix(substring.lowercased()) && substring.count != result.typedText.count {
-                finalRes.append(result)
+            var array = [CDCompletionResult]()
+            for result in completionResults {
+                if result.typedText.lowercased().hasPrefix(substring.lowercased()) && substring.count != result.typedText.count {
+                    array.append(result)
+                }
             }
+            completionResults = array
+            
+            self.lastTimeCompletionResults = completionResults
+            
+            
+        } else {
+            
+            print("charRange.length > 1")
+            var array = [CDCompletionResult]()
+            for result in lastTimeCompletionResults {
+                if result.typedText.lowercased().hasPrefix(substring.lowercased()) && substring.count != result.typedText.count {
+                    array.append(result)
+                }
+            }
+            completionResults = array
+            
         }
         
-        guard finalRes.count > 0 else {
+        guard completionResults.count > 0 else {
             return [String]()
         }
                 
@@ -255,7 +281,7 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
                     
             let vc = CDCodeCompletionViewController()
             vc.delegate = self
-            vc.results = finalRes
+            vc.results = completionResults
             vc.range = charRange
             var rect = self.layoutManager?.boundingRect(forGlyphRange: self.selectedRange, in: self.textContainer!)
                 rect?.size.width = 1.0
@@ -284,6 +310,7 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
     
     open override func insertCompletion(_ word: String, forPartialWordRange charRange: NSRange, movement: Int, isFinal flag: Bool) {
         super.insertCompletion(word, forPartialWordRange: charRange, movement: movement, isFinal: flag)
+        self.lastTimeCompletionResults = []
     }
     
     
