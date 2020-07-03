@@ -1371,6 +1371,17 @@ Gw
                                             <action selector="checkUpdate:" target="2Tp-Fl-jBw" id="kxQ-WQ-YdN"/>
                                         </connections>
                                     </button>
+                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bhB-Fs-ESn">
+                                        <rect key="frame" x="144" y="690" width="18" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="AddSymbol" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="kaK-vP-zfQ">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="addSymbol:" target="5gI-5U-AMq" id="KcZ-zM-qiL"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="252" id="sBe-Fc-HWO"/>
@@ -2526,6 +2537,7 @@ Gw
         </scene>
     </scenes>
     <resources>
+        <image name="AddSymbol" width="545" height="545"/>
         <image name="AppIcon" width="128" height="128"/>
         <image name="CompileView" width="128" height="128"/>
         <image name="Copy" width="112.5" height="112.5"/>

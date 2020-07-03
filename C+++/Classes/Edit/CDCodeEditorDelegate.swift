@@ -12,12 +12,12 @@ import Cocoa
 protocol CDCodeEditorDelegate {
     
     @objc
-    optional func didChangeText(lines: Int, characters: Int)
+    optional func codeEditorDidChangeText(lines: Int, characters: Int)
     
     @objc
-    optional func didChangeText()
+    optional func codeEditorDidChangeText()
     
     @objc
-    optional func didChangeText(lines: Int, currentLine: Int)
+    optional func codeEditorDidChangeText(lines: Int, currentLine: Int)
     
 }

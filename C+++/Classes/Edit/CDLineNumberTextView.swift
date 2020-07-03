@@ -11,7 +11,7 @@ import Cocoa
 class CDLineNumberTextView: NSTextView, CDCodeEditorDelegate {
     
     @objc
-    func didChangeText(lines: Int, currentLine: Int) {
+    func codeEditorDidChangeText(lines: Int, currentLine: Int) {
         
         if #available(OSX 10.13, *) {
             self.textColor = NSColor(named: "LineNumberColor")

@@ -172,7 +172,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
 // MARK: - Code Editor Delegate
     
     
-    func didChangeText(lines: Int, characters: Int) {
+    func codeEditorDidChangeText(lines: Int, characters: Int) {
         
         DispatchQueue.main.async {
             

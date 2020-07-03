@@ -120,8 +120,8 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
         DispatchQueue.main.async {
             
             self.complete(self)
-            self.codeEditorDelegate?.didChangeText!(lines: self.textStorage?.paragraphs.count ?? 0, characters: self.textStorage?.characters.count ?? 0)
-            self.gutterDelegate?.didChangeText!(lines: (self.textStorage?.paragraphs.count)!, currentLine: self.string.lineNumber(at: self.selectedRange.location)!)
+            self.codeEditorDelegate?.codeEditorDidChangeText!(lines: self.textStorage?.paragraphs.count ?? 0, characters: self.textStorage?.characters.count ?? 0)
+            self.gutterDelegate?.codeEditorDidChangeText!(lines: (self.textStorage?.paragraphs.count)!, currentLine: self.string.lineNumber(at: self.selectedRange.location)!)
             
         }
         
@@ -192,7 +192,7 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
     private var lastTimeCompletionResults = [CDCompletionResult]()
     
     open override func completions(forPartialWordRange charRange: NSRange, indexOfSelectedItem index: UnsafeMutablePointer<Int>) -> [String]? {
-        
+       
         var completionResults = [CDCompletionResult]()
         
         let substring = (self.string as NSString).substring(with: charRange)

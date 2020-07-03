@@ -48,7 +48,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
             endingLineNumber = "27"
-            landmarkName = "didChangeText(lines:currentLine:)"
+            landmarkName = "codeEditorDidChangeText(lines:currentLine:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
