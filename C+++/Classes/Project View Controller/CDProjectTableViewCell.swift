@@ -23,7 +23,7 @@ class CDProjectTableViewCell: CDSnippetTableViewCell {
         self.init(path: "")
     }
     
-    override func showInfo() {
+    override func showSnippetInfo() {
         NSDocumentController.shared.openDocument(withContentsOf: URL(fileURLWithPath: self.title), display: true) { (document, opened, error) in
             if let doc = document as? CDCodeDocument {
                 (doc.contentViewController.view.window?.windowController as? CDMainWindowController)?.toggleCompileViewShown(self)

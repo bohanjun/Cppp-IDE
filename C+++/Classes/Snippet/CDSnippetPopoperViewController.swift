@@ -62,7 +62,7 @@ class CDSnippetPopoperViewController: NSViewController {
         
     }
     
-    @IBAction func ChangeImage(_ sender: NSButton) {
+    @IBAction func changeImage(_ sender: NSButton) {
         
         if !isEditable {
             return

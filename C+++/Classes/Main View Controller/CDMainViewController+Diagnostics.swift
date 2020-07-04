@@ -8,16 +8,40 @@
 
 import Cocoa
 
-extension CDMainViewController {
+extension CDMainViewController: CDDiagnosticsViewControllerDelegate {
+    
+    func diagnosticsViewController(_ vc: CDDiagnosticsViewController, shouldReplaceRange range: NSRange, with string: String) {
+        self.mainTextView.replaceCharacters(in: range, with: string)
+    }
+    
+    func stringInRange(range: NSRange) -> String {
+        return (self.mainTextView.string as NSString).substring(with: range)
+    }
+    
+    
+    @objc func showDiagnosticDetail(_ sender: NSButton) {
+        
+        if self.diagnostics.count > 0 {
+            let vc = CDDiagnosticsViewController()
+            vc.delegate = self
+            vc.openInPopover(relativeTo: sender.bounds, of: sender, preferredEdge: .minY, diagnostic: self.diagnostics[(sender.superview as! CDSnippetTableViewCell).index])
+        }
+        
+    }
+    
     
     func updateDiagnostics() {
         
         self.getDiagnostics()
         diagnosticsCells = [CDSnippetTableViewCell]()
-        for diagnostic in self.diagnostics {
+        for (index, diagnostic) in self.diagnostics.enumerated() {
+            
             let cell = CDSnippetTableViewCell(title: diagnostic.description, image: nil, code: "Line:\(diagnostic.line)\nColumn:\(diagnostic.column)\n\(diagnostic.spelling!)", width: 210.0)
+            cell.index = index
             cell.explicitHeight = 32.0
             cell.titleLabel?.font? = NSFont.systemFont(ofSize: 12.0)
+            cell.titleLabel?.target = self
+            cell.titleLabel?.action = #selector(showDiagnosticDetail(_:))
             diagnosticsCells.append(cell)
             
             switch diagnostic.severity {

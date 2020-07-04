@@ -38,13 +38,27 @@ extension CDMainViewController : CDSnippetPopoverViewControllerDelegate {
             
             case "Search":
                 sender.title = "Back"
-                self.snippetAndDiagnositcsTableView.search(for: self.snippetSearchField.stringValue)
+                
+                var cells: [CDSnippetTableViewCell]
+                if self.segmentedControl.selectedSegment == 2 {
+                    cells = self.diagnosticsCells
+                } else {
+                    cells = self.snippetAndDiagnositcsTableView.cells
+                }
+                self.snippetAndDiagnositcsTableView.search(for: self.snippetSearchField.stringValue, in: cells)
                 self.snippetSearchField.isEnabled = false
                 self.addSnippetButton.isEnabled = false
                 
             case "Back":
                 sender.title = "Search"
-                self.snippetAndDiagnositcsTableView.setup(cells: self.snippetAndDiagnositcsTableView.cells)
+                
+                var cells: [CDSnippetTableViewCell]
+                if self.segmentedControl.selectedSegment == 2 {
+                    cells = self.diagnosticsCells
+                } else {
+                    cells = self.snippetAndDiagnositcsTableView.cells
+                }
+                self.snippetAndDiagnositcsTableView.setup(cells: cells)
                 self.snippetSearchField.isEnabled = true
                 self.snippetSearchField.stringValue = ""
                 self.addSnippetButton.isEnabled = false

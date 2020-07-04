@@ -98,10 +98,10 @@ class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate 
         
     }
     
-    func search(for title: String) {
+    func search(for title: String, in cells: [CDSnippetTableViewCell]) {
         
         var filteredItems = [CDSnippetTableViewCell]()
-        for item in self.cells {
+        for item in cells {
             if item.title.lowercased().contains(title.lowercased()) {
                 filteredItems.append(item)
             }

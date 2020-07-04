@@ -10,16 +10,21 @@ import Cocoa
 
 class CDSnippetTableViewCell: NSView, CDSnippetPopoverViewControllerDelegate {
     
+    var index: Int!
+    
     var explicitHeight: CGFloat = 45.0 {
         didSet {
             self.setup(width: 210.0)
         }
     }
+    
     var displaysImage: Bool = true {
         didSet {
             self.setup(width: 210.0)
         }
     }
+    
+    var action: Selector = #selector(showSnippetInfo)
     
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
@@ -70,7 +75,7 @@ class CDSnippetTableViewCell: NSView, CDSnippetPopoverViewControllerDelegate {
         
         self.titleLabel = NSButton(frame: CGRect(x: 0, y: 0, width: width, height: explicitHeight))
         self.frame = CGRect(x: 0, y: 0, width: width, height: explicitHeight)
-        self.titleLabel.action = #selector(showInfo)
+        self.titleLabel.action = self.action
         self.titleLabel.font = NSFont.systemFont(ofSize: 15.0)
         self.titleLabel.isBordered = true
         self.titleLabel.target = self
@@ -92,7 +97,7 @@ class CDSnippetTableViewCell: NSView, CDSnippetPopoverViewControllerDelegate {
         
     }
     
-    @objc func showInfo() {
+    @objc func showSnippetInfo() {
         
         popover = NSPopover()
         let vc = CDSnippetPopoperViewController()
