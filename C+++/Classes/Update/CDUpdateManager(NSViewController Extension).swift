@@ -18,6 +18,10 @@ extension NSViewController {
     
     func checkUpdate(alsoShowAlertWhenUpToDate: Bool) {
         
+        if self is CDMainViewController {
+            (self as! CDMainViewController).setStatus(string: "Checking For Updates...")
+        }
+        
         self.sendUserNotification(title: "Checking For Updates...", subtitle: "This may take a few seconds.")
         
         CDUpdateManager.getVersionAndUpdateInformation { (latestVersion, updateInformation, url) in
@@ -27,6 +31,10 @@ extension NSViewController {
                 let currentVersion = CDUpdateManager.getCurrentVersion()
                 
                 if let version = currentVersion, let latest = latestVersion {
+                    
+                    if self is CDMainViewController {
+                        (self as! CDMainViewController).setStatus(string: "Check Updates Finished")
+                    }
                     
                     var title = ""
                     var message = "You can visit \"https://github.com/23786/Cppp-IDE/releases\" to view all releases."
@@ -43,6 +51,10 @@ extension NSViewController {
                     self.showAlert(title, message)
                     
                 } else {
+                    
+                    if self is CDMainViewController {
+                        (self as! CDMainViewController).setStatus(string: "Check Updates Failed.")
+                    }
                     
                     if alsoShowAlertWhenUpToDate {
                         self.showAlert("Cannot connnect to the server.", "Please check your internet connection and try again.")

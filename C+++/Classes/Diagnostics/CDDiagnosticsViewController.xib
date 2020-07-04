@@ -51,24 +51,24 @@
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
-                                    <tableColumn width="197" minWidth="40" maxWidth="1000" id="BG4-wW-7zs">
+                                    <tableColumn width="55" minWidth="40" maxWidth="1000" id="BG4-wW-7zs">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Message">
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                         </tableHeaderCell>
-                                        <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Replace &quot;Hell0&quot; with &quot;Hello&quot;" id="AST-ZL-vwf">
+                                        <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" borderStyle="bezel" alignment="left" title="Replace &quot;Hell0&quot; with &quot;Hello&quot;" usesSingleLineMode="YES" bezelStyle="round" id="AST-ZL-vwf">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                     </tableColumn>
-                                    <tableColumn width="58" minWidth="40" maxWidth="1000" id="4R2-fF-yfr">
+                                    <tableColumn width="40" minWidth="40" maxWidth="1000" id="4R2-fF-yfr">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Fix">
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                         </tableHeaderCell>
-                                        <buttonCell key="dataCell" type="roundTextured" title="Fix" bezelStyle="texturedRounded" alignment="center" borderStyle="border" inset="2" id="9RW-TT-OOd">
+                                        <buttonCell key="dataCell" type="push" title="Fix" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="9RW-TT-OOd">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                             <connections>

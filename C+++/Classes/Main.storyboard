@@ -1605,7 +1605,7 @@ Gw
                                                             <constraint firstAttribute="height" constant="21" id="IkL-dS-sgE"/>
                                                             <constraint firstAttribute="width" constant="190" id="KVX-ib-LIF"/>
                                                         </constraints>
-                                                        <textFieldCell key="cell" lineBreakMode="clipping" truncatesLastVisibleLine="YES" title="Untitled.cpp" id="1cb-m8-NJf">
+                                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" truncatesLastVisibleLine="YES" title="Untitled.cpp" id="1cb-m8-NJf">
                                                             <font key="font" metaFont="systemSemibold" size="19"/>
                                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
