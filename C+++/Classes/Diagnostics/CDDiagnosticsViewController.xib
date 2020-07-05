@@ -37,7 +37,7 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="33" horizontalPageScroll="10" verticalLineScroll="33" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XN3-W3-L0F">
+                <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="33" horizontalPageScroll="10" verticalLineScroll="33" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XN3-W3-L0F">
                     <rect key="frame" x="11" y="13" width="286" height="103"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <clipView key="contentView" id="MfD-fX-JIe">
@@ -51,19 +51,19 @@
                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                 <tableColumns>
-                                    <tableColumn width="55" minWidth="40" maxWidth="1000" id="BG4-wW-7zs">
+                                    <tableColumn width="183.5" minWidth="40" maxWidth="1000" id="BG4-wW-7zs">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Message">
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                         </tableHeaderCell>
                                         <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" borderStyle="bezel" alignment="left" title="Replace &quot;Hell0&quot; with &quot;Hello&quot;" usesSingleLineMode="YES" bezelStyle="round" id="AST-ZL-vwf">
-                                            <font key="font" metaFont="system"/>
+                                            <font key="font" metaFont="system" size="12"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                     </tableColumn>
-                                    <tableColumn width="40" minWidth="40" maxWidth="1000" id="4R2-fF-yfr">
+                                    <tableColumn width="72" minWidth="40" maxWidth="1000" id="4R2-fF-yfr">
                                         <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Fix">
                                             <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -86,11 +86,11 @@
                         </subviews>
                     </clipView>
                     <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="j24-lD-5dz">
-                        <rect key="frame" x="1" y="87" width="284" height="15"/>
+                        <rect key="frame" x="-100" y="-100" width="284" height="15"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="Oa1-hL-4JB">
-                        <rect key="frame" x="224" y="17" width="15" height="102"/>
+                        <rect key="frame" x="-100" y="-100" width="15" height="102"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>

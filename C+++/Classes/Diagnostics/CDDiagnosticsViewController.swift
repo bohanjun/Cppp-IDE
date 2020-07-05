@@ -28,7 +28,6 @@ class CDDiagnosticsViewController: NSViewController, NSTableViewDataSource {
     @IBAction func fixIt(_ sender: Any?) {
         
         let fixIt = fixIts[self.tableView.selectedRow]
-        print(fixIt.range)
         self.delegate?.diagnosticsViewController(self, shouldReplaceRange: fixIt.range, with: fixIt.string ?? "")
         
     }

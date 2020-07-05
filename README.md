@@ -1,10 +1,10 @@
-#  C+++ IDE 2.0 for macOS
+#  C+++ IDE 2.1 for macOS
 > C+++ is an open source C++ IDE on macOS Platform, which is for C++ learners to use. Supports Dark Mode and Touch Bar. You needn't create a Xcode project to compile C++ file or compile a C++ file in the Terminal, all the things are done in the C+++ App.
 
 ## The best C++ IDE on macOS for beginners
 - Developed by a Grade-Six student 23786.
 - Website: https://23786.github.io/Cppp-IDE/
-- Download Version 2.0.0: https://github.com/23786/Cppp-IDE/releases/download/v2.0.0/C+++.2.0.0.dmg.zip
+- Download Version 2.1.0:  <#Still Developing#>
 
 
 ## Install g++
@@ -12,26 +12,28 @@
 - Of course, you can choose your compiler. You can choose between g++, gcc and clang. You can also set the compiler to "python", "swift" or other compilers, but that is not recommended.
 
 ## Update Log
-### 2020.7 Version 2.0.3 (207203)
+### 2020.7 Version 2.1.0 (207210)
 - Adapt macOS 11.0 Big Sur
-- More stable
-- Bug fixes and improvements
+- New User Interface
+- More Stable
+- Add Code Completion and realtime diagnostic
+- Bug Fixes and Improvements
 
 ### 2020.6 Version 2.0.2 (206202)
-- Add Check Update function
-- Support code font customizing
-- Mark error lines
-- Bug fixes and improvements
+- Add Check Update Function
+- Support Code Font Customizing
+- Mark Error Lines after Compiling
+- Bug Fixes and Improvements
 
 ### 2020.6 Version 2.0.1 (206201)
-- Support "" and '' completion
-- Add launch view
-- Support creating a project directly
-- Add TEST function
-- Small UI changes
-- Much more stable
-- Revert the line number feature
-- Bug fixes and improvements
+- Support "" and '' Completion
+- Add Launch View
+- Support Creating a Project Directly
+- Add TEST Function
+- Small UI Changes
+- Much More Stable
+- Revert the Line Number Feature
+- Bug Fixes and Improvements
 
 ### 2020.5 Version 2.0.0 (205200)
 - Great changes have taken place. Discover them youselves!

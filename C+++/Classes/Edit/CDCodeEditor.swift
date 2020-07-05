@@ -214,15 +214,32 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
                 var returnType: String!
                 var typedText = ""
                 var otherTexts = [String]()
+                var type: CDCompletionResult.ResultType = .other
                 
                 for result in results! {
                     if let _result = result as? CKCompletionResult {
+                        
+                        switch _result.cursorKind {
+                            
+                            case CKCursorKindEnumDecl, CKCursorKindEnumConstantDecl: type = .enum
+                            case CKCursorKindFunctionDecl, CKCursorKindFunctionTemplate, CKCursorKindConversionFunction, CKCursorKindCXXFunctionalCastExpr: type = .function
+                            case CKCursorKindNamespace, CKCursorKindNamespaceRef, CKCursorKindNamespaceAlias: type = .namespace
+                            case CKCursorKindVarDecl, CKCursorKindVariableRef: type = .variable
+                            case CKCursorKindStructDecl: type = .struct
+                            case CKCursorKindClassDecl: type = .class
+                            case CKCursorKindMacroExpansion, CKCursorKindMacroDefinition, CKCursorKindMacroInstantiation, CKCursorKindLastPreprocessing, CKCursorKindFirstPreprocessing, CKCursorKindPreprocessingDirective: type = .preprocessing
+                            case CKCursorKindTypeAliasDecl, CKCursorKindTypedefDecl: type = .typealias
+                            
+                            default: break
+                            
+                        }
+                        
+                        print(type)
                         
                         otherTexts = [String]()
                         
                         for chunk in _result.chunks {
                             if let _chunk = chunk as? CKCompletionChunk {
-                                
                                 
                                 switch _chunk.kind {
                                     case CKCompletionChunkKindResultType:
@@ -241,6 +258,7 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
                         }
                         
                         let completionResult = CDCompletionResult(returnType: returnType, typedText: typedText, otherTexts: otherTexts)
+                        completionResult.type = type
                         completionResults.append(completionResult)
                         
                     }

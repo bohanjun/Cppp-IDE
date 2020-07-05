@@ -28,9 +28,23 @@ class CDCodeCompletionViewController: NSViewController, NSTableViewDataSource, N
     }
     
     func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
-        
         if results.count >= row {
-            return results[row].textForDisplay
+            let result = self.results[row]
+            if tableColumn?.title == "Text" {
+                return result.textForDisplay
+            } else {
+                switch result.type {
+                    case .class: return NSImage(named: "Class")
+                    case .enum: return NSImage(named: "Enum")
+                    case .function: return NSImage(named: "Function")
+                    case .namespace: return NSImage(named: "Namespace")
+                    case .preprocessing: return NSImage(named: "Preprocessing")
+                    case .typealias: return NSImage(named: "Typealias")
+                    case .struct: return NSImage(named: "Struct")
+                    case .variable: return NSImage(named: "Variable")
+                    default: return nil
+                }
+            }
         } else {
             return nil
         }

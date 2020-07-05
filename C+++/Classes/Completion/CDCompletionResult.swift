@@ -1,5 +1,5 @@
 //
-//  CDParser.swift
+//  CDCompletionResult.swift
 //  C+++
 //
 //  Created by 23786 on 2020/5/8.
@@ -9,6 +9,22 @@
 import Cocoa
 
 class CDCompletionResult: NSObject {
+    
+    var type: ResultType = .other
+    
+    enum ResultType: Int {
+        
+        case `enum` = 0x00
+        case namespace = 0x01
+        case `typealias` = 0x02
+        case `struct` = 0x03
+        case `class` = 0x04
+        case function = 0x05
+        case variable = 0x06
+        case preprocessing = 0x07
+        case other = 0xFF
+        
+    }
     
     init(returnType: String?, typedText: String, otherTexts: [String]) {
         super.init()
