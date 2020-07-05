@@ -1,6 +1,6 @@
 //
 //  GutterTextView.swift
-//  Code Editor
+//  C+++
 //
 //  Created by apple on 2020/4/21.
 //  Copyright © 2020 Zhu Yixuan. All rights reserved.

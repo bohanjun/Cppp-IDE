@@ -1,6 +1,6 @@
 //
 //  Settings.swift
-//  Code Editor
+//  C+++
 //
 //  Created by apple on 2020/4/16.
 //  Copyright © 2020 Zhu Yixuan. All rights reserved.
