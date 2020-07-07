@@ -2537,12 +2537,12 @@ Gw
         </scene>
     </scenes>
     <resources>
-        <image name="AddSymbol" width="545" height="545"/>
+        <image name="AddSymbol" width="1090" height="1090"/>
         <image name="AppIcon" width="128" height="128"/>
-        <image name="CompileView" width="128" height="128"/>
-        <image name="Copy" width="112.5" height="112.5"/>
-        <image name="Cut" width="112.5" height="112.5"/>
-        <image name="DuplicateFile" width="560" height="575"/>
+        <image name="CompileView" width="256" height="256"/>
+        <image name="Copy" width="225" height="225"/>
+        <image name="Cut" width="225" height="225"/>
+        <image name="DuplicateFile" width="1120" height="1150"/>
         <image name="NSAddTemplate" width="15" height="11"/>
         <image name="NSIconViewTemplate" width="16" height="12"/>
         <image name="NSMenuOnStateTemplate" width="15" height="11"/>
@@ -2557,15 +2557,15 @@ Gw
         <image name="NSTouchBarPlayTemplate" width="12" height="11"/>
         <image name="NSTouchBarSearchTemplate" width="14" height="13"/>
         <image name="NSTouchBarTextListTemplate" width="17" height="10"/>
-        <image name="NewFile" width="660" height="660"/>
-        <image name="OpenFile" width="720" height="600"/>
-        <image name="Paste" width="178.5" height="178.5"/>
-        <image name="Redo" width="255" height="255"/>
-        <image name="Run" width="128" height="128"/>
-        <image name="SaveFile" width="600" height="600"/>
-        <image name="Settings" width="305" height="305"/>
-        <image name="Switch_50" width="25" height="25"/>
-        <image name="Undo" width="255" height="255"/>
+        <image name="NewFile" width="1320" height="1320"/>
+        <image name="OpenFile" width="1440" height="1200"/>
+        <image name="Paste" width="357" height="357"/>
+        <image name="Redo" width="510" height="510"/>
+        <image name="Run" width="256" height="256"/>
+        <image name="SaveFile" width="1200" height="1200"/>
+        <image name="Settings" width="610" height="610"/>
+        <image name="Switch_50" width="50" height="50"/>
+        <image name="Undo" width="510" height="510"/>
         <image name="Update" width="580" height="580"/>
         <namedColor name="BackgroundColor">
             <color red="0.92400002479553223" green="0.92400002479553223" blue="0.92400002479553223" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

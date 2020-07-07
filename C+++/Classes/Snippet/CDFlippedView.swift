@@ -9,7 +9,9 @@
 import Cocoa
 
 class CDFlippedView : NSView {
+    
     override var isFlipped: Bool {
         return true
     }
+    
 }

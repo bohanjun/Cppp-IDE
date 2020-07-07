@@ -42,6 +42,7 @@ extension CDMainViewController: CDDiagnosticsViewControllerDelegate {
             cell.titleLabel?.font? = NSFont.systemFont(ofSize: 12.0)
             cell.titleLabel?.target = self
             cell.titleLabel?.action = #selector(showDiagnosticDetail(_:))
+            cell.menu = nil
             diagnosticsCells.append(cell)
             
             switch diagnostic.severity {

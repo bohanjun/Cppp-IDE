@@ -10,7 +10,16 @@ import Cocoa
 
 class CDSnippetTableViewCell: NSView, CDSnippetPopoverViewControllerDelegate {
     
+    // MARK: - Properties
+    
     var index: Int!
+    var title: String!
+    var code: String!
+    var image: NSImage!
+    var titleLabel: NSButton!
+    private var popover: NSPopover!
+    weak var snippetTableView: CDSnippetTableView!
+    
     
     var explicitHeight: CGFloat = 45.0 {
         didSet {
@@ -32,63 +41,19 @@ class CDSnippetTableViewCell: NSView, CDSnippetPopoverViewControllerDelegate {
         self.bounds.fill()
     }
     
-    var title: String!
-    var code: String!
-    var image: NSImage!
     
-    var titleLabel: NSButton!
-    var popover: NSPopover!
+    // MARK: - @objc Methods
     
-    override func encode(with coder: NSCoder) {
-        
-        coder.encode(title, forKey: "title")
-        coder.encode(code, forKey: "code")
-        coder.encode(image, forKey: "image")
-        
+    @objc func delete() {
+        self.snippetTableView.removeItem(withTitle: self.title)
     }
     
-    init(title: String?, image: NSImage?, code: String?, width: CGFloat) {
-        
-        super.init(frame: NSRect(x: 0, y: 0, width: width, height: explicitHeight))
-        self.title = title
-        self.code = code
-        self.image = image
-        setup(width: width)
-        
+    @objc func _moveUp() {
+        self.snippetTableView.moveCellUp(cell: self)
     }
     
-    required convenience init?(coder: NSCoder) {
-        
-        let title = coder.decodeObject(forKey: "title") as? String
-        let code = coder.decodeObject(forKey: "code") as? String
-        let image = coder.decodeObject(forKey: "image") as? NSImage
-        
-        self.init(title: title, image: image, code: code, width: 210.0)
-        
-    }
-    
-    func setup(width: CGFloat) {
-        
-        for view in self.subviews {
-            view.removeFromSuperview()
-        }
-        
-        self.titleLabel = NSButton(frame: CGRect(x: 0, y: 0, width: width, height: explicitHeight))
-        self.frame = CGRect(x: 0, y: 0, width: width, height: explicitHeight)
-        self.titleLabel.action = self.action
-        self.titleLabel.font = NSFont.systemFont(ofSize: 15.0)
-        self.titleLabel.isBordered = true
-        self.titleLabel.target = self
-        self.titleLabel.title = "  " + self.title
-        self.titleLabel.bezelStyle = .smallSquare
-        self.titleLabel.imagePosition = .imageLeft
-        self.titleLabel.imageScaling = .scaleProportionallyUpOrDown
-        self.titleLabel.alignment = .left
-        if self.displaysImage {
-            self.titleLabel.image = image
-        }
-        self.addSubview(titleLabel)
-        
+    @objc func _moveDown() {
+        self.snippetTableView.moveCellDown(cell: self)
     }
     
     @objc func didSetColor(image: NSImage) {
@@ -117,4 +82,71 @@ class CDSnippetTableViewCell: NSView, CDSnippetPopoverViewControllerDelegate {
         
     }
     
+    
+    
+    override func encode(with coder: NSCoder) {
+        
+        coder.encode(title, forKey: "title")
+        coder.encode(code, forKey: "code")
+        coder.encode(image, forKey: "image")
+        
+    }
+    
+    
+    // MARK: - Initializers
+    
+    init(title: String?, image: NSImage?, code: String?, width: CGFloat) {
+        
+        super.init(frame: NSRect(x: 0, y: 0, width: width, height: explicitHeight))
+        self.title = title
+        self.code = code
+        self.image = image
+        setup(width: width)
+        
+    }
+    
+    required convenience init?(coder: NSCoder) {
+        
+        let title = coder.decodeObject(forKey: "title") as? String
+        let code = coder.decodeObject(forKey: "code") as? String
+        let image = coder.decodeObject(forKey: "image") as? NSImage
+        
+        self.init(title: title, image: image, code: code, width: 210.0)
+        
+    }
+    
+    
+    
+    // MARK: - setup(width: CGFloat)
+    
+    func setup(width: CGFloat) {
+       
+        for view in self.subviews {
+            view.removeFromSuperview()
+        }
+        
+        self.titleLabel = NSButton(frame: CGRect(x: 0, y: 0, width: width, height: explicitHeight))
+        self.frame = CGRect(x: 0, y: 0, width: width, height: explicitHeight)
+        self.titleLabel.action = self.action
+        self.titleLabel.font = NSFont.systemFont(ofSize: 15.0)
+        self.titleLabel.isBordered = true
+        self.titleLabel.target = self
+        self.titleLabel.title = "  " + self.title
+        self.titleLabel.bezelStyle = .smallSquare
+        self.titleLabel.imagePosition = .imageLeft
+        self.titleLabel.imageScaling = .scaleProportionallyUpOrDown
+        self.titleLabel.alignment = .left
+        if self.displaysImage {
+            self.titleLabel.image = image
+        }
+        
+        let menu = NSMenu(title: "Menu")
+        menu.addItem(NSMenuItem(title: "Remove", action: #selector(delete), keyEquivalent: String()))
+        if self.index != 0 { menu.addItem(NSMenuItem(title: "Move Up", action: #selector(_moveUp), keyEquivalent: String())) }
+        if self.index != ((self.snippetTableView?.cells.count) ?? 0) - 1 { menu.addItem(NSMenuItem(title: "Move Down", action: #selector(_moveDown), keyEquivalent: String())) }
+        self.menu = menu
+        
+        self.addSubview(titleLabel)
+        
+    }
 }

@@ -11,6 +11,11 @@ import os.log
 
 class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate {
     
+    // MARK: - Properties
+    
+    var cells : [CDSnippetTableViewCell] = []
+    static let archievePath = FileManager().urls(for: .libraryDirectory, in: .userDomainMask).first!.appendingPathComponent("C+++").appendingPathComponent("Snippets")
+    
     var explicitCellHeight: CGFloat {
         get {
             if self.cells.count == 0 {
@@ -43,13 +48,11 @@ class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate 
         }
     }
     
-    static let archievePath = FileManager().urls(for: .libraryDirectory, in: .userDomainMask).first!.appendingPathComponent("C+++").appendingPathComponent("Snippets")
     
     func save() {
         
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(cells, toFile:
                                                                     CDSnippetTableView.archievePath.path)
-        
         if !isSuccessfulSave {
             os_log("Failed to save...", type: .error)
         }
@@ -61,12 +64,11 @@ class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate 
     private func loadSample() {
         
         for (name, code) in sampleSnippets {
-
             self.append(cell: CDSnippetTableViewCell(title: name, image: NSImage(named: "Code")!, code: code, width: 210.0))
-            
         }
         
     }
+    
     
     /// Load the snippets.
     /// - returns: [CDTableViewCell]
@@ -84,12 +86,13 @@ class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate 
         "Struct Declaration": "\nstruct TNode {\n\tint a, b;\n\tTNode(int x, int y) { a = x; b = y; }\n};",
         "Switch Statement" : "\nswitch () {\n\tcase : break;\n\tcase : break;\n}",
         "Function Declaration": "\nvoid func(int a, ...) {\n\t\n}",
-        "DFS": "\nvoid dfs(int t) {\n\tif (/*Reaches the End*/) {\n\t\t/*Output;*/\n\t\treturn;\n\t}\n\tfor (int i = ; /*Every Possible Answers*/; i ++) {\n\t\tif (!gVis[i]) {\n\t\t\tgVis[i] = 1; // Change\n\t\t\t// Do Something;\n\t\t\tdfs(t + 1);\n\t\t\tgVis[i] = 0; // Recover\n\t\t}\n\t}\n}",
+        "DFS": "\nvoid dfs(int t) {\n\tif (/*Reaches the End*/) {\n\t\t//Output\n\t\treturn;\n\t}\n\tfor (int i = ; /*Every Possible Answers*/; i ++) {\n\t\tif (!gVis[i]) {\n\t\t\tgVis[i] = 1; // Change\n\t\t\t// Do Something\n\t\t\tdfs(t + 1);\n\t\t\tgVis[i] = 0; // Recover\n\t\t}\n\t}\n}",
         "Bubble Sort": "\nfor (int i = 1; i <= n - 1; i ++) {\n\tfor (int j = 1; j <= n - i; j ++) {\n\t\tif(a[j] < a[j + 1]) swap(a[j], a[j + 1]);\n\t}\n}",
         "Bucket Sort": "\nint a;\nfor (int i = 0; i < arr.count; i ++) {\n\tscanf(\"%d\", &a);\n\tn[a] += 1;\n}\n// output\nfor (int i = 0; i < arr.count; i ++) {\n\tfor(int j = 1; j <= n[i]; j ++)\n\t\tprintf(\"%d \", i);\n}",
         "Binary Search": "\nvoid binarySearch(int x) {\n\tint L = 1, R = MAXN, mid;\n\twhile (L < R) {\n\t\tmid = (L + R) / 2;\n\t\tif (x >= n[mid]) {\n\t\t\tL = mid;\n\t\t} else {\n\t\t\tR = mid - 1;\n\t\t}\n\t}\n\tprintf(\"%d\", n[L]);\n}",
         "More...": "Press the \"+\" button below\nand add your own code snippets.\nAfter you add a snippet, it\nwill not be editable.\n\nCode Snippet is a small portion\nof re-usable source code. They\nallow a programmer to avoid\ntyping repetitive code during\nprogramming."
     ]
+    
     
     @objc func didAddItem(title: String, image: NSImage, code: String) {
         
@@ -97,6 +100,7 @@ class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate 
         self.append(cell: cell)
         
     }
+    
     
     func search(for title: String, in cells: [CDSnippetTableViewCell]) {
         
@@ -110,20 +114,10 @@ class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate 
         
     }
     
-    @objc func didRemoveItem(senderTitle: String) {
-        
-        for (index, cell) in self.cells.enumerated() {
-            
-            if cell.title == senderTitle {
-                self.remove(at: index)
-                break
-            }
-            
-        }
-        
-    }
     
-    var cells : [CDSnippetTableViewCell] = []
+    @objc func didRemoveItem(senderTitle: String) {
+        self.removeItem(withTitle: senderTitle)
+    }
 
     override var autoresizesSubviews: Bool {
         get {
@@ -138,14 +132,10 @@ class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate 
         super.init(coder: coder)
         
         if let savedSnippets = load() {
-            
             cells += savedSnippets
             setup(cells: self.cells)
-            
         } else {
-            
             loadSample()
-            
         }
         
         
@@ -153,6 +143,7 @@ class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate 
     
     
     // MARK: - Append and remove
+    
     func append(cell: CDSnippetTableViewCell) {
         
         self.cells.append(cell)
@@ -169,6 +160,51 @@ class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate 
         
     }
     
+    func removeItem(withTitle title: String) {
+        
+        for (index, cell) in self.cells.enumerated() {
+            
+            if cell.title == title {
+                self.remove(at: index)
+                break
+            }
+            
+        }
+        
+    }
+    
+    func moveCellUp(cell: CDSnippetTableViewCell) {
+        
+        guard cell.index > 0 else {
+            return
+        }
+        guard cell.index < self.cells.count else {
+            return
+        }
+        let t = self.cells[cell.index - 1]
+        self.cells[cell.index - 1] = self.cells[cell.index]
+        self.cells[cell.index] = t
+        setup(cells: self.cells)
+        
+    }
+    
+    func moveCellDown(cell: CDSnippetTableViewCell) {
+        
+        guard cell.index >= 0 else {
+            return
+        }
+        guard cell.index < self.cells.count - 1 else {
+            return
+        }
+        let t = self.cells[cell.index + 1]
+        self.cells[cell.index + 1] = self.cells[cell.index]
+        self.cells[cell.index] = t
+        setup(cells: self.cells)
+        
+    }
+    
+    
+    
     
     
     // MARK: - Setup
@@ -180,12 +216,14 @@ class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate 
             view.removeFromSuperview()
         }
         
-        for cell in cells {
+        for (index, cell) in cells.enumerated() {
             
+            cell.snippetTableView = self
             cell.frame.origin = NSPoint(x: 0, y: y)
             cell.bounds.origin = NSPoint(x: 0, y: y)
             cell.titleLabel.frame.origin = NSPoint(x: 0, y: y)
             cell.titleLabel.bounds.origin = NSPoint(x: 0, y: y)
+            cell.index = index
             self.addSubview(cell)
             y += cell.bounds.height - 3
             
