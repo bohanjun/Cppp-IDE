@@ -1,18 +1,3 @@
-/*===-- clang-c/Index.h - Indexing Public C Interface -------------*- C -*-===*\
- |*                                                                            *|
- |* Part of the LLVM Project, under the Apache License v2.0 with LLVM          *|
- |* Exceptions.                                                                *|
- |* See https://llvm.org/LICENSE.txt for license information.                  *|
- |* SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception                    *|
- |*                                                                            *|
- |*===----------------------------------------------------------------------===*|
- |*                                                                            *|
- |* This header provides a public interface to a Clang library for extracting  *|
- |* high-level symbol information from source files without exposing the full  *|
- |* Clang C++ API.                                                             *|
- |*                                                                            *|
- \*===----------------------------------------------------------------------===*/
- 
  #ifndef LLVM_CLANG_C_INDEX_H
  #define LLVM_CLANG_C_INDEX_H
  
@@ -24,14 +9,6 @@
  #include "ExternC.h"
  #include "Platform.h"
  
- /**
-  * The version constants for the libclang API.
-  * CINDEX_VERSION_MINOR should increase when there are API additions.
-  * CINDEX_VERSION_MAJOR is intended for "major" source/ABI breaking changes.
-  *
-  * The policy about the libclang API was always to keep it source and ABI
-  * compatible, thus CINDEX_VERSION_MAJOR is expected to remain stable.
-  */
  #define CINDEX_VERSION_MAJOR 0
  #define CINDEX_VERSION_MINOR 60
  
@@ -48,25 +25,6 @@
    CINDEX_VERSION_STRINGIZE(CINDEX_VERSION_MAJOR, CINDEX_VERSION_MINOR)
  
  LLVM_CLANG_C_EXTERN_C_BEGIN
- 
- /** \defgroup CINDEX libclang: C Interface to Clang
-  *
-  * The C Interface to Clang provides a relatively small API that exposes
-  * facilities for parsing source code into an abstract syntax tree (AST),
-  * loading already-parsed ASTs, traversing the AST, associating
-  * physical source locations with elements within the AST, and other
-  * facilities that support Clang-based development tools.
-  *
-  * This C interface to Clang will never provide all of the information
-  * representation stored in Clang's C++ AST, nor should it: the intent is to
-  * maintain an API that is relatively stable from one release to the next,
-  * providing only the basic functionality needed to support development tools.
-  *
-  * To avoid namespace pollution, data types are prefixed with "CX" and
-  * functions are prefixed with "clang_".
-  *
-  * @{
-  */
  
  /**
   * An "index" that consists of a set of translation units that would

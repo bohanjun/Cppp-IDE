@@ -17,7 +17,6 @@ class CDSnippetTableViewCell: NSView, CDSnippetPopoverViewControllerDelegate {
     var code: String!
     var image: NSImage!
     var titleLabel: NSButton!
-    private var popover: NSPopover!
     weak var snippetTableView: CDSnippetTableView!
     
     
@@ -56,32 +55,16 @@ class CDSnippetTableViewCell: NSView, CDSnippetPopoverViewControllerDelegate {
         self.snippetTableView.moveCellDown(cell: self)
     }
     
-    @objc func didSetColor(image: NSImage) {
-        
-        self.titleLabel.image = image
-        
-    }
     
     @objc func showSnippetInfo() {
         
-        popover = NSPopover()
         let vc = CDSnippetPopoperViewController()
-        vc.setup(title: self.title, image: self.titleLabel.image, code: self.code, mode: false)
-        vc.delegate = (self.superview) as! CDSnippetTableView
-        vc.closeDelegate = self
-        vc.addToCodeDelegate = (((self.superview) as! CDSnippetTableView).superview?.superview?.window?.contentViewController) as! CDMainViewController
-        popover.contentViewController = vc
-        popover.behavior = .transient
-        popover.show(relativeTo: self.frame, of: self, preferredEdge: NSRectEdge.maxX)
+        vc.setup(title: self.title, image: self.titleLabel.image, code: self.code, isEditable: false)
+        vc.delegate_tableView = (self.superview) as! CDSnippetTableView
+        vc.delegate_textView = (((self.superview) as! CDSnippetTableView).superview?.superview?.window?.contentViewController) as! CDMainViewController
+        vc.openInPopover(relativeTo: self.frame, of: self, preferredEdge: .maxX)
         
     }
-    
-    @objc func willClose() {
-        
-        self.popover.close()
-        
-    }
-    
     
     
     override func encode(with coder: NSCoder) {
@@ -149,4 +132,12 @@ class CDSnippetTableViewCell: NSView, CDSnippetPopoverViewControllerDelegate {
         self.addSubview(titleLabel)
         
     }
+    
+    
+    
+    func popoverViewController(_ viewController: CDSnippetPopoperViewController, didSetImage image: NSImage) {
+        self.titleLabel.image = image
+    }
+    
+    
 }

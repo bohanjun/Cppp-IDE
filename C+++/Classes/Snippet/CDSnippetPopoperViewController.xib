@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17132.0.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17132.0.2"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,7 +11,7 @@
                 <outlet property="addToCodeButton" destination="MlQ-AU-NIG" id="jSi-EN-BTR"/>
                 <outlet property="imageView" destination="nkU-dH-6NV" id="Cod-ol-F5e"/>
                 <outlet property="removeButton" destination="sFI-0I-EwQ" id="KOM-hc-1pE"/>
-                <outlet property="textView" destination="non-4j-3VK" id="p5g-ii-94t"/>
+                <outlet property="textView" destination="non-4j-3VK" id="d0V-9y-moG"/>
                 <outlet property="titleLabel" destination="vfl-J8-3TD" id="wuw-Sv-BbC"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
@@ -35,7 +36,7 @@
                     <autoresizingMask key="autoresizingMask"/>
                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="iiF-WS-9yr">
                         <rect key="frame" x="0.0" y="0.0" width="276" height="175"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView importsGraphics="NO" richText="NO" horizontallyResizable="YES" verticallyResizable="YES" allowsUndo="YES" smartInsertDelete="YES" id="non-4j-3VK" customClass="CDCodeEditor" customModule="C___" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="276" height="175"/>
@@ -48,11 +49,11 @@
                             </textView>
                         </subviews>
                     </clipView>
-                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="zji-Wv-ouG">
+                    <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="zji-Wv-ouG">
                         <rect key="frame" x="-100" y="-100" width="225" height="15"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="JRh-w8-BL8">
+                    <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="JRh-w8-BL8">
                         <rect key="frame" x="261" y="0.0" width="15" height="175"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
@@ -92,6 +93,6 @@
         </customView>
     </objects>
     <resources>
-        <image name="Code" width="80" height="85"/>
+        <image name="Code" width="160" height="170"/>
     </resources>
 </document>

@@ -1,16 +1,3 @@
-/*===-- clang-c/CXErrorCode.h - C Index Error Codes  --------------*- C -*-===*\
- |*                                                                            *|
- |* Part of the LLVM Project, under the Apache License v2.0 with LLVM          *|
- |* Exceptions.                                                                *|
- |* See https://llvm.org/LICENSE.txt for license information.                  *|
- |* SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception                    *|
- |*                                                                            *|
- |*===----------------------------------------------------------------------===*|
- |*                                                                            *|
- |* This header provides the CXErrorCode enumerators.                          *|
- |*                                                                            *|
- \*===----------------------------------------------------------------------===*/
- 
  #ifndef LLVM_CLANG_C_CXERRORCODE_H
  #define LLVM_CLANG_C_CXERRORCODE_H
  

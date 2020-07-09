@@ -202,15 +202,12 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
    
     
 // MARK: - Snippet Table View
-    
-    var popover: NSPopover!
     @IBOutlet weak var snippetSearchField: NSSearchField!
    
     
     
     
 // MARK: - Diagnostics
-    
     var diagnostics = [CKDiagnostic]()
     var diagnosticsCells = [CDSnippetTableViewCell]()
     

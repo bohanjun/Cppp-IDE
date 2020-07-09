@@ -1,16 +1,3 @@
-/*===-- clang-c/CXString.h - C Index strings  --------------------*- C -*-===*\
- |*                                                                            *|
- |* Part of the LLVM Project, under the Apache License v2.0 with LLVM          *|
- |* Exceptions.                                                                *|
- |* See https://llvm.org/LICENSE.txt for license information.                  *|
- |* SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception                    *|
- |*                                                                            *|
- |*===----------------------------------------------------------------------===*|
- |*                                                                            *|
- |* This header provides the interface to C Index strings.                     *|
- |*                                                                            *|
- \*===----------------------------------------------------------------------===*/
- 
  #ifndef LLVM_CLANG_C_CXSTRING_H
  #define LLVM_CLANG_C_CXSTRING_H
  
@@ -18,13 +5,6 @@
  #include "Platform.h"
  
  LLVM_CLANG_C_EXTERN_C_BEGIN
- 
- /**
-  * \defgroup CINDEX_STRING String manipulation routines
-  * \ingroup CINDEX
-  *
-  * @{
-  */
  
  /**
   * A character string.

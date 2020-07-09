@@ -1,17 +1,3 @@
-/*==-- clang-c/Documentation.h - Utilities for comment processing -*- C -*-===*\
- |*                                                                            *|
- |* Part of the LLVM Project, under the Apache License v2.0 with LLVM          *|
- |* Exceptions.                                                                *|
- |* See https://llvm.org/LICENSE.txt for license information.                  *|
- |* SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception                    *|
- |*                                                                            *|
- |*===----------------------------------------------------------------------===*|
- |*                                                                            *|
- |* This header provides a supplementary interface for inspecting              *|
- |* documentation comments.                                                    *|
- |*                                                                            *|
- \*===----------------------------------------------------------------------===*/
- 
  #ifndef LLVM_CLANG_C_DOCUMENTATION_H
  #define LLVM_CLANG_C_DOCUMENTATION_H
  
@@ -19,16 +5,6 @@
  #include "Index.h"
  
  LLVM_CLANG_C_EXTERN_C_BEGIN
- 
- /**
-  * \defgroup CINDEX_COMMENT Comment introspection
-  *
-  * The routines in this group provide access to information in documentation
-  * comments. These facilities are distinct from the core and may be subject to
-  * their own schedule of stability and deprecation.
-  *
-  * @{
-  */
  
  /**
   * A parsed comment.

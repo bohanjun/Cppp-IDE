@@ -1,17 +1,3 @@
-/*===-- clang-c/CXCompilationDatabase.h - Compilation database  ---*- C -*-===*\
- |*                                                                            *|
- |* Part of the LLVM Project, under the Apache License v2.0 with LLVM          *|
- |* Exceptions.                                                                *|
- |* See https://llvm.org/LICENSE.txt for license information.                  *|
- |* SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception                    *|
- |*                                                                            *|
- |*===----------------------------------------------------------------------===*|
- |*                                                                            *|
- |* This header provides a public interface to use CompilationDatabase without *|
- |* the full Clang C++ API.                                                    *|
- |*                                                                            *|
- \*===----------------------------------------------------------------------===*/
- 
  #ifndef LLVM_CLANG_C_CXCOMPILATIONDATABASE_H
  #define LLVM_CLANG_C_CXCOMPILATIONDATABASE_H
  
@@ -20,13 +6,6 @@
  #include "Platform.h"
  
  LLVM_CLANG_C_EXTERN_C_BEGIN
- 
- /** \defgroup COMPILATIONDB CompilationDatabase functions
-  * \ingroup CINDEX
-  *
-  * @{
-  */
- 
  /**
   * A compilation database holds all information used to compile files in a
   * project. For each file in the database, it can be queried for the working

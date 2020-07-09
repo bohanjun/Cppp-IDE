@@ -13,22 +13,16 @@ extension CDMainViewController : CDSnippetPopoverViewControllerDelegate {
     @IBAction func addItem(_ sender: NSButton) {
         
         let vc = CDSnippetPopoperViewController()
-        vc.setup(title: "Edit your title", image: NSImage(named: "Code")!, code: "Edit your code here.\nYou can also click the image to\n change the color of it.", mode: true)
-        vc.closeDelegate = self
-        vc.delegate = self.snippetAndDiagnositcsTableView
-        popover = NSPopover()
-        popover.behavior = .transient
-        popover.contentViewController = vc
-        popover.show(relativeTo: sender.bounds, of: sender, preferredEdge: .maxY)
+        vc.setup(title: "Edit your title", image: NSImage(named: "Code")!, code: "Edit your code here.\nYou can also click the image to\n change the color of it.", isEditable: true)
+        vc.delegate_tableView = self.snippetAndDiagnositcsTableView
+        vc.openInPopover(relativeTo: sender.bounds, of: sender, preferredEdge: .maxY)
         
     }
     
-    func didAddToCode(code: String) {
-        self.mainTextView.insertText(code, replacementRange: self.mainTextView.selectedRange)
-    }
     
-    func willClose() {
-        popover.close()
+    // CDSnippetPopoverViewControllerDelegate
+    func popoverViewController(_ viewController: CDSnippetPopoperViewController, shouldAddToCode code: String) {
+        self.mainTextView.insertText(code, replacementRange: self.mainTextView.selectedRange)
     }
     
     

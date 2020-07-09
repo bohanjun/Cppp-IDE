@@ -19,7 +19,7 @@ extension NSViewController {
     func checkUpdate(alsoShowAlertWhenUpToDate: Bool) {
         
         if self is CDMainViewController {
-            (self as! CDMainViewController).setStatus(string: "Checking For Updates...")
+            (self as! CDMainViewController).setStatus(string: "C+++ | Checking For Updates...")
         }
         
         self.sendUserNotification(title: "Checking For Updates...", subtitle: "This may take a few seconds.")
@@ -53,7 +53,7 @@ extension NSViewController {
                 } else {
                     
                     if self is CDMainViewController {
-                        (self as! CDMainViewController).setStatus(string: "Check Updates Failed.")
+                        (self as! CDMainViewController).setStatus(string: "C+++ | Check Updates Failed.")
                     }
                     
                     if alsoShowAlertWhenUpToDate {

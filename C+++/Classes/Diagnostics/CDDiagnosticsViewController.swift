@@ -24,11 +24,13 @@ class CDDiagnosticsViewController: NSViewController, NSTableViewDataSource {
     var fixIts = [CKFixIt]()
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var titleLabel: NSTextField!
+    @IBOutlet weak var tryToFixItLabel: NSTextField!
     
     @IBAction func fixIt(_ sender: Any?) {
         
         let fixIt = fixIts[self.tableView.selectedRow]
         self.delegate?.diagnosticsViewController(self, shouldReplaceRange: fixIt.range, with: fixIt.string ?? "")
+        self.popover?.close()
         
     }
     
@@ -73,6 +75,10 @@ class CDDiagnosticsViewController: NSViewController, NSTableViewDataSource {
         super.viewDidLoad()
         // Do view setup here.
         self.titleLabel.stringValue = self.diagnostic.description
+        if self.fixIts.count == 0 {
+            self.tryToFixItLabel.isHidden = true
+            self.tableView.enclosingScrollView?.isHidden = true
+        }
         
     }
    

@@ -93,12 +93,13 @@ class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate 
         "More...": "Press the \"+\" button below\nand add your own code snippets.\nAfter you add a snippet, it\nwill not be editable.\n\nCode Snippet is a small portion\nof re-usable source code. They\nallow a programmer to avoid\ntyping repetitive code during\nprogramming."
     ]
     
-    
-    @objc func didAddItem(title: String, image: NSImage, code: String) {
-        
+    func popoverViewController(_ viewController: CDSnippetPopoperViewController, shouldAddItemWithTitle title: String, image: NSImage, code: String) {
         let cell = CDSnippetTableViewCell(title: title, image: image, code: code, width: 210.0)
         self.append(cell: cell)
-        
+    }
+    
+    func popoverViewController(_ viewController: CDSnippetPopoperViewController, shouldRemoveItemWithTitle title: String) {
+        self.removeItem(withTitle: title)
     }
     
     
@@ -114,10 +115,6 @@ class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate 
         
     }
     
-    
-    @objc func didRemoveItem(senderTitle: String) {
-        self.removeItem(withTitle: senderTitle)
-    }
 
     override var autoresizesSubviews: Bool {
         get {
