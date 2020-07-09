@@ -10,7 +10,24 @@ import Cocoa
 
 var launchViewController: CDLaunchViewController!
 
-class CDLaunchViewController: NSViewController, CDSettingsViewDelegate {
+class CDLaunchViewController: NSViewController, CDSettingsViewDelegate, NSTableViewDataSource, NSTableViewDelegate {
+    
+    func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
+        switch tableColumn?.title {
+            case "":
+                return NSWorkspace.shared.icon(forFile: NSDocumentController.shared.recentDocumentURLs[row].path)
+                
+            case "File":
+                return NSDocumentController.shared.recentDocumentURLs[row].lastPathComponent
+                
+            default: return nil
+        }
+    }
+    
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        print(NSDocumentController.shared.recentDocumentURLs)
+        return NSDocumentController.shared.recentDocumentURLs.count
+    }
     
     func didSet() {
         
@@ -18,35 +35,58 @@ class CDLaunchViewController: NSViewController, CDSettingsViewDelegate {
     
     @IBOutlet weak var welcomeButton: NSButton!
     @IBOutlet weak var aboutButton: NSButton!
+    @IBOutlet weak var recentFilesButton: NSButton!
     @IBOutlet weak var titleLabel: NSTextField!
     
     @IBOutlet weak var newFileView: NSView!
     @IBOutlet weak var openFileView: NSView!
     @IBOutlet weak var newProjectView: NSView!
+    @IBOutlet weak var recentFilesTableView: NSTableView!
     
     @IBOutlet weak var aboutView: NSView!
     
     @IBAction func welcomeButtonClicked(_ sender: Any?) {
         
-        welcomeButton.state = .on
-        aboutButton.state = .off
+        welcomeButton.isBordered = true
+        recentFilesTableView.enclosingScrollView?.isHidden = true
+        recentFilesButton.isBordered = false
+        aboutButton.isBordered = false
         titleLabel.stringValue = "Welcome to C+++"
         newFileView.isHidden = false
         openFileView.isHidden = false
         newProjectView.isHidden = false
         aboutView.isHidden = true
+        setButtonWidth()
         
     }
     
     @IBAction func aboutButtonClicked(_ sender: Any?) {
         
-        welcomeButton.state = .off
-        aboutButton.state = .on
+        welcomeButton.isBordered = false
+        recentFilesTableView.enclosingScrollView?.isHidden = true
+        recentFilesButton.isBordered = false
+        aboutButton.isBordered = true
         titleLabel.stringValue = "About C+++"
         newFileView.isHidden = true
         openFileView.isHidden = true
         newProjectView.isHidden = true
         aboutView.isHidden = false
+        setButtonWidth()
+        
+    }
+    
+    @IBAction func recentFilesButtonClicked(_ sender: Any?) {
+        
+        recentFilesTableView.enclosingScrollView?.isHidden = false
+        recentFilesButton.isBordered = true
+        welcomeButton.isBordered = false
+        aboutButton.isBordered = false
+        titleLabel.stringValue = "Recent Files"
+        newFileView.isHidden = true
+        openFileView.isHidden = true
+        newProjectView.isHidden = true
+        aboutView.isHidden = true
+        setButtonWidth()
         
     }
     
@@ -54,9 +94,6 @@ class CDLaunchViewController: NSViewController, CDSettingsViewDelegate {
         super.viewDidLoad()
         
         welcomeButtonClicked(nil)
-        
-        welcomeButton.bezelStyle = .smallSquare
-        aboutButton.bezelStyle = .smallSquare
         
         launchViewController = self
         
@@ -72,6 +109,12 @@ class CDLaunchViewController: NSViewController, CDSettingsViewDelegate {
                 self.presentAsSheet(ViewController)
         }
         
+    }
+    
+    private func setButtonWidth() {
+        self.aboutButton.frame = NSMakeRect(8, 150, 140, 40)
+        self.welcomeButton.frame = NSMakeRect(8, 226, 140, 40)
+        self.recentFilesButton.frame = NSMakeRect(8, 188, 140, 40)
     }
     
 }
