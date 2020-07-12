@@ -58,7 +58,7 @@ class CDSettingsViewController: NSViewController {
         CDSettings.shared = settings
         CDCompileSettings.shared = compileSettings
         
-        self.delegate.didSet()
+        self.delegate?.didSet()
         
         self.dismiss(self)
         

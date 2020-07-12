@@ -32,7 +32,18 @@ class CDProjectTableView: CDSnippetTableView {
     }
     
     override func save() {
+        (self.window?.contentViewController as! CDProjectViewController).saveProject(self)
+    }
+    
+    override func allItemTitles() -> [String] {
+        
+        var res = [String]()
+        for i in self.cells {
+            res.append((i as! CDProjectTableViewCell).path)
+        }
+        return res
         
     }
+    
     
 }

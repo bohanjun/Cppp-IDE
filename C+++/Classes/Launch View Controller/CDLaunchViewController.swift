@@ -10,7 +10,7 @@ import Cocoa
 
 var launchViewController: CDLaunchViewController!
 
-class CDLaunchViewController: NSViewController, CDSettingsViewDelegate, NSTableViewDataSource, NSTableViewDelegate {
+class CDLaunchViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
     
     func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
         switch tableColumn?.title {
@@ -24,13 +24,9 @@ class CDLaunchViewController: NSViewController, CDSettingsViewDelegate, NSTableV
         }
     }
     
-    func numberOfRows(in tableView: NSTableView) -> Int {
-        print(NSDocumentController.shared.recentDocumentURLs)
-        return NSDocumentController.shared.recentDocumentURLs.count
-    }
     
-    func didSet() {
-        
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        return NSDocumentController.shared.recentDocumentURLs.count
     }
     
     @IBOutlet weak var welcomeButton: NSButton!
@@ -94,7 +90,6 @@ class CDLaunchViewController: NSViewController, CDSettingsViewDelegate, NSTableV
         super.viewDidLoad()
         
         welcomeButtonClicked(nil)
-        
         launchViewController = self
         
     }
@@ -102,19 +97,18 @@ class CDLaunchViewController: NSViewController, CDSettingsViewDelegate, NSTableV
     @IBAction func showSettingsView(_ sender: Any?) {
         
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
-            if let ViewController =
+            if let viewController =
                 storyboard.instantiateController(
                      withIdentifier: NSStoryboard.SceneIdentifier("CDSettingsViewController")) as? CDSettingsViewController {
-                ViewController.delegate = self
-                self.presentAsSheet(ViewController)
+                self.presentAsSheet(viewController)
         }
         
     }
     
     private func setButtonWidth() {
-        self.aboutButton.frame = NSMakeRect(8, 150, 140, 40)
-        self.welcomeButton.frame = NSMakeRect(8, 226, 140, 40)
-        self.recentFilesButton.frame = NSMakeRect(8, 188, 140, 40)
+        self.aboutButton.frame = NSMakeRect(8, 160, 140, 40)
+        self.welcomeButton.frame = NSMakeRect(8, 236, 140, 40)
+        self.recentFilesButton.frame = NSMakeRect(8, 198, 140, 40)
     }
     
 }

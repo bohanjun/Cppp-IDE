@@ -83,7 +83,6 @@ class CDProjectDocument: NSDocument {
 
                 contentVC.tableView.paths = contentVC.filePaths
                 contentVC.tableView.cells = contentVC.tableView.load()
-                contentVC.isFileSaved = true
                 contentVC.tableView.setup(cells: contentVC.tableView.cells)
                 contentVC.textField.stringValue = self.compileCommand
                 

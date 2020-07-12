@@ -38,6 +38,9 @@ extension NSApplication {
             
             5. The app displays a lot of error codes when openning a document.
             Maybe you are openning a file which was previously edited in Windows or other operating systems which do not follow the UTF-8 encoding. The default encoding of the document is UTF-8 in C+++ (which is also the default one in macOS). If the document openning operation fails, the app will try WindowsCP1252 encoding. Otherwise Unicode.
+
+            6. Code Diagnostic: Fatal: 'xxx' file not found.
+            Sorry, this is a bug. We can't solve that now, but we will continue to work out solutions to this issue.
             """)
         }
         

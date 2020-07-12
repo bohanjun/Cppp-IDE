@@ -15,7 +15,14 @@ class CDProjectTableViewCell: CDSnippetTableViewCell {
     init(path: String) {
         
         self.path = path
-        super.init(title: path, image: NSImage(named: "Code"), code: "", width: 10000.0)
+        super.init(title: (path as NSString).lastPathComponent, image: NSWorkspace.shared.icon(forFile: self.path), code: "", width: 10000.0)
+        
+        self.menu?.removeAllItems()
+        self.menu?.addItem(NSMenuItem(title: "Open", action: #selector(didClickCell), keyEquivalent: ""))
+        self.menu?.addItem(NSMenuItem(title: "Show In Finder", action: #selector(showInFinder), keyEquivalent: ""))
+        self.menu?.addItem(NSMenuItem(title: "Move Up", action: #selector(_moveUp), keyEquivalent: ""))
+        self.menu?.addItem(NSMenuItem(title: "Move Down", action: #selector(_moveDown), keyEquivalent: ""))
+        self.menu?.addItem(NSMenuItem(title: "Remove File", action: #selector(delete), keyEquivalent: ""))
         
     }
     
@@ -23,14 +30,12 @@ class CDProjectTableViewCell: CDSnippetTableViewCell {
         self.init(path: "")
     }
     
-    override func showSnippetInfo() {
-        NSDocumentController.shared.openDocument(withContentsOf: URL(fileURLWithPath: self.title), display: true) { (document, opened, error) in
-            if let doc = document as? CDCodeDocument {
-                (doc.contentViewController.view.window?.windowController as? CDMainWindowController)?.toggleCompileViewShown(self)
-            } else {
-                NSWorkspace.shared.selectFile(self.title, inFileViewerRootedAtPath: "")
-            }
-        }
+    override func didClickCell() {
+        NSWorkspace.shared.open(URL(fileURLWithPath: self.path))
+    }
+    
+    @objc func showInFinder() {
+        NSWorkspace.shared.selectFile(self.path, inFileViewerRootedAtPath: "")
     }
     
 }

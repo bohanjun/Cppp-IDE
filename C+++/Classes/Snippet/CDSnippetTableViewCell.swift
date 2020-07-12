@@ -32,7 +32,7 @@ class CDSnippetTableViewCell: NSView, CDSnippetPopoverViewControllerDelegate {
         }
     }
     
-    var action: Selector = #selector(showSnippetInfo)
+    var action: Selector = #selector(didClickCell)
     
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
@@ -56,7 +56,7 @@ class CDSnippetTableViewCell: NSView, CDSnippetPopoverViewControllerDelegate {
     }
     
     
-    @objc func showSnippetInfo() {
+    @objc func didClickCell() {
         
         let vc = CDSnippetPopoperViewController()
         vc.setup(title: self.title, image: self.titleLabel.image, code: self.code, isEditable: false)
@@ -125,6 +125,7 @@ class CDSnippetTableViewCell: NSView, CDSnippetPopoverViewControllerDelegate {
         
         let menu = NSMenu(title: "Menu")
         menu.addItem(NSMenuItem(title: "Remove", action: #selector(delete), keyEquivalent: String()))
+        menu.addItem(NSMenuItem(title: "Show", action: #selector(didClickCell), keyEquivalent: String()))
         if self.index != 0 { menu.addItem(NSMenuItem(title: "Move Up", action: #selector(_moveUp), keyEquivalent: String())) }
         if self.index != ((self.snippetTableView?.cells.count) ?? 0) - 1 { menu.addItem(NSMenuItem(title: "Move Down", action: #selector(_moveDown), keyEquivalent: String())) }
         self.menu = menu
