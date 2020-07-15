@@ -15,35 +15,38 @@ class CDFileCompiler: NSObject {
     - returns: The result to be displayed in the "Compile Info"  text view.
     */
     public static func compileFile(fileURL: String, arguments: String = CDCompileSettings.shared.arguments ?? "") -> String {
+        
+        let path = (fileURL as NSString).deletingLastPathComponent
          
         // The path of the file
-        let _fileURL = "\"" + fileURL + "\""
+        let _fileURL = "\"" + (fileURL as NSString).lastPathComponent + "\""
         
-        // Create The name of the output exec
-        var out = (fileURL as NSString).deletingPathExtension as String
-        out = "\"" + out + "\""
+        // Create the name of the output exec
+        let out = "\"" + (((fileURL as NSString).lastPathComponent as NSString).deletingPathExtension) + "\""
         
         // The compile command
         let command = "\(CDCompileSettings.shared.compiler ?? "g++") \(arguments) \(_fileURL) -o \(out)"
         
         // Compile
-        let b = shell(command)
+        let compileResult = shell("cd \"\(path)\"\n" + command)
         
-        if b.count == 1 {
+        if compileResult.count == 1 {
+            
             // No error
-            shell("open \(out)")
-            return "Compile Command:\n\(command)\n\nCompile Succeed"
+            shell("cd \"\(path)\"\n" + "open \(out)")
+            return "Compile Command:\n\ncd \"\(path)\"\n\(command)\n\nCompile Succeed"
             
         } else {
+            
             // Have warning or error
-            if b[1].range(of: "error") == nil {
+            if !(compileResult[1].contains(" error: ")) {
                 
-                shell("open \(out)")
-                return "Compile Command:\n\(command)\n\nCompile Succeed\n\n" + b[1]
+                shell("cd \"\(path)\"\n" + "open \(out)")
+                return "Compile Command:\n\ncd \"\(path)\"\n\(command)\n\nCompile Succeed\n\n" + compileResult[1]
                  
             }
             
-            return "Compile Command:\n\(command)\n\nCompile Failed\n\n" + b[1]
+            return "Compile Command:\n\ncd \"\(path)\"\n\(command)\n\nCompile Failed\n\n" + compileResult[1]
             
         }
         

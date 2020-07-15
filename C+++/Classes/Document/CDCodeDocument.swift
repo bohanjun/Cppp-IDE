@@ -142,8 +142,6 @@ class CDCodeDocument: NSDocument {
         self.contentViewController.compileInfo.string = res
         self.contentViewController.setStatus(string: "\(self.fileURL?.lastPathComponent ?? "C+++") | Compile Finished")
         
-        Swift.print(res)
-        
         DispatchQueue.main.async {
             
             for i in res.components(separatedBy: "\n") {
@@ -155,7 +153,6 @@ class CDCodeDocument: NSDocument {
                     let nsstring = NSString(string: i)
                     let substring = nsstring.substring(to: index)
                     if let int = Int(substring) {
-                        Swift.print(int)
                         self.contentViewController?.lineNumberTextView?.markLineNumber(line: int, color: .orange)
                     }
                 }
@@ -203,7 +200,6 @@ class CDCodeDocument: NSDocument {
                     let nsstring = NSString(string: i)
                     let substring = nsstring.substring(to: index)
                     if let int = Int(substring) {
-                        Swift.print(int)
                         self.contentViewController?.lineNumberTextView?.markLineNumber(line: int, color: .orange)
                     }
                 }

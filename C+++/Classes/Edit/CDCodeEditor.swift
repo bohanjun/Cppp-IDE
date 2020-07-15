@@ -203,8 +203,6 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
         
         if charRange.length == 1 {
             
-            print("charRange.length = 1")
-            
             let line = self.string.lineNumber(at: self.selectedRange.location) ?? 0
             let column = self.string.columnNumber(at: self.selectedRange.location)
             let results = CKTranslationUnit(text: self.string, language: CKLanguageCPP).completionResults(forLine: UInt(line), column: UInt(column))
@@ -233,8 +231,6 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
                             default: break
                             
                         }
-                        
-                        print(type)
                         
                         otherTexts = [String]()
                         
@@ -280,7 +276,6 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
             
         } else {
             
-            print("charRange.length > 1")
             var array = [CDCompletionResult]()
             for result in lastTimeCompletionResults {
                 if result.typedText.lowercased().hasPrefix(substring.lowercased()) && substring.count != result.typedText.count {

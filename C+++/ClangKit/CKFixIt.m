@@ -47,7 +47,6 @@
     {
         string  = clang_getDiagnosticFixIt( diagnostic.cxDiagnostic, ( unsigned int )index, &range );
         _string = [ [ NSString alloc ] initWithCString: clang_getCString( string ) encoding: NSUTF8StringEncoding ];
-        printf("\n\nbegin: %d, end: %d\n\n", range.begin_int_data, range.end_int_data);
         _range = NSMakeRange(range.begin_int_data - 2, range.end_int_data - range.begin_int_data);
     }
     
