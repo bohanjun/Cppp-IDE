@@ -182,6 +182,7 @@ class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate 
         self.cells[cell.index - 1] = self.cells[cell.index]
         self.cells[cell.index] = t
         setup(cells: self.cells)
+        self.save()
         
     }
     
@@ -197,6 +198,7 @@ class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate 
         self.cells[cell.index + 1] = self.cells[cell.index]
         self.cells[cell.index] = t
         setup(cells: self.cells)
+        self.save()
         
     }
     

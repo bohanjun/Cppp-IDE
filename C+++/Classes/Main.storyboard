@@ -2234,7 +2234,7 @@ Gw
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cjt-yS-bvG">
                                         <rect key="frame" x="137" y="85" width="130" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" title="23786/cppp-ide" id="cJx-9K-TXc">
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="23786/Cppp-IDE" id="cJx-9K-TXc">
                                             <font key="font" metaFont="system" size="17"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -2646,7 +2646,7 @@ Gw
         <image name="Undo" width="510" height="510"/>
         <image name="Update" width="580" height="580"/>
         <namedColor name="BackgroundColor">
-            <color red="0.92400002479553223" green="0.92400002479553223" blue="0.92400002479553223" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.88003026376856441" green="0.88003026376856441" blue="0.88003026376856441" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="LaunchVCSideBarColor">
             <color red="0.89999997615814209" green="0.89999997615814209" blue="0.89999997615814209" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
