@@ -41,6 +41,9 @@ extension NSApplication {
 
             6. Code Diagnostic: Fatal: 'xxx' file not found.
             Sorry, this is a bug. We can't solve that now, but we will continue to work out solutions to this issue.
+
+            7. I use freopen() in my main program, but it doesn't work.
+            Sorry, this is also a bug. Workaround: Create a input file at path \"/Users/{Your Username}/\" and execute the file. Then you will see the output file at the same directory.
             """)
         }
         

@@ -156,9 +156,9 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
             for view in self.view.subviews {
                 view.appearance = darkAqua
             }
-            isDarkMode = false
+            self.isDarkMode = false
         }
-        
+
         // in case of errors
         changeAppearance(self)
         changeAppearance(self)

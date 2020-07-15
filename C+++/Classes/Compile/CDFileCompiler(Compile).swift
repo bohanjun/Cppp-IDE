@@ -32,7 +32,7 @@ extension CDFileCompiler {
         
         if compileResult.count == 1 {
             
-            // No error 
+            // No error
             return "Compile Command:\n\ncd \"\(path)\"\n\(command)\n\nCompile Succeed"
             
         } else {
