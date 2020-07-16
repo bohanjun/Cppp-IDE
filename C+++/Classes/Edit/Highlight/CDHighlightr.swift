@@ -43,7 +43,7 @@ open class CDHighlightr {
     public init?(highlightPath: String? = nil) {
         let jsContext = JSContext()!
         let window = JSValue(newObjectIn: jsContext)
-        jsContext.setObject(window, forKeyedSubscript: "window" as NSString)
+        jsContext.setObject(window, forKeyedSubscript: "window".nsString)
 
         let bundle = Bundle(for: CDHighlightr.self)
         self.bundle = bundle
@@ -194,15 +194,15 @@ open class CDHighlightr {
             
             scanner.scanLocation += 1
             
-            let string = scanner.string as NSString
+            let string = scanner.string.nsString
             let nextChar = string.substring(with: NSMakeRange(scanner.scanLocation, 1))
             if(nextChar == "s") {
-                scanner.scanLocation += (spanStart as NSString).length
+                scanner.scanLocation += spanStart.nsString.length
                 scanner.scanUpTo(spanStartClose, into:&scannedString)
-                scanner.scanLocation += (spanStartClose as NSString).length
+                scanner.scanLocation += spanStartClose.nsString.length
                 propStack.append(scannedString! as String)
             } else if nextChar == "/" {
-                scanner.scanLocation += (spanEnd as NSString).length
+                scanner.scanLocation += spanEnd.nsString.length
                 propStack.removeLast()
             } else {
                 let attrScannedString = theme.applyStyleToString("<", styleList: propStack)
@@ -219,7 +219,7 @@ open class CDHighlightr {
         var locOffset = 0
         for result in results {
             let fixedRange = NSMakeRange(result.range.location-locOffset, result.range.length)
-            let entity = (resultString.string as NSString).substring(with: fixedRange)
+            let entity = resultString.string.nsString.substring(with: fixedRange)
             if let decodedEntity = CDHighlightrHTMLUtils.decode(entity) {
                 resultString.replaceCharacters(in: fixedRange, with: String(decodedEntity))
                 locOffset += result.range.length-1;

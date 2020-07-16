@@ -16,13 +16,13 @@ extension CDFileCompiler {
     */
     public static func compileFileWithoutRunning(fileURL: String, arguments: String = CDCompileSettings.shared.arguments ?? "") -> String {
          
-        let path = (fileURL as NSString).deletingLastPathComponent
+        let path = fileURL.nsString.deletingLastPathComponent
          
         // The path of the file
-        let _fileURL = "\"" + (fileURL as NSString).lastPathComponent + "\""
+        let _fileURL = "\"" + fileURL.nsString.lastPathComponent + "\""
         
         // Create the name of the output exec
-        let out = "\"" + (((fileURL as NSString).lastPathComponent as NSString).deletingPathExtension) + "\""
+        let out = "\"" + fileURL.nsString.lastPathComponent.nsString.deletingPathExtension + "\""
         
         // The compile command
         let command = "\(CDCompileSettings.shared.compiler ?? "g++") \(arguments) \(_fileURL) -o \(out)"

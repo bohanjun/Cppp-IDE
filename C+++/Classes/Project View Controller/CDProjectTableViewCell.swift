@@ -15,7 +15,7 @@ class CDProjectTableViewCell: CDSnippetTableViewCell {
     init(path: String) {
         
         self.path = path
-        super.init(title: (path as NSString).lastPathComponent, image: NSWorkspace.shared.icon(forFile: self.path), code: "", width: 10000.0)
+        super.init(title: path.nsString.lastPathComponent, image: NSWorkspace.shared.icon(forFile: self.path), code: "", width: 10000.0)
         
         self.menu?.removeAllItems()
         self.menu?.addItem(NSMenuItem(title: "Open", action: #selector(didClickCell), keyEquivalent: ""))

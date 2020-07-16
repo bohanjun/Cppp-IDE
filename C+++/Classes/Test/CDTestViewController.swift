@@ -42,7 +42,7 @@ class CDTestViewController: NSViewController {
     
     @IBAction func start(_ sender: Any?) {
         
-        let executablePath = (self.fileURL as NSString).deletingPathExtension
+        let executablePath = self.fileURL.nsString.deletingPathExtension
         
         let exsists = FileManager().fileExists(atPath: executablePath)
         

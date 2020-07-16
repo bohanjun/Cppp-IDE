@@ -37,7 +37,7 @@ class CDUpdateManager: NSObject {
                 let string = String(data: _data, encoding: .utf8) ?? "Error"
                 let start = string.firstIndexOf("LATESTVERSIONBEGIN")
                 let end = string.firstIndexOf("LATESTVERSIONEND")
-                var strings = (string as NSString).substring(with: NSRange(location: start, length: end - start)).components(separatedBy: "<br>")
+                var strings = string.nsString.substring(with: NSRange(location: start, length: end - start)).components(separatedBy: "<br>")
                 strings.removeFirst()
                 let latestVersion = strings[0]
                 var updateInformation = strings[1].components(separatedBy: "-").joined(separator: "\n- ")

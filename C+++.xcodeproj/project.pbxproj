@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		180480AE2448602700CD0A4D /* CDSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180480AD2448602700CD0A4D /* CDSettings.swift */; };
+		1806FCB924C012EB0081D7BA /* CDGraphicalCodeDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806FCB824C012EB0081D7BA /* CDGraphicalCodeDocument.swift */; };
 		181F2B8E24AB44C600C4B217 /* Index.h in Sources */ = {isa = PBXBuildFile; fileRef = 181F2B8B24AB318800C4B217 /* Index.h */; };
 		181F2B8F24AB44E100C4B217 /* BuildSystem.h in Sources */ = {isa = PBXBuildFile; fileRef = 181F2B8424AB30AC00C4B217 /* BuildSystem.h */; };
 		181F2B9024AB44E900C4B217 /* CXErrorCode.h in Sources */ = {isa = PBXBuildFile; fileRef = 181F2B8624AB311000C4B217 /* CXErrorCode.h */; };
@@ -58,7 +59,7 @@
 		18A41AA4242C758B00AFC422 /* CDHighlightrTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A41AA3242C758B00AFC422 /* CDHighlightrTheme.swift */; };
 		18A41AA6242C75A600AFC422 /* CDHighlightrHTMLUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A41AA5242C75A600AFC422 /* CDHighlightrHTMLUtils.swift */; };
 		18A41AA8242C75C300AFC422 /* CDHighlightrShims.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A41AA7242C75C300AFC422 /* CDHighlightrShims.swift */; };
-		18A41AAA242C75DE00AFC422 /* CDAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A41AA9242C75DE00AFC422 /* CDAttributedString.swift */; };
+		18A41AAA242C75DE00AFC422 /* CDHighlightrAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A41AA9242C75DE00AFC422 /* CDHighlightrAttributedString.swift */; };
 		18A41AAD242C762100AFC422 /* highlight.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 18A41AAC242C762100AFC422 /* highlight.min.js */; };
 		18A41B09242C765500AFC422 /* paraiso-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 18A41AAF242C765200AFC422 /* paraiso-dark.min.css */; };
 		18A41B0A242C765500AFC422 /* isbl-editor-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 18A41AB0242C765200AFC422 /* isbl-editor-dark.min.css */; };
@@ -209,6 +210,7 @@
 /* Begin PBXFileReference section */
 		180480A824474A0700CD0A4D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		180480AD2448602700CD0A4D /* CDSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSettings.swift; sourceTree = "<group>"; };
+		1806FCB824C012EB0081D7BA /* CDGraphicalCodeDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDGraphicalCodeDocument.swift; sourceTree = "<group>"; };
 		181F2B8424AB30AC00C4B217 /* BuildSystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuildSystem.h; sourceTree = "<group>"; };
 		181F2B8524AB30D200C4B217 /* CXCompilationDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXCompilationDatabase.h; sourceTree = "<group>"; };
 		181F2B8624AB311000C4B217 /* CXErrorCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXErrorCode.h; sourceTree = "<group>"; };
@@ -274,7 +276,7 @@
 		18A41AA3242C758B00AFC422 /* CDHighlightrTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDHighlightrTheme.swift; sourceTree = "<group>"; };
 		18A41AA5242C75A600AFC422 /* CDHighlightrHTMLUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDHighlightrHTMLUtils.swift; sourceTree = "<group>"; };
 		18A41AA7242C75C300AFC422 /* CDHighlightrShims.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDHighlightrShims.swift; sourceTree = "<group>"; };
-		18A41AA9242C75DE00AFC422 /* CDAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDAttributedString.swift; sourceTree = "<group>"; };
+		18A41AA9242C75DE00AFC422 /* CDHighlightrAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDHighlightrAttributedString.swift; sourceTree = "<group>"; };
 		18A41AAC242C762100AFC422 /* highlight.min.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = highlight.min.js; sourceTree = "<group>"; };
 		18A41AAF242C765200AFC422 /* paraiso-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "paraiso-dark.min.css"; sourceTree = "<group>"; };
 		18A41AB0242C765200AFC422 /* isbl-editor-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "isbl-editor-dark.min.css"; sourceTree = "<group>"; };
@@ -414,6 +416,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1806FCBA24C0259E0081D7BA /* Graphical Code Editor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Graphical Code Editor";
+			sourceTree = "<group>";
+		};
 		181F2B8324AB307F00C4B217 /* clang-c */ = {
 			isa = PBXGroup;
 			children = (
@@ -487,11 +496,12 @@
 		183BF3C72428801C007AF6AC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				1872603124AF4FD2004C69B2 /* Diagnostics */,
-				18B1859824699A2800B579AD /* Main.storyboard */,
-				18B1859524698AA400B579AD /* Main View Controller */,
-				188DF6F124AF0C2200D0DA17 /* Add Symbol View Controller */,
 				18E0B01C242C52650062049C /* Document */,
+				18B1859824699A2800B579AD /* Main.storyboard */,
+				1806FCBA24C0259E0081D7BA /* Graphical Code Editor */,
+				18B1859524698AA400B579AD /* Main View Controller */,
+				1872603124AF4FD2004C69B2 /* Diagnostics */,
+				188DF6F124AF0C2200D0DA17 /* Add Symbol View Controller */,
 				18FC05442487B96200F33CE2 /* Test */,
 				187527AC247A64B200A7522A /* Launch View Controller */,
 				18D4DD6B246A2C1A00B97F32 /* Project View Controller */,
@@ -562,7 +572,7 @@
 				18A41AAB242C75EF00AFC422 /* Assets */,
 				18A41AA5242C75A600AFC422 /* CDHighlightrHTMLUtils.swift */,
 				18A41AA7242C75C300AFC422 /* CDHighlightrShims.swift */,
-				18A41AA9242C75DE00AFC422 /* CDAttributedString.swift */,
+				18A41AA9242C75DE00AFC422 /* CDHighlightrAttributedString.swift */,
 			);
 			path = Highlight;
 			sourceTree = "<group>";
@@ -772,6 +782,7 @@
 			children = (
 				18B3C78324282C1F00F4CA14 /* CDCodeDocument.swift */,
 				1860EC3224839A8B0066DE64 /* CDDocumentController.swift */,
+				1806FCB824C012EB0081D7BA /* CDGraphicalCodeDocument.swift */,
 				18B185902469608B00B579AD /* CDProjectDocument.swift */,
 				18B3C78F242836A500F4CA14 /* CDDocumentContent.swift */,
 			);
@@ -997,8 +1008,9 @@
 				180480AE2448602700CD0A4D /* CDSettings.swift in Sources */,
 				188DF6F424AF0C5400D0DA17 /* CDAddSymbolViewController.swift in Sources */,
 				18E72920244E756E000317D7 /* CDLineNumberScrollView.swift in Sources */,
+				1806FCB924C012EB0081D7BA /* CDGraphicalCodeDocument.swift in Sources */,
 				18B185732463B32400B579AD /* CDSnippetPopoperViewController.swift in Sources */,
-				18A41AAA242C75DE00AFC422 /* CDAttributedString.swift in Sources */,
+				18A41AAA242C75DE00AFC422 /* CDHighlightrAttributedString.swift in Sources */,
 				183BF3CA242906B3007AF6AC /* CDCodeEditor.swift in Sources */,
 				181F2BD824AC78C700C4B217 /* CKDiagnostic.m in Sources */,
 				18A41AA2242C756700AFC422 /* CDHighlightr.swift in Sources */,

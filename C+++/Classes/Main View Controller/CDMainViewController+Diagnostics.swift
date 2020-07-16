@@ -15,7 +15,7 @@ extension CDMainViewController: CDDiagnosticsViewControllerDelegate {
     }
     
     func stringInRange(range: NSRange) -> String {
-        return (self.mainTextView.string as NSString).substring(with: range)
+        return self.mainTextView.string.nsString.substring(with: range)
     }
     
     

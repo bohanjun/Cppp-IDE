@@ -124,7 +124,7 @@ open class CDHighlightrTheme {
     }
     
     private func stripTheme(_ themeString : String) -> [String:[String:String]] {
-        let objcString = (themeString as NSString)
+        let objcString = themeString.nsString
         let cssRegex = try! NSRegularExpression(pattern: "(?:(\\.[a-zA-Z0-9\\-_]*(?:[, ]\\.[a-zA-Z0-9\\-_]*)*)\\{([^\\}]*?)\\})", options:[.caseInsensitive])
         
         let results = cssRegex.matches(in: themeString,
@@ -246,7 +246,7 @@ open class CDHighlightrTheme {
         var cString: String = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
 
         if (cString.hasPrefix("#")) {
-            cString = (cString as NSString).substring(from: 1)
+            cString = cString.nsString.substring(from: 1)
         } else {
             switch cString {
             case "white":
@@ -274,9 +274,9 @@ open class CDHighlightrTheme {
         
         if (cString.count == 6 ) {
         
-            let rString = (cString as NSString).substring(to: 2)
-            let gString = ((cString as NSString).substring(from: 2) as NSString).substring(to: 2)
-            let bString = ((cString as NSString).substring(from: 4) as NSString).substring(to: 2)
+            let rString = cString.nsString.substring(to: 2)
+            let gString = cString.nsString.substring(from: 2).nsString.substring(to: 2)
+            let bString = cString.nsString.substring(from: 4).nsString.substring(to: 2)
             
             Scanner(string: rString).scanHexInt32(&r)
             Scanner(string: gString).scanHexInt32(&g)
@@ -285,9 +285,9 @@ open class CDHighlightrTheme {
             divisor = 255.0
             
         } else {
-            let rString = (cString as NSString).substring(to: 1)
-            let gString = ((cString as NSString).substring(from: 1) as NSString).substring(to: 1)
-            let bString = ((cString as NSString).substring(from: 2) as NSString).substring(to: 1)
+            let rString = cString.nsString.substring(to: 1)
+            let gString = cString.nsString.substring(from: 1).nsString.substring(to: 1)
+            let bString = cString.nsString.substring(from: 2).nsString.substring(to: 1)
             
             Scanner(string: rString).scanHexInt32(&r)
             Scanner(string: gString).scanHexInt32(&g)

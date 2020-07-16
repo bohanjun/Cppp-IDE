@@ -37,7 +37,7 @@ class CDDebugViewController: NSViewController {
         
         task = Process()
         task.launchPath = "/bin/bash"
-        task.arguments = ["-c", "lldb \"\((filePath as NSString).deletingPathExtension)\""]
+        task.arguments = ["-c", "lldb \"\(filePath.nsString.deletingPathExtension)\""]
         
         let pipe = Pipe()
         task.standardOutput = pipe

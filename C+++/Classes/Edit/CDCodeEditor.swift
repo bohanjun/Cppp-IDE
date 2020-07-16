@@ -12,6 +12,10 @@ var codeCompletionViewController : CDCodeCompletionViewController!
 
 extension String {
     
+    var nsString: NSString {
+        return NSString(string: self)
+    }
+    
     /// Count how many times a character appears in a string.
     /// - Parameter character: The character.
     /// - Returns: How many times the character appears in the string.
@@ -99,7 +103,7 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
     var scrollView: CDLineNumberScrollView!
     var codeEditorDelegate: CDCodeEditorDelegate!
     weak var document: CDCodeDocument!
-    var codeAttributedString: CDAttributedString!
+    var codeAttributedString: CDHighlightrAttributedString!
     
     
     
@@ -195,7 +199,7 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
        
         var completionResults = [CDCompletionResult]()
         
-        let substring = (self.string as NSString).substring(with: charRange)
+        let substring = self.string.nsString.substring(with: charRange)
         if substring == "" {
             return [String]()
         }
