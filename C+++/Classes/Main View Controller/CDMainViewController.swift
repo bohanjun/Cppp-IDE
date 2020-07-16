@@ -40,28 +40,6 @@ extension NSViewController {
     
 }
 
-extension String {
-    
-    /// Returns the index of the first substring in the string.
-    /// - Parameters:
-    ///   - string: The substring.
-    /// - Returns: The index of the first substring in the string. -1 if not found.
-    func firstIndexOf(_ string: String) -> Int {
-        
-        var pos = -1
-        if let range = range(of: string, options: .literal) {
-            if !range.isEmpty {
-                pos = self.distance(from: startIndex, to: range.lowerBound)
-            }
-        }
-        return pos
-        
-    }
-    
-}
-
-
-
 
 
 class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDelegate, NSSplitViewDelegate {
