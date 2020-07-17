@@ -10,6 +10,7 @@
 		180480AE2448602700CD0A4D /* CDSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180480AD2448602700CD0A4D /* CDSettings.swift */; };
 		1806FCB924C012EB0081D7BA /* CDGraphicalCodeDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806FCB824C012EB0081D7BA /* CDGraphicalCodeDocument.swift */; };
 		1806FCBC24C08CF70081D7BA /* String Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806FCBB24C08CF70081D7BA /* String Extension.swift */; };
+		1806FCBE24C0A79D0081D7BA /* CDGraphicalCodeEditorViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1806FCBD24C0A79D0081D7BA /* CDGraphicalCodeEditorViewController.storyboard */; };
 		181F2B8E24AB44C600C4B217 /* Index.h in Sources */ = {isa = PBXBuildFile; fileRef = 181F2B8B24AB318800C4B217 /* Index.h */; };
 		181F2B8F24AB44E100C4B217 /* BuildSystem.h in Sources */ = {isa = PBXBuildFile; fileRef = 181F2B8424AB30AC00C4B217 /* BuildSystem.h */; };
 		181F2B9024AB44E900C4B217 /* CXErrorCode.h in Sources */ = {isa = PBXBuildFile; fileRef = 181F2B8624AB311000C4B217 /* CXErrorCode.h */; };
@@ -213,6 +214,7 @@
 		180480AD2448602700CD0A4D /* CDSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSettings.swift; sourceTree = "<group>"; };
 		1806FCB824C012EB0081D7BA /* CDGraphicalCodeDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDGraphicalCodeDocument.swift; sourceTree = "<group>"; };
 		1806FCBB24C08CF70081D7BA /* String Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String Extension.swift"; sourceTree = "<group>"; };
+		1806FCBD24C0A79D0081D7BA /* CDGraphicalCodeEditorViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CDGraphicalCodeEditorViewController.storyboard; sourceTree = "<group>"; };
 		181F2B8424AB30AC00C4B217 /* BuildSystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuildSystem.h; sourceTree = "<group>"; };
 		181F2B8524AB30D200C4B217 /* CXCompilationDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXCompilationDatabase.h; sourceTree = "<group>"; };
 		181F2B8624AB311000C4B217 /* CXErrorCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXErrorCode.h; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 		1806FCBA24C0259E0081D7BA /* Graphical Code Editor */ = {
 			isa = PBXGroup;
 			children = (
+				1806FCBD24C0A79D0081D7BA /* CDGraphicalCodeEditorViewController.storyboard */,
 			);
 			path = "Graphical Code Editor";
 			sourceTree = "<group>";
@@ -969,6 +972,7 @@
 				18A41B45242C765500AFC422 /* github.min.css in Resources */,
 				18A41B40242C765500AFC422 /* idea.min.css in Resources */,
 				18A41B23242C765500AFC422 /* atelier-cave-dark.min.css in Resources */,
+				1806FCBE24C0A79D0081D7BA /* CDGraphicalCodeEditorViewController.storyboard in Resources */,
 				18A41B19242C765500AFC422 /* atelier-cave-light.min.css in Resources */,
 				18A41B12242C765500AFC422 /* a11y-light.min.css in Resources */,
 				18A41B2A242C765500AFC422 /* github-gist.min.css in Resources */,
