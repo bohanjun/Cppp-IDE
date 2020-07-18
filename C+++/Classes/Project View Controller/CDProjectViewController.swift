@@ -27,7 +27,7 @@ class CDProjectViewController: NSViewController {
     
     @IBAction func saveProject(_ sender: Any?) {
         self.view.window?.isDocumentEdited = false
-        NSDocumentController.shared.currentDocument?.save(self)
+        self.document?.save(self)
     }
     
     

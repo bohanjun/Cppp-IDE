@@ -33,12 +33,12 @@ class CDMainWindowController: NSWindowController, NSWindowDelegate {
         self.window?.toolbar?.isVisible = false
         
         let vc = (self.contentViewController as! CDMainViewController)
-        vc.bottom = false
         vc.rightConstraint.constant = 0.0
         vc.right = false
         vc.compileView.isHidden = true
-        vc.left = false
         vc.leftView.isHidden = true
+        vc.mainTextView.allowsCodeCompletion = false
+        vc.mainTextView.allowsSyntaxHighlighting = false
         
     }
     

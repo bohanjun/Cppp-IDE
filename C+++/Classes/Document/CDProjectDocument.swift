@@ -9,23 +9,6 @@
 import Cocoa
 
 
-extension NSDocumentController {
-    
-    @IBAction func newProject(_ sender: Any?) {
-        
-        do {
-            (NSDocumentController.shared as! CDDocumentController).isCreatingProject = true
-            try NSDocumentController.shared.openUntitledDocumentAndDisplay(true)
-            (NSDocumentController.shared as! CDDocumentController).isCreatingProject = false
-        } catch {
-            print("Error")
-        }
-        
-    }
-    
-}
-
-
 
 
 class CDProjectDocument: NSDocument {

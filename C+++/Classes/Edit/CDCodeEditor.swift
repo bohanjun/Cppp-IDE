@@ -21,7 +21,8 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
     var codeEditorDelegate: CDCodeEditorDelegate!
     weak var document: CDCodeDocument!
     var codeAttributedString: CDHighlightrAttributedString!
-    
+    var allowsSyntaxHighlighting: Bool = true
+    var allowsCodeCompletion: Bool = true
     
     
     
@@ -31,12 +32,16 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
         
         super.didChangeText()
         
-        let selectedRange = self.selectedRange
-        let code = self.string
-        let highlightedCode = highlightr!.highlight(code, as: "C++")
-        
-        self.textStorage!.setAttributedString(highlightedCode!)
-        self.setSelectedRange(selectedRange)
+        if self.allowsSyntaxHighlighting {
+            
+            let selectedRange = self.selectedRange
+            let code = self.string
+            let highlightedCode = highlightr!.highlight(code, as: "C++")
+            
+            self.textStorage!.setAttributedString(highlightedCode!)
+            self.setSelectedRange(selectedRange)
+            
+        }
         
         DispatchQueue.main.async {
             
@@ -113,6 +118,10 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
     private var lastTimeCompletionResults = [CDCompletionResult]()
     
     open override func completions(forPartialWordRange charRange: NSRange, indexOfSelectedItem index: UnsafeMutablePointer<Int>) -> [String]? {
+        
+        if !(self.allowsCodeCompletion) {
+            return [String]()
+        }
        
         var completionResults = [CDCompletionResult]()
         

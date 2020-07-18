@@ -8,16 +8,43 @@
 
 import Cocoa
 
+
+extension NSDocumentController {
+    
+    @IBAction func newProject(_ sender: Any?) {
+        
+        do {
+            (NSDocumentController.shared as! CDDocumentController)._defaultType = "C+++ Project"
+            try NSDocumentController.shared.openUntitledDocumentAndDisplay(true)
+            (NSDocumentController.shared as! CDDocumentController)._defaultType = "C++ Source"
+        } catch {
+            print("Error")
+        }
+        
+    }
+    
+    @IBAction func newGraphicalCodeDocument(_ sender: Any?) {
+        
+        do {
+            (NSDocumentController.shared as! CDDocumentController)._defaultType = "C+++ Graphical Code File"
+            try NSDocumentController.shared.openUntitledDocumentAndDisplay(true)
+            (NSDocumentController.shared as! CDDocumentController)._defaultType = "C++ Source"
+        } catch {
+            print("Error")
+        }
+        
+    }
+    
+}
+
+
+
 class CDDocumentController: NSDocumentController {
     
-    var isCreatingProject = false
+    var _defaultType: String = "C+++ Source"
     
     override var defaultType: String? {
-        if isCreatingProject {
-            return "C+++ Project"
-        } else {
-            return super.defaultType
-        }
+        return _defaultType
     }
     
     override func newDocument(_ sender: Any?) {

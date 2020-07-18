@@ -197,8 +197,7 @@ class CDCodeDocument: NSDocument {
                 }
                 if i.first!.isNumber && i.contains(":") {
                     let index = i.firstIndexOf(":")
-                    let nsstring = NSString(string: i)
-                    let substring = nsstring.substring(to: index)
+                    let substring = i.nsString.substring(to: index)
                     if let int = Int(substring) {
                         self.contentViewController?.lineNumberTextView?.markLineNumber(line: int, color: .orange)
                     }

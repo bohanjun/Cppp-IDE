@@ -81,6 +81,12 @@
                                                             <action selector="newProject:" target="Ady-hI-5gd" id="TT4-86-bTv"/>
                                                         </connections>
                                                     </menuItem>
+                                                    <menuItem title="C+++ Graphical Source File" keyEquivalent="n" id="hIq-lc-de5">
+                                                        <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                                        <connections>
+                                                            <action selector="newGraphicalCodeDocument:" target="Ady-hI-5gd" id="7Pj-t5-ora"/>
+                                                        </connections>
+                                                    </menuItem>
                                                 </items>
                                             </menu>
                                         </menuItem>
@@ -2646,7 +2652,7 @@ Gw
         <image name="Undo" width="510" height="510"/>
         <image name="Update" width="580" height="580"/>
         <namedColor name="BackgroundColor">
-            <color red="0.88003026376856441" green="0.88003026376856441" blue="0.88003026376856441" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.87999999523162842" green="0.87999999523162842" blue="0.87999999523162842" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="LaunchVCSideBarColor">
             <color red="0.89999997615814209" green="0.89999997615814209" blue="0.89999997615814209" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

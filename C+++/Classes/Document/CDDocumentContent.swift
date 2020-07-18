@@ -21,20 +21,24 @@ class CDDocumentContent: NSObject {
 extension CDDocumentContent {
     
     func read(from data: Data) {
+        
         if let string = String(bytes: data, encoding: .utf8) {
             print("utf8")
             contentString = string
         } else if let string = String(bytes: data, encoding: .windowsCP1252) {
-            print("CP1252")
+            print("windowsCP1252")
             contentString = string
         } else if let string = String(bytes: data, encoding: .unicode) {
             print("unicode")
             contentString = string
         }
+        
     }
     
     func data() -> Data? {
+        
         return contentString.data(using: .utf8)
+        
     }
     
 }

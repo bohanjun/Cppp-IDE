@@ -54,14 +54,8 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
     /// - if it is false, the appearance is aqua.
     var isDarkMode: Bool = true
     
-    /// Whether the compile info view is hidden.
-    var bottom = true
-    
-    /// Whether the compile view is hidden.
+    /// Whether the compile view is shown.
     var right = true
-    
-    /// Whether the file info view is hidden.
-    var left = true
     
     
     
@@ -123,10 +117,9 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
             
         }
         
-        // set the font of the StdIn, StdOut and the CompileInfo text view
         self.compileInfo.font = menloFont(ofSize: 13.0)
         
-        // set the current appearance to Dark Mode.
+        // set the current appearance to Dark Mode
         if #available(OSX 10.14, *) {
             self.mainTextView.highlightr?.setTheme(to: CDSettings.shared.darkThemeName)
             self.view.window?.appearance = darkAqua
