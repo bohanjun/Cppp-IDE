@@ -16,6 +16,7 @@ class CDGraphicalCodeDocument: NSDocument {
     override init() {
         super.init()
         // Add your subclass-specific initialization here.
+        self.content.contentString = "<>"
     }
     
     override func defaultDraftName() -> String {

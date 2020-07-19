@@ -8,27 +8,11 @@
 
 import Cocoa
 
-class CDGraphicalCodeEditorViewController: NSViewController, NSTextViewDelegate, NSTableViewDataSource {
+class CDGraphicalCodeEditorViewController: NSViewController, NSTextViewDelegate, NSTableViewDataSource, NSTableViewDelegate{
     
     @IBOutlet weak var splitView: NSSplitView!
-    @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var hiddenTextView: CDGraphicalCodeEditorHiddenTextView!
-    
-    // MARK: - NSTableViewDataSource
-    
-    func numberOfRows(in tableView: NSTableView) -> Int {
-        //return self.document?.numberOfRows ?? 0
-        return 10
-    }
-    
-    func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
-        if tableColumn?.title == "Line" {
-            return "\(row + 1)"
-        }
-        return nil
-    }
-    
-    
+    @IBOutlet var includeCellViewExamole: CDGraphicalCodeEditorIncludeCellView!
     
 
     override func viewDidLoad() {
