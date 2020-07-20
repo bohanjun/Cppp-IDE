@@ -8,12 +8,14 @@
 
 import Cocoa
 
-class CDGraphicalCodeEditorViewController: NSViewController, NSTextViewDelegate, NSTableViewDataSource, NSTableViewDelegate{
+class CDGraphicalCodeEditorViewController: NSViewController, NSTextViewDelegate, CDGraphicalCodeEditorCellViewDelegate {
     
     @IBOutlet weak var splitView: NSSplitView!
     @IBOutlet weak var hiddenTextView: CDGraphicalCodeEditorHiddenTextView!
-    @IBOutlet var includeCellViewExamole: CDGraphicalCodeEditorIncludeCellView!
+    @IBOutlet var viewInScrollView: CDFlippedView!
+    var cellViews = [CDGraphicalCodeEditorIncludeCellView]()
     
+    @IBOutlet var includeCellViewTemplate: CDGraphicalCodeEditorIncludeCellView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +27,51 @@ class CDGraphicalCodeEditorViewController: NSViewController, NSTextViewDelegate,
         
         let document = self.view.window?.windowController?.document
         self.representedObject = document
+        self.loadGraphicalCode()
         
     }
+    
+    
+    
+    func loadGraphicalCode() {
+        
+        var y: CGFloat = 10
+        var lineNumber = 1
+        
+        let lines = self.document?.lines ?? [String]()
+        for line in lines {
+            if line == "" || line == "\n" {
+                continue
+            } else {
+                let type = line.components(separatedBy: "\n").first!
+                print(type)
+                switch type {
+                    case "Include":
+                        let data = NSKeyedArchiver.archivedData(withRootObject: self.includeCellViewTemplate!)
+                        let view = NSKeyedUnarchiver.unarchiveObject(with: data) as! CDGraphicalCodeEditorIncludeCellView
+                        view.resetIBOutlet()
+                        view.loadStoredData(string: line)
+                        view.frame.origin.y = y
+                        view.setLineNumber(lineNumber)
+                        view.backgroundTextField.cornerRadius = 8.0
+                        self.viewInScrollView.addSubview(view)
+                        self.cellViews.append(view)
+                        y += (view.frame.height + 1)
+                        lineNumber += 1
+                    
+                    default:
+                        break
+                }
+            }
+        }
+        
+    }
+    
+    
+    func codeEditorCellViewDidChangeValue(_ view: CDGraphicalCodeEditorCellView) {
+        
+    }
+    
     
     override var representedObject: Any? {
         didSet {

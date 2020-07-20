@@ -18,17 +18,37 @@ class CDGraphicalCodeEditorIncludeCellView: CDGraphicalCodeEditorCellView, NSCom
     }
     
     override var savedDataKeys: [String] {
-        return ["Type", "IncludeOrImport", "FileName"]
+        return ["IncludeOrImport", "FileName"]
+    }
+    
+    override var typeName: String {
+        return "Include"
     }
     
     override func loadStoredData(string: String) {
         super.loadStoredData(string: string)
-        self.comboBox.stringValue = self.dictionary["IncludeOrImport"] ?? "#include"
-        self.fileNameTextField.stringValue = self.dictionary["FileName"] ?? ""
+        self.comboBox?.stringValue = self.dictionary["IncludeOrImport"] ?? "#include"
+        self.fileNameTextField?.stringValue = self.dictionary["FileName"] ?? ""
     }
     
     func comboBoxSelectionDidChange(_ notification: Notification) {
-        self.delegate.codeEditorCellViewDidChangeValue(self)
+        self.delegate?.codeEditorCellViewDidChangeValue(self)
+    }
+    
+    override func resetIBOutlet() {
+        super.resetIBOutlet()
+        
+        for view in subviews {
+            if let identifier = view.identifier {
+                if identifier.rawValue == "TextField" {
+                    self.fileNameTextField = view as? NSTextField
+                }
+                if identifier.rawValue == "ComboBox" {
+                    self.comboBox = view as? NSComboBox
+                }
+            }
+        }
+        
     }
     
 }

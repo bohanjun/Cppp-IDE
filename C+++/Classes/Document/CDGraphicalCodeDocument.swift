@@ -12,11 +12,12 @@ class CDGraphicalCodeDocument: NSDocument {
     
     @objc var content = CDDocumentContent(contentString: "")
     var contentViewController: CDGraphicalCodeEditorViewController!
+    static let lineSeparator = "____CPPPGRAPHICALCODEDOCUMENTLINE____"
     
     override init() {
         super.init()
         // Add your subclass-specific initialization here.
-        self.content.contentString = "<>"
+        self.content.contentString = "\(CDGraphicalCodeDocument.lineSeparator)\nInclude\n<KEY=INCLUDEORIMPORT>#include</KEY=INCLUDEORIMPORT>\n<KEY=FILENAME></KEY=FILENAME>\n"
     }
     
     override func defaultDraftName() -> String {
@@ -79,7 +80,11 @@ class CDGraphicalCodeDocument: NSDocument {
     }
     
     var numberOfRows: Int {
-        return content.contentString.split(separator: "\n").count
+        return content.contentString.components(separatedBy: CDGraphicalCodeDocument.lineSeparator).count
+    }
+    
+    var lines: [String] {
+        return content.contentString.components(separatedBy: CDGraphicalCodeDocument.lineSeparator + "\n")
     }
     
 }

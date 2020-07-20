@@ -98,7 +98,7 @@
                                                     <rect key="frame" x="1" y="1" width="448" height="291"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <view id="eea-0X-XYh">
+                                                        <view id="eea-0X-XYh" customClass="CDFlippedView" customModule="C___" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="433" height="276"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -106,7 +106,7 @@
                                                                     <rect key="frame" x="9" y="242" width="424" height="35"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                     <subviews>
-                                                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xfw-sn-hKW">
+                                                                        <button identifier="LineNumber" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xfw-sn-hKW">
                                                                             <rect key="frame" x="0.0" y="10" width="17" height="16"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <buttonCell key="cell" type="smallSquare" title="1" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="QEz-fn-RLe">
@@ -114,7 +114,7 @@
                                                                                 <font key="font" metaFont="system"/>
                                                                             </buttonCell>
                                                                         </button>
-                                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hMV-iW-PFF">
+                                                                        <textField identifier="Background" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hMV-iW-PFF">
                                                                             <rect key="frame" x="25" y="5" width="169" height="25"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <textFieldCell key="cell" lineBreakMode="clipping" drawsBackground="YES" id="Fi6-Vr-W1f">
@@ -130,7 +130,7 @@
                                                                                 </userDefinedRuntimeAttribute>
                                                                             </userDefinedRuntimeAttributes>
                                                                         </textField>
-                                                                        <comboBox focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1wD-P2-LQv">
+                                                                        <comboBox identifier="ComboBox" focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1wD-P2-LQv">
                                                                             <rect key="frame" x="25" y="5" width="93" height="25"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" focusRingType="none" title="#include" bezelStyle="round" buttonBordered="NO" numberOfVisibleItems="5" id="dNp-fl-ft0">
@@ -146,7 +146,7 @@
                                                                                 <outlet property="delegate" destination="FiT-mK-DqK" id="eSO-Wh-1AD"/>
                                                                             </connections>
                                                                         </comboBox>
-                                                                        <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qbG-dY-J5O">
+                                                                        <textField identifier="TextField" focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qbG-dY-J5O">
                                                                             <rect key="frame" x="116" y="7" width="75" height="19"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" placeholderString="&lt;cstdio&gt;" id="3Cw-Ie-Ooj">
@@ -254,7 +254,9 @@
                     </view>
                     <connections>
                         <outlet property="hiddenTextView" destination="aep-EB-GE5" id="DyP-uc-qb7"/>
+                        <outlet property="includeCellViewTemplate" destination="FiT-mK-DqK" id="sCy-0V-2ll"/>
                         <outlet property="splitView" destination="DoQ-P6-n12" id="RUj-3m-pdG"/>
+                        <outlet property="viewInScrollView" destination="eea-0X-XYh" id="vLJ-nK-q0r"/>
                     </connections>
                 </viewController>
                 <customObject id="udP-cQ-ISZ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
