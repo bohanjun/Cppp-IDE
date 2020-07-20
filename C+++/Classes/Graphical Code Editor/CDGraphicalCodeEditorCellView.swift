@@ -50,6 +50,10 @@ class CDGraphicalCodeEditorCellView: NSView {
         self.lineNumberButton?.title = "\(number)"
     }
     
+    func loadSample() {
+        return
+    }
+    
     var storedData: String {
         var string = CDGraphicalCodeDocument.lineSeparator + "\n" + self.typeName + "\n"
         for (key, value) in self.dictionary {
@@ -67,18 +71,7 @@ class CDGraphicalCodeEditorCellView: NSView {
     }
     
     func resetIBOutlet() {
-        
-        for view in subviews {
-            if let identifier = view.identifier {
-                if identifier.rawValue == "Background" {
-                    self.backgroundTextField = view as? NSTextField
-                }
-                if identifier.rawValue == "LineNumber" {
-                    self.lineNumberButton = view as? NSButton
-                }
-            }
-        }
-        
+        self.backgroundTextField.cornerRadius = 8.0
     }
     
 }

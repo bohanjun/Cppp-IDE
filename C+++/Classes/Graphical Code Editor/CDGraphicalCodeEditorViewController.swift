@@ -8,14 +8,15 @@
 
 import Cocoa
 
-class CDGraphicalCodeEditorViewController: NSViewController, NSTextViewDelegate, CDGraphicalCodeEditorCellViewDelegate {
+class CDGraphicalCodeEditorViewController: NSViewController, NSTextViewDelegate, CDGraphicalCodeEditorCellViewDelegate, CDGraphicalCodeEditorViewDelegate {
     
     @IBOutlet weak var splitView: NSSplitView!
     @IBOutlet weak var hiddenTextView: CDGraphicalCodeEditorHiddenTextView!
-    @IBOutlet var viewInScrollView: CDFlippedView!
-    var cellViews = [CDGraphicalCodeEditorIncludeCellView]()
+    @IBOutlet var viewInScrollView: CDGraphicalCodeEditorView!
+    var cellViews = [CDGraphicalCodeEditorCellView]()
     
     @IBOutlet var includeCellViewTemplate: CDGraphicalCodeEditorIncludeCellView!
+    @IBOutlet var usingNamespaceCellViewTemplate: CDGraphicalCodeEditorUsingNamespaceCellView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,59 @@ class CDGraphicalCodeEditorViewController: NSViewController, NSTextViewDelegate,
         
     }
     
+    func insertLine(type: String, at index: Int) {
+        
+        guard cellViews.count >= index else {
+            return
+        }
+        
+        var view: CDGraphicalCodeEditorCellView! = nil
+        
+        switch type {
+            
+            case "Include":
+                let data = NSKeyedArchiver.archivedData(withRootObject: self.includeCellViewTemplate!)
+                let viewCopy = NSKeyedUnarchiver.unarchiveObject(with: data) as! CDGraphicalCodeEditorIncludeCellView
+                view = viewCopy
+                
+            case "UsingNamespace":
+                let data = NSKeyedArchiver.archivedData(withRootObject: self.usingNamespaceCellViewTemplate!)
+                let viewCopy = NSKeyedUnarchiver.unarchiveObject(with: data) as! CDGraphicalCodeEditorUsingNamespaceCellView
+                view = viewCopy
+                
+            default:
+                break
+                
+        }
+        
+        if view != nil {
+            
+            view.isHidden = false
+            view.resetIBOutlet()
+            view.loadSample()
+            self.viewInScrollView.addSubview(view)
+            self.cellViews.insert(view, at: index)
+            
+        } else {
+            return
+        }
+        
+        var y: CGFloat = 10
+        var string = ""
+        for (i, view) in self.cellViews.enumerated() {
+            
+            view.setLineNumber(i + 1)
+            view.frame.origin.y = y
+            y += (view.frame.height + 1)
+            string += view.storedData
+            
+        }
+        self.hiddenTextView.string = string
+        
+        print(self.viewInScrollView.frame, self.viewInScrollView.bounds)
+        
+    }
+    
     
     
     func loadGraphicalCode() {
@@ -40,30 +94,60 @@ class CDGraphicalCodeEditorViewController: NSViewController, NSTextViewDelegate,
         
         let lines = self.document?.lines ?? [String]()
         for line in lines {
+            
             if line == "" || line == "\n" {
                 continue
             } else {
+                
                 let type = line.components(separatedBy: "\n").first!
-                print(type)
+                var view: CDGraphicalCodeEditorCellView! = nil
+                
                 switch type {
+                    
                     case "Include":
                         let data = NSKeyedArchiver.archivedData(withRootObject: self.includeCellViewTemplate!)
-                        let view = NSKeyedUnarchiver.unarchiveObject(with: data) as! CDGraphicalCodeEditorIncludeCellView
-                        view.resetIBOutlet()
-                        view.loadStoredData(string: line)
-                        view.frame.origin.y = y
-                        view.setLineNumber(lineNumber)
-                        view.backgroundTextField.cornerRadius = 8.0
-                        self.viewInScrollView.addSubview(view)
-                        self.cellViews.append(view)
-                        y += (view.frame.height + 1)
-                        lineNumber += 1
-                    
+                        let viewCopy = NSKeyedUnarchiver.unarchiveObject(with: data) as! CDGraphicalCodeEditorIncludeCellView
+                        view = viewCopy
+                        
+                    case "UsingNamespace":
+                        let data = NSKeyedArchiver.archivedData(withRootObject: self.usingNamespaceCellViewTemplate!)
+                        let viewCopy = NSKeyedUnarchiver.unarchiveObject(with: data) as! CDGraphicalCodeEditorUsingNamespaceCellView
+                        view = viewCopy
+                        
                     default:
                         break
+                        
                 }
+                
+                if view != nil {
+                    
+                    view.isHidden = false
+                    view.resetIBOutlet()
+                    view.loadStoredData(string: line)
+                    view.frame.origin.y = y
+                    view.setLineNumber(lineNumber)
+                    self.viewInScrollView.addSubview(view)
+                    self.cellViews.append(view)
+                    y += (view.frame.height + 1)
+                    lineNumber += 1
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    func codeEditorView(_ view: CDGraphicalCodeEditorView, didDragToPoint point: NSPoint, type: String) {
+        
+        for (index, view) in self.cellViews.enumerated() {
+            if abs(view.frame.origin.y - point.y) <= 15.0 {
+                self.insertLine(type: type, at: index)
+                return
             }
         }
+        self.insertLine(type: type, at: cellViews.endIndex)
         
     }
     

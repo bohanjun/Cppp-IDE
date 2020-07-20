@@ -41,7 +41,7 @@ extension NSDocumentController {
 
 class CDDocumentController: NSDocumentController {
     
-    var _defaultType: String = "C+++ Source"
+    var _defaultType: String = "C++ Source"
     
     override var defaultType: String? {
         return _defaultType

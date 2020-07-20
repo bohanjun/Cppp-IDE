@@ -35,19 +35,30 @@ class CDGraphicalCodeEditorIncludeCellView: CDGraphicalCodeEditorCellView, NSCom
         self.delegate?.codeEditorCellViewDidChangeValue(self)
     }
     
+    override func loadSample() {
+        self.dictionary["IncludeOrImport"] = "#include"
+        self.dictionary["FileName"] = ""
+    }
+    
     override func resetIBOutlet() {
-        super.resetIBOutlet()
         
         for view in subviews {
             if let identifier = view.identifier {
-                if identifier.rawValue == "TextField" {
-                    self.fileNameTextField = view as? NSTextField
-                }
-                if identifier.rawValue == "ComboBox" {
-                    self.comboBox = view as? NSComboBox
+                switch identifier.rawValue {
+                    case "Include_LineNumber":
+                        self.lineNumberButton = view as? NSButton
+                    case "Include_Background":
+                        self.backgroundTextField = view as? NSTextField
+                    case "Include_TextField":
+                        self.fileNameTextField = view as? NSTextField
+                    case "Include_ComboBox":
+                        self.comboBox = view as? NSComboBox
+                    default:
+                        break
                 }
             }
         }
+        super.resetIBOutlet()
         
     }
     
