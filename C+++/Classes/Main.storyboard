@@ -1963,18 +1963,18 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfv-8i-KlI">
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfv-8i-KlI">
                                 <rect key="frame" x="17" y="30" width="446" height="172"/>
-                                <clipView key="contentView" id="vZB-wL-H0G">
-                                    <rect key="frame" x="1" y="1" width="444" height="170"/>
+                                <clipView key="contentView" drawsBackground="NO" id="vZB-wL-H0G">
+                                    <rect key="frame" x="0.0" y="0.0" width="446" height="172"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <view id="8Vi-0v-adj" customClass="CDFlippedView" customModule="C___" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="444" height="170"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="446" height="172"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="SWq-gx-e3N" customClass="CDProjectTableView" customModule="C___" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="444" height="170"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="446" height="172"/>
                                                 </customView>
                                             </subviews>
                                             <constraints>
@@ -1991,7 +1991,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="bse-x7-XOG">
-                                    <rect key="frame" x="429" y="1" width="16" height="170"/>
+                                    <rect key="frame" x="430" y="0.0" width="16" height="172"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>

@@ -42,6 +42,7 @@
 		1830726624C574AD001B08F3 /* CDGraphicalCodeEditorSidebarLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1830726524C574AD001B08F3 /* CDGraphicalCodeEditorSidebarLibraryViewController.swift */; };
 		1830726824C582F6001B08F3 /* CDGraphicalCodeEditorSidebarLibraryViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1830726724C582F6001B08F3 /* CDGraphicalCodeEditorSidebarLibraryViewItem.swift */; };
 		1830726A24C59062001B08F3 /* CDGraphicalCodeEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1830726924C59062001B08F3 /* CDGraphicalCodeEditorView.swift */; };
+		1830726C24C67086001B08F3 /* CDGraphicalCodeEditorView+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1830726B24C67085001B08F3 /* CDGraphicalCodeEditorView+UI.swift */; };
 		183BE91124AEB1C4000F60A0 /* CDMainViewController+Diagnostics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183BE91024AEB1C4000F60A0 /* CDMainViewController+Diagnostics.swift */; };
 		183BE91324AEBC49000F60A0 /* CDMainViewController+SnippetTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183BE91224AEBC49000F60A0 /* CDMainViewController+SnippetTableView.swift */; };
 		183BE91524AEBCC5000F60A0 /* CDMainViewController+SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183BE91424AEBCC5000F60A0 /* CDMainViewController+SegmentedControl.swift */; };
@@ -270,6 +271,7 @@
 		1830726524C574AD001B08F3 /* CDGraphicalCodeEditorSidebarLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDGraphicalCodeEditorSidebarLibraryViewController.swift; sourceTree = "<group>"; };
 		1830726724C582F6001B08F3 /* CDGraphicalCodeEditorSidebarLibraryViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDGraphicalCodeEditorSidebarLibraryViewItem.swift; sourceTree = "<group>"; };
 		1830726924C59062001B08F3 /* CDGraphicalCodeEditorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDGraphicalCodeEditorView.swift; sourceTree = "<group>"; };
+		1830726B24C67085001B08F3 /* CDGraphicalCodeEditorView+UI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDGraphicalCodeEditorView+UI.swift"; sourceTree = "<group>"; };
 		183BE91024AEB1C4000F60A0 /* CDMainViewController+Diagnostics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMainViewController+Diagnostics.swift"; sourceTree = "<group>"; };
 		183BE91224AEBC49000F60A0 /* CDMainViewController+SnippetTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMainViewController+SnippetTableView.swift"; sourceTree = "<group>"; };
 		183BE91424AEBCC5000F60A0 /* CDMainViewController+SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMainViewController+SegmentedControl.swift"; sourceTree = "<group>"; };
@@ -446,6 +448,7 @@
 				1806FCBD24C0A79D0081D7BA /* Graphical Code Editor.storyboard */,
 				181455E424C1B333002BF478 /* CDGraphicalCodeEditorViewController.swift */,
 				1830726924C59062001B08F3 /* CDGraphicalCodeEditorView.swift */,
+				1830726B24C67085001B08F3 /* CDGraphicalCodeEditorView+UI.swift */,
 				1830726524C574AD001B08F3 /* CDGraphicalCodeEditorSidebarLibraryViewController.swift */,
 				18AC033124C1BFE400AEBCCB /* CDGraphicalCodeEditorWindowController.swift */,
 				1830726724C582F6001B08F3 /* CDGraphicalCodeEditorSidebarLibraryViewItem.swift */,
@@ -1029,6 +1032,7 @@
 				181F2B9524AB47E800C4B217 /* Platform.h in Sources */,
 				181F2B9424AB47E400C4B217 /* Documentation.h in Sources */,
 				181F2B9324AB47DF00C4B217 /* FatalErrorHandler.h in Sources */,
+				1830726C24C67086001B08F3 /* CDGraphicalCodeEditorView+UI.swift in Sources */,
 				181455E524C1B334002BF478 /* CDGraphicalCodeEditorViewController.swift in Sources */,
 				181F2B9224AB47DB00C4B217 /* ExternC.h in Sources */,
 				181F2B9124AB47D700C4B217 /* CXString.h in Sources */,

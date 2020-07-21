@@ -12,13 +12,26 @@ import Cocoa
 protocol CDGraphicalCodeEditorViewDelegate {
     
     func codeEditorView(_ view: CDGraphicalCodeEditorView, didDragToPoint point: NSPoint, type: String)
+    func cellViewsInCodeEditorView(_ view: CDGraphicalCodeEditorView) -> [CDGraphicalCodeEditorCellView]
     
 }
 
 class CDGraphicalCodeEditorView: CDFlippedView {
     
-    var isDragging = false
+    var shouldreloadAfterChangingFrame: Bool = true
+    
+    override var frame: NSRect {
+        didSet {
+            DispatchQueue.main.async {
+                if self.shouldreloadAfterChangingFrame && oldValue != self.frame {
+                    self.load(cellViews: self.delegate.cellViewsInCodeEditorView(self))
+                }
+            }
+        }
+    }
+    
     @IBOutlet weak var delegate: CDGraphicalCodeEditorViewDelegate!
+    @IBOutlet weak var viewController: CDGraphicalCodeEditorViewController!
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -26,12 +39,11 @@ class CDGraphicalCodeEditorView: CDFlippedView {
     }
     
     override func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation {
-        isDragging = true
         return .copy
     }
     
     override func draggingExited(_ sender: NSDraggingInfo?) {
-        isDragging = false
+        return
     }
     
     override func prepareForDragOperation(_ sender: NSDraggingInfo) -> Bool {
@@ -40,7 +52,6 @@ class CDGraphicalCodeEditorView: CDFlippedView {
     
     override func performDragOperation(_ sender: NSDraggingInfo) -> Bool {
         
-        isDragging = false
         let pasteboard = sender.draggingPasteboard
         let point = self.convert(sender.draggingLocation, from: nil)
         let string = pasteboard.string(forType: .string) ?? ""

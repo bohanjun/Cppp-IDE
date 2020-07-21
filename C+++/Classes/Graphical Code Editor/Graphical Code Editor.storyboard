@@ -124,27 +124,27 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <splitView arrangesAllSubviews="NO" dividerStyle="thin" translatesAutoresizingMaskIntoConstraints="NO" id="DoQ-P6-n12">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="400"/>
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="348"/>
                                 <subviews>
                                     <customView id="DkZ-Zt-Xop">
-                                        <rect key="frame" x="0.0" y="0.0" width="450" height="293"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="450" height="255"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
                                             <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Al-31-qls">
-                                                <rect key="frame" x="0.0" y="0.0" width="450" height="293"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="450" height="255"/>
                                                 <clipView key="contentView" id="put-Ty-ePj">
-                                                    <rect key="frame" x="1" y="1" width="448" height="291"/>
+                                                    <rect key="frame" x="1" y="1" width="448" height="253"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <view id="eea-0X-XYh" customClass="CDFlippedView" customModule="C___" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="433" height="291"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="433" height="253"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="xwE-x2-XYp" customClass="CDGraphicalCodeEditorView" customModule="C___" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="433" height="291"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="433" height="253"/>
                                                                     <subviews>
                                                                         <customView hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="33I-Sd-gLc" customClass="CDGraphicalCodeEditorIncludeCellView" customModule="C___" customModuleProvider="target">
-                                                                            <rect key="frame" x="4" y="246" width="424" height="35"/>
+                                                                            <rect key="frame" x="4" y="208" width="424" height="35"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <subviews>
                                                                                 <button identifier="Include_LineNumber" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nnj-p6-THp">
@@ -195,7 +195,7 @@
                                                                             </connections>
                                                                         </customView>
                                                                         <customView hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tBu-jr-B8A" customClass="CDGraphicalCodeEditorUsingNamespaceCellView" customModule="C___" customModuleProvider="target">
-                                                                            <rect key="frame" x="4" y="203" width="424" height="35"/>
+                                                                            <rect key="frame" x="4" y="165" width="424" height="35"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <subviews>
                                                                                 <button identifier="UsingNamespace_LineNumber" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wMt-y9-QNY">
@@ -242,6 +242,10 @@
                                                                             </connections>
                                                                         </customView>
                                                                     </subviews>
+                                                                    <connections>
+                                                                        <outlet property="delegate" destination="iPg-An-6YK" id="gMP-aG-TOT"/>
+                                                                        <outlet property="viewController" destination="iPg-An-6YK" id="cfE-hF-d17"/>
+                                                                    </connections>
                                                                 </customView>
                                                             </subviews>
                                                             <constraints>
@@ -250,18 +254,15 @@
                                                                 <constraint firstAttribute="bottom" secondItem="xwE-x2-XYp" secondAttribute="bottom" id="d2Q-Hw-0lP"/>
                                                                 <constraint firstAttribute="trailing" secondItem="xwE-x2-XYp" secondAttribute="trailing" id="jxn-jx-EWO"/>
                                                             </constraints>
-                                                            <connections>
-                                                                <outlet property="delegate" destination="iPg-An-6YK" id="foo-R9-BXC"/>
-                                                            </connections>
                                                         </view>
                                                     </subviews>
                                                 </clipView>
                                                 <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Ciz-AI-ua5">
-                                                    <rect key="frame" x="1" y="276" width="448" height="16"/>
+                                                    <rect key="frame" x="1" y="238" width="448" height="16"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </scroller>
                                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Rjy-q7-LZU">
-                                                    <rect key="frame" x="433" y="1" width="16" height="291"/>
+                                                    <rect key="frame" x="433" y="1" width="16" height="253"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </scroller>
                                             </scrollView>
@@ -274,21 +275,21 @@
                                         </constraints>
                                     </customView>
                                     <customView id="Lkt-YY-yL3">
-                                        <rect key="frame" x="0.0" y="294" width="450" height="106"/>
+                                        <rect key="frame" x="0.0" y="256" width="450" height="92"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
                                             <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3H-hH-4YM">
-                                                <rect key="frame" x="0.0" y="0.0" width="450" height="106"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="450" height="92"/>
                                                 <clipView key="contentView" drawsBackground="NO" id="ZXj-zn-VuZ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="450" height="106"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="450" height="92"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" findStyle="bar" allowsUndo="YES" smartInsertDelete="YES" id="aep-EB-GE5" customClass="CDGraphicalCodeEditorHiddenTextView" customModule="C___" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="450" height="106"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="450" height="92"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                            <size key="minSize" width="450" height="106"/>
+                                                            <size key="minSize" width="450" height="92"/>
                                                             <size key="maxSize" width="461" height="10000000"/>
                                                             <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                             <connections>
@@ -311,7 +312,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </scroller>
                                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="7nw-Mb-iUc">
-                                                    <rect key="frame" x="434" y="0.0" width="16" height="106"/>
+                                                    <rect key="frame" x="434" y="0.0" width="16" height="92"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </scroller>
                                             </scrollView>
@@ -334,7 +335,7 @@
                             <constraint firstItem="DoQ-P6-n12" firstAttribute="bottom" secondItem="9ZV-1C-uaT" secondAttribute="bottom" id="Jpk-qd-1Um"/>
                             <constraint firstItem="DoQ-P6-n12" firstAttribute="trailing" secondItem="9ZV-1C-uaT" secondAttribute="trailing" id="cuv-ne-mSd"/>
                             <constraint firstItem="DoQ-P6-n12" firstAttribute="leading" secondItem="9ZV-1C-uaT" secondAttribute="leading" id="eHy-8r-lDe"/>
-                            <constraint firstItem="DoQ-P6-n12" firstAttribute="top" secondItem="jDd-pb-ALn" secondAttribute="top" id="fb3-me-Wtp"/>
+                            <constraint firstItem="DoQ-P6-n12" firstAttribute="top" secondItem="9ZV-1C-uaT" secondAttribute="top" id="fb3-me-Wtp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9ZV-1C-uaT"/>
                         <viewLayoutGuide key="layoutMargins" id="pMU-CI-t0S"/>
