@@ -734,45 +734,26 @@ Gw
                                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="olW-wi-IBX">
                                             <rect key="frame" x="245" y="79" width="114" height="25"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <popUpButtonCell key="cell" type="push" title="Agate" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Q3A-iY-dFu" id="2Mr-1J-JcQ">
+                                            <popUpButtonCell key="cell" type="push" title="Perfect" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="a4x-cD-hh2" id="2Mr-1J-JcQ">
                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="menu"/>
                                                 <menu key="menu" id="Wap-kl-UGe">
                                                     <items>
-                                                        <menuItem title="Xcode" id="Ft9-3m-p7P"/>
-                                                        <menuItem title="Perfect" id="a4x-cD-hh2"/>
+                                                        <menuItem title="Perfect" state="on" id="a4x-cD-hh2"/>
                                                         <menuItem title="VS2015" id="TxT-XB-ykk"/>
-                                                        <menuItem title="GitHub" id="ax7-bc-eFC">
-                                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                                        </menuItem>
-                                                        <menuItem title="GoogleCode" id="1n9-Oq-dPq">
-                                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                                        </menuItem>
                                                         <menuItem title="Pojoaque" id="cnz-Ia-Daq">
                                                             <modifierMask key="keyEquivalentModifierMask"/>
                                                         </menuItem>
                                                         <menuItem title="Rainbow" id="Cop-ZG-Mym">
                                                             <modifierMask key="keyEquivalentModifierMask"/>
                                                         </menuItem>
-                                                        <menuItem title="Agate" state="on" id="Q3A-iY-dFu">
+                                                        <menuItem title="Agate" id="Q3A-iY-dFu">
                                                             <modifierMask key="keyEquivalentModifierMask"/>
                                                         </menuItem>
                                                         <menuItem title="Atom-one-dark" id="Moc-cx-x3E">
                                                             <modifierMask key="keyEquivalentModifierMask"/>
                                                         </menuItem>
-                                                        <menuItem title="Atom-one-light" id="hzQ-A6-dR6">
-                                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                                        </menuItem>
-                                                        <menuItem title="Arduino-light" id="79F-v9-T4z">
-                                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                                        </menuItem>
                                                         <menuItem title="AndroidStudio" id="KnB-HJ-pyv">
-                                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                                        </menuItem>
-                                                        <menuItem title="Brown-paper" id="COC-wF-xRy">
-                                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                                        </menuItem>
-                                                        <menuItem title="Idea" id="6dH-Xo-uzc">
                                                             <modifierMask key="keyEquivalentModifierMask"/>
                                                         </menuItem>
                                                         <menuItem title="Obsidian" id="Y6x-DF-fME">
@@ -782,9 +763,6 @@ Gw
                                                             <modifierMask key="keyEquivalentModifierMask"/>
                                                         </menuItem>
                                                         <menuItem title="QtCreator_Dark" id="HUU-cd-pBw">
-                                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                                        </menuItem>
-                                                        <menuItem title="QtCreator_Light" id="A0B-tW-vkz">
                                                             <modifierMask key="keyEquivalentModifierMask"/>
                                                         </menuItem>
                                                         <menuItem title="Sunburst" id="s6g-7P-gdg">
@@ -875,24 +853,10 @@ Gw
                                                 <menu key="menu" id="fKZ-AI-8LX">
                                                     <items>
                                                         <menuItem title="Xcode" state="on" id="Hkm-3d-5yd"/>
-                                                        <menuItem title="Perfect" id="tNh-tk-tvT"/>
-                                                        <menuItem title="VS2015" id="5Y9-4S-uu6"/>
                                                         <menuItem title="GitHub" id="Ky9-EE-yr9">
                                                             <modifierMask key="keyEquivalentModifierMask"/>
                                                         </menuItem>
                                                         <menuItem title="GoogleCode" id="13h-wC-5l2">
-                                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                                        </menuItem>
-                                                        <menuItem title="Pojoaque" id="eMW-cm-Klj">
-                                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                                        </menuItem>
-                                                        <menuItem title="Rainbow" id="Lsz-1C-yT7">
-                                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                                        </menuItem>
-                                                        <menuItem title="Agate" id="EcB-s0-v2N">
-                                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                                        </menuItem>
-                                                        <menuItem title="Atom-one-dark" id="gxL-z0-8a9">
                                                             <modifierMask key="keyEquivalentModifierMask"/>
                                                         </menuItem>
                                                         <menuItem title="Atom-one-light" id="uW6-vL-vXy">
@@ -901,28 +865,13 @@ Gw
                                                         <menuItem title="Arduino-light" id="f7a-dt-1eS">
                                                             <modifierMask key="keyEquivalentModifierMask"/>
                                                         </menuItem>
-                                                        <menuItem title="AndroidStudio" id="F7H-pa-vkb">
-                                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                                        </menuItem>
                                                         <menuItem title="Brown-paper" id="vzV-rx-lZ8">
                                                             <modifierMask key="keyEquivalentModifierMask"/>
                                                         </menuItem>
                                                         <menuItem title="Idea" id="18i-Il-xXb">
                                                             <modifierMask key="keyEquivalentModifierMask"/>
                                                         </menuItem>
-                                                        <menuItem title="Obsidian" id="gKB-Hf-oWo">
-                                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                                        </menuItem>
-                                                        <menuItem title="Ocean" id="9Xt-ME-ReE">
-                                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                                        </menuItem>
-                                                        <menuItem title="QtCreator_Dark" id="OcJ-Bf-1iV">
-                                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                                        </menuItem>
                                                         <menuItem title="QtCreator_Light" id="7yv-b9-sQT">
-                                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                                        </menuItem>
-                                                        <menuItem title="Sunburst" id="Y3B-R7-2NL">
                                                             <modifierMask key="keyEquivalentModifierMask"/>
                                                         </menuItem>
                                                     </items>
@@ -1052,9 +1001,12 @@ Gw
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="qkV-Pw-MXt">
                                 <rect key="frame" x="828" y="0.0" width="252" height="720"/>
                                 <subviews>
-                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Ci-A4-t6w">
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4Ci-A4-t6w">
                                         <rect key="frame" x="193" y="688" width="16" height="22"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="16" id="GZA-Vj-owb"/>
+                                            <constraint firstAttribute="height" constant="22" id="UfA-tz-dCh"/>
+                                        </constraints>
                                         <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="Switch_50" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="sfw-6H-Y9x">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -1063,9 +1015,12 @@ Gw
                                             <action selector="changeAppearance:" target="5gI-5U-AMq" id="rxb-EE-Uvk"/>
                                         </connections>
                                     </button>
-                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KHN-xI-39T">
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KHN-xI-39T">
                                         <rect key="frame" x="217" y="688" width="16" height="22"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="SZi-sF-fgK"/>
+                                            <constraint firstAttribute="width" constant="16" id="ZQi-3Z-bCp"/>
+                                        </constraints>
                                         <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="Settings" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="gNW-O3-UnO">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -1074,9 +1029,12 @@ Gw
                                             <action selector="showSettingsView:" target="5gI-5U-AMq" id="xQx-lr-PqL"/>
                                         </connections>
                                     </button>
-                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dr7-ha-eyI">
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Dr7-ha-eyI">
                                         <rect key="frame" x="11" y="610" width="231" height="65"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="58" id="QNl-8Y-7M3"/>
+                                            <constraint firstAttribute="width" constant="225" id="VXn-ic-Mwx"/>
+                                        </constraints>
                                         <buttonCell key="cell" type="bevel" title="Compile and Run" bezelStyle="regularSquare" imagePosition="left" alignment="center" state="on" borderStyle="border" inset="2" id="htQ-oR-Nti">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="systemMedium" size="17"/>
@@ -1085,9 +1043,12 @@ Gw
                                             <action selector="compileFile:" target="2Tp-Fl-jBw" id="9wR-fT-PPf"/>
                                         </connections>
                                     </button>
-                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="raB-fg-Lfm">
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="raB-fg-Lfm">
                                         <rect key="frame" x="20" y="578" width="68" height="33"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="33" id="R43-Gt-jsJ"/>
+                                            <constraint firstAttribute="width" constant="68" id="uDG-tZ-17u"/>
+                                        </constraints>
                                         <buttonCell key="cell" type="bevel" title="Debug" bezelStyle="regularSquare" image="NSPathTemplate" imagePosition="left" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="ieA-Nv-Nq5">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="menu" size="14"/>
@@ -1096,9 +1057,8 @@ Gw
                                             <action selector="debugFile:" target="2Tp-Fl-jBw" id="2hu-wx-ihG"/>
                                         </connections>
                                     </button>
-                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hb4-Me-Abj">
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="Hb4-Me-Abj">
                                         <rect key="frame" x="15" y="426" width="223" height="82"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9w0-i2-cXR">
                                                 <rect key="frame" x="0.0" y="0.0" width="223" height="82"/>
@@ -1151,10 +1111,13 @@ Gw
                                                 </textFieldCell>
                                             </textField>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="82" id="7od-d6-cDY"/>
+                                            <constraint firstAttribute="width" constant="223" id="X76-UC-gHo"/>
+                                        </constraints>
                                     </customView>
-                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TWt-wF-68Q">
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="TWt-wF-68Q">
                                         <rect key="frame" x="15" y="329" width="223" height="82"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wOn-ZL-BDf">
                                                 <rect key="frame" x="0.0" y="0.0" width="223" height="82"/>
@@ -1207,10 +1170,13 @@ Gw
                                                 </textFieldCell>
                                             </textField>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="223" id="HRU-Y4-FBl"/>
+                                            <constraint firstAttribute="height" constant="82" id="YAB-xX-Zvc"/>
+                                        </constraints>
                                     </customView>
-                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="75O-Xb-VQU">
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="75O-Xb-VQU">
                                         <rect key="frame" x="15" y="232" width="223" height="82"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vro-TC-84K">
                                                 <rect key="frame" x="0.0" y="0.0" width="223" height="82"/>
@@ -1263,10 +1229,13 @@ Gw
                                                 </textFieldCell>
                                             </textField>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="223" id="FoC-VP-VxZ"/>
+                                            <constraint firstAttribute="height" constant="82" id="VLb-fv-U0X"/>
+                                        </constraints>
                                     </customView>
-                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ywS-mR-85U">
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="ywS-mR-85U">
                                         <rect key="frame" x="15" y="135" width="223" height="82"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tI3-v5-4aS">
                                                 <rect key="frame" x="0.0" y="0.0" width="223" height="82"/>
@@ -1319,10 +1288,17 @@ Gw
                                                 </textFieldCell>
                                             </textField>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="223" id="CUv-Nj-7OM"/>
+                                            <constraint firstAttribute="height" constant="82" id="zed-e9-mAc"/>
+                                        </constraints>
                                     </customView>
-                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sug-ve-Dre">
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sug-ve-Dre">
                                         <rect key="frame" x="186" y="578" width="52" height="33"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="52" id="22A-XC-odz"/>
+                                            <constraint firstAttribute="height" constant="33" id="B1j-RY-GXO"/>
+                                        </constraints>
                                         <buttonCell key="cell" type="bevel" title="Test" bezelStyle="regularSquare" image="NSIconViewTemplate" imagePosition="left" alignment="center" imageScaling="proportionallyDown" inset="2" id="N2a-aR-KkV">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="menu" size="14"/>
@@ -1331,9 +1307,12 @@ Gw
                                             <action selector="testFile:" target="2Tp-Fl-jBw" id="7A5-Qf-Agk"/>
                                         </connections>
                                     </button>
-                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="olj-kb-MX6">
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="olj-kb-MX6">
                                         <rect key="frame" x="101" y="578" width="76" height="33"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="33" id="Cbb-YU-a5W"/>
+                                            <constraint firstAttribute="width" constant="76" id="T0Y-zj-MHu"/>
+                                        </constraints>
                                         <buttonCell key="cell" type="bevel" title="Compile" bezelStyle="regularSquare" image="NSTouchBarPlayTemplate" imagePosition="left" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="Dgk-8t-4EW">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="menu" size="14"/>
@@ -1342,9 +1321,12 @@ Gw
                                             <action selector="compileWithoutRunning:" target="2Tp-Fl-jBw" id="tdJ-tN-pyp"/>
                                         </connections>
                                     </button>
-                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N42-68-ctO">
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="N42-68-ctO">
                                         <rect key="frame" x="169" y="688" width="16" height="22"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="16" id="dbT-36-sgT"/>
+                                            <constraint firstAttribute="height" constant="22" id="nIq-sh-vcs"/>
+                                        </constraints>
                                         <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="Update" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="5Pt-8v-Pnu">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -1353,9 +1335,12 @@ Gw
                                             <action selector="checkUpdate:" target="2Tp-Fl-jBw" id="kxQ-WQ-YdN"/>
                                         </connections>
                                     </button>
-                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bhB-Fs-ESn">
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bhB-Fs-ESn">
                                         <rect key="frame" x="144" y="690" width="18" height="18"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="18" id="KRD-wz-wh5"/>
+                                            <constraint firstAttribute="height" constant="18" id="asj-Ek-E1z"/>
+                                        </constraints>
                                         <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="AddSymbol" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="kaK-vP-zfQ">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -1366,7 +1351,37 @@ Gw
                                     </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="N42-68-ctO" firstAttribute="top" secondItem="qkV-Pw-MXt" secondAttribute="top" constant="10" id="0gQ-B0-Efx"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hb4-Me-Abj" secondAttribute="trailing" constant="14" id="7RO-yf-lVH"/>
+                                    <constraint firstAttribute="trailing" secondItem="Dr7-ha-eyI" secondAttribute="trailing" constant="13" id="DDf-fp-ajL"/>
+                                    <constraint firstItem="TWt-wF-68Q" firstAttribute="leading" secondItem="qkV-Pw-MXt" secondAttribute="leading" constant="15" id="GQV-jG-fhn"/>
+                                    <constraint firstItem="Hb4-Me-Abj" firstAttribute="leading" secondItem="qkV-Pw-MXt" secondAttribute="leading" constant="15" id="Gwx-Dz-mAE"/>
+                                    <constraint firstAttribute="trailing" secondItem="ywS-mR-85U" secondAttribute="trailing" constant="14" id="IBH-Fn-OQr"/>
+                                    <constraint firstItem="raB-fg-Lfm" firstAttribute="leading" secondItem="qkV-Pw-MXt" secondAttribute="leading" constant="20" symbolic="YES" id="K1X-m2-TuC"/>
+                                    <constraint firstItem="4Ci-A4-t6w" firstAttribute="leading" secondItem="N42-68-ctO" secondAttribute="trailing" constant="8" symbolic="YES" id="M5N-qA-rpO"/>
+                                    <constraint firstAttribute="trailing" secondItem="KHN-xI-39T" secondAttribute="trailing" constant="19" id="OgD-dQ-2mW"/>
+                                    <constraint firstAttribute="trailing" secondItem="TWt-wF-68Q" secondAttribute="trailing" constant="14" id="Okf-hK-fZx"/>
+                                    <constraint firstItem="KHN-xI-39T" firstAttribute="top" secondItem="qkV-Pw-MXt" secondAttribute="top" constant="10" id="QZS-4P-uSP"/>
+                                    <constraint firstItem="sug-ve-Dre" firstAttribute="leading" secondItem="olj-kb-MX6" secondAttribute="trailing" constant="9" id="UIR-Gt-Unu"/>
+                                    <constraint firstItem="raB-fg-Lfm" firstAttribute="top" secondItem="Dr7-ha-eyI" secondAttribute="bottom" constant="3" id="bI8-69-6xr"/>
+                                    <constraint firstItem="Dr7-ha-eyI" firstAttribute="leading" secondItem="qkV-Pw-MXt" secondAttribute="leading" constant="14" id="btQ-4W-DFE"/>
+                                    <constraint firstItem="bhB-Fs-ESn" firstAttribute="top" secondItem="qkV-Pw-MXt" secondAttribute="top" constant="12" id="dSY-d9-izX"/>
+                                    <constraint firstItem="75O-Xb-VQU" firstAttribute="leading" secondItem="qkV-Pw-MXt" secondAttribute="leading" constant="15" id="eXY-xx-FGb"/>
+                                    <constraint firstItem="75O-Xb-VQU" firstAttribute="top" secondItem="TWt-wF-68Q" secondAttribute="bottom" constant="15" id="fwI-6e-7dP"/>
+                                    <constraint firstItem="Dr7-ha-eyI" firstAttribute="top" secondItem="qkV-Pw-MXt" secondAttribute="top" constant="48" id="h3x-NZ-91z"/>
+                                    <constraint firstItem="olj-kb-MX6" firstAttribute="leading" secondItem="raB-fg-Lfm" secondAttribute="trailing" constant="13" id="kwU-ff-h8o"/>
+                                    <constraint firstItem="KHN-xI-39T" firstAttribute="leading" secondItem="4Ci-A4-t6w" secondAttribute="trailing" constant="8" symbolic="YES" id="lZX-bj-6T1"/>
+                                    <constraint firstItem="4Ci-A4-t6w" firstAttribute="top" secondItem="qkV-Pw-MXt" secondAttribute="top" constant="10" id="oDB-ed-2qU"/>
+                                    <constraint firstItem="N42-68-ctO" firstAttribute="leading" secondItem="bhB-Fs-ESn" secondAttribute="trailing" constant="7" id="p73-Jy-vmf"/>
+                                    <constraint firstItem="ywS-mR-85U" firstAttribute="top" secondItem="75O-Xb-VQU" secondAttribute="bottom" constant="15" id="p8b-fE-MMB"/>
+                                    <constraint firstItem="sug-ve-Dre" firstAttribute="top" secondItem="Dr7-ha-eyI" secondAttribute="bottom" constant="3" id="s8t-XX-ciN"/>
                                     <constraint firstAttribute="width" constant="252" id="sBe-Fc-HWO"/>
+                                    <constraint firstItem="olj-kb-MX6" firstAttribute="top" secondItem="Dr7-ha-eyI" secondAttribute="bottom" constant="3" id="siD-vG-W6s"/>
+                                    <constraint firstAttribute="trailing" secondItem="sug-ve-Dre" secondAttribute="trailing" constant="14" id="sn8-Sv-nGH"/>
+                                    <constraint firstItem="ywS-mR-85U" firstAttribute="leading" secondItem="qkV-Pw-MXt" secondAttribute="leading" constant="15" id="tPJ-pJ-l0T"/>
+                                    <constraint firstItem="TWt-wF-68Q" firstAttribute="top" secondItem="Hb4-Me-Abj" secondAttribute="bottom" constant="15" id="tcP-JS-ZvV"/>
+                                    <constraint firstAttribute="trailing" secondItem="75O-Xb-VQU" secondAttribute="trailing" constant="14" id="uZv-5h-Z6c"/>
+                                    <constraint firstItem="Hb4-Me-Abj" firstAttribute="top" secondItem="Dr7-ha-eyI" secondAttribute="bottom" constant="106" id="vOq-XE-J4n"/>
                                 </constraints>
                             </customView>
                             <splitView dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LB2-Rd-Bhv">

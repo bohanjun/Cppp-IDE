@@ -18,12 +18,12 @@ protocol CDGraphicalCodeEditorViewDelegate {
 
 class CDGraphicalCodeEditorView: CDFlippedView {
     
-    var shouldreloadAfterChangingFrame: Bool = true
+    var shouldReloadAfterChangingFrame: Bool = true
     
     override var frame: NSRect {
         didSet {
             DispatchQueue.main.async {
-                if self.shouldreloadAfterChangingFrame && oldValue != self.frame {
+                if self.shouldReloadAfterChangingFrame && oldValue != self.frame {
                     self.load(cellViews: self.delegate.cellViewsInCodeEditorView(self))
                 }
             }

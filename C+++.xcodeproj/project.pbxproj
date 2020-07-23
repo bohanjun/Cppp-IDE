@@ -43,6 +43,8 @@
 		1830726824C582F6001B08F3 /* CDGraphicalCodeEditorSidebarLibraryViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1830726724C582F6001B08F3 /* CDGraphicalCodeEditorSidebarLibraryViewItem.swift */; };
 		1830726A24C59062001B08F3 /* CDGraphicalCodeEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1830726924C59062001B08F3 /* CDGraphicalCodeEditorView.swift */; };
 		1830726C24C67086001B08F3 /* CDGraphicalCodeEditorView+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1830726B24C67085001B08F3 /* CDGraphicalCodeEditorView+UI.swift */; };
+		18334D3B24C6F694007D1126 /* CDGraphicalCodeEditorBlockCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18334D3A24C6F694007D1126 /* CDGraphicalCodeEditorBlockCellView.swift */; };
+		18334D3D24C70A9A007D1126 /* CDGraphicalCodeEditorIfCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18334D3C24C70A9A007D1126 /* CDGraphicalCodeEditorIfCellView.swift */; };
 		183BE91124AEB1C4000F60A0 /* CDMainViewController+Diagnostics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183BE91024AEB1C4000F60A0 /* CDMainViewController+Diagnostics.swift */; };
 		183BE91324AEBC49000F60A0 /* CDMainViewController+SnippetTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183BE91224AEBC49000F60A0 /* CDMainViewController+SnippetTableView.swift */; };
 		183BE91524AEBCC5000F60A0 /* CDMainViewController+SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183BE91424AEBCC5000F60A0 /* CDMainViewController+SegmentedControl.swift */; };
@@ -272,6 +274,8 @@
 		1830726724C582F6001B08F3 /* CDGraphicalCodeEditorSidebarLibraryViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDGraphicalCodeEditorSidebarLibraryViewItem.swift; sourceTree = "<group>"; };
 		1830726924C59062001B08F3 /* CDGraphicalCodeEditorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDGraphicalCodeEditorView.swift; sourceTree = "<group>"; };
 		1830726B24C67085001B08F3 /* CDGraphicalCodeEditorView+UI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDGraphicalCodeEditorView+UI.swift"; sourceTree = "<group>"; };
+		18334D3A24C6F694007D1126 /* CDGraphicalCodeEditorBlockCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CDGraphicalCodeEditorBlockCellView.swift; path = emplate/CDGraphicalCodeEditorBlockCellView.swift; sourceTree = "<group>"; };
+		18334D3C24C70A9A007D1126 /* CDGraphicalCodeEditorIfCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDGraphicalCodeEditorIfCellView.swift; sourceTree = "<group>"; };
 		183BE91024AEB1C4000F60A0 /* CDMainViewController+Diagnostics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMainViewController+Diagnostics.swift"; sourceTree = "<group>"; };
 		183BE91224AEBC49000F60A0 /* CDMainViewController+SnippetTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMainViewController+SnippetTableView.swift"; sourceTree = "<group>"; };
 		183BE91424AEBCC5000F60A0 /* CDMainViewController+SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMainViewController+SegmentedControl.swift"; sourceTree = "<group>"; };
@@ -454,6 +458,7 @@
 				1830726724C582F6001B08F3 /* CDGraphicalCodeEditorSidebarLibraryViewItem.swift */,
 				18719FB724C3112000BD73C7 /* CDGraphicalCodeEditorHiddenTextView.swift */,
 				18AC033324C1DCAC00AEBCCB /* CDGraphicalCodeEditorCellView.swift */,
+				18334D3A24C6F694007D1126 /* CDGraphicalCodeEditorBlockCellView.swift */,
 				18719FB924C40A9500BD73C7 /* Cells */,
 			);
 			path = "Graphical Code Editor";
@@ -579,6 +584,7 @@
 			children = (
 				18719FBA24C40AD600BD73C7 /* CDGraphicalCodeEditorIncludeCellView.swift */,
 				1830726324C553F5001B08F3 /* CDGraphicalCodeEditorUsingNamespaceCellView.swift */,
+				18334D3C24C70A9A007D1126 /* CDGraphicalCodeEditorIfCellView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1030,6 +1036,7 @@
 				181F2B9724AB490300C4B217 /* C+++-Bridging-Header.h in Sources */,
 				181F2B9624AB47ED00C4B217 /* CXCompilationDatabase.h in Sources */,
 				181F2B9524AB47E800C4B217 /* Platform.h in Sources */,
+				18334D3D24C70A9A007D1126 /* CDGraphicalCodeEditorIfCellView.swift in Sources */,
 				181F2B9424AB47E400C4B217 /* Documentation.h in Sources */,
 				181F2B9324AB47DF00C4B217 /* FatalErrorHandler.h in Sources */,
 				1830726C24C67086001B08F3 /* CDGraphicalCodeEditorView+UI.swift in Sources */,
@@ -1076,6 +1083,7 @@
 				18B1858D2468E44700B579AD /* CDDebugViewController.swift in Sources */,
 				183BE91724AEBD26000F60A0 /* CDMainViewController+Appearance.swift in Sources */,
 				18B1858B2468DC9800B579AD /* CDFileCompiler(Compile).swift in Sources */,
+				18334D3B24C6F694007D1126 /* CDGraphicalCodeEditorBlockCellView.swift in Sources */,
 				181F2BD124AC78C700C4B217 /* CKCursor+Private.m in Sources */,
 				18A41AA6242C75A600AFC422 /* CDHighlightrHTMLUtils.swift in Sources */,
 				188DF6F724AF0F7700D0DA17 /* CDMainViewController+AddSymbol.swift in Sources */,

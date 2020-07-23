@@ -106,6 +106,24 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="type" value="Include"/>
                                 </userDefinedRuntimeAttributes>
                             </customView>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VEz-cR-7Gw" customClass="CDGraphicalCodeEditorSidebarLibraryViewItem" customModule="C___" customModuleProvider="target">
+                                <rect key="frame" x="9" y="216" width="163" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="roa-D9-gLt">
+                                        <rect key="frame" x="18" y="14" width="13" height="16"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="If" id="cPO-ey-5RB">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="type" value="If"/>
+                                </userDefinedRuntimeAttributes>
+                            </customView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="A0G-3g-ZTC"/>
                         <viewLayoutGuide key="layoutMargins" id="ws9-Qj-rIp"/>
@@ -216,14 +234,13 @@
                                                                                     </textFieldCell>
                                                                                 </textField>
                                                                                 <textField identifier="UsingNamespace_TextField" focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LQH-fe-LYg">
-                                                                                    <rect key="frame" x="151" y="7" width="34" height="19"/>
+                                                                                    <rect key="frame" x="151" y="8" width="34" height="19"/>
                                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" placeholderString="std" id="Ff4-Dy-Eiz">
                                                                                         <font key="font" metaFont="system"/>
                                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                     </textFieldCell>
-                                                                                    <accessibility identifier="TextField"/>
                                                                                 </textField>
                                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BRi-IQ-Zlr">
                                                                                     <rect key="frame" x="37" y="11" width="110" height="16"/>
@@ -239,6 +256,102 @@
                                                                                 <outlet property="backgroundTextField" destination="Zfn-UV-kvP" id="SVf-8b-znB"/>
                                                                                 <outlet property="lineNumberButton" destination="wMt-y9-QNY" id="O7R-2O-nmL"/>
                                                                                 <outlet property="textField" destination="LQH-fe-LYg" id="fil-PA-443"/>
+                                                                            </connections>
+                                                                        </customView>
+                                                                        <customView hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="it4-jU-4Uk" customClass="CDGraphicalCodeEditorIfCellView" customModule="C___" customModuleProvider="target">
+                                                                            <rect key="frame" x="4" y="64" width="424" height="93"/>
+                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                            <subviews>
+                                                                                <button identifier="If_LineNumber" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bdl-sE-Ucj">
+                                                                                    <rect key="frame" x="0.0" y="68" width="17" height="16"/>
+                                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                                    <buttonCell key="cell" type="smallSquare" title="3" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="O3U-Ww-Kde">
+                                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                                        <font key="font" metaFont="system"/>
+                                                                                    </buttonCell>
+                                                                                </button>
+                                                                                <textField identifier="If_Background" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nXR-31-sWb">
+                                                                                    <rect key="frame" x="25" y="63" width="152" height="25"/>
+                                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                                    <textFieldCell key="cell" lineBreakMode="clipping" drawsBackground="YES" id="ZyJ-jy-4SP">
+                                                                                        <font key="font" metaFont="system"/>
+                                                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                        <color key="backgroundColor" name="systemPinkColor" catalog="System" colorSpace="catalog"/>
+                                                                                    </textFieldCell>
+                                                                                </textField>
+                                                                                <textField identifier="If_FirstTextField" focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9RR-sj-MjH">
+                                                                                    <rect key="frame" x="53" y="66" width="35" height="19"/>
+                                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" alignment="left" placeholderString="a" id="Mvl-es-h5Q">
+                                                                                        <font key="font" metaFont="system"/>
+                                                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                                    </textFieldCell>
+                                                                                </textField>
+                                                                                <textField identifier="If_SecondTextField" focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QHL-pQ-CQX">
+                                                                                    <rect key="frame" x="133" y="66" width="40" height="19"/>
+                                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" placeholderString="b" id="b38-Su-ckv">
+                                                                                        <font key="font" metaFont="system"/>
+                                                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                                    </textFieldCell>
+                                                                                </textField>
+                                                                                <textField identifier="If_IfLabel" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2f3-mE-gaE">
+                                                                                    <rect key="frame" x="37" y="69" width="12" height="16"/>
+                                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="if" id="38n-kg-0oy">
+                                                                                        <font key="font" metaFont="system"/>
+                                                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                                    </textFieldCell>
+                                                                                </textField>
+                                                                                <comboBox identifier="If_Operator" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gJv-gM-uAJ">
+                                                                                    <rect key="frame" x="88" y="63" width="47" height="25"/>
+                                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                                    <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" title="==" drawsBackground="YES" buttonBordered="NO" completes="NO" numberOfVisibleItems="5" id="Jzj-Jf-ZlA">
+                                                                                        <font key="font" metaFont="system"/>
+                                                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                                        <objectValues>
+                                                                                            <string>==</string>
+                                                                                            <string>&lt;=</string>
+                                                                                            <string>&gt;=</string>
+                                                                                            <string>&lt;</string>
+                                                                                            <string>&gt;</string>
+                                                                                            <string>||</string>
+                                                                                            <string>&amp;&amp;</string>
+                                                                                        </objectValues>
+                                                                                    </comboBoxCell>
+                                                                                </comboBox>
+                                                                                <textField identifier="If_EndTextField" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WgA-fF-E9b">
+                                                                                    <rect key="frame" x="25" y="6" width="53" height="25"/>
+                                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                                    <textFieldCell key="cell" lineBreakMode="clipping" drawsBackground="YES" id="dNJ-pL-oqD">
+                                                                                        <font key="font" metaFont="system"/>
+                                                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                        <color key="backgroundColor" name="systemPinkColor" catalog="System" colorSpace="catalog"/>
+                                                                                    </textFieldCell>
+                                                                                </textField>
+                                                                                <textField identifier="If_EndTextTextField" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ph9-7z-6cC">
+                                                                                    <rect key="frame" x="37" y="11" width="27" height="16"/>
+                                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="end" id="i4x-QT-ofD">
+                                                                                        <font key="font" metaFont="system"/>
+                                                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                                    </textFieldCell>
+                                                                                </textField>
+                                                                            </subviews>
+                                                                            <connections>
+                                                                                <outlet property="backgroundTextField" destination="nXR-31-sWb" id="41c-KF-dAK"/>
+                                                                                <outlet property="endTextField" destination="WgA-fF-E9b" id="M2a-1d-aGY"/>
+                                                                                <outlet property="endTextTextField" destination="Ph9-7z-6cC" id="Euf-S8-mBe"/>
+                                                                                <outlet property="firstItem" destination="9RR-sj-MjH" id="KEW-KT-Qzq"/>
+                                                                                <outlet property="ifLabel" destination="2f3-mE-gaE" id="c6d-Ts-xu0"/>
+                                                                                <outlet property="lineNumberButton" destination="bdl-sE-Ucj" id="1OA-4d-A2K"/>
+                                                                                <outlet property="operatorComboBox" destination="gJv-gM-uAJ" id="PbI-Nm-2P2"/>
+                                                                                <outlet property="secondItem" destination="QHL-pQ-CQX" id="q7x-Wd-GHy"/>
                                                                             </connections>
                                                                         </customView>
                                                                     </subviews>
@@ -342,6 +455,7 @@
                     </view>
                     <connections>
                         <outlet property="hiddenTextView" destination="aep-EB-GE5" id="DyP-uc-qb7"/>
+                        <outlet property="ifCellViewTemplate" destination="it4-jU-4Uk" id="Qx9-sP-OYp"/>
                         <outlet property="includeCellViewTemplate" destination="33I-Sd-gLc" id="bwv-5a-xkP"/>
                         <outlet property="splitView" destination="DoQ-P6-n12" id="RUj-3m-pdG"/>
                         <outlet property="usingNamespaceCellViewTemplate" destination="tBu-jr-B8A" id="q8e-Xy-05v"/>
@@ -351,6 +465,48 @@
                 <customObject id="udP-cQ-ISZ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="913" y="51"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="XJl-Jc-zdS">
+            <objects>
+                <viewController id="Cio-Cl-ofH" sceneMemberID="viewController">
+                    <view key="view" id="uHb-5K-Nlm">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9V-6A-dNt">
+                                <rect key="frame" x="0.0" y="5" width="450" height="262"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <clipView key="contentView" drawsBackground="NO" id="zGq-nx-XNf">
+                                    <rect key="frame" x="0.0" y="0.0" width="450" height="262"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" smartInsertDelete="YES" id="23W-qF-nuH">
+                                            <rect key="frame" x="0.0" y="0.0" width="450" height="262"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="450" height="262"/>
+                                            <size key="maxSize" width="450" height="10000000"/>
+                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        </textView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="wrn-3e-6YP">
+                                    <rect key="frame" x="-100" y="-100" width="240" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="Kcs-i8-kSt">
+                                    <rect key="frame" x="434" y="0.0" width="16" height="262"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="JJF-I7-lzL" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1386" y="1"/>
         </scene>
     </scenes>
 </document>

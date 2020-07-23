@@ -11,6 +11,7 @@ import Cocoa
 protocol CDGraphicalCodeEditorCellViewDelegate {
     
     func codeEditorCellViewDidChangeValue(_ view: CDGraphicalCodeEditorCellView)
+    func deleteCodeEditorCellView(_ view: CDGraphicalCodeEditorCellView)
     
 }
 
@@ -70,8 +71,25 @@ class CDGraphicalCodeEditorCellView: NSView {
         super.init(frame: frameRect)
     }
     
-    func resetIBOutlet() {
+    func reloadView() {
         self.backgroundTextField.cornerRadius = 8.0
+        let menu = NSMenu(title: "Menu")
+        menu.addItem(NSMenuItem(title: "Remove", action: #selector(deleteSelf), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "Move Up", action: #selector(moveSelfUp), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "Move Down", action: #selector(moveSelfDown), keyEquivalent: ""))
+        self.menu = menu
+    }
+    
+    @objc func deleteSelf() {
+        self.delegate?.deleteCodeEditorCellView(self)
+    }
+    
+    @objc func moveSelfUp() {
+        
+    }
+    
+    @objc func moveSelfDown() {
+        
     }
     
 }

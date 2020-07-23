@@ -37,7 +37,7 @@ class CDGraphicalCodeEditorUsingNamespaceCellView: CDGraphicalCodeEditorCellView
         self.dictionary["NamespaceName"] = ""
     }
     
-    override func resetIBOutlet() {
+    override func reloadView() {
         
         for view in subviews {
             if let identifier = view.identifier {
@@ -53,7 +53,7 @@ class CDGraphicalCodeEditorUsingNamespaceCellView: CDGraphicalCodeEditorCellView
                 }
             }
         }
-        super.resetIBOutlet()
+        super.reloadView()
         
     }
     

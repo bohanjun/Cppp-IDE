@@ -40,7 +40,7 @@ class CDGraphicalCodeEditorIncludeCellView: CDGraphicalCodeEditorCellView, NSCom
         self.dictionary["FileName"] = ""
     }
     
-    override func resetIBOutlet() {
+    override func reloadView() {
         
         for view in subviews {
             if let identifier = view.identifier {
@@ -58,7 +58,7 @@ class CDGraphicalCodeEditorIncludeCellView: CDGraphicalCodeEditorCellView, NSCom
                 }
             }
         }
-        super.resetIBOutlet()
+        super.reloadView()
         
     }
     

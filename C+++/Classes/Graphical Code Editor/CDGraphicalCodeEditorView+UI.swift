@@ -10,26 +10,35 @@ import Cocoa
 
 extension CDGraphicalCodeEditorView {
     
-    func load(cellViews: [CDGraphicalCodeEditorCellView]) {
+    @discardableResult
+    func load(cellViews: [CDGraphicalCodeEditorCellView]) -> String {
+        
+        for view in self.subviews {
+            view.removeFromSuperview()
+        }
         
         var y: CGFloat = 10.0
         var lineNumber: Int = 1
+        var string = ""
         
         for view in cellViews {
             
             view.frame.origin.y = y
             view.setLineNumber(lineNumber)
             self.addSubview(view)
+            string += view.storedData
             
             y += (view.frame.height + 1)
             lineNumber += 1
             
         }
         
-        self.shouldreloadAfterChangingFrame = false
-        self.frame.size.height = y
-        self.superview?.frame.size.height = y
-        self.shouldreloadAfterChangingFrame = true
+        self.shouldReloadAfterChangingFrame = false
+        self.frame.size.height = y + 20
+        self.superview?.frame.size.height = y + 20
+        self.shouldReloadAfterChangingFrame = true
+        
+        return string
         
     }
     
