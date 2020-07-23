@@ -47,10 +47,15 @@ class CDGraphicalCodeEditorBlockCellView: CDGraphicalCodeEditorCellView {
             self.reloadView()
         } else {
             for (index, cell) in self.containedCells.enumerated() {
-                if view is CDGraphicalCodeEditorBlockCellView && view.frame.contains(point) {
-                    print(true)
-                }
                 let y = self.frame.origin.y + cell.frame.origin.y
+                print(self.frame.origin.y + cell.frame.origin.y, point.y, self.frame.origin.y + cell.frame.origin.y + cell.frame.height)
+                if cell is CDGraphicalCodeEditorBlockCellView && self.frame.origin.y + cell.frame.origin.y <= point.y &&  point.y <= self.frame.origin.y + cell.frame.origin.y + cell.frame.height {
+                    print(true)
+                    view.loadSample()
+                    cell.reloadView()
+                    (cell as! CDGraphicalCodeEditorBlockCellView).addCellView(view: view)
+                    self.reloadView()
+                }
                 if abs(y - point.y) <= 15 {
                     view.loadSample()
                     self.containedCells.insert(view, at: index)
@@ -67,6 +72,7 @@ class CDGraphicalCodeEditorBlockCellView: CDGraphicalCodeEditorCellView {
             self.containedCells.append(view)
         } else {
             (self.containedCells[self.containedCells.endIndex - 1] as! CDGraphicalCodeEditorBlockCellView).addCellView(of: hierachy - 1, view: view)
+            (self.containedCells[self.containedCells.endIndex - 1] as! CDGraphicalCodeEditorBlockCellView).reloadView()
         }
         
     }

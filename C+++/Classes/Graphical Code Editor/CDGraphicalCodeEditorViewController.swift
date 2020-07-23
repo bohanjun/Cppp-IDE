@@ -124,7 +124,6 @@ class CDGraphicalCodeEditorViewController: NSViewController, NSTextViewDelegate,
                 
                 if type == "BlockEnd" {
                     hierarchy -= 1
-                    print("Block End: hierarchy = \(hierarchy)")
                     continue
                 }
                 
@@ -134,9 +133,9 @@ class CDGraphicalCodeEditorViewController: NSViewController, NSTextViewDelegate,
                 }
                 
                 if view is CDGraphicalCodeEditorBlockCellView {
-                    print("Block View Begin: hierarchy = \(hierarchy)")
                     hierarchy += 1
                     if hierarchy - 1 == 0 {
+                        view!.reloadView()
                         self.cellViews.append(view!)
                     } else {
                         let blockCellView =
@@ -149,7 +148,6 @@ class CDGraphicalCodeEditorViewController: NSViewController, NSTextViewDelegate,
                 
                 if hierarchy >= 1 {
                     
-                    print("In a Block View : hierarchy = \(hierarchy), ofType = \(type)")
                     let blockCellView =
                         (self.cellViews[self.cellViews.endIndex - 1] as! CDGraphicalCodeEditorBlockCellView)
                     blockCellView.addCellView(of: hierarchy - 1, view: view!)
@@ -157,7 +155,6 @@ class CDGraphicalCodeEditorViewController: NSViewController, NSTextViewDelegate,
                     
                 } else {
                     
-                    print("hierarchy = 0, ofType = \(type)")
                     self.cellViews.append(view!)
                     
                 }
