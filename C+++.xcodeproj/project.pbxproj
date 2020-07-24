@@ -297,6 +297,8 @@
 		1872603224AF4FE8004C69B2 /* CDDiagnosticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDDiagnosticsViewController.swift; sourceTree = "<group>"; };
 		1872603324AF4FE8004C69B2 /* CDDiagnosticsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CDDiagnosticsViewController.xib; sourceTree = "<group>"; };
 		187527AF247A6A1900A7522A /* CDLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDLaunchViewController.swift; sourceTree = "<group>"; };
+		1876363F24CAB7F600F5DEFE /* _config.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = _config.yml; sourceTree = "<group>"; };
+		1876364024CAB81700F5DEFE /* index.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = index.md; sourceTree = "<group>"; };
 		187EF969248C86DD0023F381 /* C+++-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "C+++-Bridging-Header.h"; sourceTree = "<group>"; };
 		188DF6F224AF0C5400D0DA17 /* CDAddSymbolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDAddSymbolViewController.swift; sourceTree = "<group>"; };
 		188DF6F324AF0C5400D0DA17 /* CDAddSymbolViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CDAddSymbolViewController.xib; sourceTree = "<group>"; };
@@ -790,6 +792,8 @@
 			isa = PBXGroup;
 			children = (
 				180480A824474A0700CD0A4D /* README.md */,
+				1876364024CAB81700F5DEFE /* index.md */,
+				1876363F24CAB7F600F5DEFE /* _config.yml */,
 				184B1C7124945FBA0071C1AA /* index.html */,
 				18B3C77E24282C1F00F4CA14 /* C+++ */,
 				18B3C76524272D9F00F4CA14 /* Products */,

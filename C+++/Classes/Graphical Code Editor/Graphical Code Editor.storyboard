@@ -20,13 +20,21 @@
                             <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </view>
-                        <toolbar key="toolbar" implicitIdentifier="09D11707-F4A3-4FD5-970E-AC5832E91C2B" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="CSz-a6-T4K">
+                        <toolbar key="toolbar" implicitIdentifier="09D11707-F4A3-4FD5-970E-AC5832E91C2B" autosavesConfiguration="NO" allowsUserCustomization="NO" showsBaselineSeparator="NO" displayMode="iconOnly" sizeMode="regular" id="CSz-a6-T4K">
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="anQ-vz-shh"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="1Oh-jW-pDU"/>
+                                <toolbarItem implicitItemIdentifier="232DCB91-A06C-4102-866C-079ED4B6E8D2" label="Generate Code" paletteLabel="Generate Code" tag="-1" image="Run" id="Kyb-sv-qTf">
+                                    <size key="minSize" width="32" height="32"/>
+                                    <size key="maxSize" width="32" height="32"/>
+                                    <connections>
+                                        <action selector="generateCode:" target="2wW-B2-FhX" id="LfH-0w-n1Q"/>
+                                    </connections>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="1Oh-jW-pDU"/>
+                                <toolbarItem reference="Kyb-sv-qTf"/>
                             </defaultToolbarItems>
                         </toolbar>
                         <connections>
@@ -469,8 +477,8 @@
         <!--Window Controller-->
         <scene sceneID="G57-oa-SxG">
             <objects>
-                <windowController id="lUn-m2-eef" sceneMemberID="viewController">
-                    <window key="window" title="Generated Source Code" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" id="Tbz-pQ-bQd">
+                <windowController storyboardIdentifier="Generated Code" id="lUn-m2-eef" sceneMemberID="viewController">
+                    <window key="window" title="Generated Source Code" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" appearanceType="aqua" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" id="Tbz-pQ-bQd">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="239" width="419" height="377"/>
@@ -495,22 +503,31 @@
         <scene sceneID="XJl-Jc-zdS">
             <objects>
                 <viewController id="Cio-Cl-ofH" customClass="CDGraphicalCodeEditorGeneratedCodeViewController" customModule="C___" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="uHb-5K-Nlm">
+                    <view key="view" appearanceType="aqua" id="uHb-5K-Nlm">
                         <rect key="frame" x="0.0" y="0.0" width="419" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hhr-MK-Iap">
+                                <rect key="frame" x="11" y="268" width="249" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Generated C++ Source Code" id="vlt-73-VYb">
+                                    <font key="font" metaFont="systemBold" size="18"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                             <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9V-6A-dNt">
-                                <rect key="frame" x="0.0" y="0.0" width="419" height="260"/>
+                                <rect key="frame" x="13" y="0.0" width="394" height="260"/>
                                 <clipView key="contentView" drawsBackground="NO" id="zGq-nx-XNf">
-                                    <rect key="frame" x="0.0" y="0.0" width="419" height="260"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="394" height="260"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView editable="NO" drawsBackground="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" smartInsertDelete="YES" id="23W-qF-nuH" customClass="CDCodeEditor" customModule="C___" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="419" height="260"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="260"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="419" height="260"/>
+                                            <size key="minSize" width="394" height="260"/>
                                             <size key="maxSize" width="450" height="10000000"/>
                                             <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
@@ -521,23 +538,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="Kcs-i8-kSt">
-                                    <rect key="frame" x="403" y="0.0" width="16" height="260"/>
+                                    <rect key="frame" x="378" y="0.0" width="16" height="260"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hhr-MK-Iap">
-                                <rect key="frame" x="11" y="268" width="249" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Generated C++ Source Code" id="vlt-73-VYb">
-                                    <font key="font" metaFont="systemBold" size="18"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="C9V-6A-dNt" secondAttribute="trailing" id="M6h-JL-pEk"/>
-                            <constraint firstItem="C9V-6A-dNt" firstAttribute="leading" secondItem="uHb-5K-Nlm" secondAttribute="leading" id="SB8-Sw-kgZ"/>
+                            <constraint firstAttribute="trailing" secondItem="C9V-6A-dNt" secondAttribute="trailing" constant="12" id="M6h-JL-pEk"/>
+                            <constraint firstItem="C9V-6A-dNt" firstAttribute="leading" secondItem="uHb-5K-Nlm" secondAttribute="leading" constant="13" id="SB8-Sw-kgZ"/>
                             <constraint firstItem="C9V-6A-dNt" firstAttribute="top" secondItem="uHb-5K-Nlm" secondAttribute="top" constant="40" id="aav-ra-D8x"/>
                             <constraint firstAttribute="bottom" secondItem="C9V-6A-dNt" secondAttribute="bottom" id="bzf-yK-Mc8"/>
                         </constraints>
@@ -551,4 +559,7 @@
             <point key="canvasLocation" x="1513.5" y="-63"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Run" width="256" height="256"/>
+    </resources>
 </document>

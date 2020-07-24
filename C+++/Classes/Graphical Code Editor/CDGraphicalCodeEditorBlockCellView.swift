@@ -29,7 +29,7 @@ class CDGraphicalCodeEditorBlockCellView: CDGraphicalCodeEditorCellView {
     }
     
     override var code: String {
-        var string = "{"
+        var string = "{\n"
         for cell in self.containedCells {
             for line in cell.code.split(separator: "\n") {
                 string += "\t" + line + "\n"
