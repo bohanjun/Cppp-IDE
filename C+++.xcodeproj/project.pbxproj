@@ -285,7 +285,6 @@
 		183BF3C9242906B3007AF6AC /* CDCodeEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDCodeEditor.swift; sourceTree = "<group>"; };
 		1846EF9924C53AAB002A7797 /* NSView Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSView Extension.swift"; sourceTree = "<group>"; };
 		1846F37424C9942100556850 /* CDGraphicalCodeEditorGeneratedCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDGraphicalCodeEditorGeneratedCodeViewController.swift; sourceTree = "<group>"; };
-		184B1C7124945FBA0071C1AA /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		184D5733247EA97500C5AA27 /* NSApplication Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSApplication Extension.swift"; sourceTree = "<group>"; };
 		18541B152445905F000EB4CB /* CDSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSettingsViewController.swift; sourceTree = "<group>"; };
 		1860EC3224839A8B0066DE64 /* CDDocumentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDDocumentController.swift; sourceTree = "<group>"; };
@@ -794,7 +793,6 @@
 				180480A824474A0700CD0A4D /* README.md */,
 				1876364024CAB81700F5DEFE /* index.md */,
 				1876363F24CAB7F600F5DEFE /* _config.yml */,
-				184B1C7124945FBA0071C1AA /* index.html */,
 				18B3C77E24282C1F00F4CA14 /* C+++ */,
 				18B3C76524272D9F00F4CA14 /* Products */,
 				181F2B9824AB557D00C4B217 /* Frameworks */,

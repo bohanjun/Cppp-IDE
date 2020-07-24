@@ -9,6 +9,7 @@
 - Website: https://23786.github.io/Cppp-IDE/
 - Download version 2.1.0: https://github.com/23786/Cppp-IDE/releases/download/v2.1.0/C+++_2_1_0.dmg.zip
 
+[![2-1-0-Code-Editing.png](https://i.postimg.cc/zfVjcTBh/2-1-0-Code-Editing.png)](https://postimg.cc/SXbCX2cQ)
 
 ## Install g++
 - Open terminal, and type "g++", press enter, and there should be a dialog box "Install Xcode g++", install it, about 2~5 minutes later the installation process will be completed and then you can use C+++.
