@@ -20,7 +20,7 @@ Though C+++ IDE doesn't have as much function as Xcode and Visual Studio have, t
 
 C+++ supports syntax highlighting, Dark Mode and Touch Bar, and it includes clean User Interface, with no unnecessary elements on the view which will bother you when you are coding. If you still think the UI is too complicated, you can also enter the simple mode, which you can only see the code editor. C+++ also has perfect stability, few crash can occur.
 
-![2-1-0-Simple-Mode.png](https://i.postimg.cc/65qf3drm/2-1-0-Simple-Mode.png)
+![2.1.0 Simple Mode.png](https://i.loli.net/2020/07/24/7Lm4qMnKgJCzkZ5.png)
 
 ----
 
