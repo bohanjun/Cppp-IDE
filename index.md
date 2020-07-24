@@ -1,5 +1,6 @@
-![2-1-0-Welcome.png](https://i.postimg.cc/t44BQKT8/2-1-0-Welcome.png)
-# **<font color = "#000000">C+++ IDE 2.1.0</font>**
+![2.1.0 Welcome.png](https://i.loli.net/2020/07/24/FoE4HbKstYM6z3q.png)
+
+## **<font color = "#000000">C+++ IDE 2.1.0</font>**
 # **<font color = "#000000">A lightweight and modern C++ IDE on macOS Platform</font>**
 ## Developed by a Grade-Six (now seven) student _23786_.
 
@@ -11,7 +12,7 @@
 
 Though C+++ IDE doesn't have as much function as Xcode and Visual Studio have, though it is not as professional as Dev-C++ on Windows, but it is really enough for a C++ Beginner who aims to attend the OI competitions. C+++ Includes the most basic features, such as code editing, compiling, debugging. It also provides more user-friendly interface for users.
 
-![2-1-0-Code-Editing.png](https://i.postimg.cc/zfVjcTBh/2-1-0-Code-Editing.png)
+![2.1.0 Code Editing.png](https://i.loli.net/2020/07/24/ISgY5A6CrhKRqnk.png)
 
 ----
 
@@ -27,8 +28,8 @@ C+++ supports syntax highlighting, Dark Mode and Touch Bar, and it includes clea
 
 Two of the important features in C+++ is Code Completion and Realtime Diagnostic. Code Completion helps you type code more efficiently, while Realtime Diagnostic helps you find out errors in the code right when you are typing it. Enjoy coding with these two functions!
 
-![2-1-0-Code-Completion.png](https://i.postimg.cc/8kfpLb86/2-1-0-Code-Completion.png)
-![2-1-0-Realtime-Diagnostic.png](https://i.postimg.cc/Dz5ZYf54/2-1-0-Realtime-Diagnostic.png)
+![2.1.0 Code Completion.png](https://i.loli.net/2020/07/24/vz6F3lewAdBhWxI.png)
+![2.1.0 Realtime Diagnostic.png](https://i.loli.net/2020/07/24/CIGnYpost3WH2iw.png)
 
 ----
 
@@ -36,7 +37,7 @@ Two of the important features in C+++ is Code Completion and Realtime Diagnostic
 
 Code Snippet is a small portion of re-usable source code. They allow you to avoid typing repetitive code during programming. In C+++, this feature is also here. Click the second button on the left sidebar, then you can add snippets into your source code. 
 
-![2-1-0-Code-Snippets.png](https://i.postimg.cc/nh3r3c3j/2-1-0-Code-Snippets.png)
+![2.1.0 Code Snippets.png](https://i.loli.net/2020/07/24/PecIvTRlnuSArkx.png)
 
 ----
 
