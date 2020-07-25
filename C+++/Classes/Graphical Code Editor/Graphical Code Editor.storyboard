@@ -267,7 +267,7 @@
                                                                             </connections>
                                                                         </customView>
                                                                         <customView hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="it4-jU-4Uk" customClass="CDGraphicalCodeEditorIfCellView" customModule="C___" customModuleProvider="target">
-                                                                            <rect key="frame" x="4" y="64" width="424" height="93"/>
+                                                                            <rect key="frame" x="4" y="74" width="424" height="93"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                             <subviews>
                                                                                 <button identifier="If_LineNumber" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bdl-sE-Ucj">

@@ -91,7 +91,6 @@ Code Snippet is a small portion of re-usable source code. They allow you to avoi
 
 ## **Update Log**
 ### 2020.8 Version 2.1.1 (208201)
-- Add Graphical Code Editor (like scratch)
 
 ### 2020.7 Version 2.1.0 (207210)
 - Adapt macOS 11.0 Big Sur
@@ -151,8 +150,8 @@ Code Snippet is a small portion of re-usable source code. They allow you to avoi
 
 ### 2020.3 Version 0.9.1 (203091)
 - Code Highlight
-- Create UI
+- Update UI
 
 ### 2020.3 Version 0.9.0 (203090)
 - Create the Project
-- Can compile a C++ file
+- Add Compiling Function
