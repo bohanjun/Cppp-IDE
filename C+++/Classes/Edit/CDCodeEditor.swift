@@ -273,4 +273,23 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
         
     }
     
+    override init(frame: NSRect, textContainer: NSTextContainer?) {
+        super.init(frame: frame, textContainer: textContainer)
+        
+        self.textContainer?.size = NSSize(width: CGFloat(Int.max), height: CGFloat(Int.max))
+        self.textContainer?.widthTracksTextView = false
+        
+        if CDSettings.shared == nil {
+            initDefaultData()
+        }
+        
+        self.highlightr!.setTheme(to: CDSettings.shared.lightThemeName)
+        self.highlightr!.theme.setCodeFont(CDSettings.shared.font)
+        
+    }
+    
+    override public init(frame frameRect: NSRect) {
+        super.init(frame: frameRect)
+    }
+    
 }
