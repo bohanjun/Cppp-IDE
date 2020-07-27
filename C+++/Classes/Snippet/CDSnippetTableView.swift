@@ -249,15 +249,9 @@ class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate 
         
     }
     
-    static func snippetCompletionResults() -> [CDCompletionResult] {
+    static var savedSnippets: [CDSnippetTableViewCell] {
         
-        var results = [CDCompletionResult]()
-        var result: CDCompletionResult
-        for cell in (NSKeyedUnarchiver.unarchiveObject(withFile: archievePath.path) as! [CDSnippetTableViewCell]) {
-            result = CDCompletionResult(returnType: cell.title, typedText: cell.code, otherTexts: [String]())
-            results.append(result)
-        }
-        return results
+        return NSKeyedUnarchiver.unarchiveObject(withFile: archievePath.path) as! [CDSnippetTableViewCell]
         
     }
     

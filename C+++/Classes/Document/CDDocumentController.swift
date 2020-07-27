@@ -23,6 +23,7 @@ extension NSDocumentController {
         
     }
     
+    /*
     @IBAction func newGraphicalCodeDocument(_ sender: Any?) {
         
         do {
@@ -33,7 +34,7 @@ extension NSDocumentController {
             print("Error")
         }
         
-    }
+    }*/
     
 }
 
