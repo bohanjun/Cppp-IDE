@@ -60,7 +60,6 @@ class CDUpdateManager: NSObject {
         let infoDictionary = Bundle.main.infoDictionary
         if let infoDictionary = infoDictionary {
             let appVersion = infoDictionary["CFBundleShortVersionString"] as! String
-            print("Current Version: \(appVersion)")
             return appVersion
         } else {
             return nil

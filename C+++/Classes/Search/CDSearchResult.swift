@@ -56,7 +56,6 @@ class CDSearchResult: NSObject {
         }
         
         let words = string.components(separatedBy: " ")
-        print(words)
         
         if type == .none {
             
