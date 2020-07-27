@@ -15,6 +15,7 @@ class CDSearchViewController: NSViewController, NSTableViewDataSource, NSTextFie
     @IBOutlet weak var textField: NSTextField!
     
     var popover: NSPopover!
+    var isDarkMode = false
     
     var allResults = [CDSearchResult]()
     var filteredResults = [CDSearchResult]()
@@ -22,8 +23,7 @@ class CDSearchViewController: NSViewController, NSTableViewDataSource, NSTextFie
     func controlTextDidChange(_ obj: Notification) {
         self.filteredResults = []
         for i in self.allResults {
-            if i.title.contains(self.textField.stringValue) {
-                print(true)
+            if i.actualTitle.contains(self.textField.stringValue) {
                 self.filteredResults.append(i)
             }
         }
@@ -32,7 +32,7 @@ class CDSearchViewController: NSViewController, NSTableViewDataSource, NSTextFie
     
     func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
         if tableColumn?.title == "Title" {
-            return self.filteredResults[row].title
+            return self.filteredResults[row].displayTitle
         } else {
             return self.filteredResults[row].image
         }
@@ -47,12 +47,22 @@ class CDSearchViewController: NSViewController, NSTableViewDataSource, NSTextFie
             view.removeFromSuperview()
         }
         if self.tableView.selectedRowIndexes.count != 0 {
-            self.filteredResults[self.tableView.selectedRow].loadResultDetailInView(view: self.detailView)
+            self.filteredResults[self.tableView.selectedRow].loadResultDetailInView(view: self.detailView, isDarkMode: self.isDarkMode)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.textField?.becomeFirstResponder()
+        if #available(OSX 10.14, *) {
+            self.isDarkMode = true
+            self.popover?.appearance = darkAqua
+        } else {
+            self.isDarkMode = false
+            self.popover?.appearance = aqua
+        }
+        self.allResults[self.tableView.selectedRow].loadResultDetailInView(view: self.detailView, isDarkMode: self.isDarkMode)
         
     }
     
@@ -77,6 +87,9 @@ class CDSearchViewController: NSViewController, NSTableViewDataSource, NSTextFie
         }
         for url in NSDocumentController.shared.recentDocumentURLs {
             self.allResults.append(CDSearchResult(recentFileUrl: url))
+        }
+        for help in NSApplication.cpppHelp {
+            self.allResults.append(CDSearchResult(helpWithTitle: help.key, content: help.value))
         }
         self.filteredResults = self.allResults
         self.tableView?.reloadData()

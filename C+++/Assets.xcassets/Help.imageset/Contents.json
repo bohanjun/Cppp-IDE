@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "Update.png",
+      "filename" : "Help.png",
       "idiom" : "universal"
     },
     {
@@ -11,7 +11,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "UpdateLight.png",
+      "filename" : "HelpDark.png",
       "idiom" : "universal"
     }
   ],

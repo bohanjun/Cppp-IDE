@@ -43,7 +43,6 @@ class CDUpdateManager: NSObject {
                 var updateInformation = strings[1].components(separatedBy: "-").joined(separator: "\n- ")
                 updateInformation.removeFirst()
                 let url = strings[2]
-                print(latestVersion, updateInformation, url, separator: "\n")
                 completionHandler(latestVersion, updateInformation, url)
                 
             } else {
