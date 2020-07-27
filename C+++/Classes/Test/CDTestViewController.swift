@@ -60,7 +60,7 @@ class CDTestViewController: NSViewController {
                 let ans = CDFileCompiler.shell("\"\(executablePath)\"", i.input! + "\nEOF\n").first
                 i.actualOutput = ans
                 
-                if ans?.trimmingCharacters(in: .whitespaces) == i.output?.trimmingCharacters(in: .whitespaces) {
+                if ans?.trimmingCharacters(in: .whitespaces).trimmingCharacters(in: .newlines) == i.output?.trimmingCharacters(in: .whitespaces).trimmingCharacters(in: .newlines) {
                     i.result = "Correct"
                 } else {
                     i.result = "Incorrect"

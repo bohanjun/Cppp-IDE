@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class CDSearchViewController: NSViewController, NSTableViewDataSource, NSTextFieldDelegate, NSTableViewDelegate {
+class CDSearchViewController: NSViewController, NSTableViewDataSource, NSTextFieldDelegate, NSTableViewDelegate, NSPopoverDelegate {
     
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var detailView: NSView!
@@ -21,18 +21,24 @@ class CDSearchViewController: NSViewController, NSTableViewDataSource, NSTextFie
     var filteredResults = [CDSearchResult]()
     
     func controlTextDidChange(_ obj: Notification) {
-        self.filteredResults = []
-        for i in self.allResults {
-            if i.actualTitle.contains(self.textField.stringValue) {
-                self.filteredResults.append(i)
+        
+        DispatchQueue.main.async {
+            
+            self.filteredResults = []
+            for i in self.allResults {
+                if i.containsKeyword(word: self.textField.stringValue) {
+                    self.filteredResults.append(i)
+                }
             }
+            self.tableView.reloadData()
+            
         }
-        tableView.reloadData()
+        
     }
     
     func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
         if tableColumn?.title == "Title" {
-            return self.filteredResults[row].displayTitle
+            return self.filteredResults[row].title
         } else {
             return self.filteredResults[row].image
         }
@@ -73,6 +79,7 @@ class CDSearchViewController: NSViewController, NSTableViewDataSource, NSTextFie
             popover = NSPopover()
             popover.behavior = .transient
             popover.contentViewController = self
+            popover.delegate = self
             popover.show(relativeTo: rect, of: view, preferredEdge: edge)
             
         }
@@ -94,6 +101,10 @@ class CDSearchViewController: NSViewController, NSTableViewDataSource, NSTextFie
         self.filteredResults = self.allResults
         self.tableView?.reloadData()
         
+    }
+    
+    func popoverShouldDetach(_ popover: NSPopover) -> Bool {
+        return true
     }
     
 }

@@ -13,8 +13,7 @@ class CDSearchResult: NSObject {
     public init(snippet: CDSnippetTableViewCell) {
         super.init()
         
-        self.actualTitle = "Snippet: " + snippet.title
-        self.displayTitle = snippet.title
+        self.title = snippet.title
         self.type = .snippet
         self.value = snippet.code
         self.image = snippet.image
@@ -24,8 +23,7 @@ class CDSearchResult: NSObject {
     public init(recentFileUrl url: URL) {
         super.init()
         
-        self.actualTitle = "Recent File: " + url.lastPathComponent
-        self.displayTitle = url.lastPathComponent
+        self.title = url.lastPathComponent
         self.type = .recentFiles
         self.value = url.path
         self.image = NSWorkspace.shared.icon(forFile: self.value as! String)
@@ -35,12 +33,72 @@ class CDSearchResult: NSObject {
     public init(helpWithTitle title: String, content: String) {
         super.init()
         
-        self.actualTitle = "Help: " + title
-        self.displayTitle = title
+        self.title = title
         self.value = content
         self.image = NSImage(named: "Help")!
         self.type = .help
         
+    }
+    
+    func containsKeyword(word: String) -> Bool {
+        
+        var string = word.trimmingCharacters(in: .whitespaces)
+        var type: Type = .none
+        if string.hasPrefix("Help:") {
+            string = string.replacingOccurrences(of: "Help:", with: "")
+            type = .help
+        } else if string.hasPrefix("Snippet:") || string.hasPrefix("Code Snippet:") {
+            string = string.replacingOccurrences(of: "Code Snippet:", with: "").replacingOccurrences(of: "Snippet:", with: "")
+            type = .snippet
+        } else if string.hasPrefix("Recent File:") || string.hasPrefix("File:") {
+            string = string.replacingOccurrences(of: "Recent File:", with: "").replacingOccurrences(of: "File:", with: "")
+            type = .recentFiles
+        }
+        
+        let words = string.components(separatedBy: " ")
+        print(words)
+        
+        if type == .none {
+            
+            switch self.type {
+                
+                case .snippet, .recentFiles, .help:
+                    for word in words {
+                        guard (self.value as! String).contains(word) || self.title.contains(word) || word == "" else {
+                            return false
+                        }
+                    }
+                    return true
+                    
+                default: break
+                    
+            }
+            
+        } else {
+            
+            if type != self.type {
+                return false
+            } else {
+                
+                switch self.type {
+                    
+                    case .snippet, .recentFiles, .help:
+                        for word in words {
+                            guard (self.value as! String).contains(word) || self.title.contains(word) || word == "" else {
+                                return false
+                            }
+                        }
+                        return true
+                        
+                    default: break
+                        
+                }
+                
+            }
+            
+        }
+        
+        return true
     }
     
     
@@ -53,8 +111,7 @@ class CDSearchResult: NSObject {
     }
     
     var type: Type = .none
-    var actualTitle: String = ""
-    var displayTitle: String = ""
+    var title: String = ""
     var value: Any!
     var image: NSImage!
     
