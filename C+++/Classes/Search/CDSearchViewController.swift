@@ -16,6 +16,7 @@ class CDSearchViewController: NSViewController, NSTableViewDataSource, NSTextFie
     
     var popover: NSPopover!
     var isDarkMode = false
+    var currentFileContent = ""
     
     var allResults = [CDSearchResult]()
     var filteredResults = [CDSearchResult]()

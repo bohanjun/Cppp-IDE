@@ -83,6 +83,7 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
                 insertNewline(self)
                 deleteBackward(self)
                 super.insertText("}", replacementRange: replacementRange)
+                self.showFindIndicator(for: NSMakeRange(self.selectedRange.location - 1, 1))
                 self.selectedRange.location = location
                 return
             
@@ -92,6 +93,7 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
         
         super.insertText(right, replacementRange: replacementRange)
         self.selectedRange.location -= 1
+        self.showFindIndicator(for: NSMakeRange(self.selectedRange.location, 1))
         
     }
     
