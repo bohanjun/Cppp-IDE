@@ -63,7 +63,7 @@ class CDSearchResult: NSObject {
                 
                 case .snippet, .recentFiles, .help:
                     for word in words {
-                        guard (self.value as! String).contains(word) || self.title.contains(word) || word == "" else {
+                        guard (self.value as! String).contains(word) || self.title.lowercased().contains(word.lowercased()) || word == "" else {
                             return false
                         }
                     }
@@ -83,7 +83,7 @@ class CDSearchResult: NSObject {
                     
                     case .snippet, .recentFiles, .help:
                         for word in words {
-                            guard (self.value as! String).contains(word) || self.title.contains(word) || word == "" else {
+                            guard (self.value as! String).contains(word) || self.title.lowercased().contains(word.lowercased()) || word == "" else {
                                 return false
                             }
                         }
@@ -129,6 +129,9 @@ class CDSearchResult: NSObject {
                 }
                 codeEditor.didChangeText()
                 codeEditor.isEditable = false
+                codeEditor.maxSize = NSMakeSize(10000000, 10000000)
+                codeEditor.isVerticallyResizable = true
+                codeEditor.isHorizontallyResizable = true
                 
                 let scrollView = NSScrollView(frame: view.bounds)
                 scrollView.hasVerticalScroller = true
@@ -145,6 +148,22 @@ class CDSearchResult: NSObject {
                 imageView.alignment = .center
                 imageView.imageScaling = .scaleProportionallyDown
                 view.addSubview(imageView)
+                
+            case .help:
+                let textView = NSTextView(frame: view.bounds)
+                textView.string = self.title + "\n\n" + (self.value as! String)
+                textView.drawsBackground = false
+                textView.font = NSFont.systemFont(ofSize: 16.0, weight: .thin)
+                textView.textStorage?.addAttribute(.font, value: NSFont.systemFont(ofSize: 20.0, weight: .bold), range: NSMakeRange(0, self.title.count))
+                textView.isEditable = false
+                
+                let scrollView = NSScrollView(frame: view.bounds)
+                scrollView.hasVerticalScroller = true
+                scrollView.hasHorizontalScroller = true
+                scrollView.drawsBackground = false
+                scrollView.documentView = textView
+                
+                view.addSubview(scrollView)
                 
             default: break
         }
