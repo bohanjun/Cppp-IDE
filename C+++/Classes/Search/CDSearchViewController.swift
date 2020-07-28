@@ -16,7 +16,7 @@ class CDSearchViewController: NSViewController, NSTableViewDataSource, NSTextFie
     
     var popover: NSPopover!
     var isDarkMode = false
-    var currentFileContent = ""
+    var delegate: CDSearchViewControllerDelegate!
     
     var allResults = [CDSearchResult]()
     var filteredResults = [CDSearchResult]()
@@ -31,7 +31,10 @@ class CDSearchViewController: NSViewController, NSTableViewDataSource, NSTextFie
                     self.filteredResults.append(i)
                 }
             }
+            self.filteredResults.append(CDSearchResult(searchInFileForWord: self.textField.stringValue))
             self.tableView.reloadData()
+            self.tableViewSelectionDidChange(Notification(name: NSNotification.Name("")))
+            
             
         }
         
@@ -57,6 +60,34 @@ class CDSearchViewController: NSViewController, NSTableViewDataSource, NSTextFie
             self.filteredResults[self.tableView.selectedRow].loadResultDetailInView(view: self.detailView, isDarkMode: self.isDarkMode)
         }
     }
+    
+    
+    @IBAction func tableViewClicked(_ sender: Any?) {
+        
+        let result = self.filteredResults[self.tableView.selectedRow]
+        
+        switch result.type {
+            
+            case .fileContent:
+                self.delegate?.searchViewController(self, shouldSearchForWordInTextView: self.textField.stringValue)
+                self.popover?.close()
+                
+            case .recentFiles:
+                NSWorkspace.shared.openFile(result.value as! String)
+                self.popover?.close()
+                
+            case .snippet:
+                self.delegate?.searchViewController(self, shouldInsertCodeSnippetWithCode: result.value as! String)
+                self.popover?.close()
+                
+            default:
+                break
+            
+        }
+        
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,6 +131,7 @@ class CDSearchViewController: NSViewController, NSTableViewDataSource, NSTextFie
             self.allResults.append(CDSearchResult(helpWithTitle: help.key, content: help.value))
         }
         self.filteredResults = self.allResults
+        self.filteredResults.append(CDSearchResult(searchInFileForWord: ""))
         self.tableView?.reloadData()
         
     }

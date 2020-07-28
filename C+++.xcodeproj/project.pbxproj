@@ -55,6 +55,8 @@
 		1872603424AF4FE8004C69B2 /* CDDiagnosticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1872603224AF4FE8004C69B2 /* CDDiagnosticsViewController.swift */; };
 		1872603524AF4FE8004C69B2 /* CDDiagnosticsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1872603324AF4FE8004C69B2 /* CDDiagnosticsViewController.xib */; };
 		187527B0247A6A1900A7522A /* CDLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187527AF247A6A1900A7522A /* CDLaunchViewController.swift */; };
+		1881D5EF24D007C20082F2C4 /* CDSearchViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1881D5EE24D007C20082F2C4 /* CDSearchViewControllerDelegate.swift */; };
+		1881D5F124D011DC0082F2C4 /* CDMainViewController+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1881D5F024D011DC0082F2C4 /* CDMainViewController+Search.swift */; };
 		188DF6F424AF0C5400D0DA17 /* CDAddSymbolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188DF6F224AF0C5400D0DA17 /* CDAddSymbolViewController.swift */; };
 		188DF6F524AF0C5400D0DA17 /* CDAddSymbolViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 188DF6F324AF0C5400D0DA17 /* CDAddSymbolViewController.xib */; };
 		188DF6F724AF0F7700D0DA17 /* CDMainViewController+AddSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188DF6F624AF0F7700D0DA17 /* CDMainViewController+AddSymbol.swift */; };
@@ -277,6 +279,8 @@
 		1876363F24CAB7F600F5DEFE /* _config.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = _config.yml; sourceTree = "<group>"; };
 		1876364024CAB81700F5DEFE /* index.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = index.md; sourceTree = "<group>"; };
 		187EF969248C86DD0023F381 /* C+++-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "C+++-Bridging-Header.h"; sourceTree = "<group>"; };
+		1881D5EE24D007C20082F2C4 /* CDSearchViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSearchViewControllerDelegate.swift; sourceTree = "<group>"; };
+		1881D5F024D011DC0082F2C4 /* CDMainViewController+Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMainViewController+Search.swift"; sourceTree = "<group>"; };
 		188DF6F224AF0C5400D0DA17 /* CDAddSymbolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDAddSymbolViewController.swift; sourceTree = "<group>"; };
 		188DF6F324AF0C5400D0DA17 /* CDAddSymbolViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CDAddSymbolViewController.xib; sourceTree = "<group>"; };
 		188DF6F624AF0F7700D0DA17 /* CDMainViewController+AddSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMainViewController+AddSymbol.swift"; sourceTree = "<group>"; };
@@ -500,8 +504,8 @@
 			children = (
 				18E0B01C242C52650062049C /* Document */,
 				18B1859824699A2800B579AD /* Main.storyboard */,
-				185CD64024CC607C00A9511B /* Search */,
 				18B1859524698AA400B579AD /* Main View Controller */,
+				185CD64024CC607C00A9511B /* Search */,
 				1872603124AF4FD2004C69B2 /* Diagnostics */,
 				188DF6F124AF0C2200D0DA17 /* Add Symbol View Controller */,
 				18FC05442487B96200F33CE2 /* Test */,
@@ -544,6 +548,7 @@
 			isa = PBXGroup;
 			children = (
 				185CD64124CC639500A9511B /* CDSearchViewController.swift */,
+				1881D5EE24D007C20082F2C4 /* CDSearchViewControllerDelegate.swift */,
 				182796FE24CE63A60058F429 /* CDSearchResult.swift */,
 				185CD64324CC642D00A9511B /* CDSearchViewController.xib */,
 			);
@@ -739,6 +744,7 @@
 				183BE91224AEBC49000F60A0 /* CDMainViewController+SnippetTableView.swift */,
 				183BE91024AEB1C4000F60A0 /* CDMainViewController+Diagnostics.swift */,
 				188DF6F624AF0F7700D0DA17 /* CDMainViewController+AddSymbol.swift */,
+				1881D5F024D011DC0082F2C4 /* CDMainViewController+Search.swift */,
 				186AC7F224A47BD900F6B682 /* NSViewController+NSUserNotificationCenterDelegate.swift */,
 			);
 			path = "Main View Controller";
@@ -1009,6 +1015,7 @@
 				1868EBD7244AF934005467B2 /* CDCodeEditorDelegate.swift in Sources */,
 				1860EC3324839A8B0066DE64 /* CDDocumentController.swift in Sources */,
 				18B3C78224282C1F00F4CA14 /* CDMainViewController.swift in Sources */,
+				1881D5EF24D007C20082F2C4 /* CDSearchViewControllerDelegate.swift in Sources */,
 				182796FF24CE63A60058F429 /* CDSearchResult.swift in Sources */,
 				181F2BD024AC78C700C4B217 /* CKToken+Private.m in Sources */,
 				18FC028A2492624F004551B1 /* CDUpdateManager(NSViewController Extension).swift in Sources */,
@@ -1053,6 +1060,7 @@
 				18FC054B2487BA3600F33CE2 /* CDTestViewController.swift in Sources */,
 				18D4DD6F246A2C9E00B97F32 /* CDProjectTableView.swift in Sources */,
 				18FC02882490E612004551B1 /* CDUpdateManager.swift in Sources */,
+				1881D5F124D011DC0082F2C4 /* CDMainViewController+Search.swift in Sources */,
 				18D4DD71246A303400B97F32 /* CDProjectTableViewCell.swift in Sources */,
 				1895B51C24A716E60019580D /* CDFlippedView.swift in Sources */,
 				18D4DD6D246A2C5100B97F32 /* CDProjectViewController.swift in Sources */,

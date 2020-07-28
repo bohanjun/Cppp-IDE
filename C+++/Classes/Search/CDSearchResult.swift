@@ -40,6 +40,17 @@ class CDSearchResult: NSObject {
         
     }
     
+    convenience public init(searchInFileForWord word: String) {
+        
+        self.init(helpWithTitle: "Search for \"\(word)\" in your file", content: "Or you can use Command+F.")
+        if word == "" {
+            self.title = "Search in your file"
+        }
+        self.type = .fileContent
+        self.image = NSImage(named: NSImage.touchBarSearchTemplateName)!
+        
+    }
+    
     func containsKeyword(word: String) -> Bool {
         
         var string = word.trimmingCharacters(in: .whitespaces)
@@ -149,7 +160,7 @@ class CDSearchResult: NSObject {
                 imageView.imageScaling = .scaleProportionallyDown
                 view.addSubview(imageView)
                 
-            case .help:
+            case .help, .fileContent:
                 let textView = NSTextView(frame: view.bounds)
                 textView.string = self.title + "\n\n" + (self.value as! String)
                 textView.drawsBackground = false

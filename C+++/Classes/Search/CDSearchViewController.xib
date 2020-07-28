@@ -76,6 +76,7 @@
                                     </tableColumn>
                                 </tableColumns>
                                 <connections>
+                                    <action trigger="doubleAction" selector="tableViewClicked:" target="-2" id="ApG-gA-iQo"/>
                                     <outlet property="dataSource" destination="-2" id="1d5-Iw-ack"/>
                                     <outlet property="delegate" destination="-2" id="zrp-J9-gti"/>
                                 </connections>

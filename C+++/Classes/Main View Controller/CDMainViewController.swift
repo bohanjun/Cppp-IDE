@@ -219,12 +219,5 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
         document?.objectDidEndEditing(self)
     }
     
-    @IBAction func showSearchView(_ sender: NSButton) {
-        
-        let vc = CDSearchViewController()
-        vc.openInPopover(relativeTo: sender.bounds, of: sender, preferredEdge: .minX)
-        
-    }
-    
     
 }
