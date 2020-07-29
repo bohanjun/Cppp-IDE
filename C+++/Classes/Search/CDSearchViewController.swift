@@ -127,6 +127,7 @@ class CDSearchViewController: NSViewController, NSTableViewDataSource, NSTextFie
         for url in NSDocumentController.shared.recentDocumentURLs {
             self.allResults.append(CDSearchResult(recentFileUrl: url))
         }
+        self.allResults.append(CDSearchResult(helpWithTitle: "How to use the C+++ Search function?", content: "Just type. Currently, you can search for code snippets, help and recently opened files.\n\nIf you want to search for a code snippet, for example, you can type \"Snippet: DFS\" or \"Code Snippet: DFS\". You can also type \"Recent File: a.cpp\" to search a recently opened file whose name is a.cpp.\n\nYou can double-click the button on the left, to add a snippet to the code, open a recent file, or do other relevant operations.\n"))
         for help in NSApplication.cpppHelp {
             self.allResults.append(CDSearchResult(helpWithTitle: help.key, content: help.value))
         }

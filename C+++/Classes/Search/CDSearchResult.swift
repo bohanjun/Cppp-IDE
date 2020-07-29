@@ -42,7 +42,7 @@ class CDSearchResult: NSObject {
     
     convenience public init(searchInFileForWord word: String) {
         
-        self.init(helpWithTitle: "Search for \"\(word)\" in your file", content: "Or you can use Command+F.")
+        self.init(helpWithTitle: "Search for \"\(word)\" in your file", content: "Double-click the button on the left or you can use Command + F.")
         if word == "" {
             self.title = "Search in your file"
         }
