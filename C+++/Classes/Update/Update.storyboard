@@ -43,7 +43,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pNy-NV-4H3">
-                                <rect key="frame" x="111" y="227" width="233" height="26"/>
+                                <rect key="frame" x="111" y="225" width="233" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="An update is available." id="luH-B1-F5h">
                                     <font key="font" metaFont="systemBold" size="22"/>
@@ -126,7 +126,7 @@
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="AppIcon" id="TTX-TW-8Hd"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8f2-pC-l7M">
-                                <rect key="frame" x="111" y="177" width="259" height="38"/>
+                                <rect key="frame" x="111" y="179" width="259" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" title="The latest version is 3.0 and you are using C+++ 2.0." id="GjU-X6-yNk">
                                     <font key="font" metaFont="systemLight" size="13"/>
