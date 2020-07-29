@@ -21,27 +21,6 @@ let aqua = NSAppearance(named: .aqua)
 
 
 
-extension NSViewController {
-    
-    func showAlert(_ title: String, _ message: String) {
-        
-        guard self.view.window != nil else {
-            return
-        }
-        
-        let alert = NSAlert()
-        alert.messageText = title
-        alert.alertStyle = .informational
-        alert.addButton(withTitle: "OK")
-        alert.informativeText = message
-        alert.beginSheetModal(for: self.view.window!, completionHandler: { returnCode in })
-        
-    }
-    
-}
-
-
-
 class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDelegate, NSSplitViewDelegate {
     
     

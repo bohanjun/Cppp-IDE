@@ -1,16 +1,34 @@
 //
-//  NSViewController+NSUserNotificationCenterDelegate.swift
+//  NSViewController Extension.swift
 //  C+++
 //
 //  Created by 23786 on 2020/6/25.
 //  Copyright © 2020 Zhu Yixuan. All rights reserved.
 //
 
-
-import AVFoundation
 import NotificationCenter
 
-extension NSViewController : NSUserNotificationCenterDelegate {
+extension NSViewController {
+    
+    func showAlert(_ title: String, _ message: String) {
+        
+        guard self.view.window != nil else {
+            return
+        }
+        
+        let alert = NSAlert()
+        alert.messageText = title
+        alert.alertStyle = .informational
+        alert.addButton(withTitle: "OK")
+        alert.informativeText = message
+        alert.beginSheetModal(for: self.view.window!, completionHandler: { returnCode in })
+        
+    }
+    
+}
+
+
+extension NSObject: NSUserNotificationCenterDelegate {
     
     func sendUserNotification(title: String, subtitle: String) {
         let userNotification = NSUserNotification()
