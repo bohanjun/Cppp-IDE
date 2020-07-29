@@ -24,7 +24,11 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
     var allowsSyntaxHighlighting: Bool = true
     var allowsCodeCompletion: Bool = true
     
-    
+    var translationUnit: CKTranslationUnit {
+        
+        return CKTranslationUnit(text: self.string, language: CKLanguageCPP)
+        
+    }
     
     
     /// When the text changes, highlight the text.
@@ -137,7 +141,7 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
             
             let line = self.string.lineNumber(at: self.selectedRange.location) ?? 0
             let column = self.string.columnNumber(at: self.selectedRange.location)
-            let results = CKTranslationUnit(text: self.string, language: CKLanguageCPP).completionResults(forLine: UInt(line), column: UInt(column))
+            let results = self.translationUnit.completionResults(forLine: UInt(line), column: UInt(column))
             
             if results != nil {
                 

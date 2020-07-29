@@ -66,7 +66,7 @@ extension CDMainViewController: CDDiagnosticsViewControllerDelegate {
     private func getDiagnostics() {
         
         self.diagnostics = [CKDiagnostic]()
-        for item in CKTranslationUnit(text: self.mainTextView.string, language: CKLanguageCPP).diagnostics! {
+        for item in self.mainTextView.translationUnit.diagnostics! {
             
             if let diagnostic = item as? CKDiagnostic {
                 
