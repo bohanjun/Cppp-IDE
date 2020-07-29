@@ -86,6 +86,12 @@ class CDLaunchViewController: NSViewController, NSTableViewDataSource, NSTableVi
         
     }
     
+    @IBAction func tableViewClicked(_ sender: Any?) {
+        
+        NSWorkspace.shared.open(NSDocumentController.shared.recentDocumentURLs[self.recentFilesTableView.selectedRow])
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
