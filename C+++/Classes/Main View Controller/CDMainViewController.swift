@@ -33,9 +33,6 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
     /// - if it is false, the appearance is aqua.
     var isDarkMode: Bool = true
     
-    /// Whether the compile view is shown.
-    var right = true
-    
     
     
     @IBOutlet weak var mainTextView: CDCodeEditor!
@@ -48,6 +45,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
     @IBOutlet weak var charactersLabel: NSTextField!
     @IBOutlet weak var compileInfo: NSTextView!
     @IBOutlet weak var compileView: NSView!
+    @IBOutlet weak var compileInfoView: NSView!
     @IBOutlet weak var leftView: NSView!
     @IBOutlet weak var bigSplitView: NSSplitView!
     @IBOutlet weak var smallSplitView: NSSplitView!
@@ -196,6 +194,43 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
 
     func textDidEndEditing(_ notification: Notification) {
         document?.objectDidEndEditing(self)
+    }
+    
+    
+    
+    @IBAction func enterSimpleMode(_ sender: Any?) {
+        
+        self.leftView.isHidden = true
+        self.rightConstraint.constant = 0.0
+        self.compileView.isHidden = true
+        self.compileInfoView.isHidden = true
+        
+    }
+    
+    @IBAction func toggleLeftSidebar(_ sender: Any?) {
+        if self.leftView.isHidden {
+            self.leftView.isHidden = false
+        } else {
+            self.leftView.isHidden = true
+        }
+    }
+    
+    @IBAction func toggleCompileInfoView(_ sender: Any?) {
+        if self.compileInfoView.isHidden {
+            self.compileInfoView.isHidden = false
+        } else {
+            self.compileInfoView.isHidden = true
+        }
+    }
+    
+    @IBAction func toggleCompileView(_ sender: Any?) {
+        if self.compileView.isHidden {
+            self.compileView.isHidden = false
+            self.rightConstraint.constant = 253.0
+        } else {
+            self.compileView.isHidden = true
+            self.rightConstraint.constant = 0.0
+        }
     }
     
     

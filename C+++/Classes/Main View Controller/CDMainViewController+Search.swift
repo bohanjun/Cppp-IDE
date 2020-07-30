@@ -10,11 +10,22 @@ import Cocoa
 
 extension CDMainViewController: CDSearchViewControllerDelegate {
     
-    @IBAction func showSearchView(_ sender: NSButton) {
+    @IBAction func showSearchView(_ sender: Any?) {
         
         let vc = CDSearchViewController()
         vc.delegate = self
-        vc.openInPopover(relativeTo: sender.bounds, of: sender, preferredEdge: .minX)
+        let wc = NSWindowController()
+        let window = NSWindow()
+        window.contentViewController = vc
+        window.styleMask = .init(arrayLiteral: .titled, .fullSizeContentView)
+        window.titlebarAppearsTransparent = true
+        window.contentView = vc.view
+        window.isMovableByWindowBackground = true
+        window.delegate = vc
+        window.center()
+        wc.contentViewController = vc
+        wc.window = window
+        wc.showWindow(self)
         
     }
     

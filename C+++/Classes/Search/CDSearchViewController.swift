@@ -8,13 +8,12 @@
 
 import Cocoa
 
-class CDSearchViewController: NSViewController, NSTableViewDataSource, NSTextFieldDelegate, NSTableViewDelegate, NSPopoverDelegate {
+class CDSearchViewController: NSViewController, NSTableViewDataSource, NSTextFieldDelegate, NSTableViewDelegate, NSWindowDelegate {
     
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var detailView: NSView!
     @IBOutlet weak var textField: NSTextField!
     
-    var popover: NSPopover!
     var isDarkMode = false
     var delegate: CDSearchViewControllerDelegate!
     
@@ -70,15 +69,15 @@ class CDSearchViewController: NSViewController, NSTableViewDataSource, NSTextFie
             
             case .fileContent:
                 self.delegate?.searchViewController(self, shouldSearchForWordInTextView: self.textField.stringValue)
-                self.popover?.close()
+                self.view.window?.close()
                 
             case .recentFiles:
                 NSWorkspace.shared.openFile(result.value as! String)
-                self.popover?.close()
+                self.view.window?.close()
                 
             case .snippet:
                 self.delegate?.searchViewController(self, shouldInsertCodeSnippetWithCode: result.value as! String)
-                self.popover?.close()
+                self.view.window?.close()
                 
             default:
                 break
@@ -94,27 +93,16 @@ class CDSearchViewController: NSViewController, NSTableViewDataSource, NSTextFie
         
         self.textField?.becomeFirstResponder()
         if #available(OSX 10.14, *) {
-            self.isDarkMode = true
-            self.popover?.appearance = darkAqua
+            switch self.view.effectiveAppearance.name {
+                case .aqua, .vibrantLight: self.isDarkMode = false
+                case .darkAqua, .vibrantDark: self.isDarkMode = true
+                default: self.isDarkMode = false
+            }
         } else {
             self.isDarkMode = false
-            self.popover?.appearance = aqua
         }
+        
         self.allResults[self.tableView.selectedRow].loadResultDetailInView(view: self.detailView, isDarkMode: self.isDarkMode)
-        
-    }
-    
-    func openInPopover(relativeTo rect: NSRect, of view: NSView, preferredEdge edge: NSRectEdge) {
-        
-        if popover == nil {
-            
-            popover = NSPopover()
-            popover.behavior = .transient
-            popover.contentViewController = self
-            popover.delegate = self
-            popover.show(relativeTo: rect, of: view, preferredEdge: edge)
-            
-        }
         
     }
     
@@ -137,8 +125,12 @@ class CDSearchViewController: NSViewController, NSTableViewDataSource, NSTextFie
         
     }
     
-    func popoverShouldDetach(_ popover: NSPopover) -> Bool {
-        return true
+    func windowDidResignKey(_ notification: Notification) {
+        self.view.window?.close()
+    }
+    
+    func windowDidResignMain(_ notification: Notification) {
+        self.view.window?.close()
     }
     
 }

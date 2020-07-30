@@ -177,6 +177,7 @@ class CDSearchResult: NSObject {
                 view.addSubview(scrollView)
                 
             default: break
+                
         }
         
     }
