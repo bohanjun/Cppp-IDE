@@ -38,7 +38,7 @@
         <scene sceneID="S2D-UC-gXO">
             <objects>
                 <viewController id="gn9-Bp-kkf" customClass="CDUpdateViewController" customModule="C___" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="ElJ-pj-xiv">
+                    <view key="view" id="ElJ-pj-xiv" customClass="NSVisualEffectView">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
