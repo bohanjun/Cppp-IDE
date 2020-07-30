@@ -156,5 +156,6 @@ Code Snippet is a small portion of re-usable source code. They allow you to avoi
 - Create the Project
 - Add Compiling Function
 
+----
 
-> **You are the ![](http://www.hit-counts.com/counter.php?t=MTQ1MDQ2NA==)th to view this page.**
+> **You are the ![](http://www.hit-counts.com/counter.php?t=MTQ1MDQ2NA==)th to view this page. Thank you!**
