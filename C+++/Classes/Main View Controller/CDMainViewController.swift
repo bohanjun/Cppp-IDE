@@ -79,20 +79,10 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
         self.mainTextView.codeEditorDelegate = self
         self.mainTextView.gutterDelegate = self.lineNumberTextView
         self.mainTextView.scrollView = self.scrollViewOfTextView
-        
-        // judge if there has already been a saved settings.
-        if CDSettings.shared != nil && CDCompileSettings.shared != nil {
             
-            // set the font of the text view
-            self.mainTextView.font = CDSettings.shared.font
-            self.mainTextView.highlightr?.theme.setCodeFont(CDSettings.shared.font)
-            
-        } else {
-            
-            // create default settings data
-            initDefaultData()
-            
-        }
+        // set the font of the text view
+        self.mainTextView.font = CDSettings.shared.font
+        self.mainTextView.highlightr?.theme.setCodeFont(CDSettings.shared.font)
         
         self.compileInfo.font = menloFont(ofSize: 13.0)
         
@@ -126,7 +116,9 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
             
             self.linesLabel.stringValue = "\(lines) lines"
             self.charactersLabel.stringValue = "\(characters) characters"
-            self.updateDiagnostics()
+            if CDSettings.shared.showLiveIssues {
+                self.updateDiagnostics()
+            }
             
         }
         

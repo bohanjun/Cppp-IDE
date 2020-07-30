@@ -36,7 +36,7 @@ extension NSApplication {
     }
     
     @IBAction func showGithub(_ sender: Any) {
-        NSWorkspace.shared.open(URL(string: "https://github.com/23786/cppp-ide")!)
+        NSWorkspace.shared.open(URL(string: "https://github.com/23786/Cppp-IDE/")!)
     }
     
     @IBAction func _showHelp(_ sender: Any) {

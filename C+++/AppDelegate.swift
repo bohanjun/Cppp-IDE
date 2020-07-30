@@ -15,7 +15,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
-        NSApplication.shared.checkUpdate(alsoShowAlertWhenUpToDate: false)
+        if CDSettings.shared == nil || CDCompileSettings.shared == nil {
+            initDefaultData()
+        }
+        if CDSettings.shared.checkUpdateAfterLaunching {
+            NSApplication.shared.checkUpdate(alsoShowAlertWhenUpToDate: false)
+        }
         
     }
 

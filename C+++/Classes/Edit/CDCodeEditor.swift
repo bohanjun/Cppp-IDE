@@ -49,7 +49,9 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
         
         DispatchQueue.main.async {
             
-            self.complete(self)
+            if CDSettings.shared.codeCompletion {
+                self.complete(self)
+            }
             self.codeEditorDelegate?.codeEditorDidChangeText!(lines: self.textStorage?.paragraphs.count ?? 0, characters: self.textStorage?.characters.count ?? 0)
             self.gutterDelegate?.codeEditorDidChangeText!(lines: (self.textStorage?.paragraphs.count)!, currentLine: self.string.lineNumber(at: self.selectedRange.location)!)
             
@@ -270,10 +272,6 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
         self.textContainer?.size = NSSize(width: CGFloat(Int.max), height: CGFloat(Int.max))
         self.textContainer?.widthTracksTextView = false
         
-        if CDSettings.shared == nil {
-            initDefaultData()
-        }
-        
         self.highlightr!.setTheme(to: CDSettings.shared.lightThemeName)
         self.highlightr!.theme.setCodeFont(CDSettings.shared.font)
         
@@ -284,10 +282,6 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
         
         self.textContainer?.size = NSSize(width: CGFloat(Int.max), height: CGFloat(Int.max))
         self.textContainer?.widthTracksTextView = false
-        
-        if CDSettings.shared == nil {
-            initDefaultData()
-        }
         
         self.highlightr!.setTheme(to: CDSettings.shared.lightThemeName)
         self.highlightr!.theme.setCodeFont(CDSettings.shared.font)

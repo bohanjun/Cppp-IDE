@@ -17,13 +17,13 @@ public func initDefaultData() {
     }
     
     // Create the default data.
-    CDSettings.shared = CDSettings("Courier", 15, "Xcode", "Agate", true)!
+    CDSettings.shared = CDSettings("Courier", 15, "Xcode", "Agate", true, true, true, true)!
     CDCompileSettings.shared = CDCompileSettings("g++", "")!
     
 }
 
 @objc protocol CDSettingsViewDelegate {
-    func didSet()
+    func settingsViewControllerDidSet()
 }
 
 class CDSettingsViewController: NSViewController {
@@ -34,6 +34,9 @@ class CDSettingsViewController: NSViewController {
     @IBOutlet weak var dark: NSPopUpButton!
     @IBOutlet weak var light: NSPopUpButton!
     @IBOutlet weak var allowsCompletion: NSButton!
+    @IBOutlet weak var showsCompletionList: NSButton!
+    @IBOutlet weak var checksUpdate: NSButton!
+    @IBOutlet weak var liveIssues: NSButton!
     
     @IBOutlet weak var compiler: NSComboBox!
     @IBOutlet weak var arguments: NSTextField!
@@ -50,6 +53,9 @@ class CDSettingsViewController: NSViewController {
         settings.darkThemeName = self.dark.titleOfSelectedItem ?? "Agate"
         settings.lightThemeName = self.light.titleOfSelectedItem ?? "Xcode"
         settings.autoComplete = self.allowsCompletion.state == .on
+        settings.codeCompletion = self.showsCompletionList.state == .on
+        settings.checkUpdateAfterLaunching = self.checksUpdate.state == .on
+        settings.showLiveIssues = self.checksUpdate.state == .on
         
         let compileSettings = CDCompileSettings.shared!
         compileSettings.compiler = self.compiler.stringValue
@@ -58,7 +64,7 @@ class CDSettingsViewController: NSViewController {
         CDSettings.shared = settings
         CDCompileSettings.shared = compileSettings
         
-        self.delegate?.didSet()
+        self.delegate?.settingsViewControllerDidSet()
         
         self.dismiss(self)
         
@@ -86,7 +92,15 @@ class CDSettingsViewController: NSViewController {
     
     @IBAction func defaultSettings(_ sender: Any?) {
         
-        self.showAlert("Recover to default settings", "Please delete files named \"Settings\" and \"CompileSettings\" at \"~/Library/C+++/\" and restart C+++.")
+        self.sendUserNotification(title: "Recover to default settings", subtitle: "C+++ will restart.")
+        CDFileCompiler.shell("rm -rf ~/Library/C+++/Settings")
+        CDFileCompiler.shell("rm -rf ~/Library/C+++/CompileSettings")
+        let process = Process()
+        process.launchPath = "/bin/bash"
+        process.arguments = ["-c", "sleep 1.0; open \(Bundle.main.bundlePath)"]
+        process.launch()
+        print("launched")
+        NSApplication.shared.stop(sender)
         
     }
     
@@ -104,6 +118,24 @@ class CDSettingsViewController: NSViewController {
                 self.allowsCompletion.state = .on
             } else {
                 self.allowsCompletion.state = .off
+            }
+            
+            if savedData.codeCompletion {
+                self.showsCompletionList.state = .on
+            } else {
+                self.showsCompletionList.state = .off
+            }
+            
+            if savedData.checkUpdateAfterLaunching {
+                self.checksUpdate.state = .on
+            } else {
+                self.checksUpdate.state = .off
+            }
+            
+            if savedData.checkUpdateAfterLaunching {
+                self.checksUpdate.state = .on
+            } else {
+                self.checksUpdate.state = .off
             }
             
         }

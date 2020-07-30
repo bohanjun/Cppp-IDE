@@ -22,7 +22,7 @@ extension CDMainViewController : CDSettingsViewDelegate {
         
     }
     
-    func didSet() {
+    func settingsViewControllerDidSet() {
         
         // Theme
         switch isDarkMode {
