@@ -10,8 +10,20 @@ import Cocoa
 
 class CDCodeEditorLineNumberView: CDFlippedView {
     
+    @IBOutlet weak var codeEditor: CDCodeEditor!
     var buttonsArray = [CDCodeEditorLineNumberViewButton]()
     var debugLines = [Int]()
+    var shouldReloadAfterChangingFrame: Bool = true
+    
+    override var frame: NSRect {
+        didSet {
+            DispatchQueue.main.async {
+                if self.shouldReloadAfterChangingFrame && oldValue != self.frame {
+                    self.draw(self.codeEditor.lineRects)
+                }
+            }
+        }
+    }
     
     func draw(_ array: [NSRect]) {
         
@@ -40,8 +52,10 @@ class CDCodeEditorLineNumberView: CDFlippedView {
             self.buttonsArray.append(button)
         }
         
+        self.shouldReloadAfterChangingFrame = false
         self.frame.size.height = (array.last?.origin.y ?? 0) + (array.last?.height ?? 0)
         self.superview?.frame.size.height = (array.last?.origin.y ?? 0) + (array.last?.height ?? 0)
+        self.shouldReloadAfterChangingFrame = true
         
     }
     

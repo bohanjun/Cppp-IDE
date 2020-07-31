@@ -1902,6 +1902,9 @@ Gw
                                                                             <subviews>
                                                                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="CpK-1w-j5l" customClass="CDCodeEditorLineNumberView" customModule="C___" customModuleProvider="target">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="40" height="543"/>
+                                                                                    <connections>
+                                                                                        <outlet property="codeEditor" destination="E0u-iA-KeT" id="zfO-PT-XLi"/>
+                                                                                    </connections>
                                                                                 </customView>
                                                                             </subviews>
                                                                             <constraints>
