@@ -20,7 +20,4 @@ protocol CDCodeEditorDelegate {
     @objc
     optional func codeEditorDidChangeText(lines: Int, currentLine: Int)
     
-    @objc
-    optional func codeEditorDidChangeText(lineRects: [NSRect])
-    
 }

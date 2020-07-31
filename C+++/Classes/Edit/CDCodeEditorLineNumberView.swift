@@ -10,7 +10,7 @@ import Cocoa
 
 class CDCodeEditorLineNumberView: CDFlippedView {
     
-    var buttonsArray = [CDCodeEditorLineNumbetViewButton]()
+    var buttonsArray = [CDCodeEditorLineNumberViewButton]()
     var debugLines = [Int]()
     
     func draw(_ array: [NSRect]) {
@@ -20,10 +20,10 @@ class CDCodeEditorLineNumberView: CDFlippedView {
             view.removeFromSuperview()
         }
         
-        self.buttonsArray = [CDCodeEditorLineNumbetViewButton]()
+        self.buttonsArray = [CDCodeEditorLineNumberViewButton]()
         
         for item in array {
-            let button = CDCodeEditorLineNumbetViewButton(frame: NSMakeRect(2.0, item.origin.y, 34.0, item.height))
+            let button = CDCodeEditorLineNumberViewButton(frame: NSMakeRect(2.0, item.origin.y, 34.0, item.height))
             button.isBordered = false
             button.font = NSFont(name: CDSettings.shared.fontName, size: CGFloat(CDSettings.shared.fontSize) * 0.92)
             button.target = self
@@ -45,7 +45,7 @@ class CDCodeEditorLineNumberView: CDFlippedView {
         
     }
     
-    @objc func buttonClicked(_ sender: CDCodeEditorLineNumbetViewButton) {
+    @objc func buttonClicked(_ sender: CDCodeEditorLineNumberViewButton) {
         sender.markAsDebugLine()
     }
     

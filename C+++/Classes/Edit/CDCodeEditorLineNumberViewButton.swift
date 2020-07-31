@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class CDCodeEditorLineNumbetViewButton: NSButton {
+class CDCodeEditorLineNumberViewButton: NSButton {
     
     var backgroundColor: NSColor!
     

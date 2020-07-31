@@ -1800,6 +1800,7 @@ Gw
                                                                                     </dictionary>
                                                                                 </binding>
                                                                                 <outlet property="delegate" destination="5gI-5U-AMq" id="DFD-bd-csP"/>
+                                                                                <outlet property="lineNumberView" destination="CpK-1w-j5l" id="QuS-DC-fEK"/>
                                                                             </connections>
                                                                         </textView>
                                                                     </subviews>

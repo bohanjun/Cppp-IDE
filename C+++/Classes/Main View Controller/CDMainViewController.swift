@@ -124,10 +124,6 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
         
     }
     
-    func codeEditorDidChangeText(lineRects: [NSRect]) {
-        self.lineNumberView.draw(lineRects)
-    }
-    
 
     
     

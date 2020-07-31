@@ -14,7 +14,8 @@ var codeCompletionViewController : CDCodeCompletionViewController!
 
 open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
     
-
+    @IBOutlet weak var lineNumberView: CDCodeEditorLineNumberView!
+    
     let highlightr = CDHighlightr()
     var scrollView: CDLineNumberScrollView!
     var codeEditorDelegate: CDCodeEditorDelegate!
@@ -57,11 +58,12 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
                 }
                 location += line.count + 1
             }
-            self.codeEditorDelegate?.codeEditorDidChangeText?(lineRects: array)
+            self.lineNumberView?.draw(array)
             
             if CDSettings.shared.codeCompletion {
                 self.complete(self)
             }
+            
             self.codeEditorDelegate?.codeEditorDidChangeText!(lines: self.textStorage?.paragraphs.count ?? 0, characters: self.textStorage?.characters.count ?? 0)
             
         }
