@@ -158,10 +158,8 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
         super.deleteBackward(sender)
         
         DispatchQueue.main.async {
-            print("string=\(string)")
             let line = self.string.lineNumber(at: self.selectedRange.location) ?? -1
             let count = string.challenge("\n")
-            print(line)
             for i in 0 ..< self.lineNumberView.debugLines.count {
                 if self.lineNumberView.debugLines[i] >= line + count {
                     self.lineNumberView.debugLines[i] -= count
