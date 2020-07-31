@@ -154,7 +154,7 @@ class CDCodeDocument: NSDocument {
                     let nsstring = NSString(string: i)
                     let substring = nsstring.substring(to: index)
                     if let int = Int(substring) {
-                        self.contentViewController?.lineNumberTextView?.markLineNumber(line: int, color: .orange)
+                        self.contentViewController?.lineNumberView?.buttonsArray[int - 1].markAsErrorLine()
                     }
                 }
             }
@@ -186,7 +186,7 @@ class CDCodeDocument: NSDocument {
         
         self.save(self)
         self.contentViewController.setStatus(string: "\(self.fileURL?.lastPathComponent ?? "C+++") | Compiling...")
-        let res = CDFileCompiler.compileFileWithoutRunning(fileURL: self.fileURL?.path ?? "")
+        let res = CDFileCompiler.compileFileWithoutRunning(fileURL: self.fileURL?.lastPathComponent ?? "")
         self.contentViewController.compileInfo.string = res
         self.contentViewController.setStatus(string: "\(self.fileURL?.lastPathComponent ?? "C+++") | Compile Finished")
         
@@ -200,7 +200,7 @@ class CDCodeDocument: NSDocument {
                     let index = i.firstIndexOf(":")
                     let substring = i.nsString.substring(to: index)
                     if let int = Int(substring) {
-                        self.contentViewController?.lineNumberTextView?.markLineNumber(line: int, color: .orange)
+                        self.contentViewController?.lineNumberView?.buttonsArray[int - 1].markAsErrorLine()
                     }
                 }
             }

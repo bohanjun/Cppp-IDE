@@ -27,6 +27,13 @@ class CDCodeEditorLineNumbetViewButton: NSButton {
     
     func markAsDebugLine() {
         self.drawBackground(color: .systemBlue)
+        if self.superview != nil {
+            (self.superview! as! CDCodeEditorLineNumberView).debugLines.append(self.title.nsString.integerValue)
+        }
+    }
+    
+    func markAsWarningLine() {
+        self.drawBackground(color: .systemYellow)
     }
     
     override init(frame frameRect: NSRect) {

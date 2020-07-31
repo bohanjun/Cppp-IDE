@@ -10,7 +10,8 @@ import Cocoa
 
 class CDCodeEditorLineNumberView: CDFlippedView {
     
-    var buttonArrays = [CDCodeEditorLineNumbetViewButton]()
+    var buttonsArray = [CDCodeEditorLineNumbetViewButton]()
+    var debugLines = [Int]()
     
     func draw(_ array: [NSRect]) {
         
@@ -18,6 +19,8 @@ class CDCodeEditorLineNumberView: CDFlippedView {
         for view in self.subviews {
             view.removeFromSuperview()
         }
+        
+        self.buttonsArray = [CDCodeEditorLineNumbetViewButton]()
         
         for item in array {
             let button = CDCodeEditorLineNumbetViewButton(frame: NSMakeRect(2.0, item.origin.y, 34.0, item.height))
@@ -30,7 +33,11 @@ class CDCodeEditorLineNumberView: CDFlippedView {
             button.sizeToFit()
             button.frame.origin.x = self.bounds.width - button.frame.size.width - 2.0
             self.addSubview(button)
-            self.buttonArrays.append(button)
+            if self.debugLines.contains(lineNumber) {
+                button.markAsDebugLine()
+                self.debugLines.remove(at: self.debugLines.firstIndex(of: lineNumber)!)
+            }
+            self.buttonsArray.append(button)
         }
         
         self.frame.size.height = (array.last?.origin.y ?? 0) + (array.last?.height ?? 0)

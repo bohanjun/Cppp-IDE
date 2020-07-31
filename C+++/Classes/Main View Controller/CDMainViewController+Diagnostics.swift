@@ -48,9 +48,11 @@ extension CDMainViewController: CDDiagnosticsViewControllerDelegate {
             switch diagnostic.severity {
                 
                 case CKDiagnosticSeverityWarning:
-                    self.lineNumberTextView.markLineNumber(line: Int(diagnostic.line), color: .yellow)
+                    self.lineNumberView.buttonsArray[Int(diagnostic.line - 1)].markAsWarningLine()
+                    
                 case CKDiagnosticSeverityError, CKDiagnosticSeverityFatal:
-                    self.lineNumberTextView.markLineNumber(line: Int(diagnostic.line), color: .orange)
+                    self.lineNumberView.buttonsArray[Int(diagnostic.line - 1)].markAsErrorLine()
+                    
                 default:
                     break
             }
