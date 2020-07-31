@@ -46,7 +46,7 @@ class CDCodeEditorLineNumberView: CDFlippedView {
             button.frame.origin.x = self.bounds.width - button.frame.size.width - 2.0
             self.addSubview(button)
             if self.debugLines.contains(lineNumber) {
-                button.markAsDebugLine()
+                button.markAsBreakpointLine()
                 self.debugLines.remove(at: self.debugLines.firstIndex(of: lineNumber)!)
             }
             self.buttonsArray.append(button)
@@ -60,7 +60,7 @@ class CDCodeEditorLineNumberView: CDFlippedView {
     }
     
     @objc func buttonClicked(_ sender: CDCodeEditorLineNumberViewButton) {
-        sender.markAsDebugLine()
+        sender.markAsBreakpointLine()
     }
     
     required init?(coder: NSCoder) {

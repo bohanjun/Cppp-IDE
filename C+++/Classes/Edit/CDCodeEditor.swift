@@ -126,6 +126,15 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
     open override func insertNewline(_ sender: Any?) {
         super.insertNewline(sender)
         
+        DispatchQueue.main.async {
+            let line = self.string.lineNumber(at: self.selectedRange.location) ?? -1
+            for i in 0 ..< self.lineNumberView.debugLines.count {
+                if self.lineNumberView.debugLines[i] >= line {
+                    self.lineNumberView.debugLines[i] += 1
+                }
+            }
+        }
+        
         let nsstring = NSString(string: self.string)
         let string = nsstring.substring(to: self.selectedRange.location)
         let l = string.challenge("{")
@@ -134,6 +143,29 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
         if c > 0 {
             for _ in 1...c {
                 self.insertText("\t", replacementRange: self.selectedRange)
+            }
+        }
+        
+    }
+    
+    open override func deleteBackward(_ sender: Any?) {
+        if self.selectedRange.location == 0 && self.selectedRange.length == 0 {
+            super.deleteBackward(sender)
+            return
+        }
+        
+        let string = self.string.nsString.substring(with: NSMakeRange(self.selectedRange.location + (self.selectedRange.length == 0 ? -1 : 0), self.selectedRange.length + (self.selectedRange.length == 0 ? 1 : 0)))
+        super.deleteBackward(sender)
+        
+        DispatchQueue.main.async {
+            print("string=\(string)")
+            let line = self.string.lineNumber(at: self.selectedRange.location) ?? -1
+            let count = string.challenge("\n")
+            print(line)
+            for i in 0 ..< self.lineNumberView.debugLines.count {
+                if self.lineNumberView.debugLines[i] >= line + count {
+                    self.lineNumberView.debugLines[i] -= count
+                }
             }
         }
         

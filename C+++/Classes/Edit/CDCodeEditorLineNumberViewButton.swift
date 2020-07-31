@@ -25,7 +25,7 @@ class CDCodeEditorLineNumberViewButton: NSButton {
         self.drawBackground(color: .systemRed)
     }
     
-    func markAsDebugLine() {
+    func markAsBreakpointLine() {
         self.drawBackground(color: .systemBlue)
         if self.superview != nil {
             (self.superview! as! CDCodeEditorLineNumberView).debugLines.append(self.title.nsString.integerValue)
