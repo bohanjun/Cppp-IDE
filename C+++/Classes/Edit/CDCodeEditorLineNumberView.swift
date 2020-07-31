@@ -22,12 +22,13 @@ class CDCodeEditorLineNumberView: CDFlippedView {
         for item in array {
             let button = CDCodeEditorLineNumbetViewButton(frame: NSMakeRect(2.0, item.origin.y, 34.0, item.height))
             button.isBordered = false
-            button.font = .systemFont(ofSize: CGFloat(CDSettings.shared.fontSize) * 0.9, weight: .light)
-            button.alignment = .right
+            button.font = NSFont(name: CDSettings.shared.fontName, size: CGFloat(CDSettings.shared.fontSize) * 0.92)
             button.target = self
             button.action = #selector(buttonClicked(_:))
             lineNumber += 1
             button.title = "\(lineNumber)"
+            button.sizeToFit()
+            button.frame.origin.x = self.bounds.width - button.frame.size.width - 2.0
             self.addSubview(button)
             self.buttonArrays.append(button)
         }

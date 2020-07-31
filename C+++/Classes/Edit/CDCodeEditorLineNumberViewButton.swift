@@ -23,12 +23,10 @@ class CDCodeEditorLineNumbetViewButton: NSButton {
     
     func markAsErrorLine() {
         self.drawBackground(color: .systemRed)
-        self.title = " × " + self.title
     }
     
     func markAsDebugLine() {
         self.drawBackground(color: .systemBlue)
-        self.title = " - " + self.title
     }
     
     override init(frame frameRect: NSRect) {
