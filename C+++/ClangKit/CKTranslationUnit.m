@@ -117,8 +117,8 @@
         default:                extension = @"";        break;
     }
     
-    tempFileName = [ NSString stringWithFormat: @"ClangKit-%s%@", buffer, extension ];
-    tempFile     = [ NSTemporaryDirectory() stringByAppendingPathComponent: tempFileName ];
+    tempFileName = [ NSString stringWithFormat: @"C+++_ClangKit_TempFile_%s%@", buffer, extension ];
+    tempFile     = [[[[[[[NSFileManager alloc] init] URLsForDirectory:NSLibraryDirectory inDomains:NSUserDomainMask] firstObject] URLByAppendingPathComponent:@"C+++"] URLByAppendingPathComponent:tempFileName] path];
     
     CFRelease( uuid );
     CFRelease( uuidString );
