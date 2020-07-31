@@ -10,13 +10,13 @@ import Cocoa
 
 class CDLineNumberScrollView: NSScrollView {
     
-    @IBOutlet var bindedScrollView: CDLineNumberScrollView!
+    @IBOutlet weak var bindedScrollView: CDLineNumberScrollView!
     
     override func scroll(_ clipView: NSClipView, to point: NSPoint) {
         super.scroll(clipView, to: point)
         
-        bindedScrollView.superScroll(bindedScrollView.contentView, to: point)
-        bindedScrollView.reflectScrolledClipView(bindedScrollView.contentView)
+        bindedScrollView?.superScroll(bindedScrollView.contentView, to: point)
+        bindedScrollView?.reflectScrolledClipView(bindedScrollView.contentView)
         
     }
     

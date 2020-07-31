@@ -1779,7 +1779,7 @@ Gw
                                                         <rect key="frame" x="0.0" y="0.0" width="610" height="580"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
-                                                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPB-sL-5NP" customClass="CDLineNumberScrollView" customModule="C___" customModuleProvider="target">
+                                                            <scrollView hidden="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPB-sL-5NP" customClass="CDLineNumberScrollView" customModule="C___" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="22" width="39" height="543"/>
                                                                 <clipView key="contentView" copiesOnScroll="NO" id="aNs-hR-HC8">
                                                                     <rect key="frame" x="0.0" y="0.0" width="39" height="543"/>
@@ -1847,7 +1847,7 @@ Gw
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                 </scroller>
                                                                 <connections>
-                                                                    <outlet property="bindedScrollView" destination="TPB-sL-5NP" id="aGf-C4-KG6"/>
+                                                                    <outlet property="bindedScrollView" destination="Nkq-WO-i54" id="alv-nt-zx1"/>
                                                                 </connections>
                                                             </scrollView>
                                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="RCh-2s-VX0">
@@ -1922,6 +1922,44 @@ Gw
                                                                 </textFieldCell>
                                                                 <accessibility description="Fake Background" identifier="Fake Background"/>
                                                             </textField>
+                                                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nkq-WO-i54" customClass="CDLineNumberScrollView" customModule="C___" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="22" width="40" height="543"/>
+                                                                <clipView key="contentView" id="ISU-Hp-6Sg">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="543"/>
+                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                    <subviews>
+                                                                        <view id="y93-Mu-Pgx" customClass="CDFlippedView" customModule="C___" customModuleProvider="target">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="543"/>
+                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                            <subviews>
+                                                                                <customView translatesAutoresizingMaskIntoConstraints="NO" id="CpK-1w-j5l" customClass="CDCodeEditorLineNumberView" customModule="C___" customModuleProvider="target">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="543"/>
+                                                                                </customView>
+                                                                            </subviews>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="trailing" secondItem="CpK-1w-j5l" secondAttribute="trailing" id="7Je-3Y-8ak"/>
+                                                                                <constraint firstAttribute="bottom" secondItem="CpK-1w-j5l" secondAttribute="bottom" id="IBQ-CD-1ZI"/>
+                                                                                <constraint firstItem="CpK-1w-j5l" firstAttribute="leading" secondItem="y93-Mu-Pgx" secondAttribute="leading" id="YS3-6b-lzB"/>
+                                                                                <constraint firstItem="CpK-1w-j5l" firstAttribute="top" secondItem="y93-Mu-Pgx" secondAttribute="top" id="act-sZ-83c"/>
+                                                                            </constraints>
+                                                                        </view>
+                                                                    </subviews>
+                                                                </clipView>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="40" id="7fT-y6-foG"/>
+                                                                </constraints>
+                                                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="w99-qA-BmK">
+                                                                    <rect key="frame" x="-100" y="-100" width="40" height="16"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                </scroller>
+                                                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="ozX-p2-RPM">
+                                                                    <rect key="frame" x="-100" y="-100" width="16" height="543"/>
+                                                                    <autoresizingMask key="autoresizingMask"/>
+                                                                </scroller>
+                                                                <connections>
+                                                                    <outlet property="bindedScrollView" destination="yLp-eY-fSk" id="pU0-ny-YTl"/>
+                                                                </connections>
+                                                            </scrollView>
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="RCh-2s-VX0" secondAttribute="trailing" id="37q-NE-Gqv"/>
@@ -1930,10 +1968,13 @@ Gw
                                                             <constraint firstItem="RCh-2s-VX0" firstAttribute="top" secondItem="TPB-sL-5NP" secondAttribute="bottom" id="EjO-Xs-i1Y"/>
                                                             <constraint firstAttribute="trailing" secondItem="0HT-on-mcG" secondAttribute="trailing" id="F3c-Hd-oU4"/>
                                                             <constraint firstItem="0HT-on-mcG" firstAttribute="leading" secondItem="rcv-TM-aRa" secondAttribute="leading" id="HaH-cg-nfR"/>
+                                                            <constraint firstItem="Nkq-WO-i54" firstAttribute="top" secondItem="0HT-on-mcG" secondAttribute="bottom" id="PN0-ir-jVF"/>
                                                             <constraint firstItem="TPB-sL-5NP" firstAttribute="leading" secondItem="rcv-TM-aRa" secondAttribute="leading" id="Tr9-Zc-0zf"/>
                                                             <constraint firstItem="0HT-on-mcG" firstAttribute="top" secondItem="rcv-TM-aRa" secondAttribute="top" id="W1a-F6-Qlo"/>
                                                             <constraint firstItem="yLp-eY-fSk" firstAttribute="top" secondItem="rcv-TM-aRa" secondAttribute="top" constant="15" id="W2N-om-gUM"/>
+                                                            <constraint firstItem="Nkq-WO-i54" firstAttribute="leading" secondItem="rcv-TM-aRa" secondAttribute="leading" id="YGY-GC-JSB"/>
                                                             <constraint firstItem="TPB-sL-5NP" firstAttribute="top" secondItem="rcv-TM-aRa" secondAttribute="top" constant="15" id="YZC-sC-9rq"/>
+                                                            <constraint firstItem="RCh-2s-VX0" firstAttribute="top" secondItem="Nkq-WO-i54" secondAttribute="bottom" id="fyU-aq-Ji2"/>
                                                             <constraint firstItem="RCh-2s-VX0" firstAttribute="leading" secondItem="rcv-TM-aRa" secondAttribute="leading" id="hep-n0-cTk"/>
                                                             <constraint firstAttribute="bottom" secondItem="RCh-2s-VX0" secondAttribute="bottom" id="iVv-o1-ioM"/>
                                                             <constraint firstAttribute="trailing" secondItem="yLp-eY-fSk" secondAttribute="trailing" id="qIw-Be-jL9"/>
@@ -2034,6 +2075,7 @@ Gw
                         <outlet property="fileView" destination="TzQ-K8-fWw" id="eCX-cC-ChV"/>
                         <outlet property="leftView" destination="Qyo-s2-8ZO" id="VT5-js-cmi"/>
                         <outlet property="lineNumberTextView" destination="hS1-5x-uqb" id="poC-ev-yTa"/>
+                        <outlet property="lineNumberView" destination="CpK-1w-j5l" id="RMv-W9-guB"/>
                         <outlet property="linesLabel" destination="42g-tY-n4q" id="vAG-yT-KLn"/>
                         <outlet property="mainTextView" destination="E0u-iA-KeT" id="B0O-yd-iHk"/>
                         <outlet property="pathControl" destination="Fh1-ZV-B2L" id="De9-Vs-V5G"/>

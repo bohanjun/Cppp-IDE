@@ -49,6 +49,17 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
         
         DispatchQueue.main.async {
             
+            var array = [CGRect]()
+            var location = 0
+            for line in self.string.components(separatedBy: "\n") {
+                let rect = self.layoutManager!.boundingRect(forGlyphRange: NSMakeRange(location, 0), in: self.textContainer!)
+                if rect != NSMakeRect(0, 0, 0, 0) {
+                    array.append(rect)
+                }
+                location += line.count + 1
+            }
+            self.codeEditorDelegate?.codeEditorDidChangeText?(lineRects: array)
+            
             if CDSettings.shared.codeCompletion {
                 self.complete(self)
             }

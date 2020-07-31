@@ -50,6 +50,8 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
     @IBOutlet weak var bigSplitView: NSSplitView!
     @IBOutlet weak var smallSplitView: NSSplitView!
     
+    @IBOutlet weak var lineNumberView: CDCodeEditorLineNumberView!
+    
     
     
     
@@ -122,6 +124,10 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
             
         }
         
+    }
+    
+    func codeEditorDidChangeText(lineRects: [NSRect]) {
+        self.lineNumberView.draw(lineRects)
     }
     
 
