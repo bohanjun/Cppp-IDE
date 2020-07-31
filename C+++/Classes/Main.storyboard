@@ -1779,51 +1779,18 @@ Gw
                                                         <rect key="frame" x="0.0" y="0.0" width="610" height="580"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
-                                                            <scrollView hidden="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPB-sL-5NP" customClass="CDLineNumberScrollView" customModule="C___" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="22" width="39" height="543"/>
-                                                                <clipView key="contentView" copiesOnScroll="NO" id="aNs-hR-HC8">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="39" height="543"/>
-                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                    <subviews>
-                                                                        <textView editable="NO" selectable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" smartInsertDelete="YES" id="hS1-5x-uqb" customClass="CDLineNumberTextView" customModule="C___" customModuleProvider="target">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="39" height="543"/>
-                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                            <color key="textColor" name="LineNumberColor"/>
-                                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                                            <size key="minSize" width="39" height="543"/>
-                                                                            <size key="maxSize" width="250" height="10000000"/>
-                                                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                                        </textView>
-                                                                    </subviews>
-                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                                </clipView>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="39" id="OiV-OJ-rvE"/>
-                                                                </constraints>
-                                                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="3li-p8-h7l">
-                                                                    <rect key="frame" x="-100" y="-100" width="225" height="15"/>
-                                                                    <autoresizingMask key="autoresizingMask"/>
-                                                                </scroller>
-                                                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="6sq-sV-4OU">
-                                                                    <rect key="frame" x="-100" y="-100" width="15" height="135"/>
-                                                                    <autoresizingMask key="autoresizingMask"/>
-                                                                </scroller>
-                                                                <connections>
-                                                                    <outlet property="bindedScrollView" destination="yLp-eY-fSk" id="NtN-RS-myy"/>
-                                                                </connections>
-                                                            </scrollView>
                                                             <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" translatesAutoresizingMaskIntoConstraints="NO" id="yLp-eY-fSk" customClass="CDLineNumberScrollView" customModule="C___" customModuleProvider="target">
-                                                                <rect key="frame" x="39" y="22" width="571" height="543"/>
+                                                                <rect key="frame" x="40" y="22" width="570" height="543"/>
                                                                 <clipView key="contentView" copiesOnScroll="NO" id="a6q-mG-7ce">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="571" height="543"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="570" height="543"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textView importsGraphics="NO" richText="NO" horizontallyResizable="YES" verticallyResizable="YES" findStyle="bar" allowsCharacterPickerTouchBarItem="NO" allowsUndo="YES" usesRuler="YES" textCompletion="NO" smartInsertDelete="YES" id="E0u-iA-KeT" customClass="CDCodeEditor" customModule="C___" customModuleProvider="target">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="571" height="543"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="570" height="543"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                                            <size key="minSize" width="571" height="543"/>
+                                                                            <size key="minSize" width="570" height="543"/>
                                                                             <size key="maxSize" width="10000000" height="10000000"/>
                                                                             <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                             <connections>
@@ -1839,7 +1806,7 @@ Gw
                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 </clipView>
                                                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="jDK-Za-BQt">
-                                                                    <rect key="frame" x="0.0" y="409" width="659" height="15"/>
+                                                                    <rect key="frame" x="0.0" y="527" width="562" height="16"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                 </scroller>
                                                                 <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="5w4-ag-NiN">
@@ -1962,18 +1929,15 @@ Gw
                                                             </scrollView>
                                                         </subviews>
                                                         <constraints>
+                                                            <constraint firstItem="yLp-eY-fSk" firstAttribute="leading" secondItem="Nkq-WO-i54" secondAttribute="trailing" id="2Jy-3j-cP7"/>
                                                             <constraint firstAttribute="trailing" secondItem="RCh-2s-VX0" secondAttribute="trailing" id="37q-NE-Gqv"/>
-                                                            <constraint firstItem="yLp-eY-fSk" firstAttribute="leading" secondItem="TPB-sL-5NP" secondAttribute="trailing" id="6Pn-i8-p9v"/>
                                                             <constraint firstItem="RCh-2s-VX0" firstAttribute="top" secondItem="yLp-eY-fSk" secondAttribute="bottom" id="DIV-Jd-Z8t"/>
-                                                            <constraint firstItem="RCh-2s-VX0" firstAttribute="top" secondItem="TPB-sL-5NP" secondAttribute="bottom" id="EjO-Xs-i1Y"/>
                                                             <constraint firstAttribute="trailing" secondItem="0HT-on-mcG" secondAttribute="trailing" id="F3c-Hd-oU4"/>
                                                             <constraint firstItem="0HT-on-mcG" firstAttribute="leading" secondItem="rcv-TM-aRa" secondAttribute="leading" id="HaH-cg-nfR"/>
                                                             <constraint firstItem="Nkq-WO-i54" firstAttribute="top" secondItem="0HT-on-mcG" secondAttribute="bottom" id="PN0-ir-jVF"/>
-                                                            <constraint firstItem="TPB-sL-5NP" firstAttribute="leading" secondItem="rcv-TM-aRa" secondAttribute="leading" id="Tr9-Zc-0zf"/>
                                                             <constraint firstItem="0HT-on-mcG" firstAttribute="top" secondItem="rcv-TM-aRa" secondAttribute="top" id="W1a-F6-Qlo"/>
                                                             <constraint firstItem="yLp-eY-fSk" firstAttribute="top" secondItem="rcv-TM-aRa" secondAttribute="top" constant="15" id="W2N-om-gUM"/>
                                                             <constraint firstItem="Nkq-WO-i54" firstAttribute="leading" secondItem="rcv-TM-aRa" secondAttribute="leading" id="YGY-GC-JSB"/>
-                                                            <constraint firstItem="TPB-sL-5NP" firstAttribute="top" secondItem="rcv-TM-aRa" secondAttribute="top" constant="15" id="YZC-sC-9rq"/>
                                                             <constraint firstItem="RCh-2s-VX0" firstAttribute="top" secondItem="Nkq-WO-i54" secondAttribute="bottom" id="fyU-aq-Ji2"/>
                                                             <constraint firstItem="RCh-2s-VX0" firstAttribute="leading" secondItem="rcv-TM-aRa" secondAttribute="leading" id="hep-n0-cTk"/>
                                                             <constraint firstAttribute="bottom" secondItem="RCh-2s-VX0" secondAttribute="bottom" id="iVv-o1-ioM"/>
@@ -2074,7 +2038,6 @@ Gw
                         <outlet property="fakeBackground" destination="0HT-on-mcG" id="1xu-mn-zwJ"/>
                         <outlet property="fileView" destination="TzQ-K8-fWw" id="eCX-cC-ChV"/>
                         <outlet property="leftView" destination="Qyo-s2-8ZO" id="VT5-js-cmi"/>
-                        <outlet property="lineNumberTextView" destination="hS1-5x-uqb" id="poC-ev-yTa"/>
                         <outlet property="lineNumberView" destination="CpK-1w-j5l" id="RMv-W9-guB"/>
                         <outlet property="linesLabel" destination="42g-tY-n4q" id="vAG-yT-KLn"/>
                         <outlet property="mainTextView" destination="E0u-iA-KeT" id="B0O-yd-iHk"/>
@@ -2802,9 +2765,6 @@ Gw
         </namedColor>
         <namedColor name="LaunchVCSideBarColor">
             <color red="0.89999997615814209" green="0.89999997615814209" blue="0.89999997615814209" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="LineNumberColor">
-            <color red="0.30000001192092896" green="0.30000001192092896" blue="0.30000001192092896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

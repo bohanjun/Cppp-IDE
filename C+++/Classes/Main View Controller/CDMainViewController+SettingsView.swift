@@ -35,7 +35,6 @@ extension CDMainViewController : CDSettingsViewDelegate {
         // Font
         self.mainTextView.highlightr?.theme.setCodeFont(CDSettings.shared.font)
         self.mainTextView.font = CDSettings.shared.font
-        self.lineNumberTextView.font = CDSettings.shared.font
         self.mainTextView.didChangeText()
         
         // In case of errors

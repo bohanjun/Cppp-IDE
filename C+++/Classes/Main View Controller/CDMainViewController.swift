@@ -36,7 +36,6 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
     
     
     @IBOutlet weak var mainTextView: CDCodeEditor!
-    @IBOutlet weak var lineNumberTextView: CDLineNumberTextView!
     @IBOutlet weak var pathControl: NSPathControl!
     @IBOutlet weak var rightConstraint: NSLayoutConstraint!
     @IBOutlet weak var fakeBackground: NSTextField!
@@ -79,7 +78,6 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
         super.viewDidLoad()
         
         self.mainTextView.codeEditorDelegate = self
-        self.mainTextView.gutterDelegate = self.lineNumberTextView
         self.mainTextView.scrollView = self.scrollViewOfTextView
             
         // set the font of the text view
