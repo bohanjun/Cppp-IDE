@@ -592,9 +592,18 @@
                                         <action selector="toggleCompileViewShown:" target="jGA-0Y-lOj" id="P44-z2-2MD"/>
                                     </connections>
                                 </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="A04A12BD-B043-4959-BCFF-471F60745B82" label="Stop" paletteLabel="Stop" tag="-1" image="Stop" id="csq-Gp-YZH">
+                                    <size key="minSize" width="32" height="32"/>
+                                    <size key="maxSize" width="32" height="32"/>
+                                    <connections>
+                                        <action selector="stopRunnning:" target="6f7-a7-6o1" id="yEP-sq-rgG"/>
+                                    </connections>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="Qet-oC-g8p"/>
+                                <toolbarItem reference="eIb-XZ-6HS"/>
+                                <toolbarItem reference="csq-Gp-YZH"/>
                                 <toolbarItem reference="5Eg-DZ-en8"/>
                                 <toolbarItem reference="vjF-PO-DLw"/>
                                 <toolbarItem reference="5Eg-DZ-en8"/>
@@ -1136,7 +1145,7 @@ Gw
                                             <font key="font" metaFont="menu" size="14"/>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="debugFile:" target="2Tp-Fl-jBw" id="2hu-wx-ihG"/>
+                                            <action selector="beginDebugging:" target="2Tp-Fl-jBw" id="crH-EN-1ot"/>
                                         </connections>
                                     </button>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="Hb4-Me-Abj">
@@ -2783,6 +2792,7 @@ Gw
         <image name="Run" width="256" height="256"/>
         <image name="SaveFile" width="1200" height="1200"/>
         <image name="Settings" width="610" height="610"/>
+        <image name="Stop" width="300" height="300"/>
         <image name="Switch_50" width="50" height="50"/>
         <image name="Undo" width="510" height="510"/>
         <image name="Update" width="1160" height="1160"/>

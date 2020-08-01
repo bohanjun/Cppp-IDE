@@ -29,11 +29,11 @@ class CDDebugViewController: NSViewController {
     
     @IBAction func start(_ sender: Any?) {
         
-        let compileRes = CDFileCompiler.compileFileWithoutRunning(fileURL: self.filePath, arguments: "-g")
+        /*let compileRes = CDFileCompiler.compileFileWithoutRunning(fileURL: self.filePath, arguments: "-g")
         if compileRes.contains("Compile Failed") {
             self.textView.string = "Compile Failed. Please check your code carefully and try again.\n\n\(compileRes)"
             return
-        }
+        }*/
         
         task = Process()
         task.launchPath = "/bin/bash"

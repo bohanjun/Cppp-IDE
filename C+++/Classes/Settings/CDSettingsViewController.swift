@@ -93,8 +93,8 @@ class CDSettingsViewController: NSViewController {
     @IBAction func defaultSettings(_ sender: Any?) {
         
         self.sendUserNotification(title: "Recover to default settings", subtitle: "C+++ will restart.")
-        CDFileCompiler.shell("rm -rf ~/Library/C+++/Settings")
-        CDFileCompiler.shell("rm -rf ~/Library/C+++/CompileSettings")
+        runShellCommand("rm -rf ~/Library/C+++/Settings")
+        runShellCommand("rm -rf ~/Library/C+++/CompileSettings")
         let process = Process()
         process.launchPath = "/bin/bash"
         process.arguments = ["-c", "sleep 1.0; open \(Bundle.main.bundlePath)"]

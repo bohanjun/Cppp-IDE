@@ -175,7 +175,7 @@ class CDProjectDocument: NSDocument {
     @IBAction func compileProject(_ sender: Any?) {
         
         self.save(self)
-        var res = CDFileCompiler.shell(self.compileCommand).last
+        var res = runShellCommand(self.compileCommand).last
         if res == "" {
             res = "Compile Succeed"
         }

@@ -13,6 +13,10 @@ class CDCodeDocument: NSDocument {
     @objc var content = CDDocumentContent(contentString: "")
     var contentViewController: CDMainViewController!
     
+    // MARK: - Debug
+    var task: Process!
+    var inputPipe: Pipe!
+    
     override init() {
         super.init()
         // Add your subclass-specific initialization here.

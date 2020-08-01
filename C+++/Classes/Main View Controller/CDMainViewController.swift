@@ -49,7 +49,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
     @IBOutlet weak var smallSplitView: NSSplitView!
     @IBOutlet weak var lineNumberView: CDCodeEditorLineNumberView!
     
-    weak var currentRunningProcess: Process?
+    var currentRunningProcess: Process?
     
     
     
@@ -150,6 +150,11 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
     var diagnosticsCells = [CDSnippetTableViewCell]()
     
     
+    
+    @IBAction func stopRunnning(_ sender: Any?) {
+        print(self.currentRunningProcess)
+        self.currentRunningProcess?.terminate()
+    }
     
     
     

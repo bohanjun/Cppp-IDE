@@ -45,3 +45,14 @@ func runShellCommand(_ command: String, _ stdin: String = "") -> [String] {
     return [output, errorOutput]
     
 }
+
+
+func processForShellCommand(command: String) -> Process {
+    
+    let task = Process()
+    task.launchPath = "/bin/bash"
+    task.arguments = ["-c", command]
+    
+    return task
+    
+}
