@@ -8,7 +8,7 @@
 
 import Cocoa
 
-extension CDFileCompiler {
+class CDFileCompiler: NSObject {
     
     public static func debugFile(fileURL: String) -> CDDebugViewController {
         

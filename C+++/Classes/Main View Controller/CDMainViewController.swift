@@ -49,7 +49,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
     @IBOutlet weak var smallSplitView: NSSplitView!
     @IBOutlet weak var lineNumberView: CDCodeEditorLineNumberView!
     
-    
+    weak var currentRunningProcess: Process?
     
     
     
