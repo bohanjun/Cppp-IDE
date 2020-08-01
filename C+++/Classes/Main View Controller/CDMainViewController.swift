@@ -42,13 +42,11 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
     @IBOutlet weak var scrollViewOfTextView: CDLineNumberScrollView!
     @IBOutlet weak var linesLabel: NSTextField!
     @IBOutlet weak var charactersLabel: NSTextField!
-    @IBOutlet weak var compileInfo: NSTextView!
     @IBOutlet weak var compileView: NSView!
-    @IBOutlet weak var compileInfoView: NSView!
+    @IBOutlet weak var consoleView: CDConsoleView!
     @IBOutlet weak var leftView: NSView!
     @IBOutlet weak var bigSplitView: NSSplitView!
     @IBOutlet weak var smallSplitView: NSSplitView!
-    
     @IBOutlet weak var lineNumberView: CDCodeEditorLineNumberView!
     
     
@@ -84,7 +82,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
         self.mainTextView.font = CDSettings.shared.font
         self.mainTextView.highlightr?.theme.setCodeFont(CDSettings.shared.font)
         
-        self.compileInfo.font = menloFont(ofSize: 13.0)
+        self.consoleView.textView.font = menloFont(ofSize: 13.0)
         
         // set the current appearance to Dark Mode
         if #available(OSX 10.14, *) {
@@ -195,7 +193,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
         self.leftView.isHidden = true
         self.rightConstraint.constant = 0.0
         self.compileView.isHidden = true
-        self.compileInfoView.isHidden = true
+        self.consoleView.isHidden = true
         
     }
     
@@ -208,10 +206,10 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
     }
     
     @IBAction func toggleCompileInfoView(_ sender: Any?) {
-        if self.compileInfoView.isHidden {
-            self.compileInfoView.isHidden = false
+        if self.consoleView.isHidden {
+            self.consoleView.isHidden = false
         } else {
-            self.compileInfoView.isHidden = true
+            self.consoleView.isHidden = true
         }
     }
     

@@ -140,7 +140,7 @@ class CDCodeDocument: NSDocument {
         self.save(self)
         self.contentViewController.setStatus(string: "\(self.fileURL?.lastPathComponent ?? "C+++") | Compiling...")
         let res = CDFileCompiler.compileFile(fileURL: self.fileURL?.path ?? "").replacingOccurrences(of: self.fileURL!.lastPathComponent + ":", with: "")
-        self.contentViewController.compileInfo.string = res
+        self.contentViewController.consoleView.textView.string = res
         self.contentViewController.setStatus(string: "\(self.fileURL?.lastPathComponent ?? "C+++") | Compile Finished")
         
         DispatchQueue.main.async {
@@ -187,7 +187,7 @@ class CDCodeDocument: NSDocument {
         self.save(self)
         self.contentViewController.setStatus(string: "\(self.fileURL?.lastPathComponent ?? "C+++") | Compiling...")
         let res = CDFileCompiler.compileFileWithoutRunning(fileURL: self.fileURL?.lastPathComponent ?? "")
-        self.contentViewController.compileInfo.string = res
+        self.contentViewController.consoleView.textView.string = res
         self.contentViewController.setStatus(string: "\(self.fileURL?.lastPathComponent ?? "C+++") | Compile Finished")
         
         DispatchQueue.main.async {
