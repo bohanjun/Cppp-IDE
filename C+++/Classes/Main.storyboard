@@ -1964,7 +1964,7 @@ Gw
                                                         <subviews>
                                                             <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d64-8C-Dx7">
                                                                 <rect key="frame" x="0.0" y="0.0" width="610" height="111"/>
-                                                                <clipView key="contentView" copiesOnScroll="NO" id="M1u-1s-w0Q">
+                                                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="M1u-1s-w0Q">
                                                                     <rect key="frame" x="0.0" y="0.0" width="610" height="111"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
@@ -1997,18 +1997,24 @@ Gw
                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
                                                             </textField>
-                                                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K1P-HP-QrS">
+                                                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="K1P-HP-QrS">
                                                                 <rect key="frame" x="407" y="114" width="152" height="21"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="21" id="10e-U6-t9K"/>
+                                                                    <constraint firstAttribute="width" constant="152" id="F9h-Wq-5Ax"/>
+                                                                </constraints>
                                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Send Input to lldb" bezelStyle="round" id="7lQ-pp-RWL">
                                                                     <font key="font" metaFont="system"/>
                                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
                                                             </textField>
-                                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9pp-Jt-S5f">
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9pp-Jt-S5f">
                                                                 <rect key="frame" x="562" y="116" width="43" height="18"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="18" id="0OS-gE-on6"/>
+                                                                    <constraint firstAttribute="width" constant="43" id="OKl-hY-kzK"/>
+                                                                </constraints>
                                                                 <buttonCell key="cell" type="inline" title="Send" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="Jrq-in-UPU">
                                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                     <font key="font" metaFont="smallSystemBold"/>
@@ -2019,13 +2025,19 @@ Gw
                                                             </button>
                                                         </subviews>
                                                         <constraints>
+                                                            <constraint firstItem="9pp-Jt-S5f" firstAttribute="leading" secondItem="K1P-HP-QrS" secondAttribute="trailing" constant="3" id="1Rd-gv-ewZ"/>
                                                             <constraint firstAttribute="bottom" secondItem="d64-8C-Dx7" secondAttribute="bottom" id="2RC-oW-b83"/>
                                                             <constraint firstItem="d64-8C-Dx7" firstAttribute="top" secondItem="axC-0G-AhU" secondAttribute="bottom" constant="6" id="71P-wM-gHh"/>
+                                                            <constraint firstItem="d64-8C-Dx7" firstAttribute="top" secondItem="9pp-Jt-S5f" secondAttribute="bottom" constant="5" id="CnF-Aw-Rrx"/>
                                                             <constraint firstItem="d64-8C-Dx7" firstAttribute="leading" secondItem="M8q-ws-1g9" secondAttribute="leading" id="Fak-VD-gfk"/>
                                                             <constraint firstItem="axC-0G-AhU" firstAttribute="top" secondItem="M8q-ws-1g9" secondAttribute="top" constant="6" id="G00-dx-YRw"/>
+                                                            <constraint firstItem="d64-8C-Dx7" firstAttribute="top" secondItem="K1P-HP-QrS" secondAttribute="bottom" constant="3" id="K3g-Wa-qnL"/>
+                                                            <constraint firstItem="9pp-Jt-S5f" firstAttribute="top" secondItem="M8q-ws-1g9" secondAttribute="top" constant="5" id="R0l-2a-5B2"/>
                                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="500" id="SFg-5u-qUe"/>
+                                                            <constraint firstItem="K1P-HP-QrS" firstAttribute="top" secondItem="M8q-ws-1g9" secondAttribute="top" constant="4" id="SOn-KK-2fA"/>
                                                             <constraint firstAttribute="trailing" secondItem="d64-8C-Dx7" secondAttribute="trailing" id="dEC-L9-eIg"/>
                                                             <constraint firstItem="axC-0G-AhU" firstAttribute="leading" secondItem="M8q-ws-1g9" secondAttribute="leading" constant="6" id="uRM-gi-HrO"/>
+                                                            <constraint firstAttribute="trailing" secondItem="9pp-Jt-S5f" secondAttribute="trailing" constant="5" id="x0E-72-5D4"/>
                                                         </constraints>
                                                         <connections>
                                                             <outlet property="sendInputButton" destination="9pp-Jt-S5f" id="xpm-IZ-lTk"/>
