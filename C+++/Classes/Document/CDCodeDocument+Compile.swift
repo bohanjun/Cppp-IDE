@@ -111,14 +111,6 @@ extension CDCodeDocument {
     
     
     
-    @IBAction func debugFile(_ sender: Any?) {
-        
-        self.contentViewController.presentAsSheet(CDFileCompiler.debugFile(fileURL: self.fileURL?.path ?? ""))
-        
-    }
-    
-    
-    
     @IBAction func testFile(_ sender: Any?) {
         
         let vc = CDTestViewController()

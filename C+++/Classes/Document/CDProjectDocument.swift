@@ -183,10 +183,4 @@ class CDProjectDocument: NSDocument {
         
     }
     
-    @IBAction func debugFile(_ sender: Any?) {
-        
-        self.contentViewController.presentAsSheet(CDFileCompiler.debugFile(fileURL: self.fileURL?.path ?? ""))
-        
-    }
-    
 }

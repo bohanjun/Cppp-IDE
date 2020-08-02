@@ -449,7 +449,7 @@
                                         </menuItem>
                                         <menuItem title="Debug" keyEquivalent="d" id="0cD-b9-4Qu">
                                             <connections>
-                                                <action selector="debugFile:" target="Ady-hI-5gd" id="l1M-vX-aCm"/>
+                                                <action selector="beginDebugging:" target="Ady-hI-5gd" id="KhQ-iU-IKL"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Test" keyEquivalent="t" id="r3S-C0-q3J">
@@ -2013,6 +2013,9 @@ Gw
                                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                     <font key="font" metaFont="smallSystemBold"/>
                                                                 </buttonCell>
+                                                                <connections>
+                                                                    <action selector="sendInput:" target="M8q-ws-1g9" id="PAd-g0-6NN"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -2025,6 +2028,7 @@ Gw
                                                             <constraint firstItem="axC-0G-AhU" firstAttribute="leading" secondItem="M8q-ws-1g9" secondAttribute="leading" constant="6" id="uRM-gi-HrO"/>
                                                         </constraints>
                                                         <connections>
+                                                            <outlet property="sendInputButton" destination="9pp-Jt-S5f" id="xpm-IZ-lTk"/>
                                                             <outlet property="sendInputTextField" destination="K1P-HP-QrS" id="g3V-ZZ-WHi"/>
                                                             <outlet property="textView" destination="XdU-QA-NPp" id="zbN-Tn-V4S"/>
                                                             <outlet property="titleLabel" destination="axC-0G-AhU" id="oer-Uc-6ec"/>

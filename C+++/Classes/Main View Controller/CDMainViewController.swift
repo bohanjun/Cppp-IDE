@@ -152,7 +152,6 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
     
     
     @IBAction func stopRunnning(_ sender: Any?) {
-        print(self.currentRunningProcess)
         self.currentRunningProcess?.terminate()
     }
     
