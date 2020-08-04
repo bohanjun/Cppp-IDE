@@ -12,21 +12,27 @@ extension CDCodeDocument {
     
     func beginDebugging() {
         
+        if self.fileURL == nil {
+            self.contentViewController?.showAlert("Error", "You haven't saved your file yet. You must save your file before debugging it.")
+            return
+        }
+        
         let res = self.compileFile(alsoRuns: false, arguments: "-g")
         if !res.didSuccess {
             self.contentViewController?.showAlert("Warning", "Compilation failed. Please check your code.")
             return
         }
-        self.contentViewController?.consoleView?.textView?.string = "Begin Debugging\n\nBegin Compiling: \(res.result)\n\n=====================\n\nLLDB Process Launched\n\n\n"
+        self.contentViewController?.consoleView?.textView?.string = "Begin Debugging\n\nBegin Compiling: \(res.result)\n\n\n\nLLDB Process Launched\n\n\n"
         
-        task = Process()
-        task.launchPath = "/bin/bash"
-        task.arguments = ["-c", "lldb \"\(self.fileURL!.path.nsString.deletingPathExtension)\""]
+        debugTask = Process()
+        debugTask.launchPath = "/bin/bash"
+        debugTask.arguments = ["-c", "lldb \"\(self.fileURL!.path.nsString.deletingPathExtension)\""]
+        self.contentViewController.setStatus(string: "Preparing for Debugging...")
         
         let pipe = Pipe()
-        self.inputPipe = Pipe()
-        task.standardOutput = pipe
-        task.standardInput = inputPipe
+        self.debugInputPipe = Pipe()
+        debugTask.standardOutput = pipe
+        debugTask.standardInput = debugInputPipe
         let outHandle = pipe.fileHandleForReading
         
         outHandle.readabilityHandler = { pipe in
@@ -43,23 +49,37 @@ extension CDCodeDocument {
             
         }
         
-        task.launch()
+        debugTask.launch()
+        
+        self.contentViewController.setStatus(string: "Setting Breakpoint...")
         
         for i in self.contentViewController.lineNumberView.debugLines {
-            Swift.print("i=\(i)")
             self.sendInputToDebugger(message: "breakpoint set --line \(i)")
         }
+        
+        self.contentViewController.setStatus(string: "\(self.fileURL?.lastPathComponent ?? "C+++") | Debugging")
         
     }
     
     func sendInputToDebugger(message: String) {
-        self.inputPipe?.fileHandleForWriting.write((message + "\n").data(using: .utf8)!)
+        if debugTask.isRunning {
+            self.debugInputPipe?.fileHandleForWriting.write((message + "\n").data(using: .utf8)!)
+            if message.trimmingCharacters(in: .whitespacesAndNewlines) == "q" || message.trimmingCharacters(in: .whitespacesAndNewlines) == "quit" {
+                self.contentViewController.setStatus(string: "\(self.fileURL?.lastPathComponent ?? "C+++") | Finished Debugging")
+            }
+        } else {
+            debugInputPipe = nil
+        }
     }
     
     
     
     @IBAction func beginDebugging(_ sender: Any?) {
         self.beginDebugging()
+    }
+    
+    func endDebugging(_ sender: Any?) {
+        self.debugTask?.terminate()
     }
     
 }

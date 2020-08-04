@@ -14,8 +14,8 @@ class CDCodeDocument: NSDocument {
     var contentViewController: CDMainViewController!
     
     // MARK: - Debug
-    var task: Process!
-    var inputPipe: Pipe!
+    var debugTask: Process!
+    var debugInputPipe: Pipe!
     
     override init() {
         super.init()
