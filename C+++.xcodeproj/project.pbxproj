@@ -175,6 +175,7 @@
 		18B3C790242836A500F4CA14 /* CDDocumentContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3C78F242836A500F4CA14 /* CDDocumentContent.swift */; };
 		18B3C7942428378E00F4CA14 /* CDMainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3C7932428378E00F4CA14 /* CDMainWindowController.swift */; };
 		18BC5CEE24D7AB240062DF2C /* CDConsoleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1867F85224D6AF86007A0D5D /* CDConsoleTextView.swift */; };
+		18BC5CF024D9315A0062DF2C /* CNAME in Resources */ = {isa = PBXBuildFile; fileRef = 18BC5CEF24D9315A0062DF2C /* CNAME */; };
 		18D4DD6D246A2C5100B97F32 /* CDProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D4DD6C246A2C5100B97F32 /* CDProjectViewController.swift */; };
 		18D4DD6F246A2C9E00B97F32 /* CDProjectTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D4DD6E246A2C9E00B97F32 /* CDProjectTableView.swift */; };
 		18D4DD71246A303400B97F32 /* CDProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D4DD70246A303400B97F32 /* CDProjectTableViewCell.swift */; };
@@ -403,6 +404,7 @@
 		18B3C78B24282C2100F4CA14 /* Code_Editor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Code_Editor.entitlements; sourceTree = "<group>"; };
 		18B3C78F242836A500F4CA14 /* CDDocumentContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDDocumentContent.swift; sourceTree = "<group>"; };
 		18B3C7932428378E00F4CA14 /* CDMainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDMainWindowController.swift; sourceTree = "<group>"; };
+		18BC5CEF24D9315A0062DF2C /* CNAME */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CNAME; sourceTree = "<group>"; };
 		18D4DD6C246A2C5100B97F32 /* CDProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProjectViewController.swift; sourceTree = "<group>"; };
 		18D4DD6E246A2C9E00B97F32 /* CDProjectTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProjectTableView.swift; sourceTree = "<group>"; };
 		18D4DD70246A303400B97F32 /* CDProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProjectTableViewCell.swift; sourceTree = "<group>"; };
@@ -745,6 +747,7 @@
 			children = (
 				180480A824474A0700CD0A4D /* README.md */,
 				1876364024CAB81700F5DEFE /* index.md */,
+				18BC5CEF24D9315A0062DF2C /* CNAME */,
 				1876363F24CAB7F600F5DEFE /* _config.yml */,
 				18B3C77E24282C1F00F4CA14 /* C+++ */,
 				18B3C76524272D9F00F4CA14 /* Products */,
@@ -919,6 +922,7 @@
 				18A41B34242C765500AFC422 /* atelier-plateau-dark.min.css in Resources */,
 				18A41B1A242C765500AFC422 /* atelier-heath-dark.min.css in Resources */,
 				18B185742463B32400B579AD /* CDSnippetPopoperViewController.xib in Resources */,
+				18BC5CF024D9315A0062DF2C /* CNAME in Resources */,
 				18A41B24242C765500AFC422 /* brown-paper.min.css in Resources */,
 				18A41AAD242C762100AFC422 /* highlight.min.js in Resources */,
 				18B1859924699A2800B579AD /* Main.storyboard in Resources */,
