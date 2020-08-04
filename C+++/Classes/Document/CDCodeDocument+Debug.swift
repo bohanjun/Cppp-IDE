@@ -78,8 +78,9 @@ extension CDCodeDocument {
         self.beginDebugging()
     }
     
-    func endDebugging(_ sender: Any?) {
+    func endDebugging() {
         self.debugTask?.terminate()
+        self.contentViewController.setStatus(string: "\(self.fileURL?.lastPathComponent ?? "C+++") | Finished Debugging")
     }
     
 }

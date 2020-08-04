@@ -45,7 +45,7 @@ class CDCompletionResult: NSObject {
     
     var textForDisplay: String {
         if self.hasReturnType {
-            return "(" + self.returnType + ") " + self.typedText + self.otherTexts.joined()
+            return self.returnType! + "  " + self.typedText + self.otherTexts.joined()
         } else {
             return self.typedText + self.otherTexts.joined(separator: "")
         }

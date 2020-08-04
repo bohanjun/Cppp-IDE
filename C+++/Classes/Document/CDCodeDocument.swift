@@ -17,6 +17,9 @@ class CDCodeDocument: NSDocument {
     var debugTask: Process!
     var debugInputPipe: Pipe!
     
+    // MARK: - Run
+    var runTask: Process!
+    
     override init() {
         super.init()
         // Add your subclass-specific initialization here.
@@ -132,6 +135,15 @@ class CDCodeDocument: NSDocument {
             delegate: self,
             didRun: #selector(printOperationDidRun(_:success:contextInfo:)), contextInfo: nil)
         
+    }
+    
+    @IBAction func stopCurrentRunningProcess(_ sender: Any?) {
+        if debugTask.isRunning {
+            endDebugging()
+        }
+        if runTask.isRunning {
+            runTask.terminate()
+        }
     }
     
 }

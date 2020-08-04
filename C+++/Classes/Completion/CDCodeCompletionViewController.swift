@@ -31,7 +31,11 @@ class CDCodeCompletionViewController: NSViewController, NSTableViewDataSource, N
         if results.count >= row {
             let result = self.results[row]
             if tableColumn?.title == "Text" {
-                return result.textForDisplay
+                let string = NSMutableAttributedString(string: result.textForDisplay, attributes: [.font: CDSettings.shared.font])
+                if result.hasReturnType {
+                    string.addAttribute(.font, value: NSFont.systemFont(ofSize: CGFloat(CDSettings.shared.fontSize!) * 0.95, weight: .bold), range: NSMakeRange(0, "\(result.returnType!)  ".count))
+                }
+                return string
             } else {
                 switch result.type {
                     case .class: return NSImage(named: "Class")

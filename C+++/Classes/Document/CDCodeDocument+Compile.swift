@@ -73,7 +73,7 @@ extension CDCodeDocument {
         if alsoRuns && didSuccess {
             let process = processForShellCommand(command: "cd \"\(path)\"\n" + "open \(out)")
             process.launch()
-            self.contentViewController.currentRunningProcess = process
+            self.runTask = process
         }
         
         self.contentViewController?.consoleView?.textView?.string = result
