@@ -34,9 +34,7 @@ extension CDCodeDocument {
             if let line = String(data: pipe.availableData, encoding: .utf8) {
                 if line != "" {
                     DispatchQueue.main.async {
-                        self.contentViewController?.consoleView?.textView?.isEditable = true
                         self.contentViewController?.consoleView?.textView?.string.append(line)
-                        self.contentViewController?.consoleView?.textView?.isEditable = false
                     }
                 }
             } else {

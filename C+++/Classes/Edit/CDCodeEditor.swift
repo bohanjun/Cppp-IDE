@@ -51,9 +51,9 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
             
             self.lineNumberView?.draw(self.lineRects)
             
-            if CDSettings.shared.codeCompletion {
+            /*if CDSettings.shared.codeCompletion {
                 self.complete(self)
-            }
+            }*/
             
             self.codeEditorDelegate?.codeEditorDidChangeText!(lines: self.textStorage?.paragraphs.count ?? 0, characters: self.textStorage?.characters.count ?? 0)
             
@@ -111,6 +111,10 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
                 return
             
             default:
+                
+                if CDSettings.shared.codeCompletion {
+                    self.complete(nil)
+                }
                 return
         }
         
