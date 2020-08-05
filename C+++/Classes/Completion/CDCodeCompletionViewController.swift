@@ -78,7 +78,6 @@ class CDCodeCompletionViewController: NSViewController, NSTableViewDataSource, N
         // Do view setup here.
         self.tableView?.selectRowIndexes(IndexSet(integer: 0), byExtendingSelection: false)
         self.tableView?.cell?.font = CDSettings.shared.font
-        self.tableView?.rowHeight = CDSettings.shared.font.pointSize
         
     }
     

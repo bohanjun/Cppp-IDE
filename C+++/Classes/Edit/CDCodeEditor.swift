@@ -206,20 +206,7 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
                 for result in results! {
                     if let _result = result as? CKCompletionResult {
                         
-                        switch _result.cursorKind {
-                            
-                            case CKCursorKindEnumDecl, CKCursorKindEnumConstantDecl: type = .enum
-                            case CKCursorKindFunctionDecl, CKCursorKindFunctionTemplate, CKCursorKindConversionFunction, CKCursorKindCXXFunctionalCastExpr: type = .function
-                            case CKCursorKindNamespace, CKCursorKindNamespaceRef, CKCursorKindNamespaceAlias: type = .namespace
-                            case CKCursorKindVarDecl, CKCursorKindVariableRef: type = .variable
-                            case CKCursorKindStructDecl: type = .struct
-                            case CKCursorKindClassDecl: type = .class
-                            case CKCursorKindMacroExpansion, CKCursorKindMacroDefinition, CKCursorKindMacroInstantiation, CKCursorKindLastPreprocessing, CKCursorKindFirstPreprocessing, CKCursorKindPreprocessingDirective: type = .preprocessing
-                            case CKCursorKindTypeAliasDecl, CKCursorKindTypedefDecl: type = .typealias
-                            
-                            default: break
-                            
-                        }
+                        type = CDCompletionResult.ResultType.resultType(forCKCursorKind: _result.cursorKind)
                         
                         otherTexts = [String]()
                         
@@ -279,21 +266,24 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
             return [String]()
         }
                 
-        DispatchQueue.main.async {
-                    
-            let vc = CDCodeCompletionViewController()
-            vc.delegate = self
-            vc.results = completionResults
-            vc.range = charRange
-            var rect = self.layoutManager?.boundingRect(forGlyphRange: self.selectedRange, in: self.textContainer!)
-                rect?.size.width = 1.0
-            DispatchQueue.main.async {
-                vc.openInPopover(relativeTo: rect!, of: self, preferredEdge: .maxY)
-                C___.codeCompletionViewController?.closePopover()
-                C___.codeCompletionViewController = vc
-            }
+        // DispatchQueue.main.async {
             
-        }
+                    
+            if C___.codeCompletionViewController == nil {
+                C___.codeCompletionViewController = CDCodeCompletionViewController()
+                C___.codeCompletionViewController.delegate = self
+            } else {
+                C___.codeCompletionViewController.popover = nil
+            }
+            C___.codeCompletionViewController.results = completionResults
+            C___.codeCompletionViewController.range = charRange
+            var rect = self.layoutManager?.boundingRect(forGlyphRange: self.selectedRange, in: self.textContainer!)
+            rect?.size.width = 1.0
+           //  DispatchQueue.main.async {
+                C___.codeCompletionViewController.openInPopover(relativeTo: rect!, of: self, preferredEdge: .maxY)
+          //   }
+            
+      //   }
                 
         return [String]()
         

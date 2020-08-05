@@ -8,6 +8,7 @@
 
 import Cocoa
 
+
 class CDCompletionResult: NSObject {
     
     var type: ResultType = .other
@@ -23,6 +24,25 @@ class CDCompletionResult: NSObject {
         case variable = 0x06
         case preprocessing = 0x07
         case other = 0xFF
+        
+        static func resultType(forCKCursorKind kind: CKCursorKind) -> ResultType {
+            
+            switch kind {
+                
+                case CKCursorKindEnumDecl, CKCursorKindEnumConstantDecl: return .enum
+                case CKCursorKindFunctionDecl, CKCursorKindFunctionTemplate, CKCursorKindConversionFunction, CKCursorKindCXXFunctionalCastExpr: return .function
+                case CKCursorKindNamespace, CKCursorKindNamespaceRef, CKCursorKindNamespaceAlias: return .namespace
+                case CKCursorKindVarDecl, CKCursorKindVariableRef: return .variable
+                case CKCursorKindStructDecl: return .struct
+                case CKCursorKindClassDecl: return .class
+                case CKCursorKindMacroExpansion, CKCursorKindMacroDefinition, CKCursorKindMacroInstantiation, CKCursorKindLastPreprocessing, CKCursorKindFirstPreprocessing, CKCursorKindPreprocessingDirective: return .preprocessing
+                case CKCursorKindTypeAliasDecl, CKCursorKindTypedefDecl: return .typealias
+                
+                default: return .other
+            
+            }
+            
+        }
         
     }
     
