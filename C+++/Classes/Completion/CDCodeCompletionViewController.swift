@@ -31,9 +31,9 @@ class CDCodeCompletionViewController: NSViewController, NSTableViewDataSource, N
         if results.count >= row {
             let result = self.results[row]
             if tableColumn?.title == "Text" {
-                let string = NSMutableAttributedString(string: result.textForDisplay, attributes: [.font: CDSettings.shared.font])
+                let string = NSMutableAttributedString(string: result.textForDisplay, attributes: [.font: NSFont(name: CDSettings.shared.fontName ?? "Menlo", size: 14.0)!])
                 if result.hasReturnType {
-                    string.addAttribute(.font, value: NSFont.systemFont(ofSize: CGFloat(CDSettings.shared.fontSize!) * 0.95, weight: .bold), range: NSMakeRange(0, "\(result.returnType!)  ".count))
+                    string.addAttribute(.font, value: NSFont.systemFont(ofSize: 14.0, weight: .bold), range: NSMakeRange(0, "\(result.returnType!)  ".count))
                 }
                 return string
             } else {
@@ -78,6 +78,7 @@ class CDCodeCompletionViewController: NSViewController, NSTableViewDataSource, N
         // Do view setup here.
         self.tableView?.selectRowIndexes(IndexSet(integer: 0), byExtendingSelection: false)
         self.tableView?.cell?.font = CDSettings.shared.font
+        self.tableView?.rowHeight = CDSettings.shared.font.pointSize
         
     }
     
