@@ -119,8 +119,6 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
             
             let dataOfView = self.mainTextView.dataWithPDF(inside: self.mainTextView.bounds)
             let imageOfView = NSImage(data: dataOfView)
-            self.imageView.imageScaling = .scaleProportionallyUpOrDown
-            self.imageView.imageAlignment = .alignTopLeft
             self.imageView.image = imageOfView
             
         }

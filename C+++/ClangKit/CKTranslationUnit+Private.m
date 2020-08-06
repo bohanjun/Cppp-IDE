@@ -92,10 +92,10 @@
             _unsavedFile,
             ( _unsavedFile == NULL ) ? 0 : 1,
             clang_defaultEditingTranslationUnitOptions()
-          | CXTranslationUnit_DetailedPreprocessingRecord
-          | CXTranslationUnit_PrecompiledPreamble
-          | CXTranslationUnit_CacheCompletionResults
-          | CXTranslationUnit_Incomplete
+          //| CXTranslationUnit_DetailedPreprocessingRecord
+          //| CXTranslationUnit_PrecompiledPreamble
+          //| CXTranslationUnit_CacheCompletionResults
+          //| CXTranslationUnit_Incomplete
         );
         
         if( _cxTranslationUnit == NULL )

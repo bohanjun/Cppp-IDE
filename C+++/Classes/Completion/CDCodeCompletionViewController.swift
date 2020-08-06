@@ -108,7 +108,7 @@ class CDCodeCompletionViewController: NSViewController, NSTableViewDataSource, N
     
     override func keyDown(with event: NSEvent) {
         
-        if event.specialKey == NSEvent.SpecialKey(rawValue: 13) && self.tableView.selectedRow != -1 {
+        if event.specialKey?.rawValue == 13 && self.tableView.selectedRow != -1 {
             
             self.delegate?.codeCompletionViewController(self, didSelectItemWithTitle: self.results[self.tableView.selectedRow].completionString, range: self.range)
             self.closePopover()
