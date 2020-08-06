@@ -1931,21 +1931,24 @@ Gw
                                                                     <rect key="frame" x="0.0" y="0.0" width="122" height="558"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
-                                                                        <view id="Lo4-51-TBQ">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="124" height="558"/>
+                                                                        <view id="Lo4-51-TBQ" customClass="CDMinimapView" customModule="C___" customModuleProvider="target">
+                                                                            <rect key="frame" x="0.0" y="558" width="122" height="558"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                                             <subviews>
                                                                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kvu-Qy-keC">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="124" height="558"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="122" height="558"/>
                                                                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="topLeft" imageScaling="proportionallyUpOrDown" id="m7V-ih-UOi"/>
                                                                                 </imageView>
                                                                             </subviews>
                                                                             <constraints>
                                                                                 <constraint firstItem="Kvu-Qy-keC" firstAttribute="leading" secondItem="Lo4-51-TBQ" secondAttribute="leading" id="J4a-7N-Hzu"/>
-                                                                                <constraint firstItem="Kvu-Qy-keC" firstAttribute="top" secondItem="Lo4-51-TBQ" secondAttribute="top" id="XPF-yj-F2V"/>
-                                                                                <constraint firstAttribute="bottom" secondItem="Kvu-Qy-keC" secondAttribute="bottom" id="lvo-JM-BLB"/>
+                                                                                <constraint firstAttribute="bottom" secondItem="Kvu-Qy-keC" secondAttribute="bottom" id="NAu-YC-cSF"/>
                                                                                 <constraint firstAttribute="trailing" secondItem="Kvu-Qy-keC" secondAttribute="trailing" id="n0W-ah-dMM"/>
+                                                                                <constraint firstItem="Kvu-Qy-keC" firstAttribute="top" secondItem="Lo4-51-TBQ" secondAttribute="top" id="qQW-vu-AqT"/>
                                                                             </constraints>
+                                                                            <connections>
+                                                                                <outlet property="imageView" destination="Kvu-Qy-keC" id="HTD-zH-fLl"/>
+                                                                            </connections>
                                                                         </view>
                                                                     </subviews>
                                                                 </clipView>
