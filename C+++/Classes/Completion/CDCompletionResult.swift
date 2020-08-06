@@ -12,6 +12,7 @@ import Cocoa
 class CDCompletionResult: NSObject {
     
     var type: ResultType = .other
+    var matchedRanges = [NSRange]()
     
     enum ResultType: Int {
         

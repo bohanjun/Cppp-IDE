@@ -34,6 +34,13 @@ class CDCodeCompletionViewController: NSViewController, NSTableViewDataSource, N
                 let string = NSMutableAttributedString(string: result.textForDisplay, attributes: [.font: NSFont(name: CDSettings.shared.fontName ?? "Menlo", size: 14.0)!])
                 if result.hasReturnType {
                     string.addAttribute(.font, value: NSFont.systemFont(ofSize: 14.0, weight: .bold), range: NSMakeRange(0, "\(result.returnType!)  ".count))
+                    for i in result.matchedRanges {
+                        string.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange("\(result.returnType!)  ".count + i.location, i.length))
+                    }
+                } else {
+                    for i in result.matchedRanges {
+                        string.addAttribute(.backgroundColor, value: NSColor.systemOrange, range: i)
+                    }
                 }
                 return string
             } else {

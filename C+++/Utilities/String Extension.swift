@@ -103,5 +103,34 @@ extension String {
         return pos
         
     }
+    
+    func compareWith(anotherString string: String) -> (string: String, range: [NSRange]) {
+        var str1 = "", str2 = ""
+        var range = [NSRange]()
+        var resultString = ""
+        // str1 is shorter.
+        if string.count >= self.count {
+            str1 = self
+            str2 = string
+        } else {
+            str1 = string
+            str2 = self
+        }
+        let array1 = Array(str1), array2 = Array(str2)
+        var index = 0, index2 = 0
+        for char in array1 {
+            for i in index2..<array2.count {
+                if array2[i] == char {
+                    range.append(NSMakeRange(index2, 1))
+                    resultString.append(char)
+                    index2 += 1
+                    break
+                }
+                index2 += 1
+            }
+            index += 1
+        }
+        return (string: resultString, range: range)
+    }
 
 }

@@ -241,7 +241,9 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
             
             var array = [CDCompletionResult]()
             for result in completionResults {
-                if result.typedText.lowercased().hasPrefix(substring.lowercased()) && substring.count != result.typedText.count {
+                let _result = result.typedText.lowercased().compareWith(anotherString: substring.lowercased())
+                if _result.string == substring.lowercased() && substring.count != result.completionString.count {
+                    result.matchedRanges = _result.range
                     array.append(result)
                 }
             }
@@ -254,7 +256,9 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
             
             var array = [CDCompletionResult]()
             for result in lastTimeCompletionResults {
-                if result.typedText.lowercased().hasPrefix(substring.lowercased()) && substring.count != result.typedText.count {
+                let _result = result.typedText.lowercased().compareWith(anotherString: substring.lowercased())
+                if _result.string == substring.lowercased() && substring.count != result.completionString.count {
+                    result.matchedRanges = _result.range
                     array.append(result)
                 }
             }
