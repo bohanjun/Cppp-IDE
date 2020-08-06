@@ -178,6 +178,8 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
     
     open override func completions(forPartialWordRange charRange: NSRange, indexOfSelectedItem index: UnsafeMutablePointer<Int>) -> [String]? {
         
+        // let date = Date()
+        
         if !(self.allowsCodeCompletion) {
             return [String]()
         }
@@ -288,7 +290,7 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
           //   }
             
       //   }
-                
+        // print(String(format: "Time = %.7lf", -date.timeIntervalSinceNow))
         return [String]()
         
     }

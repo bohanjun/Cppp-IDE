@@ -39,7 +39,7 @@ class CDCodeCompletionViewController: NSViewController, NSTableViewDataSource, N
                     }
                 } else {
                     for i in result.matchedRanges {
-                        string.addAttribute(.backgroundColor, value: NSColor.systemOrange, range: i)
+                        string.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: i)
                     }
                 }
                 return string
