@@ -48,6 +48,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
     @IBOutlet weak var bigSplitView: NSSplitView!
     @IBOutlet weak var smallSplitView: NSSplitView!
     @IBOutlet weak var lineNumberView: CDCodeEditorLineNumberView!
+    @IBOutlet weak var imageView: NSImageView!
     
     
     
@@ -115,6 +116,12 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
             if CDSettings.shared.showLiveIssues {
                 self.updateDiagnostics()
             }
+            
+            let dataOfView = self.mainTextView.dataWithPDF(inside: self.mainTextView.bounds)
+            let imageOfView = NSImage(data: dataOfView)
+            self.imageView.imageScaling = .scaleProportionallyUpOrDown
+            self.imageView.imageAlignment = .alignTopLeft
+            self.imageView.image = imageOfView
             
         }
         
