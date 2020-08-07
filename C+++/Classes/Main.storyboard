@@ -1933,11 +1933,11 @@ Gw
                                                                     <subviews>
                                                                         <view id="Lo4-51-TBQ" customClass="CDMinimapView" customModule="C___" customModuleProvider="target">
                                                                             <rect key="frame" x="0.0" y="558" width="122" height="558"/>
-                                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                                                            <autoresizingMask key="autoresizingMask"/>
                                                                             <subviews>
                                                                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kvu-Qy-keC">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="122" height="558"/>
-                                                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="topLeft" imageScaling="proportionallyUpOrDown" id="m7V-ih-UOi"/>
+                                                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="top" imageScaling="proportionallyUpOrDown" id="m7V-ih-UOi"/>
                                                                                 </imageView>
                                                                             </subviews>
                                                                             <constraints>
@@ -2083,11 +2083,11 @@ Gw
                         <outlet property="consoleView" destination="M8q-ws-1g9" id="8eO-sM-vWK"/>
                         <outlet property="fakeBackground" destination="0HT-on-mcG" id="1xu-mn-zwJ"/>
                         <outlet property="fileView" destination="TzQ-K8-fWw" id="eCX-cC-ChV"/>
-                        <outlet property="imageView" destination="Kvu-Qy-keC" id="6Ec-Bb-u31"/>
                         <outlet property="leftView" destination="Qyo-s2-8ZO" id="VT5-js-cmi"/>
                         <outlet property="lineNumberView" destination="CpK-1w-j5l" id="RMv-W9-guB"/>
                         <outlet property="linesLabel" destination="42g-tY-n4q" id="vAG-yT-KLn"/>
                         <outlet property="mainTextView" destination="E0u-iA-KeT" id="B0O-yd-iHk"/>
+                        <outlet property="minimapView" destination="Lo4-51-TBQ" id="Cmc-8L-v2F"/>
                         <outlet property="pathControl" destination="Fh1-ZV-B2L" id="De9-Vs-V5G"/>
                         <outlet property="rightConstraint" destination="fNW-CT-dK4" id="wop-M0-Toi"/>
                         <outlet property="scrollViewOfTableView" destination="5hZ-8U-hjU" id="w2d-vE-Q1o"/>

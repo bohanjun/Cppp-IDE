@@ -48,7 +48,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
     @IBOutlet weak var bigSplitView: NSSplitView!
     @IBOutlet weak var smallSplitView: NSSplitView!
     @IBOutlet weak var lineNumberView: CDCodeEditorLineNumberView!
-    @IBOutlet weak var imageView: NSImageView!
+    @IBOutlet weak var minimapView: CDMinimapView!
     
     
     
@@ -119,7 +119,9 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
             
             let dataOfView = self.mainTextView.dataWithPDF(inside: self.mainTextView.bounds)
             let imageOfView = NSImage(data: dataOfView)
-            self.imageView.image = imageOfView
+            self.minimapView.imageView.image = imageOfView
+            self.minimapView.frame.size.height =  imageOfView!.size.height / (imageOfView!.size.width / self.minimapView.imageView.frame.width)
+            self.minimapView.imageView.frame.size.height =  imageOfView!.size.height / (imageOfView!.size.width / self.minimapView.imageView.frame.width)
             
         }
         
