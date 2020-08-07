@@ -19,6 +19,7 @@ class CDMinimapScrollerView: NSControl {
         if self.frame.height + self.frame.origin.y >= self.superview!.frame.height {
             self.frame.origin.y = self.superview!.frame.height - self.frame.height
         }
+        (self.superview! as! CDMinimapView).didDragScroller()
     }
     
     required init?(coder: NSCoder) {

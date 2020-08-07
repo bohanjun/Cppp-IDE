@@ -1951,6 +1951,7 @@ Gw
                                                                                 <constraint firstItem="Kvu-Qy-keC" firstAttribute="top" secondItem="Lo4-51-TBQ" secondAttribute="top" id="qQW-vu-AqT"/>
                                                                             </constraints>
                                                                             <connections>
+                                                                                <outlet property="codeEditorScrollView" destination="yLp-eY-fSk" id="SaG-DJ-0u9"/>
                                                                                 <outlet property="imageView" destination="Kvu-Qy-keC" id="HTD-zH-fLl"/>
                                                                                 <outlet property="scrollerView" destination="KOZ-rV-tj2" id="J7p-Gh-2td"/>
                                                                             </connections>
@@ -2105,7 +2106,7 @@ Gw
                 </viewController>
                 <customObject id="2Tp-Fl-jBw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="70" y="1006"/>
+            <point key="canvasLocation" x="230" y="1004"/>
         </scene>
         <!--Project View Controller-->
         <scene sceneID="eAM-Sv-WeE">
