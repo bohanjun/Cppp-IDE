@@ -39,7 +39,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
     @IBOutlet weak var pathControl: NSPathControl!
     @IBOutlet weak var rightConstraint: NSLayoutConstraint!
     @IBOutlet weak var fakeBackground: NSTextField!
-    @IBOutlet weak var scrollViewOfTextView: CDLineNumberScrollView!
+    @IBOutlet weak var scrollViewOfTextView: CDCodeEditorScrollView!
     @IBOutlet weak var linesLabel: NSTextField!
     @IBOutlet weak var charactersLabel: NSTextField!
     @IBOutlet weak var compileView: NSView!
@@ -82,6 +82,9 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
         self.mainTextView.highlightr?.theme.setCodeFont(CDSettings.shared.font)
         
         self.consoleView.textView.font = menloFont(ofSize: 13.0)
+        
+        // initialize the scroll view and the minimap view.
+        self.scrollViewOfTextView.scroll(self.scrollViewOfTextView.contentView, to: NSMakePoint(0, 0))
         
         // set the current appearance to Dark Mode
         if #available(OSX 10.14, *) {

@@ -17,7 +17,7 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
     @IBOutlet weak var lineNumberView: CDCodeEditorLineNumberView!
     
     let highlightr = CDHighlightr()
-    var scrollView: CDLineNumberScrollView!
+    var scrollView: CDCodeEditorScrollView!
     var codeEditorDelegate: CDCodeEditorDelegate!
     weak var document: CDCodeDocument!
     var codeAttributedString: CDHighlightrAttributedString!

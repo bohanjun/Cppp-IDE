@@ -1772,7 +1772,7 @@ Gw
                                                         <rect key="frame" x="0.0" y="0.0" width="610" height="580"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
-                                                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" translatesAutoresizingMaskIntoConstraints="NO" id="yLp-eY-fSk" customClass="CDLineNumberScrollView" customModule="C___" customModuleProvider="target">
+                                                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" translatesAutoresizingMaskIntoConstraints="NO" id="yLp-eY-fSk" customClass="CDCodeEditorScrollView" customModule="C___" customModuleProvider="target">
                                                                 <rect key="frame" x="40" y="22" width="447" height="543"/>
                                                                 <clipView key="contentView" copiesOnScroll="NO" id="a6q-mG-7ce">
                                                                     <rect key="frame" x="0.0" y="0.0" width="447" height="543"/>
@@ -1808,6 +1808,7 @@ Gw
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                 </scroller>
                                                                 <connections>
+                                                                    <outlet property="bindedMinimapView" destination="Lo4-51-TBQ" id="lu9-p1-W74"/>
                                                                     <outlet property="bindedScrollView" destination="Nkq-WO-i54" id="alv-nt-zx1"/>
                                                                 </connections>
                                                             </scrollView>
@@ -1883,7 +1884,7 @@ Gw
                                                                 </textFieldCell>
                                                                 <accessibility description="Fake Background" identifier="Fake Background"/>
                                                             </textField>
-                                                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nkq-WO-i54" customClass="CDLineNumberScrollView" customModule="C___" customModuleProvider="target">
+                                                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nkq-WO-i54" customClass="CDCodeEditorScrollView" customModule="C___" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="22" width="40" height="543"/>
                                                                 <clipView key="contentView" id="ISU-Hp-6Sg">
                                                                     <rect key="frame" x="0.0" y="0.0" width="40" height="543"/>
