@@ -11,13 +11,6 @@ import Cocoa
 class CDMinimapView: CDFlippedView {
     
     @IBOutlet weak var imageView: NSImageView!
-    
-    override var frame: NSRect {
-        didSet {
-            if oldValue != frame {
-                self.imageView.frame.origin = NSMakePoint(0, 0)
-            }
-        }
-    }
+    @IBOutlet weak var scrollerView: CDMinimapScrollerView!
     
 }

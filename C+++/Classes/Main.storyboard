@@ -1939,6 +1939,10 @@ Gw
                                                                                     <rect key="frame" x="0.0" y="0.0" width="122" height="558"/>
                                                                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="top" imageScaling="proportionallyUpOrDown" id="m7V-ih-UOi"/>
                                                                                 </imageView>
+                                                                                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KOZ-rV-tj2" customClass="CDMinimapScrollerView" customModule="C___" customModuleProvider="target">
+                                                                                    <rect key="frame" x="0.0" y="462" width="122" height="96"/>
+                                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                                </customView>
                                                                             </subviews>
                                                                             <constraints>
                                                                                 <constraint firstItem="Kvu-Qy-keC" firstAttribute="leading" secondItem="Lo4-51-TBQ" secondAttribute="leading" id="J4a-7N-Hzu"/>
@@ -1948,6 +1952,7 @@ Gw
                                                                             </constraints>
                                                                             <connections>
                                                                                 <outlet property="imageView" destination="Kvu-Qy-keC" id="HTD-zH-fLl"/>
+                                                                                <outlet property="scrollerView" destination="KOZ-rV-tj2" id="J7p-Gh-2td"/>
                                                                             </connections>
                                                                         </view>
                                                                     </subviews>
