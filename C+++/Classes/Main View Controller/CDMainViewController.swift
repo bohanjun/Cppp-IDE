@@ -49,6 +49,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
     @IBOutlet weak var smallSplitView: NSSplitView!
     @IBOutlet weak var lineNumberView: CDCodeEditorLineNumberView!
     @IBOutlet weak var minimapView: CDMinimapView!
+    @IBOutlet weak var minimapViewConstraint: NSLayoutConstraint!
     
     
     
@@ -230,5 +231,14 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
         }
     }
     
+    @IBAction func toggleMinimap(_ sender: Any?) {
+        if self.minimapView.enclosingScrollView!.isHidden {
+            self.minimapView.enclosingScrollView?.isHidden = false
+            self.minimapViewConstraint.constant = 123.0
+        } else {
+            self.minimapView.enclosingScrollView?.isHidden = true
+            self.minimapViewConstraint.constant = 0.0
+        }
+    }
     
 }

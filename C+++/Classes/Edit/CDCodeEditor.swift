@@ -8,8 +8,6 @@
 
 import Cocoa
 
-var codeCompletionViewController : CDCodeCompletionViewController!
-
 
 
 open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
@@ -23,6 +21,7 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
     var codeAttributedString: CDHighlightrAttributedString!
     var allowsSyntaxHighlighting: Bool = true
     var allowsCodeCompletion: Bool = true
+    var codeCompletionViewController : CDCodeCompletionViewController!
     
     var translationUnit: CKTranslationUnit {
         
@@ -178,7 +177,7 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
     
     open override func completions(forPartialWordRange charRange: NSRange, indexOfSelectedItem index: UnsafeMutablePointer<Int>) -> [String]? {
         
-        let date = Date()
+        // let date = Date()
         
         if !(self.allowsCodeCompletion) {
             return [String]()
@@ -271,26 +270,26 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
         guard completionResults.count > 0 else {
             return [String]()
         }
-                
+        
         // DispatchQueue.main.async {
-            
-                    
-            if C___.codeCompletionViewController == nil {
-                C___.codeCompletionViewController = CDCodeCompletionViewController()
-                C___.codeCompletionViewController.delegate = self
-            } else {
-                C___.codeCompletionViewController.popover = nil
-            }
-            C___.codeCompletionViewController.results = completionResults
-            C___.codeCompletionViewController.range = charRange
-            var rect = self.layoutManager?.boundingRect(forGlyphRange: self.selectedRange, in: self.textContainer!)
-            rect?.size.width = 1.0
-           //  DispatchQueue.main.async {
-                C___.codeCompletionViewController.openInPopover(relativeTo: rect!, of: self, preferredEdge: .maxY)
-          //   }
-            
-      //   }
-        print(String(format: "Time = %.7lf", -date.timeIntervalSinceNow))
+        
+        
+        if self.codeCompletionViewController == nil {
+            self.codeCompletionViewController = CDCodeCompletionViewController()
+            self.codeCompletionViewController.delegate = self
+        } else {
+            self.codeCompletionViewController.popover = nil
+        }
+        self.codeCompletionViewController.results = completionResults
+        self.codeCompletionViewController.range = charRange
+        var rect = self.layoutManager?.boundingRect(forGlyphRange: self.selectedRange, in: self.textContainer!)
+        rect?.size.width = 1.0
+        //  DispatchQueue.main.async {
+        self.codeCompletionViewController.openInPopover(relativeTo: rect!, of: self, preferredEdge: .maxY)
+        //   }
+        
+        //   }
+        // print(String(format: "Time = %.7lf", -date.timeIntervalSinceNow))
         return [String]()
         
     }

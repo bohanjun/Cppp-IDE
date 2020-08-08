@@ -384,16 +384,16 @@
                                                 <action selector="toggleTabBar:" target="Ady-hI-5gd" id="pPh-nA-rtB"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Show All Tabs" id="ieG-Ez-E7P">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="toggleTabOverview:" target="Ady-hI-5gd" id="bnn-Xn-ZBQ"/>
-                                            </connections>
-                                        </menuItem>
                                         <menuItem title="Show Toolbar" keyEquivalent="t" id="snW-S8-Cw5">
                                             <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                             <connections>
                                                 <action selector="toggleToolbarShown:" target="Ady-hI-5gd" id="BXY-wc-z0C"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Show All Tabs" id="ieG-Ez-E7P">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="toggleTabOverview:" target="Ady-hI-5gd" id="bnn-Xn-ZBQ"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="R1u-qZ-EEg"/>
@@ -431,6 +431,18 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="Editor" id="PqD-9G-lwC">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Editor" id="Plf-xp-tvM">
+                                    <items>
+                                        <menuItem title="Minimap" keyEquivalent="m" id="WyN-t8-Wrc">
+                                            <connections>
+                                                <action selector="toggleMinimap:" target="Ady-hI-5gd" id="L0i-xh-4Gg"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                             <menuItem title="Run" id="v33-9z-u0i">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Run" id="nu4-Kq-FAj">
@@ -438,7 +450,7 @@
                                         <menuItem title="Compile and Run" keyEquivalent="C" id="wCv-IP-SA0">
                                             <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
                                             <connections>
-                                                <action selector="compileFile:" target="Ady-hI-5gd" id="Osh-Qg-97d"/>
+                                                <action selector="compileFile:" target="Ady-hI-5gd" id="oxM-J8-Owe"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Compile" keyEquivalent="c" id="UCD-q9-6qE">
@@ -1976,8 +1988,8 @@ Gw
                                                             <constraint firstItem="yLp-eY-fSk" firstAttribute="leading" secondItem="Nkq-WO-i54" secondAttribute="trailing" id="2Jy-3j-cP7"/>
                                                             <constraint firstAttribute="trailing" secondItem="RCh-2s-VX0" secondAttribute="trailing" id="37q-NE-Gqv"/>
                                                             <constraint firstItem="uB2-0f-Grb" firstAttribute="top" secondItem="rcv-TM-aRa" secondAttribute="top" id="3I7-5R-sUp"/>
+                                                            <constraint firstItem="0HT-on-mcG" firstAttribute="trailing" secondItem="E0u-iA-KeT" secondAttribute="trailing" id="8kS-xO-rOA"/>
                                                             <constraint firstItem="RCh-2s-VX0" firstAttribute="top" secondItem="yLp-eY-fSk" secondAttribute="bottom" id="DIV-Jd-Z8t"/>
-                                                            <constraint firstAttribute="trailing" secondItem="0HT-on-mcG" secondAttribute="trailing" constant="123" id="F3c-Hd-oU4"/>
                                                             <constraint firstItem="0HT-on-mcG" firstAttribute="leading" secondItem="rcv-TM-aRa" secondAttribute="leading" id="HaH-cg-nfR"/>
                                                             <constraint firstItem="Nkq-WO-i54" firstAttribute="top" secondItem="0HT-on-mcG" secondAttribute="bottom" id="PN0-ir-jVF"/>
                                                             <constraint firstItem="0HT-on-mcG" firstAttribute="top" secondItem="rcv-TM-aRa" secondAttribute="top" id="W1a-F6-Qlo"/>
@@ -2095,6 +2107,7 @@ Gw
                         <outlet property="linesLabel" destination="42g-tY-n4q" id="vAG-yT-KLn"/>
                         <outlet property="mainTextView" destination="E0u-iA-KeT" id="B0O-yd-iHk"/>
                         <outlet property="minimapView" destination="Lo4-51-TBQ" id="Cmc-8L-v2F"/>
+                        <outlet property="minimapViewConstraint" destination="qIw-Be-jL9" id="dEM-Gl-WcL"/>
                         <outlet property="pathControl" destination="Fh1-ZV-B2L" id="De9-Vs-V5G"/>
                         <outlet property="rightConstraint" destination="fNW-CT-dK4" id="wop-M0-Toi"/>
                         <outlet property="scrollViewOfTableView" destination="5hZ-8U-hjU" id="w2d-vE-Q1o"/>

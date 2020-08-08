@@ -17,6 +17,41 @@
 
 ----
 
+## **<font color="#2159A3">New Features in Version 2.1.1</font>**
+
+> There are many new features in C+++ Version 2.1.1. And a lot of original functions are improved.
+
+# **Minimap.**
+
+The **Minimap** feature is now in C+++. You can navigate in your file much more quickly than before.
+
+----
+
+# **Totally new Code Completion.**
+
+Now the **Code Completion** features has improved. It is more 'beautiful', and of course, much more powerful.
+
+----
+
+# **Search for Anything.**
+
+Search for anything in C+++. Click the "Search" button on the right, then search for whatever you want, for code snippets, for recent files, for help...
+
+----
+
+# **Whole New Debug Experience.**
+
+The Debug function is now merged into the main window, and the new interactive debug area makes debugging more effective.
+
+----
+
+----
+
+
+## **<font color="#2159A3">Explore C+++ right now: </font>**
+
+----
+
 # **Write Code, Compile, Run.**
 
 Though C+++ IDE doesn't have as much function as Xcode and Visual Studio have, though it is not as professional as Dev-C++ on Windows, it is really enough for a C++ Beginner who aims to attend the OI competitions. C+++ Includes the most basic features, such as code editing, compiling, debugging. It also provides more user-friendly interface for users.
