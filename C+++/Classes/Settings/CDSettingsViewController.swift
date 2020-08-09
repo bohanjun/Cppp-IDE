@@ -22,9 +22,9 @@ public func initDefaultData() {
     
 }
 
-@objc protocol CDSettingsViewDelegate {
+/*@objc protocol CDSettingsViewDelegate {
     func settingsViewControllerDidSet()
-}
+}*/
 
 class CDSettingsViewController: NSViewController {
     
@@ -42,7 +42,7 @@ class CDSettingsViewController: NSViewController {
     @IBOutlet weak var arguments: NSTextField!
     
     
-    var delegate: CDSettingsViewDelegate!
+    // var delegate: CDSettingsViewDelegate!
     
     
     @IBAction func save(_ sender: NSButton) {
@@ -64,7 +64,7 @@ class CDSettingsViewController: NSViewController {
         CDSettings.shared = settings
         CDCompileSettings.shared = compileSettings
         
-        self.delegate?.settingsViewControllerDidSet()
+        // self.delegate?.settingsViewControllerDidSet()
         
         self.dismiss(self)
         

@@ -435,6 +435,23 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Editor" id="Plf-xp-tvM">
                                     <items>
+                                        <menuItem title="Font Size" id="Qof-jL-yt2">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <menu key="submenu" id="yp7-SJ-h60">
+                                                <items>
+                                                    <menuItem title="Bigger Font" keyEquivalent="+" id="Vsn-AS-BMu">
+                                                        <connections>
+                                                            <action selector="biggerFont:" target="Ady-hI-5gd" id="KiJ-LF-Qjs"/>
+                                                        </connections>
+                                                    </menuItem>
+                                                    <menuItem title="Smaller Font" keyEquivalent="-" id="WbS-il-qN8">
+                                                        <connections>
+                                                            <action selector="smallerFont:" target="Ady-hI-5gd" id="G67-CY-usG"/>
+                                                        </connections>
+                                                    </menuItem>
+                                                </items>
+                                            </menu>
+                                        </menuItem>
                                         <menuItem title="Minimap" keyEquivalent="m" id="WyN-t8-Wrc">
                                             <connections>
                                                 <action selector="toggleMinimap:" target="Ady-hI-5gd" id="L0i-xh-4Gg"/>

@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import NotificationCenter
 
 class CDSettings: NSObject, NSCoding {
     
@@ -23,6 +24,8 @@ class CDSettings: NSObject, NSCoding {
     var codeCompletion: Bool!
     var checkUpdateAfterLaunching: Bool!
     var showLiveIssues: Bool!
+    
+    static let settingsDidChangeNotification: NSNotification.Name = NSNotification.Name(rawValue: "CDSettingsDidChange")
     
     
     
@@ -106,6 +109,7 @@ class CDSettings: NSObject, NSCoding {
         }
         set {
             NSKeyedArchiver.archiveRootObject(newValue!, toFile: CDSettings.archiveURL.path)
+            NotificationCenter.default.post(name: CDSettings.settingsDidChangeNotification, object: nil)
         }
     }
     

@@ -49,6 +49,7 @@
 		183BE91924AEBD7B000F60A0 /* CDMainViewController+SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183BE91824AEBD7B000F60A0 /* CDMainViewController+SettingsView.swift */; };
 		183BF3CA242906B3007AF6AC /* CDCodeEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183BF3C9242906B3007AF6AC /* CDCodeEditor.swift */; };
 		1846EF9A24C53AAB002A7797 /* NSView Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1846EF9924C53AAB002A7797 /* NSView Extension.swift */; };
+		1849ED8F24DFCC55006DCDB4 /* CDCodeEditor Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1849ED8E24DFCC55006DCDB4 /* CDCodeEditor Extension.swift */; };
 		184D5734247EA97500C5AA27 /* NSApplication Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184D5733247EA97500C5AA27 /* NSApplication Extension.swift */; };
 		184FE40124D55BF10093CC2B /* Run Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184FE40024D55BF10093CC2B /* Run Command.swift */; };
 		184FE40324D5608F0093CC2B /* CDCodeDocument+Compile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184FE40224D5608F0093CC2B /* CDCodeDocument+Compile.swift */; };
@@ -274,6 +275,7 @@
 		183BE91824AEBD7B000F60A0 /* CDMainViewController+SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDMainViewController+SettingsView.swift"; sourceTree = "<group>"; };
 		183BF3C9242906B3007AF6AC /* CDCodeEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDCodeEditor.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		1846EF9924C53AAB002A7797 /* NSView Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSView Extension.swift"; sourceTree = "<group>"; };
+		1849ED8E24DFCC55006DCDB4 /* CDCodeEditor Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCodeEditor Extension.swift"; sourceTree = "<group>"; };
 		184D5733247EA97500C5AA27 /* NSApplication Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSApplication Extension.swift"; sourceTree = "<group>"; };
 		184FE40024D55BF10093CC2B /* Run Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Run Command.swift"; sourceTree = "<group>"; };
 		184FE40224D5608F0093CC2B /* CDCodeDocument+Compile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCodeDocument+Compile.swift"; sourceTree = "<group>"; };
@@ -538,6 +540,7 @@
 			isa = PBXGroup;
 			children = (
 				183BF3C9242906B3007AF6AC /* CDCodeEditor.swift */,
+				1849ED8E24DFCC55006DCDB4 /* CDCodeEditor Extension.swift */,
 				1801DF5E24D2DDC2005CAD42 /* CDCodeEditorLineNumberView.swift */,
 				1801DF6024D3B64B005CAD42 /* CDCodeEditorLineNumberViewButton.swift */,
 				18E7291F244E756E000317D7 /* CDCodeEditorScrollView.swift */,
@@ -1097,6 +1100,7 @@
 				18B3C78424282C1F00F4CA14 /* CDCodeDocument.swift in Sources */,
 				18B3C790242836A500F4CA14 /* CDDocumentContent.swift in Sources */,
 				184D5734247EA97500C5AA27 /* NSApplication Extension.swift in Sources */,
+				1849ED8F24DFCC55006DCDB4 /* CDCodeEditor Extension.swift in Sources */,
 				181F2BD624AC78C700C4B217 /* CKDiagnostic+Private.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -75,6 +75,8 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(settingsDidChange(_:)), name: CDSettings.settingsDidChangeNotification, object: nil)
+        
         self.mainTextView.codeEditorDelegate = self
         self.mainTextView.scrollView = self.scrollViewOfTextView
             
