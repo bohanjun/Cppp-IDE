@@ -115,6 +115,7 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
                     self.complete(nil)
                 }
                 return
+                
         }
         
         super.insertText(right, replacementRange: replacementRange)
@@ -186,7 +187,7 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
         var completionResults = [CDCompletionResult]()
         
         let substring = self.string.nsString.substring(with: charRange)
-        if substring == "" {
+        if substring == "" || !(substring.first ?? "\0").isLetter {
             return [String]()
         }
         
