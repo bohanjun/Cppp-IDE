@@ -42,26 +42,6 @@ enum CDProjectItem: Codable {
     case folder(CDProject.Folder)
     case document(CDProject.Document)
     
-    /*enum CodingKeys: String, CodingKey {
-        
-        case typeName = "ITEM_TYPE"
-        case hasChildren = "HAS_CHILDREN"
-        case children = "CHILDREN_ARRAY"
-        
-    }
-    
-    required convenience init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        let type = try container.decode(String.self, forKey: CodingKeys.typeName)
-        switch type {
-            case "File": self = try CDProject.Document.init(from: decoder)
-            case "Folder": self = try CDProject.Folder.init(from: decoder)
-            case "Project": break
-            default:
-                break
-        }
-    }*/
-    
 }
 
 class CDProject: NSObject, Codable {

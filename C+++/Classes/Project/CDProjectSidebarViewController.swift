@@ -23,6 +23,7 @@ class CDProjectSidebarViewController: NSViewController, NSOutlineViewDataSource,
         return false
     }
     
+    
     func outlineView(_ outlineView: NSOutlineView, child index: Int, ofItem item: Any?) -> Any {
         
         if item == nil {
@@ -51,6 +52,7 @@ class CDProjectSidebarViewController: NSViewController, NSOutlineViewDataSource,
         
     }
     
+    
     func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
         if let item = item as? CDProjectItem {
             switch item {
@@ -59,10 +61,12 @@ class CDProjectSidebarViewController: NSViewController, NSOutlineViewDataSource,
                 case .project(let project): return project.children.count
             }
         }
-        return self.document?.project?.children.count ?? 0
+        return 1
     }
     
+    
     func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView? {
+        
         var cell: NSTableCellView!
         if let item = item as? CDProjectItem {
             cell = outlineView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "Cell"), owner: self) as? NSTableCellView
@@ -81,6 +85,7 @@ class CDProjectSidebarViewController: NSViewController, NSOutlineViewDataSource,
             
         }
         return cell
+        
     }
     
     override func awakeFromNib() {
@@ -89,11 +94,15 @@ class CDProjectSidebarViewController: NSViewController, NSOutlineViewDataSource,
     
     override func viewWillAppear() {
         super.viewWillAppear()
+        
         self.document = self.view.window?.windowController?.document as? CDProjectDocument
         self.outlineView.reloadData()
+        
     }
     
+    
     weak var document: CDProjectDocument!
+    
     
     @IBAction func add(_ sender: Any?) {
         
@@ -103,6 +112,13 @@ class CDProjectSidebarViewController: NSViewController, NSOutlineViewDataSource,
             self.document.project.children.append(.document(CDProject.Document(path: panel.url!.path)))
             self.outlineView.reloadData()
         }
+        
+    }
+    
+    @IBAction func addFolder(_ sender: Any?) {
+        
+        self.document.project.children.append(.folder(CDProject.Folder(name: "Folder")))
+        self.outlineView.reloadData()
         
     }
     
