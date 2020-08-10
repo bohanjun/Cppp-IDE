@@ -55,14 +55,14 @@ class CDSettings: NSObject, NSCoding {
     init?(_ fontName: String? = "Courier", _ fontSize: Int? = 15, _ lightThemeName: String? = "Xcode", _ darkThemeName: String? = "Agate", _ autoComplete: Bool? = true, _ codeCompletion: Bool? = true, _ checkUpdateAfterLaunching: Bool? = true, _ showsLiveIssue: Bool? = true) {
         
         // Initialize stored properties.
-        self.fontName = fontName
-        self.fontSize = fontSize
-        self.lightThemeName = lightThemeName
-        self.darkThemeName = darkThemeName
-        self.autoComplete = autoComplete
-        self.codeCompletion = codeCompletion
-        self.checkUpdateAfterLaunching = checkUpdateAfterLaunching
-        self.showLiveIssues = showsLiveIssue
+        self.fontName = fontName ?? "Courier"
+        self.fontSize = fontSize ?? 15
+        self.lightThemeName = lightThemeName ?? "Xcode"
+        self.darkThemeName = darkThemeName ?? "Agate"
+        self.autoComplete = autoComplete ?? true
+        self.codeCompletion = codeCompletion ?? true
+        self.checkUpdateAfterLaunching = checkUpdateAfterLaunching ?? true
+        self.showLiveIssues = showsLiveIssue ?? true
         
     }
     

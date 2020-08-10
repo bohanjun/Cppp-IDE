@@ -435,6 +435,12 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Editor" id="Plf-xp-tvM">
                                     <items>
+                                        <menuItem title="Comment Selection" id="9LO-FL-nut">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="changeSelectionToComment:" target="Ady-hI-5gd" id="I8B-LR-cEF"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem title="Font Size" id="Qof-jL-yt2">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <menu key="submenu" id="yp7-SJ-h60">
