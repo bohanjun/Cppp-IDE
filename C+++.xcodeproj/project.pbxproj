@@ -12,6 +12,9 @@
 		1801DF6524D50CAA005CAD42 /* CDConsoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1801DF6424D50CAA005CAD42 /* CDConsoleView.swift */; };
 		180480AE2448602700CD0A4D /* CDSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180480AD2448602700CD0A4D /* CDSettings.swift */; };
 		1806FCBC24C08CF70081D7BA /* String Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806FCBB24C08CF70081D7BA /* String Extension.swift */; };
+		1815A0D524E0E7E700D1B23C /* Project.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1815A0D424E0E7E700D1B23C /* Project.storyboard */; };
+		1815A0D724E0E93200D1B23C /* CDProjectSidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1815A0D624E0E93200D1B23C /* CDProjectSidebarViewController.swift */; };
+		1815A0D924E0EAA100D1B23C /* CDProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1815A0D824E0EAA100D1B23C /* CDProject.swift */; };
 		181B4F8B24DC392C000F3ED7 /* CDMinimapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181B4F8A24DC392C000F3ED7 /* CDMinimapView.swift */; };
 		181B4F8D24DCED1E000F3ED7 /* CDMinimapScrollerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181B4F8C24DCED1E000F3ED7 /* CDMinimapScrollerView.swift */; };
 		181B4F9024DE39F7000F3ED7 /* CDParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181B4F8F24DE39F7000F3ED7 /* CDParser.swift */; };
@@ -224,6 +227,9 @@
 		180480A824474A0700CD0A4D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		180480AD2448602700CD0A4D /* CDSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDSettings.swift; sourceTree = "<group>"; };
 		1806FCBB24C08CF70081D7BA /* String Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String Extension.swift"; sourceTree = "<group>"; };
+		1815A0D424E0E7E700D1B23C /* Project.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Project.storyboard; sourceTree = "<group>"; };
+		1815A0D624E0E93200D1B23C /* CDProjectSidebarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProjectSidebarViewController.swift; sourceTree = "<group>"; };
+		1815A0D824E0EAA100D1B23C /* CDProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProject.swift; sourceTree = "<group>"; };
 		181B4F8A24DC392C000F3ED7 /* CDMinimapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDMinimapView.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		181B4F8C24DCED1E000F3ED7 /* CDMinimapScrollerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDMinimapScrollerView.swift; sourceTree = "<group>"; };
 		181B4F8F24DE39F7000F3ED7 /* CDParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDParser.swift; sourceTree = "<group>"; };
@@ -526,7 +532,7 @@
 				18FC05442487B96200F33CE2 /* Test */,
 				181B4F8E24DE39DE000F3ED7 /* Parser */,
 				187527AC247A64B200A7522A /* Launch View Controller */,
-				18D4DD6B246A2C1A00B97F32 /* Project View Controller */,
+				18D4DD6B246A2C1A00B97F32 /* Project */,
 				18541B172445AB35000EB4CB /* Settings */,
 				18B185752464EE9200B579AD /* Snippet */,
 				18B185802466D9B100B579AD /* Completion */,
@@ -804,14 +810,16 @@
 			path = "C+++";
 			sourceTree = "<group>";
 		};
-		18D4DD6B246A2C1A00B97F32 /* Project View Controller */ = {
+		18D4DD6B246A2C1A00B97F32 /* Project */ = {
 			isa = PBXGroup;
 			children = (
 				18D4DD6C246A2C5100B97F32 /* CDProjectViewController.swift */,
+				1815A0D424E0E7E700D1B23C /* Project.storyboard */,
+				1815A0D624E0E93200D1B23C /* CDProjectSidebarViewController.swift */,
 				18D4DD6E246A2C9E00B97F32 /* CDProjectTableView.swift */,
 				18D4DD70246A303400B97F32 /* CDProjectTableViewCell.swift */,
 			);
-			path = "Project View Controller";
+			path = Project;
 			sourceTree = "<group>";
 		};
 		18E0B01C242C52650062049C /* Document */ = {
@@ -822,6 +830,7 @@
 				184FE40424D5817D0093CC2B /* CDCodeDocument+Debug.swift */,
 				1860EC3224839A8B0066DE64 /* CDDocumentController.swift */,
 				18B185902469608B00B579AD /* CDProjectDocument.swift */,
+				1815A0D824E0EAA100D1B23C /* CDProject.swift */,
 				18B3C78F242836A500F4CA14 /* CDDocumentContent.swift */,
 			);
 			path = Document;
@@ -922,6 +931,7 @@
 				1881D5F324D139B40082F2C4 /* Update.storyboard in Resources */,
 				18A41B1F242C765500AFC422 /* dark.min.css in Resources */,
 				18A41B36242C765500AFC422 /* darcula.min.css in Resources */,
+				1815A0D524E0E7E700D1B23C /* Project.storyboard in Resources */,
 				18A41B33242C765500AFC422 /* vs.min.css in Resources */,
 				18A41B2D242C765500AFC422 /* hopscotch.min.css in Resources */,
 				18A41B27242C765500AFC422 /* perfect.min.css in Resources */,
@@ -1053,11 +1063,13 @@
 				181B4F8D24DCED1E000F3ED7 /* CDMinimapScrollerView.swift in Sources */,
 				181F2BDA24AC78C700C4B217 /* CKCompletionResult.m in Sources */,
 				186AC7F324A47BD900F6B682 /* NSViewController Extension.swift in Sources */,
+				1815A0D724E0E93200D1B23C /* CDProjectSidebarViewController.swift in Sources */,
 				183BE91124AEB1C4000F60A0 /* CDMainViewController+Diagnostics.swift in Sources */,
 				180480AE2448602700CD0A4D /* CDSettings.swift in Sources */,
 				18E72920244E756E000317D7 /* CDCodeEditorScrollView.swift in Sources */,
 				18B185732463B32400B579AD /* CDSnippetPopoperViewController.swift in Sources */,
 				18A41AAA242C75DE00AFC422 /* CDHighlightrAttributedString.swift in Sources */,
+				1815A0D924E0EAA100D1B23C /* CDProject.swift in Sources */,
 				183BF3CA242906B3007AF6AC /* CDCodeEditor.swift in Sources */,
 				185CD64224CC639500A9511B /* CDSearchViewController.swift in Sources */,
 				181F2BD824AC78C700C4B217 /* CKDiagnostic.m in Sources */,

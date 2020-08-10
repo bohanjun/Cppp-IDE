@@ -8,17 +8,18 @@
 
 import Cocoa
 
-
-
-
 class CDProjectDocument: NSDocument {
     
-    @objc var content = CDDocumentContent(contentString: "")
+    var project: CDProject!
     var contentViewController: CDProjectViewController!
+    var documents = [NSDocument]()
+    let decoder = JSONDecoder()
+    let encoder = JSONEncoder()
     
     override init() {
         super.init()
         // Add your subclass-specific initialization here.
+        self.project = CDProject(compileCommand: "Not set", version: "1.0", documents: [CDProject.Document()])
     }
     
     override func defaultDraftName() -> String {
@@ -51,135 +52,36 @@ class CDProjectDocument: NSDocument {
         
         launchViewController.view.window?.close()
         
-        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
-        if let windowController =
-            storyboard.instantiateController(
-                withIdentifier: NSStoryboard.SceneIdentifier("Project Window Controller")) as? NSWindowController {
-            
+        let storyboard = NSStoryboard(name: "Project", bundle: nil)
+        if let windowController = storyboard.instantiateController(withIdentifier: "Project Window Controller") as? NSWindowController {
             self.addWindowController(windowController)
+        }
+        
+        /* if let viewController = storyboard.instantiateController(withIdentifier: "Project View Controller") as? NSViewController {
             
-            // Set the view controller's represented object as your document.
-            if let contentVC = windowController.contentViewController as? CDProjectViewController {
-                
-                contentVC.filePaths = self.allFiles
-                contentVC.representedObject = self
+        }*/
+        
+        if let sidebar = storyboard.instantiateController(withIdentifier: "Project Sidebar View Controller") as? CDProjectSidebarViewController {
+            sidebar.document = self
+        }
 
-                contentVC.tableView.paths = contentVC.filePaths
-                contentVC.tableView.cells = contentVC.tableView.load()
-                contentVC.tableView.setup(cells: contentVC.tableView.cells)
-                contentVC.textField.stringValue = self.compileCommand
-                
-                contentViewController = contentVC
-                
-            }
-        }
     }
     
-    @objc dynamic var compileCommand: String {
-        
-        get {
-            let string = self.content.contentString
-            let lines = string.components(separatedBy: "\n")
-            return lines.first ?? ""
-        }
-        
-        set {
-            let string = newValue + "\n" + allFiles.joined(separator: "\n")
-            self.content.contentString = string
-        }
-        
-    }
-    
-    @objc dynamic var allFiles: [String] {
-        
-        get {
-            let string = self.content.contentString
-            var lines = string.components(separatedBy: "\n")
-            lines.removeFirst()
-            return lines
-        }
-        
-        set {
-            let string = compileCommand + "\n" + newValue.joined(separator: "\n")
-            self.content.contentString = string
-        }
-        
-    }
     
     
     // MARK: - Reading and Writing
     
     override func read(from data: Data, ofType typeName: String) throws {
         
-        content.read(from: data)
+        let result = try decoder.decode(CDProject.self, from: data)
+        self.project = result
+        Swift.print("parseresult: \(result)")
         
     }
     
     override func data(ofType typeName: String) throws -> Data {
         
-        return content.data()!
-        
-    }
-    
-    
-    // MARK: - Printing
-    
-    func thePrintInfo() -> NSPrintInfo {
-        
-        let thePrintInfo = NSPrintInfo()
-        thePrintInfo.horizontalPagination = .fit
-        thePrintInfo.isHorizontallyCentered = false
-        thePrintInfo.isVerticallyCentered = false
-        
-        // One inch margin all the way around.
-        thePrintInfo.leftMargin = 72.0
-        thePrintInfo.rightMargin = 72.0
-        thePrintInfo.topMargin = 72.0
-        thePrintInfo.bottomMargin = 72.0
-        
-        printInfo.dictionary().setObject(NSNumber(value: true),
-                                         forKey: NSPrintInfo.AttributeKey.headerAndFooter as NSCopying)
-        
-        return thePrintInfo
-        
-    }
-    
-    @objc
-    func printOperationDidRun(
-        _ printOperation: NSPrintOperation, success: Bool, contextInfo: UnsafeMutableRawPointer?) {
-        // Printing finished...
-    }
-    
-    @IBAction override func printDocument(_ sender: Any?) {
-        // Print the NSTextView.
-        
-        // Create a copy to manipulate for printing.
-        let pageSize = NSSize(width: (printInfo.paperSize.width), height: (printInfo.paperSize.height))
-        let textView = NSTextView(frame: NSRect(x: 0.0, y: 0.0, width: pageSize.width, height: pageSize.height))
-        
-        // Make sure we print on a white background.
-        textView.appearance = NSAppearance(named: .aqua)
-        
-        // Copy the attributed string.
-        textView.textStorage?.append(NSAttributedString(string: "This C+++ Project document cannot be printed."))
-        
-        let printOperation = NSPrintOperation(view: textView)
-        printOperation.runModal(
-            for: windowControllers[0].window!,
-            delegate: self,
-            didRun: #selector(printOperationDidRun(_:success:contextInfo:)), contextInfo: nil)
-        
-    }
-    
-    
-    @IBAction func compileProject(_ sender: Any?) {
-        
-        self.save(self)
-        var res = runShellCommand(self.compileCommand).last
-        if res == "" {
-            res = "Compile Succeed"
-        }
-        self.contentViewController.showAlert("Compile Result", res!)
+        return try encoder.encode(self.project)
         
     }
     

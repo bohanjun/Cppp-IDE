@@ -31,9 +31,9 @@ class CDProjectTableView: CDSnippetTableView {
         return array
     }
     
-    override func save() {
+    /*override func save() {
         (self.window?.contentViewController as! CDProjectViewController).saveProject(self)
-    }
+    }*/
     
     override func allItemTitles() -> [String] {
         

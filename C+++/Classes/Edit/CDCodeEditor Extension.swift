@@ -28,14 +28,11 @@ extension CDCodeEditor {
     
     @IBAction func changeSelectionToComment(_ sender: Any?) {
         
-        // let string = self.string.nsString.substring(with: self.selectedRange)
         var range = self.selectedRange
         var lineRange = NSMakeRange(0, 0)
         for line in self.string.components(separatedBy: .newlines) {
             lineRange.length = line.count + 1
-            print(lineRange)
             let anotherRange = NSIntersectionRange(range, lineRange)
-            print("selected range = \(range)    intersection range = \(anotherRange)")
             if anotherRange.length != 0 {
                 self.string = self.string.nsString.replacingCharacters(in: NSMakeRange(lineRange.location, lineRange.length - 1), with: "//" + line)
                 lineRange.location += line.count + 3
