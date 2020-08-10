@@ -19,7 +19,10 @@ class CDProjectDocument: NSDocument {
     override init() {
         super.init()
         // Add your subclass-specific initialization here.
-        self.project = CDProject(compileCommand: "Not set", version: "1.0", documents: [CDProject.Document()])
+        encoder.outputFormatting = .prettyPrinted
+        self.project = CDProject(compileCommand: "Not set", version: "1.0")
+        project.children.append(.document(CDProject.Document(path: "/Users/Apple/Desktop/main.cpp")))
+        Swift.print(self.project.children)
     }
     
     override func defaultDraftName() -> String {
@@ -72,10 +75,13 @@ class CDProjectDocument: NSDocument {
     // MARK: - Reading and Writing
     
     override func read(from data: Data, ofType typeName: String) throws {
-        
-        let result = try decoder.decode(CDProject.self, from: data)
-        self.project = result
-        Swift.print("parseresult: \(result)")
+        do {
+            let result = try decoder.decode(CDProject.self, from: data)
+            
+            self.project = result
+        } catch {
+            Swift.print("\(error)")
+        }
         
     }
     

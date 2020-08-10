@@ -13,13 +13,9 @@ extension NSDocumentController {
     
     @IBAction func newProject(_ sender: Any?) {
         
-        do {
-            (NSDocumentController.shared as! CDDocumentController)._defaultType = "C+++ Project"
-            try NSDocumentController.shared.openUntitledDocumentAndDisplay(true)
-            (NSDocumentController.shared as! CDDocumentController)._defaultType = "C++ Source"
-        } catch {
-            print("Error")
-        }
+        (NSDocumentController.shared as! CDDocumentController)._defaultType = "C+++ Project"
+        self.newDocument(sender)
+        (NSDocumentController.shared as! CDDocumentController)._defaultType = "C++ Source"
         
     }
     
@@ -50,9 +46,19 @@ class CDDocumentController: NSDocumentController {
     
     override func newDocument(_ sender: Any?) {
         super.newDocument(sender)
+        
         self.currentDocument?.save(self)
         if let document = self.currentDocument as? CDCodeDocument {
             document.contentViewController.mainTextView.document = document
+            return
+        }
+        if let document = self.currentDocument as? CDProjectDocument {
+            if document.fileURL == nil {
+                // document.close()
+                // return
+            } else {
+                FileManager.default.createFile(atPath: document.fileURL!.deletingLastPathComponent().appendingPathComponent("main.cpp").path, contents: "#include <cstdio>\nint main() {\n\treturn 0;\n}\n".data(using: .utf8), attributes: nil)
+            }
         }
     }
     
