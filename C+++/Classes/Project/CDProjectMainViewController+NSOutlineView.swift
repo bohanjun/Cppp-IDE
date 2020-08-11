@@ -1,16 +1,14 @@
 //
-//  CDProjectSidebarViewController.swift
+//  CDProjectMainViewController+NSOutlineView.swift
 //  C+++
 //
-//  Created by 23786 on 2020/8/10.
+//  Created by 23786 on 2020/8/11.
 //  Copyright © 2020 Zhu Yixuan. All rights reserved.
 //
 
 import Cocoa
 
-class CDProjectSidebarViewController: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate {
-    
-    @IBOutlet weak var outlineView: NSOutlineView!
+extension CDProjectMainViewController: NSOutlineViewDataSource, NSOutlineViewDelegate {
     
     func outlineView(_ outlineView: NSOutlineView, isItemExpandable item: Any) -> Bool {
         if let item = item as? CDProjectItem {
@@ -27,7 +25,7 @@ class CDProjectSidebarViewController: NSViewController, NSOutlineViewDataSource,
     func outlineView(_ outlineView: NSOutlineView, child index: Int, ofItem item: Any?) -> Any {
         
         if item == nil {
-            return CDProjectItem.project(self.document.project!)
+            return CDProjectItem.project(self.document?.project ?? CDProject())
         }
         
         if let projectItem = item as? CDProjectItem {
@@ -101,8 +99,6 @@ class CDProjectSidebarViewController: NSViewController, NSOutlineViewDataSource,
     }
     
     
-    weak var document: CDProjectDocument!
-    
     
     @IBAction func add(_ sender: Any?) {
         
@@ -117,9 +113,24 @@ class CDProjectSidebarViewController: NSViewController, NSOutlineViewDataSource,
     
     @IBAction func addFolder(_ sender: Any?) {
         
+        print("SIDEBAR: \(self.isViewLoaded)")
         self.document.project.children.append(.folder(CDProject.Folder(name: "Folder")))
         self.outlineView.reloadData()
         
     }
     
+    @IBAction func didClick(_ sender: NSOutlineView) {
+        
+        let item = sender.item(atRow: sender.clickedRow)
+        if let item = item as? CDProjectItem {
+            switch item {
+                case .document(_):
+                    break
+                default:
+                    break
+            }
+        }
+        
+    }
+
 }

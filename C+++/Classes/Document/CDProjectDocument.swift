@@ -11,7 +11,7 @@ import Cocoa
 class CDProjectDocument: NSDocument {
     
     var project: CDProject!
-    var contentViewController: CDProjectViewController!
+    var contentViewController: CDProjectMainViewController!
     var documents = [NSDocument]()
     let decoder = JSONDecoder()
     let encoder = JSONEncoder()
@@ -60,13 +60,12 @@ class CDProjectDocument: NSDocument {
             self.addWindowController(windowController)
         }
         
-        /* if let viewController = storyboard.instantiateController(withIdentifier: "Project View Controller") as? NSViewController {
-            
-        }*/
-        
-        if let sidebar = storyboard.instantiateController(withIdentifier: "Project Sidebar View Controller") as? CDProjectSidebarViewController {
-            sidebar.document = self
+        if let vc = storyboard.instantiateController(withIdentifier: "Project View Controller") as? CDProjectMainViewController {
+            // sidebar.delegate = self.contentViewController
+            vc.document = self
+            self.contentViewController = vc
         }
+        
 
     }
     
@@ -75,13 +74,9 @@ class CDProjectDocument: NSDocument {
     // MARK: - Reading and Writing
     
     override func read(from data: Data, ofType typeName: String) throws {
-        do {
-            let result = try decoder.decode(CDProject.self, from: data)
-            
-            self.project = result
-        } catch {
-            Swift.print("\(error)")
-        }
+        
+        let result = try decoder.decode(CDProject.self, from: data)
+        self.project = result
         
     }
     
