@@ -58,13 +58,14 @@ class CDProjectDocument: NSDocument {
         let storyboard = NSStoryboard(name: "Project", bundle: nil)
         if let windowController = storyboard.instantiateController(withIdentifier: "Project Window Controller") as? NSWindowController {
             self.addWindowController(windowController)
+            
+            if let vc = windowController.contentViewController as? CDProjectMainViewController {
+                vc.document = self
+                self.contentViewController = vc
+            }
+            
         }
         
-        if let vc = storyboard.instantiateController(withIdentifier: "Project View Controller") as? CDProjectMainViewController {
-            // sidebar.delegate = self.contentViewController
-            vc.document = self
-            self.contentViewController = vc
-        }
         
 
     }

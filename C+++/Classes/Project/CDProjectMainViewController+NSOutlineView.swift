@@ -123,12 +123,7 @@ extension CDProjectMainViewController: NSOutlineViewDataSource, NSOutlineViewDel
         
         let item = sender.item(atRow: sender.clickedRow)
         if let item = item as? CDProjectItem {
-            switch item {
-                case .document(_):
-                    break
-                default:
-                    break
-            }
+            self.document.openDocument(item: item)
         }
         
     }

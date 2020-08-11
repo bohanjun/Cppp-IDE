@@ -14,6 +14,13 @@ class CDProjectMainViewController: NSViewController {
     
     weak var document: CDProjectDocument!
     
+    // MARK: - Document Information
+    
+    @IBOutlet weak var documentInfoFileNameLabel: NSTextField!
+    @IBOutlet weak var documentInfoFileTypeLabel: NSTextField!
+    @IBOutlet weak var documentInfoFilePathLabel: NSTextField!
+    @IBOutlet weak var documentInfoDescription: NSTextView!
+    
  
     
 }
