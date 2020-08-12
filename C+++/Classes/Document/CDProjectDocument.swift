@@ -68,6 +68,15 @@ class CDProjectDocument: NSDocument {
 
     }
     
+    override func save(_ sender: Any?) {
+        super.save(sender)
+        
+        if let document = self.contentViewController.contentVC.representedObject as? CDCodeDocument {
+            document.save(sender)
+        }
+        
+    }
+    
     
     
     // MARK: - Reading and Writing
