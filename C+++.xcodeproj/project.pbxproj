@@ -230,7 +230,7 @@
 		1806FCBB24C08CF70081D7BA /* String Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String Extension.swift"; sourceTree = "<group>"; };
 		1815A0D424E0E7E700D1B23C /* Project.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Project.storyboard; sourceTree = "<group>"; };
 		1815A0D624E0E93200D1B23C /* CDProjectMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProjectMainViewController.swift; sourceTree = "<group>"; };
-		1815A0DA24E15BEA00D1B23C /* CDProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProject.swift; sourceTree = "<group>"; };
+		1815A0DA24E15BEA00D1B23C /* CDProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDProject.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		181B4F8A24DC392C000F3ED7 /* CDMinimapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDMinimapView.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		181B4F8C24DCED1E000F3ED7 /* CDMinimapScrollerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDMinimapScrollerView.swift; sourceTree = "<group>"; };
 		181B4F8F24DE39F7000F3ED7 /* CDParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDParser.swift; sourceTree = "<group>"; };

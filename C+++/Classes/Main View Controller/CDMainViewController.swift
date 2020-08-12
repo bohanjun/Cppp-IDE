@@ -32,7 +32,7 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
     /// - If it is true,the appearance is dark aqua.
     /// - if it is false, the appearance is aqua.
     var isDarkMode: Bool = true
-    
+    var isOpeningInProjectViewController = false
     
     
     @IBOutlet weak var mainTextView: CDCodeEditor!
@@ -180,7 +180,13 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
         }
         return nil
     }
-
+    
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        if !self.isOpeningInProjectViewController {
+            self.representedObject = self.view.window?.windowController?.document as? CDCodeDocument
+        }
+    }
     
     
     

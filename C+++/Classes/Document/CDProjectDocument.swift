@@ -21,8 +21,6 @@ class CDProjectDocument: NSDocument {
         // Add your subclass-specific initialization here.
         encoder.outputFormatting = .prettyPrinted
         self.project = CDProject(compileCommand: "Not set", version: "1.0")
-        project.children.append(.document(CDProject.Document(path: "/Users/Apple/Desktop/main.cpp")))
-        Swift.print(self.project.children)
     }
     
     override func defaultDraftName() -> String {
@@ -85,6 +83,25 @@ class CDProjectDocument: NSDocument {
         
         return try encoder.encode(self.project)
         
+    }
+    
+    override func runModalSavePanel(for saveOperation: NSDocument.SaveOperationType,
+                                         delegate: Any?,
+                                          didSave didSaveSelector: Selector?,
+                                          contextInfo: UnsafeMutableRawPointer?) {
+        super.runModalSavePanel(for: saveOperation, delegate: delegate, didSave: #selector(didSave), contextInfo: contextInfo)
+    }
+    
+    @objc func didSave() {
+        if let filePath = fileURL?.path {
+            let path = filePath.nsString.deletingLastPathComponent.nsString.appendingPathComponent("main.cpp")
+            let anotherPath = path.nsString.deletingLastPathComponent.nsString.appendingPathComponent("main.h")
+            FileManager.default.createFile(atPath: path, contents: "#include <cstdio>\nint main() {\n\treturn 0;\n}\n".data(using: .utf8), attributes: nil)
+            FileManager.default.createFile(atPath: anotherPath, contents: "#ifndef MAIN_H\n#define MAIN_H\n\n#endif\n".data(using: .utf8), attributes: nil)
+            self.project.children.append(.document(CDProject.Document(path: path)))
+            self.project.children.append(.document(CDProject.Document(path: anotherPath)))
+            self.save(self)
+        }
     }
     
 }

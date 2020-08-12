@@ -12,6 +12,9 @@
 			<key>CFBundleTypeExtensions</key>
 			<array>
 				<string>cpp</string>
+				<string>cxx</string>
+				<string>c++</string>
+				<string>cc</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
 			<string></string>
@@ -23,6 +26,8 @@
 			<string>Editor</string>
 			<key>LSHandlerRank</key>
 			<string>Default</string>
+			<key>LSItemContentTypes</key>
+			<array/>
 			<key>LSTypeIsPackage</key>
 			<integer>0</integer>
 			<key>NSDocumentClass</key>
@@ -32,6 +37,9 @@
 			<key>CFBundleTypeExtensions</key>
 			<array>
 				<string>h</string>
+				<string>hpp</string>
+				<string>h++</string>
+				<string>hxx</string>
 			</array>
 			<key>CFBundleTypeIconSystemGenerated</key>
 			<integer>1</integer>
@@ -41,6 +49,8 @@
 			<string>Editor</string>
 			<key>LSHandlerRank</key>
 			<string>Default</string>
+			<key>LSItemContentTypes</key>
+			<array/>
 			<key>LSTypeIsPackage</key>
 			<integer>0</integer>
 			<key>NSDocumentClass</key>
@@ -59,6 +69,8 @@
 			<string>Editor</string>
 			<key>LSHandlerRank</key>
 			<string>Default</string>
+			<key>LSItemContentTypes</key>
+			<array/>
 			<key>LSTypeIsPackage</key>
 			<integer>0</integer>
 			<key>NSDocumentClass</key>
@@ -95,6 +107,8 @@
 			<string>Editor</string>
 			<key>LSHandlerRank</key>
 			<string>Default</string>
+			<key>LSItemContentTypes</key>
+			<array/>
 			<key>LSTypeIsPackage</key>
 			<integer>0</integer>
 			<key>NSDocumentClass</key>
@@ -104,6 +118,7 @@
 			<key>CFBundleTypeExtensions</key>
 			<array>
 				<string>out</string>
+				<string>ans</string>
 			</array>
 			<key>CFBundleTypeIconSystemGenerated</key>
 			<integer>1</integer>

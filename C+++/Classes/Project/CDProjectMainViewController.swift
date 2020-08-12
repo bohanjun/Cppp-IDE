@@ -11,8 +11,10 @@ import Cocoa
 class CDProjectMainViewController: NSViewController {
     
     @IBOutlet weak var outlineView: NSOutlineView!
+    @IBOutlet weak var fileView: NSView!
     
     weak var document: CDProjectDocument!
+    weak var contentVC: CDMainViewController!
     
     // MARK: - Document Information
     
@@ -21,6 +23,15 @@ class CDProjectMainViewController: NSViewController {
     @IBOutlet weak var documentInfoFilePathLabel: NSTextField!
     @IBOutlet weak var documentInfoDescription: NSTextView!
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.contentVC = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "Main View Controller") as? CDMainViewController
+        contentVC.isOpeningInProjectViewController = true
+        self.addChild(contentVC)
+        
+    }
  
     
 }

@@ -163,9 +163,34 @@
                                             <splitView misplaced="YES" arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wWq-qV-Mkx">
                                                 <rect key="frame" x="0.0" y="0.0" width="484" height="525"/>
                                                 <subviews>
-                                                    <customView fixedFrame="YES" id="s9h-rI-Iuu">
+                                                    <customView misplaced="YES" id="s9h-rI-Iuu">
                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="525"/>
                                                         <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <splitView misplaced="YES" arrangesAllSubviews="NO" dividerStyle="thin" translatesAutoresizingMaskIntoConstraints="NO" id="578-cW-AE3">
+                                                                <rect key="frame" x="0.0" y="0.0" width="300" height="525"/>
+                                                                <subviews>
+                                                                    <customView fixedFrame="YES" id="nW6-88-8jO">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="409"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                    </customView>
+                                                                    <customView fixedFrame="YES" id="Fmt-RC-hgO">
+                                                                        <rect key="frame" x="0.0" y="410" width="300" height="115"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                    </customView>
+                                                                </subviews>
+                                                                <holdingPriorities>
+                                                                    <real value="250"/>
+                                                                    <real value="250"/>
+                                                                </holdingPriorities>
+                                                            </splitView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="578-cW-AE3" secondAttribute="bottom" id="Owq-fm-jS3"/>
+                                                            <constraint firstAttribute="trailing" secondItem="578-cW-AE3" secondAttribute="trailing" id="VXr-3c-3sY"/>
+                                                            <constraint firstItem="578-cW-AE3" firstAttribute="top" secondItem="s9h-rI-Iuu" secondAttribute="top" id="ci0-nb-rZY"/>
+                                                            <constraint firstItem="578-cW-AE3" firstAttribute="leading" secondItem="s9h-rI-Iuu" secondAttribute="leading" id="jeD-Ui-V81"/>
+                                                        </constraints>
                                                     </customView>
                                                     <customView id="muS-M7-msn">
                                                         <rect key="frame" x="301" y="0.0" width="183" height="525"/>
@@ -222,6 +247,13 @@
                                                                     <font key="font" metaFont="system"/>
                                                                 </buttonCell>
                                                             </button>
+                                                            <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s8x-hU-KGH">
+                                                                <rect key="frame" x="10" y="353" width="153" height="16"/>
+                                                                <buttonCell key="cell" type="bevel" title=" Show in Finder" bezelStyle="rounded" image="NSTouchBarGetInfoTemplate" imagePosition="left" alignment="left" imageScaling="proportionallyDown" inset="2" id="3yj-uE-VfD">
+                                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                            </button>
                                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xMK-SC-cmZ">
                                                                 <rect key="frame" x="8" y="302" width="167" height="16"/>
                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Description (Optional)" id="gAs-W1-Q4Q">
@@ -259,12 +291,27 @@
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                 </scroller>
                                                             </scrollView>
-                                                            <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s8x-hU-KGH">
-                                                                <rect key="frame" x="10" y="353" width="153" height="16"/>
-                                                                <buttonCell key="cell" type="bevel" title=" Show in Finder" bezelStyle="rounded" image="NSTouchBarGetInfoTemplate" imagePosition="left" alignment="left" imageScaling="proportionallyDown" inset="2" id="3yj-uE-VfD">
+                                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nXn-Cl-nQc">
+                                                                <rect key="frame" x="13" y="157" width="95" height="32"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <buttonCell key="cell" type="push" title="Add File" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WGx-0i-RVf">
                                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                     <font key="font" metaFont="system"/>
                                                                 </buttonCell>
+                                                                <connections>
+                                                                    <action selector="add:" target="IWd-cJ-Eak" id="kx7-u8-lRv"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K9L-AH-jWF">
+                                                                <rect key="frame" x="13" y="132" width="113" height="32"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                <buttonCell key="cell" type="push" title="Add Folder" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="t7E-gc-1uX">
+                                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                                <connections>
+                                                                    <action selector="addFolder:" target="IWd-cJ-Eak" id="mqe-bn-cdm"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -328,6 +375,7 @@
                         <outlet property="documentInfoFileNameLabel" destination="cjq-8a-nXO" id="gwx-cP-yEU"/>
                         <outlet property="documentInfoFilePathLabel" destination="t4r-eV-QaW" id="O5n-XR-kU5"/>
                         <outlet property="documentInfoFileTypeLabel" destination="T3e-rl-Y7j" id="iEX-Yq-ZHO"/>
+                        <outlet property="fileView" destination="nW6-88-8jO" id="evU-81-gmh"/>
                         <outlet property="outlineView" destination="e4f-QB-miL" id="igc-RP-Xpj"/>
                     </connections>
                 </viewController>

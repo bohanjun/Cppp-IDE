@@ -1822,9 +1822,13 @@ Gw
                                                                             <size key="maxSize" width="10000000" height="10000000"/>
                                                                             <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                                             <connections>
-                                                                                <binding destination="5gI-5U-AMq" name="value" keyPath="representedObject.contentString" id="Hfd-3x-ikM">
+                                                                                <binding destination="5gI-5U-AMq" name="value" keyPath="representedObject.content.contentString" id="ifK-M9-C0x">
                                                                                     <dictionary key="options">
                                                                                         <bool key="NSContinuouslyUpdatesValue" value="YES"/>
+                                                                                        <string key="NSMultipleValuesPlaceholder">Open Document Failed: Error: Multiple Values</string>
+                                                                                        <string key="NSNoSelectionPlaceholder">Open Document Failed: Error: No Selection</string>
+                                                                                        <string key="NSNotApplicablePlaceholder">Open Document Failed: Error: Not Applicable</string>
+                                                                                        <string key="NSNullPlaceholder">Open Document Failed: Error: Null</string>
                                                                                     </dictionary>
                                                                                 </binding>
                                                                                 <outlet property="delegate" destination="5gI-5U-AMq" id="DFD-bd-csP"/>

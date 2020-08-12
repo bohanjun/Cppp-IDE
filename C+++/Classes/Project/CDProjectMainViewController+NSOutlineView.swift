@@ -113,7 +113,6 @@ extension CDProjectMainViewController: NSOutlineViewDataSource, NSOutlineViewDel
     
     @IBAction func addFolder(_ sender: Any?) {
         
-        print("SIDEBAR: \(self.isViewLoaded)")
         self.document.project.children.append(.folder(CDProject.Folder(name: "Folder")))
         self.outlineView.reloadData()
         

@@ -63,7 +63,7 @@ class CDCodeDocument: NSDocument {
             // Set the view controller's represented object as your document.
             if let contentVC = windowController.contentViewController as? CDMainViewController {
                 
-                contentVC.representedObject = content
+                contentVC.representedObject = self
                 contentViewController = contentVC
                 contentVC.mainTextView?.didChangeText()
                 contentVC.mainTextView?.document = self
@@ -145,5 +145,9 @@ class CDCodeDocument: NSDocument {
             runTask.terminate()
         }
     }
+    
+    //override func read(from fileWrapper: FileWrapper, ofType typeName: String) throws {
+    //    return
+    //}
     
 }

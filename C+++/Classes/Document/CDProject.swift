@@ -57,7 +57,7 @@ class CDProject: NSObject, Codable {
         var hasChildren: Bool
         var typeName: String
         var children: [CDProjectItem]
-        
+        var fileDescription: String?
         
         var title: String {
             return self.path.nsString.lastPathComponent
@@ -69,11 +69,12 @@ class CDProject: NSObject, Codable {
         init(path: String = "Document") {
             self.path = path
             self.hasChildren = false
+            self.fileDescription = ""
             self.typeName = "File"
             self.children = []
         }
         
-        func encode(to encoder: Encoder) throws {
+        /*func encode(to encoder: Encoder) throws {
             var container = encoder.container(keyedBy: CodingKeys.self)
             try container.encode(self.hasChildren, forKey: CodingKeys.hasChildren)
             try container.encode(self.typeName, forKey: CodingKeys.typeName)
@@ -87,27 +88,20 @@ class CDProject: NSObject, Codable {
             let hasChildren = try container.decode(Bool.self, forKey: CodingKeys.hasChildren)
             let children = try container.decode(Array<CDProjectItem>.self, forKey: CodingKeys.children)
             let path = try container.decode(String.self, forKey: CodingKeys.path)
+            let path = try container.decode(String.self, forKey: CodingKeys.path)
             self.typeName = typeName
             self.hasChildren = hasChildren
             self.children = children
             self.path = path
-        }
+        }*/
         
         enum CodingKeys: String, CodingKey {
-                case typeName = "ITEM_TYPE"
-                case hasChildren = "HAS_CHILDREN"
-                case children = "CHILDREN_ARRAY"
-            case path = "FILE_PATH"
-        }
-        
-        /*enum CodingKeys: String, CodingKey {
-            
             case typeName = "ITEM_TYPE"
             case hasChildren = "HAS_CHILDREN"
             case children = "CHILDREN_ARRAY"
             case path = "FILE_PATH"
-            
-        }*/
+            case fileDescription = "FILE_DESCRIPTION"
+        }
         
         
     }
@@ -120,7 +114,7 @@ class CDProject: NSObject, Codable {
         var hasChildren: Bool
         var typeName: String
         var children: [CDProjectItem]
-        
+        var fileDescription: String?
         var name: String = ""
         
         var title: String {
@@ -131,6 +125,7 @@ class CDProject: NSObject, Codable {
             self.name = name
             self.hasChildren = true
             self.typeName = "Folder"
+            self.fileDescription = ""
             self.children = []
         }
         
@@ -140,9 +135,11 @@ class CDProject: NSObject, Codable {
             case typeName = "ITEM_TYPE"
             case children = "CHILDREN_ARRAY"
             case name = "FOLDER_NAME"
+            case fileDescription = "FILE_DESCRIPTION"
             
         }
         
+        /*
         func encode(to encoder: Encoder) throws {
             var container = encoder.container(keyedBy: CodingKeys.self)
             try container.encode(self.hasChildren, forKey: CodingKeys.hasChildren)
@@ -162,7 +159,7 @@ class CDProject: NSObject, Codable {
             self.children = children
             self.name = name
         }
-        
+        */
         
     }
     
@@ -170,7 +167,7 @@ class CDProject: NSObject, Codable {
     
     var compileCommand = ""
     var version = "1.0"
-    
+    var fileDescription: String?
     var title: String {
         return "Project"
     }
@@ -178,12 +175,13 @@ class CDProject: NSObject, Codable {
     init(compileCommand: String? = "", version: String? = "1.0") {
         self.typeName = "Project"
         self.hasChildren = true
+        self.fileDescription = ""
         self.children = []
         self.compileCommand = compileCommand ?? ""
         self.version = version ?? "1.0"
     }
     
-    required init(from decoder: Decoder) throws {
+    /*required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let typeName = try container.decode(String.self, forKey: CodingKeys.typeName)
         let hasChildren = try container.decode(Bool.self, forKey: CodingKeys.hasChildren)
@@ -204,7 +202,7 @@ class CDProject: NSObject, Codable {
         try container.encode(self.children, forKey: CodingKeys.children)
         try container.encode(self.compileCommand, forKey: CodingKeys.compileCommand)
         try container.encode(self.version, forKey: CodingKeys.version)
-    }
+    }*/
     
     enum CodingKeys: String, CodingKey {
         
@@ -213,6 +211,7 @@ class CDProject: NSObject, Codable {
         case children = "CHILDREN_ARRAY"
         case compileCommand = "COMPILE_COMMAND"
         case version = "VERSION"
+        case fileDescription = "FILE_DESCRIPTION"
         
     }
     
