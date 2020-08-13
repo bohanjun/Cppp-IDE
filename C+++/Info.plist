@@ -81,8 +81,10 @@
 			<array>
 				<string>cpppproj</string>
 			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>Icon</string>
 			<key>CFBundleTypeIconSystemGenerated</key>
-			<integer>1</integer>
+			<integer>0</integer>
 			<key>CFBundleTypeName</key>
 			<string>C+++ Project</string>
 			<key>CFBundleTypeRole</key>
@@ -120,6 +122,8 @@
 				<string>out</string>
 				<string>ans</string>
 			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string></string>
 			<key>CFBundleTypeIconSystemGenerated</key>
 			<integer>1</integer>
 			<key>CFBundleTypeName</key>

@@ -106,7 +106,7 @@
                                                                                 <imageView wantsLayer="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zZy-kL-8ZC">
                                                                                     <rect key="frame" x="3" y="0.0" width="17" height="17"/>
                                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                                    <imageCell key="cell" refusesFirstResponder="YES" imageScaling="proportionallyDown" image="NSActionTemplate" catalog="system" id="UYA-cR-enp"/>
+                                                                                    <imageCell key="cell" refusesFirstResponder="YES" imageScaling="proportionallyDown" image="NSActionTemplate" id="UYA-cR-enp"/>
                                                                                 </imageView>
                                                                                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eud-ft-XRC">
                                                                                     <rect key="frame" x="25" y="0.0" width="204" height="17"/>
@@ -130,6 +130,7 @@
                                                                 <action selector="didClick:" target="IWd-cJ-Eak" id="vdu-tY-1se"/>
                                                                 <outlet property="dataSource" destination="IWd-cJ-Eak" id="nC7-hx-kBT"/>
                                                                 <outlet property="delegate" destination="IWd-cJ-Eak" id="t6j-5a-jFd"/>
+                                                                <outlet property="menu" destination="X7j-w3-S1B" id="5xj-Fd-r55"/>
                                                             </connections>
                                                         </outlineView>
                                                     </subviews>
@@ -246,6 +247,9 @@
                                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                     <font key="font" metaFont="system"/>
                                                                 </buttonCell>
+                                                                <connections>
+                                                                    <action selector="removeSelected:" target="IWd-cJ-Eak" id="daa-ZD-al0"/>
+                                                                </connections>
                                                             </button>
                                                             <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s8x-hU-KGH">
                                                                 <rect key="frame" x="10" y="353" width="153" height="16"/>
@@ -253,6 +257,9 @@
                                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                     <font key="font" metaFont="system"/>
                                                                 </buttonCell>
+                                                                <connections>
+                                                                    <action selector="showSelectedDocumentInFinder:" target="IWd-cJ-Eak" id="BMw-gs-ION"/>
+                                                                </connections>
                                                             </button>
                                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xMK-SC-cmZ">
                                                                 <rect key="frame" x="8" y="302" width="167" height="16"/>
@@ -291,28 +298,6 @@
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                 </scroller>
                                                             </scrollView>
-                                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nXn-Cl-nQc">
-                                                                <rect key="frame" x="13" y="157" width="95" height="32"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                <buttonCell key="cell" type="push" title="Add File" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WGx-0i-RVf">
-                                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                                    <font key="font" metaFont="system"/>
-                                                                </buttonCell>
-                                                                <connections>
-                                                                    <action selector="add:" target="IWd-cJ-Eak" id="kx7-u8-lRv"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K9L-AH-jWF">
-                                                                <rect key="frame" x="13" y="132" width="113" height="32"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                <buttonCell key="cell" type="push" title="Add Folder" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="t7E-gc-1uX">
-                                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                                    <font key="font" metaFont="system"/>
-                                                                </buttonCell>
-                                                                <connections>
-                                                                    <action selector="addFolder:" target="IWd-cJ-Eak" id="mqe-bn-cdm"/>
-                                                                </connections>
-                                                            </button>
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstItem="cjq-8a-nXO" firstAttribute="top" secondItem="JR2-Cj-Vlr" secondAttribute="bottom" constant="7" id="0hu-zB-eNE"/>
@@ -380,12 +365,41 @@
                     </connections>
                 </viewController>
                 <customObject id="aQa-Ql-MG6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <menu id="X7j-w3-S1B">
+                    <items>
+                        <menuItem title="Show in Finder" id="89G-VW-l7u">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="showSelectedDocumentInFinder:" target="IWd-cJ-Eak" id="iA2-Pg-fju"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem isSeparatorItem="YES" id="2D8-AX-W8D"/>
+                        <menuItem title="Remove from Project" id="zdU-a7-PaU">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="removeSelected:" target="IWd-cJ-Eak" id="ncV-Na-trr"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="New Folder" id="uEo-Gv-iOZ">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="addFolder:" target="IWd-cJ-Eak" id="6iu-83-ExE"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Add Exsisting File to Project" id="FIv-XI-U6u">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="addExsistingFile:" target="IWd-cJ-Eak" id="yBz-t0-xTL"/>
+                            </connections>
+                        </menuItem>
+                    </items>
+                </menu>
             </objects>
             <point key="canvasLocation" x="1447.5" y="14.5"/>
         </scene>
     </scenes>
     <resources>
-        <image name="NSActionTemplate" catalog="system" width="17" height="15"/>
+        <image name="NSActionTemplate" width="17" height="15"/>
         <image name="NSTouchBarDeleteTemplate" width="15" height="15"/>
         <image name="NSTouchBarGetInfoTemplate" width="15" height="13"/>
     </resources>

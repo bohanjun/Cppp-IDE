@@ -100,21 +100,73 @@ extension CDProjectMainViewController: NSOutlineViewDataSource, NSOutlineViewDel
     
     
     
-    @IBAction func add(_ sender: Any?) {
+    @IBAction func addExsistingFile(_ sender: Any?) {
         
         let panel = NSOpenPanel()
         let result = panel.runModal()
         if result == .OK {
-            self.document.project.children.append(.document(CDProject.Document(path: panel.url!.path)))
-            self.outlineView.reloadData()
+            
+            let newItem: CDProjectItem = .document(CDProject.Document(path: panel.url!.path))
+            
+            let _item = self.outlineView.item(atRow: self.outlineView.selectedRow)
+            
+            if let item = _item as? CDProjectItem {
+                
+                switch item {
+                    
+                    case .document(_):
+                        if let superItem = self.outlineView.parent(forItem: _item) as? CDProjectItem {
+                            switch superItem {
+                                case .folder(let folder): folder.children.append(newItem)
+                                case .project(let project): project.children.append(newItem)
+                                default: break
+                            }
+                        }
+                        
+                    case .folder(let folder):
+                        folder.children.append(newItem)
+                        
+                    case .project(let project):
+                        project.children.append(newItem)
+                        
+                }
+            }
+            
+            self.outlineView.reloadItem(nil, reloadChildren: true)
+            
         }
         
     }
     
     @IBAction func addFolder(_ sender: Any?) {
         
-        self.document.project.children.append(.folder(CDProject.Folder(name: "Folder")))
-        self.outlineView.reloadData()
+        let newItem: CDProjectItem = .folder(CDProject.Folder(name: "Folder"))
+        
+        let _item = self.outlineView.item(atRow: self.outlineView.selectedRow)
+        
+        if let item = _item as? CDProjectItem {
+            
+            switch item {
+                
+                case .document(_):
+                    if let superItem = self.outlineView.parent(forItem: _item) as? CDProjectItem {
+                        switch superItem {
+                            case .folder(let folder): folder.children.append(newItem)
+                            case .project(let project): project.children.append(newItem)
+                            default: break
+                        }
+                    }
+                    
+                case .folder(let folder):
+                    folder.children.append(newItem)
+                    
+                case .project(let project):
+                    project.children.append(newItem)
+                    
+            }
+        }
+        
+        self.outlineView.reloadItem(nil, reloadChildren: true)
         
     }
     
@@ -123,6 +175,48 @@ extension CDProjectMainViewController: NSOutlineViewDataSource, NSOutlineViewDel
         let item = sender.item(atRow: sender.clickedRow)
         if let item = item as? CDProjectItem {
             self.document.openDocument(item: item)
+        }
+        
+    }
+    
+    @IBAction func removeSelected(_ sender: Any?) {
+        
+        let _item = self.outlineView.item(atRow: self.outlineView.selectedRow)
+        
+        if _item == nil {
+            return
+        }
+        
+        if let superItem = self.outlineView.parent(forItem: _item) as? CDProjectItem {
+            
+            let childIndex = self.outlineView.childIndex(forItem: _item!)
+            
+            switch superItem {
+                case .document(let a): a.children.remove(at: childIndex)
+                case .project(let a): a.children.remove(at: childIndex)
+                case .folder(let a): a.children.remove(at: childIndex)
+            }
+            
+            self.outlineView.removeItems(at: IndexSet(arrayLiteral: childIndex), inParent: superItem)
+            
+            // self.outlineView.reloadItem(nil, reloadChildren: true)
+            
+        }
+        
+    }
+    
+    @IBAction func showSelectedDocumentInFinder(_ sender: Any?) {
+        
+        let _item = self.outlineView.item(atRow: self.outlineView.selectedRow)
+        if let item = _item as? CDProjectItem {
+            switch item {
+                case .document(let document):
+                    NSWorkspace.shared.selectFile(document.path, inFileViewerRootedAtPath: "")
+                case .project(_):
+                    NSWorkspace.shared.selectFile(self.document?.fileURL?.path ?? "", inFileViewerRootedAtPath: "")
+                default:
+                    break
+            }
         }
         
     }

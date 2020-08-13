@@ -94,7 +94,7 @@ class CDProjectDocument: NSDocument {
         
     }
     
-    override func runModalSavePanel(for saveOperation: NSDocument.SaveOperationType,
+    /*override func runModalSavePanel(for saveOperation: NSDocument.SaveOperationType,
                                          delegate: Any?,
                                           didSave didSaveSelector: Selector?,
                                           contextInfo: UnsafeMutableRawPointer?) {
@@ -111,6 +111,6 @@ class CDProjectDocument: NSDocument {
             self.project.children.append(.document(CDProject.Document(path: anotherPath)))
             self.save(self)
         }
-    }
+    }*/
     
 }
