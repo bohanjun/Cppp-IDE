@@ -99,40 +99,62 @@ extension CDProjectMainViewController: NSOutlineViewDataSource, NSOutlineViewDel
     }
     
     
+    func insert(newItem: CDProjectItem) {
+        
+        let _item = self.outlineView.item(atRow: self.outlineView.selectedRow)
+        
+        if let item = _item as? CDProjectItem {
+            
+            var index = 0
+            
+            switch item {
+                
+                case .document(_):
+                    
+                    var _index = 0
+                    if let _superItem = self.outlineView.parent(forItem: _item), let superItem = _superItem as? CDProjectItem {
+                        switch superItem {
+                            case .folder(let folder):
+                                folder.children.append(newItem)
+                                _index = folder.children.count - 1
+                            case .project(let project):
+                                project.children.append(newItem)
+                                _index = project.children.count - 1
+                            default: break
+                        }
+                        
+                        self.outlineView.insertItems(at: IndexSet(arrayLiteral: _index), inParent: _superItem)
+                        return
+                    }
+                    
+                case .folder(let folder):
+                    folder.children.append(newItem)
+                    index = folder.children.count - 1
+                    
+                case .project(let project):
+                    project.children.append(newItem)
+                    index = project.children.count - 1
+                    
+            }
+            
+            if let superItem = self.outlineView.parent(forItem: _item) {
+                self.outlineView.insertItems(at: IndexSet(arrayLiteral: index), inParent: superItem)
+            }
+            
+        }
+        
+    }
+    
+    
     
     @IBAction func addExsistingFile(_ sender: Any?) {
         
         let panel = NSOpenPanel()
         let result = panel.runModal()
+        
         if result == .OK {
             
-            let newItem: CDProjectItem = .document(CDProject.Document(path: panel.url!.path))
-            
-            let _item = self.outlineView.item(atRow: self.outlineView.selectedRow)
-            
-            if let item = _item as? CDProjectItem {
-                
-                switch item {
-                    
-                    case .document(_):
-                        if let superItem = self.outlineView.parent(forItem: _item) as? CDProjectItem {
-                            switch superItem {
-                                case .folder(let folder): folder.children.append(newItem)
-                                case .project(let project): project.children.append(newItem)
-                                default: break
-                            }
-                        }
-                        
-                    case .folder(let folder):
-                        folder.children.append(newItem)
-                        
-                    case .project(let project):
-                        project.children.append(newItem)
-                        
-                }
-            }
-            
-            self.outlineView.reloadItem(nil, reloadChildren: true)
+            self.insert(newItem: .document(CDProject.Document(path: panel.url!.path)))
             
         }
         
@@ -140,33 +162,7 @@ extension CDProjectMainViewController: NSOutlineViewDataSource, NSOutlineViewDel
     
     @IBAction func addFolder(_ sender: Any?) {
         
-        let newItem: CDProjectItem = .folder(CDProject.Folder(name: "Folder"))
-        
-        let _item = self.outlineView.item(atRow: self.outlineView.selectedRow)
-        
-        if let item = _item as? CDProjectItem {
-            
-            switch item {
-                
-                case .document(_):
-                    if let superItem = self.outlineView.parent(forItem: _item) as? CDProjectItem {
-                        switch superItem {
-                            case .folder(let folder): folder.children.append(newItem)
-                            case .project(let project): project.children.append(newItem)
-                            default: break
-                        }
-                    }
-                    
-                case .folder(let folder):
-                    folder.children.append(newItem)
-                    
-                case .project(let project):
-                    project.children.append(newItem)
-                    
-            }
-        }
-        
-        self.outlineView.reloadItem(nil, reloadChildren: true)
+        self.insert(newItem: .folder(CDProject.Folder(name: "Folder")))
         
     }
     
@@ -174,7 +170,7 @@ extension CDProjectMainViewController: NSOutlineViewDataSource, NSOutlineViewDel
         
         let item = sender.item(atRow: sender.clickedRow)
         if let item = item as? CDProjectItem {
-            self.document.openDocument(item: item)
+            self.document?.openDocument(item: item)
         }
         
     }
@@ -187,7 +183,7 @@ extension CDProjectMainViewController: NSOutlineViewDataSource, NSOutlineViewDel
             return
         }
         
-        if let superItem = self.outlineView.parent(forItem: _item) as? CDProjectItem {
+        if let _superItem = self.outlineView.parent(forItem: _item), let superItem = _superItem as? CDProjectItem {
             
             let childIndex = self.outlineView.childIndex(forItem: _item!)
             
@@ -197,9 +193,7 @@ extension CDProjectMainViewController: NSOutlineViewDataSource, NSOutlineViewDel
                 case .folder(let a): a.children.remove(at: childIndex)
             }
             
-            self.outlineView.removeItems(at: IndexSet(arrayLiteral: childIndex), inParent: superItem)
-            
-            // self.outlineView.reloadItem(nil, reloadChildren: true)
+            self.outlineView.removeItems(at: IndexSet(arrayLiteral: childIndex), inParent: _superItem)
             
         }
         
