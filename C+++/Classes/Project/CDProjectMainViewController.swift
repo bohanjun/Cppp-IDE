@@ -16,6 +16,9 @@ class CDProjectMainViewController: NSViewController {
     weak var document: CDProjectDocument!
     weak var contentVC: CDMainViewController!
     
+    // MARK: - Dragging
+    var draggedItem: Any? = nil
+    
     // MARK: - Document Information
     
     @IBOutlet weak var documentInfoFileNameLabel: NSTextField!
@@ -30,6 +33,8 @@ class CDProjectMainViewController: NSViewController {
         self.contentVC = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "Main View Controller") as? CDMainViewController
         contentVC.isOpeningInProjectViewController = true
         self.addChild(contentVC)
+        
+        self.outlineView?.registerForDraggedTypes([.string])
         
     }
  
