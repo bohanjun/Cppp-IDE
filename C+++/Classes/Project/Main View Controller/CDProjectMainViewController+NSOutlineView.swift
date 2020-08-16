@@ -8,7 +8,7 @@
 
 import Cocoa
 
-extension CDProjectMainViewController: NSOutlineViewDataSource, NSOutlineViewDelegate {
+extension CDProjectMainViewController: NSOutlineViewDataSource, NSOutlineViewDelegate, CDProjectNewFileChooseTypeViewControllerDelegate {
     
     func outlineView(_ outlineView: NSOutlineView, isItemExpandable item: Any) -> Bool {
         if let item = item as? CDProjectItem {
@@ -162,7 +162,9 @@ extension CDProjectMainViewController: NSOutlineViewDataSource, NSOutlineViewDel
     
     @IBAction func addFolder(_ sender: Any?) {
         
-        self.insert(newItem: .folder(CDProject.Folder(name: "Folder")))
+        CDGetInput(title: "Folder Name:", placeholder: "Folder Name") { result in
+            self.insert(newItem: .folder(CDProject.Folder(name: result)))
+        }
         
     }
     
@@ -213,6 +215,18 @@ extension CDProjectMainViewController: NSOutlineViewDataSource, NSOutlineViewDel
             }
         }
         
+    }
+    
+    
+    @IBAction func newFile(_ sender: Any?) {
+        let vc = NSStoryboard(name: "Project", bundle: nil).instantiateController(withIdentifier: "Project Choose File Type") as! CDProjectNewFileChooseTypeViewController
+        vc.delegate = self
+        self.presentAsSheet(vc)
+    }
+    
+    // CDProjectNewFileChooseTypeViewControllerDelegate
+    func newFileCreated(atPath path: String) {
+        self.insert(newItem: .document(.init(path: path)))
     }
 
 }

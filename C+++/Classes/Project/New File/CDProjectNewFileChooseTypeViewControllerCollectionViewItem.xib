@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17132.0.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17132.0.2"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="CDProjectNewFileChooseTypeViewControllerCollectionViewItem" customModule="C___" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="pxr-Nc-r7z" id="jVk-SV-ryM"/>
+                <outlet property="textField" destination="P3C-xR-8pr" id="rMM-i2-KGq"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="125" height="141"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="P3C-xR-8pr">
+                    <rect key="frame" x="35" y="10" width="55" height="16"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Text File" id="GSF-IJ-wnf">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pxr-Nc-r7z">
+                    <rect key="frame" x="20" y="36" width="85" height="85"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="85" id="L8U-bN-bZr"/>
+                        <constraint firstAttribute="height" constant="85" id="wEy-0K-0BS"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="d1r-4R-2E8"/>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="pxr-Nc-r7z" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="R9H-0t-97L"/>
+                <constraint firstAttribute="bottom" secondItem="P3C-xR-8pr" secondAttribute="bottom" constant="10" id="VD2-1R-lBj"/>
+                <constraint firstItem="pxr-Nc-r7z" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="v0E-eN-6Xp"/>
+                <constraint firstItem="P3C-xR-8pr" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="v0Y-KV-iN9"/>
+            </constraints>
+            <point key="canvasLocation" x="-321.5" y="54.5"/>
+        </customView>
+    </objects>
+</document>

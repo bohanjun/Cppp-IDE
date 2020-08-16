@@ -41,6 +41,103 @@
             </objects>
             <point key="canvasLocation" x="734" y="70"/>
         </scene>
+        <!--Project New File Choose Type View Controller-->
+        <scene sceneID="yNv-uQ-aUk">
+            <objects>
+                <viewController storyboardIdentifier="Project Choose File Type" id="Lic-gr-O2B" customClass="CDProjectNewFileChooseTypeViewController" customModule="C___" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="z5A-ZW-kWh">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="280"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="laY-9Y-VZe">
+                                <rect key="frame" x="18" y="246" width="197" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Choose a type for your new file:" id="KeZ-D0-11G">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FhQ-LS-Kis">
+                                <rect key="frame" x="18" y="46" width="415" height="190"/>
+                                <clipView key="contentView" drawsBackground="NO" id="rFD-QZ-Kjd">
+                                    <rect key="frame" x="0.0" y="0.0" width="415" height="190"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <collectionView selectable="YES" allowsEmptySelection="NO" id="K9f-dn-TfI">
+                                            <rect key="frame" x="0.0" y="0.0" width="415" height="190"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" scrollDirection="horizontal" id="ENT-Ac-x4P">
+                                                <size key="itemSize" width="125" height="141"/>
+                                            </collectionViewFlowLayout>
+                                            <color key="primaryBackgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <outlet property="dataSource" destination="Lic-gr-O2B" id="JnU-ga-EaE"/>
+                                                <outlet property="delegate" destination="Lic-gr-O2B" id="8pe-Qm-8VV"/>
+                                            </connections>
+                                        </collectionView>
+                                    </subviews>
+                                </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="ay9-Te-Lg5"/>
+                                </constraints>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="WYC-DK-1uo">
+                                    <rect key="frame" x="-100" y="-100" width="233" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="k8o-ni-WIK">
+                                    <rect key="frame" x="-100" y="-100" width="16" height="188"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aEy-gf-JqP">
+                                <rect key="frame" x="362" y="7" width="78" height="32"/>
+                                <buttonCell key="cell" type="push" title="Done" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QSa-8d-2g9">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="done:" target="Lic-gr-O2B" id="wDQ-he-z3l"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="M8J-Oh-k9w">
+                                <rect key="frame" x="276" y="7" width="88" height="32"/>
+                                <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Q1N-8i-IIL">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="cancel:" target="Lic-gr-O2B" id="M8f-hI-Ad9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="laY-9Y-VZe" firstAttribute="top" secondItem="z5A-ZW-kWh" secondAttribute="top" constant="18" id="17t-Mz-MNH"/>
+                            <constraint firstItem="laY-9Y-VZe" firstAttribute="leading" secondItem="z5A-ZW-kWh" secondAttribute="leading" constant="20" symbolic="YES" id="50B-iV-YbP"/>
+                            <constraint firstAttribute="trailing" secondItem="aEy-gf-JqP" secondAttribute="trailing" constant="17" id="IkD-Bh-xha"/>
+                            <constraint firstAttribute="trailing" secondItem="FhQ-LS-Kis" secondAttribute="trailing" constant="17" id="X07-hQ-hKV"/>
+                            <constraint firstItem="FhQ-LS-Kis" firstAttribute="top" secondItem="laY-9Y-VZe" secondAttribute="bottom" constant="10" id="c6g-XO-ai8"/>
+                            <constraint firstItem="FhQ-LS-Kis" firstAttribute="leading" secondItem="z5A-ZW-kWh" secondAttribute="leading" constant="18" id="eDm-Fx-Nyh"/>
+                            <constraint firstItem="M8J-Oh-k9w" firstAttribute="top" secondItem="FhQ-LS-Kis" secondAttribute="bottom" constant="12" id="evM-ox-wKL"/>
+                            <constraint firstItem="aEy-gf-JqP" firstAttribute="leading" secondItem="M8J-Oh-k9w" secondAttribute="trailing" constant="12" symbolic="YES" id="foy-DE-QNI"/>
+                            <constraint firstAttribute="bottom" secondItem="M8J-Oh-k9w" secondAttribute="bottom" constant="14" id="pOV-VI-3OH"/>
+                            <constraint firstItem="aEy-gf-JqP" firstAttribute="top" secondItem="FhQ-LS-Kis" secondAttribute="bottom" constant="12" id="uMz-24-GGh"/>
+                            <constraint firstAttribute="bottom" secondItem="aEy-gf-JqP" secondAttribute="bottom" constant="14" id="wiL-Kt-EG9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="K9f-dn-TfI" id="fyy-z0-7vo"/>
+                    </connections>
+                </viewController>
+                <customObject id="XgW-uA-XDA" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="230" y="479"/>
+        </scene>
         <!--Project Main View Controller-->
         <scene sceneID="BrE-X3-UIL">
             <objects>
@@ -390,6 +487,12 @@
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="addExsistingFile:" target="IWd-cJ-Eak" id="yBz-t0-xTL"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="New File" id="fjp-M2-VxI">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="newFile:" target="IWd-cJ-Eak" id="Rtf-de-E87"/>
                             </connections>
                         </menuItem>
                     </items>

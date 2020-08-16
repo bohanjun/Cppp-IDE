@@ -13,7 +13,7 @@ extension CDProjectMainViewController {
     func outlineView(_ outlineView: NSOutlineView, pasteboardWriterForItem item: Any) -> NSPasteboardWriting? {
         self.draggedItem = item
         let item = NSPasteboardItem()
-        item.setString(" ", forType: .string)
+        item.setString("", forType: .string)
         return item
     }
     
@@ -69,6 +69,7 @@ extension CDProjectMainViewController {
         }
         
         return true
+        
     }
     
     
