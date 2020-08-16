@@ -468,19 +468,20 @@ Gw
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="showSelectedDocumentInFinder:" target="IWd-cJ-Eak" id="iA2-Pg-fju"/>
+                                <binding destination="IWd-cJ-Eak" name="enabled" keyPath="isShowInFinderItemEnabled" id="ZmQ-Pq-Geo"/>
                             </connections>
                         </menuItem>
                         <menuItem isSeparatorItem="YES" id="2D8-AX-W8D"/>
-                        <menuItem title="Remove from Project" id="zdU-a7-PaU">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                            <connections>
-                                <action selector="removeSelected:" target="IWd-cJ-Eak" id="ncV-Na-trr"/>
-                            </connections>
-                        </menuItem>
                         <menuItem title="New Folder" id="uEo-Gv-iOZ">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
                                 <action selector="addFolder:" target="IWd-cJ-Eak" id="6iu-83-ExE"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="New File" id="fjp-M2-VxI">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="newFile:" target="IWd-cJ-Eak" id="Rtf-de-E87"/>
                             </connections>
                         </menuItem>
                         <menuItem title="Add Exsisting File to Project" id="FIv-XI-U6u">
@@ -489,10 +490,12 @@ Gw
                                 <action selector="addExsistingFile:" target="IWd-cJ-Eak" id="yBz-t0-xTL"/>
                             </connections>
                         </menuItem>
-                        <menuItem title="New File" id="fjp-M2-VxI">
+                        <menuItem isSeparatorItem="YES" id="Hn9-v7-3ZC"/>
+                        <menuItem title="Remove from Project" id="zdU-a7-PaU">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
-                                <action selector="newFile:" target="IWd-cJ-Eak" id="Rtf-de-E87"/>
+                                <action selector="removeSelected:" target="IWd-cJ-Eak" id="ncV-Na-trr"/>
+                                <binding destination="IWd-cJ-Eak" name="enabled" keyPath="isRemoveFromProjectItemEnabled" id="tlV-kM-8nX"/>
                             </connections>
                         </menuItem>
                     </items>

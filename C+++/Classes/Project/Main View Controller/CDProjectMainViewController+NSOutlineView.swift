@@ -10,6 +10,9 @@ import Cocoa
 
 extension CDProjectMainViewController: NSOutlineViewDataSource, NSOutlineViewDelegate, CDProjectNewFileChooseTypeViewControllerDelegate {
     
+    
+    // MARK: - NSOutlineViewDelegate
+    
     func outlineView(_ outlineView: NSOutlineView, isItemExpandable item: Any) -> Bool {
         if let item = item as? CDProjectItem {
             switch item {
@@ -86,6 +89,10 @@ extension CDProjectMainViewController: NSOutlineViewDataSource, NSOutlineViewDel
         
     }
     
+    
+    
+    // MARK: - awakeFromNib() and viewWillAppear()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -97,6 +104,9 @@ extension CDProjectMainViewController: NSOutlineViewDataSource, NSOutlineViewDel
         self.outlineView.reloadData()
         
     }
+    
+    
+    // MARK: - insert(newitem:)
     
     
     func insert(newItem: CDProjectItem) {
@@ -147,6 +157,7 @@ extension CDProjectMainViewController: NSOutlineViewDataSource, NSOutlineViewDel
     
     
     
+    /// Add an exsisting file to the project.
     @IBAction func addExsistingFile(_ sender: Any?) {
         
         let panel = NSOpenPanel()
@@ -160,6 +171,9 @@ extension CDProjectMainViewController: NSOutlineViewDataSource, NSOutlineViewDel
         
     }
     
+    
+    
+    /// Insert a folder into the project.
     @IBAction func addFolder(_ sender: Any?) {
         
         CDGetInput(title: "Folder Name:", placeholder: "Folder Name") { result in
@@ -168,6 +182,13 @@ extension CDProjectMainViewController: NSOutlineViewDataSource, NSOutlineViewDel
         
     }
     
+    
+    // MARK: - Actions
+    
+    
+    // MARK: Open Document
+    
+    /// Open the clicked document, if user clicked the outline view.
     @IBAction func didClick(_ sender: NSOutlineView) {
         
         let item = sender.item(atRow: sender.clickedRow)
@@ -177,6 +198,21 @@ extension CDProjectMainViewController: NSOutlineViewDataSource, NSOutlineViewDel
         
     }
     
+    
+    
+    /// Open the selected document, if the selection changed.
+    func outlineViewSelectionDidChange(_ notification: Notification) {
+        let item = self.outlineView.item(atRow: self.outlineView.clickedRow)
+        if let item = item as? CDProjectItem {
+            self.document?.openDocument(item: item)
+        }
+    }
+
+    
+    
+    // MARK: Remove Selected
+    
+    /// Remove the selected document from the project, but not moving it to the trash.
     @IBAction func removeSelected(_ sender: Any?) {
         
         let _item = self.outlineView.item(atRow: self.outlineView.selectedRow)
@@ -201,6 +237,11 @@ extension CDProjectMainViewController: NSOutlineViewDataSource, NSOutlineViewDel
         
     }
     
+    
+    
+    // MARK: Show in Finder
+    
+    /// Show the selected document in Finder.
     @IBAction func showSelectedDocumentInFinder(_ sender: Any?) {
         
         let _item = self.outlineView.item(atRow: self.outlineView.selectedRow)
@@ -218,15 +259,18 @@ extension CDProjectMainViewController: NSOutlineViewDataSource, NSOutlineViewDel
     }
     
     
+    
+    
+    // MARK: - Create a New File
+    
     @IBAction func newFile(_ sender: Any?) {
         let vc = NSStoryboard(name: "Project", bundle: nil).instantiateController(withIdentifier: "Project Choose File Type") as! CDProjectNewFileChooseTypeViewController
         vc.delegate = self
         self.presentAsSheet(vc)
     }
     
-    // CDProjectNewFileChooseTypeViewControllerDelegate
     func newFileCreated(atPath path: String) {
         self.insert(newItem: .document(.init(path: path)))
     }
-
+    
 }

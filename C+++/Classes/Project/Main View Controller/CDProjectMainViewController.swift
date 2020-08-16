@@ -19,6 +19,27 @@ class CDProjectMainViewController: NSViewController {
     // MARK: - Dragging
     var draggedItem: Any? = nil
     
+    // MARK: - Right-Click Menu
+    @objc dynamic var isShowInFinderItemEnabled: Bool {
+        if let item = self.outlineView?.item(atRow: self.outlineView.selectedRow) as? CDProjectItem {
+            switch item {
+                case .folder(_): return false
+                default: return true
+            }
+        }
+        return false
+    }
+    
+    @objc dynamic var isRemoveFromProjectItemEnabled: Bool {
+        if let item = self.outlineView?.item(atRow: self.outlineView.selectedRow) as? CDProjectItem {
+            switch item {
+                case .project(_): return false
+                default: return true
+            }
+        }
+        return false
+    }
+    
     // MARK: - Document Information
     
     @IBOutlet weak var documentInfoFileNameLabel: NSTextField!
