@@ -65,11 +65,31 @@ class CDCompletionResult: NSObject {
     }
     
     var textForDisplay: String {
-        if self.hasReturnType {
-            return self.returnType! + "  " + self.typedText + self.otherTexts.joined()
-        } else {
-            return self.typedText + self.otherTexts.joined(separator: "")
+        return self.typedText + self.otherTexts.joined()
+    }
+    
+    var attributedString: NSAttributedString {
+        let attributedString = NSMutableAttributedString(string: self.textForDisplay, attributes: [.font: NSFont(name: CDSettings.shared.fontName ?? "Menlo", size: 14.0)!])
+        for i in self.matchedRanges {
+            attributedString.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: i)
         }
+        return attributedString
+    }
+    
+    var image: NSImage? {
+        
+        switch self.type {
+            case .class: return NSImage(named: "Class")
+            case .enum: return NSImage(named: "Enum")
+            case .function: return NSImage(named: "Function")
+            case .namespace: return NSImage(named: "Namespace")
+            case .preprocessing: return NSImage(named: "Preprocessing")
+            case .typealias: return NSImage(named: "Typealias")
+            case .struct: return NSImage(named: "Struct")
+            case .variable: return NSImage(named: "Variable")
+            default: return nil
+        }
+        
     }
     
     var completionString: String {

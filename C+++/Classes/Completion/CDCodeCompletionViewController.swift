@@ -28,33 +28,13 @@ class CDCodeCompletionViewController: NSViewController, NSTableViewDataSource, N
     }
     
     func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
+        
         if results.count >= row {
             let result = self.results[row]
             if tableColumn?.title == "Text" {
-                let string = NSMutableAttributedString(string: result.textForDisplay, attributes: [.font: NSFont(name: CDSettings.shared.fontName ?? "Menlo", size: 14.0)!])
-                if result.hasReturnType {
-                    string.addAttribute(.font, value: NSFont.systemFont(ofSize: 14.0, weight: .bold), range: NSMakeRange(0, "\(result.returnType!)  ".count))
-                    for i in result.matchedRanges {
-                        string.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange("\(result.returnType!)  ".count + i.location, i.length))
-                    }
-                } else {
-                    for i in result.matchedRanges {
-                        string.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: i)
-                    }
-                }
-                return string
+                return result.attributedString
             } else {
-                switch result.type {
-                    case .class: return NSImage(named: "Class")
-                    case .enum: return NSImage(named: "Enum")
-                    case .function: return NSImage(named: "Function")
-                    case .namespace: return NSImage(named: "Namespace")
-                    case .preprocessing: return NSImage(named: "Preprocessing")
-                    case .typealias: return NSImage(named: "Typealias")
-                    case .struct: return NSImage(named: "Struct")
-                    case .variable: return NSImage(named: "Variable")
-                    default: return nil
-                }
+                return result.image
             }
         } else {
             return nil
