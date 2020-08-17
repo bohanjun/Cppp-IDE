@@ -25,7 +25,19 @@ class CDConsoleTextView: NSTextView {
         if !isInputtingInLastLine {
             return
         }
-        super.insertText(string, replacementRange: replacementRange)
+        if (string as! String).contains("\n") {
+            for i in (string as! String).components(separatedBy: "\n") {
+                super.insertText(i, replacementRange: self.selectedRange)
+                self.insertNewline(nil)
+            }
+            return
+        } else {
+            super.insertText(string, replacementRange: replacementRange)
+        }
+    }
+    
+    override func paste(_ sender: Any?) {
+        self.insertText(NSPasteboard.general.string(forType: .string) ?? "", replacementRange: self.selectedRange)
     }
     
     override func deleteBackward(_ sender: Any?) {

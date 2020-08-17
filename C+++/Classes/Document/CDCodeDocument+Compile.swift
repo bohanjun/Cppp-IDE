@@ -13,6 +13,8 @@ extension CDCodeDocument {
     @discardableResult
     func compileFile(alsoRuns: Bool = true, arguments: String = CDCompileSettings.shared.arguments) -> (result: String, didSuccess: Bool) {
         
+        self.endDebugging()
+        
         if self.fileURL == nil {
             self.contentViewController?.showAlert("Error", "You haven't saved your file yet. You must save your file before compiling it.")
             return (result: "", didSuccess: false)

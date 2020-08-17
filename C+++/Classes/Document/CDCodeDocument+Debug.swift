@@ -12,6 +12,9 @@ extension CDCodeDocument {
     
     func beginDebugging() {
         
+        // If there is already a lldb process, terminate it.
+        self.endDebugging()
+        
         if self.fileURL == nil {
             self.contentViewController?.showAlert("Error", "You haven't saved your file yet. You must save your file before debugging it.")
             return
