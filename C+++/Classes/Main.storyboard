@@ -441,6 +441,17 @@
                                                 <action selector="changeSelectionToComment:" target="Ady-hI-5gd" id="I8B-LR-cEF"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Shift Right" keyEquivalent="]" id="kx9-uZ-Jaz">
+                                            <connections>
+                                                <action selector="shiftRight:" target="Ady-hI-5gd" id="Ubz-SF-W5b"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Shift Left" keyEquivalent="[" id="Z3h-gR-VbK">
+                                            <connections>
+                                                <action selector="shiftLeft:" target="Ady-hI-5gd" id="n8h-2N-2EC"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="nQp-6T-cnn"/>
                                         <menuItem title="Font Size" id="Qof-jL-yt2">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <menu key="submenu" id="yp7-SJ-h60">
@@ -556,7 +567,7 @@
                                                 <action selector="showWebsite:" target="Ady-hI-5gd" id="91l-pm-nDB"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="View Source Code on GitHub" id="rkH-9z-UoG">
+                                        <menuItem title="View on GitHub" id="rkH-9z-UoG">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="showGithub:" target="Ady-hI-5gd" id="Agi-T5-exZ"/>
