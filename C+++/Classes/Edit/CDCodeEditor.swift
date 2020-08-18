@@ -38,8 +38,8 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
         if self.allowsSyntaxHighlighting {
             
             let selectedRange = self.selectedRange
-            let code = self.string
-            let highlightedCode = highlightr!.highlight(code, as: "C++")
+            
+            let highlightedCode = highlightr!.highlight(self.string, as: "C++")
             
             self.textStorage!.setAttributedString(highlightedCode!)
             self.setSelectedRange(selectedRange)
@@ -337,6 +337,7 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
     
     override public init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
+        
     }
     
 }

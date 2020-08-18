@@ -228,6 +228,8 @@ class CDSnippetTableView: CDFlippedView, CDSnippetPopoverViewControllerDelegate 
             
         }
         
+        y += 33
+        
         self.frame.size.height = y + 20
         self.bounds.size.height = y + 20
         self.superview?.frame.size.height = y + 20
