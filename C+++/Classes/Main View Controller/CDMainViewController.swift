@@ -51,6 +51,8 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
     @IBOutlet weak var minimapView: CDMinimapView!
     @IBOutlet weak var minimapViewConstraint: NSLayoutConstraint!
     
+    var observation: NSKeyValueObservation?
+    
     
     
     
@@ -75,6 +77,18 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.changeAppearance(newAppearance: self.view.effectiveAppearance.name)
+       
+        // observe the appearance of the view.
+        self.observation = observe(\.view.effectiveAppearance, options: [.old, .new]) { object, change in
+            
+            // print ("old \(change.oldValue!.name) now \(change.newValue!.name).")
+            if change.oldValue!.name != change.newValue!.name {
+                self.changeAppearance(newAppearance: change.newValue!.name)
+            }
+            
+        }
+        
         NotificationCenter.default.addObserver(self, selector: #selector(settingsDidChange(_:)), name: CDSettings.settingsDidChangeNotification, object: nil)
         
         self.mainTextView.codeEditorDelegate = self
@@ -88,21 +102,6 @@ class CDMainViewController: NSViewController, NSTextViewDelegate, CDCodeEditorDe
         
         // initialize the scroll view and the minimap view.
         self.scrollViewOfTextView.scroll(self.scrollViewOfTextView.contentView, to: NSMakePoint(0, 0))
-        
-        // set the current appearance to Dark Mode
-        if #available(OSX 10.14, *) {
-            self.mainTextView.highlightr?.setTheme(to: CDSettings.shared.darkThemeName)
-            self.view.window?.appearance = darkAqua
-            self.view.appearance = darkAqua
-            for view in self.view.subviews {
-                view.appearance = darkAqua
-            }
-            self.isDarkMode = false
-        }
-
-        // in case of errors
-        changeAppearance(self)
-        changeAppearance(self)
         
     }
     

@@ -15,9 +15,10 @@ class CDMainWindowController: NSWindowController, NSWindowDelegate {
     override func windowDidLoad() {
         super.windowDidLoad()
         
+        /*
         if #available(OSX 10.14, *) {
             self.window?.appearance = darkAqua
-        }
+        }*/
         
     }
     

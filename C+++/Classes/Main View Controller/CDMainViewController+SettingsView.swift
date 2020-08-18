@@ -46,22 +46,7 @@ extension CDMainViewController/* : CDSettingsViewDelegate*/ {
     
     @objc func settingsDidChange(_ notification: NSNotification) {
         
-        // Theme
-        switch isDarkMode {
-            case false:
-                self.mainTextView.highlightr?.setTheme(to: CDSettings.shared.darkThemeName)
-            case true:
-                self.mainTextView.highlightr?.setTheme(to: CDSettings.shared.lightThemeName)
-        }
-        
-        // Font
-        self.mainTextView.highlightr?.theme.setCodeFont(CDSettings.shared.font)
-        self.mainTextView.font = CDSettings.shared.font
-        self.mainTextView.didChangeText()
-        
-        // In case of errors
-        changeAppearance(self)
-        changeAppearance(self)
+        self.changeAppearance(newAppearance: self.view.effectiveAppearance.name)
         
     }
     
