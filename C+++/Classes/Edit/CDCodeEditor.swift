@@ -111,7 +111,7 @@ open class CDCodeEditor: NSTextView, CDCodeCompletionViewControllerDelegate {
             
             default:
                 
-                if CDSettings.shared.codeCompletion {
+                if CDSettings.shared.codeCompletion && self.allowsCodeCompletion {
                     self.complete(nil)
                 }
                 return

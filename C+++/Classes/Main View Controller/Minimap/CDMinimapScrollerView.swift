@@ -12,6 +12,7 @@ class CDMinimapScrollerView: NSControl {
     
     override func mouseDragged(with event: NSEvent) {
         super.mouseDragged(with: event)
+        
         self.frame.origin.y += event.deltaY
         if self.frame.origin.y <= 0 {
             self.frame.origin.y = 0
@@ -20,13 +21,16 @@ class CDMinimapScrollerView: NSControl {
             self.frame.origin.y = self.superview!.frame.height - self.frame.height
         }
         (self.superview! as! CDMinimapView).didDragScroller()
+        
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        
         self.wantsLayer = true
-        self.layer?.backgroundColor = NSColor(white: 0.4, alpha: 0.5).cgColor
+        self.layer?.backgroundColor = NSColor(white: 0.7, alpha: 0.4).cgColor
         self.setNeedsDisplay()
+        
     }
     
 }

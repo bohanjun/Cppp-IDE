@@ -46,6 +46,7 @@ class CDProjectMainViewController: NSViewController {
     @IBOutlet weak var documentInfoFileTypeLabel: NSTextField!
     @IBOutlet weak var documentInfoFilePathLabel: NSTextField!
     @IBOutlet weak var documentInfoDescription: NSTextView!
+    @IBOutlet weak var log: NSTextView!
     
     
     override func viewDidLoad() {
@@ -56,6 +57,8 @@ class CDProjectMainViewController: NSViewController {
         self.addChild(contentVC)
         
         self.outlineView?.registerForDraggedTypes([.string])
+        
+        self.log.font = menloFont(ofSize: 13.0)
         
     }
  

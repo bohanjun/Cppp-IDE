@@ -15,6 +15,7 @@ class CDMinimapView: CDFlippedView {
     @IBOutlet weak var codeEditorScrollView: CDCodeEditorScrollView!
     
     func didDragScroller() {
+        
         let a = self.codeEditorScrollView.frame.height
         let b = self.codeEditorScrollView.documentView!.frame.height
         let c = self.imageView.frame.height
@@ -22,9 +23,11 @@ class CDMinimapView: CDFlippedView {
         let d = self.scrollerView.frame.origin.y
         self.codeEditorScrollView.scroll(codeEditorScrollView.contentView, to: NSMakePoint(0, d / c * b))
         self.codeEditorScrollView.reflectScrolledClipView(self.codeEditorScrollView.contentView)
+ 
     }
     
     func codeEditorScrollViewDidScrollToPoint(point: NSPoint) {
+        
         let a = self.codeEditorScrollView.frame.height
         let b = self.codeEditorScrollView.documentView!.frame.height
         let c = self.imageView.frame.height
@@ -32,6 +35,7 @@ class CDMinimapView: CDFlippedView {
         self.scrollerView.frame.size.height = (a / b) * c
         // print(d / b * c)
         self.scrollerView.frame.origin.y = (d / b) * c
+        
     }
     
 }
