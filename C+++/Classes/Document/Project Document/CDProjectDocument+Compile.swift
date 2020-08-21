@@ -132,6 +132,7 @@ extension CDProjectDocument {
             }
             
             do {
+                
                 let document = try CDCodeDocument(contentsOf: URL(fileURLWithPath: customCompileCommandFilePath), ofType: "C++ Source")
                 output.append("Begin Compiling...")
                 let result = _runCommand(document.content.contentString)
@@ -142,12 +143,14 @@ extension CDProjectDocument {
                     return (false, output)
                 }
                 return (true, output)
+                
             } catch {
+                
                 output.append("Error: Read custom compile command file failed. (6)")
                 self.contentViewController.showAlert("Error", "Read custom compile command file failed. (6).")
+                return (false, output)
+                
             }
-            
-            
             
         }
         
