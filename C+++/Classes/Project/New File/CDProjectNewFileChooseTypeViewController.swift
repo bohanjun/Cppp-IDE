@@ -17,11 +17,12 @@ class CDProjectNewFileChooseTypeViewController: NSViewController, NSCollectionVi
     @IBOutlet weak var collectionView: NSCollectionView!
     var delegate: CDProjectNewFileChooseTypeViewControllerDelegate?
     
-    static let supportedFileTypes: KeyValuePairs<String, String> = [
-        "C++ Source": "cpp",
-        "C/C++ Header": "h",
-        "C Source": "c",
-        "Text File": "txt"
+    static let supportedFileTypes: KeyValuePairs<String, [String]> = [
+        "C++ Source": ["cpp", "cxx", "c++"],
+        "C/C++ Header": ["h", "hpp", "h++"],
+        "C Source": ["c"],
+        "Text File": [],
+        "Markdown File": ["md"]
     ]
     
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -37,7 +38,7 @@ class CDProjectNewFileChooseTypeViewController: NSViewController, NSCollectionVi
         item.loadView()
         item.setType(
             typeName: CDProjectNewFileChooseTypeViewController.supportedFileTypes[indexPath.item].key,
-            typeExtension: CDProjectNewFileChooseTypeViewController.supportedFileTypes[indexPath.item].value
+            typeExtension: CDProjectNewFileChooseTypeViewController.supportedFileTypes[indexPath.item].value.first ?? "txt"
         )
         return item
     }
@@ -65,7 +66,7 @@ extension CDProjectNewFileChooseTypeViewController {
     @IBAction func done(_ sender: Any?) {
         let `extension` = CDProjectNewFileChooseTypeViewController.supportedFileTypes[self.collectionView.selectionIndexPaths.first?.item ?? 0].value
         let panel = NSSavePanel()
-        panel.allowedFileTypes = ["\(`extension`)"]
+        panel.allowedFileTypes = `extension`
         let result = panel.runModal()
         if result == .OK && panel.url != nil {
             FileManager.default.createFile(atPath: panel.url!.path, contents: nil)
