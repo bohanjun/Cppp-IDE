@@ -22,7 +22,7 @@ class CDProjectMainViewController: NSViewController {
     
     // MARK: - Right-Click Menu
     @objc dynamic var isShowInFinderItemEnabled: Bool {
-        if let item = self.outlineView?.item(atRow: self.outlineView.selectedRow) as? CDProjectItem {
+        if let item = self.outlineView?.item(atRow: self.outlineView.clickedRow) as? CDProjectItem {
             switch item {
                 case .folder(_): return false
                 default: return true
@@ -32,7 +32,7 @@ class CDProjectMainViewController: NSViewController {
     }
     
     @objc dynamic var isRemoveFromProjectItemEnabled: Bool {
-        if let item = self.outlineView?.item(atRow: self.outlineView.selectedRow) as? CDProjectItem {
+        if let item = self.outlineView?.item(atRow: self.outlineView.clickedRow) as? CDProjectItem {
             switch item {
                 case .project(_): return false
                 default: return true

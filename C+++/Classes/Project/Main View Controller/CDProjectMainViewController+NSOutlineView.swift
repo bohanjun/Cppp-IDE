@@ -97,7 +97,7 @@ extension CDProjectMainViewController: NSOutlineViewDataSource, NSOutlineViewDel
     
     func insert(newItem: CDProjectItem) {
         
-        let _item = self.outlineView.item(atRow: self.outlineView.selectedRow)
+        let _item = self.outlineView.item(atRow: self.outlineView.clickedRow)
         
         if let item = _item as? CDProjectItem {
             
@@ -201,7 +201,7 @@ extension CDProjectMainViewController: NSOutlineViewDataSource, NSOutlineViewDel
     /// Remove the selected document from the project, but not moving it to the trash.
     @IBAction func removeSelected(_ sender: Any?) {
         
-        let _item = self.outlineView.item(atRow: self.outlineView.selectedRow)
+        let _item = self.outlineView.item(atRow: self.outlineView.clickedRow)
         
         if _item == nil {
             return
@@ -230,7 +230,7 @@ extension CDProjectMainViewController: NSOutlineViewDataSource, NSOutlineViewDel
     /// Show the selected document in Finder.
     @IBAction func showSelectedDocumentInFinder(_ sender: Any?) {
         
-        let _item = self.outlineView.item(atRow: self.outlineView.selectedRow)
+        let _item = self.outlineView.item(atRow: self.outlineView.clickedRow)
         if let item = _item as? CDProjectItem {
             switch item {
                 case .document(let document):
