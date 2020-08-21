@@ -149,11 +149,11 @@ Gw
                             <splitView arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wqG-U8-XGQ">
                                 <rect key="frame" x="0.0" y="0.0" width="739" height="525"/>
                                 <subviews>
-                                    <customView misplaced="YES" id="KKI-1m-TR0">
+                                    <customView id="KKI-1m-TR0">
                                         <rect key="frame" x="0.0" y="0.0" width="254" height="525"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <scrollView misplaced="YES" autohidesScrollers="YES" horizontalLineScroll="23" horizontalPageScroll="10" verticalLineScroll="23" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCJ-UB-HMe">
+                                            <scrollView autohidesScrollers="YES" horizontalLineScroll="23" horizontalPageScroll="10" verticalLineScroll="23" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCJ-UB-HMe">
                                                 <rect key="frame" x="0.0" y="0.0" width="254" height="525"/>
                                                 <clipView key="contentView" drawsBackground="NO" id="LI1-Ke-Tlh">
                                                     <rect key="frame" x="1" y="1" width="252" height="523"/>
@@ -254,29 +254,29 @@ Gw
                                             <constraint firstItem="sCJ-UB-HMe" firstAttribute="top" secondItem="KKI-1m-TR0" secondAttribute="top" id="bA3-hJ-Nu8"/>
                                         </constraints>
                                     </customView>
-                                    <customView misplaced="YES" id="F3i-GV-8mE">
+                                    <customView id="F3i-GV-8mE">
                                         <rect key="frame" x="255" y="0.0" width="484" height="525"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <splitView misplaced="YES" arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wWq-qV-Mkx">
+                                            <splitView arrangesAllSubviews="NO" dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wWq-qV-Mkx">
                                                 <rect key="frame" x="0.0" y="0.0" width="484" height="525"/>
                                                 <subviews>
-                                                    <customView misplaced="YES" id="s9h-rI-Iuu">
+                                                    <customView id="s9h-rI-Iuu">
                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="525"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
-                                                            <splitView misplaced="YES" arrangesAllSubviews="NO" dividerStyle="thin" translatesAutoresizingMaskIntoConstraints="NO" id="578-cW-AE3">
+                                                            <splitView arrangesAllSubviews="NO" dividerStyle="thin" translatesAutoresizingMaskIntoConstraints="NO" id="578-cW-AE3">
                                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="525"/>
                                                                 <subviews>
-                                                                    <customView misplaced="YES" id="nW6-88-8jO">
+                                                                    <customView id="nW6-88-8jO">
                                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="409"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <subviews>
-                                                                            <customView misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NM6-jr-a01">
-                                                                                <rect key="frame" x="19" y="157" width="263" height="96"/>
+                                                                            <customView misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NM6-jr-a01" customClass="CDProjectSettingsView" customModule="C___" customModuleProvider="target">
+                                                                                <rect key="frame" x="17" y="119" width="263" height="171"/>
                                                                                 <subviews>
                                                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3aO-Tr-7go">
-                                                                                        <rect key="frame" x="11" y="60" width="135" height="16"/>
+                                                                                        <rect key="frame" x="11" y="135" width="135" height="16"/>
                                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="PROJECT SETTINGS" id="glp-4f-eKV">
                                                                                             <font key="font" metaFont="systemBold"/>
@@ -285,16 +285,19 @@ Gw
                                                                                         </textFieldCell>
                                                                                     </textField>
                                                                                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Iw-Sl-0Uo">
-                                                                                        <rect key="frame" x="83" y="30" width="160" height="21"/>
+                                                                                        <rect key="frame" x="83" y="105" width="160" height="21"/>
                                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="1.0" drawsBackground="YES" id="J3f-Qc-7Nx">
                                                                                             <font key="font" metaFont="system"/>
                                                                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                         </textFieldCell>
+                                                                                        <connections>
+                                                                                            <outlet property="delegate" destination="NM6-jr-a01" id="TgS-1s-fa6"/>
+                                                                                        </connections>
                                                                                     </textField>
                                                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2NU-3U-XYN">
-                                                                                        <rect key="frame" x="11" y="33" width="50" height="16"/>
+                                                                                        <rect key="frame" x="11" y="108" width="50" height="16"/>
                                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Version" id="R7j-x6-k4f">
                                                                                             <font key="font" metaFont="system"/>
@@ -302,23 +305,57 @@ Gw
                                                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                         </textFieldCell>
                                                                                     </textField>
+                                                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KM9-sB-olU">
+                                                                                        <rect key="frame" x="11" y="84" width="120" height="16"/>
+                                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Compile Command" id="pWD-RR-nmk">
+                                                                                            <font key="font" metaFont="system"/>
+                                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                                        </textFieldCell>
+                                                                                    </textField>
+                                                                                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cza-Bl-v9a">
+                                                                                        <rect key="frame" x="143" y="83" width="70" height="18"/>
+                                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                                        <buttonCell key="cell" type="check" title="Default" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="nab-HU-v8P">
+                                                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                                            <font key="font" metaFont="system"/>
+                                                                                        </buttonCell>
+                                                                                        <connections>
+                                                                                            <action selector="buttonClicked:" target="NM6-jr-a01" id="wxO-8t-lSW"/>
+                                                                                        </connections>
+                                                                                    </button>
+                                                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vQ8-kZ-oat">
+                                                                                        <rect key="frame" x="12" y="12" width="232" height="64"/>
+                                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                                                        <textFieldCell key="cell" title="If you do not want to use the default compile command, please create a &quot;compile.txt&quot; file and add to the project." id="Mem-ez-z4c">
+                                                                                            <font key="font" metaFont="system"/>
+                                                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                                        </textFieldCell>
+                                                                                    </textField>
                                                                                 </subviews>
                                                                                 <constraints>
-                                                                                    <constraint firstAttribute="height" constant="96" id="Chc-dH-6du"/>
-                                                                                    <constraint firstAttribute="width" constant="263" id="PkE-nk-7Mm"/>
+                                                                                    <constraint firstAttribute="width" constant="263" id="Ls7-Jb-Ii5"/>
+                                                                                    <constraint firstAttribute="height" constant="171" id="k0O-an-HDy"/>
                                                                                 </constraints>
+                                                                                <connections>
+                                                                                    <outlet property="versionTextField" destination="1Iw-Sl-0Uo" id="6kb-bt-H5z"/>
+                                                                                </connections>
                                                                             </customView>
                                                                         </subviews>
                                                                         <constraints>
+                                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="375" id="Irj-UI-J9K"/>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="dSj-A6-qQT"/>
                                                                             <constraint firstItem="NM6-jr-a01" firstAttribute="centerY" secondItem="nW6-88-8jO" secondAttribute="centerY" id="eyv-PC-gUv"/>
                                                                             <constraint firstItem="NM6-jr-a01" firstAttribute="centerX" secondItem="nW6-88-8jO" secondAttribute="centerX" id="g9c-a3-MBw"/>
                                                                         </constraints>
                                                                     </customView>
-                                                                    <customView misplaced="YES" id="Fmt-RC-hgO">
+                                                                    <customView id="Fmt-RC-hgO">
                                                                         <rect key="frame" x="0.0" y="410" width="300" height="115"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <subviews>
-                                                                            <scrollView misplaced="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1L-9H-vnz">
+                                                                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1L-9H-vnz">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="115"/>
                                                                                 <clipView key="contentView" drawsBackground="NO" id="S6x-jw-7ft">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="300" height="115"/>
@@ -547,6 +584,7 @@ Gw
                         <outlet property="fileView" destination="nW6-88-8jO" id="evU-81-gmh"/>
                         <outlet property="log" destination="Far-nH-oyP" id="qlT-Ux-tLf"/>
                         <outlet property="outlineView" destination="e4f-QB-miL" id="igc-RP-Xpj"/>
+                        <outlet property="projectSettingsView" destination="NM6-jr-a01" id="glM-Uy-Xo4"/>
                     </connections>
                 </viewController>
                 <customObject id="aQa-Ql-MG6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

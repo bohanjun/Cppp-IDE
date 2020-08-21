@@ -12,19 +12,27 @@ extension CDProjectDocument {
     
     func openDocument(item: CDProjectItem) {
         
+        self.contentViewController?.contentVC?.view.removeFromSuperview()
+        
         switch item {
+            
             case .document(let document):
+                
+                self.contentViewController?.projectSettingsView?.isHidden = true
+                
                 self.contentViewController.documentInfoFileNameLabel.stringValue = document.path.nsString.lastPathComponent
                 self.contentViewController.documentInfoFilePathLabel.stringValue = document.path
                 var documentType = "Other"
                 switch document.path.nsString.pathExtension.lowercased() {
-                    case "cpp", "cxx": documentType = "C++ Source"
+                    case "cpp", "cxx", "c++": documentType = "C++ Source"
                     case "c": documentType = "C Source"
-                    case "h": documentType = "C/C++ Header"
+                    case "h", "hpp", "h++": documentType = "Header"
                     case "in": documentType = "Input File"
                     case "out", "ans": documentType = "Output File"
                     default: break
                 }
+                documentType = "Type: \(documentType)"
+                
                 self.contentViewController.documentInfoFileTypeLabel.stringValue = documentType
                 self.contentViewController.documentInfoDescription.string = document.fileDescription ?? ""
                 
@@ -32,9 +40,11 @@ extension CDProjectDocument {
                 do {
                     
                     self.contentViewController.contentVC.representedObject = try CDCodeDocument(contentsOf: URL(fileURLWithPath: document.path), ofType: "C++ Source")
-                    for view in self.contentViewController.fileView.subviews {
+                    
+                    /*for view in self.contentViewController.fileView.subviews {
                         view.removeFromSuperview()
-                    }
+                    }*/
+                    
                     self.contentViewController.contentVC.view.frame = self.contentViewController.fileView.bounds
                     self.contentViewController.contentVC.loadView()
                     self.contentViewController.contentVC.view.translatesAutoresizingMaskIntoConstraints = false
@@ -55,15 +65,21 @@ extension CDProjectDocument {
                 }
                 
             case .project(_):
+                
+                self.contentViewController?.projectSettingsView?.isHidden = false
+                
                 self.contentViewController.documentInfoFileNameLabel.stringValue = self.fileURL?.lastPathComponent ?? "Not saved"
                 self.contentViewController.documentInfoFilePathLabel.stringValue = self.fileURL?.path ?? "Not saved"
-                self.contentViewController.documentInfoFileTypeLabel.stringValue = "C+++ Project"
+                self.contentViewController.documentInfoFileTypeLabel.stringValue = "Type: Project"
                 self.contentViewController.documentInfoDescription.string = project.fileDescription ?? ""
                 
             case .folder(let folder):
+                
+                self.contentViewController?.projectSettingsView?.isHidden = true
+                
                 self.contentViewController.documentInfoFileNameLabel.stringValue = folder.name
-                self.contentViewController.documentInfoFilePathLabel.stringValue = "Not Applicable"
-                self.contentViewController.documentInfoFileTypeLabel.stringValue = "Folder"
+                self.contentViewController.documentInfoFilePathLabel.stringValue = "-"
+                self.contentViewController.documentInfoFileTypeLabel.stringValue = "Type: Folder"
                 self.contentViewController.documentInfoDescription.string = folder.fileDescription ?? ""
                 
         }

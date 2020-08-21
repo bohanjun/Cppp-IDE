@@ -12,6 +12,7 @@ class CDProjectMainViewController: NSViewController {
     
     @IBOutlet weak var outlineView: NSOutlineView!
     @IBOutlet weak var fileView: NSView!
+    @IBOutlet weak var projectSettingsView: CDProjectSettingsView!
     
     weak var document: CDProjectDocument!
     weak var contentVC: CDMainViewController!
@@ -57,6 +58,8 @@ class CDProjectMainViewController: NSViewController {
         self.addChild(contentVC)
         
         self.outlineView?.registerForDraggedTypes([.string])
+        
+        self.projectSettingsView?.delegate = self
         
         self.log.font = menloFont(ofSize: 13.0)
         
