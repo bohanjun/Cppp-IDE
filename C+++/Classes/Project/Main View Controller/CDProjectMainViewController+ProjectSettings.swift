@@ -11,7 +11,7 @@ import Cocoa
 extension CDProjectMainViewController: CDProjectSettingsViewDelegate {
     
     func projectSettingsDidChangeVersion(to string: String) {
-        print("projectSettingsDidChangeVersion(to: \(string))")
+        // print("projectSettingsDidChangeVersion(to: \(string))")
         self.document?.project.version = string
         DispatchQueue.main.async {
             self.document?.save(nil)
@@ -19,7 +19,7 @@ extension CDProjectMainViewController: CDProjectSettingsViewDelegate {
     }
     
     func projectSettingsDidChangeCompileCommandSettings(useDefault: Bool) {
-        print("projectSettingsDidChangeCompileCommandSettings(useDefault: \(useDefault)")
+        // print("projectSettingsDidChangeCompileCommandSettings(useDefault: \(useDefault))")
         self.document?.project.compileCommand = useDefault ? "Default" : "Custom"
         DispatchQueue.main.async {
             self.document?.save(nil)

@@ -21,6 +21,7 @@ class CDProjectSettingsView: NSView, NSTextFieldDelegate {
     var delegate: CDProjectSettingsViewDelegate?
     
     @IBOutlet weak var versionTextField: NSTextField!
+    @IBOutlet weak var button: NSButton!
     
     @IBAction func buttonClicked(_ sender: NSButton) {
         

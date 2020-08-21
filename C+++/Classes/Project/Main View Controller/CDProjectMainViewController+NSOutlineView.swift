@@ -91,20 +91,6 @@ extension CDProjectMainViewController: NSOutlineViewDataSource, NSOutlineViewDel
     
     
     
-    // MARK: - awakeFromNib() and viewWillAppear()
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-    override func viewWillAppear() {
-        super.viewWillAppear()
-        
-        self.document = self.view.window?.windowController?.document as? CDProjectDocument
-        self.outlineView.reloadData()
-        
-    }
-    
     
     // MARK: - insert(newitem:)
     

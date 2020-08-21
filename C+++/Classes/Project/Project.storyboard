@@ -340,6 +340,7 @@ Gw
                                                                                     <constraint firstAttribute="height" constant="171" id="k0O-an-HDy"/>
                                                                                 </constraints>
                                                                                 <connections>
+                                                                                    <outlet property="button" destination="cza-Bl-v9a" id="evt-gk-l4q"/>
                                                                                     <outlet property="versionTextField" destination="1Iw-Sl-0Uo" id="6kb-bt-H5z"/>
                                                                                 </connections>
                                                                             </customView>

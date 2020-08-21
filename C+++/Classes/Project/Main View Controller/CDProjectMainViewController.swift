@@ -64,6 +64,22 @@ class CDProjectMainViewController: NSViewController {
         self.log.font = menloFont(ofSize: 13.0)
         
     }
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        
+        self.document = self.view.window?.windowController?.document as? CDProjectDocument
+        self.outlineView.reloadData()
+        
+        self.projectSettingsView.versionTextField.stringValue = self.document?.project?.version ?? "nil"
+        self.projectSettingsView.button.state = self.document?.project?.compileCommand == "Default" ? .on : .off
+        
+    }
  
     
 }
