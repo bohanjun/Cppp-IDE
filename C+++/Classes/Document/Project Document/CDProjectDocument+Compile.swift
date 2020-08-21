@@ -23,6 +23,7 @@ extension CDProjectDocument {
         
         // MARK: - Variables
         
+        let customCompileCommand = self.project.compileCommand == "Custom"
         var output = [String]()
         var didSuccess = true
         let cd = "cd \"\(self.fileURL!.path.nsString.deletingLastPathComponent)\"\n"
@@ -62,6 +63,8 @@ extension CDProjectDocument {
         
         var allCFilePaths = [String]()
         var allCppFilePaths = [String]()
+        var customCompileCommandFilePath = "NOTFOUND"
+        var isSuccessful = true
         
         // Recursive
         func viewAllDocuments(_ current: CDProjectItem) {
@@ -69,13 +72,28 @@ extension CDProjectDocument {
             switch current {
                 
                 case .document(let document):
+                    
+                    guard FileManager.default.fileExists(atPath: document.path) else {
+                        output.append("Error: File \(document.path) does not exist. (4).")
+                        output.append("Compile Failed.")
+                        self.contentViewController?.showAlert("Error", "File \(document.path) does not exist. (4).\nCompile Failed.")
+                        isSuccessful = false
+                        return
+                    }
+                    
                     if ["c"].contains(document.path.nsString.pathExtension) {
                         NSLog("C++: %@", document.path)
                         allCFilePaths.append(document.path)
                     }
+                    
                     if ["cpp", "cxx", "c++"].contains(document.path.nsString.pathExtension) {
                         NSLog("C++ File: %@", document.path)
                         allCppFilePaths.append(document.path)
+                    }
+                    
+                    if customCompileCommand && document.path.nsString.lastPathComponent.lowercased() == "compile.txt" {
+                        customCompileCommandFilePath = document.path
+                        NSLog("Find custom compile fommand file at path \(document.path)")
                     }
                     
                 case .project(let project):
@@ -96,7 +114,42 @@ extension CDProjectDocument {
         
         viewAllDocuments(.project(self.project ?? CDProject(compileCommand: "", version: "")))
         
+        guard isSuccessful else {
+            return (false, output)
+        }
+        
         output.append("End.")
+        
+        output.append("Reading custom compile command file...")
+        output.append("Note: Using custom compile command may cause unknown problems.")
+        
+        if customCompileCommand {
+            
+            guard customCompileCommandFilePath != "NOTFOUND" else {
+                output.append("Error: Cannot find custom compile command file. Create a \"compile.txt\" file and add it to the project. Or go to the project settings and set the \"Compile Command\" option to default. (5)")
+                self.contentViewController.showAlert("Error", "Cannot find custom compile command file. Create a \"compile.txt\" file and add it to the project. Or go to the project settings and set the \"Compile Command\" option to default. (5)")
+                return (false, output)
+            }
+            
+            do {
+                let document = try CDCodeDocument(contentsOf: URL(fileURLWithPath: customCompileCommandFilePath), ofType: "C++ Source")
+                output.append("Begin Compiling...")
+                let result = _runCommand(document.content.contentString)
+                output.append("End.")
+                output.append("Output: \(result[0])")
+                if result.count >= 2 {
+                    output.append("Error: \(result[1])")
+                    return (false, output)
+                }
+                return (true, output)
+            } catch {
+                output.append("Error: Read custom compile command file failed. (6)")
+                self.contentViewController.showAlert("Error", "Read custom compile command file failed. (6).")
+            }
+            
+            
+            
+        }
         
         
         var objectFiles = [String]()
